@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: dk.sdu.mmmi.mdsd.f18.dsl.external
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: dk.sdu.mmmi.mdsd.f18.dsl.external; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl,
+ dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.util,
+ dk.sdu.mmmi.mdsd.f18.dsl.external.serializer,
+ dk.sdu.mmmi.mdsd.f18.dsl.external.services,
+ dk.sdu.mmmi.mdsd.f18.dsl.external.scoping,
+ dk.sdu.mmmi.mdsd.f18.dsl.external.parser.antlr,
+ dk.sdu.mmmi.mdsd.f18.dsl.external.generator,
+ dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic,
+ dk.sdu.mmmi.mdsd.f18.dsl.external,
+ dk.sdu.mmmi.mdsd.f18.dsl.external.validation,
+ dk.sdu.mmmi.mdsd.f18.dsl.external.parser.antlr.internal
+Import-Package: org.apache.log4j

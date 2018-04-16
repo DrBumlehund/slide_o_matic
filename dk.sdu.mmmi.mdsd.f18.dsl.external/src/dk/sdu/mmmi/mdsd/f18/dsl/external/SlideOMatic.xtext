@@ -1,0 +1,81 @@
+grammar dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic with org.eclipse.xtext.common.Terminals
+
+generate slideOMatic "http://www.sdu.dk/mmmi/mdsd/f18/dsl/external/SlideOMatic"
+
+// Project Extension is '.slide'
+Model:
+	presentation=Presentation;
+
+Presentation:
+	"presentation" name=ID "{" ("(" (settings+=Setting)* ")")+ (slides+=Slide | animations+=Animation)* "}";
+
+Setting:
+	Theme | Author | Date;
+
+Theme:
+	"theme" theme=BeamerTheme ("color" themeColor=ThemeColor)?;
+
+BeamerTheme:
+	"AnnArbor" | "Antibes" | "Bergen" | "Berkeley" | "Berlin" | "Boadilla" | "boxes" | "CambridgeUS" | "Copenhagen" |
+	"Darmstadt" | "default" | "Dresden" | "Frankfurt" | "Goettingen" | "Hannover" | "Ilmanau" | "JuanLesPins" | "Luebeck"
+	| "Madrid" | "Malmoe" | "Marburg" | "Montpellier" | "PaloAlto" | "Pittsburgh" | "Rochester" | "Singapore" | "Szeged"
+	| "Warsaw";
+
+ThemeColor:
+	"albatros" | "beaver" | "beetle" | "crane" | "default" | "dolphin" | "dove" | "fly" | "lily" | "orchid" | "rose" |
+	"seagull" | "seahorse" | "sidebartab" | "structure" | "whale" | "wolverine";
+
+Author:
+	"author" aName=STRING;
+
+Date:
+	"date" ({DateString} date=STRING | {Today} "*");
+
+Slide:
+	"slide" (Section)? (sName=STRING)? "{" (contents+=Content)+ "}";
+
+Section:
+	{Section} "*" | {SubSection} "**" | {SubSubSection} "***";
+
+Content:
+	{TOC} "ToC" | Text | List | Float;
+
+Text:
+	{Paragraph} ">" text=STRING (Click)? | {Block} "Block" (name=ID)? "{" text=STRING "}" (Click)?;
+
+List:
+	(ListItems+=NumberedListItem)+ | (ListItems+=UnNumberedList)+;
+
+NumberedListItem:
+	"##" item=STRING (Click)?;
+
+UnNumberedList:
+	"--" item=STRING (Click)?;
+
+Float:
+	Image | Table;
+
+Image:
+	"img" name=ID "src" src=STRING (alignment=Alignment)? (size=Size) (Click)?;
+
+Alignment:
+	"topleft" | "top" | "topright" | "left" | "center" | "right" | "bottomleft" | "bottom" | "bottomright";
+
+Size:
+	("width" | "height") scale=INT "%";
+
+Table:
+	"tab" name=ID "[" rows+=TableRow ("," rows+=TableRow)* "]";
+
+TableRow:
+	"[" values+=STRING ("," values+=STRING)* "]";
+
+Click:
+	"$$";
+
+Animation:
+	"animate" target=[Float] type=AnimationType "to" location=Alignment (size=Size)?;
+
+AnimationType:
+	{Move} "move" | {Jump} "jump";
+	
