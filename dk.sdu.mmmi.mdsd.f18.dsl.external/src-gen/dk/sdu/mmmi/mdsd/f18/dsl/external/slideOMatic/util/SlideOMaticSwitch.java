@@ -5,31 +5,33 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.util;
 
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Author;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Model;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedListItem;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Paragraph;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Section;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Setting;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSection;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSection;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -99,13 +101,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-      case SlideOMaticPackage.MODEL:
-      {
-        Model model = (Model)theEObject;
-        T result = caseModel(model);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SlideOMaticPackage.PRESENTATION:
       {
         Presentation presentation = (Presentation)theEObject;
@@ -113,26 +108,24 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlideOMaticPackage.SETTING:
-      {
-        Setting setting = (Setting)theEObject;
-        T result = caseSetting(setting);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SlideOMaticPackage.THEME:
       {
         Theme theme = (Theme)theEObject;
         T result = caseTheme(theme);
-        if (result == null) result = caseSetting(theme);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlideOMaticPackage.AUTHOR:
+      case SlideOMaticPackage.AUTHORS:
       {
-        Author author = (Author)theEObject;
-        T result = caseAuthor(author);
-        if (result == null) result = caseSetting(author);
+        Authors authors = (Authors)theEObject;
+        T result = caseAuthors(authors);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlideOMaticPackage.INSTITUTE:
+      {
+        Institute institute = (Institute)theEObject;
+        T result = caseInstitute(institute);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -140,7 +133,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
       {
         Date date = (Date)theEObject;
         T result = caseDate(date);
-        if (result == null) result = caseSetting(date);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -189,10 +181,10 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlideOMaticPackage.UN_NUMBERED_LIST:
+      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM:
       {
-        UnNumberedList unNumberedList = (UnNumberedList)theEObject;
-        T result = caseUnNumberedList(unNumberedList);
+        UnNumberedListItem unNumberedListItem = (UnNumberedListItem)theEObject;
+        T result = caseUnNumberedListItem(unNumberedListItem);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -250,21 +242,30 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlideOMaticPackage.SUB_SECTION:
+      case SlideOMaticPackage.SEC:
       {
-        SubSection subSection = (SubSection)theEObject;
-        T result = caseSubSection(subSection);
-        if (result == null) result = caseSection(subSection);
-        if (result == null) result = caseSlide(subSection);
+        Sec sec = (Sec)theEObject;
+        T result = caseSec(sec);
+        if (result == null) result = caseSection(sec);
+        if (result == null) result = caseSlide(sec);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlideOMaticPackage.SUB_SUB_SECTION:
+      case SlideOMaticPackage.SUB_SEC:
       {
-        SubSubSection subSubSection = (SubSubSection)theEObject;
-        T result = caseSubSubSection(subSubSection);
-        if (result == null) result = caseSection(subSubSection);
-        if (result == null) result = caseSlide(subSubSection);
+        SubSec subSec = (SubSec)theEObject;
+        T result = caseSubSec(subSec);
+        if (result == null) result = caseSection(subSec);
+        if (result == null) result = caseSlide(subSec);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlideOMaticPackage.SUB_SUB_SEC:
+      {
+        SubSubSec subSubSec = (SubSubSec)theEObject;
+        T result = caseSubSubSec(subSubSec);
+        if (result == null) result = caseSection(subSubSec);
+        if (result == null) result = caseSlide(subSubSec);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -294,6 +295,24 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlideOMaticPackage.NUMBERED_LIST:
+      {
+        NumberedList numberedList = (NumberedList)theEObject;
+        T result = caseNumberedList(numberedList);
+        if (result == null) result = caseList(numberedList);
+        if (result == null) result = caseContent(numberedList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlideOMaticPackage.UN_NUMBERED_LIST:
+      {
+        UnNumberedList unNumberedList = (UnNumberedList)theEObject;
+        T result = caseUnNumberedList(unNumberedList);
+        if (result == null) result = caseList(unNumberedList);
+        if (result == null) result = caseContent(unNumberedList);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlideOMaticPackage.MOVE:
       {
         Move move = (Move)theEObject;
@@ -315,22 +334,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Model</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Model</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseModel(Model object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Presentation</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -342,22 +345,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePresentation(Presentation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Setting</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Setting</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSetting(Setting object)
   {
     return null;
   }
@@ -379,17 +366,33 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Author</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Authors</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Author</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Authors</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseAuthor(Author object)
+  public T caseAuthors(Authors object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Institute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Institute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInstitute(Institute object)
   {
     return null;
   }
@@ -507,17 +510,17 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Un Numbered List</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Un Numbered List Item</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Un Numbered List</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Un Numbered List Item</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUnNumberedList(UnNumberedList object)
+  public T caseUnNumberedListItem(UnNumberedListItem object)
   {
     return null;
   }
@@ -635,33 +638,49 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Section</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Sec</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Section</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Sec</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubSection(SubSection object)
+  public T caseSec(Sec object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Sub Sub Section</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Sub Sec</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Sub Sub Section</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Sub Sec</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSubSubSection(SubSubSection object)
+  public T caseSubSec(SubSec object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sub Sub Sec</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sub Sub Sec</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSubSubSec(SubSubSec object)
   {
     return null;
   }
@@ -710,6 +729,38 @@ public class SlideOMaticSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBlock(Block object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Numbered List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Numbered List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberedList(NumberedList object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Un Numbered List</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Un Numbered List</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnNumberedList(UnNumberedList object)
   {
     return null;
   }

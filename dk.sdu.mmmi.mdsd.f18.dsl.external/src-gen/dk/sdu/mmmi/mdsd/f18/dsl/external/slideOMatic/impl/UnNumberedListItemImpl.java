@@ -3,56 +3,57 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Author;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Author</b></em>'.
+ * An implementation of the model object '<em><b>Un Numbered List Item</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AuthorImpl#getAName <em>AName</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListItemImpl#getItem <em>Item</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class AuthorImpl extends SettingImpl implements Author
+public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container implements UnNumberedListItem
 {
   /**
-   * The default value of the '{@link #getAName() <em>AName</em>}' attribute.
+   * The default value of the '{@link #getItem() <em>Item</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAName()
+   * @see #getItem()
    * @generated
    * @ordered
    */
-  protected static final String ANAME_EDEFAULT = null;
+  protected static final String ITEM_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getAName() <em>AName</em>}' attribute.
+   * The cached value of the '{@link #getItem() <em>Item</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAName()
+   * @see #getItem()
    * @generated
    * @ordered
    */
-  protected String aName = ANAME_EDEFAULT;
+  protected String item = ITEM_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AuthorImpl()
+  protected UnNumberedListItemImpl()
   {
     super();
   }
@@ -65,7 +66,7 @@ public class AuthorImpl extends SettingImpl implements Author
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.AUTHOR;
+    return SlideOMaticPackage.Literals.UN_NUMBERED_LIST_ITEM;
   }
 
   /**
@@ -73,9 +74,9 @@ public class AuthorImpl extends SettingImpl implements Author
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getAName()
+  public String getItem()
   {
-    return aName;
+    return item;
   }
 
   /**
@@ -83,12 +84,12 @@ public class AuthorImpl extends SettingImpl implements Author
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAName(String newAName)
+  public void setItem(String newItem)
   {
-    String oldAName = aName;
-    aName = newAName;
+    String oldItem = item;
+    item = newItem;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.AUTHOR__ANAME, oldAName, aName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM, oldItem, item));
   }
 
   /**
@@ -101,8 +102,8 @@ public class AuthorImpl extends SettingImpl implements Author
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.AUTHOR__ANAME:
-        return getAName();
+      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM:
+        return getItem();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +118,8 @@ public class AuthorImpl extends SettingImpl implements Author
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.AUTHOR__ANAME:
-        setAName((String)newValue);
+      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM:
+        setItem((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +135,8 @@ public class AuthorImpl extends SettingImpl implements Author
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.AUTHOR__ANAME:
-        setAName(ANAME_EDEFAULT);
+      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM:
+        setItem(ITEM_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -151,8 +152,8 @@ public class AuthorImpl extends SettingImpl implements Author
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.AUTHOR__ANAME:
-        return ANAME_EDEFAULT == null ? aName != null : !ANAME_EDEFAULT.equals(aName);
+      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM:
+        return ITEM_EDEFAULT == null ? item != null : !ITEM_EDEFAULT.equals(item);
     }
     return super.eIsSet(featureID);
   }
@@ -168,10 +169,10 @@ public class AuthorImpl extends SettingImpl implements Author
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (aName: ");
-    result.append(aName);
+    result.append(" (item: ");
+    result.append(item);
     result.append(')');
     return result.toString();
   }
 
-} //AuthorImpl
+} //UnNumberedListItemImpl

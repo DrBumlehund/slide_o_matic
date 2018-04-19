@@ -27,7 +27,7 @@ public class SlideOMaticParser extends AbstractAntlrParser {
 
 	@Override 
 	protected String getDefaultRuleName() {
-		return "Model";
+		return "Presentation";
 	}
 
 	public SlideOMaticGrammarAccess getGrammarAccess() {

@@ -3,26 +3,26 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSection;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Sub Section</b></em>'.
+ * An implementation of the model object '<em><b>Sec</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class SubSectionImpl extends SectionImpl implements SubSection
+public class SecImpl extends SectionImpl implements Sec
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SubSectionImpl()
+  protected SecImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class SubSectionImpl extends SectionImpl implements SubSection
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.SUB_SECTION;
+    return SlideOMaticPackage.Literals.SEC;
   }
 
-} //SubSectionImpl
+} //SecImpl

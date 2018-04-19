@@ -2,32 +2,36 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="slideOMatic" nsURI="http://www.sdu.dk/mmmi/mdsd/f18/dsl/external/SlideOMatic"
     nsPrefix="slideOMatic">
-  <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="presentation" eType="#//Presentation"
-        containment="true"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Presentation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="settings" upperBound="-1"
-        eType="#//Setting" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="theme" eType="#//Theme"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="authors" eType="#//Authors"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="institute" eType="#//Institute"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="slides" upperBound="-1"
         eType="#//Slide" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="animations" upperBound="-1"
         eType="#//Animation" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Setting"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Theme" eSuperTypes="#//Setting">
+  <eClassifiers xsi:type="ecore:EClass" name="Theme">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="theme" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="themeColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Author" eSuperTypes="#//Setting">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Authors">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="names" unique="false" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Date" eSuperTypes="#//Setting">
+  <eClassifiers xsi:type="ecore:EClass" name="Institute">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Date">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Slide">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="contents" upperBound="-1"
         eType="#//Content" containment="true"/>
   </eClassifiers>
@@ -36,14 +40,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//Content">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Content">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ListItems" upperBound="-1"
-        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Content"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumberedListItem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="item" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="UnNumberedList">
+  <eClassifiers xsi:type="ecore:EClass" name="UnNumberedListItem">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="item" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Float" eSuperTypes="#//Content">
@@ -73,12 +74,21 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnimationType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SubSection" eSuperTypes="#//Section"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SubSubSection" eSuperTypes="#//Section"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sec" eSuperTypes="#//Section"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubSec" eSuperTypes="#//Section"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SubSubSec" eSuperTypes="#//Section"/>
   <eClassifiers xsi:type="ecore:EClass" name="TOC" eSuperTypes="#//Content"/>
   <eClassifiers xsi:type="ecore:EClass" name="Paragraph" eSuperTypes="#//Text"/>
   <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//Text">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NumberedList" eSuperTypes="#//List">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ListItems" upperBound="-1"
+        eType="#//NumberedListItem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnNumberedList" eSuperTypes="#//List">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ListItems" upperBound="-1"
+        eType="#//UnNumberedListItem" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Move" eSuperTypes="#//AnimationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Jump" eSuperTypes="#//AnimationType"/>

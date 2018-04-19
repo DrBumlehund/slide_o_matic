@@ -3,14 +3,9 @@ grammar dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic with org.eclipse.xtext.com
 generate slideOMatic "http://www.sdu.dk/mmmi/mdsd/f18/dsl/external/SlideOMatic"
 
 // Project Extension is '.slide'
-Model:
-	presentation=Presentation;
-
 Presentation:
-	"presentation" name=ID "{" ("(" (settings+=Setting)* ")")+ (slides+=Slide | animations+=Animation)* "}";
-
-Setting:
-	Theme | Author | Date;
+	"presentation" name=STRING "{" ("(" (theme=Theme)? (authors=Authors)? (institute=Institute)? (date=Date)? ")")? (slides+=Slide |
+	animations+=Animation)* "}";
 
 Theme:
 	"theme" theme=BeamerTheme ("color" themeColor=ThemeColor)?;
@@ -25,31 +20,34 @@ ThemeColor:
 	"albatros" | "beaver" | "beetle" | "crane" | "default" | "dolphin" | "dove" | "fly" | "lily" | "orchid" | "rose" |
 	"seagull" | "seahorse" | "sidebartab" | "structure" | "whale" | "wolverine";
 
-Author:
-	"author" aName=STRING;
+Authors:
+	"author" names+=STRING (',' names+=STRING)*;
+
+Institute:
+	"institute" name=STRING;
 
 Date:
-	"date" ({DateString} date=STRING | {Today} "*");
+	"date" date=STRING;
 
 Slide:
-	"slide" (Section)? (sName=STRING)? "{" (contents+=Content)+ "}";
+	"slide" (Section name=STRING | name=STRING)? "{" contents+=Content+ "}";
 
 Section:
-	{Section} "*" | {SubSection} "**" | {SubSubSection} "***";
+	{Sec} "*" | {SubSec} "**" | {SubSubSec} "***";
 
 Content:
 	{TOC} "ToC" | Text | List | Float;
 
 Text:
-	{Paragraph} ">" text=STRING (Click)? | {Block} "Block" (name=ID)? "{" text=STRING "}" (Click)?;
+	{Paragraph} ">" text=STRING (Click)? | {Block} "block" (name=STRING)? "{" text=STRING "}" (Click)?;
 
 List:
-	(ListItems+=NumberedListItem)+ | (ListItems+=UnNumberedList)+;
+	{NumberedList} "#list" ListItems+=NumberedListItem+ | {UnNumberedList} "-list" ListItems+=UnNumberedListItem+;
 
 NumberedListItem:
 	"##" item=STRING (Click)?;
 
-UnNumberedList:
+UnNumberedListItem:
 	"--" item=STRING (Click)?;
 
 Float:

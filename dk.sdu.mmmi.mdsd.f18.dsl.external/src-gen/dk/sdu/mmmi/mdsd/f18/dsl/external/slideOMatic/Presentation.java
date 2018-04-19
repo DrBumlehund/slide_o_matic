@@ -17,7 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getName <em>Name</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getSettings <em>Settings</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getTheme <em>Theme</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getAuthors <em>Authors</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getInstitute <em>Institute</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getDate <em>Date</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getSlides <em>Slides</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getAnimations <em>Animations</em>}</li>
  * </ul>
@@ -55,20 +58,108 @@ public interface Presentation extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Settings</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Setting}.
+   * Returns the value of the '<em><b>Theme</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Settings</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Theme</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Settings</em>' containment reference list.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getPresentation_Settings()
+   * @return the value of the '<em>Theme</em>' containment reference.
+   * @see #setTheme(Theme)
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getPresentation_Theme()
    * @model containment="true"
    * @generated
    */
-  EList<Setting> getSettings();
+  Theme getTheme();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getTheme <em>Theme</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Theme</em>' containment reference.
+   * @see #getTheme()
+   * @generated
+   */
+  void setTheme(Theme value);
+
+  /**
+   * Returns the value of the '<em><b>Authors</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Authors</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Authors</em>' containment reference.
+   * @see #setAuthors(Authors)
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getPresentation_Authors()
+   * @model containment="true"
+   * @generated
+   */
+  Authors getAuthors();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getAuthors <em>Authors</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Authors</em>' containment reference.
+   * @see #getAuthors()
+   * @generated
+   */
+  void setAuthors(Authors value);
+
+  /**
+   * Returns the value of the '<em><b>Institute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Institute</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Institute</em>' containment reference.
+   * @see #setInstitute(Institute)
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getPresentation_Institute()
+   * @model containment="true"
+   * @generated
+   */
+  Institute getInstitute();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getInstitute <em>Institute</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Institute</em>' containment reference.
+   * @see #getInstitute()
+   * @generated
+   */
+  void setInstitute(Institute value);
+
+  /**
+   * Returns the value of the '<em><b>Date</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Date</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Date</em>' containment reference.
+   * @see #setDate(Date)
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getPresentation_Date()
+   * @model containment="true"
+   * @generated
+   */
+  Date getDate();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getDate <em>Date</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Date</em>' containment reference.
+   * @see #getDate()
+   * @generated
+   */
+  void setDate(Date value);
 
   /**
    * Returns the value of the '<em><b>Slides</b></em>' containment reference list.

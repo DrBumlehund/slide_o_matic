@@ -3,28 +3,26 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Setting;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Setting</b></em>'.
+ * An implementation of the model object '<em><b>Sub Sub Sec</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
+public class SubSubSecImpl extends SectionImpl implements SubSubSec
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected SettingImpl()
+  protected SubSubSecImpl()
   {
     super();
   }
@@ -37,7 +35,7 @@ public class SettingImpl extends MinimalEObjectImpl.Container implements Setting
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.SETTING;
+    return SlideOMaticPackage.Literals.SUB_SUB_SEC;
   }
 
-} //SettingImpl
+} //SubSubSecImpl

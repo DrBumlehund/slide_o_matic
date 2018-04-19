@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +18,46 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class SlideOMaticGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		resource.allContents.filter(Presentation).next.doGenerateTexFile(fsa)
 	}
+
+	def void doGenerateTexFile(Presentation p, IFileSystemAccess2 fsa){
+		System.out.println(p.generateTexCode)
+	}
+	
+	def CharSequence generateTexCode(Presentation p){'''
+	\documentclass{beamer}
+	\usepackage[absolute,overlay]{textpos}
+	\usepackage{graphicx}
+	\usepackage[english]{babel}
+	\usepackage{lastpage}
+	
+	«IF p.theme !== null»
+	\usetheme{«p.theme.theme»}
+	«IF p.theme.themeColor !== null»
+	\usecolortheme{«p.theme.themeColor»}
+	«ENDIF»
+	«ENDIF»
+	
+	\title{«p.name»}
+	«IF p.authors !== null»
+	\author{«FOR a: p.authors.names.filter(String) SEPARATOR " \\and "»«a»«ENDFOR»}
+	«ENDIF»
+	«IF p.institute !== null»
+	\institute{«p.institute.name»}
+	«ENDIF»
+	«IF p.date !== null»
+	\date{«p.date.date»}
+	«ENDIF»
+	
+	\begin{document}
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	\end{document}
+	
+	'''		
+	}
+
 }

@@ -3,6 +3,7 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +21,7 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
  * @model
  * @generated
  */
-public interface Date extends Setting
+public interface Date extends EObject
 {
   /**
    * Returns the value of the '<em><b>Date</b></em>' attribute.

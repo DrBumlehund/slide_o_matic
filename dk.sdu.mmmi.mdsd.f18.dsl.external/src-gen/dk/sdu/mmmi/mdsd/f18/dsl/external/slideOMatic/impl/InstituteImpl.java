@@ -3,7 +3,7 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -15,45 +15,45 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Date</b></em>'.
+ * An implementation of the model object '<em><b>Institute</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.DateImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.InstituteImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class DateImpl extends MinimalEObjectImpl.Container implements Date
+public class InstituteImpl extends MinimalEObjectImpl.Container implements Institute
 {
   /**
-   * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDate()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String DATE_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDate()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String date = DATE_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected DateImpl()
+  protected InstituteImpl()
   {
     super();
   }
@@ -66,7 +66,7 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.DATE;
+    return SlideOMaticPackage.Literals.INSTITUTE;
   }
 
   /**
@@ -74,9 +74,9 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getDate()
+  public String getName()
   {
-    return date;
+    return name;
   }
 
   /**
@@ -84,12 +84,12 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setDate(String newDate)
+  public void setName(String newName)
   {
-    String oldDate = date;
-    date = newDate;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.DATE__DATE, oldDate, date));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.INSTITUTE__NAME, oldName, name));
   }
 
   /**
@@ -102,8 +102,8 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.DATE__DATE:
-        return getDate();
+      case SlideOMaticPackage.INSTITUTE__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +118,8 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.DATE__DATE:
-        setDate((String)newValue);
+      case SlideOMaticPackage.INSTITUTE__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +135,8 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.DATE__DATE:
-        setDate(DATE_EDEFAULT);
+      case SlideOMaticPackage.INSTITUTE__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +152,8 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.DATE__DATE:
-        return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
+      case SlideOMaticPackage.INSTITUTE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +169,10 @@ public class DateImpl extends MinimalEObjectImpl.Container implements Date
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (date: ");
-    result.append(date);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //DateImpl
+} //InstituteImpl

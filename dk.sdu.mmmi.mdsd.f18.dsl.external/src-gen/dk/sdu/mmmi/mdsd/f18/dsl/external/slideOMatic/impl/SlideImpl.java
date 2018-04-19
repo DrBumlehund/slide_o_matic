@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideImpl#getSName <em>SName</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideImpl#getContents <em>Contents</em>}</li>
  * </ul>
  *
@@ -40,24 +40,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
 {
   /**
-   * The default value of the '{@link #getSName() <em>SName</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String SNAME_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getSName() <em>SName</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSName()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String sName = SNAME_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getContents() <em>Contents</em>}' containment reference list.
@@ -95,9 +95,9 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getSName()
+  public String getName()
   {
-    return sName;
+    return name;
   }
 
   /**
@@ -105,12 +105,12 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setSName(String newSName)
+  public void setName(String newName)
   {
-    String oldSName = sName;
-    sName = newSName;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.SLIDE__SNAME, oldSName, sName));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.SLIDE__NAME, oldName, name));
   }
 
   /**
@@ -153,8 +153,8 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.SLIDE__SNAME:
-        return getSName();
+      case SlideOMaticPackage.SLIDE__NAME:
+        return getName();
       case SlideOMaticPackage.SLIDE__CONTENTS:
         return getContents();
     }
@@ -172,8 +172,8 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.SLIDE__SNAME:
-        setSName((String)newValue);
+      case SlideOMaticPackage.SLIDE__NAME:
+        setName((String)newValue);
         return;
       case SlideOMaticPackage.SLIDE__CONTENTS:
         getContents().clear();
@@ -193,8 +193,8 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.SLIDE__SNAME:
-        setSName(SNAME_EDEFAULT);
+      case SlideOMaticPackage.SLIDE__NAME:
+        setName(NAME_EDEFAULT);
         return;
       case SlideOMaticPackage.SLIDE__CONTENTS:
         getContents().clear();
@@ -213,8 +213,8 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.SLIDE__SNAME:
-        return SNAME_EDEFAULT == null ? sName != null : !SNAME_EDEFAULT.equals(sName);
+      case SlideOMaticPackage.SLIDE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SlideOMaticPackage.SLIDE__CONTENTS:
         return contents != null && !contents.isEmpty();
     }
@@ -232,8 +232,8 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (sName: ");
-    result.append(sName);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }

@@ -3,7 +3,15 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.generator;
 
+import com.google.common.collect.Iterables;
+import com.google.common.collect.Iterators;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -17,5 +25,111 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class SlideOMaticGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    this.doGenerateTexFile(Iterators.<Presentation>filter(resource.getAllContents(), Presentation.class).next(), fsa);
+  }
+  
+  public void doGenerateTexFile(final Presentation p, final IFileSystemAccess2 fsa) {
+    System.out.println(this.generateTexCode(p));
+  }
+  
+  public CharSequence generateTexCode(final Presentation p) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\documentclass{beamer}");
+    _builder.newLine();
+    _builder.append("\\usepackage[absolute,overlay]{textpos}");
+    _builder.newLine();
+    _builder.append("\\usepackage{graphicx}");
+    _builder.newLine();
+    _builder.append("\\usepackage[english]{babel}");
+    _builder.newLine();
+    _builder.append("\\usepackage{lastpage}");
+    _builder.newLine();
+    _builder.newLine();
+    {
+      Theme _theme = p.getTheme();
+      boolean _tripleNotEquals = (_theme != null);
+      if (_tripleNotEquals) {
+        _builder.append("\\usetheme{");
+        String _theme_1 = p.getTheme().getTheme();
+        _builder.append(_theme_1);
+        _builder.append("}");
+        _builder.newLineIfNotEmpty();
+        {
+          String _themeColor = p.getTheme().getThemeColor();
+          boolean _tripleNotEquals_1 = (_themeColor != null);
+          if (_tripleNotEquals_1) {
+            _builder.append("\\usecolortheme{");
+            String _themeColor_1 = p.getTheme().getThemeColor();
+            _builder.append(_themeColor_1);
+            _builder.append("}");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    _builder.newLine();
+    _builder.append("\\title{");
+    String _name = p.getName();
+    _builder.append(_name);
+    _builder.append("}");
+    _builder.newLineIfNotEmpty();
+    {
+      Authors _authors = p.getAuthors();
+      boolean _tripleNotEquals_2 = (_authors != null);
+      if (_tripleNotEquals_2) {
+        _builder.append("\\author{");
+        {
+          Iterable<String> _filter = Iterables.<String>filter(p.getAuthors().getNames(), String.class);
+          boolean _hasElements = false;
+          for(final String a : _filter) {
+            if (!_hasElements) {
+              _hasElements = true;
+            } else {
+              _builder.appendImmediate(" \\and ", "");
+            }
+            _builder.append(a);
+          }
+        }
+        _builder.append("}");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      Institute _institute = p.getInstitute();
+      boolean _tripleNotEquals_3 = (_institute != null);
+      if (_tripleNotEquals_3) {
+        _builder.append("\\institute{");
+        String _name_1 = p.getInstitute().getName();
+        _builder.append(_name_1);
+        _builder.append("}");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    {
+      Date _date = p.getDate();
+      boolean _tripleNotEquals_4 = (_date != null);
+      if (_tripleNotEquals_4) {
+        _builder.append("\\date{");
+        String _date_1 = p.getDate().getDate();
+        _builder.append(_date_1);
+        _builder.append("}");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    _builder.append("\\begin{document}");
+    _builder.newLine();
+    _builder.append("\\begin{frame}");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("\\titlepage");
+    _builder.newLine();
+    _builder.append("\\end{frame}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("\\end{document}");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder;
   }
 }

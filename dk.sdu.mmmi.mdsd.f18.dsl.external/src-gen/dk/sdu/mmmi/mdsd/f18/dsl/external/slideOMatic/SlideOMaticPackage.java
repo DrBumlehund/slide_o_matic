@@ -58,34 +58,6 @@ public interface SlideOMaticPackage extends EPackage
   SlideOMaticPackage eINSTANCE = dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl.init();
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ModelImpl <em>Model</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ModelImpl
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getModel()
-   * @generated
-   */
-  int MODEL = 0;
-
-  /**
-   * The feature id for the '<em><b>Presentation</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL__PRESENTATION = 0;
-
-  /**
-   * The number of structural features of the '<em>Model</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MODEL_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl <em>Presentation</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -93,7 +65,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getPresentation()
    * @generated
    */
-  int PRESENTATION = 1;
+  int PRESENTATION = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -105,13 +77,40 @@ public interface SlideOMaticPackage extends EPackage
   int PRESENTATION__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Settings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Theme</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PRESENTATION__SETTINGS = 1;
+  int PRESENTATION__THEME = 1;
+
+  /**
+   * The feature id for the '<em><b>Authors</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRESENTATION__AUTHORS = 2;
+
+  /**
+   * The feature id for the '<em><b>Institute</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRESENTATION__INSTITUTE = 3;
+
+  /**
+   * The feature id for the '<em><b>Date</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PRESENTATION__DATE = 4;
 
   /**
    * The feature id for the '<em><b>Slides</b></em>' containment reference list.
@@ -120,7 +119,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRESENTATION__SLIDES = 2;
+  int PRESENTATION__SLIDES = 5;
 
   /**
    * The feature id for the '<em><b>Animations</b></em>' containment reference list.
@@ -129,7 +128,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRESENTATION__ANIMATIONS = 3;
+  int PRESENTATION__ANIMATIONS = 6;
 
   /**
    * The number of structural features of the '<em>Presentation</em>' class.
@@ -138,26 +137,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PRESENTATION_FEATURE_COUNT = 4;
-
-  /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SettingImpl <em>Setting</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SettingImpl
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSetting()
-   * @generated
-   */
-  int SETTING = 2;
-
-  /**
-   * The number of structural features of the '<em>Setting</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SETTING_FEATURE_COUNT = 0;
+  int PRESENTATION_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ThemeImpl <em>Theme</em>}' class.
@@ -167,7 +147,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getTheme()
    * @generated
    */
-  int THEME = 3;
+  int THEME = 1;
 
   /**
    * The feature id for the '<em><b>Theme</b></em>' attribute.
@@ -176,7 +156,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int THEME__THEME = SETTING_FEATURE_COUNT + 0;
+  int THEME__THEME = 0;
 
   /**
    * The feature id for the '<em><b>Theme Color</b></em>' attribute.
@@ -185,7 +165,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int THEME__THEME_COLOR = SETTING_FEATURE_COUNT + 1;
+  int THEME__THEME_COLOR = 1;
 
   /**
    * The number of structural features of the '<em>Theme</em>' class.
@@ -194,35 +174,63 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int THEME_FEATURE_COUNT = SETTING_FEATURE_COUNT + 2;
+  int THEME_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AuthorImpl <em>Author</em>}' class.
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AuthorsImpl <em>Authors</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AuthorImpl
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getAuthor()
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AuthorsImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getAuthors()
    * @generated
    */
-  int AUTHOR = 4;
+  int AUTHORS = 2;
 
   /**
-   * The feature id for the '<em><b>AName</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AUTHOR__ANAME = SETTING_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Author</em>' class.
+   * The feature id for the '<em><b>Names</b></em>' attribute list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AUTHOR_FEATURE_COUNT = SETTING_FEATURE_COUNT + 1;
+  int AUTHORS__NAMES = 0;
+
+  /**
+   * The number of structural features of the '<em>Authors</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AUTHORS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.InstituteImpl <em>Institute</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.InstituteImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getInstitute()
+   * @generated
+   */
+  int INSTITUTE = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTITUTE__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Institute</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INSTITUTE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.DateImpl <em>Date</em>}' class.
@@ -232,7 +240,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getDate()
    * @generated
    */
-  int DATE = 5;
+  int DATE = 4;
 
   /**
    * The feature id for the '<em><b>Date</b></em>' attribute.
@@ -241,7 +249,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATE__DATE = SETTING_FEATURE_COUNT + 0;
+  int DATE__DATE = 0;
 
   /**
    * The number of structural features of the '<em>Date</em>' class.
@@ -250,7 +258,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int DATE_FEATURE_COUNT = SETTING_FEATURE_COUNT + 1;
+  int DATE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideImpl <em>Slide</em>}' class.
@@ -260,16 +268,16 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSlide()
    * @generated
    */
-  int SLIDE = 6;
+  int SLIDE = 5;
 
   /**
-   * The feature id for the '<em><b>SName</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SLIDE__SNAME = 0;
+  int SLIDE__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Contents</b></em>' containment reference list.
@@ -297,16 +305,16 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSection()
    * @generated
    */
-  int SECTION = 7;
+  int SECTION = 6;
 
   /**
-   * The feature id for the '<em><b>SName</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SECTION__SNAME = SLIDE__SNAME;
+  int SECTION__NAME = SLIDE__NAME;
 
   /**
    * The feature id for the '<em><b>Contents</b></em>' containment reference list.
@@ -334,7 +342,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getContent()
    * @generated
    */
-  int CONTENT = 8;
+  int CONTENT = 7;
 
   /**
    * The number of structural features of the '<em>Content</em>' class.
@@ -353,7 +361,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getText()
    * @generated
    */
-  int TEXT = 9;
+  int TEXT = 8;
 
   /**
    * The feature id for the '<em><b>Text</b></em>' attribute.
@@ -381,16 +389,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getList()
    * @generated
    */
-  int LIST = 10;
-
-  /**
-   * The feature id for the '<em><b>List Items</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LIST__LIST_ITEMS = CONTENT_FEATURE_COUNT + 0;
+  int LIST = 9;
 
   /**
    * The number of structural features of the '<em>List</em>' class.
@@ -399,7 +398,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
+  int LIST_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.NumberedListItemImpl <em>Numbered List Item</em>}' class.
@@ -409,7 +408,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getNumberedListItem()
    * @generated
    */
-  int NUMBERED_LIST_ITEM = 11;
+  int NUMBERED_LIST_ITEM = 10;
 
   /**
    * The feature id for the '<em><b>Item</b></em>' attribute.
@@ -430,14 +429,14 @@ public interface SlideOMaticPackage extends EPackage
   int NUMBERED_LIST_ITEM_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListImpl <em>Un Numbered List</em>}' class.
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListItemImpl <em>Un Numbered List Item</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListImpl
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getUnNumberedList()
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListItemImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getUnNumberedListItem()
    * @generated
    */
-  int UN_NUMBERED_LIST = 12;
+  int UN_NUMBERED_LIST_ITEM = 11;
 
   /**
    * The feature id for the '<em><b>Item</b></em>' attribute.
@@ -446,16 +445,16 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int UN_NUMBERED_LIST__ITEM = 0;
+  int UN_NUMBERED_LIST_ITEM__ITEM = 0;
 
   /**
-   * The number of structural features of the '<em>Un Numbered List</em>' class.
+   * The number of structural features of the '<em>Un Numbered List Item</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int UN_NUMBERED_LIST_FEATURE_COUNT = 1;
+  int UN_NUMBERED_LIST_ITEM_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.FloatImpl <em>Float</em>}' class.
@@ -465,7 +464,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getFloat()
    * @generated
    */
-  int FLOAT = 13;
+  int FLOAT = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -493,7 +492,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getImage()
    * @generated
    */
-  int IMAGE = 14;
+  int IMAGE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -548,7 +547,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSize()
    * @generated
    */
-  int SIZE = 15;
+  int SIZE = 14;
 
   /**
    * The feature id for the '<em><b>Scale</b></em>' attribute.
@@ -576,7 +575,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getTable()
    * @generated
    */
-  int TABLE = 16;
+  int TABLE = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -613,7 +612,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getTableRow()
    * @generated
    */
-  int TABLE_ROW = 17;
+  int TABLE_ROW = 16;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -641,7 +640,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getAnimation()
    * @generated
    */
-  int ANIMATION = 18;
+  int ANIMATION = 17;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -696,7 +695,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getAnimationType()
    * @generated
    */
-  int ANIMATION_TYPE = 19;
+  int ANIMATION_TYPE = 18;
 
   /**
    * The number of structural features of the '<em>Animation Type</em>' class.
@@ -708,23 +707,23 @@ public interface SlideOMaticPackage extends EPackage
   int ANIMATION_TYPE_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSectionImpl <em>Sub Section</em>}' class.
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SecImpl <em>Sec</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSectionImpl
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSubSection()
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SecImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSec()
    * @generated
    */
-  int SUB_SECTION = 20;
+  int SEC = 19;
 
   /**
-   * The feature id for the '<em><b>SName</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_SECTION__SNAME = SECTION__SNAME;
+  int SEC__NAME = SECTION__NAME;
 
   /**
    * The feature id for the '<em><b>Contents</b></em>' containment reference list.
@@ -733,35 +732,35 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_SECTION__CONTENTS = SECTION__CONTENTS;
+  int SEC__CONTENTS = SECTION__CONTENTS;
 
   /**
-   * The number of structural features of the '<em>Sub Section</em>' class.
+   * The number of structural features of the '<em>Sec</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_SECTION_FEATURE_COUNT = SECTION_FEATURE_COUNT + 0;
+  int SEC_FEATURE_COUNT = SECTION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSubSectionImpl <em>Sub Sub Section</em>}' class.
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSecImpl <em>Sub Sec</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSubSectionImpl
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSubSubSection()
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSecImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSubSec()
    * @generated
    */
-  int SUB_SUB_SECTION = 21;
+  int SUB_SEC = 20;
 
   /**
-   * The feature id for the '<em><b>SName</b></em>' attribute.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_SUB_SECTION__SNAME = SECTION__SNAME;
+  int SUB_SEC__NAME = SECTION__NAME;
 
   /**
    * The feature id for the '<em><b>Contents</b></em>' containment reference list.
@@ -770,16 +769,53 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SUB_SUB_SECTION__CONTENTS = SECTION__CONTENTS;
+  int SUB_SEC__CONTENTS = SECTION__CONTENTS;
 
   /**
-   * The number of structural features of the '<em>Sub Sub Section</em>' class.
+   * The number of structural features of the '<em>Sub Sec</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SUB_SUB_SECTION_FEATURE_COUNT = SECTION_FEATURE_COUNT + 0;
+  int SUB_SEC_FEATURE_COUNT = SECTION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSubSecImpl <em>Sub Sub Sec</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSubSecImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSubSubSec()
+   * @generated
+   */
+  int SUB_SUB_SEC = 21;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SUB_SEC__NAME = SECTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Contents</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SUB_SEC__CONTENTS = SECTION__CONTENTS;
+
+  /**
+   * The number of structural features of the '<em>Sub Sub Sec</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SUB_SUB_SEC_FEATURE_COUNT = SECTION_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TOCImpl <em>TOC</em>}' class.
@@ -866,6 +902,62 @@ public interface SlideOMaticPackage extends EPackage
   int BLOCK_FEATURE_COUNT = TEXT_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.NumberedListImpl <em>Numbered List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.NumberedListImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getNumberedList()
+   * @generated
+   */
+  int NUMBERED_LIST = 25;
+
+  /**
+   * The feature id for the '<em><b>List Items</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBERED_LIST__LIST_ITEMS = LIST_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Numbered List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBERED_LIST_FEATURE_COUNT = LIST_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListImpl <em>Un Numbered List</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getUnNumberedList()
+   * @generated
+   */
+  int UN_NUMBERED_LIST = 26;
+
+  /**
+   * The feature id for the '<em><b>List Items</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UN_NUMBERED_LIST__LIST_ITEMS = LIST_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Un Numbered List</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UN_NUMBERED_LIST_FEATURE_COUNT = LIST_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.MoveImpl <em>Move</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -873,7 +965,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getMove()
    * @generated
    */
-  int MOVE = 25;
+  int MOVE = 27;
 
   /**
    * The number of structural features of the '<em>Move</em>' class.
@@ -892,7 +984,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getJump()
    * @generated
    */
-  int JUMP = 26;
+  int JUMP = 28;
 
   /**
    * The number of structural features of the '<em>Jump</em>' class.
@@ -903,27 +995,6 @@ public interface SlideOMaticPackage extends EPackage
    */
   int JUMP_FEATURE_COUNT = ANIMATION_TYPE_FEATURE_COUNT + 0;
 
-
-  /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Model <em>Model</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Model</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Model
-   * @generated
-   */
-  EClass getModel();
-
-  /**
-   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Model#getPresentation <em>Presentation</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Presentation</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Model#getPresentation()
-   * @see #getModel()
-   * @generated
-   */
-  EReference getModel_Presentation();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation <em>Presentation</em>}'.
@@ -947,15 +1018,48 @@ public interface SlideOMaticPackage extends EPackage
   EAttribute getPresentation_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getSettings <em>Settings</em>}'.
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getTheme <em>Theme</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Settings</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getSettings()
+   * @return the meta object for the containment reference '<em>Theme</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getTheme()
    * @see #getPresentation()
    * @generated
    */
-  EReference getPresentation_Settings();
+  EReference getPresentation_Theme();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getAuthors <em>Authors</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Authors</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getAuthors()
+   * @see #getPresentation()
+   * @generated
+   */
+  EReference getPresentation_Authors();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getInstitute <em>Institute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Institute</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getInstitute()
+   * @see #getPresentation()
+   * @generated
+   */
+  EReference getPresentation_Institute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getDate <em>Date</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Date</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getDate()
+   * @see #getPresentation()
+   * @generated
+   */
+  EReference getPresentation_Date();
 
   /**
    * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getSlides <em>Slides</em>}'.
@@ -978,16 +1082,6 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    */
   EReference getPresentation_Animations();
-
-  /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Setting <em>Setting</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Setting</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Setting
-   * @generated
-   */
-  EClass getSetting();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme <em>Theme</em>}'.
@@ -1022,25 +1116,46 @@ public interface SlideOMaticPackage extends EPackage
   EAttribute getTheme_ThemeColor();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Author <em>Author</em>}'.
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors <em>Authors</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Author</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Author
+   * @return the meta object for class '<em>Authors</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors
    * @generated
    */
-  EClass getAuthor();
+  EClass getAuthors();
 
   /**
-   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Author#getAName <em>AName</em>}'.
+   * Returns the meta object for the attribute list '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors#getNames <em>Names</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>AName</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Author#getAName()
-   * @see #getAuthor()
+   * @return the meta object for the attribute list '<em>Names</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors#getNames()
+   * @see #getAuthors()
    * @generated
    */
-  EAttribute getAuthor_AName();
+  EAttribute getAuthors_Names();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute <em>Institute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Institute</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute
+   * @generated
+   */
+  EClass getInstitute();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute#getName()
+   * @see #getInstitute()
+   * @generated
+   */
+  EAttribute getInstitute_Name();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date <em>Date</em>}'.
@@ -1074,15 +1189,15 @@ public interface SlideOMaticPackage extends EPackage
   EClass getSlide();
 
   /**
-   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getSName <em>SName</em>}'.
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>SName</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getSName()
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getName()
    * @see #getSlide()
    * @generated
    */
-  EAttribute getSlide_SName();
+  EAttribute getSlide_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getContents <em>Contents</em>}'.
@@ -1147,17 +1262,6 @@ public interface SlideOMaticPackage extends EPackage
   EClass getList();
 
   /**
-   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List#getListItems <em>List Items</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>List Items</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List#getListItems()
-   * @see #getList()
-   * @generated
-   */
-  EReference getList_ListItems();
-
-  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedListItem <em>Numbered List Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1179,25 +1283,25 @@ public interface SlideOMaticPackage extends EPackage
   EAttribute getNumberedListItem_Item();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList <em>Un Numbered List</em>}'.
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem <em>Un Numbered List Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Un Numbered List</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList
+   * @return the meta object for class '<em>Un Numbered List Item</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem
    * @generated
    */
-  EClass getUnNumberedList();
+  EClass getUnNumberedListItem();
 
   /**
-   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList#getItem <em>Item</em>}'.
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem#getItem <em>Item</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Item</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList#getItem()
-   * @see #getUnNumberedList()
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem#getItem()
+   * @see #getUnNumberedListItem()
    * @generated
    */
-  EAttribute getUnNumberedList_Item();
+  EAttribute getUnNumberedListItem_Item();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float <em>Float</em>}'.
@@ -1391,24 +1495,34 @@ public interface SlideOMaticPackage extends EPackage
   EClass getAnimationType();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSection <em>Sub Section</em>}'.
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec <em>Sec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub Section</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSection
+   * @return the meta object for class '<em>Sec</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec
    * @generated
    */
-  EClass getSubSection();
+  EClass getSec();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSection <em>Sub Sub Section</em>}'.
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec <em>Sub Sec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub Sub Section</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSection
+   * @return the meta object for class '<em>Sub Sec</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec
    * @generated
    */
-  EClass getSubSubSection();
+  EClass getSubSec();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec <em>Sub Sub Sec</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Sub Sub Sec</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec
+   * @generated
+   */
+  EClass getSubSubSec();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC <em>TOC</em>}'.
@@ -1450,6 +1564,48 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    */
   EAttribute getBlock_Name();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList <em>Numbered List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Numbered List</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList
+   * @generated
+   */
+  EClass getNumberedList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList#getListItems <em>List Items</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>List Items</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList#getListItems()
+   * @see #getNumberedList()
+   * @generated
+   */
+  EReference getNumberedList_ListItems();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList <em>Un Numbered List</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Un Numbered List</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList
+   * @generated
+   */
+  EClass getUnNumberedList();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList#getListItems <em>List Items</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>List Items</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList#getListItems()
+   * @see #getUnNumberedList()
+   * @generated
+   */
+  EReference getUnNumberedList_ListItems();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move <em>Move</em>}'.
@@ -1495,24 +1651,6 @@ public interface SlideOMaticPackage extends EPackage
   interface Literals
   {
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ModelImpl <em>Model</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ModelImpl
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getModel()
-     * @generated
-     */
-    EClass MODEL = eINSTANCE.getModel();
-
-    /**
-     * The meta object literal for the '<em><b>Presentation</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MODEL__PRESENTATION = eINSTANCE.getModel_Presentation();
-
-    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl <em>Presentation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1531,12 +1669,36 @@ public interface SlideOMaticPackage extends EPackage
     EAttribute PRESENTATION__NAME = eINSTANCE.getPresentation_Name();
 
     /**
-     * The meta object literal for the '<em><b>Settings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Theme</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference PRESENTATION__SETTINGS = eINSTANCE.getPresentation_Settings();
+    EReference PRESENTATION__THEME = eINSTANCE.getPresentation_Theme();
+
+    /**
+     * The meta object literal for the '<em><b>Authors</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRESENTATION__AUTHORS = eINSTANCE.getPresentation_Authors();
+
+    /**
+     * The meta object literal for the '<em><b>Institute</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRESENTATION__INSTITUTE = eINSTANCE.getPresentation_Institute();
+
+    /**
+     * The meta object literal for the '<em><b>Date</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PRESENTATION__DATE = eINSTANCE.getPresentation_Date();
 
     /**
      * The meta object literal for the '<em><b>Slides</b></em>' containment reference list feature.
@@ -1553,16 +1715,6 @@ public interface SlideOMaticPackage extends EPackage
      * @generated
      */
     EReference PRESENTATION__ANIMATIONS = eINSTANCE.getPresentation_Animations();
-
-    /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SettingImpl <em>Setting</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SettingImpl
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSetting()
-     * @generated
-     */
-    EClass SETTING = eINSTANCE.getSetting();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ThemeImpl <em>Theme</em>}' class.
@@ -1591,22 +1743,40 @@ public interface SlideOMaticPackage extends EPackage
     EAttribute THEME__THEME_COLOR = eINSTANCE.getTheme_ThemeColor();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AuthorImpl <em>Author</em>}' class.
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AuthorsImpl <em>Authors</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AuthorImpl
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getAuthor()
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AuthorsImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getAuthors()
      * @generated
      */
-    EClass AUTHOR = eINSTANCE.getAuthor();
+    EClass AUTHORS = eINSTANCE.getAuthors();
 
     /**
-     * The meta object literal for the '<em><b>AName</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Names</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute AUTHOR__ANAME = eINSTANCE.getAuthor_AName();
+    EAttribute AUTHORS__NAMES = eINSTANCE.getAuthors_Names();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.InstituteImpl <em>Institute</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.InstituteImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getInstitute()
+     * @generated
+     */
+    EClass INSTITUTE = eINSTANCE.getInstitute();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INSTITUTE__NAME = eINSTANCE.getInstitute_Name();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.DateImpl <em>Date</em>}' class.
@@ -1637,12 +1807,12 @@ public interface SlideOMaticPackage extends EPackage
     EClass SLIDE = eINSTANCE.getSlide();
 
     /**
-     * The meta object literal for the '<em><b>SName</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SLIDE__SNAME = eINSTANCE.getSlide_SName();
+    EAttribute SLIDE__NAME = eINSTANCE.getSlide_Name();
 
     /**
      * The meta object literal for the '<em><b>Contents</b></em>' containment reference list feature.
@@ -1701,14 +1871,6 @@ public interface SlideOMaticPackage extends EPackage
     EClass LIST = eINSTANCE.getList();
 
     /**
-     * The meta object literal for the '<em><b>List Items</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LIST__LIST_ITEMS = eINSTANCE.getList_ListItems();
-
-    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.NumberedListItemImpl <em>Numbered List Item</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1727,14 +1889,14 @@ public interface SlideOMaticPackage extends EPackage
     EAttribute NUMBERED_LIST_ITEM__ITEM = eINSTANCE.getNumberedListItem_Item();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListImpl <em>Un Numbered List</em>}' class.
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListItemImpl <em>Un Numbered List Item</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListImpl
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getUnNumberedList()
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListItemImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getUnNumberedListItem()
      * @generated
      */
-    EClass UN_NUMBERED_LIST = eINSTANCE.getUnNumberedList();
+    EClass UN_NUMBERED_LIST_ITEM = eINSTANCE.getUnNumberedListItem();
 
     /**
      * The meta object literal for the '<em><b>Item</b></em>' attribute feature.
@@ -1742,7 +1904,7 @@ public interface SlideOMaticPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute UN_NUMBERED_LIST__ITEM = eINSTANCE.getUnNumberedList_Item();
+    EAttribute UN_NUMBERED_LIST_ITEM__ITEM = eINSTANCE.getUnNumberedListItem_Item();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.FloatImpl <em>Float</em>}' class.
@@ -1903,24 +2065,34 @@ public interface SlideOMaticPackage extends EPackage
     EClass ANIMATION_TYPE = eINSTANCE.getAnimationType();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSectionImpl <em>Sub Section</em>}' class.
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SecImpl <em>Sec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSectionImpl
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSubSection()
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SecImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSec()
      * @generated
      */
-    EClass SUB_SECTION = eINSTANCE.getSubSection();
+    EClass SEC = eINSTANCE.getSec();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSubSectionImpl <em>Sub Sub Section</em>}' class.
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSecImpl <em>Sub Sec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSubSectionImpl
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSubSubSection()
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSecImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSubSec()
      * @generated
      */
-    EClass SUB_SUB_SECTION = eINSTANCE.getSubSubSection();
+    EClass SUB_SEC = eINSTANCE.getSubSec();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSubSecImpl <em>Sub Sub Sec</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SubSubSecImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSubSubSec()
+     * @generated
+     */
+    EClass SUB_SUB_SEC = eINSTANCE.getSubSubSec();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TOCImpl <em>TOC</em>}' class.
@@ -1959,6 +2131,42 @@ public interface SlideOMaticPackage extends EPackage
      * @generated
      */
     EAttribute BLOCK__NAME = eINSTANCE.getBlock_Name();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.NumberedListImpl <em>Numbered List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.NumberedListImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getNumberedList()
+     * @generated
+     */
+    EClass NUMBERED_LIST = eINSTANCE.getNumberedList();
+
+    /**
+     * The meta object literal for the '<em><b>List Items</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NUMBERED_LIST__LIST_ITEMS = eINSTANCE.getNumberedList_ListItems();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListImpl <em>Un Numbered List</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getUnNumberedList()
+     * @generated
+     */
+    EClass UN_NUMBERED_LIST = eINSTANCE.getUnNumberedList();
+
+    /**
+     * The meta object literal for the '<em><b>List Items</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UN_NUMBERED_LIST__LIST_ITEMS = eINSTANCE.getUnNumberedList_ListItems();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.MoveImpl <em>Move</em>}' class.

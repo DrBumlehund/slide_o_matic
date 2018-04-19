@@ -5,32 +5,34 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Author;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Model;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedListItem;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Paragraph;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Section;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Setting;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticFactory;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSection;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSection;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -92,11 +94,10 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
   {
     switch (eClass.getClassifierID())
     {
-      case SlideOMaticPackage.MODEL: return createModel();
       case SlideOMaticPackage.PRESENTATION: return createPresentation();
-      case SlideOMaticPackage.SETTING: return createSetting();
       case SlideOMaticPackage.THEME: return createTheme();
-      case SlideOMaticPackage.AUTHOR: return createAuthor();
+      case SlideOMaticPackage.AUTHORS: return createAuthors();
+      case SlideOMaticPackage.INSTITUTE: return createInstitute();
       case SlideOMaticPackage.DATE: return createDate();
       case SlideOMaticPackage.SLIDE: return createSlide();
       case SlideOMaticPackage.SECTION: return createSection();
@@ -104,7 +105,7 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.TEXT: return createText();
       case SlideOMaticPackage.LIST: return createList();
       case SlideOMaticPackage.NUMBERED_LIST_ITEM: return createNumberedListItem();
-      case SlideOMaticPackage.UN_NUMBERED_LIST: return createUnNumberedList();
+      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM: return createUnNumberedListItem();
       case SlideOMaticPackage.FLOAT: return createFloat();
       case SlideOMaticPackage.IMAGE: return createImage();
       case SlideOMaticPackage.SIZE: return createSize();
@@ -112,27 +113,19 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.TABLE_ROW: return createTableRow();
       case SlideOMaticPackage.ANIMATION: return createAnimation();
       case SlideOMaticPackage.ANIMATION_TYPE: return createAnimationType();
-      case SlideOMaticPackage.SUB_SECTION: return createSubSection();
-      case SlideOMaticPackage.SUB_SUB_SECTION: return createSubSubSection();
+      case SlideOMaticPackage.SEC: return createSec();
+      case SlideOMaticPackage.SUB_SEC: return createSubSec();
+      case SlideOMaticPackage.SUB_SUB_SEC: return createSubSubSec();
       case SlideOMaticPackage.TOC: return createTOC();
       case SlideOMaticPackage.PARAGRAPH: return createParagraph();
       case SlideOMaticPackage.BLOCK: return createBlock();
+      case SlideOMaticPackage.NUMBERED_LIST: return createNumberedList();
+      case SlideOMaticPackage.UN_NUMBERED_LIST: return createUnNumberedList();
       case SlideOMaticPackage.MOVE: return createMove();
       case SlideOMaticPackage.JUMP: return createJump();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Model createModel()
-  {
-    ModelImpl model = new ModelImpl();
-    return model;
   }
 
   /**
@@ -151,17 +144,6 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Setting createSetting()
-  {
-    SettingImpl setting = new SettingImpl();
-    return setting;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Theme createTheme()
   {
     ThemeImpl theme = new ThemeImpl();
@@ -173,10 +155,21 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Author createAuthor()
+  public Authors createAuthors()
   {
-    AuthorImpl author = new AuthorImpl();
-    return author;
+    AuthorsImpl authors = new AuthorsImpl();
+    return authors;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Institute createInstitute()
+  {
+    InstituteImpl institute = new InstituteImpl();
+    return institute;
   }
 
   /**
@@ -261,10 +254,10 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public UnNumberedList createUnNumberedList()
+  public UnNumberedListItem createUnNumberedListItem()
   {
-    UnNumberedListImpl unNumberedList = new UnNumberedListImpl();
-    return unNumberedList;
+    UnNumberedListItemImpl unNumberedListItem = new UnNumberedListItemImpl();
+    return unNumberedListItem;
   }
 
   /**
@@ -349,10 +342,10 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubSection createSubSection()
+  public Sec createSec()
   {
-    SubSectionImpl subSection = new SubSectionImpl();
-    return subSection;
+    SecImpl sec = new SecImpl();
+    return sec;
   }
 
   /**
@@ -360,10 +353,21 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public SubSubSection createSubSubSection()
+  public SubSec createSubSec()
   {
-    SubSubSectionImpl subSubSection = new SubSubSectionImpl();
-    return subSubSection;
+    SubSecImpl subSec = new SubSecImpl();
+    return subSec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SubSubSec createSubSubSec()
+  {
+    SubSubSecImpl subSubSec = new SubSubSecImpl();
+    return subSubSec;
   }
 
   /**
@@ -397,6 +401,28 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
   {
     BlockImpl block = new BlockImpl();
     return block;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NumberedList createNumberedList()
+  {
+    NumberedListImpl numberedList = new NumberedListImpl();
+    return numberedList;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UnNumberedList createUnNumberedList()
+  {
+    UnNumberedListImpl unNumberedList = new UnNumberedListImpl();
+    return unNumberedList;
   }
 
   /**

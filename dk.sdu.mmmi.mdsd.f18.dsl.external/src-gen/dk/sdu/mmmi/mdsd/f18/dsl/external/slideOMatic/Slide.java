@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getSName <em>SName</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getContents <em>Contents</em>}</li>
  * </ul>
  *
@@ -27,30 +27,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Slide extends EObject
 {
   /**
-   * Returns the value of the '<em><b>SName</b></em>' attribute.
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>SName</em>' attribute isn't clear,
+   * If the meaning of the '<em>Name</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>SName</em>' attribute.
-   * @see #setSName(String)
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getSlide_SName()
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getSlide_Name()
    * @model
    * @generated
    */
-  String getSName();
+  String getName();
 
   /**
-   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getSName <em>SName</em>}' attribute.
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>SName</em>' attribute.
-   * @see #getSName()
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
    * @generated
    */
-  void setSName(String value);
+  void setName(String value);
 
   /**
    * Returns the value of the '<em><b>Contents</b></em>' containment reference list.

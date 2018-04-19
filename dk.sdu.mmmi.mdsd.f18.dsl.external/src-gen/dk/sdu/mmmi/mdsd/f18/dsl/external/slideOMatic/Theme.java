@@ -3,6 +3,7 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
 
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +22,7 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
  * @model
  * @generated
  */
-public interface Theme extends Setting
+public interface Theme extends EObject
 {
   /**
    * Returns the value of the '<em><b>Theme</b></em>' attribute.

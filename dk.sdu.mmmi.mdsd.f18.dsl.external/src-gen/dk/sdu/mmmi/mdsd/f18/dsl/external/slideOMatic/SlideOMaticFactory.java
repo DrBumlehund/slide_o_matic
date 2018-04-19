@@ -24,15 +24,6 @@ public interface SlideOMaticFactory extends EFactory
   SlideOMaticFactory eINSTANCE = dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Model</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Model</em>'.
-   * @generated
-   */
-  Model createModel();
-
-  /**
    * Returns a new object of class '<em>Presentation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -40,15 +31,6 @@ public interface SlideOMaticFactory extends EFactory
    * @generated
    */
   Presentation createPresentation();
-
-  /**
-   * Returns a new object of class '<em>Setting</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Setting</em>'.
-   * @generated
-   */
-  Setting createSetting();
 
   /**
    * Returns a new object of class '<em>Theme</em>'.
@@ -60,13 +42,22 @@ public interface SlideOMaticFactory extends EFactory
   Theme createTheme();
 
   /**
-   * Returns a new object of class '<em>Author</em>'.
+   * Returns a new object of class '<em>Authors</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Author</em>'.
+   * @return a new object of class '<em>Authors</em>'.
    * @generated
    */
-  Author createAuthor();
+  Authors createAuthors();
+
+  /**
+   * Returns a new object of class '<em>Institute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Institute</em>'.
+   * @generated
+   */
+  Institute createInstitute();
 
   /**
    * Returns a new object of class '<em>Date</em>'.
@@ -132,13 +123,13 @@ public interface SlideOMaticFactory extends EFactory
   NumberedListItem createNumberedListItem();
 
   /**
-   * Returns a new object of class '<em>Un Numbered List</em>'.
+   * Returns a new object of class '<em>Un Numbered List Item</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Un Numbered List</em>'.
+   * @return a new object of class '<em>Un Numbered List Item</em>'.
    * @generated
    */
-  UnNumberedList createUnNumberedList();
+  UnNumberedListItem createUnNumberedListItem();
 
   /**
    * Returns a new object of class '<em>Float</em>'.
@@ -204,22 +195,31 @@ public interface SlideOMaticFactory extends EFactory
   AnimationType createAnimationType();
 
   /**
-   * Returns a new object of class '<em>Sub Section</em>'.
+   * Returns a new object of class '<em>Sec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Section</em>'.
+   * @return a new object of class '<em>Sec</em>'.
    * @generated
    */
-  SubSection createSubSection();
+  Sec createSec();
 
   /**
-   * Returns a new object of class '<em>Sub Sub Section</em>'.
+   * Returns a new object of class '<em>Sub Sec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub Sub Section</em>'.
+   * @return a new object of class '<em>Sub Sec</em>'.
    * @generated
    */
-  SubSubSection createSubSubSection();
+  SubSec createSubSec();
+
+  /**
+   * Returns a new object of class '<em>Sub Sub Sec</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Sub Sub Sec</em>'.
+   * @generated
+   */
+  SubSubSec createSubSubSec();
 
   /**
    * Returns a new object of class '<em>TOC</em>'.
@@ -247,6 +247,24 @@ public interface SlideOMaticFactory extends EFactory
    * @generated
    */
   Block createBlock();
+
+  /**
+   * Returns a new object of class '<em>Numbered List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Numbered List</em>'.
+   * @generated
+   */
+  NumberedList createNumberedList();
+
+  /**
+   * Returns a new object of class '<em>Un Numbered List</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Un Numbered List</em>'.
+   * @generated
+   */
+  UnNumberedList createUnNumberedList();
 
   /**
    * Returns a new object of class '<em>Move</em>'.
