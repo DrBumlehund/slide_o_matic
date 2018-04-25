@@ -4,7 +4,9 @@ generate slideOMatic "http://www.sdu.dk/mmmi/mdsd/f18/dsl/external/SlideOMatic"
 
 // Project Extension is '.slide'
 Presentation:
-	"presentation" name=STRING "{" ("(" (theme=Theme)? (authors=Authors)? (institute=Institute)? (date=Date)? ")")? (slides+=Slide |
+	"presentation" name=STRING (subtitle=STRING)? "{" ("(" (theme=Theme)? (authors=Authors)? (institute=Institute)?
+	(date=Date)? ")")?
+	(slides+=Slide |
 	animations+=Animation)* "}";
 
 Theme:
@@ -30,37 +32,46 @@ Date:
 	"date" date=STRING;
 
 Slide:
-	"slide" (Section name=STRING | name=STRING)? "{" contents+=Content+ "}";
+	"slide" (sec=Section name=STRING | name=STRING)? "{" contents+=Content+ "}";
 
 Section:
 	{Sec} "*" | {SubSec} "**" | {SubSubSec} "***";
 
 Content:
-	{TOC} "ToC" | Text | List | Float;
+	{TOC} "ToC" |BlockableContent| Code;
+
+BlockableContent:
+	 Text | Block | List | Floats;
 
 Text:
-	{Paragraph} ">" text=STRING (Click)? | {Block} "block" (name=STRING)? "{" text=STRING "}" (Click)?;
+	">" text=STRING (click=Click)?;
+
+Block:
+	"block" (name=STRING)? "{" content=BlockableContent "}" (click=Click)?;
 
 List:
-	{NumberedList} "#list" ListItems+=NumberedListItem+ | {UnNumberedList} "-list" ListItems+=UnNumberedListItem+;
+	NumberedList | UnNumberedList;
 
-NumberedListItem:
-	"##" item=STRING (Click)?;
+NumberedList:
+	"#list" items+=ListItem+;
 
-UnNumberedListItem:
-	"--" item=STRING (Click)?;
+UnNumberedList:
+	"&list" items+=ListItem+;
 
-Float:
+ListItem:
+	"-" item=STRING ("(" nestedList=List ")")? (click=Click)?;
+
+Floats:
 	Image | Table;
 
 Image:
-	"img" name=ID "src" src=STRING (alignment=Alignment)? (size=Size) (Click)?;
+	"img" name=ID "src" src=STRING (alignment=Alignment)? (size=Size) (click=Click)?;
 
 Alignment:
 	"topleft" | "top" | "topright" | "left" | "center" | "right" | "bottomleft" | "bottom" | "bottomright";
 
 Size:
-	("width" | "height") scale=INT "%";
+	{ProportionalSize} way=("width" | "height") scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
 
 Table:
 	"tab" name=ID "[" rows+=TableRow ("," rows+=TableRow)* "]";
@@ -68,11 +79,14 @@ Table:
 TableRow:
 	"[" values+=STRING ("," values+=STRING)* "]";
 
+Code:
+	"```" lang=ID code=STRING "```";
+
 Click:
 	"$$";
 
 Animation:
-	"animate" target=[Float] type=AnimationType "to" location=Alignment (size=Size)?;
+	"animate" target=[Floats] type=AnimationType "to" location=Alignment (size=Size)?;
 
 AnimationType:
 	{Move} "move" | {Jump} "jump";

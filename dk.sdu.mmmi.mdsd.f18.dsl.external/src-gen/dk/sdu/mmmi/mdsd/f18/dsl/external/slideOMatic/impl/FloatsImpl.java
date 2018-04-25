@@ -3,57 +3,56 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Un Numbered List Item</b></em>'.
+ * An implementation of the model object '<em><b>Floats</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.UnNumberedListItemImpl#getItem <em>Item</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.FloatsImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container implements UnNumberedListItem
+public class FloatsImpl extends BlockableContentImpl implements Floats
 {
   /**
-   * The default value of the '{@link #getItem() <em>Item</em>}' attribute.
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getItem()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected static final String ITEM_EDEFAULT = null;
+  protected static final String NAME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getItem() <em>Item</em>}' attribute.
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getItem()
+   * @see #getName()
    * @generated
    * @ordered
    */
-  protected String item = ITEM_EDEFAULT;
+  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected UnNumberedListItemImpl()
+  protected FloatsImpl()
   {
     super();
   }
@@ -66,7 +65,7 @@ public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container impleme
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.UN_NUMBERED_LIST_ITEM;
+    return SlideOMaticPackage.Literals.FLOATS;
   }
 
   /**
@@ -74,9 +73,9 @@ public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getItem()
+  public String getName()
   {
-    return item;
+    return name;
   }
 
   /**
@@ -84,12 +83,12 @@ public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container impleme
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setItem(String newItem)
+  public void setName(String newName)
   {
-    String oldItem = item;
-    item = newItem;
+    String oldName = name;
+    name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM, oldItem, item));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.FLOATS__NAME, oldName, name));
   }
 
   /**
@@ -102,8 +101,8 @@ public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM:
-        return getItem();
+      case SlideOMaticPackage.FLOATS__NAME:
+        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -118,8 +117,8 @@ public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM:
-        setItem((String)newValue);
+      case SlideOMaticPackage.FLOATS__NAME:
+        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -135,8 +134,8 @@ public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM:
-        setItem(ITEM_EDEFAULT);
+      case SlideOMaticPackage.FLOATS__NAME:
+        setName(NAME_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -152,8 +151,8 @@ public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container impleme
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM__ITEM:
-        return ITEM_EDEFAULT == null ? item != null : !ITEM_EDEFAULT.equals(item);
+      case SlideOMaticPackage.FLOATS__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -169,10 +168,10 @@ public class UnNumberedListItemImpl extends MinimalEObjectImpl.Container impleme
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (item: ");
-    result.append(item);
+    result.append(" (name: ");
+    result.append(name);
     result.append(')');
     return result.toString();
   }
 
-} //UnNumberedListItemImpl
+} //FloatsImpl

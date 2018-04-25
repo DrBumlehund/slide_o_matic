@@ -35,12 +35,12 @@ public interface Animation extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target</em>' reference.
-   * @see #setTarget(dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float)
+   * @see #setTarget(Floats)
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getAnimation_Target()
    * @model
    * @generated
    */
-  dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float getTarget();
+  Floats getTarget();
 
   /**
    * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation#getTarget <em>Target</em>}' reference.
@@ -50,7 +50,7 @@ public interface Animation extends EObject
    * @see #getTarget()
    * @generated
    */
-  void setTarget(dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float value);
+  void setTarget(Floats value);
 
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.

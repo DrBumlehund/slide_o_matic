@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSlideOMaticParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'$$'", "'AnnArbor'", "'Antibes'", "'Bergen'", "'Berkeley'", "'Berlin'", "'Boadilla'", "'boxes'", "'CambridgeUS'", "'Copenhagen'", "'Darmstadt'", "'default'", "'Dresden'", "'Frankfurt'", "'Goettingen'", "'Hannover'", "'Ilmanau'", "'JuanLesPins'", "'Luebeck'", "'Madrid'", "'Malmoe'", "'Marburg'", "'Montpellier'", "'PaloAlto'", "'Pittsburgh'", "'Rochester'", "'Singapore'", "'Szeged'", "'Warsaw'", "'albatros'", "'beaver'", "'beetle'", "'crane'", "'dolphin'", "'dove'", "'fly'", "'lily'", "'orchid'", "'rose'", "'seagull'", "'seahorse'", "'sidebartab'", "'structure'", "'whale'", "'wolverine'", "'topleft'", "'top'", "'topright'", "'left'", "'center'", "'right'", "'bottomleft'", "'bottom'", "'bottomright'", "'width'", "'height'", "'presentation'", "'{'", "'}'", "'('", "')'", "'theme'", "'color'", "'author'", "','", "'institute'", "'date'", "'slide'", "'*'", "'**'", "'***'", "'ToC'", "'>'", "'block'", "'#list'", "'-list'", "'##'", "'--'", "'img'", "'src'", "'%'", "'tab'", "'['", "']'", "'animate'", "'to'", "'move'", "'jump'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'$$'", "'AnnArbor'", "'Antibes'", "'Bergen'", "'Berkeley'", "'Berlin'", "'Boadilla'", "'boxes'", "'CambridgeUS'", "'Copenhagen'", "'Darmstadt'", "'default'", "'Dresden'", "'Frankfurt'", "'Goettingen'", "'Hannover'", "'Ilmanau'", "'JuanLesPins'", "'Luebeck'", "'Madrid'", "'Malmoe'", "'Marburg'", "'Montpellier'", "'PaloAlto'", "'Pittsburgh'", "'Rochester'", "'Singapore'", "'Szeged'", "'Warsaw'", "'albatros'", "'beaver'", "'beetle'", "'crane'", "'dolphin'", "'dove'", "'fly'", "'lily'", "'orchid'", "'rose'", "'seagull'", "'seahorse'", "'sidebartab'", "'structure'", "'whale'", "'wolverine'", "'topleft'", "'top'", "'topright'", "'left'", "'center'", "'right'", "'bottomleft'", "'bottom'", "'bottomright'", "'width'", "'height'", "'cm'", "'em'", "'mm'", "'presentation'", "'{'", "'}'", "'('", "')'", "'theme'", "'color'", "'author'", "','", "'institute'", "'date'", "'slide'", "'*'", "'**'", "'***'", "'ToC'", "'>'", "'block'", "'#list'", "'&list'", "'-'", "'img'", "'src'", "'%'", "'tab'", "'['", "']'", "'```'", "'animate'", "'to'", "'move'", "'jump'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -68,9 +68,11 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     public static final int T__42=42;
     public static final int T__43=43;
     public static final int T__91=91;
+    public static final int T__100=100;
     public static final int T__92=92;
     public static final int T__93=93;
     public static final int T__94=94;
+    public static final int T__101=101;
     public static final int T__90=90;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -78,6 +80,7 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     public static final int T__17=17;
     public static final int T__18=18;
     public static final int T__11=11;
+    public static final int T__99=99;
     public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
@@ -926,12 +929,89 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleContent"
 
 
+    // $ANTLR start "entryRuleBlockableContent"
+    // InternalSlideOMatic.g:303:1: entryRuleBlockableContent : ruleBlockableContent EOF ;
+    public final void entryRuleBlockableContent() throws RecognitionException {
+        try {
+            // InternalSlideOMatic.g:304:1: ( ruleBlockableContent EOF )
+            // InternalSlideOMatic.g:305:1: ruleBlockableContent EOF
+            {
+             before(grammarAccess.getBlockableContentRule()); 
+            pushFollow(FOLLOW_1);
+            ruleBlockableContent();
+
+            state._fsp--;
+
+             after(grammarAccess.getBlockableContentRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleBlockableContent"
+
+
+    // $ANTLR start "ruleBlockableContent"
+    // InternalSlideOMatic.g:312:1: ruleBlockableContent : ( ( rule__BlockableContent__Alternatives ) ) ;
+    public final void ruleBlockableContent() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:316:2: ( ( ( rule__BlockableContent__Alternatives ) ) )
+            // InternalSlideOMatic.g:317:2: ( ( rule__BlockableContent__Alternatives ) )
+            {
+            // InternalSlideOMatic.g:317:2: ( ( rule__BlockableContent__Alternatives ) )
+            // InternalSlideOMatic.g:318:3: ( rule__BlockableContent__Alternatives )
+            {
+             before(grammarAccess.getBlockableContentAccess().getAlternatives()); 
+            // InternalSlideOMatic.g:319:3: ( rule__BlockableContent__Alternatives )
+            // InternalSlideOMatic.g:319:4: rule__BlockableContent__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__BlockableContent__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBlockableContentAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleBlockableContent"
+
+
     // $ANTLR start "entryRuleText"
-    // InternalSlideOMatic.g:303:1: entryRuleText : ruleText EOF ;
+    // InternalSlideOMatic.g:328:1: entryRuleText : ruleText EOF ;
     public final void entryRuleText() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:304:1: ( ruleText EOF )
-            // InternalSlideOMatic.g:305:1: ruleText EOF
+            // InternalSlideOMatic.g:329:1: ( ruleText EOF )
+            // InternalSlideOMatic.g:330:1: ruleText EOF
             {
              before(grammarAccess.getTextRule()); 
             pushFollow(FOLLOW_1);
@@ -957,31 +1037,31 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleText"
-    // InternalSlideOMatic.g:312:1: ruleText : ( ( rule__Text__Alternatives ) ) ;
+    // InternalSlideOMatic.g:337:1: ruleText : ( ( rule__Text__Group__0 ) ) ;
     public final void ruleText() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:316:2: ( ( ( rule__Text__Alternatives ) ) )
-            // InternalSlideOMatic.g:317:2: ( ( rule__Text__Alternatives ) )
+            // InternalSlideOMatic.g:341:2: ( ( ( rule__Text__Group__0 ) ) )
+            // InternalSlideOMatic.g:342:2: ( ( rule__Text__Group__0 ) )
             {
-            // InternalSlideOMatic.g:317:2: ( ( rule__Text__Alternatives ) )
-            // InternalSlideOMatic.g:318:3: ( rule__Text__Alternatives )
+            // InternalSlideOMatic.g:342:2: ( ( rule__Text__Group__0 ) )
+            // InternalSlideOMatic.g:343:3: ( rule__Text__Group__0 )
             {
-             before(grammarAccess.getTextAccess().getAlternatives()); 
-            // InternalSlideOMatic.g:319:3: ( rule__Text__Alternatives )
-            // InternalSlideOMatic.g:319:4: rule__Text__Alternatives
+             before(grammarAccess.getTextAccess().getGroup()); 
+            // InternalSlideOMatic.g:344:3: ( rule__Text__Group__0 )
+            // InternalSlideOMatic.g:344:4: rule__Text__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Text__Alternatives();
+            rule__Text__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTextAccess().getAlternatives()); 
+             after(grammarAccess.getTextAccess().getGroup()); 
 
             }
 
@@ -1003,12 +1083,89 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleText"
 
 
+    // $ANTLR start "entryRuleBlock"
+    // InternalSlideOMatic.g:353:1: entryRuleBlock : ruleBlock EOF ;
+    public final void entryRuleBlock() throws RecognitionException {
+        try {
+            // InternalSlideOMatic.g:354:1: ( ruleBlock EOF )
+            // InternalSlideOMatic.g:355:1: ruleBlock EOF
+            {
+             before(grammarAccess.getBlockRule()); 
+            pushFollow(FOLLOW_1);
+            ruleBlock();
+
+            state._fsp--;
+
+             after(grammarAccess.getBlockRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleBlock"
+
+
+    // $ANTLR start "ruleBlock"
+    // InternalSlideOMatic.g:362:1: ruleBlock : ( ( rule__Block__Group__0 ) ) ;
+    public final void ruleBlock() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:366:2: ( ( ( rule__Block__Group__0 ) ) )
+            // InternalSlideOMatic.g:367:2: ( ( rule__Block__Group__0 ) )
+            {
+            // InternalSlideOMatic.g:367:2: ( ( rule__Block__Group__0 ) )
+            // InternalSlideOMatic.g:368:3: ( rule__Block__Group__0 )
+            {
+             before(grammarAccess.getBlockAccess().getGroup()); 
+            // InternalSlideOMatic.g:369:3: ( rule__Block__Group__0 )
+            // InternalSlideOMatic.g:369:4: rule__Block__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Block__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getBlockAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleBlock"
+
+
     // $ANTLR start "entryRuleList"
-    // InternalSlideOMatic.g:328:1: entryRuleList : ruleList EOF ;
+    // InternalSlideOMatic.g:378:1: entryRuleList : ruleList EOF ;
     public final void entryRuleList() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:329:1: ( ruleList EOF )
-            // InternalSlideOMatic.g:330:1: ruleList EOF
+            // InternalSlideOMatic.g:379:1: ( ruleList EOF )
+            // InternalSlideOMatic.g:380:1: ruleList EOF
             {
              before(grammarAccess.getListRule()); 
             pushFollow(FOLLOW_1);
@@ -1034,21 +1191,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleList"
-    // InternalSlideOMatic.g:337:1: ruleList : ( ( rule__List__Alternatives ) ) ;
+    // InternalSlideOMatic.g:387:1: ruleList : ( ( rule__List__Alternatives ) ) ;
     public final void ruleList() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:341:2: ( ( ( rule__List__Alternatives ) ) )
-            // InternalSlideOMatic.g:342:2: ( ( rule__List__Alternatives ) )
+            // InternalSlideOMatic.g:391:2: ( ( ( rule__List__Alternatives ) ) )
+            // InternalSlideOMatic.g:392:2: ( ( rule__List__Alternatives ) )
             {
-            // InternalSlideOMatic.g:342:2: ( ( rule__List__Alternatives ) )
-            // InternalSlideOMatic.g:343:3: ( rule__List__Alternatives )
+            // InternalSlideOMatic.g:392:2: ( ( rule__List__Alternatives ) )
+            // InternalSlideOMatic.g:393:3: ( rule__List__Alternatives )
             {
              before(grammarAccess.getListAccess().getAlternatives()); 
-            // InternalSlideOMatic.g:344:3: ( rule__List__Alternatives )
-            // InternalSlideOMatic.g:344:4: rule__List__Alternatives
+            // InternalSlideOMatic.g:394:3: ( rule__List__Alternatives )
+            // InternalSlideOMatic.g:394:4: rule__List__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__List__Alternatives();
@@ -1080,20 +1237,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleList"
 
 
-    // $ANTLR start "entryRuleNumberedListItem"
-    // InternalSlideOMatic.g:353:1: entryRuleNumberedListItem : ruleNumberedListItem EOF ;
-    public final void entryRuleNumberedListItem() throws RecognitionException {
+    // $ANTLR start "entryRuleNumberedList"
+    // InternalSlideOMatic.g:403:1: entryRuleNumberedList : ruleNumberedList EOF ;
+    public final void entryRuleNumberedList() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:354:1: ( ruleNumberedListItem EOF )
-            // InternalSlideOMatic.g:355:1: ruleNumberedListItem EOF
+            // InternalSlideOMatic.g:404:1: ( ruleNumberedList EOF )
+            // InternalSlideOMatic.g:405:1: ruleNumberedList EOF
             {
-             before(grammarAccess.getNumberedListItemRule()); 
+             before(grammarAccess.getNumberedListRule()); 
             pushFollow(FOLLOW_1);
-            ruleNumberedListItem();
+            ruleNumberedList();
 
             state._fsp--;
 
-             after(grammarAccess.getNumberedListItemRule()); 
+             after(grammarAccess.getNumberedListRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1107,35 +1264,35 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "entryRuleNumberedListItem"
+    // $ANTLR end "entryRuleNumberedList"
 
 
-    // $ANTLR start "ruleNumberedListItem"
-    // InternalSlideOMatic.g:362:1: ruleNumberedListItem : ( ( rule__NumberedListItem__Group__0 ) ) ;
-    public final void ruleNumberedListItem() throws RecognitionException {
+    // $ANTLR start "ruleNumberedList"
+    // InternalSlideOMatic.g:412:1: ruleNumberedList : ( ( rule__NumberedList__Group__0 ) ) ;
+    public final void ruleNumberedList() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:366:2: ( ( ( rule__NumberedListItem__Group__0 ) ) )
-            // InternalSlideOMatic.g:367:2: ( ( rule__NumberedListItem__Group__0 ) )
+            // InternalSlideOMatic.g:416:2: ( ( ( rule__NumberedList__Group__0 ) ) )
+            // InternalSlideOMatic.g:417:2: ( ( rule__NumberedList__Group__0 ) )
             {
-            // InternalSlideOMatic.g:367:2: ( ( rule__NumberedListItem__Group__0 ) )
-            // InternalSlideOMatic.g:368:3: ( rule__NumberedListItem__Group__0 )
+            // InternalSlideOMatic.g:417:2: ( ( rule__NumberedList__Group__0 ) )
+            // InternalSlideOMatic.g:418:3: ( rule__NumberedList__Group__0 )
             {
-             before(grammarAccess.getNumberedListItemAccess().getGroup()); 
-            // InternalSlideOMatic.g:369:3: ( rule__NumberedListItem__Group__0 )
-            // InternalSlideOMatic.g:369:4: rule__NumberedListItem__Group__0
+             before(grammarAccess.getNumberedListAccess().getGroup()); 
+            // InternalSlideOMatic.g:419:3: ( rule__NumberedList__Group__0 )
+            // InternalSlideOMatic.g:419:4: rule__NumberedList__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__NumberedListItem__Group__0();
+            rule__NumberedList__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getNumberedListItemAccess().getGroup()); 
+             after(grammarAccess.getNumberedListAccess().getGroup()); 
 
             }
 
@@ -1154,23 +1311,23 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "ruleNumberedListItem"
+    // $ANTLR end "ruleNumberedList"
 
 
-    // $ANTLR start "entryRuleUnNumberedListItem"
-    // InternalSlideOMatic.g:378:1: entryRuleUnNumberedListItem : ruleUnNumberedListItem EOF ;
-    public final void entryRuleUnNumberedListItem() throws RecognitionException {
+    // $ANTLR start "entryRuleUnNumberedList"
+    // InternalSlideOMatic.g:428:1: entryRuleUnNumberedList : ruleUnNumberedList EOF ;
+    public final void entryRuleUnNumberedList() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:379:1: ( ruleUnNumberedListItem EOF )
-            // InternalSlideOMatic.g:380:1: ruleUnNumberedListItem EOF
+            // InternalSlideOMatic.g:429:1: ( ruleUnNumberedList EOF )
+            // InternalSlideOMatic.g:430:1: ruleUnNumberedList EOF
             {
-             before(grammarAccess.getUnNumberedListItemRule()); 
+             before(grammarAccess.getUnNumberedListRule()); 
             pushFollow(FOLLOW_1);
-            ruleUnNumberedListItem();
+            ruleUnNumberedList();
 
             state._fsp--;
 
-             after(grammarAccess.getUnNumberedListItemRule()); 
+             after(grammarAccess.getUnNumberedListRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1184,35 +1341,35 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "entryRuleUnNumberedListItem"
+    // $ANTLR end "entryRuleUnNumberedList"
 
 
-    // $ANTLR start "ruleUnNumberedListItem"
-    // InternalSlideOMatic.g:387:1: ruleUnNumberedListItem : ( ( rule__UnNumberedListItem__Group__0 ) ) ;
-    public final void ruleUnNumberedListItem() throws RecognitionException {
+    // $ANTLR start "ruleUnNumberedList"
+    // InternalSlideOMatic.g:437:1: ruleUnNumberedList : ( ( rule__UnNumberedList__Group__0 ) ) ;
+    public final void ruleUnNumberedList() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:391:2: ( ( ( rule__UnNumberedListItem__Group__0 ) ) )
-            // InternalSlideOMatic.g:392:2: ( ( rule__UnNumberedListItem__Group__0 ) )
+            // InternalSlideOMatic.g:441:2: ( ( ( rule__UnNumberedList__Group__0 ) ) )
+            // InternalSlideOMatic.g:442:2: ( ( rule__UnNumberedList__Group__0 ) )
             {
-            // InternalSlideOMatic.g:392:2: ( ( rule__UnNumberedListItem__Group__0 ) )
-            // InternalSlideOMatic.g:393:3: ( rule__UnNumberedListItem__Group__0 )
+            // InternalSlideOMatic.g:442:2: ( ( rule__UnNumberedList__Group__0 ) )
+            // InternalSlideOMatic.g:443:3: ( rule__UnNumberedList__Group__0 )
             {
-             before(grammarAccess.getUnNumberedListItemAccess().getGroup()); 
-            // InternalSlideOMatic.g:394:3: ( rule__UnNumberedListItem__Group__0 )
-            // InternalSlideOMatic.g:394:4: rule__UnNumberedListItem__Group__0
+             before(grammarAccess.getUnNumberedListAccess().getGroup()); 
+            // InternalSlideOMatic.g:444:3: ( rule__UnNumberedList__Group__0 )
+            // InternalSlideOMatic.g:444:4: rule__UnNumberedList__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__UnNumberedListItem__Group__0();
+            rule__UnNumberedList__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getUnNumberedListItemAccess().getGroup()); 
+             after(grammarAccess.getUnNumberedListAccess().getGroup()); 
 
             }
 
@@ -1231,23 +1388,23 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "ruleUnNumberedListItem"
+    // $ANTLR end "ruleUnNumberedList"
 
 
-    // $ANTLR start "entryRuleFloat"
-    // InternalSlideOMatic.g:403:1: entryRuleFloat : ruleFloat EOF ;
-    public final void entryRuleFloat() throws RecognitionException {
+    // $ANTLR start "entryRuleListItem"
+    // InternalSlideOMatic.g:453:1: entryRuleListItem : ruleListItem EOF ;
+    public final void entryRuleListItem() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:404:1: ( ruleFloat EOF )
-            // InternalSlideOMatic.g:405:1: ruleFloat EOF
+            // InternalSlideOMatic.g:454:1: ( ruleListItem EOF )
+            // InternalSlideOMatic.g:455:1: ruleListItem EOF
             {
-             before(grammarAccess.getFloatRule()); 
+             before(grammarAccess.getListItemRule()); 
             pushFollow(FOLLOW_1);
-            ruleFloat();
+            ruleListItem();
 
             state._fsp--;
 
-             after(grammarAccess.getFloatRule()); 
+             after(grammarAccess.getListItemRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -1261,35 +1418,35 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "entryRuleFloat"
+    // $ANTLR end "entryRuleListItem"
 
 
-    // $ANTLR start "ruleFloat"
-    // InternalSlideOMatic.g:412:1: ruleFloat : ( ( rule__Float__Alternatives ) ) ;
-    public final void ruleFloat() throws RecognitionException {
+    // $ANTLR start "ruleListItem"
+    // InternalSlideOMatic.g:462:1: ruleListItem : ( ( rule__ListItem__Group__0 ) ) ;
+    public final void ruleListItem() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:416:2: ( ( ( rule__Float__Alternatives ) ) )
-            // InternalSlideOMatic.g:417:2: ( ( rule__Float__Alternatives ) )
+            // InternalSlideOMatic.g:466:2: ( ( ( rule__ListItem__Group__0 ) ) )
+            // InternalSlideOMatic.g:467:2: ( ( rule__ListItem__Group__0 ) )
             {
-            // InternalSlideOMatic.g:417:2: ( ( rule__Float__Alternatives ) )
-            // InternalSlideOMatic.g:418:3: ( rule__Float__Alternatives )
+            // InternalSlideOMatic.g:467:2: ( ( rule__ListItem__Group__0 ) )
+            // InternalSlideOMatic.g:468:3: ( rule__ListItem__Group__0 )
             {
-             before(grammarAccess.getFloatAccess().getAlternatives()); 
-            // InternalSlideOMatic.g:419:3: ( rule__Float__Alternatives )
-            // InternalSlideOMatic.g:419:4: rule__Float__Alternatives
+             before(grammarAccess.getListItemAccess().getGroup()); 
+            // InternalSlideOMatic.g:469:3: ( rule__ListItem__Group__0 )
+            // InternalSlideOMatic.g:469:4: rule__ListItem__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Float__Alternatives();
+            rule__ListItem__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getFloatAccess().getAlternatives()); 
+             after(grammarAccess.getListItemAccess().getGroup()); 
 
             }
 
@@ -1308,15 +1465,92 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "ruleFloat"
+    // $ANTLR end "ruleListItem"
+
+
+    // $ANTLR start "entryRuleFloats"
+    // InternalSlideOMatic.g:478:1: entryRuleFloats : ruleFloats EOF ;
+    public final void entryRuleFloats() throws RecognitionException {
+        try {
+            // InternalSlideOMatic.g:479:1: ( ruleFloats EOF )
+            // InternalSlideOMatic.g:480:1: ruleFloats EOF
+            {
+             before(grammarAccess.getFloatsRule()); 
+            pushFollow(FOLLOW_1);
+            ruleFloats();
+
+            state._fsp--;
+
+             after(grammarAccess.getFloatsRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleFloats"
+
+
+    // $ANTLR start "ruleFloats"
+    // InternalSlideOMatic.g:487:1: ruleFloats : ( ( rule__Floats__Alternatives ) ) ;
+    public final void ruleFloats() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:491:2: ( ( ( rule__Floats__Alternatives ) ) )
+            // InternalSlideOMatic.g:492:2: ( ( rule__Floats__Alternatives ) )
+            {
+            // InternalSlideOMatic.g:492:2: ( ( rule__Floats__Alternatives ) )
+            // InternalSlideOMatic.g:493:3: ( rule__Floats__Alternatives )
+            {
+             before(grammarAccess.getFloatsAccess().getAlternatives()); 
+            // InternalSlideOMatic.g:494:3: ( rule__Floats__Alternatives )
+            // InternalSlideOMatic.g:494:4: rule__Floats__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__Floats__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFloatsAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleFloats"
 
 
     // $ANTLR start "entryRuleImage"
-    // InternalSlideOMatic.g:428:1: entryRuleImage : ruleImage EOF ;
+    // InternalSlideOMatic.g:503:1: entryRuleImage : ruleImage EOF ;
     public final void entryRuleImage() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:429:1: ( ruleImage EOF )
-            // InternalSlideOMatic.g:430:1: ruleImage EOF
+            // InternalSlideOMatic.g:504:1: ( ruleImage EOF )
+            // InternalSlideOMatic.g:505:1: ruleImage EOF
             {
              before(grammarAccess.getImageRule()); 
             pushFollow(FOLLOW_1);
@@ -1342,21 +1576,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleImage"
-    // InternalSlideOMatic.g:437:1: ruleImage : ( ( rule__Image__Group__0 ) ) ;
+    // InternalSlideOMatic.g:512:1: ruleImage : ( ( rule__Image__Group__0 ) ) ;
     public final void ruleImage() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:441:2: ( ( ( rule__Image__Group__0 ) ) )
-            // InternalSlideOMatic.g:442:2: ( ( rule__Image__Group__0 ) )
+            // InternalSlideOMatic.g:516:2: ( ( ( rule__Image__Group__0 ) ) )
+            // InternalSlideOMatic.g:517:2: ( ( rule__Image__Group__0 ) )
             {
-            // InternalSlideOMatic.g:442:2: ( ( rule__Image__Group__0 ) )
-            // InternalSlideOMatic.g:443:3: ( rule__Image__Group__0 )
+            // InternalSlideOMatic.g:517:2: ( ( rule__Image__Group__0 ) )
+            // InternalSlideOMatic.g:518:3: ( rule__Image__Group__0 )
             {
              before(grammarAccess.getImageAccess().getGroup()); 
-            // InternalSlideOMatic.g:444:3: ( rule__Image__Group__0 )
-            // InternalSlideOMatic.g:444:4: rule__Image__Group__0
+            // InternalSlideOMatic.g:519:3: ( rule__Image__Group__0 )
+            // InternalSlideOMatic.g:519:4: rule__Image__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Image__Group__0();
@@ -1389,11 +1623,11 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleAlignment"
-    // InternalSlideOMatic.g:453:1: entryRuleAlignment : ruleAlignment EOF ;
+    // InternalSlideOMatic.g:528:1: entryRuleAlignment : ruleAlignment EOF ;
     public final void entryRuleAlignment() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:454:1: ( ruleAlignment EOF )
-            // InternalSlideOMatic.g:455:1: ruleAlignment EOF
+            // InternalSlideOMatic.g:529:1: ( ruleAlignment EOF )
+            // InternalSlideOMatic.g:530:1: ruleAlignment EOF
             {
              before(grammarAccess.getAlignmentRule()); 
             pushFollow(FOLLOW_1);
@@ -1419,21 +1653,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleAlignment"
-    // InternalSlideOMatic.g:462:1: ruleAlignment : ( ( rule__Alignment__Alternatives ) ) ;
+    // InternalSlideOMatic.g:537:1: ruleAlignment : ( ( rule__Alignment__Alternatives ) ) ;
     public final void ruleAlignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:466:2: ( ( ( rule__Alignment__Alternatives ) ) )
-            // InternalSlideOMatic.g:467:2: ( ( rule__Alignment__Alternatives ) )
+            // InternalSlideOMatic.g:541:2: ( ( ( rule__Alignment__Alternatives ) ) )
+            // InternalSlideOMatic.g:542:2: ( ( rule__Alignment__Alternatives ) )
             {
-            // InternalSlideOMatic.g:467:2: ( ( rule__Alignment__Alternatives ) )
-            // InternalSlideOMatic.g:468:3: ( rule__Alignment__Alternatives )
+            // InternalSlideOMatic.g:542:2: ( ( rule__Alignment__Alternatives ) )
+            // InternalSlideOMatic.g:543:3: ( rule__Alignment__Alternatives )
             {
              before(grammarAccess.getAlignmentAccess().getAlternatives()); 
-            // InternalSlideOMatic.g:469:3: ( rule__Alignment__Alternatives )
-            // InternalSlideOMatic.g:469:4: rule__Alignment__Alternatives
+            // InternalSlideOMatic.g:544:3: ( rule__Alignment__Alternatives )
+            // InternalSlideOMatic.g:544:4: rule__Alignment__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__Alignment__Alternatives();
@@ -1466,11 +1700,11 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleSize"
-    // InternalSlideOMatic.g:478:1: entryRuleSize : ruleSize EOF ;
+    // InternalSlideOMatic.g:553:1: entryRuleSize : ruleSize EOF ;
     public final void entryRuleSize() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:479:1: ( ruleSize EOF )
-            // InternalSlideOMatic.g:480:1: ruleSize EOF
+            // InternalSlideOMatic.g:554:1: ( ruleSize EOF )
+            // InternalSlideOMatic.g:555:1: ruleSize EOF
             {
              before(grammarAccess.getSizeRule()); 
             pushFollow(FOLLOW_1);
@@ -1496,31 +1730,31 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleSize"
-    // InternalSlideOMatic.g:487:1: ruleSize : ( ( rule__Size__Group__0 ) ) ;
+    // InternalSlideOMatic.g:562:1: ruleSize : ( ( rule__Size__Alternatives ) ) ;
     public final void ruleSize() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:491:2: ( ( ( rule__Size__Group__0 ) ) )
-            // InternalSlideOMatic.g:492:2: ( ( rule__Size__Group__0 ) )
+            // InternalSlideOMatic.g:566:2: ( ( ( rule__Size__Alternatives ) ) )
+            // InternalSlideOMatic.g:567:2: ( ( rule__Size__Alternatives ) )
             {
-            // InternalSlideOMatic.g:492:2: ( ( rule__Size__Group__0 ) )
-            // InternalSlideOMatic.g:493:3: ( rule__Size__Group__0 )
+            // InternalSlideOMatic.g:567:2: ( ( rule__Size__Alternatives ) )
+            // InternalSlideOMatic.g:568:3: ( rule__Size__Alternatives )
             {
-             before(grammarAccess.getSizeAccess().getGroup()); 
-            // InternalSlideOMatic.g:494:3: ( rule__Size__Group__0 )
-            // InternalSlideOMatic.g:494:4: rule__Size__Group__0
+             before(grammarAccess.getSizeAccess().getAlternatives()); 
+            // InternalSlideOMatic.g:569:3: ( rule__Size__Alternatives )
+            // InternalSlideOMatic.g:569:4: rule__Size__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__Size__Group__0();
+            rule__Size__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSizeAccess().getGroup()); 
+             after(grammarAccess.getSizeAccess().getAlternatives()); 
 
             }
 
@@ -1543,11 +1777,11 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleTable"
-    // InternalSlideOMatic.g:503:1: entryRuleTable : ruleTable EOF ;
+    // InternalSlideOMatic.g:578:1: entryRuleTable : ruleTable EOF ;
     public final void entryRuleTable() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:504:1: ( ruleTable EOF )
-            // InternalSlideOMatic.g:505:1: ruleTable EOF
+            // InternalSlideOMatic.g:579:1: ( ruleTable EOF )
+            // InternalSlideOMatic.g:580:1: ruleTable EOF
             {
              before(grammarAccess.getTableRule()); 
             pushFollow(FOLLOW_1);
@@ -1573,21 +1807,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleTable"
-    // InternalSlideOMatic.g:512:1: ruleTable : ( ( rule__Table__Group__0 ) ) ;
+    // InternalSlideOMatic.g:587:1: ruleTable : ( ( rule__Table__Group__0 ) ) ;
     public final void ruleTable() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:516:2: ( ( ( rule__Table__Group__0 ) ) )
-            // InternalSlideOMatic.g:517:2: ( ( rule__Table__Group__0 ) )
+            // InternalSlideOMatic.g:591:2: ( ( ( rule__Table__Group__0 ) ) )
+            // InternalSlideOMatic.g:592:2: ( ( rule__Table__Group__0 ) )
             {
-            // InternalSlideOMatic.g:517:2: ( ( rule__Table__Group__0 ) )
-            // InternalSlideOMatic.g:518:3: ( rule__Table__Group__0 )
+            // InternalSlideOMatic.g:592:2: ( ( rule__Table__Group__0 ) )
+            // InternalSlideOMatic.g:593:3: ( rule__Table__Group__0 )
             {
              before(grammarAccess.getTableAccess().getGroup()); 
-            // InternalSlideOMatic.g:519:3: ( rule__Table__Group__0 )
-            // InternalSlideOMatic.g:519:4: rule__Table__Group__0
+            // InternalSlideOMatic.g:594:3: ( rule__Table__Group__0 )
+            // InternalSlideOMatic.g:594:4: rule__Table__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Table__Group__0();
@@ -1620,11 +1854,11 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleTableRow"
-    // InternalSlideOMatic.g:528:1: entryRuleTableRow : ruleTableRow EOF ;
+    // InternalSlideOMatic.g:603:1: entryRuleTableRow : ruleTableRow EOF ;
     public final void entryRuleTableRow() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:529:1: ( ruleTableRow EOF )
-            // InternalSlideOMatic.g:530:1: ruleTableRow EOF
+            // InternalSlideOMatic.g:604:1: ( ruleTableRow EOF )
+            // InternalSlideOMatic.g:605:1: ruleTableRow EOF
             {
              before(grammarAccess.getTableRowRule()); 
             pushFollow(FOLLOW_1);
@@ -1650,21 +1884,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleTableRow"
-    // InternalSlideOMatic.g:537:1: ruleTableRow : ( ( rule__TableRow__Group__0 ) ) ;
+    // InternalSlideOMatic.g:612:1: ruleTableRow : ( ( rule__TableRow__Group__0 ) ) ;
     public final void ruleTableRow() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:541:2: ( ( ( rule__TableRow__Group__0 ) ) )
-            // InternalSlideOMatic.g:542:2: ( ( rule__TableRow__Group__0 ) )
+            // InternalSlideOMatic.g:616:2: ( ( ( rule__TableRow__Group__0 ) ) )
+            // InternalSlideOMatic.g:617:2: ( ( rule__TableRow__Group__0 ) )
             {
-            // InternalSlideOMatic.g:542:2: ( ( rule__TableRow__Group__0 ) )
-            // InternalSlideOMatic.g:543:3: ( rule__TableRow__Group__0 )
+            // InternalSlideOMatic.g:617:2: ( ( rule__TableRow__Group__0 ) )
+            // InternalSlideOMatic.g:618:3: ( rule__TableRow__Group__0 )
             {
              before(grammarAccess.getTableRowAccess().getGroup()); 
-            // InternalSlideOMatic.g:544:3: ( rule__TableRow__Group__0 )
-            // InternalSlideOMatic.g:544:4: rule__TableRow__Group__0
+            // InternalSlideOMatic.g:619:3: ( rule__TableRow__Group__0 )
+            // InternalSlideOMatic.g:619:4: rule__TableRow__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__TableRow__Group__0();
@@ -1696,12 +1930,89 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleTableRow"
 
 
+    // $ANTLR start "entryRuleCode"
+    // InternalSlideOMatic.g:628:1: entryRuleCode : ruleCode EOF ;
+    public final void entryRuleCode() throws RecognitionException {
+        try {
+            // InternalSlideOMatic.g:629:1: ( ruleCode EOF )
+            // InternalSlideOMatic.g:630:1: ruleCode EOF
+            {
+             before(grammarAccess.getCodeRule()); 
+            pushFollow(FOLLOW_1);
+            ruleCode();
+
+            state._fsp--;
+
+             after(grammarAccess.getCodeRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleCode"
+
+
+    // $ANTLR start "ruleCode"
+    // InternalSlideOMatic.g:637:1: ruleCode : ( ( rule__Code__Group__0 ) ) ;
+    public final void ruleCode() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:641:2: ( ( ( rule__Code__Group__0 ) ) )
+            // InternalSlideOMatic.g:642:2: ( ( rule__Code__Group__0 ) )
+            {
+            // InternalSlideOMatic.g:642:2: ( ( rule__Code__Group__0 ) )
+            // InternalSlideOMatic.g:643:3: ( rule__Code__Group__0 )
+            {
+             before(grammarAccess.getCodeAccess().getGroup()); 
+            // InternalSlideOMatic.g:644:3: ( rule__Code__Group__0 )
+            // InternalSlideOMatic.g:644:4: rule__Code__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Code__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getCodeAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleCode"
+
+
     // $ANTLR start "entryRuleClick"
-    // InternalSlideOMatic.g:553:1: entryRuleClick : ruleClick EOF ;
+    // InternalSlideOMatic.g:653:1: entryRuleClick : ruleClick EOF ;
     public final void entryRuleClick() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:554:1: ( ruleClick EOF )
-            // InternalSlideOMatic.g:555:1: ruleClick EOF
+            // InternalSlideOMatic.g:654:1: ( ruleClick EOF )
+            // InternalSlideOMatic.g:655:1: ruleClick EOF
             {
              before(grammarAccess.getClickRule()); 
             pushFollow(FOLLOW_1);
@@ -1727,17 +2038,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleClick"
-    // InternalSlideOMatic.g:562:1: ruleClick : ( '$$' ) ;
+    // InternalSlideOMatic.g:662:1: ruleClick : ( '$$' ) ;
     public final void ruleClick() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:566:2: ( ( '$$' ) )
-            // InternalSlideOMatic.g:567:2: ( '$$' )
+            // InternalSlideOMatic.g:666:2: ( ( '$$' ) )
+            // InternalSlideOMatic.g:667:2: ( '$$' )
             {
-            // InternalSlideOMatic.g:567:2: ( '$$' )
-            // InternalSlideOMatic.g:568:3: '$$'
+            // InternalSlideOMatic.g:667:2: ( '$$' )
+            // InternalSlideOMatic.g:668:3: '$$'
             {
              before(grammarAccess.getClickAccess().getDollarSignDollarSignKeyword()); 
             match(input,11,FOLLOW_2); 
@@ -1764,11 +2075,11 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleAnimation"
-    // InternalSlideOMatic.g:578:1: entryRuleAnimation : ruleAnimation EOF ;
+    // InternalSlideOMatic.g:678:1: entryRuleAnimation : ruleAnimation EOF ;
     public final void entryRuleAnimation() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:579:1: ( ruleAnimation EOF )
-            // InternalSlideOMatic.g:580:1: ruleAnimation EOF
+            // InternalSlideOMatic.g:679:1: ( ruleAnimation EOF )
+            // InternalSlideOMatic.g:680:1: ruleAnimation EOF
             {
              before(grammarAccess.getAnimationRule()); 
             pushFollow(FOLLOW_1);
@@ -1794,21 +2105,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleAnimation"
-    // InternalSlideOMatic.g:587:1: ruleAnimation : ( ( rule__Animation__Group__0 ) ) ;
+    // InternalSlideOMatic.g:687:1: ruleAnimation : ( ( rule__Animation__Group__0 ) ) ;
     public final void ruleAnimation() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:591:2: ( ( ( rule__Animation__Group__0 ) ) )
-            // InternalSlideOMatic.g:592:2: ( ( rule__Animation__Group__0 ) )
+            // InternalSlideOMatic.g:691:2: ( ( ( rule__Animation__Group__0 ) ) )
+            // InternalSlideOMatic.g:692:2: ( ( rule__Animation__Group__0 ) )
             {
-            // InternalSlideOMatic.g:592:2: ( ( rule__Animation__Group__0 ) )
-            // InternalSlideOMatic.g:593:3: ( rule__Animation__Group__0 )
+            // InternalSlideOMatic.g:692:2: ( ( rule__Animation__Group__0 ) )
+            // InternalSlideOMatic.g:693:3: ( rule__Animation__Group__0 )
             {
              before(grammarAccess.getAnimationAccess().getGroup()); 
-            // InternalSlideOMatic.g:594:3: ( rule__Animation__Group__0 )
-            // InternalSlideOMatic.g:594:4: rule__Animation__Group__0
+            // InternalSlideOMatic.g:694:3: ( rule__Animation__Group__0 )
+            // InternalSlideOMatic.g:694:4: rule__Animation__Group__0
             {
             pushFollow(FOLLOW_2);
             rule__Animation__Group__0();
@@ -1841,11 +2152,11 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "entryRuleAnimationType"
-    // InternalSlideOMatic.g:603:1: entryRuleAnimationType : ruleAnimationType EOF ;
+    // InternalSlideOMatic.g:703:1: entryRuleAnimationType : ruleAnimationType EOF ;
     public final void entryRuleAnimationType() throws RecognitionException {
         try {
-            // InternalSlideOMatic.g:604:1: ( ruleAnimationType EOF )
-            // InternalSlideOMatic.g:605:1: ruleAnimationType EOF
+            // InternalSlideOMatic.g:704:1: ( ruleAnimationType EOF )
+            // InternalSlideOMatic.g:705:1: ruleAnimationType EOF
             {
              before(grammarAccess.getAnimationTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -1871,21 +2182,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleAnimationType"
-    // InternalSlideOMatic.g:612:1: ruleAnimationType : ( ( rule__AnimationType__Alternatives ) ) ;
+    // InternalSlideOMatic.g:712:1: ruleAnimationType : ( ( rule__AnimationType__Alternatives ) ) ;
     public final void ruleAnimationType() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:616:2: ( ( ( rule__AnimationType__Alternatives ) ) )
-            // InternalSlideOMatic.g:617:2: ( ( rule__AnimationType__Alternatives ) )
+            // InternalSlideOMatic.g:716:2: ( ( ( rule__AnimationType__Alternatives ) ) )
+            // InternalSlideOMatic.g:717:2: ( ( rule__AnimationType__Alternatives ) )
             {
-            // InternalSlideOMatic.g:617:2: ( ( rule__AnimationType__Alternatives ) )
-            // InternalSlideOMatic.g:618:3: ( rule__AnimationType__Alternatives )
+            // InternalSlideOMatic.g:717:2: ( ( rule__AnimationType__Alternatives ) )
+            // InternalSlideOMatic.g:718:3: ( rule__AnimationType__Alternatives )
             {
              before(grammarAccess.getAnimationTypeAccess().getAlternatives()); 
-            // InternalSlideOMatic.g:619:3: ( rule__AnimationType__Alternatives )
-            // InternalSlideOMatic.g:619:4: rule__AnimationType__Alternatives
+            // InternalSlideOMatic.g:719:3: ( rule__AnimationType__Alternatives )
+            // InternalSlideOMatic.g:719:4: rule__AnimationType__Alternatives
             {
             pushFollow(FOLLOW_2);
             rule__AnimationType__Alternatives();
@@ -1917,21 +2228,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleAnimationType"
 
 
-    // $ANTLR start "rule__Presentation__Alternatives_4"
-    // InternalSlideOMatic.g:627:1: rule__Presentation__Alternatives_4 : ( ( ( rule__Presentation__SlidesAssignment_4_0 ) ) | ( ( rule__Presentation__AnimationsAssignment_4_1 ) ) );
-    public final void rule__Presentation__Alternatives_4() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__Alternatives_5"
+    // InternalSlideOMatic.g:727:1: rule__Presentation__Alternatives_5 : ( ( ( rule__Presentation__SlidesAssignment_5_0 ) ) | ( ( rule__Presentation__AnimationsAssignment_5_1 ) ) );
+    public final void rule__Presentation__Alternatives_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:631:1: ( ( ( rule__Presentation__SlidesAssignment_4_0 ) ) | ( ( rule__Presentation__AnimationsAssignment_4_1 ) ) )
+            // InternalSlideOMatic.g:731:1: ( ( ( rule__Presentation__SlidesAssignment_5_0 ) ) | ( ( rule__Presentation__AnimationsAssignment_5_1 ) ) )
             int alt1=2;
             int LA1_0 = input.LA(1);
 
-            if ( (LA1_0==78) ) {
+            if ( (LA1_0==81) ) {
                 alt1=1;
             }
-            else if ( (LA1_0==95) ) {
+            else if ( (LA1_0==98) ) {
                 alt1=2;
             }
             else {
@@ -1942,24 +2253,24 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             }
             switch (alt1) {
                 case 1 :
-                    // InternalSlideOMatic.g:632:2: ( ( rule__Presentation__SlidesAssignment_4_0 ) )
+                    // InternalSlideOMatic.g:732:2: ( ( rule__Presentation__SlidesAssignment_5_0 ) )
                     {
-                    // InternalSlideOMatic.g:632:2: ( ( rule__Presentation__SlidesAssignment_4_0 ) )
-                    // InternalSlideOMatic.g:633:3: ( rule__Presentation__SlidesAssignment_4_0 )
+                    // InternalSlideOMatic.g:732:2: ( ( rule__Presentation__SlidesAssignment_5_0 ) )
+                    // InternalSlideOMatic.g:733:3: ( rule__Presentation__SlidesAssignment_5_0 )
                     {
-                     before(grammarAccess.getPresentationAccess().getSlidesAssignment_4_0()); 
-                    // InternalSlideOMatic.g:634:3: ( rule__Presentation__SlidesAssignment_4_0 )
-                    // InternalSlideOMatic.g:634:4: rule__Presentation__SlidesAssignment_4_0
+                     before(grammarAccess.getPresentationAccess().getSlidesAssignment_5_0()); 
+                    // InternalSlideOMatic.g:734:3: ( rule__Presentation__SlidesAssignment_5_0 )
+                    // InternalSlideOMatic.g:734:4: rule__Presentation__SlidesAssignment_5_0
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Presentation__SlidesAssignment_4_0();
+                    rule__Presentation__SlidesAssignment_5_0();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPresentationAccess().getSlidesAssignment_4_0()); 
+                     after(grammarAccess.getPresentationAccess().getSlidesAssignment_5_0()); 
 
                     }
 
@@ -1967,24 +2278,24 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:638:2: ( ( rule__Presentation__AnimationsAssignment_4_1 ) )
+                    // InternalSlideOMatic.g:738:2: ( ( rule__Presentation__AnimationsAssignment_5_1 ) )
                     {
-                    // InternalSlideOMatic.g:638:2: ( ( rule__Presentation__AnimationsAssignment_4_1 ) )
-                    // InternalSlideOMatic.g:639:3: ( rule__Presentation__AnimationsAssignment_4_1 )
+                    // InternalSlideOMatic.g:738:2: ( ( rule__Presentation__AnimationsAssignment_5_1 ) )
+                    // InternalSlideOMatic.g:739:3: ( rule__Presentation__AnimationsAssignment_5_1 )
                     {
-                     before(grammarAccess.getPresentationAccess().getAnimationsAssignment_4_1()); 
-                    // InternalSlideOMatic.g:640:3: ( rule__Presentation__AnimationsAssignment_4_1 )
-                    // InternalSlideOMatic.g:640:4: rule__Presentation__AnimationsAssignment_4_1
+                     before(grammarAccess.getPresentationAccess().getAnimationsAssignment_5_1()); 
+                    // InternalSlideOMatic.g:740:3: ( rule__Presentation__AnimationsAssignment_5_1 )
+                    // InternalSlideOMatic.g:740:4: rule__Presentation__AnimationsAssignment_5_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Presentation__AnimationsAssignment_4_1();
+                    rule__Presentation__AnimationsAssignment_5_1();
 
                     state._fsp--;
 
 
                     }
 
-                     after(grammarAccess.getPresentationAccess().getAnimationsAssignment_4_1()); 
+                     after(grammarAccess.getPresentationAccess().getAnimationsAssignment_5_1()); 
 
                     }
 
@@ -2005,17 +2316,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__Alternatives_4"
+    // $ANTLR end "rule__Presentation__Alternatives_5"
 
 
     // $ANTLR start "rule__BeamerTheme__Alternatives"
-    // InternalSlideOMatic.g:648:1: rule__BeamerTheme__Alternatives : ( ( 'AnnArbor' ) | ( 'Antibes' ) | ( 'Bergen' ) | ( 'Berkeley' ) | ( 'Berlin' ) | ( 'Boadilla' ) | ( 'boxes' ) | ( 'CambridgeUS' ) | ( 'Copenhagen' ) | ( 'Darmstadt' ) | ( 'default' ) | ( 'Dresden' ) | ( 'Frankfurt' ) | ( 'Goettingen' ) | ( 'Hannover' ) | ( 'Ilmanau' ) | ( 'JuanLesPins' ) | ( 'Luebeck' ) | ( 'Madrid' ) | ( 'Malmoe' ) | ( 'Marburg' ) | ( 'Montpellier' ) | ( 'PaloAlto' ) | ( 'Pittsburgh' ) | ( 'Rochester' ) | ( 'Singapore' ) | ( 'Szeged' ) | ( 'Warsaw' ) );
+    // InternalSlideOMatic.g:748:1: rule__BeamerTheme__Alternatives : ( ( 'AnnArbor' ) | ( 'Antibes' ) | ( 'Bergen' ) | ( 'Berkeley' ) | ( 'Berlin' ) | ( 'Boadilla' ) | ( 'boxes' ) | ( 'CambridgeUS' ) | ( 'Copenhagen' ) | ( 'Darmstadt' ) | ( 'default' ) | ( 'Dresden' ) | ( 'Frankfurt' ) | ( 'Goettingen' ) | ( 'Hannover' ) | ( 'Ilmanau' ) | ( 'JuanLesPins' ) | ( 'Luebeck' ) | ( 'Madrid' ) | ( 'Malmoe' ) | ( 'Marburg' ) | ( 'Montpellier' ) | ( 'PaloAlto' ) | ( 'Pittsburgh' ) | ( 'Rochester' ) | ( 'Singapore' ) | ( 'Szeged' ) | ( 'Warsaw' ) );
     public final void rule__BeamerTheme__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:652:1: ( ( 'AnnArbor' ) | ( 'Antibes' ) | ( 'Bergen' ) | ( 'Berkeley' ) | ( 'Berlin' ) | ( 'Boadilla' ) | ( 'boxes' ) | ( 'CambridgeUS' ) | ( 'Copenhagen' ) | ( 'Darmstadt' ) | ( 'default' ) | ( 'Dresden' ) | ( 'Frankfurt' ) | ( 'Goettingen' ) | ( 'Hannover' ) | ( 'Ilmanau' ) | ( 'JuanLesPins' ) | ( 'Luebeck' ) | ( 'Madrid' ) | ( 'Malmoe' ) | ( 'Marburg' ) | ( 'Montpellier' ) | ( 'PaloAlto' ) | ( 'Pittsburgh' ) | ( 'Rochester' ) | ( 'Singapore' ) | ( 'Szeged' ) | ( 'Warsaw' ) )
+            // InternalSlideOMatic.g:752:1: ( ( 'AnnArbor' ) | ( 'Antibes' ) | ( 'Bergen' ) | ( 'Berkeley' ) | ( 'Berlin' ) | ( 'Boadilla' ) | ( 'boxes' ) | ( 'CambridgeUS' ) | ( 'Copenhagen' ) | ( 'Darmstadt' ) | ( 'default' ) | ( 'Dresden' ) | ( 'Frankfurt' ) | ( 'Goettingen' ) | ( 'Hannover' ) | ( 'Ilmanau' ) | ( 'JuanLesPins' ) | ( 'Luebeck' ) | ( 'Madrid' ) | ( 'Malmoe' ) | ( 'Marburg' ) | ( 'Montpellier' ) | ( 'PaloAlto' ) | ( 'Pittsburgh' ) | ( 'Rochester' ) | ( 'Singapore' ) | ( 'Szeged' ) | ( 'Warsaw' ) )
             int alt2=28;
             switch ( input.LA(1) ) {
             case 12:
@@ -2167,10 +2478,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             switch (alt2) {
                 case 1 :
-                    // InternalSlideOMatic.g:653:2: ( 'AnnArbor' )
+                    // InternalSlideOMatic.g:753:2: ( 'AnnArbor' )
                     {
-                    // InternalSlideOMatic.g:653:2: ( 'AnnArbor' )
-                    // InternalSlideOMatic.g:654:3: 'AnnArbor'
+                    // InternalSlideOMatic.g:753:2: ( 'AnnArbor' )
+                    // InternalSlideOMatic.g:754:3: 'AnnArbor'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getAnnArborKeyword_0()); 
                     match(input,12,FOLLOW_2); 
@@ -2182,10 +2493,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:659:2: ( 'Antibes' )
+                    // InternalSlideOMatic.g:759:2: ( 'Antibes' )
                     {
-                    // InternalSlideOMatic.g:659:2: ( 'Antibes' )
-                    // InternalSlideOMatic.g:660:3: 'Antibes'
+                    // InternalSlideOMatic.g:759:2: ( 'Antibes' )
+                    // InternalSlideOMatic.g:760:3: 'Antibes'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getAntibesKeyword_1()); 
                     match(input,13,FOLLOW_2); 
@@ -2197,10 +2508,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalSlideOMatic.g:665:2: ( 'Bergen' )
+                    // InternalSlideOMatic.g:765:2: ( 'Bergen' )
                     {
-                    // InternalSlideOMatic.g:665:2: ( 'Bergen' )
-                    // InternalSlideOMatic.g:666:3: 'Bergen'
+                    // InternalSlideOMatic.g:765:2: ( 'Bergen' )
+                    // InternalSlideOMatic.g:766:3: 'Bergen'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getBergenKeyword_2()); 
                     match(input,14,FOLLOW_2); 
@@ -2212,10 +2523,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 4 :
-                    // InternalSlideOMatic.g:671:2: ( 'Berkeley' )
+                    // InternalSlideOMatic.g:771:2: ( 'Berkeley' )
                     {
-                    // InternalSlideOMatic.g:671:2: ( 'Berkeley' )
-                    // InternalSlideOMatic.g:672:3: 'Berkeley'
+                    // InternalSlideOMatic.g:771:2: ( 'Berkeley' )
+                    // InternalSlideOMatic.g:772:3: 'Berkeley'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getBerkeleyKeyword_3()); 
                     match(input,15,FOLLOW_2); 
@@ -2227,10 +2538,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 5 :
-                    // InternalSlideOMatic.g:677:2: ( 'Berlin' )
+                    // InternalSlideOMatic.g:777:2: ( 'Berlin' )
                     {
-                    // InternalSlideOMatic.g:677:2: ( 'Berlin' )
-                    // InternalSlideOMatic.g:678:3: 'Berlin'
+                    // InternalSlideOMatic.g:777:2: ( 'Berlin' )
+                    // InternalSlideOMatic.g:778:3: 'Berlin'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getBerlinKeyword_4()); 
                     match(input,16,FOLLOW_2); 
@@ -2242,10 +2553,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 6 :
-                    // InternalSlideOMatic.g:683:2: ( 'Boadilla' )
+                    // InternalSlideOMatic.g:783:2: ( 'Boadilla' )
                     {
-                    // InternalSlideOMatic.g:683:2: ( 'Boadilla' )
-                    // InternalSlideOMatic.g:684:3: 'Boadilla'
+                    // InternalSlideOMatic.g:783:2: ( 'Boadilla' )
+                    // InternalSlideOMatic.g:784:3: 'Boadilla'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getBoadillaKeyword_5()); 
                     match(input,17,FOLLOW_2); 
@@ -2257,10 +2568,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 7 :
-                    // InternalSlideOMatic.g:689:2: ( 'boxes' )
+                    // InternalSlideOMatic.g:789:2: ( 'boxes' )
                     {
-                    // InternalSlideOMatic.g:689:2: ( 'boxes' )
-                    // InternalSlideOMatic.g:690:3: 'boxes'
+                    // InternalSlideOMatic.g:789:2: ( 'boxes' )
+                    // InternalSlideOMatic.g:790:3: 'boxes'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getBoxesKeyword_6()); 
                     match(input,18,FOLLOW_2); 
@@ -2272,10 +2583,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 8 :
-                    // InternalSlideOMatic.g:695:2: ( 'CambridgeUS' )
+                    // InternalSlideOMatic.g:795:2: ( 'CambridgeUS' )
                     {
-                    // InternalSlideOMatic.g:695:2: ( 'CambridgeUS' )
-                    // InternalSlideOMatic.g:696:3: 'CambridgeUS'
+                    // InternalSlideOMatic.g:795:2: ( 'CambridgeUS' )
+                    // InternalSlideOMatic.g:796:3: 'CambridgeUS'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getCambridgeUSKeyword_7()); 
                     match(input,19,FOLLOW_2); 
@@ -2287,10 +2598,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 9 :
-                    // InternalSlideOMatic.g:701:2: ( 'Copenhagen' )
+                    // InternalSlideOMatic.g:801:2: ( 'Copenhagen' )
                     {
-                    // InternalSlideOMatic.g:701:2: ( 'Copenhagen' )
-                    // InternalSlideOMatic.g:702:3: 'Copenhagen'
+                    // InternalSlideOMatic.g:801:2: ( 'Copenhagen' )
+                    // InternalSlideOMatic.g:802:3: 'Copenhagen'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getCopenhagenKeyword_8()); 
                     match(input,20,FOLLOW_2); 
@@ -2302,10 +2613,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 10 :
-                    // InternalSlideOMatic.g:707:2: ( 'Darmstadt' )
+                    // InternalSlideOMatic.g:807:2: ( 'Darmstadt' )
                     {
-                    // InternalSlideOMatic.g:707:2: ( 'Darmstadt' )
-                    // InternalSlideOMatic.g:708:3: 'Darmstadt'
+                    // InternalSlideOMatic.g:807:2: ( 'Darmstadt' )
+                    // InternalSlideOMatic.g:808:3: 'Darmstadt'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getDarmstadtKeyword_9()); 
                     match(input,21,FOLLOW_2); 
@@ -2317,10 +2628,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 11 :
-                    // InternalSlideOMatic.g:713:2: ( 'default' )
+                    // InternalSlideOMatic.g:813:2: ( 'default' )
                     {
-                    // InternalSlideOMatic.g:713:2: ( 'default' )
-                    // InternalSlideOMatic.g:714:3: 'default'
+                    // InternalSlideOMatic.g:813:2: ( 'default' )
+                    // InternalSlideOMatic.g:814:3: 'default'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getDefaultKeyword_10()); 
                     match(input,22,FOLLOW_2); 
@@ -2332,10 +2643,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 12 :
-                    // InternalSlideOMatic.g:719:2: ( 'Dresden' )
+                    // InternalSlideOMatic.g:819:2: ( 'Dresden' )
                     {
-                    // InternalSlideOMatic.g:719:2: ( 'Dresden' )
-                    // InternalSlideOMatic.g:720:3: 'Dresden'
+                    // InternalSlideOMatic.g:819:2: ( 'Dresden' )
+                    // InternalSlideOMatic.g:820:3: 'Dresden'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getDresdenKeyword_11()); 
                     match(input,23,FOLLOW_2); 
@@ -2347,10 +2658,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 13 :
-                    // InternalSlideOMatic.g:725:2: ( 'Frankfurt' )
+                    // InternalSlideOMatic.g:825:2: ( 'Frankfurt' )
                     {
-                    // InternalSlideOMatic.g:725:2: ( 'Frankfurt' )
-                    // InternalSlideOMatic.g:726:3: 'Frankfurt'
+                    // InternalSlideOMatic.g:825:2: ( 'Frankfurt' )
+                    // InternalSlideOMatic.g:826:3: 'Frankfurt'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getFrankfurtKeyword_12()); 
                     match(input,24,FOLLOW_2); 
@@ -2362,10 +2673,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 14 :
-                    // InternalSlideOMatic.g:731:2: ( 'Goettingen' )
+                    // InternalSlideOMatic.g:831:2: ( 'Goettingen' )
                     {
-                    // InternalSlideOMatic.g:731:2: ( 'Goettingen' )
-                    // InternalSlideOMatic.g:732:3: 'Goettingen'
+                    // InternalSlideOMatic.g:831:2: ( 'Goettingen' )
+                    // InternalSlideOMatic.g:832:3: 'Goettingen'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getGoettingenKeyword_13()); 
                     match(input,25,FOLLOW_2); 
@@ -2377,10 +2688,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 15 :
-                    // InternalSlideOMatic.g:737:2: ( 'Hannover' )
+                    // InternalSlideOMatic.g:837:2: ( 'Hannover' )
                     {
-                    // InternalSlideOMatic.g:737:2: ( 'Hannover' )
-                    // InternalSlideOMatic.g:738:3: 'Hannover'
+                    // InternalSlideOMatic.g:837:2: ( 'Hannover' )
+                    // InternalSlideOMatic.g:838:3: 'Hannover'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getHannoverKeyword_14()); 
                     match(input,26,FOLLOW_2); 
@@ -2392,10 +2703,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 16 :
-                    // InternalSlideOMatic.g:743:2: ( 'Ilmanau' )
+                    // InternalSlideOMatic.g:843:2: ( 'Ilmanau' )
                     {
-                    // InternalSlideOMatic.g:743:2: ( 'Ilmanau' )
-                    // InternalSlideOMatic.g:744:3: 'Ilmanau'
+                    // InternalSlideOMatic.g:843:2: ( 'Ilmanau' )
+                    // InternalSlideOMatic.g:844:3: 'Ilmanau'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getIlmanauKeyword_15()); 
                     match(input,27,FOLLOW_2); 
@@ -2407,10 +2718,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 17 :
-                    // InternalSlideOMatic.g:749:2: ( 'JuanLesPins' )
+                    // InternalSlideOMatic.g:849:2: ( 'JuanLesPins' )
                     {
-                    // InternalSlideOMatic.g:749:2: ( 'JuanLesPins' )
-                    // InternalSlideOMatic.g:750:3: 'JuanLesPins'
+                    // InternalSlideOMatic.g:849:2: ( 'JuanLesPins' )
+                    // InternalSlideOMatic.g:850:3: 'JuanLesPins'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getJuanLesPinsKeyword_16()); 
                     match(input,28,FOLLOW_2); 
@@ -2422,10 +2733,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 18 :
-                    // InternalSlideOMatic.g:755:2: ( 'Luebeck' )
+                    // InternalSlideOMatic.g:855:2: ( 'Luebeck' )
                     {
-                    // InternalSlideOMatic.g:755:2: ( 'Luebeck' )
-                    // InternalSlideOMatic.g:756:3: 'Luebeck'
+                    // InternalSlideOMatic.g:855:2: ( 'Luebeck' )
+                    // InternalSlideOMatic.g:856:3: 'Luebeck'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getLuebeckKeyword_17()); 
                     match(input,29,FOLLOW_2); 
@@ -2437,10 +2748,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 19 :
-                    // InternalSlideOMatic.g:761:2: ( 'Madrid' )
+                    // InternalSlideOMatic.g:861:2: ( 'Madrid' )
                     {
-                    // InternalSlideOMatic.g:761:2: ( 'Madrid' )
-                    // InternalSlideOMatic.g:762:3: 'Madrid'
+                    // InternalSlideOMatic.g:861:2: ( 'Madrid' )
+                    // InternalSlideOMatic.g:862:3: 'Madrid'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getMadridKeyword_18()); 
                     match(input,30,FOLLOW_2); 
@@ -2452,10 +2763,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 20 :
-                    // InternalSlideOMatic.g:767:2: ( 'Malmoe' )
+                    // InternalSlideOMatic.g:867:2: ( 'Malmoe' )
                     {
-                    // InternalSlideOMatic.g:767:2: ( 'Malmoe' )
-                    // InternalSlideOMatic.g:768:3: 'Malmoe'
+                    // InternalSlideOMatic.g:867:2: ( 'Malmoe' )
+                    // InternalSlideOMatic.g:868:3: 'Malmoe'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getMalmoeKeyword_19()); 
                     match(input,31,FOLLOW_2); 
@@ -2467,10 +2778,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 21 :
-                    // InternalSlideOMatic.g:773:2: ( 'Marburg' )
+                    // InternalSlideOMatic.g:873:2: ( 'Marburg' )
                     {
-                    // InternalSlideOMatic.g:773:2: ( 'Marburg' )
-                    // InternalSlideOMatic.g:774:3: 'Marburg'
+                    // InternalSlideOMatic.g:873:2: ( 'Marburg' )
+                    // InternalSlideOMatic.g:874:3: 'Marburg'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getMarburgKeyword_20()); 
                     match(input,32,FOLLOW_2); 
@@ -2482,10 +2793,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 22 :
-                    // InternalSlideOMatic.g:779:2: ( 'Montpellier' )
+                    // InternalSlideOMatic.g:879:2: ( 'Montpellier' )
                     {
-                    // InternalSlideOMatic.g:779:2: ( 'Montpellier' )
-                    // InternalSlideOMatic.g:780:3: 'Montpellier'
+                    // InternalSlideOMatic.g:879:2: ( 'Montpellier' )
+                    // InternalSlideOMatic.g:880:3: 'Montpellier'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getMontpellierKeyword_21()); 
                     match(input,33,FOLLOW_2); 
@@ -2497,10 +2808,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 23 :
-                    // InternalSlideOMatic.g:785:2: ( 'PaloAlto' )
+                    // InternalSlideOMatic.g:885:2: ( 'PaloAlto' )
                     {
-                    // InternalSlideOMatic.g:785:2: ( 'PaloAlto' )
-                    // InternalSlideOMatic.g:786:3: 'PaloAlto'
+                    // InternalSlideOMatic.g:885:2: ( 'PaloAlto' )
+                    // InternalSlideOMatic.g:886:3: 'PaloAlto'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getPaloAltoKeyword_22()); 
                     match(input,34,FOLLOW_2); 
@@ -2512,10 +2823,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 24 :
-                    // InternalSlideOMatic.g:791:2: ( 'Pittsburgh' )
+                    // InternalSlideOMatic.g:891:2: ( 'Pittsburgh' )
                     {
-                    // InternalSlideOMatic.g:791:2: ( 'Pittsburgh' )
-                    // InternalSlideOMatic.g:792:3: 'Pittsburgh'
+                    // InternalSlideOMatic.g:891:2: ( 'Pittsburgh' )
+                    // InternalSlideOMatic.g:892:3: 'Pittsburgh'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getPittsburghKeyword_23()); 
                     match(input,35,FOLLOW_2); 
@@ -2527,10 +2838,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 25 :
-                    // InternalSlideOMatic.g:797:2: ( 'Rochester' )
+                    // InternalSlideOMatic.g:897:2: ( 'Rochester' )
                     {
-                    // InternalSlideOMatic.g:797:2: ( 'Rochester' )
-                    // InternalSlideOMatic.g:798:3: 'Rochester'
+                    // InternalSlideOMatic.g:897:2: ( 'Rochester' )
+                    // InternalSlideOMatic.g:898:3: 'Rochester'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getRochesterKeyword_24()); 
                     match(input,36,FOLLOW_2); 
@@ -2542,10 +2853,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 26 :
-                    // InternalSlideOMatic.g:803:2: ( 'Singapore' )
+                    // InternalSlideOMatic.g:903:2: ( 'Singapore' )
                     {
-                    // InternalSlideOMatic.g:803:2: ( 'Singapore' )
-                    // InternalSlideOMatic.g:804:3: 'Singapore'
+                    // InternalSlideOMatic.g:903:2: ( 'Singapore' )
+                    // InternalSlideOMatic.g:904:3: 'Singapore'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getSingaporeKeyword_25()); 
                     match(input,37,FOLLOW_2); 
@@ -2557,10 +2868,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 27 :
-                    // InternalSlideOMatic.g:809:2: ( 'Szeged' )
+                    // InternalSlideOMatic.g:909:2: ( 'Szeged' )
                     {
-                    // InternalSlideOMatic.g:809:2: ( 'Szeged' )
-                    // InternalSlideOMatic.g:810:3: 'Szeged'
+                    // InternalSlideOMatic.g:909:2: ( 'Szeged' )
+                    // InternalSlideOMatic.g:910:3: 'Szeged'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getSzegedKeyword_26()); 
                     match(input,38,FOLLOW_2); 
@@ -2572,10 +2883,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 28 :
-                    // InternalSlideOMatic.g:815:2: ( 'Warsaw' )
+                    // InternalSlideOMatic.g:915:2: ( 'Warsaw' )
                     {
-                    // InternalSlideOMatic.g:815:2: ( 'Warsaw' )
-                    // InternalSlideOMatic.g:816:3: 'Warsaw'
+                    // InternalSlideOMatic.g:915:2: ( 'Warsaw' )
+                    // InternalSlideOMatic.g:916:3: 'Warsaw'
                     {
                      before(grammarAccess.getBeamerThemeAccess().getWarsawKeyword_27()); 
                     match(input,39,FOLLOW_2); 
@@ -2604,13 +2915,13 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ThemeColor__Alternatives"
-    // InternalSlideOMatic.g:825:1: rule__ThemeColor__Alternatives : ( ( 'albatros' ) | ( 'beaver' ) | ( 'beetle' ) | ( 'crane' ) | ( 'default' ) | ( 'dolphin' ) | ( 'dove' ) | ( 'fly' ) | ( 'lily' ) | ( 'orchid' ) | ( 'rose' ) | ( 'seagull' ) | ( 'seahorse' ) | ( 'sidebartab' ) | ( 'structure' ) | ( 'whale' ) | ( 'wolverine' ) );
+    // InternalSlideOMatic.g:925:1: rule__ThemeColor__Alternatives : ( ( 'albatros' ) | ( 'beaver' ) | ( 'beetle' ) | ( 'crane' ) | ( 'default' ) | ( 'dolphin' ) | ( 'dove' ) | ( 'fly' ) | ( 'lily' ) | ( 'orchid' ) | ( 'rose' ) | ( 'seagull' ) | ( 'seahorse' ) | ( 'sidebartab' ) | ( 'structure' ) | ( 'whale' ) | ( 'wolverine' ) );
     public final void rule__ThemeColor__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:829:1: ( ( 'albatros' ) | ( 'beaver' ) | ( 'beetle' ) | ( 'crane' ) | ( 'default' ) | ( 'dolphin' ) | ( 'dove' ) | ( 'fly' ) | ( 'lily' ) | ( 'orchid' ) | ( 'rose' ) | ( 'seagull' ) | ( 'seahorse' ) | ( 'sidebartab' ) | ( 'structure' ) | ( 'whale' ) | ( 'wolverine' ) )
+            // InternalSlideOMatic.g:929:1: ( ( 'albatros' ) | ( 'beaver' ) | ( 'beetle' ) | ( 'crane' ) | ( 'default' ) | ( 'dolphin' ) | ( 'dove' ) | ( 'fly' ) | ( 'lily' ) | ( 'orchid' ) | ( 'rose' ) | ( 'seagull' ) | ( 'seahorse' ) | ( 'sidebartab' ) | ( 'structure' ) | ( 'whale' ) | ( 'wolverine' ) )
             int alt3=17;
             switch ( input.LA(1) ) {
             case 40:
@@ -2707,10 +3018,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             switch (alt3) {
                 case 1 :
-                    // InternalSlideOMatic.g:830:2: ( 'albatros' )
+                    // InternalSlideOMatic.g:930:2: ( 'albatros' )
                     {
-                    // InternalSlideOMatic.g:830:2: ( 'albatros' )
-                    // InternalSlideOMatic.g:831:3: 'albatros'
+                    // InternalSlideOMatic.g:930:2: ( 'albatros' )
+                    // InternalSlideOMatic.g:931:3: 'albatros'
                     {
                      before(grammarAccess.getThemeColorAccess().getAlbatrosKeyword_0()); 
                     match(input,40,FOLLOW_2); 
@@ -2722,10 +3033,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:836:2: ( 'beaver' )
+                    // InternalSlideOMatic.g:936:2: ( 'beaver' )
                     {
-                    // InternalSlideOMatic.g:836:2: ( 'beaver' )
-                    // InternalSlideOMatic.g:837:3: 'beaver'
+                    // InternalSlideOMatic.g:936:2: ( 'beaver' )
+                    // InternalSlideOMatic.g:937:3: 'beaver'
                     {
                      before(grammarAccess.getThemeColorAccess().getBeaverKeyword_1()); 
                     match(input,41,FOLLOW_2); 
@@ -2737,10 +3048,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalSlideOMatic.g:842:2: ( 'beetle' )
+                    // InternalSlideOMatic.g:942:2: ( 'beetle' )
                     {
-                    // InternalSlideOMatic.g:842:2: ( 'beetle' )
-                    // InternalSlideOMatic.g:843:3: 'beetle'
+                    // InternalSlideOMatic.g:942:2: ( 'beetle' )
+                    // InternalSlideOMatic.g:943:3: 'beetle'
                     {
                      before(grammarAccess.getThemeColorAccess().getBeetleKeyword_2()); 
                     match(input,42,FOLLOW_2); 
@@ -2752,10 +3063,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 4 :
-                    // InternalSlideOMatic.g:848:2: ( 'crane' )
+                    // InternalSlideOMatic.g:948:2: ( 'crane' )
                     {
-                    // InternalSlideOMatic.g:848:2: ( 'crane' )
-                    // InternalSlideOMatic.g:849:3: 'crane'
+                    // InternalSlideOMatic.g:948:2: ( 'crane' )
+                    // InternalSlideOMatic.g:949:3: 'crane'
                     {
                      before(grammarAccess.getThemeColorAccess().getCraneKeyword_3()); 
                     match(input,43,FOLLOW_2); 
@@ -2767,10 +3078,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 5 :
-                    // InternalSlideOMatic.g:854:2: ( 'default' )
+                    // InternalSlideOMatic.g:954:2: ( 'default' )
                     {
-                    // InternalSlideOMatic.g:854:2: ( 'default' )
-                    // InternalSlideOMatic.g:855:3: 'default'
+                    // InternalSlideOMatic.g:954:2: ( 'default' )
+                    // InternalSlideOMatic.g:955:3: 'default'
                     {
                      before(grammarAccess.getThemeColorAccess().getDefaultKeyword_4()); 
                     match(input,22,FOLLOW_2); 
@@ -2782,10 +3093,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 6 :
-                    // InternalSlideOMatic.g:860:2: ( 'dolphin' )
+                    // InternalSlideOMatic.g:960:2: ( 'dolphin' )
                     {
-                    // InternalSlideOMatic.g:860:2: ( 'dolphin' )
-                    // InternalSlideOMatic.g:861:3: 'dolphin'
+                    // InternalSlideOMatic.g:960:2: ( 'dolphin' )
+                    // InternalSlideOMatic.g:961:3: 'dolphin'
                     {
                      before(grammarAccess.getThemeColorAccess().getDolphinKeyword_5()); 
                     match(input,44,FOLLOW_2); 
@@ -2797,10 +3108,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 7 :
-                    // InternalSlideOMatic.g:866:2: ( 'dove' )
+                    // InternalSlideOMatic.g:966:2: ( 'dove' )
                     {
-                    // InternalSlideOMatic.g:866:2: ( 'dove' )
-                    // InternalSlideOMatic.g:867:3: 'dove'
+                    // InternalSlideOMatic.g:966:2: ( 'dove' )
+                    // InternalSlideOMatic.g:967:3: 'dove'
                     {
                      before(grammarAccess.getThemeColorAccess().getDoveKeyword_6()); 
                     match(input,45,FOLLOW_2); 
@@ -2812,10 +3123,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 8 :
-                    // InternalSlideOMatic.g:872:2: ( 'fly' )
+                    // InternalSlideOMatic.g:972:2: ( 'fly' )
                     {
-                    // InternalSlideOMatic.g:872:2: ( 'fly' )
-                    // InternalSlideOMatic.g:873:3: 'fly'
+                    // InternalSlideOMatic.g:972:2: ( 'fly' )
+                    // InternalSlideOMatic.g:973:3: 'fly'
                     {
                      before(grammarAccess.getThemeColorAccess().getFlyKeyword_7()); 
                     match(input,46,FOLLOW_2); 
@@ -2827,10 +3138,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 9 :
-                    // InternalSlideOMatic.g:878:2: ( 'lily' )
+                    // InternalSlideOMatic.g:978:2: ( 'lily' )
                     {
-                    // InternalSlideOMatic.g:878:2: ( 'lily' )
-                    // InternalSlideOMatic.g:879:3: 'lily'
+                    // InternalSlideOMatic.g:978:2: ( 'lily' )
+                    // InternalSlideOMatic.g:979:3: 'lily'
                     {
                      before(grammarAccess.getThemeColorAccess().getLilyKeyword_8()); 
                     match(input,47,FOLLOW_2); 
@@ -2842,10 +3153,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 10 :
-                    // InternalSlideOMatic.g:884:2: ( 'orchid' )
+                    // InternalSlideOMatic.g:984:2: ( 'orchid' )
                     {
-                    // InternalSlideOMatic.g:884:2: ( 'orchid' )
-                    // InternalSlideOMatic.g:885:3: 'orchid'
+                    // InternalSlideOMatic.g:984:2: ( 'orchid' )
+                    // InternalSlideOMatic.g:985:3: 'orchid'
                     {
                      before(grammarAccess.getThemeColorAccess().getOrchidKeyword_9()); 
                     match(input,48,FOLLOW_2); 
@@ -2857,10 +3168,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 11 :
-                    // InternalSlideOMatic.g:890:2: ( 'rose' )
+                    // InternalSlideOMatic.g:990:2: ( 'rose' )
                     {
-                    // InternalSlideOMatic.g:890:2: ( 'rose' )
-                    // InternalSlideOMatic.g:891:3: 'rose'
+                    // InternalSlideOMatic.g:990:2: ( 'rose' )
+                    // InternalSlideOMatic.g:991:3: 'rose'
                     {
                      before(grammarAccess.getThemeColorAccess().getRoseKeyword_10()); 
                     match(input,49,FOLLOW_2); 
@@ -2872,10 +3183,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 12 :
-                    // InternalSlideOMatic.g:896:2: ( 'seagull' )
+                    // InternalSlideOMatic.g:996:2: ( 'seagull' )
                     {
-                    // InternalSlideOMatic.g:896:2: ( 'seagull' )
-                    // InternalSlideOMatic.g:897:3: 'seagull'
+                    // InternalSlideOMatic.g:996:2: ( 'seagull' )
+                    // InternalSlideOMatic.g:997:3: 'seagull'
                     {
                      before(grammarAccess.getThemeColorAccess().getSeagullKeyword_11()); 
                     match(input,50,FOLLOW_2); 
@@ -2887,10 +3198,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 13 :
-                    // InternalSlideOMatic.g:902:2: ( 'seahorse' )
+                    // InternalSlideOMatic.g:1002:2: ( 'seahorse' )
                     {
-                    // InternalSlideOMatic.g:902:2: ( 'seahorse' )
-                    // InternalSlideOMatic.g:903:3: 'seahorse'
+                    // InternalSlideOMatic.g:1002:2: ( 'seahorse' )
+                    // InternalSlideOMatic.g:1003:3: 'seahorse'
                     {
                      before(grammarAccess.getThemeColorAccess().getSeahorseKeyword_12()); 
                     match(input,51,FOLLOW_2); 
@@ -2902,10 +3213,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 14 :
-                    // InternalSlideOMatic.g:908:2: ( 'sidebartab' )
+                    // InternalSlideOMatic.g:1008:2: ( 'sidebartab' )
                     {
-                    // InternalSlideOMatic.g:908:2: ( 'sidebartab' )
-                    // InternalSlideOMatic.g:909:3: 'sidebartab'
+                    // InternalSlideOMatic.g:1008:2: ( 'sidebartab' )
+                    // InternalSlideOMatic.g:1009:3: 'sidebartab'
                     {
                      before(grammarAccess.getThemeColorAccess().getSidebartabKeyword_13()); 
                     match(input,52,FOLLOW_2); 
@@ -2917,10 +3228,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 15 :
-                    // InternalSlideOMatic.g:914:2: ( 'structure' )
+                    // InternalSlideOMatic.g:1014:2: ( 'structure' )
                     {
-                    // InternalSlideOMatic.g:914:2: ( 'structure' )
-                    // InternalSlideOMatic.g:915:3: 'structure'
+                    // InternalSlideOMatic.g:1014:2: ( 'structure' )
+                    // InternalSlideOMatic.g:1015:3: 'structure'
                     {
                      before(grammarAccess.getThemeColorAccess().getStructureKeyword_14()); 
                     match(input,53,FOLLOW_2); 
@@ -2932,10 +3243,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 16 :
-                    // InternalSlideOMatic.g:920:2: ( 'whale' )
+                    // InternalSlideOMatic.g:1020:2: ( 'whale' )
                     {
-                    // InternalSlideOMatic.g:920:2: ( 'whale' )
-                    // InternalSlideOMatic.g:921:3: 'whale'
+                    // InternalSlideOMatic.g:1020:2: ( 'whale' )
+                    // InternalSlideOMatic.g:1021:3: 'whale'
                     {
                      before(grammarAccess.getThemeColorAccess().getWhaleKeyword_15()); 
                     match(input,54,FOLLOW_2); 
@@ -2947,10 +3258,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 17 :
-                    // InternalSlideOMatic.g:926:2: ( 'wolverine' )
+                    // InternalSlideOMatic.g:1026:2: ( 'wolverine' )
                     {
-                    // InternalSlideOMatic.g:926:2: ( 'wolverine' )
-                    // InternalSlideOMatic.g:927:3: 'wolverine'
+                    // InternalSlideOMatic.g:1026:2: ( 'wolverine' )
+                    // InternalSlideOMatic.g:1027:3: 'wolverine'
                     {
                      before(grammarAccess.getThemeColorAccess().getWolverineKeyword_16()); 
                     match(input,55,FOLLOW_2); 
@@ -2979,17 +3290,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Alternatives_1"
-    // InternalSlideOMatic.g:936:1: rule__Slide__Alternatives_1 : ( ( ( rule__Slide__Group_1_0__0 ) ) | ( ( rule__Slide__NameAssignment_1_1 ) ) );
+    // InternalSlideOMatic.g:1036:1: rule__Slide__Alternatives_1 : ( ( ( rule__Slide__Group_1_0__0 ) ) | ( ( rule__Slide__NameAssignment_1_1 ) ) );
     public final void rule__Slide__Alternatives_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:940:1: ( ( ( rule__Slide__Group_1_0__0 ) ) | ( ( rule__Slide__NameAssignment_1_1 ) ) )
+            // InternalSlideOMatic.g:1040:1: ( ( ( rule__Slide__Group_1_0__0 ) ) | ( ( rule__Slide__NameAssignment_1_1 ) ) )
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( ((LA4_0>=79 && LA4_0<=81)) ) {
+            if ( ((LA4_0>=82 && LA4_0<=84)) ) {
                 alt4=1;
             }
             else if ( (LA4_0==RULE_STRING) ) {
@@ -3003,14 +3314,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             }
             switch (alt4) {
                 case 1 :
-                    // InternalSlideOMatic.g:941:2: ( ( rule__Slide__Group_1_0__0 ) )
+                    // InternalSlideOMatic.g:1041:2: ( ( rule__Slide__Group_1_0__0 ) )
                     {
-                    // InternalSlideOMatic.g:941:2: ( ( rule__Slide__Group_1_0__0 ) )
-                    // InternalSlideOMatic.g:942:3: ( rule__Slide__Group_1_0__0 )
+                    // InternalSlideOMatic.g:1041:2: ( ( rule__Slide__Group_1_0__0 ) )
+                    // InternalSlideOMatic.g:1042:3: ( rule__Slide__Group_1_0__0 )
                     {
                      before(grammarAccess.getSlideAccess().getGroup_1_0()); 
-                    // InternalSlideOMatic.g:943:3: ( rule__Slide__Group_1_0__0 )
-                    // InternalSlideOMatic.g:943:4: rule__Slide__Group_1_0__0
+                    // InternalSlideOMatic.g:1043:3: ( rule__Slide__Group_1_0__0 )
+                    // InternalSlideOMatic.g:1043:4: rule__Slide__Group_1_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Slide__Group_1_0__0();
@@ -3028,14 +3339,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:947:2: ( ( rule__Slide__NameAssignment_1_1 ) )
+                    // InternalSlideOMatic.g:1047:2: ( ( rule__Slide__NameAssignment_1_1 ) )
                     {
-                    // InternalSlideOMatic.g:947:2: ( ( rule__Slide__NameAssignment_1_1 ) )
-                    // InternalSlideOMatic.g:948:3: ( rule__Slide__NameAssignment_1_1 )
+                    // InternalSlideOMatic.g:1047:2: ( ( rule__Slide__NameAssignment_1_1 ) )
+                    // InternalSlideOMatic.g:1048:3: ( rule__Slide__NameAssignment_1_1 )
                     {
                      before(grammarAccess.getSlideAccess().getNameAssignment_1_1()); 
-                    // InternalSlideOMatic.g:949:3: ( rule__Slide__NameAssignment_1_1 )
-                    // InternalSlideOMatic.g:949:4: rule__Slide__NameAssignment_1_1
+                    // InternalSlideOMatic.g:1049:3: ( rule__Slide__NameAssignment_1_1 )
+                    // InternalSlideOMatic.g:1049:4: rule__Slide__NameAssignment_1_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Slide__NameAssignment_1_1();
@@ -3070,26 +3381,26 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Alternatives"
-    // InternalSlideOMatic.g:957:1: rule__Section__Alternatives : ( ( ( rule__Section__Group_0__0 ) ) | ( ( rule__Section__Group_1__0 ) ) | ( ( rule__Section__Group_2__0 ) ) );
+    // InternalSlideOMatic.g:1057:1: rule__Section__Alternatives : ( ( ( rule__Section__Group_0__0 ) ) | ( ( rule__Section__Group_1__0 ) ) | ( ( rule__Section__Group_2__0 ) ) );
     public final void rule__Section__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:961:1: ( ( ( rule__Section__Group_0__0 ) ) | ( ( rule__Section__Group_1__0 ) ) | ( ( rule__Section__Group_2__0 ) ) )
+            // InternalSlideOMatic.g:1061:1: ( ( ( rule__Section__Group_0__0 ) ) | ( ( rule__Section__Group_1__0 ) ) | ( ( rule__Section__Group_2__0 ) ) )
             int alt5=3;
             switch ( input.LA(1) ) {
-            case 79:
+            case 82:
                 {
                 alt5=1;
                 }
                 break;
-            case 80:
+            case 83:
                 {
                 alt5=2;
                 }
                 break;
-            case 81:
+            case 84:
                 {
                 alt5=3;
                 }
@@ -3103,14 +3414,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             switch (alt5) {
                 case 1 :
-                    // InternalSlideOMatic.g:962:2: ( ( rule__Section__Group_0__0 ) )
+                    // InternalSlideOMatic.g:1062:2: ( ( rule__Section__Group_0__0 ) )
                     {
-                    // InternalSlideOMatic.g:962:2: ( ( rule__Section__Group_0__0 ) )
-                    // InternalSlideOMatic.g:963:3: ( rule__Section__Group_0__0 )
+                    // InternalSlideOMatic.g:1062:2: ( ( rule__Section__Group_0__0 ) )
+                    // InternalSlideOMatic.g:1063:3: ( rule__Section__Group_0__0 )
                     {
                      before(grammarAccess.getSectionAccess().getGroup_0()); 
-                    // InternalSlideOMatic.g:964:3: ( rule__Section__Group_0__0 )
-                    // InternalSlideOMatic.g:964:4: rule__Section__Group_0__0
+                    // InternalSlideOMatic.g:1064:3: ( rule__Section__Group_0__0 )
+                    // InternalSlideOMatic.g:1064:4: rule__Section__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Section__Group_0__0();
@@ -3128,14 +3439,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:968:2: ( ( rule__Section__Group_1__0 ) )
+                    // InternalSlideOMatic.g:1068:2: ( ( rule__Section__Group_1__0 ) )
                     {
-                    // InternalSlideOMatic.g:968:2: ( ( rule__Section__Group_1__0 ) )
-                    // InternalSlideOMatic.g:969:3: ( rule__Section__Group_1__0 )
+                    // InternalSlideOMatic.g:1068:2: ( ( rule__Section__Group_1__0 ) )
+                    // InternalSlideOMatic.g:1069:3: ( rule__Section__Group_1__0 )
                     {
                      before(grammarAccess.getSectionAccess().getGroup_1()); 
-                    // InternalSlideOMatic.g:970:3: ( rule__Section__Group_1__0 )
-                    // InternalSlideOMatic.g:970:4: rule__Section__Group_1__0
+                    // InternalSlideOMatic.g:1070:3: ( rule__Section__Group_1__0 )
+                    // InternalSlideOMatic.g:1070:4: rule__Section__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Section__Group_1__0();
@@ -3153,14 +3464,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalSlideOMatic.g:974:2: ( ( rule__Section__Group_2__0 ) )
+                    // InternalSlideOMatic.g:1074:2: ( ( rule__Section__Group_2__0 ) )
                     {
-                    // InternalSlideOMatic.g:974:2: ( ( rule__Section__Group_2__0 ) )
-                    // InternalSlideOMatic.g:975:3: ( rule__Section__Group_2__0 )
+                    // InternalSlideOMatic.g:1074:2: ( ( rule__Section__Group_2__0 ) )
+                    // InternalSlideOMatic.g:1075:3: ( rule__Section__Group_2__0 )
                     {
                      before(grammarAccess.getSectionAccess().getGroup_2()); 
-                    // InternalSlideOMatic.g:976:3: ( rule__Section__Group_2__0 )
-                    // InternalSlideOMatic.g:976:4: rule__Section__Group_2__0
+                    // InternalSlideOMatic.g:1076:3: ( rule__Section__Group_2__0 )
+                    // InternalSlideOMatic.g:1076:4: rule__Section__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Section__Group_2__0();
@@ -3195,36 +3506,33 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Content__Alternatives"
-    // InternalSlideOMatic.g:984:1: rule__Content__Alternatives : ( ( ( rule__Content__Group_0__0 ) ) | ( ruleText ) | ( ruleList ) | ( ruleFloat ) );
+    // InternalSlideOMatic.g:1084:1: rule__Content__Alternatives : ( ( ( rule__Content__Group_0__0 ) ) | ( ruleBlockableContent ) | ( ruleCode ) );
     public final void rule__Content__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:988:1: ( ( ( rule__Content__Group_0__0 ) ) | ( ruleText ) | ( ruleList ) | ( ruleFloat ) )
-            int alt6=4;
+            // InternalSlideOMatic.g:1088:1: ( ( ( rule__Content__Group_0__0 ) ) | ( ruleBlockableContent ) | ( ruleCode ) )
+            int alt6=3;
             switch ( input.LA(1) ) {
-            case 82:
+            case 85:
                 {
                 alt6=1;
                 }
                 break;
-            case 83:
-            case 84:
+            case 86:
+            case 87:
+            case 88:
+            case 89:
+            case 91:
+            case 94:
                 {
                 alt6=2;
                 }
                 break;
-            case 85:
-            case 86:
+            case 97:
                 {
                 alt6=3;
-                }
-                break;
-            case 89:
-            case 92:
-                {
-                alt6=4;
                 }
                 break;
             default:
@@ -3236,14 +3544,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             switch (alt6) {
                 case 1 :
-                    // InternalSlideOMatic.g:989:2: ( ( rule__Content__Group_0__0 ) )
+                    // InternalSlideOMatic.g:1089:2: ( ( rule__Content__Group_0__0 ) )
                     {
-                    // InternalSlideOMatic.g:989:2: ( ( rule__Content__Group_0__0 ) )
-                    // InternalSlideOMatic.g:990:3: ( rule__Content__Group_0__0 )
+                    // InternalSlideOMatic.g:1089:2: ( ( rule__Content__Group_0__0 ) )
+                    // InternalSlideOMatic.g:1090:3: ( rule__Content__Group_0__0 )
                     {
                      before(grammarAccess.getContentAccess().getGroup_0()); 
-                    // InternalSlideOMatic.g:991:3: ( rule__Content__Group_0__0 )
-                    // InternalSlideOMatic.g:991:4: rule__Content__Group_0__0
+                    // InternalSlideOMatic.g:1091:3: ( rule__Content__Group_0__0 )
+                    // InternalSlideOMatic.g:1091:4: rule__Content__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Content__Group_0__0();
@@ -3261,18 +3569,18 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:995:2: ( ruleText )
+                    // InternalSlideOMatic.g:1095:2: ( ruleBlockableContent )
                     {
-                    // InternalSlideOMatic.g:995:2: ( ruleText )
-                    // InternalSlideOMatic.g:996:3: ruleText
+                    // InternalSlideOMatic.g:1095:2: ( ruleBlockableContent )
+                    // InternalSlideOMatic.g:1096:3: ruleBlockableContent
                     {
-                     before(grammarAccess.getContentAccess().getTextParserRuleCall_1()); 
+                     before(grammarAccess.getContentAccess().getBlockableContentParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
-                    ruleText();
+                    ruleBlockableContent();
 
                     state._fsp--;
 
-                     after(grammarAccess.getContentAccess().getTextParserRuleCall_1()); 
+                     after(grammarAccess.getContentAccess().getBlockableContentParserRuleCall_1()); 
 
                     }
 
@@ -3280,37 +3588,18 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalSlideOMatic.g:1001:2: ( ruleList )
+                    // InternalSlideOMatic.g:1101:2: ( ruleCode )
                     {
-                    // InternalSlideOMatic.g:1001:2: ( ruleList )
-                    // InternalSlideOMatic.g:1002:3: ruleList
+                    // InternalSlideOMatic.g:1101:2: ( ruleCode )
+                    // InternalSlideOMatic.g:1102:3: ruleCode
                     {
-                     before(grammarAccess.getContentAccess().getListParserRuleCall_2()); 
+                     before(grammarAccess.getContentAccess().getCodeParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
-                    ruleList();
+                    ruleCode();
 
                     state._fsp--;
 
-                     after(grammarAccess.getContentAccess().getListParserRuleCall_2()); 
-
-                    }
-
-
-                    }
-                    break;
-                case 4 :
-                    // InternalSlideOMatic.g:1007:2: ( ruleFloat )
-                    {
-                    // InternalSlideOMatic.g:1007:2: ( ruleFloat )
-                    // InternalSlideOMatic.g:1008:3: ruleFloat
-                    {
-                     before(grammarAccess.getContentAccess().getFloatParserRuleCall_3()); 
-                    pushFollow(FOLLOW_2);
-                    ruleFloat();
-
-                    state._fsp--;
-
-                     after(grammarAccess.getContentAccess().getFloatParserRuleCall_3()); 
+                     after(grammarAccess.getContentAccess().getCodeParserRuleCall_2()); 
 
                     }
 
@@ -3334,49 +3623,59 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Content__Alternatives"
 
 
-    // $ANTLR start "rule__Text__Alternatives"
-    // InternalSlideOMatic.g:1017:1: rule__Text__Alternatives : ( ( ( rule__Text__Group_0__0 ) ) | ( ( rule__Text__Group_1__0 ) ) );
-    public final void rule__Text__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__BlockableContent__Alternatives"
+    // InternalSlideOMatic.g:1111:1: rule__BlockableContent__Alternatives : ( ( ruleText ) | ( ruleBlock ) | ( ruleList ) | ( ruleFloats ) );
+    public final void rule__BlockableContent__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1021:1: ( ( ( rule__Text__Group_0__0 ) ) | ( ( rule__Text__Group_1__0 ) ) )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==83) ) {
+            // InternalSlideOMatic.g:1115:1: ( ( ruleText ) | ( ruleBlock ) | ( ruleList ) | ( ruleFloats ) )
+            int alt7=4;
+            switch ( input.LA(1) ) {
+            case 86:
+                {
                 alt7=1;
-            }
-            else if ( (LA7_0==84) ) {
+                }
+                break;
+            case 87:
+                {
                 alt7=2;
-            }
-            else {
+                }
+                break;
+            case 88:
+            case 89:
+                {
+                alt7=3;
+                }
+                break;
+            case 91:
+            case 94:
+                {
+                alt7=4;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
+
             switch (alt7) {
                 case 1 :
-                    // InternalSlideOMatic.g:1022:2: ( ( rule__Text__Group_0__0 ) )
+                    // InternalSlideOMatic.g:1116:2: ( ruleText )
                     {
-                    // InternalSlideOMatic.g:1022:2: ( ( rule__Text__Group_0__0 ) )
-                    // InternalSlideOMatic.g:1023:3: ( rule__Text__Group_0__0 )
+                    // InternalSlideOMatic.g:1116:2: ( ruleText )
+                    // InternalSlideOMatic.g:1117:3: ruleText
                     {
-                     before(grammarAccess.getTextAccess().getGroup_0()); 
-                    // InternalSlideOMatic.g:1024:3: ( rule__Text__Group_0__0 )
-                    // InternalSlideOMatic.g:1024:4: rule__Text__Group_0__0
-                    {
+                     before(grammarAccess.getBlockableContentAccess().getTextParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
-                    rule__Text__Group_0__0();
+                    ruleText();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getTextAccess().getGroup_0()); 
+                     after(grammarAccess.getBlockableContentAccess().getTextParserRuleCall_0()); 
 
                     }
 
@@ -3384,24 +3683,56 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1028:2: ( ( rule__Text__Group_1__0 ) )
+                    // InternalSlideOMatic.g:1122:2: ( ruleBlock )
                     {
-                    // InternalSlideOMatic.g:1028:2: ( ( rule__Text__Group_1__0 ) )
-                    // InternalSlideOMatic.g:1029:3: ( rule__Text__Group_1__0 )
+                    // InternalSlideOMatic.g:1122:2: ( ruleBlock )
+                    // InternalSlideOMatic.g:1123:3: ruleBlock
                     {
-                     before(grammarAccess.getTextAccess().getGroup_1()); 
-                    // InternalSlideOMatic.g:1030:3: ( rule__Text__Group_1__0 )
-                    // InternalSlideOMatic.g:1030:4: rule__Text__Group_1__0
-                    {
+                     before(grammarAccess.getBlockableContentAccess().getBlockParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
-                    rule__Text__Group_1__0();
+                    ruleBlock();
 
                     state._fsp--;
 
+                     after(grammarAccess.getBlockableContentAccess().getBlockParserRuleCall_1()); 
 
                     }
 
-                     after(grammarAccess.getTextAccess().getGroup_1()); 
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSlideOMatic.g:1128:2: ( ruleList )
+                    {
+                    // InternalSlideOMatic.g:1128:2: ( ruleList )
+                    // InternalSlideOMatic.g:1129:3: ruleList
+                    {
+                     before(grammarAccess.getBlockableContentAccess().getListParserRuleCall_2()); 
+                    pushFollow(FOLLOW_2);
+                    ruleList();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getBlockableContentAccess().getListParserRuleCall_2()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSlideOMatic.g:1134:2: ( ruleFloats )
+                    {
+                    // InternalSlideOMatic.g:1134:2: ( ruleFloats )
+                    // InternalSlideOMatic.g:1135:3: ruleFloats
+                    {
+                     before(grammarAccess.getBlockableContentAccess().getFloatsParserRuleCall_3()); 
+                    pushFollow(FOLLOW_2);
+                    ruleFloats();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getBlockableContentAccess().getFloatsParserRuleCall_3()); 
 
                     }
 
@@ -3422,24 +3753,24 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__Alternatives"
+    // $ANTLR end "rule__BlockableContent__Alternatives"
 
 
     // $ANTLR start "rule__List__Alternatives"
-    // InternalSlideOMatic.g:1038:1: rule__List__Alternatives : ( ( ( rule__List__Group_0__0 ) ) | ( ( rule__List__Group_1__0 ) ) );
+    // InternalSlideOMatic.g:1144:1: rule__List__Alternatives : ( ( ruleNumberedList ) | ( ruleUnNumberedList ) );
     public final void rule__List__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1042:1: ( ( ( rule__List__Group_0__0 ) ) | ( ( rule__List__Group_1__0 ) ) )
+            // InternalSlideOMatic.g:1148:1: ( ( ruleNumberedList ) | ( ruleUnNumberedList ) )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==85) ) {
+            if ( (LA8_0==88) ) {
                 alt8=1;
             }
-            else if ( (LA8_0==86) ) {
+            else if ( (LA8_0==89) ) {
                 alt8=2;
             }
             else {
@@ -3450,24 +3781,18 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             }
             switch (alt8) {
                 case 1 :
-                    // InternalSlideOMatic.g:1043:2: ( ( rule__List__Group_0__0 ) )
+                    // InternalSlideOMatic.g:1149:2: ( ruleNumberedList )
                     {
-                    // InternalSlideOMatic.g:1043:2: ( ( rule__List__Group_0__0 ) )
-                    // InternalSlideOMatic.g:1044:3: ( rule__List__Group_0__0 )
+                    // InternalSlideOMatic.g:1149:2: ( ruleNumberedList )
+                    // InternalSlideOMatic.g:1150:3: ruleNumberedList
                     {
-                     before(grammarAccess.getListAccess().getGroup_0()); 
-                    // InternalSlideOMatic.g:1045:3: ( rule__List__Group_0__0 )
-                    // InternalSlideOMatic.g:1045:4: rule__List__Group_0__0
-                    {
+                     before(grammarAccess.getListAccess().getNumberedListParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
-                    rule__List__Group_0__0();
+                    ruleNumberedList();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getListAccess().getGroup_0()); 
+                     after(grammarAccess.getListAccess().getNumberedListParserRuleCall_0()); 
 
                     }
 
@@ -3475,24 +3800,18 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1049:2: ( ( rule__List__Group_1__0 ) )
+                    // InternalSlideOMatic.g:1155:2: ( ruleUnNumberedList )
                     {
-                    // InternalSlideOMatic.g:1049:2: ( ( rule__List__Group_1__0 ) )
-                    // InternalSlideOMatic.g:1050:3: ( rule__List__Group_1__0 )
+                    // InternalSlideOMatic.g:1155:2: ( ruleUnNumberedList )
+                    // InternalSlideOMatic.g:1156:3: ruleUnNumberedList
                     {
-                     before(grammarAccess.getListAccess().getGroup_1()); 
-                    // InternalSlideOMatic.g:1051:3: ( rule__List__Group_1__0 )
-                    // InternalSlideOMatic.g:1051:4: rule__List__Group_1__0
-                    {
+                     before(grammarAccess.getListAccess().getUnNumberedListParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
-                    rule__List__Group_1__0();
+                    ruleUnNumberedList();
 
                     state._fsp--;
 
-
-                    }
-
-                     after(grammarAccess.getListAccess().getGroup_1()); 
+                     after(grammarAccess.getListAccess().getUnNumberedListParserRuleCall_1()); 
 
                     }
 
@@ -3516,21 +3835,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__List__Alternatives"
 
 
-    // $ANTLR start "rule__Float__Alternatives"
-    // InternalSlideOMatic.g:1059:1: rule__Float__Alternatives : ( ( ruleImage ) | ( ruleTable ) );
-    public final void rule__Float__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__Floats__Alternatives"
+    // InternalSlideOMatic.g:1165:1: rule__Floats__Alternatives : ( ( ruleImage ) | ( ruleTable ) );
+    public final void rule__Floats__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1063:1: ( ( ruleImage ) | ( ruleTable ) )
+            // InternalSlideOMatic.g:1169:1: ( ( ruleImage ) | ( ruleTable ) )
             int alt9=2;
             int LA9_0 = input.LA(1);
 
-            if ( (LA9_0==89) ) {
+            if ( (LA9_0==91) ) {
                 alt9=1;
             }
-            else if ( (LA9_0==92) ) {
+            else if ( (LA9_0==94) ) {
                 alt9=2;
             }
             else {
@@ -3541,18 +3860,18 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             }
             switch (alt9) {
                 case 1 :
-                    // InternalSlideOMatic.g:1064:2: ( ruleImage )
+                    // InternalSlideOMatic.g:1170:2: ( ruleImage )
                     {
-                    // InternalSlideOMatic.g:1064:2: ( ruleImage )
-                    // InternalSlideOMatic.g:1065:3: ruleImage
+                    // InternalSlideOMatic.g:1170:2: ( ruleImage )
+                    // InternalSlideOMatic.g:1171:3: ruleImage
                     {
-                     before(grammarAccess.getFloatAccess().getImageParserRuleCall_0()); 
+                     before(grammarAccess.getFloatsAccess().getImageParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
                     ruleImage();
 
                     state._fsp--;
 
-                     after(grammarAccess.getFloatAccess().getImageParserRuleCall_0()); 
+                     after(grammarAccess.getFloatsAccess().getImageParserRuleCall_0()); 
 
                     }
 
@@ -3560,18 +3879,18 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1070:2: ( ruleTable )
+                    // InternalSlideOMatic.g:1176:2: ( ruleTable )
                     {
-                    // InternalSlideOMatic.g:1070:2: ( ruleTable )
-                    // InternalSlideOMatic.g:1071:3: ruleTable
+                    // InternalSlideOMatic.g:1176:2: ( ruleTable )
+                    // InternalSlideOMatic.g:1177:3: ruleTable
                     {
-                     before(grammarAccess.getFloatAccess().getTableParserRuleCall_1()); 
+                     before(grammarAccess.getFloatsAccess().getTableParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
                     ruleTable();
 
                     state._fsp--;
 
-                     after(grammarAccess.getFloatAccess().getTableParserRuleCall_1()); 
+                     after(grammarAccess.getFloatsAccess().getTableParserRuleCall_1()); 
 
                     }
 
@@ -3592,17 +3911,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Float__Alternatives"
+    // $ANTLR end "rule__Floats__Alternatives"
 
 
     // $ANTLR start "rule__Alignment__Alternatives"
-    // InternalSlideOMatic.g:1080:1: rule__Alignment__Alternatives : ( ( 'topleft' ) | ( 'top' ) | ( 'topright' ) | ( 'left' ) | ( 'center' ) | ( 'right' ) | ( 'bottomleft' ) | ( 'bottom' ) | ( 'bottomright' ) );
+    // InternalSlideOMatic.g:1186:1: rule__Alignment__Alternatives : ( ( 'topleft' ) | ( 'top' ) | ( 'topright' ) | ( 'left' ) | ( 'center' ) | ( 'right' ) | ( 'bottomleft' ) | ( 'bottom' ) | ( 'bottomright' ) );
     public final void rule__Alignment__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1084:1: ( ( 'topleft' ) | ( 'top' ) | ( 'topright' ) | ( 'left' ) | ( 'center' ) | ( 'right' ) | ( 'bottomleft' ) | ( 'bottom' ) | ( 'bottomright' ) )
+            // InternalSlideOMatic.g:1190:1: ( ( 'topleft' ) | ( 'top' ) | ( 'topright' ) | ( 'left' ) | ( 'center' ) | ( 'right' ) | ( 'bottomleft' ) | ( 'bottom' ) | ( 'bottomright' ) )
             int alt10=9;
             switch ( input.LA(1) ) {
             case 56:
@@ -3659,10 +3978,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             switch (alt10) {
                 case 1 :
-                    // InternalSlideOMatic.g:1085:2: ( 'topleft' )
+                    // InternalSlideOMatic.g:1191:2: ( 'topleft' )
                     {
-                    // InternalSlideOMatic.g:1085:2: ( 'topleft' )
-                    // InternalSlideOMatic.g:1086:3: 'topleft'
+                    // InternalSlideOMatic.g:1191:2: ( 'topleft' )
+                    // InternalSlideOMatic.g:1192:3: 'topleft'
                     {
                      before(grammarAccess.getAlignmentAccess().getTopleftKeyword_0()); 
                     match(input,56,FOLLOW_2); 
@@ -3674,10 +3993,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1091:2: ( 'top' )
+                    // InternalSlideOMatic.g:1197:2: ( 'top' )
                     {
-                    // InternalSlideOMatic.g:1091:2: ( 'top' )
-                    // InternalSlideOMatic.g:1092:3: 'top'
+                    // InternalSlideOMatic.g:1197:2: ( 'top' )
+                    // InternalSlideOMatic.g:1198:3: 'top'
                     {
                      before(grammarAccess.getAlignmentAccess().getTopKeyword_1()); 
                     match(input,57,FOLLOW_2); 
@@ -3689,10 +4008,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 3 :
-                    // InternalSlideOMatic.g:1097:2: ( 'topright' )
+                    // InternalSlideOMatic.g:1203:2: ( 'topright' )
                     {
-                    // InternalSlideOMatic.g:1097:2: ( 'topright' )
-                    // InternalSlideOMatic.g:1098:3: 'topright'
+                    // InternalSlideOMatic.g:1203:2: ( 'topright' )
+                    // InternalSlideOMatic.g:1204:3: 'topright'
                     {
                      before(grammarAccess.getAlignmentAccess().getToprightKeyword_2()); 
                     match(input,58,FOLLOW_2); 
@@ -3704,10 +4023,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 4 :
-                    // InternalSlideOMatic.g:1103:2: ( 'left' )
+                    // InternalSlideOMatic.g:1209:2: ( 'left' )
                     {
-                    // InternalSlideOMatic.g:1103:2: ( 'left' )
-                    // InternalSlideOMatic.g:1104:3: 'left'
+                    // InternalSlideOMatic.g:1209:2: ( 'left' )
+                    // InternalSlideOMatic.g:1210:3: 'left'
                     {
                      before(grammarAccess.getAlignmentAccess().getLeftKeyword_3()); 
                     match(input,59,FOLLOW_2); 
@@ -3719,10 +4038,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 5 :
-                    // InternalSlideOMatic.g:1109:2: ( 'center' )
+                    // InternalSlideOMatic.g:1215:2: ( 'center' )
                     {
-                    // InternalSlideOMatic.g:1109:2: ( 'center' )
-                    // InternalSlideOMatic.g:1110:3: 'center'
+                    // InternalSlideOMatic.g:1215:2: ( 'center' )
+                    // InternalSlideOMatic.g:1216:3: 'center'
                     {
                      before(grammarAccess.getAlignmentAccess().getCenterKeyword_4()); 
                     match(input,60,FOLLOW_2); 
@@ -3734,10 +4053,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 6 :
-                    // InternalSlideOMatic.g:1115:2: ( 'right' )
+                    // InternalSlideOMatic.g:1221:2: ( 'right' )
                     {
-                    // InternalSlideOMatic.g:1115:2: ( 'right' )
-                    // InternalSlideOMatic.g:1116:3: 'right'
+                    // InternalSlideOMatic.g:1221:2: ( 'right' )
+                    // InternalSlideOMatic.g:1222:3: 'right'
                     {
                      before(grammarAccess.getAlignmentAccess().getRightKeyword_5()); 
                     match(input,61,FOLLOW_2); 
@@ -3749,10 +4068,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 7 :
-                    // InternalSlideOMatic.g:1121:2: ( 'bottomleft' )
+                    // InternalSlideOMatic.g:1227:2: ( 'bottomleft' )
                     {
-                    // InternalSlideOMatic.g:1121:2: ( 'bottomleft' )
-                    // InternalSlideOMatic.g:1122:3: 'bottomleft'
+                    // InternalSlideOMatic.g:1227:2: ( 'bottomleft' )
+                    // InternalSlideOMatic.g:1228:3: 'bottomleft'
                     {
                      before(grammarAccess.getAlignmentAccess().getBottomleftKeyword_6()); 
                     match(input,62,FOLLOW_2); 
@@ -3764,10 +4083,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 8 :
-                    // InternalSlideOMatic.g:1127:2: ( 'bottom' )
+                    // InternalSlideOMatic.g:1233:2: ( 'bottom' )
                     {
-                    // InternalSlideOMatic.g:1127:2: ( 'bottom' )
-                    // InternalSlideOMatic.g:1128:3: 'bottom'
+                    // InternalSlideOMatic.g:1233:2: ( 'bottom' )
+                    // InternalSlideOMatic.g:1234:3: 'bottom'
                     {
                      before(grammarAccess.getAlignmentAccess().getBottomKeyword_7()); 
                     match(input,63,FOLLOW_2); 
@@ -3779,10 +4098,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 9 :
-                    // InternalSlideOMatic.g:1133:2: ( 'bottomright' )
+                    // InternalSlideOMatic.g:1239:2: ( 'bottomright' )
                     {
-                    // InternalSlideOMatic.g:1133:2: ( 'bottomright' )
-                    // InternalSlideOMatic.g:1134:3: 'bottomright'
+                    // InternalSlideOMatic.g:1239:2: ( 'bottomright' )
+                    // InternalSlideOMatic.g:1240:3: 'bottomright'
                     {
                      before(grammarAccess.getAlignmentAccess().getBottomrightKeyword_8()); 
                     match(input,64,FOLLOW_2); 
@@ -3810,21 +4129,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Alignment__Alternatives"
 
 
-    // $ANTLR start "rule__Size__Alternatives_0"
-    // InternalSlideOMatic.g:1143:1: rule__Size__Alternatives_0 : ( ( 'width' ) | ( 'height' ) );
-    public final void rule__Size__Alternatives_0() throws RecognitionException {
+    // $ANTLR start "rule__Size__Alternatives"
+    // InternalSlideOMatic.g:1249:1: rule__Size__Alternatives : ( ( ( rule__Size__Group_0__0 ) ) | ( ( rule__Size__Group_1__0 ) ) );
+    public final void rule__Size__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1147:1: ( ( 'width' ) | ( 'height' ) )
+            // InternalSlideOMatic.g:1253:1: ( ( ( rule__Size__Group_0__0 ) ) | ( ( rule__Size__Group_1__0 ) ) )
             int alt11=2;
             int LA11_0 = input.LA(1);
 
-            if ( (LA11_0==65) ) {
+            if ( ((LA11_0>=65 && LA11_0<=66)) ) {
                 alt11=1;
             }
-            else if ( (LA11_0==66) ) {
+            else if ( (LA11_0==RULE_INT) ) {
                 alt11=2;
             }
             else {
@@ -3835,14 +4154,24 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             }
             switch (alt11) {
                 case 1 :
-                    // InternalSlideOMatic.g:1148:2: ( 'width' )
+                    // InternalSlideOMatic.g:1254:2: ( ( rule__Size__Group_0__0 ) )
                     {
-                    // InternalSlideOMatic.g:1148:2: ( 'width' )
-                    // InternalSlideOMatic.g:1149:3: 'width'
+                    // InternalSlideOMatic.g:1254:2: ( ( rule__Size__Group_0__0 ) )
+                    // InternalSlideOMatic.g:1255:3: ( rule__Size__Group_0__0 )
                     {
-                     before(grammarAccess.getSizeAccess().getWidthKeyword_0_0()); 
-                    match(input,65,FOLLOW_2); 
-                     after(grammarAccess.getSizeAccess().getWidthKeyword_0_0()); 
+                     before(grammarAccess.getSizeAccess().getGroup_0()); 
+                    // InternalSlideOMatic.g:1256:3: ( rule__Size__Group_0__0 )
+                    // InternalSlideOMatic.g:1256:4: rule__Size__Group_0__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Size__Group_0__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getSizeAccess().getGroup_0()); 
 
                     }
 
@@ -3850,14 +4179,24 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1154:2: ( 'height' )
+                    // InternalSlideOMatic.g:1260:2: ( ( rule__Size__Group_1__0 ) )
                     {
-                    // InternalSlideOMatic.g:1154:2: ( 'height' )
-                    // InternalSlideOMatic.g:1155:3: 'height'
+                    // InternalSlideOMatic.g:1260:2: ( ( rule__Size__Group_1__0 ) )
+                    // InternalSlideOMatic.g:1261:3: ( rule__Size__Group_1__0 )
                     {
-                     before(grammarAccess.getSizeAccess().getHeightKeyword_0_1()); 
-                    match(input,66,FOLLOW_2); 
-                     after(grammarAccess.getSizeAccess().getHeightKeyword_0_1()); 
+                     before(grammarAccess.getSizeAccess().getGroup_1()); 
+                    // InternalSlideOMatic.g:1262:3: ( rule__Size__Group_1__0 )
+                    // InternalSlideOMatic.g:1262:4: rule__Size__Group_1__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Size__Group_1__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getSizeAccess().getGroup_1()); 
 
                     }
 
@@ -3878,24 +4217,24 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Size__Alternatives_0"
+    // $ANTLR end "rule__Size__Alternatives"
 
 
-    // $ANTLR start "rule__AnimationType__Alternatives"
-    // InternalSlideOMatic.g:1164:1: rule__AnimationType__Alternatives : ( ( ( rule__AnimationType__Group_0__0 ) ) | ( ( rule__AnimationType__Group_1__0 ) ) );
-    public final void rule__AnimationType__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__Size__WayAlternatives_0_1_0"
+    // InternalSlideOMatic.g:1270:1: rule__Size__WayAlternatives_0_1_0 : ( ( 'width' ) | ( 'height' ) );
+    public final void rule__Size__WayAlternatives_0_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1168:1: ( ( ( rule__AnimationType__Group_0__0 ) ) | ( ( rule__AnimationType__Group_1__0 ) ) )
+            // InternalSlideOMatic.g:1274:1: ( ( 'width' ) | ( 'height' ) )
             int alt12=2;
             int LA12_0 = input.LA(1);
 
-            if ( (LA12_0==97) ) {
+            if ( (LA12_0==65) ) {
                 alt12=1;
             }
-            else if ( (LA12_0==98) ) {
+            else if ( (LA12_0==66) ) {
                 alt12=2;
             }
             else {
@@ -3906,14 +4245,180 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             }
             switch (alt12) {
                 case 1 :
-                    // InternalSlideOMatic.g:1169:2: ( ( rule__AnimationType__Group_0__0 ) )
+                    // InternalSlideOMatic.g:1275:2: ( 'width' )
                     {
-                    // InternalSlideOMatic.g:1169:2: ( ( rule__AnimationType__Group_0__0 ) )
-                    // InternalSlideOMatic.g:1170:3: ( rule__AnimationType__Group_0__0 )
+                    // InternalSlideOMatic.g:1275:2: ( 'width' )
+                    // InternalSlideOMatic.g:1276:3: 'width'
+                    {
+                     before(grammarAccess.getSizeAccess().getWayWidthKeyword_0_1_0_0()); 
+                    match(input,65,FOLLOW_2); 
+                     after(grammarAccess.getSizeAccess().getWayWidthKeyword_0_1_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSlideOMatic.g:1281:2: ( 'height' )
+                    {
+                    // InternalSlideOMatic.g:1281:2: ( 'height' )
+                    // InternalSlideOMatic.g:1282:3: 'height'
+                    {
+                     before(grammarAccess.getSizeAccess().getWayHeightKeyword_0_1_0_1()); 
+                    match(input,66,FOLLOW_2); 
+                     after(grammarAccess.getSizeAccess().getWayHeightKeyword_0_1_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__WayAlternatives_0_1_0"
+
+
+    // $ANTLR start "rule__Size__UnitAlternatives_1_2_0"
+    // InternalSlideOMatic.g:1291:1: rule__Size__UnitAlternatives_1_2_0 : ( ( 'cm' ) | ( 'em' ) | ( 'mm' ) );
+    public final void rule__Size__UnitAlternatives_1_2_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1295:1: ( ( 'cm' ) | ( 'em' ) | ( 'mm' ) )
+            int alt13=3;
+            switch ( input.LA(1) ) {
+            case 67:
+                {
+                alt13=1;
+                }
+                break;
+            case 68:
+                {
+                alt13=2;
+                }
+                break;
+            case 69:
+                {
+                alt13=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 13, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt13) {
+                case 1 :
+                    // InternalSlideOMatic.g:1296:2: ( 'cm' )
+                    {
+                    // InternalSlideOMatic.g:1296:2: ( 'cm' )
+                    // InternalSlideOMatic.g:1297:3: 'cm'
+                    {
+                     before(grammarAccess.getSizeAccess().getUnitCmKeyword_1_2_0_0()); 
+                    match(input,67,FOLLOW_2); 
+                     after(grammarAccess.getSizeAccess().getUnitCmKeyword_1_2_0_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSlideOMatic.g:1302:2: ( 'em' )
+                    {
+                    // InternalSlideOMatic.g:1302:2: ( 'em' )
+                    // InternalSlideOMatic.g:1303:3: 'em'
+                    {
+                     before(grammarAccess.getSizeAccess().getUnitEmKeyword_1_2_0_1()); 
+                    match(input,68,FOLLOW_2); 
+                     after(grammarAccess.getSizeAccess().getUnitEmKeyword_1_2_0_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSlideOMatic.g:1308:2: ( 'mm' )
+                    {
+                    // InternalSlideOMatic.g:1308:2: ( 'mm' )
+                    // InternalSlideOMatic.g:1309:3: 'mm'
+                    {
+                     before(grammarAccess.getSizeAccess().getUnitMmKeyword_1_2_0_2()); 
+                    match(input,69,FOLLOW_2); 
+                     after(grammarAccess.getSizeAccess().getUnitMmKeyword_1_2_0_2()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__UnitAlternatives_1_2_0"
+
+
+    // $ANTLR start "rule__AnimationType__Alternatives"
+    // InternalSlideOMatic.g:1318:1: rule__AnimationType__Alternatives : ( ( ( rule__AnimationType__Group_0__0 ) ) | ( ( rule__AnimationType__Group_1__0 ) ) );
+    public final void rule__AnimationType__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1322:1: ( ( ( rule__AnimationType__Group_0__0 ) ) | ( ( rule__AnimationType__Group_1__0 ) ) )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
+
+            if ( (LA14_0==100) ) {
+                alt14=1;
+            }
+            else if ( (LA14_0==101) ) {
+                alt14=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 14, 0, input);
+
+                throw nvae;
+            }
+            switch (alt14) {
+                case 1 :
+                    // InternalSlideOMatic.g:1323:2: ( ( rule__AnimationType__Group_0__0 ) )
+                    {
+                    // InternalSlideOMatic.g:1323:2: ( ( rule__AnimationType__Group_0__0 ) )
+                    // InternalSlideOMatic.g:1324:3: ( rule__AnimationType__Group_0__0 )
                     {
                      before(grammarAccess.getAnimationTypeAccess().getGroup_0()); 
-                    // InternalSlideOMatic.g:1171:3: ( rule__AnimationType__Group_0__0 )
-                    // InternalSlideOMatic.g:1171:4: rule__AnimationType__Group_0__0
+                    // InternalSlideOMatic.g:1325:3: ( rule__AnimationType__Group_0__0 )
+                    // InternalSlideOMatic.g:1325:4: rule__AnimationType__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AnimationType__Group_0__0();
@@ -3931,14 +4436,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1175:2: ( ( rule__AnimationType__Group_1__0 ) )
+                    // InternalSlideOMatic.g:1329:2: ( ( rule__AnimationType__Group_1__0 ) )
                     {
-                    // InternalSlideOMatic.g:1175:2: ( ( rule__AnimationType__Group_1__0 ) )
-                    // InternalSlideOMatic.g:1176:3: ( rule__AnimationType__Group_1__0 )
+                    // InternalSlideOMatic.g:1329:2: ( ( rule__AnimationType__Group_1__0 ) )
+                    // InternalSlideOMatic.g:1330:3: ( rule__AnimationType__Group_1__0 )
                     {
                      before(grammarAccess.getAnimationTypeAccess().getGroup_1()); 
-                    // InternalSlideOMatic.g:1177:3: ( rule__AnimationType__Group_1__0 )
-                    // InternalSlideOMatic.g:1177:4: rule__AnimationType__Group_1__0
+                    // InternalSlideOMatic.g:1331:3: ( rule__AnimationType__Group_1__0 )
+                    // InternalSlideOMatic.g:1331:4: rule__AnimationType__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AnimationType__Group_1__0();
@@ -3973,14 +4478,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__0"
-    // InternalSlideOMatic.g:1185:1: rule__Presentation__Group__0 : rule__Presentation__Group__0__Impl rule__Presentation__Group__1 ;
+    // InternalSlideOMatic.g:1339:1: rule__Presentation__Group__0 : rule__Presentation__Group__0__Impl rule__Presentation__Group__1 ;
     public final void rule__Presentation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1189:1: ( rule__Presentation__Group__0__Impl rule__Presentation__Group__1 )
-            // InternalSlideOMatic.g:1190:2: rule__Presentation__Group__0__Impl rule__Presentation__Group__1
+            // InternalSlideOMatic.g:1343:1: ( rule__Presentation__Group__0__Impl rule__Presentation__Group__1 )
+            // InternalSlideOMatic.g:1344:2: rule__Presentation__Group__0__Impl rule__Presentation__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Presentation__Group__0__Impl();
@@ -4011,20 +4516,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__0__Impl"
-    // InternalSlideOMatic.g:1197:1: rule__Presentation__Group__0__Impl : ( 'presentation' ) ;
+    // InternalSlideOMatic.g:1351:1: rule__Presentation__Group__0__Impl : ( 'presentation' ) ;
     public final void rule__Presentation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1201:1: ( ( 'presentation' ) )
-            // InternalSlideOMatic.g:1202:1: ( 'presentation' )
+            // InternalSlideOMatic.g:1355:1: ( ( 'presentation' ) )
+            // InternalSlideOMatic.g:1356:1: ( 'presentation' )
             {
-            // InternalSlideOMatic.g:1202:1: ( 'presentation' )
-            // InternalSlideOMatic.g:1203:2: 'presentation'
+            // InternalSlideOMatic.g:1356:1: ( 'presentation' )
+            // InternalSlideOMatic.g:1357:2: 'presentation'
             {
              before(grammarAccess.getPresentationAccess().getPresentationKeyword_0()); 
-            match(input,67,FOLLOW_2); 
+            match(input,70,FOLLOW_2); 
              after(grammarAccess.getPresentationAccess().getPresentationKeyword_0()); 
 
             }
@@ -4048,14 +4553,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__1"
-    // InternalSlideOMatic.g:1212:1: rule__Presentation__Group__1 : rule__Presentation__Group__1__Impl rule__Presentation__Group__2 ;
+    // InternalSlideOMatic.g:1366:1: rule__Presentation__Group__1 : rule__Presentation__Group__1__Impl rule__Presentation__Group__2 ;
     public final void rule__Presentation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1216:1: ( rule__Presentation__Group__1__Impl rule__Presentation__Group__2 )
-            // InternalSlideOMatic.g:1217:2: rule__Presentation__Group__1__Impl rule__Presentation__Group__2
+            // InternalSlideOMatic.g:1370:1: ( rule__Presentation__Group__1__Impl rule__Presentation__Group__2 )
+            // InternalSlideOMatic.g:1371:2: rule__Presentation__Group__1__Impl rule__Presentation__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__Presentation__Group__1__Impl();
@@ -4086,21 +4591,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__1__Impl"
-    // InternalSlideOMatic.g:1224:1: rule__Presentation__Group__1__Impl : ( ( rule__Presentation__NameAssignment_1 ) ) ;
+    // InternalSlideOMatic.g:1378:1: rule__Presentation__Group__1__Impl : ( ( rule__Presentation__NameAssignment_1 ) ) ;
     public final void rule__Presentation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1228:1: ( ( ( rule__Presentation__NameAssignment_1 ) ) )
-            // InternalSlideOMatic.g:1229:1: ( ( rule__Presentation__NameAssignment_1 ) )
+            // InternalSlideOMatic.g:1382:1: ( ( ( rule__Presentation__NameAssignment_1 ) ) )
+            // InternalSlideOMatic.g:1383:1: ( ( rule__Presentation__NameAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:1229:1: ( ( rule__Presentation__NameAssignment_1 ) )
-            // InternalSlideOMatic.g:1230:2: ( rule__Presentation__NameAssignment_1 )
+            // InternalSlideOMatic.g:1383:1: ( ( rule__Presentation__NameAssignment_1 ) )
+            // InternalSlideOMatic.g:1384:2: ( rule__Presentation__NameAssignment_1 )
             {
              before(grammarAccess.getPresentationAccess().getNameAssignment_1()); 
-            // InternalSlideOMatic.g:1231:2: ( rule__Presentation__NameAssignment_1 )
-            // InternalSlideOMatic.g:1231:3: rule__Presentation__NameAssignment_1
+            // InternalSlideOMatic.g:1385:2: ( rule__Presentation__NameAssignment_1 )
+            // InternalSlideOMatic.g:1385:3: rule__Presentation__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Presentation__NameAssignment_1();
@@ -4133,16 +4638,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__2"
-    // InternalSlideOMatic.g:1239:1: rule__Presentation__Group__2 : rule__Presentation__Group__2__Impl rule__Presentation__Group__3 ;
+    // InternalSlideOMatic.g:1393:1: rule__Presentation__Group__2 : rule__Presentation__Group__2__Impl rule__Presentation__Group__3 ;
     public final void rule__Presentation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1243:1: ( rule__Presentation__Group__2__Impl rule__Presentation__Group__3 )
-            // InternalSlideOMatic.g:1244:2: rule__Presentation__Group__2__Impl rule__Presentation__Group__3
+            // InternalSlideOMatic.g:1397:1: ( rule__Presentation__Group__2__Impl rule__Presentation__Group__3 )
+            // InternalSlideOMatic.g:1398:2: rule__Presentation__Group__2__Impl rule__Presentation__Group__3
             {
-            pushFollow(FOLLOW_5);
+            pushFollow(FOLLOW_4);
             rule__Presentation__Group__2__Impl();
 
             state._fsp--;
@@ -4171,21 +4676,42 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__2__Impl"
-    // InternalSlideOMatic.g:1251:1: rule__Presentation__Group__2__Impl : ( '{' ) ;
+    // InternalSlideOMatic.g:1405:1: rule__Presentation__Group__2__Impl : ( ( rule__Presentation__SubtitleAssignment_2 )? ) ;
     public final void rule__Presentation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1255:1: ( ( '{' ) )
-            // InternalSlideOMatic.g:1256:1: ( '{' )
+            // InternalSlideOMatic.g:1409:1: ( ( ( rule__Presentation__SubtitleAssignment_2 )? ) )
+            // InternalSlideOMatic.g:1410:1: ( ( rule__Presentation__SubtitleAssignment_2 )? )
             {
-            // InternalSlideOMatic.g:1256:1: ( '{' )
-            // InternalSlideOMatic.g:1257:2: '{'
+            // InternalSlideOMatic.g:1410:1: ( ( rule__Presentation__SubtitleAssignment_2 )? )
+            // InternalSlideOMatic.g:1411:2: ( rule__Presentation__SubtitleAssignment_2 )?
             {
-             before(grammarAccess.getPresentationAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,68,FOLLOW_2); 
-             after(grammarAccess.getPresentationAccess().getLeftCurlyBracketKeyword_2()); 
+             before(grammarAccess.getPresentationAccess().getSubtitleAssignment_2()); 
+            // InternalSlideOMatic.g:1412:2: ( rule__Presentation__SubtitleAssignment_2 )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
+
+            if ( (LA15_0==RULE_STRING) ) {
+                alt15=1;
+            }
+            switch (alt15) {
+                case 1 :
+                    // InternalSlideOMatic.g:1412:3: rule__Presentation__SubtitleAssignment_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Presentation__SubtitleAssignment_2();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getPresentationAccess().getSubtitleAssignment_2()); 
 
             }
 
@@ -4208,14 +4734,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__3"
-    // InternalSlideOMatic.g:1266:1: rule__Presentation__Group__3 : rule__Presentation__Group__3__Impl rule__Presentation__Group__4 ;
+    // InternalSlideOMatic.g:1420:1: rule__Presentation__Group__3 : rule__Presentation__Group__3__Impl rule__Presentation__Group__4 ;
     public final void rule__Presentation__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1270:1: ( rule__Presentation__Group__3__Impl rule__Presentation__Group__4 )
-            // InternalSlideOMatic.g:1271:2: rule__Presentation__Group__3__Impl rule__Presentation__Group__4
+            // InternalSlideOMatic.g:1424:1: ( rule__Presentation__Group__3__Impl rule__Presentation__Group__4 )
+            // InternalSlideOMatic.g:1425:2: rule__Presentation__Group__3__Impl rule__Presentation__Group__4
             {
             pushFollow(FOLLOW_5);
             rule__Presentation__Group__3__Impl();
@@ -4246,42 +4772,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__3__Impl"
-    // InternalSlideOMatic.g:1278:1: rule__Presentation__Group__3__Impl : ( ( rule__Presentation__Group_3__0 )? ) ;
+    // InternalSlideOMatic.g:1432:1: rule__Presentation__Group__3__Impl : ( '{' ) ;
     public final void rule__Presentation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1282:1: ( ( ( rule__Presentation__Group_3__0 )? ) )
-            // InternalSlideOMatic.g:1283:1: ( ( rule__Presentation__Group_3__0 )? )
+            // InternalSlideOMatic.g:1436:1: ( ( '{' ) )
+            // InternalSlideOMatic.g:1437:1: ( '{' )
             {
-            // InternalSlideOMatic.g:1283:1: ( ( rule__Presentation__Group_3__0 )? )
-            // InternalSlideOMatic.g:1284:2: ( rule__Presentation__Group_3__0 )?
+            // InternalSlideOMatic.g:1437:1: ( '{' )
+            // InternalSlideOMatic.g:1438:2: '{'
             {
-             before(grammarAccess.getPresentationAccess().getGroup_3()); 
-            // InternalSlideOMatic.g:1285:2: ( rule__Presentation__Group_3__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
-
-            if ( (LA13_0==70) ) {
-                alt13=1;
-            }
-            switch (alt13) {
-                case 1 :
-                    // InternalSlideOMatic.g:1285:3: rule__Presentation__Group_3__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Presentation__Group_3__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getPresentationAccess().getGroup_3()); 
+             before(grammarAccess.getPresentationAccess().getLeftCurlyBracketKeyword_3()); 
+            match(input,71,FOLLOW_2); 
+             after(grammarAccess.getPresentationAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
 
@@ -4304,14 +4809,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__4"
-    // InternalSlideOMatic.g:1293:1: rule__Presentation__Group__4 : rule__Presentation__Group__4__Impl rule__Presentation__Group__5 ;
+    // InternalSlideOMatic.g:1447:1: rule__Presentation__Group__4 : rule__Presentation__Group__4__Impl rule__Presentation__Group__5 ;
     public final void rule__Presentation__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1297:1: ( rule__Presentation__Group__4__Impl rule__Presentation__Group__5 )
-            // InternalSlideOMatic.g:1298:2: rule__Presentation__Group__4__Impl rule__Presentation__Group__5
+            // InternalSlideOMatic.g:1451:1: ( rule__Presentation__Group__4__Impl rule__Presentation__Group__5 )
+            // InternalSlideOMatic.g:1452:2: rule__Presentation__Group__4__Impl rule__Presentation__Group__5
             {
             pushFollow(FOLLOW_5);
             rule__Presentation__Group__4__Impl();
@@ -4342,49 +4847,42 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__4__Impl"
-    // InternalSlideOMatic.g:1305:1: rule__Presentation__Group__4__Impl : ( ( rule__Presentation__Alternatives_4 )* ) ;
+    // InternalSlideOMatic.g:1459:1: rule__Presentation__Group__4__Impl : ( ( rule__Presentation__Group_4__0 )? ) ;
     public final void rule__Presentation__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1309:1: ( ( ( rule__Presentation__Alternatives_4 )* ) )
-            // InternalSlideOMatic.g:1310:1: ( ( rule__Presentation__Alternatives_4 )* )
+            // InternalSlideOMatic.g:1463:1: ( ( ( rule__Presentation__Group_4__0 )? ) )
+            // InternalSlideOMatic.g:1464:1: ( ( rule__Presentation__Group_4__0 )? )
             {
-            // InternalSlideOMatic.g:1310:1: ( ( rule__Presentation__Alternatives_4 )* )
-            // InternalSlideOMatic.g:1311:2: ( rule__Presentation__Alternatives_4 )*
+            // InternalSlideOMatic.g:1464:1: ( ( rule__Presentation__Group_4__0 )? )
+            // InternalSlideOMatic.g:1465:2: ( rule__Presentation__Group_4__0 )?
             {
-             before(grammarAccess.getPresentationAccess().getAlternatives_4()); 
-            // InternalSlideOMatic.g:1312:2: ( rule__Presentation__Alternatives_4 )*
-            loop14:
-            do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+             before(grammarAccess.getPresentationAccess().getGroup_4()); 
+            // InternalSlideOMatic.g:1466:2: ( rule__Presentation__Group_4__0 )?
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-                if ( (LA14_0==78||LA14_0==95) ) {
-                    alt14=1;
-                }
+            if ( (LA16_0==73) ) {
+                alt16=1;
+            }
+            switch (alt16) {
+                case 1 :
+                    // InternalSlideOMatic.g:1466:3: rule__Presentation__Group_4__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Presentation__Group_4__0();
 
-
-                switch (alt14) {
-            	case 1 :
-            	    // InternalSlideOMatic.g:1312:3: rule__Presentation__Alternatives_4
-            	    {
-            	    pushFollow(FOLLOW_6);
-            	    rule__Presentation__Alternatives_4();
-
-            	    state._fsp--;
+                    state._fsp--;
 
 
-            	    }
-            	    break;
+                    }
+                    break;
 
-            	default :
-            	    break loop14;
-                }
-            } while (true);
+            }
 
-             after(grammarAccess.getPresentationAccess().getAlternatives_4()); 
+             after(grammarAccess.getPresentationAccess().getGroup_4()); 
 
             }
 
@@ -4407,17 +4905,22 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__5"
-    // InternalSlideOMatic.g:1320:1: rule__Presentation__Group__5 : rule__Presentation__Group__5__Impl ;
+    // InternalSlideOMatic.g:1474:1: rule__Presentation__Group__5 : rule__Presentation__Group__5__Impl rule__Presentation__Group__6 ;
     public final void rule__Presentation__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1324:1: ( rule__Presentation__Group__5__Impl )
-            // InternalSlideOMatic.g:1325:2: rule__Presentation__Group__5__Impl
+            // InternalSlideOMatic.g:1478:1: ( rule__Presentation__Group__5__Impl rule__Presentation__Group__6 )
+            // InternalSlideOMatic.g:1479:2: rule__Presentation__Group__5__Impl rule__Presentation__Group__6
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_5);
             rule__Presentation__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Presentation__Group__6();
 
             state._fsp--;
 
@@ -4440,21 +4943,49 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__Group__5__Impl"
-    // InternalSlideOMatic.g:1331:1: rule__Presentation__Group__5__Impl : ( '}' ) ;
+    // InternalSlideOMatic.g:1486:1: rule__Presentation__Group__5__Impl : ( ( rule__Presentation__Alternatives_5 )* ) ;
     public final void rule__Presentation__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1335:1: ( ( '}' ) )
-            // InternalSlideOMatic.g:1336:1: ( '}' )
+            // InternalSlideOMatic.g:1490:1: ( ( ( rule__Presentation__Alternatives_5 )* ) )
+            // InternalSlideOMatic.g:1491:1: ( ( rule__Presentation__Alternatives_5 )* )
             {
-            // InternalSlideOMatic.g:1336:1: ( '}' )
-            // InternalSlideOMatic.g:1337:2: '}'
+            // InternalSlideOMatic.g:1491:1: ( ( rule__Presentation__Alternatives_5 )* )
+            // InternalSlideOMatic.g:1492:2: ( rule__Presentation__Alternatives_5 )*
             {
-             before(grammarAccess.getPresentationAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,69,FOLLOW_2); 
-             after(grammarAccess.getPresentationAccess().getRightCurlyBracketKeyword_5()); 
+             before(grammarAccess.getPresentationAccess().getAlternatives_5()); 
+            // InternalSlideOMatic.g:1493:2: ( rule__Presentation__Alternatives_5 )*
+            loop17:
+            do {
+                int alt17=2;
+                int LA17_0 = input.LA(1);
+
+                if ( (LA17_0==81||LA17_0==98) ) {
+                    alt17=1;
+                }
+
+
+                switch (alt17) {
+            	case 1 :
+            	    // InternalSlideOMatic.g:1493:3: rule__Presentation__Alternatives_5
+            	    {
+            	    pushFollow(FOLLOW_6);
+            	    rule__Presentation__Alternatives_5();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop17;
+                }
+            } while (true);
+
+             after(grammarAccess.getPresentationAccess().getAlternatives_5()); 
 
             }
 
@@ -4476,23 +5007,93 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Presentation__Group__5__Impl"
 
 
-    // $ANTLR start "rule__Presentation__Group_3__0"
-    // InternalSlideOMatic.g:1347:1: rule__Presentation__Group_3__0 : rule__Presentation__Group_3__0__Impl rule__Presentation__Group_3__1 ;
-    public final void rule__Presentation__Group_3__0() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__Group__6"
+    // InternalSlideOMatic.g:1501:1: rule__Presentation__Group__6 : rule__Presentation__Group__6__Impl ;
+    public final void rule__Presentation__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1351:1: ( rule__Presentation__Group_3__0__Impl rule__Presentation__Group_3__1 )
-            // InternalSlideOMatic.g:1352:2: rule__Presentation__Group_3__0__Impl rule__Presentation__Group_3__1
+            // InternalSlideOMatic.g:1505:1: ( rule__Presentation__Group__6__Impl )
+            // InternalSlideOMatic.g:1506:2: rule__Presentation__Group__6__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Presentation__Group__6__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Presentation__Group__6"
+
+
+    // $ANTLR start "rule__Presentation__Group__6__Impl"
+    // InternalSlideOMatic.g:1512:1: rule__Presentation__Group__6__Impl : ( '}' ) ;
+    public final void rule__Presentation__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1516:1: ( ( '}' ) )
+            // InternalSlideOMatic.g:1517:1: ( '}' )
+            {
+            // InternalSlideOMatic.g:1517:1: ( '}' )
+            // InternalSlideOMatic.g:1518:2: '}'
+            {
+             before(grammarAccess.getPresentationAccess().getRightCurlyBracketKeyword_6()); 
+            match(input,72,FOLLOW_2); 
+             after(grammarAccess.getPresentationAccess().getRightCurlyBracketKeyword_6()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Presentation__Group__6__Impl"
+
+
+    // $ANTLR start "rule__Presentation__Group_4__0"
+    // InternalSlideOMatic.g:1528:1: rule__Presentation__Group_4__0 : rule__Presentation__Group_4__0__Impl rule__Presentation__Group_4__1 ;
+    public final void rule__Presentation__Group_4__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1532:1: ( rule__Presentation__Group_4__0__Impl rule__Presentation__Group_4__1 )
+            // InternalSlideOMatic.g:1533:2: rule__Presentation__Group_4__0__Impl rule__Presentation__Group_4__1
             {
             pushFollow(FOLLOW_7);
-            rule__Presentation__Group_3__0__Impl();
+            rule__Presentation__Group_4__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Presentation__Group_3__1();
+            rule__Presentation__Group_4__1();
 
             state._fsp--;
 
@@ -4511,25 +5112,25 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__Group_3__0"
+    // $ANTLR end "rule__Presentation__Group_4__0"
 
 
-    // $ANTLR start "rule__Presentation__Group_3__0__Impl"
-    // InternalSlideOMatic.g:1359:1: rule__Presentation__Group_3__0__Impl : ( '(' ) ;
-    public final void rule__Presentation__Group_3__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__Group_4__0__Impl"
+    // InternalSlideOMatic.g:1540:1: rule__Presentation__Group_4__0__Impl : ( '(' ) ;
+    public final void rule__Presentation__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1363:1: ( ( '(' ) )
-            // InternalSlideOMatic.g:1364:1: ( '(' )
+            // InternalSlideOMatic.g:1544:1: ( ( '(' ) )
+            // InternalSlideOMatic.g:1545:1: ( '(' )
             {
-            // InternalSlideOMatic.g:1364:1: ( '(' )
-            // InternalSlideOMatic.g:1365:2: '('
+            // InternalSlideOMatic.g:1545:1: ( '(' )
+            // InternalSlideOMatic.g:1546:2: '('
             {
-             before(grammarAccess.getPresentationAccess().getLeftParenthesisKeyword_3_0()); 
-            match(input,70,FOLLOW_2); 
-             after(grammarAccess.getPresentationAccess().getLeftParenthesisKeyword_3_0()); 
+             before(grammarAccess.getPresentationAccess().getLeftParenthesisKeyword_4_0()); 
+            match(input,73,FOLLOW_2); 
+             after(grammarAccess.getPresentationAccess().getLeftParenthesisKeyword_4_0()); 
 
             }
 
@@ -4548,26 +5149,26 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__Group_3__0__Impl"
+    // $ANTLR end "rule__Presentation__Group_4__0__Impl"
 
 
-    // $ANTLR start "rule__Presentation__Group_3__1"
-    // InternalSlideOMatic.g:1374:1: rule__Presentation__Group_3__1 : rule__Presentation__Group_3__1__Impl rule__Presentation__Group_3__2 ;
-    public final void rule__Presentation__Group_3__1() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__Group_4__1"
+    // InternalSlideOMatic.g:1555:1: rule__Presentation__Group_4__1 : rule__Presentation__Group_4__1__Impl rule__Presentation__Group_4__2 ;
+    public final void rule__Presentation__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1378:1: ( rule__Presentation__Group_3__1__Impl rule__Presentation__Group_3__2 )
-            // InternalSlideOMatic.g:1379:2: rule__Presentation__Group_3__1__Impl rule__Presentation__Group_3__2
+            // InternalSlideOMatic.g:1559:1: ( rule__Presentation__Group_4__1__Impl rule__Presentation__Group_4__2 )
+            // InternalSlideOMatic.g:1560:2: rule__Presentation__Group_4__1__Impl rule__Presentation__Group_4__2
             {
             pushFollow(FOLLOW_7);
-            rule__Presentation__Group_3__1__Impl();
+            rule__Presentation__Group_4__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Presentation__Group_3__2();
+            rule__Presentation__Group_4__2();
 
             state._fsp--;
 
@@ -4586,324 +5187,36 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__Group_3__1"
+    // $ANTLR end "rule__Presentation__Group_4__1"
 
 
-    // $ANTLR start "rule__Presentation__Group_3__1__Impl"
-    // InternalSlideOMatic.g:1386:1: rule__Presentation__Group_3__1__Impl : ( ( rule__Presentation__ThemeAssignment_3_1 )? ) ;
-    public final void rule__Presentation__Group_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:1390:1: ( ( ( rule__Presentation__ThemeAssignment_3_1 )? ) )
-            // InternalSlideOMatic.g:1391:1: ( ( rule__Presentation__ThemeAssignment_3_1 )? )
-            {
-            // InternalSlideOMatic.g:1391:1: ( ( rule__Presentation__ThemeAssignment_3_1 )? )
-            // InternalSlideOMatic.g:1392:2: ( rule__Presentation__ThemeAssignment_3_1 )?
-            {
-             before(grammarAccess.getPresentationAccess().getThemeAssignment_3_1()); 
-            // InternalSlideOMatic.g:1393:2: ( rule__Presentation__ThemeAssignment_3_1 )?
-            int alt15=2;
-            int LA15_0 = input.LA(1);
-
-            if ( (LA15_0==72) ) {
-                alt15=1;
-            }
-            switch (alt15) {
-                case 1 :
-                    // InternalSlideOMatic.g:1393:3: rule__Presentation__ThemeAssignment_3_1
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Presentation__ThemeAssignment_3_1();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getPresentationAccess().getThemeAssignment_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Presentation__Group_3__1__Impl"
-
-
-    // $ANTLR start "rule__Presentation__Group_3__2"
-    // InternalSlideOMatic.g:1401:1: rule__Presentation__Group_3__2 : rule__Presentation__Group_3__2__Impl rule__Presentation__Group_3__3 ;
-    public final void rule__Presentation__Group_3__2() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__Group_4__1__Impl"
+    // InternalSlideOMatic.g:1567:1: rule__Presentation__Group_4__1__Impl : ( ( rule__Presentation__ThemeAssignment_4_1 )? ) ;
+    public final void rule__Presentation__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1405:1: ( rule__Presentation__Group_3__2__Impl rule__Presentation__Group_3__3 )
-            // InternalSlideOMatic.g:1406:2: rule__Presentation__Group_3__2__Impl rule__Presentation__Group_3__3
+            // InternalSlideOMatic.g:1571:1: ( ( ( rule__Presentation__ThemeAssignment_4_1 )? ) )
+            // InternalSlideOMatic.g:1572:1: ( ( rule__Presentation__ThemeAssignment_4_1 )? )
             {
-            pushFollow(FOLLOW_7);
-            rule__Presentation__Group_3__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Presentation__Group_3__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Presentation__Group_3__2"
-
-
-    // $ANTLR start "rule__Presentation__Group_3__2__Impl"
-    // InternalSlideOMatic.g:1413:1: rule__Presentation__Group_3__2__Impl : ( ( rule__Presentation__AuthorsAssignment_3_2 )? ) ;
-    public final void rule__Presentation__Group_3__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:1417:1: ( ( ( rule__Presentation__AuthorsAssignment_3_2 )? ) )
-            // InternalSlideOMatic.g:1418:1: ( ( rule__Presentation__AuthorsAssignment_3_2 )? )
+            // InternalSlideOMatic.g:1572:1: ( ( rule__Presentation__ThemeAssignment_4_1 )? )
+            // InternalSlideOMatic.g:1573:2: ( rule__Presentation__ThemeAssignment_4_1 )?
             {
-            // InternalSlideOMatic.g:1418:1: ( ( rule__Presentation__AuthorsAssignment_3_2 )? )
-            // InternalSlideOMatic.g:1419:2: ( rule__Presentation__AuthorsAssignment_3_2 )?
-            {
-             before(grammarAccess.getPresentationAccess().getAuthorsAssignment_3_2()); 
-            // InternalSlideOMatic.g:1420:2: ( rule__Presentation__AuthorsAssignment_3_2 )?
-            int alt16=2;
-            int LA16_0 = input.LA(1);
-
-            if ( (LA16_0==74) ) {
-                alt16=1;
-            }
-            switch (alt16) {
-                case 1 :
-                    // InternalSlideOMatic.g:1420:3: rule__Presentation__AuthorsAssignment_3_2
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Presentation__AuthorsAssignment_3_2();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getPresentationAccess().getAuthorsAssignment_3_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Presentation__Group_3__2__Impl"
-
-
-    // $ANTLR start "rule__Presentation__Group_3__3"
-    // InternalSlideOMatic.g:1428:1: rule__Presentation__Group_3__3 : rule__Presentation__Group_3__3__Impl rule__Presentation__Group_3__4 ;
-    public final void rule__Presentation__Group_3__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:1432:1: ( rule__Presentation__Group_3__3__Impl rule__Presentation__Group_3__4 )
-            // InternalSlideOMatic.g:1433:2: rule__Presentation__Group_3__3__Impl rule__Presentation__Group_3__4
-            {
-            pushFollow(FOLLOW_7);
-            rule__Presentation__Group_3__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Presentation__Group_3__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Presentation__Group_3__3"
-
-
-    // $ANTLR start "rule__Presentation__Group_3__3__Impl"
-    // InternalSlideOMatic.g:1440:1: rule__Presentation__Group_3__3__Impl : ( ( rule__Presentation__InstituteAssignment_3_3 )? ) ;
-    public final void rule__Presentation__Group_3__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:1444:1: ( ( ( rule__Presentation__InstituteAssignment_3_3 )? ) )
-            // InternalSlideOMatic.g:1445:1: ( ( rule__Presentation__InstituteAssignment_3_3 )? )
-            {
-            // InternalSlideOMatic.g:1445:1: ( ( rule__Presentation__InstituteAssignment_3_3 )? )
-            // InternalSlideOMatic.g:1446:2: ( rule__Presentation__InstituteAssignment_3_3 )?
-            {
-             before(grammarAccess.getPresentationAccess().getInstituteAssignment_3_3()); 
-            // InternalSlideOMatic.g:1447:2: ( rule__Presentation__InstituteAssignment_3_3 )?
-            int alt17=2;
-            int LA17_0 = input.LA(1);
-
-            if ( (LA17_0==76) ) {
-                alt17=1;
-            }
-            switch (alt17) {
-                case 1 :
-                    // InternalSlideOMatic.g:1447:3: rule__Presentation__InstituteAssignment_3_3
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Presentation__InstituteAssignment_3_3();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getPresentationAccess().getInstituteAssignment_3_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Presentation__Group_3__3__Impl"
-
-
-    // $ANTLR start "rule__Presentation__Group_3__4"
-    // InternalSlideOMatic.g:1455:1: rule__Presentation__Group_3__4 : rule__Presentation__Group_3__4__Impl rule__Presentation__Group_3__5 ;
-    public final void rule__Presentation__Group_3__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:1459:1: ( rule__Presentation__Group_3__4__Impl rule__Presentation__Group_3__5 )
-            // InternalSlideOMatic.g:1460:2: rule__Presentation__Group_3__4__Impl rule__Presentation__Group_3__5
-            {
-            pushFollow(FOLLOW_7);
-            rule__Presentation__Group_3__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Presentation__Group_3__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Presentation__Group_3__4"
-
-
-    // $ANTLR start "rule__Presentation__Group_3__4__Impl"
-    // InternalSlideOMatic.g:1467:1: rule__Presentation__Group_3__4__Impl : ( ( rule__Presentation__DateAssignment_3_4 )? ) ;
-    public final void rule__Presentation__Group_3__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:1471:1: ( ( ( rule__Presentation__DateAssignment_3_4 )? ) )
-            // InternalSlideOMatic.g:1472:1: ( ( rule__Presentation__DateAssignment_3_4 )? )
-            {
-            // InternalSlideOMatic.g:1472:1: ( ( rule__Presentation__DateAssignment_3_4 )? )
-            // InternalSlideOMatic.g:1473:2: ( rule__Presentation__DateAssignment_3_4 )?
-            {
-             before(grammarAccess.getPresentationAccess().getDateAssignment_3_4()); 
-            // InternalSlideOMatic.g:1474:2: ( rule__Presentation__DateAssignment_3_4 )?
+             before(grammarAccess.getPresentationAccess().getThemeAssignment_4_1()); 
+            // InternalSlideOMatic.g:1574:2: ( rule__Presentation__ThemeAssignment_4_1 )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==77) ) {
+            if ( (LA18_0==75) ) {
                 alt18=1;
             }
             switch (alt18) {
                 case 1 :
-                    // InternalSlideOMatic.g:1474:3: rule__Presentation__DateAssignment_3_4
+                    // InternalSlideOMatic.g:1574:3: rule__Presentation__ThemeAssignment_4_1
                     {
                     pushFollow(FOLLOW_2);
-                    rule__Presentation__DateAssignment_3_4();
+                    rule__Presentation__ThemeAssignment_4_1();
 
                     state._fsp--;
 
@@ -4913,7 +5226,7 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             }
 
-             after(grammarAccess.getPresentationAccess().getDateAssignment_3_4()); 
+             after(grammarAccess.getPresentationAccess().getThemeAssignment_4_1()); 
 
             }
 
@@ -4932,21 +5245,26 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__Group_3__4__Impl"
+    // $ANTLR end "rule__Presentation__Group_4__1__Impl"
 
 
-    // $ANTLR start "rule__Presentation__Group_3__5"
-    // InternalSlideOMatic.g:1482:1: rule__Presentation__Group_3__5 : rule__Presentation__Group_3__5__Impl ;
-    public final void rule__Presentation__Group_3__5() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__Group_4__2"
+    // InternalSlideOMatic.g:1582:1: rule__Presentation__Group_4__2 : rule__Presentation__Group_4__2__Impl rule__Presentation__Group_4__3 ;
+    public final void rule__Presentation__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1486:1: ( rule__Presentation__Group_3__5__Impl )
-            // InternalSlideOMatic.g:1487:2: rule__Presentation__Group_3__5__Impl
+            // InternalSlideOMatic.g:1586:1: ( rule__Presentation__Group_4__2__Impl rule__Presentation__Group_4__3 )
+            // InternalSlideOMatic.g:1587:2: rule__Presentation__Group_4__2__Impl rule__Presentation__Group_4__3
             {
+            pushFollow(FOLLOW_7);
+            rule__Presentation__Group_4__2__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__Presentation__Group_3__5__Impl();
+            rule__Presentation__Group_4__3();
 
             state._fsp--;
 
@@ -4965,25 +5283,46 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__Group_3__5"
+    // $ANTLR end "rule__Presentation__Group_4__2"
 
 
-    // $ANTLR start "rule__Presentation__Group_3__5__Impl"
-    // InternalSlideOMatic.g:1493:1: rule__Presentation__Group_3__5__Impl : ( ')' ) ;
-    public final void rule__Presentation__Group_3__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__Group_4__2__Impl"
+    // InternalSlideOMatic.g:1594:1: rule__Presentation__Group_4__2__Impl : ( ( rule__Presentation__AuthorsAssignment_4_2 )? ) ;
+    public final void rule__Presentation__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1497:1: ( ( ')' ) )
-            // InternalSlideOMatic.g:1498:1: ( ')' )
+            // InternalSlideOMatic.g:1598:1: ( ( ( rule__Presentation__AuthorsAssignment_4_2 )? ) )
+            // InternalSlideOMatic.g:1599:1: ( ( rule__Presentation__AuthorsAssignment_4_2 )? )
             {
-            // InternalSlideOMatic.g:1498:1: ( ')' )
-            // InternalSlideOMatic.g:1499:2: ')'
+            // InternalSlideOMatic.g:1599:1: ( ( rule__Presentation__AuthorsAssignment_4_2 )? )
+            // InternalSlideOMatic.g:1600:2: ( rule__Presentation__AuthorsAssignment_4_2 )?
             {
-             before(grammarAccess.getPresentationAccess().getRightParenthesisKeyword_3_5()); 
-            match(input,71,FOLLOW_2); 
-             after(grammarAccess.getPresentationAccess().getRightParenthesisKeyword_3_5()); 
+             before(grammarAccess.getPresentationAccess().getAuthorsAssignment_4_2()); 
+            // InternalSlideOMatic.g:1601:2: ( rule__Presentation__AuthorsAssignment_4_2 )?
+            int alt19=2;
+            int LA19_0 = input.LA(1);
+
+            if ( (LA19_0==77) ) {
+                alt19=1;
+            }
+            switch (alt19) {
+                case 1 :
+                    // InternalSlideOMatic.g:1601:3: rule__Presentation__AuthorsAssignment_4_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Presentation__AuthorsAssignment_4_2();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getPresentationAccess().getAuthorsAssignment_4_2()); 
 
             }
 
@@ -5002,18 +5341,280 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__Group_3__5__Impl"
+    // $ANTLR end "rule__Presentation__Group_4__2__Impl"
+
+
+    // $ANTLR start "rule__Presentation__Group_4__3"
+    // InternalSlideOMatic.g:1609:1: rule__Presentation__Group_4__3 : rule__Presentation__Group_4__3__Impl rule__Presentation__Group_4__4 ;
+    public final void rule__Presentation__Group_4__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1613:1: ( rule__Presentation__Group_4__3__Impl rule__Presentation__Group_4__4 )
+            // InternalSlideOMatic.g:1614:2: rule__Presentation__Group_4__3__Impl rule__Presentation__Group_4__4
+            {
+            pushFollow(FOLLOW_7);
+            rule__Presentation__Group_4__3__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Presentation__Group_4__4();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Presentation__Group_4__3"
+
+
+    // $ANTLR start "rule__Presentation__Group_4__3__Impl"
+    // InternalSlideOMatic.g:1621:1: rule__Presentation__Group_4__3__Impl : ( ( rule__Presentation__InstituteAssignment_4_3 )? ) ;
+    public final void rule__Presentation__Group_4__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1625:1: ( ( ( rule__Presentation__InstituteAssignment_4_3 )? ) )
+            // InternalSlideOMatic.g:1626:1: ( ( rule__Presentation__InstituteAssignment_4_3 )? )
+            {
+            // InternalSlideOMatic.g:1626:1: ( ( rule__Presentation__InstituteAssignment_4_3 )? )
+            // InternalSlideOMatic.g:1627:2: ( rule__Presentation__InstituteAssignment_4_3 )?
+            {
+             before(grammarAccess.getPresentationAccess().getInstituteAssignment_4_3()); 
+            // InternalSlideOMatic.g:1628:2: ( rule__Presentation__InstituteAssignment_4_3 )?
+            int alt20=2;
+            int LA20_0 = input.LA(1);
+
+            if ( (LA20_0==79) ) {
+                alt20=1;
+            }
+            switch (alt20) {
+                case 1 :
+                    // InternalSlideOMatic.g:1628:3: rule__Presentation__InstituteAssignment_4_3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Presentation__InstituteAssignment_4_3();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getPresentationAccess().getInstituteAssignment_4_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Presentation__Group_4__3__Impl"
+
+
+    // $ANTLR start "rule__Presentation__Group_4__4"
+    // InternalSlideOMatic.g:1636:1: rule__Presentation__Group_4__4 : rule__Presentation__Group_4__4__Impl rule__Presentation__Group_4__5 ;
+    public final void rule__Presentation__Group_4__4() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1640:1: ( rule__Presentation__Group_4__4__Impl rule__Presentation__Group_4__5 )
+            // InternalSlideOMatic.g:1641:2: rule__Presentation__Group_4__4__Impl rule__Presentation__Group_4__5
+            {
+            pushFollow(FOLLOW_7);
+            rule__Presentation__Group_4__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Presentation__Group_4__5();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Presentation__Group_4__4"
+
+
+    // $ANTLR start "rule__Presentation__Group_4__4__Impl"
+    // InternalSlideOMatic.g:1648:1: rule__Presentation__Group_4__4__Impl : ( ( rule__Presentation__DateAssignment_4_4 )? ) ;
+    public final void rule__Presentation__Group_4__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1652:1: ( ( ( rule__Presentation__DateAssignment_4_4 )? ) )
+            // InternalSlideOMatic.g:1653:1: ( ( rule__Presentation__DateAssignment_4_4 )? )
+            {
+            // InternalSlideOMatic.g:1653:1: ( ( rule__Presentation__DateAssignment_4_4 )? )
+            // InternalSlideOMatic.g:1654:2: ( rule__Presentation__DateAssignment_4_4 )?
+            {
+             before(grammarAccess.getPresentationAccess().getDateAssignment_4_4()); 
+            // InternalSlideOMatic.g:1655:2: ( rule__Presentation__DateAssignment_4_4 )?
+            int alt21=2;
+            int LA21_0 = input.LA(1);
+
+            if ( (LA21_0==80) ) {
+                alt21=1;
+            }
+            switch (alt21) {
+                case 1 :
+                    // InternalSlideOMatic.g:1655:3: rule__Presentation__DateAssignment_4_4
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Presentation__DateAssignment_4_4();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getPresentationAccess().getDateAssignment_4_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Presentation__Group_4__4__Impl"
+
+
+    // $ANTLR start "rule__Presentation__Group_4__5"
+    // InternalSlideOMatic.g:1663:1: rule__Presentation__Group_4__5 : rule__Presentation__Group_4__5__Impl ;
+    public final void rule__Presentation__Group_4__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1667:1: ( rule__Presentation__Group_4__5__Impl )
+            // InternalSlideOMatic.g:1668:2: rule__Presentation__Group_4__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Presentation__Group_4__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Presentation__Group_4__5"
+
+
+    // $ANTLR start "rule__Presentation__Group_4__5__Impl"
+    // InternalSlideOMatic.g:1674:1: rule__Presentation__Group_4__5__Impl : ( ')' ) ;
+    public final void rule__Presentation__Group_4__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:1678:1: ( ( ')' ) )
+            // InternalSlideOMatic.g:1679:1: ( ')' )
+            {
+            // InternalSlideOMatic.g:1679:1: ( ')' )
+            // InternalSlideOMatic.g:1680:2: ')'
+            {
+             before(grammarAccess.getPresentationAccess().getRightParenthesisKeyword_4_5()); 
+            match(input,74,FOLLOW_2); 
+             after(grammarAccess.getPresentationAccess().getRightParenthesisKeyword_4_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Presentation__Group_4__5__Impl"
 
 
     // $ANTLR start "rule__Theme__Group__0"
-    // InternalSlideOMatic.g:1509:1: rule__Theme__Group__0 : rule__Theme__Group__0__Impl rule__Theme__Group__1 ;
+    // InternalSlideOMatic.g:1690:1: rule__Theme__Group__0 : rule__Theme__Group__0__Impl rule__Theme__Group__1 ;
     public final void rule__Theme__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1513:1: ( rule__Theme__Group__0__Impl rule__Theme__Group__1 )
-            // InternalSlideOMatic.g:1514:2: rule__Theme__Group__0__Impl rule__Theme__Group__1
+            // InternalSlideOMatic.g:1694:1: ( rule__Theme__Group__0__Impl rule__Theme__Group__1 )
+            // InternalSlideOMatic.g:1695:2: rule__Theme__Group__0__Impl rule__Theme__Group__1
             {
             pushFollow(FOLLOW_8);
             rule__Theme__Group__0__Impl();
@@ -5044,20 +5645,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__Group__0__Impl"
-    // InternalSlideOMatic.g:1521:1: rule__Theme__Group__0__Impl : ( 'theme' ) ;
+    // InternalSlideOMatic.g:1702:1: rule__Theme__Group__0__Impl : ( 'theme' ) ;
     public final void rule__Theme__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1525:1: ( ( 'theme' ) )
-            // InternalSlideOMatic.g:1526:1: ( 'theme' )
+            // InternalSlideOMatic.g:1706:1: ( ( 'theme' ) )
+            // InternalSlideOMatic.g:1707:1: ( 'theme' )
             {
-            // InternalSlideOMatic.g:1526:1: ( 'theme' )
-            // InternalSlideOMatic.g:1527:2: 'theme'
+            // InternalSlideOMatic.g:1707:1: ( 'theme' )
+            // InternalSlideOMatic.g:1708:2: 'theme'
             {
              before(grammarAccess.getThemeAccess().getThemeKeyword_0()); 
-            match(input,72,FOLLOW_2); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getThemeAccess().getThemeKeyword_0()); 
 
             }
@@ -5081,14 +5682,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__Group__1"
-    // InternalSlideOMatic.g:1536:1: rule__Theme__Group__1 : rule__Theme__Group__1__Impl rule__Theme__Group__2 ;
+    // InternalSlideOMatic.g:1717:1: rule__Theme__Group__1 : rule__Theme__Group__1__Impl rule__Theme__Group__2 ;
     public final void rule__Theme__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1540:1: ( rule__Theme__Group__1__Impl rule__Theme__Group__2 )
-            // InternalSlideOMatic.g:1541:2: rule__Theme__Group__1__Impl rule__Theme__Group__2
+            // InternalSlideOMatic.g:1721:1: ( rule__Theme__Group__1__Impl rule__Theme__Group__2 )
+            // InternalSlideOMatic.g:1722:2: rule__Theme__Group__1__Impl rule__Theme__Group__2
             {
             pushFollow(FOLLOW_9);
             rule__Theme__Group__1__Impl();
@@ -5119,21 +5720,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__Group__1__Impl"
-    // InternalSlideOMatic.g:1548:1: rule__Theme__Group__1__Impl : ( ( rule__Theme__ThemeAssignment_1 ) ) ;
+    // InternalSlideOMatic.g:1729:1: rule__Theme__Group__1__Impl : ( ( rule__Theme__ThemeAssignment_1 ) ) ;
     public final void rule__Theme__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1552:1: ( ( ( rule__Theme__ThemeAssignment_1 ) ) )
-            // InternalSlideOMatic.g:1553:1: ( ( rule__Theme__ThemeAssignment_1 ) )
+            // InternalSlideOMatic.g:1733:1: ( ( ( rule__Theme__ThemeAssignment_1 ) ) )
+            // InternalSlideOMatic.g:1734:1: ( ( rule__Theme__ThemeAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:1553:1: ( ( rule__Theme__ThemeAssignment_1 ) )
-            // InternalSlideOMatic.g:1554:2: ( rule__Theme__ThemeAssignment_1 )
+            // InternalSlideOMatic.g:1734:1: ( ( rule__Theme__ThemeAssignment_1 ) )
+            // InternalSlideOMatic.g:1735:2: ( rule__Theme__ThemeAssignment_1 )
             {
              before(grammarAccess.getThemeAccess().getThemeAssignment_1()); 
-            // InternalSlideOMatic.g:1555:2: ( rule__Theme__ThemeAssignment_1 )
-            // InternalSlideOMatic.g:1555:3: rule__Theme__ThemeAssignment_1
+            // InternalSlideOMatic.g:1736:2: ( rule__Theme__ThemeAssignment_1 )
+            // InternalSlideOMatic.g:1736:3: rule__Theme__ThemeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Theme__ThemeAssignment_1();
@@ -5166,14 +5767,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__Group__2"
-    // InternalSlideOMatic.g:1563:1: rule__Theme__Group__2 : rule__Theme__Group__2__Impl ;
+    // InternalSlideOMatic.g:1744:1: rule__Theme__Group__2 : rule__Theme__Group__2__Impl ;
     public final void rule__Theme__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1567:1: ( rule__Theme__Group__2__Impl )
-            // InternalSlideOMatic.g:1568:2: rule__Theme__Group__2__Impl
+            // InternalSlideOMatic.g:1748:1: ( rule__Theme__Group__2__Impl )
+            // InternalSlideOMatic.g:1749:2: rule__Theme__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Theme__Group__2__Impl();
@@ -5199,29 +5800,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__Group__2__Impl"
-    // InternalSlideOMatic.g:1574:1: rule__Theme__Group__2__Impl : ( ( rule__Theme__Group_2__0 )? ) ;
+    // InternalSlideOMatic.g:1755:1: rule__Theme__Group__2__Impl : ( ( rule__Theme__Group_2__0 )? ) ;
     public final void rule__Theme__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1578:1: ( ( ( rule__Theme__Group_2__0 )? ) )
-            // InternalSlideOMatic.g:1579:1: ( ( rule__Theme__Group_2__0 )? )
+            // InternalSlideOMatic.g:1759:1: ( ( ( rule__Theme__Group_2__0 )? ) )
+            // InternalSlideOMatic.g:1760:1: ( ( rule__Theme__Group_2__0 )? )
             {
-            // InternalSlideOMatic.g:1579:1: ( ( rule__Theme__Group_2__0 )? )
-            // InternalSlideOMatic.g:1580:2: ( rule__Theme__Group_2__0 )?
+            // InternalSlideOMatic.g:1760:1: ( ( rule__Theme__Group_2__0 )? )
+            // InternalSlideOMatic.g:1761:2: ( rule__Theme__Group_2__0 )?
             {
              before(grammarAccess.getThemeAccess().getGroup_2()); 
-            // InternalSlideOMatic.g:1581:2: ( rule__Theme__Group_2__0 )?
-            int alt19=2;
-            int LA19_0 = input.LA(1);
+            // InternalSlideOMatic.g:1762:2: ( rule__Theme__Group_2__0 )?
+            int alt22=2;
+            int LA22_0 = input.LA(1);
 
-            if ( (LA19_0==73) ) {
-                alt19=1;
+            if ( (LA22_0==76) ) {
+                alt22=1;
             }
-            switch (alt19) {
+            switch (alt22) {
                 case 1 :
-                    // InternalSlideOMatic.g:1581:3: rule__Theme__Group_2__0
+                    // InternalSlideOMatic.g:1762:3: rule__Theme__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Theme__Group_2__0();
@@ -5257,14 +5858,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__Group_2__0"
-    // InternalSlideOMatic.g:1590:1: rule__Theme__Group_2__0 : rule__Theme__Group_2__0__Impl rule__Theme__Group_2__1 ;
+    // InternalSlideOMatic.g:1771:1: rule__Theme__Group_2__0 : rule__Theme__Group_2__0__Impl rule__Theme__Group_2__1 ;
     public final void rule__Theme__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1594:1: ( rule__Theme__Group_2__0__Impl rule__Theme__Group_2__1 )
-            // InternalSlideOMatic.g:1595:2: rule__Theme__Group_2__0__Impl rule__Theme__Group_2__1
+            // InternalSlideOMatic.g:1775:1: ( rule__Theme__Group_2__0__Impl rule__Theme__Group_2__1 )
+            // InternalSlideOMatic.g:1776:2: rule__Theme__Group_2__0__Impl rule__Theme__Group_2__1
             {
             pushFollow(FOLLOW_10);
             rule__Theme__Group_2__0__Impl();
@@ -5295,20 +5896,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__Group_2__0__Impl"
-    // InternalSlideOMatic.g:1602:1: rule__Theme__Group_2__0__Impl : ( 'color' ) ;
+    // InternalSlideOMatic.g:1783:1: rule__Theme__Group_2__0__Impl : ( 'color' ) ;
     public final void rule__Theme__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1606:1: ( ( 'color' ) )
-            // InternalSlideOMatic.g:1607:1: ( 'color' )
+            // InternalSlideOMatic.g:1787:1: ( ( 'color' ) )
+            // InternalSlideOMatic.g:1788:1: ( 'color' )
             {
-            // InternalSlideOMatic.g:1607:1: ( 'color' )
-            // InternalSlideOMatic.g:1608:2: 'color'
+            // InternalSlideOMatic.g:1788:1: ( 'color' )
+            // InternalSlideOMatic.g:1789:2: 'color'
             {
              before(grammarAccess.getThemeAccess().getColorKeyword_2_0()); 
-            match(input,73,FOLLOW_2); 
+            match(input,76,FOLLOW_2); 
              after(grammarAccess.getThemeAccess().getColorKeyword_2_0()); 
 
             }
@@ -5332,14 +5933,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__Group_2__1"
-    // InternalSlideOMatic.g:1617:1: rule__Theme__Group_2__1 : rule__Theme__Group_2__1__Impl ;
+    // InternalSlideOMatic.g:1798:1: rule__Theme__Group_2__1 : rule__Theme__Group_2__1__Impl ;
     public final void rule__Theme__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1621:1: ( rule__Theme__Group_2__1__Impl )
-            // InternalSlideOMatic.g:1622:2: rule__Theme__Group_2__1__Impl
+            // InternalSlideOMatic.g:1802:1: ( rule__Theme__Group_2__1__Impl )
+            // InternalSlideOMatic.g:1803:2: rule__Theme__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Theme__Group_2__1__Impl();
@@ -5365,21 +5966,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__Group_2__1__Impl"
-    // InternalSlideOMatic.g:1628:1: rule__Theme__Group_2__1__Impl : ( ( rule__Theme__ThemeColorAssignment_2_1 ) ) ;
+    // InternalSlideOMatic.g:1809:1: rule__Theme__Group_2__1__Impl : ( ( rule__Theme__ThemeColorAssignment_2_1 ) ) ;
     public final void rule__Theme__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1632:1: ( ( ( rule__Theme__ThemeColorAssignment_2_1 ) ) )
-            // InternalSlideOMatic.g:1633:1: ( ( rule__Theme__ThemeColorAssignment_2_1 ) )
+            // InternalSlideOMatic.g:1813:1: ( ( ( rule__Theme__ThemeColorAssignment_2_1 ) ) )
+            // InternalSlideOMatic.g:1814:1: ( ( rule__Theme__ThemeColorAssignment_2_1 ) )
             {
-            // InternalSlideOMatic.g:1633:1: ( ( rule__Theme__ThemeColorAssignment_2_1 ) )
-            // InternalSlideOMatic.g:1634:2: ( rule__Theme__ThemeColorAssignment_2_1 )
+            // InternalSlideOMatic.g:1814:1: ( ( rule__Theme__ThemeColorAssignment_2_1 ) )
+            // InternalSlideOMatic.g:1815:2: ( rule__Theme__ThemeColorAssignment_2_1 )
             {
              before(grammarAccess.getThemeAccess().getThemeColorAssignment_2_1()); 
-            // InternalSlideOMatic.g:1635:2: ( rule__Theme__ThemeColorAssignment_2_1 )
-            // InternalSlideOMatic.g:1635:3: rule__Theme__ThemeColorAssignment_2_1
+            // InternalSlideOMatic.g:1816:2: ( rule__Theme__ThemeColorAssignment_2_1 )
+            // InternalSlideOMatic.g:1816:3: rule__Theme__ThemeColorAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Theme__ThemeColorAssignment_2_1();
@@ -5412,14 +6013,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group__0"
-    // InternalSlideOMatic.g:1644:1: rule__Authors__Group__0 : rule__Authors__Group__0__Impl rule__Authors__Group__1 ;
+    // InternalSlideOMatic.g:1825:1: rule__Authors__Group__0 : rule__Authors__Group__0__Impl rule__Authors__Group__1 ;
     public final void rule__Authors__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1648:1: ( rule__Authors__Group__0__Impl rule__Authors__Group__1 )
-            // InternalSlideOMatic.g:1649:2: rule__Authors__Group__0__Impl rule__Authors__Group__1
+            // InternalSlideOMatic.g:1829:1: ( rule__Authors__Group__0__Impl rule__Authors__Group__1 )
+            // InternalSlideOMatic.g:1830:2: rule__Authors__Group__0__Impl rule__Authors__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Authors__Group__0__Impl();
@@ -5450,20 +6051,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group__0__Impl"
-    // InternalSlideOMatic.g:1656:1: rule__Authors__Group__0__Impl : ( 'author' ) ;
+    // InternalSlideOMatic.g:1837:1: rule__Authors__Group__0__Impl : ( 'author' ) ;
     public final void rule__Authors__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1660:1: ( ( 'author' ) )
-            // InternalSlideOMatic.g:1661:1: ( 'author' )
+            // InternalSlideOMatic.g:1841:1: ( ( 'author' ) )
+            // InternalSlideOMatic.g:1842:1: ( 'author' )
             {
-            // InternalSlideOMatic.g:1661:1: ( 'author' )
-            // InternalSlideOMatic.g:1662:2: 'author'
+            // InternalSlideOMatic.g:1842:1: ( 'author' )
+            // InternalSlideOMatic.g:1843:2: 'author'
             {
              before(grammarAccess.getAuthorsAccess().getAuthorKeyword_0()); 
-            match(input,74,FOLLOW_2); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getAuthorsAccess().getAuthorKeyword_0()); 
 
             }
@@ -5487,14 +6088,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group__1"
-    // InternalSlideOMatic.g:1671:1: rule__Authors__Group__1 : rule__Authors__Group__1__Impl rule__Authors__Group__2 ;
+    // InternalSlideOMatic.g:1852:1: rule__Authors__Group__1 : rule__Authors__Group__1__Impl rule__Authors__Group__2 ;
     public final void rule__Authors__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1675:1: ( rule__Authors__Group__1__Impl rule__Authors__Group__2 )
-            // InternalSlideOMatic.g:1676:2: rule__Authors__Group__1__Impl rule__Authors__Group__2
+            // InternalSlideOMatic.g:1856:1: ( rule__Authors__Group__1__Impl rule__Authors__Group__2 )
+            // InternalSlideOMatic.g:1857:2: rule__Authors__Group__1__Impl rule__Authors__Group__2
             {
             pushFollow(FOLLOW_11);
             rule__Authors__Group__1__Impl();
@@ -5525,21 +6126,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group__1__Impl"
-    // InternalSlideOMatic.g:1683:1: rule__Authors__Group__1__Impl : ( ( rule__Authors__NamesAssignment_1 ) ) ;
+    // InternalSlideOMatic.g:1864:1: rule__Authors__Group__1__Impl : ( ( rule__Authors__NamesAssignment_1 ) ) ;
     public final void rule__Authors__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1687:1: ( ( ( rule__Authors__NamesAssignment_1 ) ) )
-            // InternalSlideOMatic.g:1688:1: ( ( rule__Authors__NamesAssignment_1 ) )
+            // InternalSlideOMatic.g:1868:1: ( ( ( rule__Authors__NamesAssignment_1 ) ) )
+            // InternalSlideOMatic.g:1869:1: ( ( rule__Authors__NamesAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:1688:1: ( ( rule__Authors__NamesAssignment_1 ) )
-            // InternalSlideOMatic.g:1689:2: ( rule__Authors__NamesAssignment_1 )
+            // InternalSlideOMatic.g:1869:1: ( ( rule__Authors__NamesAssignment_1 ) )
+            // InternalSlideOMatic.g:1870:2: ( rule__Authors__NamesAssignment_1 )
             {
              before(grammarAccess.getAuthorsAccess().getNamesAssignment_1()); 
-            // InternalSlideOMatic.g:1690:2: ( rule__Authors__NamesAssignment_1 )
-            // InternalSlideOMatic.g:1690:3: rule__Authors__NamesAssignment_1
+            // InternalSlideOMatic.g:1871:2: ( rule__Authors__NamesAssignment_1 )
+            // InternalSlideOMatic.g:1871:3: rule__Authors__NamesAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Authors__NamesAssignment_1();
@@ -5572,14 +6173,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group__2"
-    // InternalSlideOMatic.g:1698:1: rule__Authors__Group__2 : rule__Authors__Group__2__Impl ;
+    // InternalSlideOMatic.g:1879:1: rule__Authors__Group__2 : rule__Authors__Group__2__Impl ;
     public final void rule__Authors__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1702:1: ( rule__Authors__Group__2__Impl )
-            // InternalSlideOMatic.g:1703:2: rule__Authors__Group__2__Impl
+            // InternalSlideOMatic.g:1883:1: ( rule__Authors__Group__2__Impl )
+            // InternalSlideOMatic.g:1884:2: rule__Authors__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Authors__Group__2__Impl();
@@ -5605,33 +6206,33 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group__2__Impl"
-    // InternalSlideOMatic.g:1709:1: rule__Authors__Group__2__Impl : ( ( rule__Authors__Group_2__0 )* ) ;
+    // InternalSlideOMatic.g:1890:1: rule__Authors__Group__2__Impl : ( ( rule__Authors__Group_2__0 )* ) ;
     public final void rule__Authors__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1713:1: ( ( ( rule__Authors__Group_2__0 )* ) )
-            // InternalSlideOMatic.g:1714:1: ( ( rule__Authors__Group_2__0 )* )
+            // InternalSlideOMatic.g:1894:1: ( ( ( rule__Authors__Group_2__0 )* ) )
+            // InternalSlideOMatic.g:1895:1: ( ( rule__Authors__Group_2__0 )* )
             {
-            // InternalSlideOMatic.g:1714:1: ( ( rule__Authors__Group_2__0 )* )
-            // InternalSlideOMatic.g:1715:2: ( rule__Authors__Group_2__0 )*
+            // InternalSlideOMatic.g:1895:1: ( ( rule__Authors__Group_2__0 )* )
+            // InternalSlideOMatic.g:1896:2: ( rule__Authors__Group_2__0 )*
             {
              before(grammarAccess.getAuthorsAccess().getGroup_2()); 
-            // InternalSlideOMatic.g:1716:2: ( rule__Authors__Group_2__0 )*
-            loop20:
+            // InternalSlideOMatic.g:1897:2: ( rule__Authors__Group_2__0 )*
+            loop23:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( (LA20_0==75) ) {
-                    alt20=1;
+                if ( (LA23_0==78) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt23) {
             	case 1 :
-            	    // InternalSlideOMatic.g:1716:3: rule__Authors__Group_2__0
+            	    // InternalSlideOMatic.g:1897:3: rule__Authors__Group_2__0
             	    {
             	    pushFollow(FOLLOW_12);
             	    rule__Authors__Group_2__0();
@@ -5643,7 +6244,7 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop23;
                 }
             } while (true);
 
@@ -5670,14 +6271,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group_2__0"
-    // InternalSlideOMatic.g:1725:1: rule__Authors__Group_2__0 : rule__Authors__Group_2__0__Impl rule__Authors__Group_2__1 ;
+    // InternalSlideOMatic.g:1906:1: rule__Authors__Group_2__0 : rule__Authors__Group_2__0__Impl rule__Authors__Group_2__1 ;
     public final void rule__Authors__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1729:1: ( rule__Authors__Group_2__0__Impl rule__Authors__Group_2__1 )
-            // InternalSlideOMatic.g:1730:2: rule__Authors__Group_2__0__Impl rule__Authors__Group_2__1
+            // InternalSlideOMatic.g:1910:1: ( rule__Authors__Group_2__0__Impl rule__Authors__Group_2__1 )
+            // InternalSlideOMatic.g:1911:2: rule__Authors__Group_2__0__Impl rule__Authors__Group_2__1
             {
             pushFollow(FOLLOW_3);
             rule__Authors__Group_2__0__Impl();
@@ -5708,20 +6309,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group_2__0__Impl"
-    // InternalSlideOMatic.g:1737:1: rule__Authors__Group_2__0__Impl : ( ',' ) ;
+    // InternalSlideOMatic.g:1918:1: rule__Authors__Group_2__0__Impl : ( ',' ) ;
     public final void rule__Authors__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1741:1: ( ( ',' ) )
-            // InternalSlideOMatic.g:1742:1: ( ',' )
+            // InternalSlideOMatic.g:1922:1: ( ( ',' ) )
+            // InternalSlideOMatic.g:1923:1: ( ',' )
             {
-            // InternalSlideOMatic.g:1742:1: ( ',' )
-            // InternalSlideOMatic.g:1743:2: ','
+            // InternalSlideOMatic.g:1923:1: ( ',' )
+            // InternalSlideOMatic.g:1924:2: ','
             {
              before(grammarAccess.getAuthorsAccess().getCommaKeyword_2_0()); 
-            match(input,75,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getAuthorsAccess().getCommaKeyword_2_0()); 
 
             }
@@ -5745,14 +6346,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group_2__1"
-    // InternalSlideOMatic.g:1752:1: rule__Authors__Group_2__1 : rule__Authors__Group_2__1__Impl ;
+    // InternalSlideOMatic.g:1933:1: rule__Authors__Group_2__1 : rule__Authors__Group_2__1__Impl ;
     public final void rule__Authors__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1756:1: ( rule__Authors__Group_2__1__Impl )
-            // InternalSlideOMatic.g:1757:2: rule__Authors__Group_2__1__Impl
+            // InternalSlideOMatic.g:1937:1: ( rule__Authors__Group_2__1__Impl )
+            // InternalSlideOMatic.g:1938:2: rule__Authors__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Authors__Group_2__1__Impl();
@@ -5778,21 +6379,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__Group_2__1__Impl"
-    // InternalSlideOMatic.g:1763:1: rule__Authors__Group_2__1__Impl : ( ( rule__Authors__NamesAssignment_2_1 ) ) ;
+    // InternalSlideOMatic.g:1944:1: rule__Authors__Group_2__1__Impl : ( ( rule__Authors__NamesAssignment_2_1 ) ) ;
     public final void rule__Authors__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1767:1: ( ( ( rule__Authors__NamesAssignment_2_1 ) ) )
-            // InternalSlideOMatic.g:1768:1: ( ( rule__Authors__NamesAssignment_2_1 ) )
+            // InternalSlideOMatic.g:1948:1: ( ( ( rule__Authors__NamesAssignment_2_1 ) ) )
+            // InternalSlideOMatic.g:1949:1: ( ( rule__Authors__NamesAssignment_2_1 ) )
             {
-            // InternalSlideOMatic.g:1768:1: ( ( rule__Authors__NamesAssignment_2_1 ) )
-            // InternalSlideOMatic.g:1769:2: ( rule__Authors__NamesAssignment_2_1 )
+            // InternalSlideOMatic.g:1949:1: ( ( rule__Authors__NamesAssignment_2_1 ) )
+            // InternalSlideOMatic.g:1950:2: ( rule__Authors__NamesAssignment_2_1 )
             {
              before(grammarAccess.getAuthorsAccess().getNamesAssignment_2_1()); 
-            // InternalSlideOMatic.g:1770:2: ( rule__Authors__NamesAssignment_2_1 )
-            // InternalSlideOMatic.g:1770:3: rule__Authors__NamesAssignment_2_1
+            // InternalSlideOMatic.g:1951:2: ( rule__Authors__NamesAssignment_2_1 )
+            // InternalSlideOMatic.g:1951:3: rule__Authors__NamesAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__Authors__NamesAssignment_2_1();
@@ -5825,14 +6426,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Institute__Group__0"
-    // InternalSlideOMatic.g:1779:1: rule__Institute__Group__0 : rule__Institute__Group__0__Impl rule__Institute__Group__1 ;
+    // InternalSlideOMatic.g:1960:1: rule__Institute__Group__0 : rule__Institute__Group__0__Impl rule__Institute__Group__1 ;
     public final void rule__Institute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1783:1: ( rule__Institute__Group__0__Impl rule__Institute__Group__1 )
-            // InternalSlideOMatic.g:1784:2: rule__Institute__Group__0__Impl rule__Institute__Group__1
+            // InternalSlideOMatic.g:1964:1: ( rule__Institute__Group__0__Impl rule__Institute__Group__1 )
+            // InternalSlideOMatic.g:1965:2: rule__Institute__Group__0__Impl rule__Institute__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Institute__Group__0__Impl();
@@ -5863,20 +6464,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Institute__Group__0__Impl"
-    // InternalSlideOMatic.g:1791:1: rule__Institute__Group__0__Impl : ( 'institute' ) ;
+    // InternalSlideOMatic.g:1972:1: rule__Institute__Group__0__Impl : ( 'institute' ) ;
     public final void rule__Institute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1795:1: ( ( 'institute' ) )
-            // InternalSlideOMatic.g:1796:1: ( 'institute' )
+            // InternalSlideOMatic.g:1976:1: ( ( 'institute' ) )
+            // InternalSlideOMatic.g:1977:1: ( 'institute' )
             {
-            // InternalSlideOMatic.g:1796:1: ( 'institute' )
-            // InternalSlideOMatic.g:1797:2: 'institute'
+            // InternalSlideOMatic.g:1977:1: ( 'institute' )
+            // InternalSlideOMatic.g:1978:2: 'institute'
             {
              before(grammarAccess.getInstituteAccess().getInstituteKeyword_0()); 
-            match(input,76,FOLLOW_2); 
+            match(input,79,FOLLOW_2); 
              after(grammarAccess.getInstituteAccess().getInstituteKeyword_0()); 
 
             }
@@ -5900,14 +6501,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Institute__Group__1"
-    // InternalSlideOMatic.g:1806:1: rule__Institute__Group__1 : rule__Institute__Group__1__Impl ;
+    // InternalSlideOMatic.g:1987:1: rule__Institute__Group__1 : rule__Institute__Group__1__Impl ;
     public final void rule__Institute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1810:1: ( rule__Institute__Group__1__Impl )
-            // InternalSlideOMatic.g:1811:2: rule__Institute__Group__1__Impl
+            // InternalSlideOMatic.g:1991:1: ( rule__Institute__Group__1__Impl )
+            // InternalSlideOMatic.g:1992:2: rule__Institute__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Institute__Group__1__Impl();
@@ -5933,21 +6534,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Institute__Group__1__Impl"
-    // InternalSlideOMatic.g:1817:1: rule__Institute__Group__1__Impl : ( ( rule__Institute__NameAssignment_1 ) ) ;
+    // InternalSlideOMatic.g:1998:1: rule__Institute__Group__1__Impl : ( ( rule__Institute__NameAssignment_1 ) ) ;
     public final void rule__Institute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1821:1: ( ( ( rule__Institute__NameAssignment_1 ) ) )
-            // InternalSlideOMatic.g:1822:1: ( ( rule__Institute__NameAssignment_1 ) )
+            // InternalSlideOMatic.g:2002:1: ( ( ( rule__Institute__NameAssignment_1 ) ) )
+            // InternalSlideOMatic.g:2003:1: ( ( rule__Institute__NameAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:1822:1: ( ( rule__Institute__NameAssignment_1 ) )
-            // InternalSlideOMatic.g:1823:2: ( rule__Institute__NameAssignment_1 )
+            // InternalSlideOMatic.g:2003:1: ( ( rule__Institute__NameAssignment_1 ) )
+            // InternalSlideOMatic.g:2004:2: ( rule__Institute__NameAssignment_1 )
             {
              before(grammarAccess.getInstituteAccess().getNameAssignment_1()); 
-            // InternalSlideOMatic.g:1824:2: ( rule__Institute__NameAssignment_1 )
-            // InternalSlideOMatic.g:1824:3: rule__Institute__NameAssignment_1
+            // InternalSlideOMatic.g:2005:2: ( rule__Institute__NameAssignment_1 )
+            // InternalSlideOMatic.g:2005:3: rule__Institute__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Institute__NameAssignment_1();
@@ -5980,14 +6581,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Date__Group__0"
-    // InternalSlideOMatic.g:1833:1: rule__Date__Group__0 : rule__Date__Group__0__Impl rule__Date__Group__1 ;
+    // InternalSlideOMatic.g:2014:1: rule__Date__Group__0 : rule__Date__Group__0__Impl rule__Date__Group__1 ;
     public final void rule__Date__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1837:1: ( rule__Date__Group__0__Impl rule__Date__Group__1 )
-            // InternalSlideOMatic.g:1838:2: rule__Date__Group__0__Impl rule__Date__Group__1
+            // InternalSlideOMatic.g:2018:1: ( rule__Date__Group__0__Impl rule__Date__Group__1 )
+            // InternalSlideOMatic.g:2019:2: rule__Date__Group__0__Impl rule__Date__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Date__Group__0__Impl();
@@ -6018,20 +6619,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Date__Group__0__Impl"
-    // InternalSlideOMatic.g:1845:1: rule__Date__Group__0__Impl : ( 'date' ) ;
+    // InternalSlideOMatic.g:2026:1: rule__Date__Group__0__Impl : ( 'date' ) ;
     public final void rule__Date__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1849:1: ( ( 'date' ) )
-            // InternalSlideOMatic.g:1850:1: ( 'date' )
+            // InternalSlideOMatic.g:2030:1: ( ( 'date' ) )
+            // InternalSlideOMatic.g:2031:1: ( 'date' )
             {
-            // InternalSlideOMatic.g:1850:1: ( 'date' )
-            // InternalSlideOMatic.g:1851:2: 'date'
+            // InternalSlideOMatic.g:2031:1: ( 'date' )
+            // InternalSlideOMatic.g:2032:2: 'date'
             {
              before(grammarAccess.getDateAccess().getDateKeyword_0()); 
-            match(input,77,FOLLOW_2); 
+            match(input,80,FOLLOW_2); 
              after(grammarAccess.getDateAccess().getDateKeyword_0()); 
 
             }
@@ -6055,14 +6656,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Date__Group__1"
-    // InternalSlideOMatic.g:1860:1: rule__Date__Group__1 : rule__Date__Group__1__Impl ;
+    // InternalSlideOMatic.g:2041:1: rule__Date__Group__1 : rule__Date__Group__1__Impl ;
     public final void rule__Date__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1864:1: ( rule__Date__Group__1__Impl )
-            // InternalSlideOMatic.g:1865:2: rule__Date__Group__1__Impl
+            // InternalSlideOMatic.g:2045:1: ( rule__Date__Group__1__Impl )
+            // InternalSlideOMatic.g:2046:2: rule__Date__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Date__Group__1__Impl();
@@ -6088,21 +6689,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Date__Group__1__Impl"
-    // InternalSlideOMatic.g:1871:1: rule__Date__Group__1__Impl : ( ( rule__Date__DateAssignment_1 ) ) ;
+    // InternalSlideOMatic.g:2052:1: rule__Date__Group__1__Impl : ( ( rule__Date__DateAssignment_1 ) ) ;
     public final void rule__Date__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1875:1: ( ( ( rule__Date__DateAssignment_1 ) ) )
-            // InternalSlideOMatic.g:1876:1: ( ( rule__Date__DateAssignment_1 ) )
+            // InternalSlideOMatic.g:2056:1: ( ( ( rule__Date__DateAssignment_1 ) ) )
+            // InternalSlideOMatic.g:2057:1: ( ( rule__Date__DateAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:1876:1: ( ( rule__Date__DateAssignment_1 ) )
-            // InternalSlideOMatic.g:1877:2: ( rule__Date__DateAssignment_1 )
+            // InternalSlideOMatic.g:2057:1: ( ( rule__Date__DateAssignment_1 ) )
+            // InternalSlideOMatic.g:2058:2: ( rule__Date__DateAssignment_1 )
             {
              before(grammarAccess.getDateAccess().getDateAssignment_1()); 
-            // InternalSlideOMatic.g:1878:2: ( rule__Date__DateAssignment_1 )
-            // InternalSlideOMatic.g:1878:3: rule__Date__DateAssignment_1
+            // InternalSlideOMatic.g:2059:2: ( rule__Date__DateAssignment_1 )
+            // InternalSlideOMatic.g:2059:3: rule__Date__DateAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Date__DateAssignment_1();
@@ -6135,14 +6736,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__0"
-    // InternalSlideOMatic.g:1887:1: rule__Slide__Group__0 : rule__Slide__Group__0__Impl rule__Slide__Group__1 ;
+    // InternalSlideOMatic.g:2068:1: rule__Slide__Group__0 : rule__Slide__Group__0__Impl rule__Slide__Group__1 ;
     public final void rule__Slide__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1891:1: ( rule__Slide__Group__0__Impl rule__Slide__Group__1 )
-            // InternalSlideOMatic.g:1892:2: rule__Slide__Group__0__Impl rule__Slide__Group__1
+            // InternalSlideOMatic.g:2072:1: ( rule__Slide__Group__0__Impl rule__Slide__Group__1 )
+            // InternalSlideOMatic.g:2073:2: rule__Slide__Group__0__Impl rule__Slide__Group__1
             {
             pushFollow(FOLLOW_13);
             rule__Slide__Group__0__Impl();
@@ -6173,20 +6774,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__0__Impl"
-    // InternalSlideOMatic.g:1899:1: rule__Slide__Group__0__Impl : ( 'slide' ) ;
+    // InternalSlideOMatic.g:2080:1: rule__Slide__Group__0__Impl : ( 'slide' ) ;
     public final void rule__Slide__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1903:1: ( ( 'slide' ) )
-            // InternalSlideOMatic.g:1904:1: ( 'slide' )
+            // InternalSlideOMatic.g:2084:1: ( ( 'slide' ) )
+            // InternalSlideOMatic.g:2085:1: ( 'slide' )
             {
-            // InternalSlideOMatic.g:1904:1: ( 'slide' )
-            // InternalSlideOMatic.g:1905:2: 'slide'
+            // InternalSlideOMatic.g:2085:1: ( 'slide' )
+            // InternalSlideOMatic.g:2086:2: 'slide'
             {
              before(grammarAccess.getSlideAccess().getSlideKeyword_0()); 
-            match(input,78,FOLLOW_2); 
+            match(input,81,FOLLOW_2); 
              after(grammarAccess.getSlideAccess().getSlideKeyword_0()); 
 
             }
@@ -6210,14 +6811,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__1"
-    // InternalSlideOMatic.g:1914:1: rule__Slide__Group__1 : rule__Slide__Group__1__Impl rule__Slide__Group__2 ;
+    // InternalSlideOMatic.g:2095:1: rule__Slide__Group__1 : rule__Slide__Group__1__Impl rule__Slide__Group__2 ;
     public final void rule__Slide__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1918:1: ( rule__Slide__Group__1__Impl rule__Slide__Group__2 )
-            // InternalSlideOMatic.g:1919:2: rule__Slide__Group__1__Impl rule__Slide__Group__2
+            // InternalSlideOMatic.g:2099:1: ( rule__Slide__Group__1__Impl rule__Slide__Group__2 )
+            // InternalSlideOMatic.g:2100:2: rule__Slide__Group__1__Impl rule__Slide__Group__2
             {
             pushFollow(FOLLOW_13);
             rule__Slide__Group__1__Impl();
@@ -6248,29 +6849,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__1__Impl"
-    // InternalSlideOMatic.g:1926:1: rule__Slide__Group__1__Impl : ( ( rule__Slide__Alternatives_1 )? ) ;
+    // InternalSlideOMatic.g:2107:1: rule__Slide__Group__1__Impl : ( ( rule__Slide__Alternatives_1 )? ) ;
     public final void rule__Slide__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1930:1: ( ( ( rule__Slide__Alternatives_1 )? ) )
-            // InternalSlideOMatic.g:1931:1: ( ( rule__Slide__Alternatives_1 )? )
+            // InternalSlideOMatic.g:2111:1: ( ( ( rule__Slide__Alternatives_1 )? ) )
+            // InternalSlideOMatic.g:2112:1: ( ( rule__Slide__Alternatives_1 )? )
             {
-            // InternalSlideOMatic.g:1931:1: ( ( rule__Slide__Alternatives_1 )? )
-            // InternalSlideOMatic.g:1932:2: ( rule__Slide__Alternatives_1 )?
+            // InternalSlideOMatic.g:2112:1: ( ( rule__Slide__Alternatives_1 )? )
+            // InternalSlideOMatic.g:2113:2: ( rule__Slide__Alternatives_1 )?
             {
              before(grammarAccess.getSlideAccess().getAlternatives_1()); 
-            // InternalSlideOMatic.g:1933:2: ( rule__Slide__Alternatives_1 )?
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalSlideOMatic.g:2114:2: ( rule__Slide__Alternatives_1 )?
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA21_0==RULE_STRING||(LA21_0>=79 && LA21_0<=81)) ) {
-                alt21=1;
+            if ( (LA24_0==RULE_STRING||(LA24_0>=82 && LA24_0<=84)) ) {
+                alt24=1;
             }
-            switch (alt21) {
+            switch (alt24) {
                 case 1 :
-                    // InternalSlideOMatic.g:1933:3: rule__Slide__Alternatives_1
+                    // InternalSlideOMatic.g:2114:3: rule__Slide__Alternatives_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Slide__Alternatives_1();
@@ -6306,14 +6907,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__2"
-    // InternalSlideOMatic.g:1941:1: rule__Slide__Group__2 : rule__Slide__Group__2__Impl rule__Slide__Group__3 ;
+    // InternalSlideOMatic.g:2122:1: rule__Slide__Group__2 : rule__Slide__Group__2__Impl rule__Slide__Group__3 ;
     public final void rule__Slide__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1945:1: ( rule__Slide__Group__2__Impl rule__Slide__Group__3 )
-            // InternalSlideOMatic.g:1946:2: rule__Slide__Group__2__Impl rule__Slide__Group__3
+            // InternalSlideOMatic.g:2126:1: ( rule__Slide__Group__2__Impl rule__Slide__Group__3 )
+            // InternalSlideOMatic.g:2127:2: rule__Slide__Group__2__Impl rule__Slide__Group__3
             {
             pushFollow(FOLLOW_14);
             rule__Slide__Group__2__Impl();
@@ -6344,20 +6945,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__2__Impl"
-    // InternalSlideOMatic.g:1953:1: rule__Slide__Group__2__Impl : ( '{' ) ;
+    // InternalSlideOMatic.g:2134:1: rule__Slide__Group__2__Impl : ( '{' ) ;
     public final void rule__Slide__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1957:1: ( ( '{' ) )
-            // InternalSlideOMatic.g:1958:1: ( '{' )
+            // InternalSlideOMatic.g:2138:1: ( ( '{' ) )
+            // InternalSlideOMatic.g:2139:1: ( '{' )
             {
-            // InternalSlideOMatic.g:1958:1: ( '{' )
-            // InternalSlideOMatic.g:1959:2: '{'
+            // InternalSlideOMatic.g:2139:1: ( '{' )
+            // InternalSlideOMatic.g:2140:2: '{'
             {
              before(grammarAccess.getSlideAccess().getLeftCurlyBracketKeyword_2()); 
-            match(input,68,FOLLOW_2); 
+            match(input,71,FOLLOW_2); 
              after(grammarAccess.getSlideAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
@@ -6381,14 +6982,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__3"
-    // InternalSlideOMatic.g:1968:1: rule__Slide__Group__3 : rule__Slide__Group__3__Impl rule__Slide__Group__4 ;
+    // InternalSlideOMatic.g:2149:1: rule__Slide__Group__3 : rule__Slide__Group__3__Impl rule__Slide__Group__4 ;
     public final void rule__Slide__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1972:1: ( rule__Slide__Group__3__Impl rule__Slide__Group__4 )
-            // InternalSlideOMatic.g:1973:2: rule__Slide__Group__3__Impl rule__Slide__Group__4
+            // InternalSlideOMatic.g:2153:1: ( rule__Slide__Group__3__Impl rule__Slide__Group__4 )
+            // InternalSlideOMatic.g:2154:2: rule__Slide__Group__3__Impl rule__Slide__Group__4
             {
             pushFollow(FOLLOW_15);
             rule__Slide__Group__3__Impl();
@@ -6419,24 +7020,24 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__3__Impl"
-    // InternalSlideOMatic.g:1980:1: rule__Slide__Group__3__Impl : ( ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* ) ) ;
+    // InternalSlideOMatic.g:2161:1: rule__Slide__Group__3__Impl : ( ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* ) ) ;
     public final void rule__Slide__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:1984:1: ( ( ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* ) ) )
-            // InternalSlideOMatic.g:1985:1: ( ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* ) )
+            // InternalSlideOMatic.g:2165:1: ( ( ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* ) ) )
+            // InternalSlideOMatic.g:2166:1: ( ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* ) )
             {
-            // InternalSlideOMatic.g:1985:1: ( ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* ) )
-            // InternalSlideOMatic.g:1986:2: ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* )
+            // InternalSlideOMatic.g:2166:1: ( ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* ) )
+            // InternalSlideOMatic.g:2167:2: ( ( rule__Slide__ContentsAssignment_3 ) ) ( ( rule__Slide__ContentsAssignment_3 )* )
             {
-            // InternalSlideOMatic.g:1986:2: ( ( rule__Slide__ContentsAssignment_3 ) )
-            // InternalSlideOMatic.g:1987:3: ( rule__Slide__ContentsAssignment_3 )
+            // InternalSlideOMatic.g:2167:2: ( ( rule__Slide__ContentsAssignment_3 ) )
+            // InternalSlideOMatic.g:2168:3: ( rule__Slide__ContentsAssignment_3 )
             {
              before(grammarAccess.getSlideAccess().getContentsAssignment_3()); 
-            // InternalSlideOMatic.g:1988:3: ( rule__Slide__ContentsAssignment_3 )
-            // InternalSlideOMatic.g:1988:4: rule__Slide__ContentsAssignment_3
+            // InternalSlideOMatic.g:2169:3: ( rule__Slide__ContentsAssignment_3 )
+            // InternalSlideOMatic.g:2169:4: rule__Slide__ContentsAssignment_3
             {
             pushFollow(FOLLOW_16);
             rule__Slide__ContentsAssignment_3();
@@ -6450,24 +7051,24 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             }
 
-            // InternalSlideOMatic.g:1991:2: ( ( rule__Slide__ContentsAssignment_3 )* )
-            // InternalSlideOMatic.g:1992:3: ( rule__Slide__ContentsAssignment_3 )*
+            // InternalSlideOMatic.g:2172:2: ( ( rule__Slide__ContentsAssignment_3 )* )
+            // InternalSlideOMatic.g:2173:3: ( rule__Slide__ContentsAssignment_3 )*
             {
              before(grammarAccess.getSlideAccess().getContentsAssignment_3()); 
-            // InternalSlideOMatic.g:1993:3: ( rule__Slide__ContentsAssignment_3 )*
-            loop22:
+            // InternalSlideOMatic.g:2174:3: ( rule__Slide__ContentsAssignment_3 )*
+            loop25:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( ((LA22_0>=82 && LA22_0<=86)||LA22_0==89||LA22_0==92) ) {
-                    alt22=1;
+                if ( ((LA25_0>=85 && LA25_0<=89)||LA25_0==91||LA25_0==94||LA25_0==97) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt25) {
             	case 1 :
-            	    // InternalSlideOMatic.g:1993:4: rule__Slide__ContentsAssignment_3
+            	    // InternalSlideOMatic.g:2174:4: rule__Slide__ContentsAssignment_3
             	    {
             	    pushFollow(FOLLOW_16);
             	    rule__Slide__ContentsAssignment_3();
@@ -6479,7 +7080,7 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop25;
                 }
             } while (true);
 
@@ -6509,14 +7110,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__4"
-    // InternalSlideOMatic.g:2002:1: rule__Slide__Group__4 : rule__Slide__Group__4__Impl ;
+    // InternalSlideOMatic.g:2183:1: rule__Slide__Group__4 : rule__Slide__Group__4__Impl ;
     public final void rule__Slide__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2006:1: ( rule__Slide__Group__4__Impl )
-            // InternalSlideOMatic.g:2007:2: rule__Slide__Group__4__Impl
+            // InternalSlideOMatic.g:2187:1: ( rule__Slide__Group__4__Impl )
+            // InternalSlideOMatic.g:2188:2: rule__Slide__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Slide__Group__4__Impl();
@@ -6542,20 +7143,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group__4__Impl"
-    // InternalSlideOMatic.g:2013:1: rule__Slide__Group__4__Impl : ( '}' ) ;
+    // InternalSlideOMatic.g:2194:1: rule__Slide__Group__4__Impl : ( '}' ) ;
     public final void rule__Slide__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2017:1: ( ( '}' ) )
-            // InternalSlideOMatic.g:2018:1: ( '}' )
+            // InternalSlideOMatic.g:2198:1: ( ( '}' ) )
+            // InternalSlideOMatic.g:2199:1: ( '}' )
             {
-            // InternalSlideOMatic.g:2018:1: ( '}' )
-            // InternalSlideOMatic.g:2019:2: '}'
+            // InternalSlideOMatic.g:2199:1: ( '}' )
+            // InternalSlideOMatic.g:2200:2: '}'
             {
              before(grammarAccess.getSlideAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,69,FOLLOW_2); 
+            match(input,72,FOLLOW_2); 
              after(grammarAccess.getSlideAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -6579,14 +7180,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group_1_0__0"
-    // InternalSlideOMatic.g:2029:1: rule__Slide__Group_1_0__0 : rule__Slide__Group_1_0__0__Impl rule__Slide__Group_1_0__1 ;
+    // InternalSlideOMatic.g:2210:1: rule__Slide__Group_1_0__0 : rule__Slide__Group_1_0__0__Impl rule__Slide__Group_1_0__1 ;
     public final void rule__Slide__Group_1_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2033:1: ( rule__Slide__Group_1_0__0__Impl rule__Slide__Group_1_0__1 )
-            // InternalSlideOMatic.g:2034:2: rule__Slide__Group_1_0__0__Impl rule__Slide__Group_1_0__1
+            // InternalSlideOMatic.g:2214:1: ( rule__Slide__Group_1_0__0__Impl rule__Slide__Group_1_0__1 )
+            // InternalSlideOMatic.g:2215:2: rule__Slide__Group_1_0__0__Impl rule__Slide__Group_1_0__1
             {
             pushFollow(FOLLOW_3);
             rule__Slide__Group_1_0__0__Impl();
@@ -6617,25 +7218,31 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group_1_0__0__Impl"
-    // InternalSlideOMatic.g:2041:1: rule__Slide__Group_1_0__0__Impl : ( ruleSection ) ;
+    // InternalSlideOMatic.g:2222:1: rule__Slide__Group_1_0__0__Impl : ( ( rule__Slide__SecAssignment_1_0_0 ) ) ;
     public final void rule__Slide__Group_1_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2045:1: ( ( ruleSection ) )
-            // InternalSlideOMatic.g:2046:1: ( ruleSection )
+            // InternalSlideOMatic.g:2226:1: ( ( ( rule__Slide__SecAssignment_1_0_0 ) ) )
+            // InternalSlideOMatic.g:2227:1: ( ( rule__Slide__SecAssignment_1_0_0 ) )
             {
-            // InternalSlideOMatic.g:2046:1: ( ruleSection )
-            // InternalSlideOMatic.g:2047:2: ruleSection
+            // InternalSlideOMatic.g:2227:1: ( ( rule__Slide__SecAssignment_1_0_0 ) )
+            // InternalSlideOMatic.g:2228:2: ( rule__Slide__SecAssignment_1_0_0 )
             {
-             before(grammarAccess.getSlideAccess().getSectionParserRuleCall_1_0_0()); 
+             before(grammarAccess.getSlideAccess().getSecAssignment_1_0_0()); 
+            // InternalSlideOMatic.g:2229:2: ( rule__Slide__SecAssignment_1_0_0 )
+            // InternalSlideOMatic.g:2229:3: rule__Slide__SecAssignment_1_0_0
+            {
             pushFollow(FOLLOW_2);
-            ruleSection();
+            rule__Slide__SecAssignment_1_0_0();
 
             state._fsp--;
 
-             after(grammarAccess.getSlideAccess().getSectionParserRuleCall_1_0_0()); 
+
+            }
+
+             after(grammarAccess.getSlideAccess().getSecAssignment_1_0_0()); 
 
             }
 
@@ -6658,14 +7265,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group_1_0__1"
-    // InternalSlideOMatic.g:2056:1: rule__Slide__Group_1_0__1 : rule__Slide__Group_1_0__1__Impl ;
+    // InternalSlideOMatic.g:2237:1: rule__Slide__Group_1_0__1 : rule__Slide__Group_1_0__1__Impl ;
     public final void rule__Slide__Group_1_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2060:1: ( rule__Slide__Group_1_0__1__Impl )
-            // InternalSlideOMatic.g:2061:2: rule__Slide__Group_1_0__1__Impl
+            // InternalSlideOMatic.g:2241:1: ( rule__Slide__Group_1_0__1__Impl )
+            // InternalSlideOMatic.g:2242:2: rule__Slide__Group_1_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Slide__Group_1_0__1__Impl();
@@ -6691,21 +7298,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__Group_1_0__1__Impl"
-    // InternalSlideOMatic.g:2067:1: rule__Slide__Group_1_0__1__Impl : ( ( rule__Slide__NameAssignment_1_0_1 ) ) ;
+    // InternalSlideOMatic.g:2248:1: rule__Slide__Group_1_0__1__Impl : ( ( rule__Slide__NameAssignment_1_0_1 ) ) ;
     public final void rule__Slide__Group_1_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2071:1: ( ( ( rule__Slide__NameAssignment_1_0_1 ) ) )
-            // InternalSlideOMatic.g:2072:1: ( ( rule__Slide__NameAssignment_1_0_1 ) )
+            // InternalSlideOMatic.g:2252:1: ( ( ( rule__Slide__NameAssignment_1_0_1 ) ) )
+            // InternalSlideOMatic.g:2253:1: ( ( rule__Slide__NameAssignment_1_0_1 ) )
             {
-            // InternalSlideOMatic.g:2072:1: ( ( rule__Slide__NameAssignment_1_0_1 ) )
-            // InternalSlideOMatic.g:2073:2: ( rule__Slide__NameAssignment_1_0_1 )
+            // InternalSlideOMatic.g:2253:1: ( ( rule__Slide__NameAssignment_1_0_1 ) )
+            // InternalSlideOMatic.g:2254:2: ( rule__Slide__NameAssignment_1_0_1 )
             {
              before(grammarAccess.getSlideAccess().getNameAssignment_1_0_1()); 
-            // InternalSlideOMatic.g:2074:2: ( rule__Slide__NameAssignment_1_0_1 )
-            // InternalSlideOMatic.g:2074:3: rule__Slide__NameAssignment_1_0_1
+            // InternalSlideOMatic.g:2255:2: ( rule__Slide__NameAssignment_1_0_1 )
+            // InternalSlideOMatic.g:2255:3: rule__Slide__NameAssignment_1_0_1
             {
             pushFollow(FOLLOW_2);
             rule__Slide__NameAssignment_1_0_1();
@@ -6738,14 +7345,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_0__0"
-    // InternalSlideOMatic.g:2083:1: rule__Section__Group_0__0 : rule__Section__Group_0__0__Impl rule__Section__Group_0__1 ;
+    // InternalSlideOMatic.g:2264:1: rule__Section__Group_0__0 : rule__Section__Group_0__0__Impl rule__Section__Group_0__1 ;
     public final void rule__Section__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2087:1: ( rule__Section__Group_0__0__Impl rule__Section__Group_0__1 )
-            // InternalSlideOMatic.g:2088:2: rule__Section__Group_0__0__Impl rule__Section__Group_0__1
+            // InternalSlideOMatic.g:2268:1: ( rule__Section__Group_0__0__Impl rule__Section__Group_0__1 )
+            // InternalSlideOMatic.g:2269:2: rule__Section__Group_0__0__Impl rule__Section__Group_0__1
             {
             pushFollow(FOLLOW_17);
             rule__Section__Group_0__0__Impl();
@@ -6776,21 +7383,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_0__0__Impl"
-    // InternalSlideOMatic.g:2095:1: rule__Section__Group_0__0__Impl : ( () ) ;
+    // InternalSlideOMatic.g:2276:1: rule__Section__Group_0__0__Impl : ( () ) ;
     public final void rule__Section__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2099:1: ( ( () ) )
-            // InternalSlideOMatic.g:2100:1: ( () )
+            // InternalSlideOMatic.g:2280:1: ( ( () ) )
+            // InternalSlideOMatic.g:2281:1: ( () )
             {
-            // InternalSlideOMatic.g:2100:1: ( () )
-            // InternalSlideOMatic.g:2101:2: ()
+            // InternalSlideOMatic.g:2281:1: ( () )
+            // InternalSlideOMatic.g:2282:2: ()
             {
              before(grammarAccess.getSectionAccess().getSecAction_0_0()); 
-            // InternalSlideOMatic.g:2102:2: ()
-            // InternalSlideOMatic.g:2102:3: 
+            // InternalSlideOMatic.g:2283:2: ()
+            // InternalSlideOMatic.g:2283:3: 
             {
             }
 
@@ -6813,14 +7420,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_0__1"
-    // InternalSlideOMatic.g:2110:1: rule__Section__Group_0__1 : rule__Section__Group_0__1__Impl ;
+    // InternalSlideOMatic.g:2291:1: rule__Section__Group_0__1 : rule__Section__Group_0__1__Impl ;
     public final void rule__Section__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2114:1: ( rule__Section__Group_0__1__Impl )
-            // InternalSlideOMatic.g:2115:2: rule__Section__Group_0__1__Impl
+            // InternalSlideOMatic.g:2295:1: ( rule__Section__Group_0__1__Impl )
+            // InternalSlideOMatic.g:2296:2: rule__Section__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Section__Group_0__1__Impl();
@@ -6846,20 +7453,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_0__1__Impl"
-    // InternalSlideOMatic.g:2121:1: rule__Section__Group_0__1__Impl : ( '*' ) ;
+    // InternalSlideOMatic.g:2302:1: rule__Section__Group_0__1__Impl : ( '*' ) ;
     public final void rule__Section__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2125:1: ( ( '*' ) )
-            // InternalSlideOMatic.g:2126:1: ( '*' )
+            // InternalSlideOMatic.g:2306:1: ( ( '*' ) )
+            // InternalSlideOMatic.g:2307:1: ( '*' )
             {
-            // InternalSlideOMatic.g:2126:1: ( '*' )
-            // InternalSlideOMatic.g:2127:2: '*'
+            // InternalSlideOMatic.g:2307:1: ( '*' )
+            // InternalSlideOMatic.g:2308:2: '*'
             {
              before(grammarAccess.getSectionAccess().getAsteriskKeyword_0_1()); 
-            match(input,79,FOLLOW_2); 
+            match(input,82,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getAsteriskKeyword_0_1()); 
 
             }
@@ -6883,14 +7490,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_1__0"
-    // InternalSlideOMatic.g:2137:1: rule__Section__Group_1__0 : rule__Section__Group_1__0__Impl rule__Section__Group_1__1 ;
+    // InternalSlideOMatic.g:2318:1: rule__Section__Group_1__0 : rule__Section__Group_1__0__Impl rule__Section__Group_1__1 ;
     public final void rule__Section__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2141:1: ( rule__Section__Group_1__0__Impl rule__Section__Group_1__1 )
-            // InternalSlideOMatic.g:2142:2: rule__Section__Group_1__0__Impl rule__Section__Group_1__1
+            // InternalSlideOMatic.g:2322:1: ( rule__Section__Group_1__0__Impl rule__Section__Group_1__1 )
+            // InternalSlideOMatic.g:2323:2: rule__Section__Group_1__0__Impl rule__Section__Group_1__1
             {
             pushFollow(FOLLOW_18);
             rule__Section__Group_1__0__Impl();
@@ -6921,21 +7528,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_1__0__Impl"
-    // InternalSlideOMatic.g:2149:1: rule__Section__Group_1__0__Impl : ( () ) ;
+    // InternalSlideOMatic.g:2330:1: rule__Section__Group_1__0__Impl : ( () ) ;
     public final void rule__Section__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2153:1: ( ( () ) )
-            // InternalSlideOMatic.g:2154:1: ( () )
+            // InternalSlideOMatic.g:2334:1: ( ( () ) )
+            // InternalSlideOMatic.g:2335:1: ( () )
             {
-            // InternalSlideOMatic.g:2154:1: ( () )
-            // InternalSlideOMatic.g:2155:2: ()
+            // InternalSlideOMatic.g:2335:1: ( () )
+            // InternalSlideOMatic.g:2336:2: ()
             {
              before(grammarAccess.getSectionAccess().getSubSecAction_1_0()); 
-            // InternalSlideOMatic.g:2156:2: ()
-            // InternalSlideOMatic.g:2156:3: 
+            // InternalSlideOMatic.g:2337:2: ()
+            // InternalSlideOMatic.g:2337:3: 
             {
             }
 
@@ -6958,14 +7565,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_1__1"
-    // InternalSlideOMatic.g:2164:1: rule__Section__Group_1__1 : rule__Section__Group_1__1__Impl ;
+    // InternalSlideOMatic.g:2345:1: rule__Section__Group_1__1 : rule__Section__Group_1__1__Impl ;
     public final void rule__Section__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2168:1: ( rule__Section__Group_1__1__Impl )
-            // InternalSlideOMatic.g:2169:2: rule__Section__Group_1__1__Impl
+            // InternalSlideOMatic.g:2349:1: ( rule__Section__Group_1__1__Impl )
+            // InternalSlideOMatic.g:2350:2: rule__Section__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Section__Group_1__1__Impl();
@@ -6991,20 +7598,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_1__1__Impl"
-    // InternalSlideOMatic.g:2175:1: rule__Section__Group_1__1__Impl : ( '**' ) ;
+    // InternalSlideOMatic.g:2356:1: rule__Section__Group_1__1__Impl : ( '**' ) ;
     public final void rule__Section__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2179:1: ( ( '**' ) )
-            // InternalSlideOMatic.g:2180:1: ( '**' )
+            // InternalSlideOMatic.g:2360:1: ( ( '**' ) )
+            // InternalSlideOMatic.g:2361:1: ( '**' )
             {
-            // InternalSlideOMatic.g:2180:1: ( '**' )
-            // InternalSlideOMatic.g:2181:2: '**'
+            // InternalSlideOMatic.g:2361:1: ( '**' )
+            // InternalSlideOMatic.g:2362:2: '**'
             {
              before(grammarAccess.getSectionAccess().getAsteriskAsteriskKeyword_1_1()); 
-            match(input,80,FOLLOW_2); 
+            match(input,83,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getAsteriskAsteriskKeyword_1_1()); 
 
             }
@@ -7028,14 +7635,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_2__0"
-    // InternalSlideOMatic.g:2191:1: rule__Section__Group_2__0 : rule__Section__Group_2__0__Impl rule__Section__Group_2__1 ;
+    // InternalSlideOMatic.g:2372:1: rule__Section__Group_2__0 : rule__Section__Group_2__0__Impl rule__Section__Group_2__1 ;
     public final void rule__Section__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2195:1: ( rule__Section__Group_2__0__Impl rule__Section__Group_2__1 )
-            // InternalSlideOMatic.g:2196:2: rule__Section__Group_2__0__Impl rule__Section__Group_2__1
+            // InternalSlideOMatic.g:2376:1: ( rule__Section__Group_2__0__Impl rule__Section__Group_2__1 )
+            // InternalSlideOMatic.g:2377:2: rule__Section__Group_2__0__Impl rule__Section__Group_2__1
             {
             pushFollow(FOLLOW_19);
             rule__Section__Group_2__0__Impl();
@@ -7066,21 +7673,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_2__0__Impl"
-    // InternalSlideOMatic.g:2203:1: rule__Section__Group_2__0__Impl : ( () ) ;
+    // InternalSlideOMatic.g:2384:1: rule__Section__Group_2__0__Impl : ( () ) ;
     public final void rule__Section__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2207:1: ( ( () ) )
-            // InternalSlideOMatic.g:2208:1: ( () )
+            // InternalSlideOMatic.g:2388:1: ( ( () ) )
+            // InternalSlideOMatic.g:2389:1: ( () )
             {
-            // InternalSlideOMatic.g:2208:1: ( () )
-            // InternalSlideOMatic.g:2209:2: ()
+            // InternalSlideOMatic.g:2389:1: ( () )
+            // InternalSlideOMatic.g:2390:2: ()
             {
              before(grammarAccess.getSectionAccess().getSubSubSecAction_2_0()); 
-            // InternalSlideOMatic.g:2210:2: ()
-            // InternalSlideOMatic.g:2210:3: 
+            // InternalSlideOMatic.g:2391:2: ()
+            // InternalSlideOMatic.g:2391:3: 
             {
             }
 
@@ -7103,14 +7710,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_2__1"
-    // InternalSlideOMatic.g:2218:1: rule__Section__Group_2__1 : rule__Section__Group_2__1__Impl ;
+    // InternalSlideOMatic.g:2399:1: rule__Section__Group_2__1 : rule__Section__Group_2__1__Impl ;
     public final void rule__Section__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2222:1: ( rule__Section__Group_2__1__Impl )
-            // InternalSlideOMatic.g:2223:2: rule__Section__Group_2__1__Impl
+            // InternalSlideOMatic.g:2403:1: ( rule__Section__Group_2__1__Impl )
+            // InternalSlideOMatic.g:2404:2: rule__Section__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Section__Group_2__1__Impl();
@@ -7136,20 +7743,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Section__Group_2__1__Impl"
-    // InternalSlideOMatic.g:2229:1: rule__Section__Group_2__1__Impl : ( '***' ) ;
+    // InternalSlideOMatic.g:2410:1: rule__Section__Group_2__1__Impl : ( '***' ) ;
     public final void rule__Section__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2233:1: ( ( '***' ) )
-            // InternalSlideOMatic.g:2234:1: ( '***' )
+            // InternalSlideOMatic.g:2414:1: ( ( '***' ) )
+            // InternalSlideOMatic.g:2415:1: ( '***' )
             {
-            // InternalSlideOMatic.g:2234:1: ( '***' )
-            // InternalSlideOMatic.g:2235:2: '***'
+            // InternalSlideOMatic.g:2415:1: ( '***' )
+            // InternalSlideOMatic.g:2416:2: '***'
             {
              before(grammarAccess.getSectionAccess().getAsteriskAsteriskAsteriskKeyword_2_1()); 
-            match(input,81,FOLLOW_2); 
+            match(input,84,FOLLOW_2); 
              after(grammarAccess.getSectionAccess().getAsteriskAsteriskAsteriskKeyword_2_1()); 
 
             }
@@ -7173,14 +7780,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Content__Group_0__0"
-    // InternalSlideOMatic.g:2245:1: rule__Content__Group_0__0 : rule__Content__Group_0__0__Impl rule__Content__Group_0__1 ;
+    // InternalSlideOMatic.g:2426:1: rule__Content__Group_0__0 : rule__Content__Group_0__0__Impl rule__Content__Group_0__1 ;
     public final void rule__Content__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2249:1: ( rule__Content__Group_0__0__Impl rule__Content__Group_0__1 )
-            // InternalSlideOMatic.g:2250:2: rule__Content__Group_0__0__Impl rule__Content__Group_0__1
+            // InternalSlideOMatic.g:2430:1: ( rule__Content__Group_0__0__Impl rule__Content__Group_0__1 )
+            // InternalSlideOMatic.g:2431:2: rule__Content__Group_0__0__Impl rule__Content__Group_0__1
             {
             pushFollow(FOLLOW_20);
             rule__Content__Group_0__0__Impl();
@@ -7211,21 +7818,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Content__Group_0__0__Impl"
-    // InternalSlideOMatic.g:2257:1: rule__Content__Group_0__0__Impl : ( () ) ;
+    // InternalSlideOMatic.g:2438:1: rule__Content__Group_0__0__Impl : ( () ) ;
     public final void rule__Content__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2261:1: ( ( () ) )
-            // InternalSlideOMatic.g:2262:1: ( () )
+            // InternalSlideOMatic.g:2442:1: ( ( () ) )
+            // InternalSlideOMatic.g:2443:1: ( () )
             {
-            // InternalSlideOMatic.g:2262:1: ( () )
-            // InternalSlideOMatic.g:2263:2: ()
+            // InternalSlideOMatic.g:2443:1: ( () )
+            // InternalSlideOMatic.g:2444:2: ()
             {
              before(grammarAccess.getContentAccess().getTOCAction_0_0()); 
-            // InternalSlideOMatic.g:2264:2: ()
-            // InternalSlideOMatic.g:2264:3: 
+            // InternalSlideOMatic.g:2445:2: ()
+            // InternalSlideOMatic.g:2445:3: 
             {
             }
 
@@ -7248,14 +7855,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Content__Group_0__1"
-    // InternalSlideOMatic.g:2272:1: rule__Content__Group_0__1 : rule__Content__Group_0__1__Impl ;
+    // InternalSlideOMatic.g:2453:1: rule__Content__Group_0__1 : rule__Content__Group_0__1__Impl ;
     public final void rule__Content__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2276:1: ( rule__Content__Group_0__1__Impl )
-            // InternalSlideOMatic.g:2277:2: rule__Content__Group_0__1__Impl
+            // InternalSlideOMatic.g:2457:1: ( rule__Content__Group_0__1__Impl )
+            // InternalSlideOMatic.g:2458:2: rule__Content__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Content__Group_0__1__Impl();
@@ -7281,20 +7888,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Content__Group_0__1__Impl"
-    // InternalSlideOMatic.g:2283:1: rule__Content__Group_0__1__Impl : ( 'ToC' ) ;
+    // InternalSlideOMatic.g:2464:1: rule__Content__Group_0__1__Impl : ( 'ToC' ) ;
     public final void rule__Content__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2287:1: ( ( 'ToC' ) )
-            // InternalSlideOMatic.g:2288:1: ( 'ToC' )
+            // InternalSlideOMatic.g:2468:1: ( ( 'ToC' ) )
+            // InternalSlideOMatic.g:2469:1: ( 'ToC' )
             {
-            // InternalSlideOMatic.g:2288:1: ( 'ToC' )
-            // InternalSlideOMatic.g:2289:2: 'ToC'
+            // InternalSlideOMatic.g:2469:1: ( 'ToC' )
+            // InternalSlideOMatic.g:2470:2: 'ToC'
             {
              before(grammarAccess.getContentAccess().getToCKeyword_0_1()); 
-            match(input,82,FOLLOW_2); 
+            match(input,85,FOLLOW_2); 
              after(grammarAccess.getContentAccess().getToCKeyword_0_1()); 
 
             }
@@ -7317,23 +7924,98 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Content__Group_0__1__Impl"
 
 
-    // $ANTLR start "rule__Text__Group_0__0"
-    // InternalSlideOMatic.g:2299:1: rule__Text__Group_0__0 : rule__Text__Group_0__0__Impl rule__Text__Group_0__1 ;
-    public final void rule__Text__Group_0__0() throws RecognitionException {
+    // $ANTLR start "rule__Text__Group__0"
+    // InternalSlideOMatic.g:2480:1: rule__Text__Group__0 : rule__Text__Group__0__Impl rule__Text__Group__1 ;
+    public final void rule__Text__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2303:1: ( rule__Text__Group_0__0__Impl rule__Text__Group_0__1 )
-            // InternalSlideOMatic.g:2304:2: rule__Text__Group_0__0__Impl rule__Text__Group_0__1
+            // InternalSlideOMatic.g:2484:1: ( rule__Text__Group__0__Impl rule__Text__Group__1 )
+            // InternalSlideOMatic.g:2485:2: rule__Text__Group__0__Impl rule__Text__Group__1
+            {
+            pushFollow(FOLLOW_3);
+            rule__Text__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Text__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Text__Group__0"
+
+
+    // $ANTLR start "rule__Text__Group__0__Impl"
+    // InternalSlideOMatic.g:2492:1: rule__Text__Group__0__Impl : ( '>' ) ;
+    public final void rule__Text__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2496:1: ( ( '>' ) )
+            // InternalSlideOMatic.g:2497:1: ( '>' )
+            {
+            // InternalSlideOMatic.g:2497:1: ( '>' )
+            // InternalSlideOMatic.g:2498:2: '>'
+            {
+             before(grammarAccess.getTextAccess().getGreaterThanSignKeyword_0()); 
+            match(input,86,FOLLOW_2); 
+             after(grammarAccess.getTextAccess().getGreaterThanSignKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Text__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Text__Group__1"
+    // InternalSlideOMatic.g:2507:1: rule__Text__Group__1 : rule__Text__Group__1__Impl rule__Text__Group__2 ;
+    public final void rule__Text__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2511:1: ( rule__Text__Group__1__Impl rule__Text__Group__2 )
+            // InternalSlideOMatic.g:2512:2: rule__Text__Group__1__Impl rule__Text__Group__2
             {
             pushFollow(FOLLOW_21);
-            rule__Text__Group_0__0__Impl();
+            rule__Text__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Text__Group_0__1();
+            rule__Text__Group__2();
 
             state._fsp--;
 
@@ -7352,35 +8034,45 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__Group_0__0"
+    // $ANTLR end "rule__Text__Group__1"
 
 
-    // $ANTLR start "rule__Text__Group_0__0__Impl"
-    // InternalSlideOMatic.g:2311:1: rule__Text__Group_0__0__Impl : ( () ) ;
-    public final void rule__Text__Group_0__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Text__Group__1__Impl"
+    // InternalSlideOMatic.g:2519:1: rule__Text__Group__1__Impl : ( ( rule__Text__TextAssignment_1 ) ) ;
+    public final void rule__Text__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2315:1: ( ( () ) )
-            // InternalSlideOMatic.g:2316:1: ( () )
+            // InternalSlideOMatic.g:2523:1: ( ( ( rule__Text__TextAssignment_1 ) ) )
+            // InternalSlideOMatic.g:2524:1: ( ( rule__Text__TextAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:2316:1: ( () )
-            // InternalSlideOMatic.g:2317:2: ()
+            // InternalSlideOMatic.g:2524:1: ( ( rule__Text__TextAssignment_1 ) )
+            // InternalSlideOMatic.g:2525:2: ( rule__Text__TextAssignment_1 )
             {
-             before(grammarAccess.getTextAccess().getParagraphAction_0_0()); 
-            // InternalSlideOMatic.g:2318:2: ()
-            // InternalSlideOMatic.g:2318:3: 
+             before(grammarAccess.getTextAccess().getTextAssignment_1()); 
+            // InternalSlideOMatic.g:2526:2: ( rule__Text__TextAssignment_1 )
+            // InternalSlideOMatic.g:2526:3: rule__Text__TextAssignment_1
             {
+            pushFollow(FOLLOW_2);
+            rule__Text__TextAssignment_1();
+
+            state._fsp--;
+
+
             }
 
-             after(grammarAccess.getTextAccess().getParagraphAction_0_0()); 
+             after(grammarAccess.getTextAccess().getTextAssignment_1()); 
 
             }
 
 
             }
 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
         }
         finally {
 
@@ -7389,26 +8081,117 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__Group_0__0__Impl"
+    // $ANTLR end "rule__Text__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Text__Group_0__1"
-    // InternalSlideOMatic.g:2326:1: rule__Text__Group_0__1 : rule__Text__Group_0__1__Impl rule__Text__Group_0__2 ;
-    public final void rule__Text__Group_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Text__Group__2"
+    // InternalSlideOMatic.g:2534:1: rule__Text__Group__2 : rule__Text__Group__2__Impl ;
+    public final void rule__Text__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2330:1: ( rule__Text__Group_0__1__Impl rule__Text__Group_0__2 )
-            // InternalSlideOMatic.g:2331:2: rule__Text__Group_0__1__Impl rule__Text__Group_0__2
+            // InternalSlideOMatic.g:2538:1: ( rule__Text__Group__2__Impl )
+            // InternalSlideOMatic.g:2539:2: rule__Text__Group__2__Impl
             {
-            pushFollow(FOLLOW_3);
-            rule__Text__Group_0__1__Impl();
+            pushFollow(FOLLOW_2);
+            rule__Text__Group__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Text__Group__2"
+
+
+    // $ANTLR start "rule__Text__Group__2__Impl"
+    // InternalSlideOMatic.g:2545:1: rule__Text__Group__2__Impl : ( ( rule__Text__ClickAssignment_2 )? ) ;
+    public final void rule__Text__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2549:1: ( ( ( rule__Text__ClickAssignment_2 )? ) )
+            // InternalSlideOMatic.g:2550:1: ( ( rule__Text__ClickAssignment_2 )? )
+            {
+            // InternalSlideOMatic.g:2550:1: ( ( rule__Text__ClickAssignment_2 )? )
+            // InternalSlideOMatic.g:2551:2: ( rule__Text__ClickAssignment_2 )?
+            {
+             before(grammarAccess.getTextAccess().getClickAssignment_2()); 
+            // InternalSlideOMatic.g:2552:2: ( rule__Text__ClickAssignment_2 )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
+
+            if ( (LA26_0==11) ) {
+                alt26=1;
+            }
+            switch (alt26) {
+                case 1 :
+                    // InternalSlideOMatic.g:2552:3: rule__Text__ClickAssignment_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Text__ClickAssignment_2();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getTextAccess().getClickAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Text__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Block__Group__0"
+    // InternalSlideOMatic.g:2561:1: rule__Block__Group__0 : rule__Block__Group__0__Impl rule__Block__Group__1 ;
+    public final void rule__Block__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2565:1: ( rule__Block__Group__0__Impl rule__Block__Group__1 )
+            // InternalSlideOMatic.g:2566:2: rule__Block__Group__0__Impl rule__Block__Group__1
+            {
+            pushFollow(FOLLOW_4);
+            rule__Block__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Text__Group_0__2();
+            rule__Block__Group__1();
 
             state._fsp--;
 
@@ -7427,25 +8210,25 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__Group_0__1"
+    // $ANTLR end "rule__Block__Group__0"
 
 
-    // $ANTLR start "rule__Text__Group_0__1__Impl"
-    // InternalSlideOMatic.g:2338:1: rule__Text__Group_0__1__Impl : ( '>' ) ;
-    public final void rule__Text__Group_0__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Block__Group__0__Impl"
+    // InternalSlideOMatic.g:2573:1: rule__Block__Group__0__Impl : ( 'block' ) ;
+    public final void rule__Block__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2342:1: ( ( '>' ) )
-            // InternalSlideOMatic.g:2343:1: ( '>' )
+            // InternalSlideOMatic.g:2577:1: ( ( 'block' ) )
+            // InternalSlideOMatic.g:2578:1: ( 'block' )
             {
-            // InternalSlideOMatic.g:2343:1: ( '>' )
-            // InternalSlideOMatic.g:2344:2: '>'
+            // InternalSlideOMatic.g:2578:1: ( 'block' )
+            // InternalSlideOMatic.g:2579:2: 'block'
             {
-             before(grammarAccess.getTextAccess().getGreaterThanSignKeyword_0_1()); 
-            match(input,83,FOLLOW_2); 
-             after(grammarAccess.getTextAccess().getGreaterThanSignKeyword_0_1()); 
+             before(grammarAccess.getBlockAccess().getBlockKeyword_0()); 
+            match(input,87,FOLLOW_2); 
+             after(grammarAccess.getBlockAccess().getBlockKeyword_0()); 
 
             }
 
@@ -7464,26 +8247,122 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__Group_0__1__Impl"
+    // $ANTLR end "rule__Block__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Text__Group_0__2"
-    // InternalSlideOMatic.g:2353:1: rule__Text__Group_0__2 : rule__Text__Group_0__2__Impl rule__Text__Group_0__3 ;
-    public final void rule__Text__Group_0__2() throws RecognitionException {
+    // $ANTLR start "rule__Block__Group__1"
+    // InternalSlideOMatic.g:2588:1: rule__Block__Group__1 : rule__Block__Group__1__Impl rule__Block__Group__2 ;
+    public final void rule__Block__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2357:1: ( rule__Text__Group_0__2__Impl rule__Text__Group_0__3 )
-            // InternalSlideOMatic.g:2358:2: rule__Text__Group_0__2__Impl rule__Text__Group_0__3
+            // InternalSlideOMatic.g:2592:1: ( rule__Block__Group__1__Impl rule__Block__Group__2 )
+            // InternalSlideOMatic.g:2593:2: rule__Block__Group__1__Impl rule__Block__Group__2
+            {
+            pushFollow(FOLLOW_4);
+            rule__Block__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Block__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Block__Group__1"
+
+
+    // $ANTLR start "rule__Block__Group__1__Impl"
+    // InternalSlideOMatic.g:2600:1: rule__Block__Group__1__Impl : ( ( rule__Block__NameAssignment_1 )? ) ;
+    public final void rule__Block__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2604:1: ( ( ( rule__Block__NameAssignment_1 )? ) )
+            // InternalSlideOMatic.g:2605:1: ( ( rule__Block__NameAssignment_1 )? )
+            {
+            // InternalSlideOMatic.g:2605:1: ( ( rule__Block__NameAssignment_1 )? )
+            // InternalSlideOMatic.g:2606:2: ( rule__Block__NameAssignment_1 )?
+            {
+             before(grammarAccess.getBlockAccess().getNameAssignment_1()); 
+            // InternalSlideOMatic.g:2607:2: ( rule__Block__NameAssignment_1 )?
+            int alt27=2;
+            int LA27_0 = input.LA(1);
+
+            if ( (LA27_0==RULE_STRING) ) {
+                alt27=1;
+            }
+            switch (alt27) {
+                case 1 :
+                    // InternalSlideOMatic.g:2607:3: rule__Block__NameAssignment_1
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Block__NameAssignment_1();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getBlockAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Block__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Block__Group__2"
+    // InternalSlideOMatic.g:2615:1: rule__Block__Group__2 : rule__Block__Group__2__Impl rule__Block__Group__3 ;
+    public final void rule__Block__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2619:1: ( rule__Block__Group__2__Impl rule__Block__Group__3 )
+            // InternalSlideOMatic.g:2620:2: rule__Block__Group__2__Impl rule__Block__Group__3
             {
             pushFollow(FOLLOW_22);
-            rule__Text__Group_0__2__Impl();
+            rule__Block__Group__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Text__Group_0__3();
+            rule__Block__Group__3();
 
             state._fsp--;
 
@@ -7502,35 +8381,25 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__Group_0__2"
+    // $ANTLR end "rule__Block__Group__2"
 
 
-    // $ANTLR start "rule__Text__Group_0__2__Impl"
-    // InternalSlideOMatic.g:2365:1: rule__Text__Group_0__2__Impl : ( ( rule__Text__TextAssignment_0_2 ) ) ;
-    public final void rule__Text__Group_0__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Block__Group__2__Impl"
+    // InternalSlideOMatic.g:2627:1: rule__Block__Group__2__Impl : ( '{' ) ;
+    public final void rule__Block__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2369:1: ( ( ( rule__Text__TextAssignment_0_2 ) ) )
-            // InternalSlideOMatic.g:2370:1: ( ( rule__Text__TextAssignment_0_2 ) )
+            // InternalSlideOMatic.g:2631:1: ( ( '{' ) )
+            // InternalSlideOMatic.g:2632:1: ( '{' )
             {
-            // InternalSlideOMatic.g:2370:1: ( ( rule__Text__TextAssignment_0_2 ) )
-            // InternalSlideOMatic.g:2371:2: ( rule__Text__TextAssignment_0_2 )
+            // InternalSlideOMatic.g:2632:1: ( '{' )
+            // InternalSlideOMatic.g:2633:2: '{'
             {
-             before(grammarAccess.getTextAccess().getTextAssignment_0_2()); 
-            // InternalSlideOMatic.g:2372:2: ( rule__Text__TextAssignment_0_2 )
-            // InternalSlideOMatic.g:2372:3: rule__Text__TextAssignment_0_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__Text__TextAssignment_0_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getTextAccess().getTextAssignment_0_2()); 
+             before(grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_2()); 
+            match(input,71,FOLLOW_2); 
+             after(grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_2()); 
 
             }
 
@@ -7549,438 +8418,26 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__Group_0__2__Impl"
+    // $ANTLR end "rule__Block__Group__2__Impl"
 
 
-    // $ANTLR start "rule__Text__Group_0__3"
-    // InternalSlideOMatic.g:2380:1: rule__Text__Group_0__3 : rule__Text__Group_0__3__Impl ;
-    public final void rule__Text__Group_0__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2384:1: ( rule__Text__Group_0__3__Impl )
-            // InternalSlideOMatic.g:2385:2: rule__Text__Group_0__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Text__Group_0__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_0__3"
-
-
-    // $ANTLR start "rule__Text__Group_0__3__Impl"
-    // InternalSlideOMatic.g:2391:1: rule__Text__Group_0__3__Impl : ( ( ruleClick )? ) ;
-    public final void rule__Text__Group_0__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Block__Group__3"
+    // InternalSlideOMatic.g:2642:1: rule__Block__Group__3 : rule__Block__Group__3__Impl rule__Block__Group__4 ;
+    public final void rule__Block__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2395:1: ( ( ( ruleClick )? ) )
-            // InternalSlideOMatic.g:2396:1: ( ( ruleClick )? )
-            {
-            // InternalSlideOMatic.g:2396:1: ( ( ruleClick )? )
-            // InternalSlideOMatic.g:2397:2: ( ruleClick )?
-            {
-             before(grammarAccess.getTextAccess().getClickParserRuleCall_0_3()); 
-            // InternalSlideOMatic.g:2398:2: ( ruleClick )?
-            int alt23=2;
-            int LA23_0 = input.LA(1);
-
-            if ( (LA23_0==11) ) {
-                alt23=1;
-            }
-            switch (alt23) {
-                case 1 :
-                    // InternalSlideOMatic.g:2398:3: ruleClick
-                    {
-                    pushFollow(FOLLOW_2);
-                    ruleClick();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getTextAccess().getClickParserRuleCall_0_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_0__3__Impl"
-
-
-    // $ANTLR start "rule__Text__Group_1__0"
-    // InternalSlideOMatic.g:2407:1: rule__Text__Group_1__0 : rule__Text__Group_1__0__Impl rule__Text__Group_1__1 ;
-    public final void rule__Text__Group_1__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2411:1: ( rule__Text__Group_1__0__Impl rule__Text__Group_1__1 )
-            // InternalSlideOMatic.g:2412:2: rule__Text__Group_1__0__Impl rule__Text__Group_1__1
-            {
-            pushFollow(FOLLOW_23);
-            rule__Text__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Text__Group_1__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__0"
-
-
-    // $ANTLR start "rule__Text__Group_1__0__Impl"
-    // InternalSlideOMatic.g:2419:1: rule__Text__Group_1__0__Impl : ( () ) ;
-    public final void rule__Text__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2423:1: ( ( () ) )
-            // InternalSlideOMatic.g:2424:1: ( () )
-            {
-            // InternalSlideOMatic.g:2424:1: ( () )
-            // InternalSlideOMatic.g:2425:2: ()
-            {
-             before(grammarAccess.getTextAccess().getBlockAction_1_0()); 
-            // InternalSlideOMatic.g:2426:2: ()
-            // InternalSlideOMatic.g:2426:3: 
-            {
-            }
-
-             after(grammarAccess.getTextAccess().getBlockAction_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__Text__Group_1__1"
-    // InternalSlideOMatic.g:2434:1: rule__Text__Group_1__1 : rule__Text__Group_1__1__Impl rule__Text__Group_1__2 ;
-    public final void rule__Text__Group_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2438:1: ( rule__Text__Group_1__1__Impl rule__Text__Group_1__2 )
-            // InternalSlideOMatic.g:2439:2: rule__Text__Group_1__1__Impl rule__Text__Group_1__2
-            {
-            pushFollow(FOLLOW_24);
-            rule__Text__Group_1__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Text__Group_1__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__1"
-
-
-    // $ANTLR start "rule__Text__Group_1__1__Impl"
-    // InternalSlideOMatic.g:2446:1: rule__Text__Group_1__1__Impl : ( 'block' ) ;
-    public final void rule__Text__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2450:1: ( ( 'block' ) )
-            // InternalSlideOMatic.g:2451:1: ( 'block' )
-            {
-            // InternalSlideOMatic.g:2451:1: ( 'block' )
-            // InternalSlideOMatic.g:2452:2: 'block'
-            {
-             before(grammarAccess.getTextAccess().getBlockKeyword_1_1()); 
-            match(input,84,FOLLOW_2); 
-             after(grammarAccess.getTextAccess().getBlockKeyword_1_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__Text__Group_1__2"
-    // InternalSlideOMatic.g:2461:1: rule__Text__Group_1__2 : rule__Text__Group_1__2__Impl rule__Text__Group_1__3 ;
-    public final void rule__Text__Group_1__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2465:1: ( rule__Text__Group_1__2__Impl rule__Text__Group_1__3 )
-            // InternalSlideOMatic.g:2466:2: rule__Text__Group_1__2__Impl rule__Text__Group_1__3
-            {
-            pushFollow(FOLLOW_24);
-            rule__Text__Group_1__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Text__Group_1__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__2"
-
-
-    // $ANTLR start "rule__Text__Group_1__2__Impl"
-    // InternalSlideOMatic.g:2473:1: rule__Text__Group_1__2__Impl : ( ( rule__Text__NameAssignment_1_2 )? ) ;
-    public final void rule__Text__Group_1__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2477:1: ( ( ( rule__Text__NameAssignment_1_2 )? ) )
-            // InternalSlideOMatic.g:2478:1: ( ( rule__Text__NameAssignment_1_2 )? )
-            {
-            // InternalSlideOMatic.g:2478:1: ( ( rule__Text__NameAssignment_1_2 )? )
-            // InternalSlideOMatic.g:2479:2: ( rule__Text__NameAssignment_1_2 )?
-            {
-             before(grammarAccess.getTextAccess().getNameAssignment_1_2()); 
-            // InternalSlideOMatic.g:2480:2: ( rule__Text__NameAssignment_1_2 )?
-            int alt24=2;
-            int LA24_0 = input.LA(1);
-
-            if ( (LA24_0==RULE_STRING) ) {
-                alt24=1;
-            }
-            switch (alt24) {
-                case 1 :
-                    // InternalSlideOMatic.g:2480:3: rule__Text__NameAssignment_1_2
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Text__NameAssignment_1_2();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getTextAccess().getNameAssignment_1_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__2__Impl"
-
-
-    // $ANTLR start "rule__Text__Group_1__3"
-    // InternalSlideOMatic.g:2488:1: rule__Text__Group_1__3 : rule__Text__Group_1__3__Impl rule__Text__Group_1__4 ;
-    public final void rule__Text__Group_1__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2492:1: ( rule__Text__Group_1__3__Impl rule__Text__Group_1__4 )
-            // InternalSlideOMatic.g:2493:2: rule__Text__Group_1__3__Impl rule__Text__Group_1__4
-            {
-            pushFollow(FOLLOW_3);
-            rule__Text__Group_1__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Text__Group_1__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__3"
-
-
-    // $ANTLR start "rule__Text__Group_1__3__Impl"
-    // InternalSlideOMatic.g:2500:1: rule__Text__Group_1__3__Impl : ( '{' ) ;
-    public final void rule__Text__Group_1__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2504:1: ( ( '{' ) )
-            // InternalSlideOMatic.g:2505:1: ( '{' )
-            {
-            // InternalSlideOMatic.g:2505:1: ( '{' )
-            // InternalSlideOMatic.g:2506:2: '{'
-            {
-             before(grammarAccess.getTextAccess().getLeftCurlyBracketKeyword_1_3()); 
-            match(input,68,FOLLOW_2); 
-             after(grammarAccess.getTextAccess().getLeftCurlyBracketKeyword_1_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__3__Impl"
-
-
-    // $ANTLR start "rule__Text__Group_1__4"
-    // InternalSlideOMatic.g:2515:1: rule__Text__Group_1__4 : rule__Text__Group_1__4__Impl rule__Text__Group_1__5 ;
-    public final void rule__Text__Group_1__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2519:1: ( rule__Text__Group_1__4__Impl rule__Text__Group_1__5 )
-            // InternalSlideOMatic.g:2520:2: rule__Text__Group_1__4__Impl rule__Text__Group_1__5
+            // InternalSlideOMatic.g:2646:1: ( rule__Block__Group__3__Impl rule__Block__Group__4 )
+            // InternalSlideOMatic.g:2647:2: rule__Block__Group__3__Impl rule__Block__Group__4
             {
             pushFollow(FOLLOW_15);
-            rule__Text__Group_1__4__Impl();
+            rule__Block__Group__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Text__Group_1__5();
+            rule__Block__Group__4();
 
             state._fsp--;
 
@@ -7999,35 +8456,35 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__Group_1__4"
+    // $ANTLR end "rule__Block__Group__3"
 
 
-    // $ANTLR start "rule__Text__Group_1__4__Impl"
-    // InternalSlideOMatic.g:2527:1: rule__Text__Group_1__4__Impl : ( ( rule__Text__TextAssignment_1_4 ) ) ;
-    public final void rule__Text__Group_1__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Block__Group__3__Impl"
+    // InternalSlideOMatic.g:2654:1: rule__Block__Group__3__Impl : ( ( rule__Block__ContentAssignment_3 ) ) ;
+    public final void rule__Block__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2531:1: ( ( ( rule__Text__TextAssignment_1_4 ) ) )
-            // InternalSlideOMatic.g:2532:1: ( ( rule__Text__TextAssignment_1_4 ) )
+            // InternalSlideOMatic.g:2658:1: ( ( ( rule__Block__ContentAssignment_3 ) ) )
+            // InternalSlideOMatic.g:2659:1: ( ( rule__Block__ContentAssignment_3 ) )
             {
-            // InternalSlideOMatic.g:2532:1: ( ( rule__Text__TextAssignment_1_4 ) )
-            // InternalSlideOMatic.g:2533:2: ( rule__Text__TextAssignment_1_4 )
+            // InternalSlideOMatic.g:2659:1: ( ( rule__Block__ContentAssignment_3 ) )
+            // InternalSlideOMatic.g:2660:2: ( rule__Block__ContentAssignment_3 )
             {
-             before(grammarAccess.getTextAccess().getTextAssignment_1_4()); 
-            // InternalSlideOMatic.g:2534:2: ( rule__Text__TextAssignment_1_4 )
-            // InternalSlideOMatic.g:2534:3: rule__Text__TextAssignment_1_4
+             before(grammarAccess.getBlockAccess().getContentAssignment_3()); 
+            // InternalSlideOMatic.g:2661:2: ( rule__Block__ContentAssignment_3 )
+            // InternalSlideOMatic.g:2661:3: rule__Block__ContentAssignment_3
             {
             pushFollow(FOLLOW_2);
-            rule__Text__TextAssignment_1_4();
+            rule__Block__ContentAssignment_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTextAccess().getTextAssignment_1_4()); 
+             after(grammarAccess.getBlockAccess().getContentAssignment_3()); 
 
             }
 
@@ -8046,192 +8503,26 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__Group_1__4__Impl"
+    // $ANTLR end "rule__Block__Group__3__Impl"
 
 
-    // $ANTLR start "rule__Text__Group_1__5"
-    // InternalSlideOMatic.g:2542:1: rule__Text__Group_1__5 : rule__Text__Group_1__5__Impl rule__Text__Group_1__6 ;
-    public final void rule__Text__Group_1__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2546:1: ( rule__Text__Group_1__5__Impl rule__Text__Group_1__6 )
-            // InternalSlideOMatic.g:2547:2: rule__Text__Group_1__5__Impl rule__Text__Group_1__6
-            {
-            pushFollow(FOLLOW_22);
-            rule__Text__Group_1__5__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Text__Group_1__6();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__5"
-
-
-    // $ANTLR start "rule__Text__Group_1__5__Impl"
-    // InternalSlideOMatic.g:2554:1: rule__Text__Group_1__5__Impl : ( '}' ) ;
-    public final void rule__Text__Group_1__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Block__Group__4"
+    // InternalSlideOMatic.g:2669:1: rule__Block__Group__4 : rule__Block__Group__4__Impl rule__Block__Group__5 ;
+    public final void rule__Block__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2558:1: ( ( '}' ) )
-            // InternalSlideOMatic.g:2559:1: ( '}' )
+            // InternalSlideOMatic.g:2673:1: ( rule__Block__Group__4__Impl rule__Block__Group__5 )
+            // InternalSlideOMatic.g:2674:2: rule__Block__Group__4__Impl rule__Block__Group__5
             {
-            // InternalSlideOMatic.g:2559:1: ( '}' )
-            // InternalSlideOMatic.g:2560:2: '}'
-            {
-             before(grammarAccess.getTextAccess().getRightCurlyBracketKeyword_1_5()); 
-            match(input,69,FOLLOW_2); 
-             after(grammarAccess.getTextAccess().getRightCurlyBracketKeyword_1_5()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__5__Impl"
-
-
-    // $ANTLR start "rule__Text__Group_1__6"
-    // InternalSlideOMatic.g:2569:1: rule__Text__Group_1__6 : rule__Text__Group_1__6__Impl ;
-    public final void rule__Text__Group_1__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2573:1: ( rule__Text__Group_1__6__Impl )
-            // InternalSlideOMatic.g:2574:2: rule__Text__Group_1__6__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__Text__Group_1__6__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__6"
-
-
-    // $ANTLR start "rule__Text__Group_1__6__Impl"
-    // InternalSlideOMatic.g:2580:1: rule__Text__Group_1__6__Impl : ( ( ruleClick )? ) ;
-    public final void rule__Text__Group_1__6__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2584:1: ( ( ( ruleClick )? ) )
-            // InternalSlideOMatic.g:2585:1: ( ( ruleClick )? )
-            {
-            // InternalSlideOMatic.g:2585:1: ( ( ruleClick )? )
-            // InternalSlideOMatic.g:2586:2: ( ruleClick )?
-            {
-             before(grammarAccess.getTextAccess().getClickParserRuleCall_1_6()); 
-            // InternalSlideOMatic.g:2587:2: ( ruleClick )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
-
-            if ( (LA25_0==11) ) {
-                alt25=1;
-            }
-            switch (alt25) {
-                case 1 :
-                    // InternalSlideOMatic.g:2587:3: ruleClick
-                    {
-                    pushFollow(FOLLOW_2);
-                    ruleClick();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getTextAccess().getClickParserRuleCall_1_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__Group_1__6__Impl"
-
-
-    // $ANTLR start "rule__List__Group_0__0"
-    // InternalSlideOMatic.g:2596:1: rule__List__Group_0__0 : rule__List__Group_0__0__Impl rule__List__Group_0__1 ;
-    public final void rule__List__Group_0__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2600:1: ( rule__List__Group_0__0__Impl rule__List__Group_0__1 )
-            // InternalSlideOMatic.g:2601:2: rule__List__Group_0__0__Impl rule__List__Group_0__1
-            {
-            pushFollow(FOLLOW_25);
-            rule__List__Group_0__0__Impl();
+            pushFollow(FOLLOW_21);
+            rule__Block__Group__4__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__List__Group_0__1();
+            rule__Block__Group__5();
 
             state._fsp--;
 
@@ -8250,100 +8541,25 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__List__Group_0__0"
+    // $ANTLR end "rule__Block__Group__4"
 
 
-    // $ANTLR start "rule__List__Group_0__0__Impl"
-    // InternalSlideOMatic.g:2608:1: rule__List__Group_0__0__Impl : ( () ) ;
-    public final void rule__List__Group_0__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2612:1: ( ( () ) )
-            // InternalSlideOMatic.g:2613:1: ( () )
-            {
-            // InternalSlideOMatic.g:2613:1: ( () )
-            // InternalSlideOMatic.g:2614:2: ()
-            {
-             before(grammarAccess.getListAccess().getNumberedListAction_0_0()); 
-            // InternalSlideOMatic.g:2615:2: ()
-            // InternalSlideOMatic.g:2615:3: 
-            {
-            }
-
-             after(grammarAccess.getListAccess().getNumberedListAction_0_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__List__Group_0__0__Impl"
-
-
-    // $ANTLR start "rule__List__Group_0__1"
-    // InternalSlideOMatic.g:2623:1: rule__List__Group_0__1 : rule__List__Group_0__1__Impl rule__List__Group_0__2 ;
-    public final void rule__List__Group_0__1() throws RecognitionException {
+    // $ANTLR start "rule__Block__Group__4__Impl"
+    // InternalSlideOMatic.g:2681:1: rule__Block__Group__4__Impl : ( '}' ) ;
+    public final void rule__Block__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2627:1: ( rule__List__Group_0__1__Impl rule__List__Group_0__2 )
-            // InternalSlideOMatic.g:2628:2: rule__List__Group_0__1__Impl rule__List__Group_0__2
+            // InternalSlideOMatic.g:2685:1: ( ( '}' ) )
+            // InternalSlideOMatic.g:2686:1: ( '}' )
             {
-            pushFollow(FOLLOW_26);
-            rule__List__Group_0__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__List__Group_0__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__List__Group_0__1"
-
-
-    // $ANTLR start "rule__List__Group_0__1__Impl"
-    // InternalSlideOMatic.g:2635:1: rule__List__Group_0__1__Impl : ( '#list' ) ;
-    public final void rule__List__Group_0__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2639:1: ( ( '#list' ) )
-            // InternalSlideOMatic.g:2640:1: ( '#list' )
+            // InternalSlideOMatic.g:2686:1: ( '}' )
+            // InternalSlideOMatic.g:2687:2: '}'
             {
-            // InternalSlideOMatic.g:2640:1: ( '#list' )
-            // InternalSlideOMatic.g:2641:2: '#list'
-            {
-             before(grammarAccess.getListAccess().getListKeyword_0_1()); 
-            match(input,85,FOLLOW_2); 
-             after(grammarAccess.getListAccess().getListKeyword_0_1()); 
+             before(grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_4()); 
+            match(input,72,FOLLOW_2); 
+             after(grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_4()); 
 
             }
 
@@ -8362,21 +8578,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__List__Group_0__1__Impl"
+    // $ANTLR end "rule__Block__Group__4__Impl"
 
 
-    // $ANTLR start "rule__List__Group_0__2"
-    // InternalSlideOMatic.g:2650:1: rule__List__Group_0__2 : rule__List__Group_0__2__Impl ;
-    public final void rule__List__Group_0__2() throws RecognitionException {
+    // $ANTLR start "rule__Block__Group__5"
+    // InternalSlideOMatic.g:2696:1: rule__Block__Group__5 : rule__Block__Group__5__Impl ;
+    public final void rule__Block__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2654:1: ( rule__List__Group_0__2__Impl )
-            // InternalSlideOMatic.g:2655:2: rule__List__Group_0__2__Impl
+            // InternalSlideOMatic.g:2700:1: ( rule__Block__Group__5__Impl )
+            // InternalSlideOMatic.g:2701:2: rule__Block__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__List__Group_0__2__Impl();
+            rule__Block__Group__5__Impl();
 
             state._fsp--;
 
@@ -8395,580 +8611,24 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__List__Group_0__2"
+    // $ANTLR end "rule__Block__Group__5"
 
 
-    // $ANTLR start "rule__List__Group_0__2__Impl"
-    // InternalSlideOMatic.g:2661:1: rule__List__Group_0__2__Impl : ( ( ( rule__List__ListItemsAssignment_0_2 ) ) ( ( rule__List__ListItemsAssignment_0_2 )* ) ) ;
-    public final void rule__List__Group_0__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2665:1: ( ( ( ( rule__List__ListItemsAssignment_0_2 ) ) ( ( rule__List__ListItemsAssignment_0_2 )* ) ) )
-            // InternalSlideOMatic.g:2666:1: ( ( ( rule__List__ListItemsAssignment_0_2 ) ) ( ( rule__List__ListItemsAssignment_0_2 )* ) )
-            {
-            // InternalSlideOMatic.g:2666:1: ( ( ( rule__List__ListItemsAssignment_0_2 ) ) ( ( rule__List__ListItemsAssignment_0_2 )* ) )
-            // InternalSlideOMatic.g:2667:2: ( ( rule__List__ListItemsAssignment_0_2 ) ) ( ( rule__List__ListItemsAssignment_0_2 )* )
-            {
-            // InternalSlideOMatic.g:2667:2: ( ( rule__List__ListItemsAssignment_0_2 ) )
-            // InternalSlideOMatic.g:2668:3: ( rule__List__ListItemsAssignment_0_2 )
-            {
-             before(grammarAccess.getListAccess().getListItemsAssignment_0_2()); 
-            // InternalSlideOMatic.g:2669:3: ( rule__List__ListItemsAssignment_0_2 )
-            // InternalSlideOMatic.g:2669:4: rule__List__ListItemsAssignment_0_2
-            {
-            pushFollow(FOLLOW_27);
-            rule__List__ListItemsAssignment_0_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getListAccess().getListItemsAssignment_0_2()); 
-
-            }
-
-            // InternalSlideOMatic.g:2672:2: ( ( rule__List__ListItemsAssignment_0_2 )* )
-            // InternalSlideOMatic.g:2673:3: ( rule__List__ListItemsAssignment_0_2 )*
-            {
-             before(grammarAccess.getListAccess().getListItemsAssignment_0_2()); 
-            // InternalSlideOMatic.g:2674:3: ( rule__List__ListItemsAssignment_0_2 )*
-            loop26:
-            do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
-
-                if ( (LA26_0==87) ) {
-                    alt26=1;
-                }
-
-
-                switch (alt26) {
-            	case 1 :
-            	    // InternalSlideOMatic.g:2674:4: rule__List__ListItemsAssignment_0_2
-            	    {
-            	    pushFollow(FOLLOW_27);
-            	    rule__List__ListItemsAssignment_0_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop26;
-                }
-            } while (true);
-
-             after(grammarAccess.getListAccess().getListItemsAssignment_0_2()); 
-
-            }
-
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__List__Group_0__2__Impl"
-
-
-    // $ANTLR start "rule__List__Group_1__0"
-    // InternalSlideOMatic.g:2684:1: rule__List__Group_1__0 : rule__List__Group_1__0__Impl rule__List__Group_1__1 ;
-    public final void rule__List__Group_1__0() throws RecognitionException {
+    // $ANTLR start "rule__Block__Group__5__Impl"
+    // InternalSlideOMatic.g:2707:1: rule__Block__Group__5__Impl : ( ( rule__Block__ClickAssignment_5 )? ) ;
+    public final void rule__Block__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2688:1: ( rule__List__Group_1__0__Impl rule__List__Group_1__1 )
-            // InternalSlideOMatic.g:2689:2: rule__List__Group_1__0__Impl rule__List__Group_1__1
+            // InternalSlideOMatic.g:2711:1: ( ( ( rule__Block__ClickAssignment_5 )? ) )
+            // InternalSlideOMatic.g:2712:1: ( ( rule__Block__ClickAssignment_5 )? )
             {
-            pushFollow(FOLLOW_28);
-            rule__List__Group_1__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__List__Group_1__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__List__Group_1__0"
-
-
-    // $ANTLR start "rule__List__Group_1__0__Impl"
-    // InternalSlideOMatic.g:2696:1: rule__List__Group_1__0__Impl : ( () ) ;
-    public final void rule__List__Group_1__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2700:1: ( ( () ) )
-            // InternalSlideOMatic.g:2701:1: ( () )
+            // InternalSlideOMatic.g:2712:1: ( ( rule__Block__ClickAssignment_5 )? )
+            // InternalSlideOMatic.g:2713:2: ( rule__Block__ClickAssignment_5 )?
             {
-            // InternalSlideOMatic.g:2701:1: ( () )
-            // InternalSlideOMatic.g:2702:2: ()
-            {
-             before(grammarAccess.getListAccess().getUnNumberedListAction_1_0()); 
-            // InternalSlideOMatic.g:2703:2: ()
-            // InternalSlideOMatic.g:2703:3: 
-            {
-            }
-
-             after(grammarAccess.getListAccess().getUnNumberedListAction_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__List__Group_1__0__Impl"
-
-
-    // $ANTLR start "rule__List__Group_1__1"
-    // InternalSlideOMatic.g:2711:1: rule__List__Group_1__1 : rule__List__Group_1__1__Impl rule__List__Group_1__2 ;
-    public final void rule__List__Group_1__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2715:1: ( rule__List__Group_1__1__Impl rule__List__Group_1__2 )
-            // InternalSlideOMatic.g:2716:2: rule__List__Group_1__1__Impl rule__List__Group_1__2
-            {
-            pushFollow(FOLLOW_29);
-            rule__List__Group_1__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__List__Group_1__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__List__Group_1__1"
-
-
-    // $ANTLR start "rule__List__Group_1__1__Impl"
-    // InternalSlideOMatic.g:2723:1: rule__List__Group_1__1__Impl : ( '-list' ) ;
-    public final void rule__List__Group_1__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2727:1: ( ( '-list' ) )
-            // InternalSlideOMatic.g:2728:1: ( '-list' )
-            {
-            // InternalSlideOMatic.g:2728:1: ( '-list' )
-            // InternalSlideOMatic.g:2729:2: '-list'
-            {
-             before(grammarAccess.getListAccess().getListKeyword_1_1()); 
-            match(input,86,FOLLOW_2); 
-             after(grammarAccess.getListAccess().getListKeyword_1_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__List__Group_1__1__Impl"
-
-
-    // $ANTLR start "rule__List__Group_1__2"
-    // InternalSlideOMatic.g:2738:1: rule__List__Group_1__2 : rule__List__Group_1__2__Impl ;
-    public final void rule__List__Group_1__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2742:1: ( rule__List__Group_1__2__Impl )
-            // InternalSlideOMatic.g:2743:2: rule__List__Group_1__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__List__Group_1__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__List__Group_1__2"
-
-
-    // $ANTLR start "rule__List__Group_1__2__Impl"
-    // InternalSlideOMatic.g:2749:1: rule__List__Group_1__2__Impl : ( ( ( rule__List__ListItemsAssignment_1_2 ) ) ( ( rule__List__ListItemsAssignment_1_2 )* ) ) ;
-    public final void rule__List__Group_1__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2753:1: ( ( ( ( rule__List__ListItemsAssignment_1_2 ) ) ( ( rule__List__ListItemsAssignment_1_2 )* ) ) )
-            // InternalSlideOMatic.g:2754:1: ( ( ( rule__List__ListItemsAssignment_1_2 ) ) ( ( rule__List__ListItemsAssignment_1_2 )* ) )
-            {
-            // InternalSlideOMatic.g:2754:1: ( ( ( rule__List__ListItemsAssignment_1_2 ) ) ( ( rule__List__ListItemsAssignment_1_2 )* ) )
-            // InternalSlideOMatic.g:2755:2: ( ( rule__List__ListItemsAssignment_1_2 ) ) ( ( rule__List__ListItemsAssignment_1_2 )* )
-            {
-            // InternalSlideOMatic.g:2755:2: ( ( rule__List__ListItemsAssignment_1_2 ) )
-            // InternalSlideOMatic.g:2756:3: ( rule__List__ListItemsAssignment_1_2 )
-            {
-             before(grammarAccess.getListAccess().getListItemsAssignment_1_2()); 
-            // InternalSlideOMatic.g:2757:3: ( rule__List__ListItemsAssignment_1_2 )
-            // InternalSlideOMatic.g:2757:4: rule__List__ListItemsAssignment_1_2
-            {
-            pushFollow(FOLLOW_30);
-            rule__List__ListItemsAssignment_1_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getListAccess().getListItemsAssignment_1_2()); 
-
-            }
-
-            // InternalSlideOMatic.g:2760:2: ( ( rule__List__ListItemsAssignment_1_2 )* )
-            // InternalSlideOMatic.g:2761:3: ( rule__List__ListItemsAssignment_1_2 )*
-            {
-             before(grammarAccess.getListAccess().getListItemsAssignment_1_2()); 
-            // InternalSlideOMatic.g:2762:3: ( rule__List__ListItemsAssignment_1_2 )*
-            loop27:
-            do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
-
-                if ( (LA27_0==88) ) {
-                    alt27=1;
-                }
-
-
-                switch (alt27) {
-            	case 1 :
-            	    // InternalSlideOMatic.g:2762:4: rule__List__ListItemsAssignment_1_2
-            	    {
-            	    pushFollow(FOLLOW_30);
-            	    rule__List__ListItemsAssignment_1_2();
-
-            	    state._fsp--;
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop27;
-                }
-            } while (true);
-
-             after(grammarAccess.getListAccess().getListItemsAssignment_1_2()); 
-
-            }
-
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__List__Group_1__2__Impl"
-
-
-    // $ANTLR start "rule__NumberedListItem__Group__0"
-    // InternalSlideOMatic.g:2772:1: rule__NumberedListItem__Group__0 : rule__NumberedListItem__Group__0__Impl rule__NumberedListItem__Group__1 ;
-    public final void rule__NumberedListItem__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2776:1: ( rule__NumberedListItem__Group__0__Impl rule__NumberedListItem__Group__1 )
-            // InternalSlideOMatic.g:2777:2: rule__NumberedListItem__Group__0__Impl rule__NumberedListItem__Group__1
-            {
-            pushFollow(FOLLOW_3);
-            rule__NumberedListItem__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__NumberedListItem__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumberedListItem__Group__0"
-
-
-    // $ANTLR start "rule__NumberedListItem__Group__0__Impl"
-    // InternalSlideOMatic.g:2784:1: rule__NumberedListItem__Group__0__Impl : ( '##' ) ;
-    public final void rule__NumberedListItem__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2788:1: ( ( '##' ) )
-            // InternalSlideOMatic.g:2789:1: ( '##' )
-            {
-            // InternalSlideOMatic.g:2789:1: ( '##' )
-            // InternalSlideOMatic.g:2790:2: '##'
-            {
-             before(grammarAccess.getNumberedListItemAccess().getNumberSignNumberSignKeyword_0()); 
-            match(input,87,FOLLOW_2); 
-             after(grammarAccess.getNumberedListItemAccess().getNumberSignNumberSignKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumberedListItem__Group__0__Impl"
-
-
-    // $ANTLR start "rule__NumberedListItem__Group__1"
-    // InternalSlideOMatic.g:2799:1: rule__NumberedListItem__Group__1 : rule__NumberedListItem__Group__1__Impl rule__NumberedListItem__Group__2 ;
-    public final void rule__NumberedListItem__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2803:1: ( rule__NumberedListItem__Group__1__Impl rule__NumberedListItem__Group__2 )
-            // InternalSlideOMatic.g:2804:2: rule__NumberedListItem__Group__1__Impl rule__NumberedListItem__Group__2
-            {
-            pushFollow(FOLLOW_22);
-            rule__NumberedListItem__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__NumberedListItem__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumberedListItem__Group__1"
-
-
-    // $ANTLR start "rule__NumberedListItem__Group__1__Impl"
-    // InternalSlideOMatic.g:2811:1: rule__NumberedListItem__Group__1__Impl : ( ( rule__NumberedListItem__ItemAssignment_1 ) ) ;
-    public final void rule__NumberedListItem__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2815:1: ( ( ( rule__NumberedListItem__ItemAssignment_1 ) ) )
-            // InternalSlideOMatic.g:2816:1: ( ( rule__NumberedListItem__ItemAssignment_1 ) )
-            {
-            // InternalSlideOMatic.g:2816:1: ( ( rule__NumberedListItem__ItemAssignment_1 ) )
-            // InternalSlideOMatic.g:2817:2: ( rule__NumberedListItem__ItemAssignment_1 )
-            {
-             before(grammarAccess.getNumberedListItemAccess().getItemAssignment_1()); 
-            // InternalSlideOMatic.g:2818:2: ( rule__NumberedListItem__ItemAssignment_1 )
-            // InternalSlideOMatic.g:2818:3: rule__NumberedListItem__ItemAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__NumberedListItem__ItemAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getNumberedListItemAccess().getItemAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumberedListItem__Group__1__Impl"
-
-
-    // $ANTLR start "rule__NumberedListItem__Group__2"
-    // InternalSlideOMatic.g:2826:1: rule__NumberedListItem__Group__2 : rule__NumberedListItem__Group__2__Impl ;
-    public final void rule__NumberedListItem__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2830:1: ( rule__NumberedListItem__Group__2__Impl )
-            // InternalSlideOMatic.g:2831:2: rule__NumberedListItem__Group__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__NumberedListItem__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__NumberedListItem__Group__2"
-
-
-    // $ANTLR start "rule__NumberedListItem__Group__2__Impl"
-    // InternalSlideOMatic.g:2837:1: rule__NumberedListItem__Group__2__Impl : ( ( ruleClick )? ) ;
-    public final void rule__NumberedListItem__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:2841:1: ( ( ( ruleClick )? ) )
-            // InternalSlideOMatic.g:2842:1: ( ( ruleClick )? )
-            {
-            // InternalSlideOMatic.g:2842:1: ( ( ruleClick )? )
-            // InternalSlideOMatic.g:2843:2: ( ruleClick )?
-            {
-             before(grammarAccess.getNumberedListItemAccess().getClickParserRuleCall_2()); 
-            // InternalSlideOMatic.g:2844:2: ( ruleClick )?
+             before(grammarAccess.getBlockAccess().getClickAssignment_5()); 
+            // InternalSlideOMatic.g:2714:2: ( rule__Block__ClickAssignment_5 )?
             int alt28=2;
             int LA28_0 = input.LA(1);
 
@@ -8977,10 +8637,10 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             }
             switch (alt28) {
                 case 1 :
-                    // InternalSlideOMatic.g:2844:3: ruleClick
+                    // InternalSlideOMatic.g:2714:3: rule__Block__ClickAssignment_5
                     {
                     pushFollow(FOLLOW_2);
-                    ruleClick();
+                    rule__Block__ClickAssignment_5();
 
                     state._fsp--;
 
@@ -8990,7 +8650,7 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             }
 
-             after(grammarAccess.getNumberedListItemAccess().getClickParserRuleCall_2()); 
+             after(grammarAccess.getBlockAccess().getClickAssignment_5()); 
 
             }
 
@@ -9009,26 +8669,422 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__NumberedListItem__Group__2__Impl"
+    // $ANTLR end "rule__Block__Group__5__Impl"
 
 
-    // $ANTLR start "rule__UnNumberedListItem__Group__0"
-    // InternalSlideOMatic.g:2853:1: rule__UnNumberedListItem__Group__0 : rule__UnNumberedListItem__Group__0__Impl rule__UnNumberedListItem__Group__1 ;
-    public final void rule__UnNumberedListItem__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__NumberedList__Group__0"
+    // InternalSlideOMatic.g:2723:1: rule__NumberedList__Group__0 : rule__NumberedList__Group__0__Impl rule__NumberedList__Group__1 ;
+    public final void rule__NumberedList__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2857:1: ( rule__UnNumberedListItem__Group__0__Impl rule__UnNumberedListItem__Group__1 )
-            // InternalSlideOMatic.g:2858:2: rule__UnNumberedListItem__Group__0__Impl rule__UnNumberedListItem__Group__1
+            // InternalSlideOMatic.g:2727:1: ( rule__NumberedList__Group__0__Impl rule__NumberedList__Group__1 )
+            // InternalSlideOMatic.g:2728:2: rule__NumberedList__Group__0__Impl rule__NumberedList__Group__1
+            {
+            pushFollow(FOLLOW_23);
+            rule__NumberedList__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__NumberedList__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumberedList__Group__0"
+
+
+    // $ANTLR start "rule__NumberedList__Group__0__Impl"
+    // InternalSlideOMatic.g:2735:1: rule__NumberedList__Group__0__Impl : ( '#list' ) ;
+    public final void rule__NumberedList__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2739:1: ( ( '#list' ) )
+            // InternalSlideOMatic.g:2740:1: ( '#list' )
+            {
+            // InternalSlideOMatic.g:2740:1: ( '#list' )
+            // InternalSlideOMatic.g:2741:2: '#list'
+            {
+             before(grammarAccess.getNumberedListAccess().getListKeyword_0()); 
+            match(input,88,FOLLOW_2); 
+             after(grammarAccess.getNumberedListAccess().getListKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumberedList__Group__0__Impl"
+
+
+    // $ANTLR start "rule__NumberedList__Group__1"
+    // InternalSlideOMatic.g:2750:1: rule__NumberedList__Group__1 : rule__NumberedList__Group__1__Impl ;
+    public final void rule__NumberedList__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2754:1: ( rule__NumberedList__Group__1__Impl )
+            // InternalSlideOMatic.g:2755:2: rule__NumberedList__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__NumberedList__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumberedList__Group__1"
+
+
+    // $ANTLR start "rule__NumberedList__Group__1__Impl"
+    // InternalSlideOMatic.g:2761:1: rule__NumberedList__Group__1__Impl : ( ( ( rule__NumberedList__ItemsAssignment_1 ) ) ( ( rule__NumberedList__ItemsAssignment_1 )* ) ) ;
+    public final void rule__NumberedList__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2765:1: ( ( ( ( rule__NumberedList__ItemsAssignment_1 ) ) ( ( rule__NumberedList__ItemsAssignment_1 )* ) ) )
+            // InternalSlideOMatic.g:2766:1: ( ( ( rule__NumberedList__ItemsAssignment_1 ) ) ( ( rule__NumberedList__ItemsAssignment_1 )* ) )
+            {
+            // InternalSlideOMatic.g:2766:1: ( ( ( rule__NumberedList__ItemsAssignment_1 ) ) ( ( rule__NumberedList__ItemsAssignment_1 )* ) )
+            // InternalSlideOMatic.g:2767:2: ( ( rule__NumberedList__ItemsAssignment_1 ) ) ( ( rule__NumberedList__ItemsAssignment_1 )* )
+            {
+            // InternalSlideOMatic.g:2767:2: ( ( rule__NumberedList__ItemsAssignment_1 ) )
+            // InternalSlideOMatic.g:2768:3: ( rule__NumberedList__ItemsAssignment_1 )
+            {
+             before(grammarAccess.getNumberedListAccess().getItemsAssignment_1()); 
+            // InternalSlideOMatic.g:2769:3: ( rule__NumberedList__ItemsAssignment_1 )
+            // InternalSlideOMatic.g:2769:4: rule__NumberedList__ItemsAssignment_1
+            {
+            pushFollow(FOLLOW_24);
+            rule__NumberedList__ItemsAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNumberedListAccess().getItemsAssignment_1()); 
+
+            }
+
+            // InternalSlideOMatic.g:2772:2: ( ( rule__NumberedList__ItemsAssignment_1 )* )
+            // InternalSlideOMatic.g:2773:3: ( rule__NumberedList__ItemsAssignment_1 )*
+            {
+             before(grammarAccess.getNumberedListAccess().getItemsAssignment_1()); 
+            // InternalSlideOMatic.g:2774:3: ( rule__NumberedList__ItemsAssignment_1 )*
+            loop29:
+            do {
+                int alt29=2;
+                int LA29_0 = input.LA(1);
+
+                if ( (LA29_0==90) ) {
+                    alt29=1;
+                }
+
+
+                switch (alt29) {
+            	case 1 :
+            	    // InternalSlideOMatic.g:2774:4: rule__NumberedList__ItemsAssignment_1
+            	    {
+            	    pushFollow(FOLLOW_24);
+            	    rule__NumberedList__ItemsAssignment_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop29;
+                }
+            } while (true);
+
+             after(grammarAccess.getNumberedListAccess().getItemsAssignment_1()); 
+
+            }
+
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumberedList__Group__1__Impl"
+
+
+    // $ANTLR start "rule__UnNumberedList__Group__0"
+    // InternalSlideOMatic.g:2784:1: rule__UnNumberedList__Group__0 : rule__UnNumberedList__Group__0__Impl rule__UnNumberedList__Group__1 ;
+    public final void rule__UnNumberedList__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2788:1: ( rule__UnNumberedList__Group__0__Impl rule__UnNumberedList__Group__1 )
+            // InternalSlideOMatic.g:2789:2: rule__UnNumberedList__Group__0__Impl rule__UnNumberedList__Group__1
+            {
+            pushFollow(FOLLOW_23);
+            rule__UnNumberedList__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__UnNumberedList__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnNumberedList__Group__0"
+
+
+    // $ANTLR start "rule__UnNumberedList__Group__0__Impl"
+    // InternalSlideOMatic.g:2796:1: rule__UnNumberedList__Group__0__Impl : ( '&list' ) ;
+    public final void rule__UnNumberedList__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2800:1: ( ( '&list' ) )
+            // InternalSlideOMatic.g:2801:1: ( '&list' )
+            {
+            // InternalSlideOMatic.g:2801:1: ( '&list' )
+            // InternalSlideOMatic.g:2802:2: '&list'
+            {
+             before(grammarAccess.getUnNumberedListAccess().getListKeyword_0()); 
+            match(input,89,FOLLOW_2); 
+             after(grammarAccess.getUnNumberedListAccess().getListKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnNumberedList__Group__0__Impl"
+
+
+    // $ANTLR start "rule__UnNumberedList__Group__1"
+    // InternalSlideOMatic.g:2811:1: rule__UnNumberedList__Group__1 : rule__UnNumberedList__Group__1__Impl ;
+    public final void rule__UnNumberedList__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2815:1: ( rule__UnNumberedList__Group__1__Impl )
+            // InternalSlideOMatic.g:2816:2: rule__UnNumberedList__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__UnNumberedList__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnNumberedList__Group__1"
+
+
+    // $ANTLR start "rule__UnNumberedList__Group__1__Impl"
+    // InternalSlideOMatic.g:2822:1: rule__UnNumberedList__Group__1__Impl : ( ( ( rule__UnNumberedList__ItemsAssignment_1 ) ) ( ( rule__UnNumberedList__ItemsAssignment_1 )* ) ) ;
+    public final void rule__UnNumberedList__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2826:1: ( ( ( ( rule__UnNumberedList__ItemsAssignment_1 ) ) ( ( rule__UnNumberedList__ItemsAssignment_1 )* ) ) )
+            // InternalSlideOMatic.g:2827:1: ( ( ( rule__UnNumberedList__ItemsAssignment_1 ) ) ( ( rule__UnNumberedList__ItemsAssignment_1 )* ) )
+            {
+            // InternalSlideOMatic.g:2827:1: ( ( ( rule__UnNumberedList__ItemsAssignment_1 ) ) ( ( rule__UnNumberedList__ItemsAssignment_1 )* ) )
+            // InternalSlideOMatic.g:2828:2: ( ( rule__UnNumberedList__ItemsAssignment_1 ) ) ( ( rule__UnNumberedList__ItemsAssignment_1 )* )
+            {
+            // InternalSlideOMatic.g:2828:2: ( ( rule__UnNumberedList__ItemsAssignment_1 ) )
+            // InternalSlideOMatic.g:2829:3: ( rule__UnNumberedList__ItemsAssignment_1 )
+            {
+             before(grammarAccess.getUnNumberedListAccess().getItemsAssignment_1()); 
+            // InternalSlideOMatic.g:2830:3: ( rule__UnNumberedList__ItemsAssignment_1 )
+            // InternalSlideOMatic.g:2830:4: rule__UnNumberedList__ItemsAssignment_1
+            {
+            pushFollow(FOLLOW_24);
+            rule__UnNumberedList__ItemsAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getUnNumberedListAccess().getItemsAssignment_1()); 
+
+            }
+
+            // InternalSlideOMatic.g:2833:2: ( ( rule__UnNumberedList__ItemsAssignment_1 )* )
+            // InternalSlideOMatic.g:2834:3: ( rule__UnNumberedList__ItemsAssignment_1 )*
+            {
+             before(grammarAccess.getUnNumberedListAccess().getItemsAssignment_1()); 
+            // InternalSlideOMatic.g:2835:3: ( rule__UnNumberedList__ItemsAssignment_1 )*
+            loop30:
+            do {
+                int alt30=2;
+                int LA30_0 = input.LA(1);
+
+                if ( (LA30_0==90) ) {
+                    alt30=1;
+                }
+
+
+                switch (alt30) {
+            	case 1 :
+            	    // InternalSlideOMatic.g:2835:4: rule__UnNumberedList__ItemsAssignment_1
+            	    {
+            	    pushFollow(FOLLOW_24);
+            	    rule__UnNumberedList__ItemsAssignment_1();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop30;
+                }
+            } while (true);
+
+             after(grammarAccess.getUnNumberedListAccess().getItemsAssignment_1()); 
+
+            }
+
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnNumberedList__Group__1__Impl"
+
+
+    // $ANTLR start "rule__ListItem__Group__0"
+    // InternalSlideOMatic.g:2845:1: rule__ListItem__Group__0 : rule__ListItem__Group__0__Impl rule__ListItem__Group__1 ;
+    public final void rule__ListItem__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2849:1: ( rule__ListItem__Group__0__Impl rule__ListItem__Group__1 )
+            // InternalSlideOMatic.g:2850:2: rule__ListItem__Group__0__Impl rule__ListItem__Group__1
             {
             pushFollow(FOLLOW_3);
-            rule__UnNumberedListItem__Group__0__Impl();
+            rule__ListItem__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UnNumberedListItem__Group__1();
+            rule__ListItem__Group__1();
 
             state._fsp--;
 
@@ -9047,25 +9103,25 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__UnNumberedListItem__Group__0"
+    // $ANTLR end "rule__ListItem__Group__0"
 
 
-    // $ANTLR start "rule__UnNumberedListItem__Group__0__Impl"
-    // InternalSlideOMatic.g:2865:1: rule__UnNumberedListItem__Group__0__Impl : ( '--' ) ;
-    public final void rule__UnNumberedListItem__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ListItem__Group__0__Impl"
+    // InternalSlideOMatic.g:2857:1: rule__ListItem__Group__0__Impl : ( '-' ) ;
+    public final void rule__ListItem__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2869:1: ( ( '--' ) )
-            // InternalSlideOMatic.g:2870:1: ( '--' )
+            // InternalSlideOMatic.g:2861:1: ( ( '-' ) )
+            // InternalSlideOMatic.g:2862:1: ( '-' )
             {
-            // InternalSlideOMatic.g:2870:1: ( '--' )
-            // InternalSlideOMatic.g:2871:2: '--'
+            // InternalSlideOMatic.g:2862:1: ( '-' )
+            // InternalSlideOMatic.g:2863:2: '-'
             {
-             before(grammarAccess.getUnNumberedListItemAccess().getHyphenMinusHyphenMinusKeyword_0()); 
-            match(input,88,FOLLOW_2); 
-             after(grammarAccess.getUnNumberedListItemAccess().getHyphenMinusHyphenMinusKeyword_0()); 
+             before(grammarAccess.getListItemAccess().getHyphenMinusKeyword_0()); 
+            match(input,90,FOLLOW_2); 
+             after(grammarAccess.getListItemAccess().getHyphenMinusKeyword_0()); 
 
             }
 
@@ -9084,26 +9140,26 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__UnNumberedListItem__Group__0__Impl"
+    // $ANTLR end "rule__ListItem__Group__0__Impl"
 
 
-    // $ANTLR start "rule__UnNumberedListItem__Group__1"
-    // InternalSlideOMatic.g:2880:1: rule__UnNumberedListItem__Group__1 : rule__UnNumberedListItem__Group__1__Impl rule__UnNumberedListItem__Group__2 ;
-    public final void rule__UnNumberedListItem__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__ListItem__Group__1"
+    // InternalSlideOMatic.g:2872:1: rule__ListItem__Group__1 : rule__ListItem__Group__1__Impl rule__ListItem__Group__2 ;
+    public final void rule__ListItem__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2884:1: ( rule__UnNumberedListItem__Group__1__Impl rule__UnNumberedListItem__Group__2 )
-            // InternalSlideOMatic.g:2885:2: rule__UnNumberedListItem__Group__1__Impl rule__UnNumberedListItem__Group__2
+            // InternalSlideOMatic.g:2876:1: ( rule__ListItem__Group__1__Impl rule__ListItem__Group__2 )
+            // InternalSlideOMatic.g:2877:2: rule__ListItem__Group__1__Impl rule__ListItem__Group__2
             {
-            pushFollow(FOLLOW_22);
-            rule__UnNumberedListItem__Group__1__Impl();
+            pushFollow(FOLLOW_25);
+            rule__ListItem__Group__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__UnNumberedListItem__Group__2();
+            rule__ListItem__Group__2();
 
             state._fsp--;
 
@@ -9122,35 +9178,35 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__UnNumberedListItem__Group__1"
+    // $ANTLR end "rule__ListItem__Group__1"
 
 
-    // $ANTLR start "rule__UnNumberedListItem__Group__1__Impl"
-    // InternalSlideOMatic.g:2892:1: rule__UnNumberedListItem__Group__1__Impl : ( ( rule__UnNumberedListItem__ItemAssignment_1 ) ) ;
-    public final void rule__UnNumberedListItem__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ListItem__Group__1__Impl"
+    // InternalSlideOMatic.g:2884:1: rule__ListItem__Group__1__Impl : ( ( rule__ListItem__ItemAssignment_1 ) ) ;
+    public final void rule__ListItem__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2896:1: ( ( ( rule__UnNumberedListItem__ItemAssignment_1 ) ) )
-            // InternalSlideOMatic.g:2897:1: ( ( rule__UnNumberedListItem__ItemAssignment_1 ) )
+            // InternalSlideOMatic.g:2888:1: ( ( ( rule__ListItem__ItemAssignment_1 ) ) )
+            // InternalSlideOMatic.g:2889:1: ( ( rule__ListItem__ItemAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:2897:1: ( ( rule__UnNumberedListItem__ItemAssignment_1 ) )
-            // InternalSlideOMatic.g:2898:2: ( rule__UnNumberedListItem__ItemAssignment_1 )
+            // InternalSlideOMatic.g:2889:1: ( ( rule__ListItem__ItemAssignment_1 ) )
+            // InternalSlideOMatic.g:2890:2: ( rule__ListItem__ItemAssignment_1 )
             {
-             before(grammarAccess.getUnNumberedListItemAccess().getItemAssignment_1()); 
-            // InternalSlideOMatic.g:2899:2: ( rule__UnNumberedListItem__ItemAssignment_1 )
-            // InternalSlideOMatic.g:2899:3: rule__UnNumberedListItem__ItemAssignment_1
+             before(grammarAccess.getListItemAccess().getItemAssignment_1()); 
+            // InternalSlideOMatic.g:2891:2: ( rule__ListItem__ItemAssignment_1 )
+            // InternalSlideOMatic.g:2891:3: rule__ListItem__ItemAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__UnNumberedListItem__ItemAssignment_1();
+            rule__ListItem__ItemAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getUnNumberedListItemAccess().getItemAssignment_1()); 
+             after(grammarAccess.getListItemAccess().getItemAssignment_1()); 
 
             }
 
@@ -9169,21 +9225,26 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__UnNumberedListItem__Group__1__Impl"
+    // $ANTLR end "rule__ListItem__Group__1__Impl"
 
 
-    // $ANTLR start "rule__UnNumberedListItem__Group__2"
-    // InternalSlideOMatic.g:2907:1: rule__UnNumberedListItem__Group__2 : rule__UnNumberedListItem__Group__2__Impl ;
-    public final void rule__UnNumberedListItem__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__ListItem__Group__2"
+    // InternalSlideOMatic.g:2899:1: rule__ListItem__Group__2 : rule__ListItem__Group__2__Impl rule__ListItem__Group__3 ;
+    public final void rule__ListItem__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2911:1: ( rule__UnNumberedListItem__Group__2__Impl )
-            // InternalSlideOMatic.g:2912:2: rule__UnNumberedListItem__Group__2__Impl
+            // InternalSlideOMatic.g:2903:1: ( rule__ListItem__Group__2__Impl rule__ListItem__Group__3 )
+            // InternalSlideOMatic.g:2904:2: rule__ListItem__Group__2__Impl rule__ListItem__Group__3
             {
+            pushFollow(FOLLOW_25);
+            rule__ListItem__Group__2__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__UnNumberedListItem__Group__2__Impl();
+            rule__ListItem__Group__3();
 
             state._fsp--;
 
@@ -9202,36 +9263,36 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__UnNumberedListItem__Group__2"
+    // $ANTLR end "rule__ListItem__Group__2"
 
 
-    // $ANTLR start "rule__UnNumberedListItem__Group__2__Impl"
-    // InternalSlideOMatic.g:2918:1: rule__UnNumberedListItem__Group__2__Impl : ( ( ruleClick )? ) ;
-    public final void rule__UnNumberedListItem__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__ListItem__Group__2__Impl"
+    // InternalSlideOMatic.g:2911:1: rule__ListItem__Group__2__Impl : ( ( rule__ListItem__Group_2__0 )? ) ;
+    public final void rule__ListItem__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2922:1: ( ( ( ruleClick )? ) )
-            // InternalSlideOMatic.g:2923:1: ( ( ruleClick )? )
+            // InternalSlideOMatic.g:2915:1: ( ( ( rule__ListItem__Group_2__0 )? ) )
+            // InternalSlideOMatic.g:2916:1: ( ( rule__ListItem__Group_2__0 )? )
             {
-            // InternalSlideOMatic.g:2923:1: ( ( ruleClick )? )
-            // InternalSlideOMatic.g:2924:2: ( ruleClick )?
+            // InternalSlideOMatic.g:2916:1: ( ( rule__ListItem__Group_2__0 )? )
+            // InternalSlideOMatic.g:2917:2: ( rule__ListItem__Group_2__0 )?
             {
-             before(grammarAccess.getUnNumberedListItemAccess().getClickParserRuleCall_2()); 
-            // InternalSlideOMatic.g:2925:2: ( ruleClick )?
-            int alt29=2;
-            int LA29_0 = input.LA(1);
+             before(grammarAccess.getListItemAccess().getGroup_2()); 
+            // InternalSlideOMatic.g:2918:2: ( rule__ListItem__Group_2__0 )?
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( (LA29_0==11) ) {
-                alt29=1;
+            if ( (LA31_0==73) ) {
+                alt31=1;
             }
-            switch (alt29) {
+            switch (alt31) {
                 case 1 :
-                    // InternalSlideOMatic.g:2925:3: ruleClick
+                    // InternalSlideOMatic.g:2918:3: rule__ListItem__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
-                    ruleClick();
+                    rule__ListItem__Group_2__0();
 
                     state._fsp--;
 
@@ -9241,7 +9302,7 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             }
 
-             after(grammarAccess.getUnNumberedListItemAccess().getClickParserRuleCall_2()); 
+             after(grammarAccess.getListItemAccess().getGroup_2()); 
 
             }
 
@@ -9260,20 +9321,341 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__UnNumberedListItem__Group__2__Impl"
+    // $ANTLR end "rule__ListItem__Group__2__Impl"
+
+
+    // $ANTLR start "rule__ListItem__Group__3"
+    // InternalSlideOMatic.g:2926:1: rule__ListItem__Group__3 : rule__ListItem__Group__3__Impl ;
+    public final void rule__ListItem__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2930:1: ( rule__ListItem__Group__3__Impl )
+            // InternalSlideOMatic.g:2931:2: rule__ListItem__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ListItem__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__Group__3"
+
+
+    // $ANTLR start "rule__ListItem__Group__3__Impl"
+    // InternalSlideOMatic.g:2937:1: rule__ListItem__Group__3__Impl : ( ( rule__ListItem__ClickAssignment_3 )? ) ;
+    public final void rule__ListItem__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2941:1: ( ( ( rule__ListItem__ClickAssignment_3 )? ) )
+            // InternalSlideOMatic.g:2942:1: ( ( rule__ListItem__ClickAssignment_3 )? )
+            {
+            // InternalSlideOMatic.g:2942:1: ( ( rule__ListItem__ClickAssignment_3 )? )
+            // InternalSlideOMatic.g:2943:2: ( rule__ListItem__ClickAssignment_3 )?
+            {
+             before(grammarAccess.getListItemAccess().getClickAssignment_3()); 
+            // InternalSlideOMatic.g:2944:2: ( rule__ListItem__ClickAssignment_3 )?
+            int alt32=2;
+            int LA32_0 = input.LA(1);
+
+            if ( (LA32_0==11) ) {
+                alt32=1;
+            }
+            switch (alt32) {
+                case 1 :
+                    // InternalSlideOMatic.g:2944:3: rule__ListItem__ClickAssignment_3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__ListItem__ClickAssignment_3();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getListItemAccess().getClickAssignment_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__Group__3__Impl"
+
+
+    // $ANTLR start "rule__ListItem__Group_2__0"
+    // InternalSlideOMatic.g:2953:1: rule__ListItem__Group_2__0 : rule__ListItem__Group_2__0__Impl rule__ListItem__Group_2__1 ;
+    public final void rule__ListItem__Group_2__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2957:1: ( rule__ListItem__Group_2__0__Impl rule__ListItem__Group_2__1 )
+            // InternalSlideOMatic.g:2958:2: rule__ListItem__Group_2__0__Impl rule__ListItem__Group_2__1
+            {
+            pushFollow(FOLLOW_26);
+            rule__ListItem__Group_2__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ListItem__Group_2__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__Group_2__0"
+
+
+    // $ANTLR start "rule__ListItem__Group_2__0__Impl"
+    // InternalSlideOMatic.g:2965:1: rule__ListItem__Group_2__0__Impl : ( '(' ) ;
+    public final void rule__ListItem__Group_2__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2969:1: ( ( '(' ) )
+            // InternalSlideOMatic.g:2970:1: ( '(' )
+            {
+            // InternalSlideOMatic.g:2970:1: ( '(' )
+            // InternalSlideOMatic.g:2971:2: '('
+            {
+             before(grammarAccess.getListItemAccess().getLeftParenthesisKeyword_2_0()); 
+            match(input,73,FOLLOW_2); 
+             after(grammarAccess.getListItemAccess().getLeftParenthesisKeyword_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__Group_2__0__Impl"
+
+
+    // $ANTLR start "rule__ListItem__Group_2__1"
+    // InternalSlideOMatic.g:2980:1: rule__ListItem__Group_2__1 : rule__ListItem__Group_2__1__Impl rule__ListItem__Group_2__2 ;
+    public final void rule__ListItem__Group_2__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2984:1: ( rule__ListItem__Group_2__1__Impl rule__ListItem__Group_2__2 )
+            // InternalSlideOMatic.g:2985:2: rule__ListItem__Group_2__1__Impl rule__ListItem__Group_2__2
+            {
+            pushFollow(FOLLOW_27);
+            rule__ListItem__Group_2__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__ListItem__Group_2__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__Group_2__1"
+
+
+    // $ANTLR start "rule__ListItem__Group_2__1__Impl"
+    // InternalSlideOMatic.g:2992:1: rule__ListItem__Group_2__1__Impl : ( ( rule__ListItem__NestedListAssignment_2_1 ) ) ;
+    public final void rule__ListItem__Group_2__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:2996:1: ( ( ( rule__ListItem__NestedListAssignment_2_1 ) ) )
+            // InternalSlideOMatic.g:2997:1: ( ( rule__ListItem__NestedListAssignment_2_1 ) )
+            {
+            // InternalSlideOMatic.g:2997:1: ( ( rule__ListItem__NestedListAssignment_2_1 ) )
+            // InternalSlideOMatic.g:2998:2: ( rule__ListItem__NestedListAssignment_2_1 )
+            {
+             before(grammarAccess.getListItemAccess().getNestedListAssignment_2_1()); 
+            // InternalSlideOMatic.g:2999:2: ( rule__ListItem__NestedListAssignment_2_1 )
+            // InternalSlideOMatic.g:2999:3: rule__ListItem__NestedListAssignment_2_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__ListItem__NestedListAssignment_2_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getListItemAccess().getNestedListAssignment_2_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__Group_2__1__Impl"
+
+
+    // $ANTLR start "rule__ListItem__Group_2__2"
+    // InternalSlideOMatic.g:3007:1: rule__ListItem__Group_2__2 : rule__ListItem__Group_2__2__Impl ;
+    public final void rule__ListItem__Group_2__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3011:1: ( rule__ListItem__Group_2__2__Impl )
+            // InternalSlideOMatic.g:3012:2: rule__ListItem__Group_2__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__ListItem__Group_2__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__Group_2__2"
+
+
+    // $ANTLR start "rule__ListItem__Group_2__2__Impl"
+    // InternalSlideOMatic.g:3018:1: rule__ListItem__Group_2__2__Impl : ( ')' ) ;
+    public final void rule__ListItem__Group_2__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3022:1: ( ( ')' ) )
+            // InternalSlideOMatic.g:3023:1: ( ')' )
+            {
+            // InternalSlideOMatic.g:3023:1: ( ')' )
+            // InternalSlideOMatic.g:3024:2: ')'
+            {
+             before(grammarAccess.getListItemAccess().getRightParenthesisKeyword_2_2()); 
+            match(input,74,FOLLOW_2); 
+             after(grammarAccess.getListItemAccess().getRightParenthesisKeyword_2_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__Group_2__2__Impl"
 
 
     // $ANTLR start "rule__Image__Group__0"
-    // InternalSlideOMatic.g:2934:1: rule__Image__Group__0 : rule__Image__Group__0__Impl rule__Image__Group__1 ;
+    // InternalSlideOMatic.g:3034:1: rule__Image__Group__0 : rule__Image__Group__0__Impl rule__Image__Group__1 ;
     public final void rule__Image__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2938:1: ( rule__Image__Group__0__Impl rule__Image__Group__1 )
-            // InternalSlideOMatic.g:2939:2: rule__Image__Group__0__Impl rule__Image__Group__1
+            // InternalSlideOMatic.g:3038:1: ( rule__Image__Group__0__Impl rule__Image__Group__1 )
+            // InternalSlideOMatic.g:3039:2: rule__Image__Group__0__Impl rule__Image__Group__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_28);
             rule__Image__Group__0__Impl();
 
             state._fsp--;
@@ -9302,20 +9684,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__0__Impl"
-    // InternalSlideOMatic.g:2946:1: rule__Image__Group__0__Impl : ( 'img' ) ;
+    // InternalSlideOMatic.g:3046:1: rule__Image__Group__0__Impl : ( 'img' ) ;
     public final void rule__Image__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2950:1: ( ( 'img' ) )
-            // InternalSlideOMatic.g:2951:1: ( 'img' )
+            // InternalSlideOMatic.g:3050:1: ( ( 'img' ) )
+            // InternalSlideOMatic.g:3051:1: ( 'img' )
             {
-            // InternalSlideOMatic.g:2951:1: ( 'img' )
-            // InternalSlideOMatic.g:2952:2: 'img'
+            // InternalSlideOMatic.g:3051:1: ( 'img' )
+            // InternalSlideOMatic.g:3052:2: 'img'
             {
              before(grammarAccess.getImageAccess().getImgKeyword_0()); 
-            match(input,89,FOLLOW_2); 
+            match(input,91,FOLLOW_2); 
              after(grammarAccess.getImageAccess().getImgKeyword_0()); 
 
             }
@@ -9339,16 +9721,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__1"
-    // InternalSlideOMatic.g:2961:1: rule__Image__Group__1 : rule__Image__Group__1__Impl rule__Image__Group__2 ;
+    // InternalSlideOMatic.g:3061:1: rule__Image__Group__1 : rule__Image__Group__1__Impl rule__Image__Group__2 ;
     public final void rule__Image__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2965:1: ( rule__Image__Group__1__Impl rule__Image__Group__2 )
-            // InternalSlideOMatic.g:2966:2: rule__Image__Group__1__Impl rule__Image__Group__2
+            // InternalSlideOMatic.g:3065:1: ( rule__Image__Group__1__Impl rule__Image__Group__2 )
+            // InternalSlideOMatic.g:3066:2: rule__Image__Group__1__Impl rule__Image__Group__2
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_29);
             rule__Image__Group__1__Impl();
 
             state._fsp--;
@@ -9377,21 +9759,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__1__Impl"
-    // InternalSlideOMatic.g:2973:1: rule__Image__Group__1__Impl : ( ( rule__Image__NameAssignment_1 ) ) ;
+    // InternalSlideOMatic.g:3073:1: rule__Image__Group__1__Impl : ( ( rule__Image__NameAssignment_1 ) ) ;
     public final void rule__Image__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2977:1: ( ( ( rule__Image__NameAssignment_1 ) ) )
-            // InternalSlideOMatic.g:2978:1: ( ( rule__Image__NameAssignment_1 ) )
+            // InternalSlideOMatic.g:3077:1: ( ( ( rule__Image__NameAssignment_1 ) ) )
+            // InternalSlideOMatic.g:3078:1: ( ( rule__Image__NameAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:2978:1: ( ( rule__Image__NameAssignment_1 ) )
-            // InternalSlideOMatic.g:2979:2: ( rule__Image__NameAssignment_1 )
+            // InternalSlideOMatic.g:3078:1: ( ( rule__Image__NameAssignment_1 ) )
+            // InternalSlideOMatic.g:3079:2: ( rule__Image__NameAssignment_1 )
             {
              before(grammarAccess.getImageAccess().getNameAssignment_1()); 
-            // InternalSlideOMatic.g:2980:2: ( rule__Image__NameAssignment_1 )
-            // InternalSlideOMatic.g:2980:3: rule__Image__NameAssignment_1
+            // InternalSlideOMatic.g:3080:2: ( rule__Image__NameAssignment_1 )
+            // InternalSlideOMatic.g:3080:3: rule__Image__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Image__NameAssignment_1();
@@ -9424,14 +9806,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__2"
-    // InternalSlideOMatic.g:2988:1: rule__Image__Group__2 : rule__Image__Group__2__Impl rule__Image__Group__3 ;
+    // InternalSlideOMatic.g:3088:1: rule__Image__Group__2 : rule__Image__Group__2__Impl rule__Image__Group__3 ;
     public final void rule__Image__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:2992:1: ( rule__Image__Group__2__Impl rule__Image__Group__3 )
-            // InternalSlideOMatic.g:2993:2: rule__Image__Group__2__Impl rule__Image__Group__3
+            // InternalSlideOMatic.g:3092:1: ( rule__Image__Group__2__Impl rule__Image__Group__3 )
+            // InternalSlideOMatic.g:3093:2: rule__Image__Group__2__Impl rule__Image__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__Image__Group__2__Impl();
@@ -9462,20 +9844,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__2__Impl"
-    // InternalSlideOMatic.g:3000:1: rule__Image__Group__2__Impl : ( 'src' ) ;
+    // InternalSlideOMatic.g:3100:1: rule__Image__Group__2__Impl : ( 'src' ) ;
     public final void rule__Image__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3004:1: ( ( 'src' ) )
-            // InternalSlideOMatic.g:3005:1: ( 'src' )
+            // InternalSlideOMatic.g:3104:1: ( ( 'src' ) )
+            // InternalSlideOMatic.g:3105:1: ( 'src' )
             {
-            // InternalSlideOMatic.g:3005:1: ( 'src' )
-            // InternalSlideOMatic.g:3006:2: 'src'
+            // InternalSlideOMatic.g:3105:1: ( 'src' )
+            // InternalSlideOMatic.g:3106:2: 'src'
             {
              before(grammarAccess.getImageAccess().getSrcKeyword_2()); 
-            match(input,90,FOLLOW_2); 
+            match(input,92,FOLLOW_2); 
              after(grammarAccess.getImageAccess().getSrcKeyword_2()); 
 
             }
@@ -9499,16 +9881,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__3"
-    // InternalSlideOMatic.g:3015:1: rule__Image__Group__3 : rule__Image__Group__3__Impl rule__Image__Group__4 ;
+    // InternalSlideOMatic.g:3115:1: rule__Image__Group__3 : rule__Image__Group__3__Impl rule__Image__Group__4 ;
     public final void rule__Image__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3019:1: ( rule__Image__Group__3__Impl rule__Image__Group__4 )
-            // InternalSlideOMatic.g:3020:2: rule__Image__Group__3__Impl rule__Image__Group__4
+            // InternalSlideOMatic.g:3119:1: ( rule__Image__Group__3__Impl rule__Image__Group__4 )
+            // InternalSlideOMatic.g:3120:2: rule__Image__Group__3__Impl rule__Image__Group__4
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_30);
             rule__Image__Group__3__Impl();
 
             state._fsp--;
@@ -9537,21 +9919,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__3__Impl"
-    // InternalSlideOMatic.g:3027:1: rule__Image__Group__3__Impl : ( ( rule__Image__SrcAssignment_3 ) ) ;
+    // InternalSlideOMatic.g:3127:1: rule__Image__Group__3__Impl : ( ( rule__Image__SrcAssignment_3 ) ) ;
     public final void rule__Image__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3031:1: ( ( ( rule__Image__SrcAssignment_3 ) ) )
-            // InternalSlideOMatic.g:3032:1: ( ( rule__Image__SrcAssignment_3 ) )
+            // InternalSlideOMatic.g:3131:1: ( ( ( rule__Image__SrcAssignment_3 ) ) )
+            // InternalSlideOMatic.g:3132:1: ( ( rule__Image__SrcAssignment_3 ) )
             {
-            // InternalSlideOMatic.g:3032:1: ( ( rule__Image__SrcAssignment_3 ) )
-            // InternalSlideOMatic.g:3033:2: ( rule__Image__SrcAssignment_3 )
+            // InternalSlideOMatic.g:3132:1: ( ( rule__Image__SrcAssignment_3 ) )
+            // InternalSlideOMatic.g:3133:2: ( rule__Image__SrcAssignment_3 )
             {
              before(grammarAccess.getImageAccess().getSrcAssignment_3()); 
-            // InternalSlideOMatic.g:3034:2: ( rule__Image__SrcAssignment_3 )
-            // InternalSlideOMatic.g:3034:3: rule__Image__SrcAssignment_3
+            // InternalSlideOMatic.g:3134:2: ( rule__Image__SrcAssignment_3 )
+            // InternalSlideOMatic.g:3134:3: rule__Image__SrcAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Image__SrcAssignment_3();
@@ -9584,16 +9966,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__4"
-    // InternalSlideOMatic.g:3042:1: rule__Image__Group__4 : rule__Image__Group__4__Impl rule__Image__Group__5 ;
+    // InternalSlideOMatic.g:3142:1: rule__Image__Group__4 : rule__Image__Group__4__Impl rule__Image__Group__5 ;
     public final void rule__Image__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3046:1: ( rule__Image__Group__4__Impl rule__Image__Group__5 )
-            // InternalSlideOMatic.g:3047:2: rule__Image__Group__4__Impl rule__Image__Group__5
+            // InternalSlideOMatic.g:3146:1: ( rule__Image__Group__4__Impl rule__Image__Group__5 )
+            // InternalSlideOMatic.g:3147:2: rule__Image__Group__4__Impl rule__Image__Group__5
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_30);
             rule__Image__Group__4__Impl();
 
             state._fsp--;
@@ -9622,29 +10004,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__4__Impl"
-    // InternalSlideOMatic.g:3054:1: rule__Image__Group__4__Impl : ( ( rule__Image__AlignmentAssignment_4 )? ) ;
+    // InternalSlideOMatic.g:3154:1: rule__Image__Group__4__Impl : ( ( rule__Image__AlignmentAssignment_4 )? ) ;
     public final void rule__Image__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3058:1: ( ( ( rule__Image__AlignmentAssignment_4 )? ) )
-            // InternalSlideOMatic.g:3059:1: ( ( rule__Image__AlignmentAssignment_4 )? )
+            // InternalSlideOMatic.g:3158:1: ( ( ( rule__Image__AlignmentAssignment_4 )? ) )
+            // InternalSlideOMatic.g:3159:1: ( ( rule__Image__AlignmentAssignment_4 )? )
             {
-            // InternalSlideOMatic.g:3059:1: ( ( rule__Image__AlignmentAssignment_4 )? )
-            // InternalSlideOMatic.g:3060:2: ( rule__Image__AlignmentAssignment_4 )?
+            // InternalSlideOMatic.g:3159:1: ( ( rule__Image__AlignmentAssignment_4 )? )
+            // InternalSlideOMatic.g:3160:2: ( rule__Image__AlignmentAssignment_4 )?
             {
              before(grammarAccess.getImageAccess().getAlignmentAssignment_4()); 
-            // InternalSlideOMatic.g:3061:2: ( rule__Image__AlignmentAssignment_4 )?
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalSlideOMatic.g:3161:2: ( rule__Image__AlignmentAssignment_4 )?
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( ((LA30_0>=56 && LA30_0<=64)) ) {
-                alt30=1;
+            if ( ((LA33_0>=56 && LA33_0<=64)) ) {
+                alt33=1;
             }
-            switch (alt30) {
+            switch (alt33) {
                 case 1 :
-                    // InternalSlideOMatic.g:3061:3: rule__Image__AlignmentAssignment_4
+                    // InternalSlideOMatic.g:3161:3: rule__Image__AlignmentAssignment_4
                     {
                     pushFollow(FOLLOW_2);
                     rule__Image__AlignmentAssignment_4();
@@ -9680,16 +10062,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__5"
-    // InternalSlideOMatic.g:3069:1: rule__Image__Group__5 : rule__Image__Group__5__Impl rule__Image__Group__6 ;
+    // InternalSlideOMatic.g:3169:1: rule__Image__Group__5 : rule__Image__Group__5__Impl rule__Image__Group__6 ;
     public final void rule__Image__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3073:1: ( rule__Image__Group__5__Impl rule__Image__Group__6 )
-            // InternalSlideOMatic.g:3074:2: rule__Image__Group__5__Impl rule__Image__Group__6
+            // InternalSlideOMatic.g:3173:1: ( rule__Image__Group__5__Impl rule__Image__Group__6 )
+            // InternalSlideOMatic.g:3174:2: rule__Image__Group__5__Impl rule__Image__Group__6
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_21);
             rule__Image__Group__5__Impl();
 
             state._fsp--;
@@ -9718,21 +10100,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__5__Impl"
-    // InternalSlideOMatic.g:3081:1: rule__Image__Group__5__Impl : ( ( rule__Image__SizeAssignment_5 ) ) ;
+    // InternalSlideOMatic.g:3181:1: rule__Image__Group__5__Impl : ( ( rule__Image__SizeAssignment_5 ) ) ;
     public final void rule__Image__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3085:1: ( ( ( rule__Image__SizeAssignment_5 ) ) )
-            // InternalSlideOMatic.g:3086:1: ( ( rule__Image__SizeAssignment_5 ) )
+            // InternalSlideOMatic.g:3185:1: ( ( ( rule__Image__SizeAssignment_5 ) ) )
+            // InternalSlideOMatic.g:3186:1: ( ( rule__Image__SizeAssignment_5 ) )
             {
-            // InternalSlideOMatic.g:3086:1: ( ( rule__Image__SizeAssignment_5 ) )
-            // InternalSlideOMatic.g:3087:2: ( rule__Image__SizeAssignment_5 )
+            // InternalSlideOMatic.g:3186:1: ( ( rule__Image__SizeAssignment_5 ) )
+            // InternalSlideOMatic.g:3187:2: ( rule__Image__SizeAssignment_5 )
             {
              before(grammarAccess.getImageAccess().getSizeAssignment_5()); 
-            // InternalSlideOMatic.g:3088:2: ( rule__Image__SizeAssignment_5 )
-            // InternalSlideOMatic.g:3088:3: rule__Image__SizeAssignment_5
+            // InternalSlideOMatic.g:3188:2: ( rule__Image__SizeAssignment_5 )
+            // InternalSlideOMatic.g:3188:3: rule__Image__SizeAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__Image__SizeAssignment_5();
@@ -9765,14 +10147,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__6"
-    // InternalSlideOMatic.g:3096:1: rule__Image__Group__6 : rule__Image__Group__6__Impl ;
+    // InternalSlideOMatic.g:3196:1: rule__Image__Group__6 : rule__Image__Group__6__Impl ;
     public final void rule__Image__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3100:1: ( rule__Image__Group__6__Impl )
-            // InternalSlideOMatic.g:3101:2: rule__Image__Group__6__Impl
+            // InternalSlideOMatic.g:3200:1: ( rule__Image__Group__6__Impl )
+            // InternalSlideOMatic.g:3201:2: rule__Image__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Image__Group__6__Impl();
@@ -9798,32 +10180,32 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__Group__6__Impl"
-    // InternalSlideOMatic.g:3107:1: rule__Image__Group__6__Impl : ( ( ruleClick )? ) ;
+    // InternalSlideOMatic.g:3207:1: rule__Image__Group__6__Impl : ( ( rule__Image__ClickAssignment_6 )? ) ;
     public final void rule__Image__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3111:1: ( ( ( ruleClick )? ) )
-            // InternalSlideOMatic.g:3112:1: ( ( ruleClick )? )
+            // InternalSlideOMatic.g:3211:1: ( ( ( rule__Image__ClickAssignment_6 )? ) )
+            // InternalSlideOMatic.g:3212:1: ( ( rule__Image__ClickAssignment_6 )? )
             {
-            // InternalSlideOMatic.g:3112:1: ( ( ruleClick )? )
-            // InternalSlideOMatic.g:3113:2: ( ruleClick )?
+            // InternalSlideOMatic.g:3212:1: ( ( rule__Image__ClickAssignment_6 )? )
+            // InternalSlideOMatic.g:3213:2: ( rule__Image__ClickAssignment_6 )?
             {
-             before(grammarAccess.getImageAccess().getClickParserRuleCall_6()); 
-            // InternalSlideOMatic.g:3114:2: ( ruleClick )?
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+             before(grammarAccess.getImageAccess().getClickAssignment_6()); 
+            // InternalSlideOMatic.g:3214:2: ( rule__Image__ClickAssignment_6 )?
+            int alt34=2;
+            int LA34_0 = input.LA(1);
 
-            if ( (LA31_0==11) ) {
-                alt31=1;
+            if ( (LA34_0==11) ) {
+                alt34=1;
             }
-            switch (alt31) {
+            switch (alt34) {
                 case 1 :
-                    // InternalSlideOMatic.g:3114:3: ruleClick
+                    // InternalSlideOMatic.g:3214:3: rule__Image__ClickAssignment_6
                     {
                     pushFollow(FOLLOW_2);
-                    ruleClick();
+                    rule__Image__ClickAssignment_6();
 
                     state._fsp--;
 
@@ -9833,7 +10215,7 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
             }
 
-             after(grammarAccess.getImageAccess().getClickParserRuleCall_6()); 
+             after(grammarAccess.getImageAccess().getClickAssignment_6()); 
 
             }
 
@@ -9855,23 +10237,413 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Image__Group__6__Impl"
 
 
-    // $ANTLR start "rule__Size__Group__0"
-    // InternalSlideOMatic.g:3123:1: rule__Size__Group__0 : rule__Size__Group__0__Impl rule__Size__Group__1 ;
-    public final void rule__Size__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Size__Group_0__0"
+    // InternalSlideOMatic.g:3223:1: rule__Size__Group_0__0 : rule__Size__Group_0__0__Impl rule__Size__Group_0__1 ;
+    public final void rule__Size__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3127:1: ( rule__Size__Group__0__Impl rule__Size__Group__1 )
-            // InternalSlideOMatic.g:3128:2: rule__Size__Group__0__Impl rule__Size__Group__1
+            // InternalSlideOMatic.g:3227:1: ( rule__Size__Group_0__0__Impl rule__Size__Group_0__1 )
+            // InternalSlideOMatic.g:3228:2: rule__Size__Group_0__0__Impl rule__Size__Group_0__1
+            {
+            pushFollow(FOLLOW_31);
+            rule__Size__Group_0__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Size__Group_0__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_0__0"
+
+
+    // $ANTLR start "rule__Size__Group_0__0__Impl"
+    // InternalSlideOMatic.g:3235:1: rule__Size__Group_0__0__Impl : ( () ) ;
+    public final void rule__Size__Group_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3239:1: ( ( () ) )
+            // InternalSlideOMatic.g:3240:1: ( () )
+            {
+            // InternalSlideOMatic.g:3240:1: ( () )
+            // InternalSlideOMatic.g:3241:2: ()
+            {
+             before(grammarAccess.getSizeAccess().getProportionalSizeAction_0_0()); 
+            // InternalSlideOMatic.g:3242:2: ()
+            // InternalSlideOMatic.g:3242:3: 
+            {
+            }
+
+             after(grammarAccess.getSizeAccess().getProportionalSizeAction_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_0__0__Impl"
+
+
+    // $ANTLR start "rule__Size__Group_0__1"
+    // InternalSlideOMatic.g:3250:1: rule__Size__Group_0__1 : rule__Size__Group_0__1__Impl rule__Size__Group_0__2 ;
+    public final void rule__Size__Group_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3254:1: ( rule__Size__Group_0__1__Impl rule__Size__Group_0__2 )
+            // InternalSlideOMatic.g:3255:2: rule__Size__Group_0__1__Impl rule__Size__Group_0__2
+            {
+            pushFollow(FOLLOW_32);
+            rule__Size__Group_0__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Size__Group_0__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_0__1"
+
+
+    // $ANTLR start "rule__Size__Group_0__1__Impl"
+    // InternalSlideOMatic.g:3262:1: rule__Size__Group_0__1__Impl : ( ( rule__Size__WayAssignment_0_1 ) ) ;
+    public final void rule__Size__Group_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3266:1: ( ( ( rule__Size__WayAssignment_0_1 ) ) )
+            // InternalSlideOMatic.g:3267:1: ( ( rule__Size__WayAssignment_0_1 ) )
+            {
+            // InternalSlideOMatic.g:3267:1: ( ( rule__Size__WayAssignment_0_1 ) )
+            // InternalSlideOMatic.g:3268:2: ( rule__Size__WayAssignment_0_1 )
+            {
+             before(grammarAccess.getSizeAccess().getWayAssignment_0_1()); 
+            // InternalSlideOMatic.g:3269:2: ( rule__Size__WayAssignment_0_1 )
+            // InternalSlideOMatic.g:3269:3: rule__Size__WayAssignment_0_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Size__WayAssignment_0_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSizeAccess().getWayAssignment_0_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_0__1__Impl"
+
+
+    // $ANTLR start "rule__Size__Group_0__2"
+    // InternalSlideOMatic.g:3277:1: rule__Size__Group_0__2 : rule__Size__Group_0__2__Impl rule__Size__Group_0__3 ;
+    public final void rule__Size__Group_0__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3281:1: ( rule__Size__Group_0__2__Impl rule__Size__Group_0__3 )
+            // InternalSlideOMatic.g:3282:2: rule__Size__Group_0__2__Impl rule__Size__Group_0__3
+            {
+            pushFollow(FOLLOW_33);
+            rule__Size__Group_0__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Size__Group_0__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_0__2"
+
+
+    // $ANTLR start "rule__Size__Group_0__2__Impl"
+    // InternalSlideOMatic.g:3289:1: rule__Size__Group_0__2__Impl : ( ( rule__Size__ScaleAssignment_0_2 ) ) ;
+    public final void rule__Size__Group_0__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3293:1: ( ( ( rule__Size__ScaleAssignment_0_2 ) ) )
+            // InternalSlideOMatic.g:3294:1: ( ( rule__Size__ScaleAssignment_0_2 ) )
+            {
+            // InternalSlideOMatic.g:3294:1: ( ( rule__Size__ScaleAssignment_0_2 ) )
+            // InternalSlideOMatic.g:3295:2: ( rule__Size__ScaleAssignment_0_2 )
+            {
+             before(grammarAccess.getSizeAccess().getScaleAssignment_0_2()); 
+            // InternalSlideOMatic.g:3296:2: ( rule__Size__ScaleAssignment_0_2 )
+            // InternalSlideOMatic.g:3296:3: rule__Size__ScaleAssignment_0_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Size__ScaleAssignment_0_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSizeAccess().getScaleAssignment_0_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_0__2__Impl"
+
+
+    // $ANTLR start "rule__Size__Group_0__3"
+    // InternalSlideOMatic.g:3304:1: rule__Size__Group_0__3 : rule__Size__Group_0__3__Impl ;
+    public final void rule__Size__Group_0__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3308:1: ( rule__Size__Group_0__3__Impl )
+            // InternalSlideOMatic.g:3309:2: rule__Size__Group_0__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Size__Group_0__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_0__3"
+
+
+    // $ANTLR start "rule__Size__Group_0__3__Impl"
+    // InternalSlideOMatic.g:3315:1: rule__Size__Group_0__3__Impl : ( '%' ) ;
+    public final void rule__Size__Group_0__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3319:1: ( ( '%' ) )
+            // InternalSlideOMatic.g:3320:1: ( '%' )
+            {
+            // InternalSlideOMatic.g:3320:1: ( '%' )
+            // InternalSlideOMatic.g:3321:2: '%'
+            {
+             before(grammarAccess.getSizeAccess().getPercentSignKeyword_0_3()); 
+            match(input,93,FOLLOW_2); 
+             after(grammarAccess.getSizeAccess().getPercentSignKeyword_0_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_0__3__Impl"
+
+
+    // $ANTLR start "rule__Size__Group_1__0"
+    // InternalSlideOMatic.g:3331:1: rule__Size__Group_1__0 : rule__Size__Group_1__0__Impl rule__Size__Group_1__1 ;
+    public final void rule__Size__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3335:1: ( rule__Size__Group_1__0__Impl rule__Size__Group_1__1 )
+            // InternalSlideOMatic.g:3336:2: rule__Size__Group_1__0__Impl rule__Size__Group_1__1
+            {
+            pushFollow(FOLLOW_30);
+            rule__Size__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Size__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_1__0"
+
+
+    // $ANTLR start "rule__Size__Group_1__0__Impl"
+    // InternalSlideOMatic.g:3343:1: rule__Size__Group_1__0__Impl : ( () ) ;
+    public final void rule__Size__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3347:1: ( ( () ) )
+            // InternalSlideOMatic.g:3348:1: ( () )
+            {
+            // InternalSlideOMatic.g:3348:1: ( () )
+            // InternalSlideOMatic.g:3349:2: ()
+            {
+             before(grammarAccess.getSizeAccess().getExactSizeAction_1_0()); 
+            // InternalSlideOMatic.g:3350:2: ()
+            // InternalSlideOMatic.g:3350:3: 
+            {
+            }
+
+             after(grammarAccess.getSizeAccess().getExactSizeAction_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__Group_1__0__Impl"
+
+
+    // $ANTLR start "rule__Size__Group_1__1"
+    // InternalSlideOMatic.g:3358:1: rule__Size__Group_1__1 : rule__Size__Group_1__1__Impl rule__Size__Group_1__2 ;
+    public final void rule__Size__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3362:1: ( rule__Size__Group_1__1__Impl rule__Size__Group_1__2 )
+            // InternalSlideOMatic.g:3363:2: rule__Size__Group_1__1__Impl rule__Size__Group_1__2
             {
             pushFollow(FOLLOW_34);
-            rule__Size__Group__0__Impl();
+            rule__Size__Group_1__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Size__Group__1();
+            rule__Size__Group_1__2();
 
             state._fsp--;
 
@@ -9890,35 +10662,35 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Size__Group__0"
+    // $ANTLR end "rule__Size__Group_1__1"
 
 
-    // $ANTLR start "rule__Size__Group__0__Impl"
-    // InternalSlideOMatic.g:3135:1: rule__Size__Group__0__Impl : ( ( rule__Size__Alternatives_0 ) ) ;
-    public final void rule__Size__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Size__Group_1__1__Impl"
+    // InternalSlideOMatic.g:3370:1: rule__Size__Group_1__1__Impl : ( ( rule__Size__SizeAssignment_1_1 ) ) ;
+    public final void rule__Size__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3139:1: ( ( ( rule__Size__Alternatives_0 ) ) )
-            // InternalSlideOMatic.g:3140:1: ( ( rule__Size__Alternatives_0 ) )
+            // InternalSlideOMatic.g:3374:1: ( ( ( rule__Size__SizeAssignment_1_1 ) ) )
+            // InternalSlideOMatic.g:3375:1: ( ( rule__Size__SizeAssignment_1_1 ) )
             {
-            // InternalSlideOMatic.g:3140:1: ( ( rule__Size__Alternatives_0 ) )
-            // InternalSlideOMatic.g:3141:2: ( rule__Size__Alternatives_0 )
+            // InternalSlideOMatic.g:3375:1: ( ( rule__Size__SizeAssignment_1_1 ) )
+            // InternalSlideOMatic.g:3376:2: ( rule__Size__SizeAssignment_1_1 )
             {
-             before(grammarAccess.getSizeAccess().getAlternatives_0()); 
-            // InternalSlideOMatic.g:3142:2: ( rule__Size__Alternatives_0 )
-            // InternalSlideOMatic.g:3142:3: rule__Size__Alternatives_0
+             before(grammarAccess.getSizeAccess().getSizeAssignment_1_1()); 
+            // InternalSlideOMatic.g:3377:2: ( rule__Size__SizeAssignment_1_1 )
+            // InternalSlideOMatic.g:3377:3: rule__Size__SizeAssignment_1_1
             {
             pushFollow(FOLLOW_2);
-            rule__Size__Alternatives_0();
+            rule__Size__SizeAssignment_1_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSizeAccess().getAlternatives_0()); 
+             after(grammarAccess.getSizeAccess().getSizeAssignment_1_1()); 
 
             }
 
@@ -9937,75 +10709,23 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Size__Group__0__Impl"
+    // $ANTLR end "rule__Size__Group_1__1__Impl"
 
 
-    // $ANTLR start "rule__Size__Group__1"
-    // InternalSlideOMatic.g:3150:1: rule__Size__Group__1 : rule__Size__Group__1__Impl rule__Size__Group__2 ;
-    public final void rule__Size__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:3154:1: ( rule__Size__Group__1__Impl rule__Size__Group__2 )
-            // InternalSlideOMatic.g:3155:2: rule__Size__Group__1__Impl rule__Size__Group__2
-            {
-            pushFollow(FOLLOW_35);
-            rule__Size__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Size__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Size__Group__1"
-
-
-    // $ANTLR start "rule__Size__Group__1__Impl"
-    // InternalSlideOMatic.g:3162:1: rule__Size__Group__1__Impl : ( ( rule__Size__ScaleAssignment_1 ) ) ;
-    public final void rule__Size__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Size__Group_1__2"
+    // InternalSlideOMatic.g:3385:1: rule__Size__Group_1__2 : rule__Size__Group_1__2__Impl ;
+    public final void rule__Size__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3166:1: ( ( ( rule__Size__ScaleAssignment_1 ) ) )
-            // InternalSlideOMatic.g:3167:1: ( ( rule__Size__ScaleAssignment_1 ) )
-            {
-            // InternalSlideOMatic.g:3167:1: ( ( rule__Size__ScaleAssignment_1 ) )
-            // InternalSlideOMatic.g:3168:2: ( rule__Size__ScaleAssignment_1 )
-            {
-             before(grammarAccess.getSizeAccess().getScaleAssignment_1()); 
-            // InternalSlideOMatic.g:3169:2: ( rule__Size__ScaleAssignment_1 )
-            // InternalSlideOMatic.g:3169:3: rule__Size__ScaleAssignment_1
+            // InternalSlideOMatic.g:3389:1: ( rule__Size__Group_1__2__Impl )
+            // InternalSlideOMatic.g:3390:2: rule__Size__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Size__ScaleAssignment_1();
+            rule__Size__Group_1__2__Impl();
 
             state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSizeAccess().getScaleAssignment_1()); 
-
-            }
 
 
             }
@@ -10022,58 +10742,35 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Size__Group__1__Impl"
+    // $ANTLR end "rule__Size__Group_1__2"
 
 
-    // $ANTLR start "rule__Size__Group__2"
-    // InternalSlideOMatic.g:3177:1: rule__Size__Group__2 : rule__Size__Group__2__Impl ;
-    public final void rule__Size__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Size__Group_1__2__Impl"
+    // InternalSlideOMatic.g:3396:1: rule__Size__Group_1__2__Impl : ( ( rule__Size__UnitAssignment_1_2 ) ) ;
+    public final void rule__Size__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3181:1: ( rule__Size__Group__2__Impl )
-            // InternalSlideOMatic.g:3182:2: rule__Size__Group__2__Impl
+            // InternalSlideOMatic.g:3400:1: ( ( ( rule__Size__UnitAssignment_1_2 ) ) )
+            // InternalSlideOMatic.g:3401:1: ( ( rule__Size__UnitAssignment_1_2 ) )
+            {
+            // InternalSlideOMatic.g:3401:1: ( ( rule__Size__UnitAssignment_1_2 ) )
+            // InternalSlideOMatic.g:3402:2: ( rule__Size__UnitAssignment_1_2 )
+            {
+             before(grammarAccess.getSizeAccess().getUnitAssignment_1_2()); 
+            // InternalSlideOMatic.g:3403:2: ( rule__Size__UnitAssignment_1_2 )
+            // InternalSlideOMatic.g:3403:3: rule__Size__UnitAssignment_1_2
             {
             pushFollow(FOLLOW_2);
-            rule__Size__Group__2__Impl();
+            rule__Size__UnitAssignment_1_2();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Size__Group__2"
-
-
-    // $ANTLR start "rule__Size__Group__2__Impl"
-    // InternalSlideOMatic.g:3188:1: rule__Size__Group__2__Impl : ( '%' ) ;
-    public final void rule__Size__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:3192:1: ( ( '%' ) )
-            // InternalSlideOMatic.g:3193:1: ( '%' )
-            {
-            // InternalSlideOMatic.g:3193:1: ( '%' )
-            // InternalSlideOMatic.g:3194:2: '%'
-            {
-             before(grammarAccess.getSizeAccess().getPercentSignKeyword_2()); 
-            match(input,91,FOLLOW_2); 
-             after(grammarAccess.getSizeAccess().getPercentSignKeyword_2()); 
+             after(grammarAccess.getSizeAccess().getUnitAssignment_1_2()); 
 
             }
 
@@ -10092,20 +10789,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Size__Group__2__Impl"
+    // $ANTLR end "rule__Size__Group_1__2__Impl"
 
 
     // $ANTLR start "rule__Table__Group__0"
-    // InternalSlideOMatic.g:3204:1: rule__Table__Group__0 : rule__Table__Group__0__Impl rule__Table__Group__1 ;
+    // InternalSlideOMatic.g:3412:1: rule__Table__Group__0 : rule__Table__Group__0__Impl rule__Table__Group__1 ;
     public final void rule__Table__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3208:1: ( rule__Table__Group__0__Impl rule__Table__Group__1 )
-            // InternalSlideOMatic.g:3209:2: rule__Table__Group__0__Impl rule__Table__Group__1
+            // InternalSlideOMatic.g:3416:1: ( rule__Table__Group__0__Impl rule__Table__Group__1 )
+            // InternalSlideOMatic.g:3417:2: rule__Table__Group__0__Impl rule__Table__Group__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_28);
             rule__Table__Group__0__Impl();
 
             state._fsp--;
@@ -10134,20 +10831,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__0__Impl"
-    // InternalSlideOMatic.g:3216:1: rule__Table__Group__0__Impl : ( 'tab' ) ;
+    // InternalSlideOMatic.g:3424:1: rule__Table__Group__0__Impl : ( 'tab' ) ;
     public final void rule__Table__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3220:1: ( ( 'tab' ) )
-            // InternalSlideOMatic.g:3221:1: ( 'tab' )
+            // InternalSlideOMatic.g:3428:1: ( ( 'tab' ) )
+            // InternalSlideOMatic.g:3429:1: ( 'tab' )
             {
-            // InternalSlideOMatic.g:3221:1: ( 'tab' )
-            // InternalSlideOMatic.g:3222:2: 'tab'
+            // InternalSlideOMatic.g:3429:1: ( 'tab' )
+            // InternalSlideOMatic.g:3430:2: 'tab'
             {
              before(grammarAccess.getTableAccess().getTabKeyword_0()); 
-            match(input,92,FOLLOW_2); 
+            match(input,94,FOLLOW_2); 
              after(grammarAccess.getTableAccess().getTabKeyword_0()); 
 
             }
@@ -10171,16 +10868,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__1"
-    // InternalSlideOMatic.g:3231:1: rule__Table__Group__1 : rule__Table__Group__1__Impl rule__Table__Group__2 ;
+    // InternalSlideOMatic.g:3439:1: rule__Table__Group__1 : rule__Table__Group__1__Impl rule__Table__Group__2 ;
     public final void rule__Table__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3235:1: ( rule__Table__Group__1__Impl rule__Table__Group__2 )
-            // InternalSlideOMatic.g:3236:2: rule__Table__Group__1__Impl rule__Table__Group__2
+            // InternalSlideOMatic.g:3443:1: ( rule__Table__Group__1__Impl rule__Table__Group__2 )
+            // InternalSlideOMatic.g:3444:2: rule__Table__Group__1__Impl rule__Table__Group__2
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__Table__Group__1__Impl();
 
             state._fsp--;
@@ -10209,21 +10906,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__1__Impl"
-    // InternalSlideOMatic.g:3243:1: rule__Table__Group__1__Impl : ( ( rule__Table__NameAssignment_1 ) ) ;
+    // InternalSlideOMatic.g:3451:1: rule__Table__Group__1__Impl : ( ( rule__Table__NameAssignment_1 ) ) ;
     public final void rule__Table__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3247:1: ( ( ( rule__Table__NameAssignment_1 ) ) )
-            // InternalSlideOMatic.g:3248:1: ( ( rule__Table__NameAssignment_1 ) )
+            // InternalSlideOMatic.g:3455:1: ( ( ( rule__Table__NameAssignment_1 ) ) )
+            // InternalSlideOMatic.g:3456:1: ( ( rule__Table__NameAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:3248:1: ( ( rule__Table__NameAssignment_1 ) )
-            // InternalSlideOMatic.g:3249:2: ( rule__Table__NameAssignment_1 )
+            // InternalSlideOMatic.g:3456:1: ( ( rule__Table__NameAssignment_1 ) )
+            // InternalSlideOMatic.g:3457:2: ( rule__Table__NameAssignment_1 )
             {
              before(grammarAccess.getTableAccess().getNameAssignment_1()); 
-            // InternalSlideOMatic.g:3250:2: ( rule__Table__NameAssignment_1 )
-            // InternalSlideOMatic.g:3250:3: rule__Table__NameAssignment_1
+            // InternalSlideOMatic.g:3458:2: ( rule__Table__NameAssignment_1 )
+            // InternalSlideOMatic.g:3458:3: rule__Table__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Table__NameAssignment_1();
@@ -10256,16 +10953,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__2"
-    // InternalSlideOMatic.g:3258:1: rule__Table__Group__2 : rule__Table__Group__2__Impl rule__Table__Group__3 ;
+    // InternalSlideOMatic.g:3466:1: rule__Table__Group__2 : rule__Table__Group__2__Impl rule__Table__Group__3 ;
     public final void rule__Table__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3262:1: ( rule__Table__Group__2__Impl rule__Table__Group__3 )
-            // InternalSlideOMatic.g:3263:2: rule__Table__Group__2__Impl rule__Table__Group__3
+            // InternalSlideOMatic.g:3470:1: ( rule__Table__Group__2__Impl rule__Table__Group__3 )
+            // InternalSlideOMatic.g:3471:2: rule__Table__Group__2__Impl rule__Table__Group__3
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__Table__Group__2__Impl();
 
             state._fsp--;
@@ -10294,20 +10991,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__2__Impl"
-    // InternalSlideOMatic.g:3270:1: rule__Table__Group__2__Impl : ( '[' ) ;
+    // InternalSlideOMatic.g:3478:1: rule__Table__Group__2__Impl : ( '[' ) ;
     public final void rule__Table__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3274:1: ( ( '[' ) )
-            // InternalSlideOMatic.g:3275:1: ( '[' )
+            // InternalSlideOMatic.g:3482:1: ( ( '[' ) )
+            // InternalSlideOMatic.g:3483:1: ( '[' )
             {
-            // InternalSlideOMatic.g:3275:1: ( '[' )
-            // InternalSlideOMatic.g:3276:2: '['
+            // InternalSlideOMatic.g:3483:1: ( '[' )
+            // InternalSlideOMatic.g:3484:2: '['
             {
              before(grammarAccess.getTableAccess().getLeftSquareBracketKeyword_2()); 
-            match(input,93,FOLLOW_2); 
+            match(input,95,FOLLOW_2); 
              after(grammarAccess.getTableAccess().getLeftSquareBracketKeyword_2()); 
 
             }
@@ -10331,16 +11028,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__3"
-    // InternalSlideOMatic.g:3285:1: rule__Table__Group__3 : rule__Table__Group__3__Impl rule__Table__Group__4 ;
+    // InternalSlideOMatic.g:3493:1: rule__Table__Group__3 : rule__Table__Group__3__Impl rule__Table__Group__4 ;
     public final void rule__Table__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3289:1: ( rule__Table__Group__3__Impl rule__Table__Group__4 )
-            // InternalSlideOMatic.g:3290:2: rule__Table__Group__3__Impl rule__Table__Group__4
+            // InternalSlideOMatic.g:3497:1: ( rule__Table__Group__3__Impl rule__Table__Group__4 )
+            // InternalSlideOMatic.g:3498:2: rule__Table__Group__3__Impl rule__Table__Group__4
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Table__Group__3__Impl();
 
             state._fsp--;
@@ -10369,21 +11066,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__3__Impl"
-    // InternalSlideOMatic.g:3297:1: rule__Table__Group__3__Impl : ( ( rule__Table__RowsAssignment_3 ) ) ;
+    // InternalSlideOMatic.g:3505:1: rule__Table__Group__3__Impl : ( ( rule__Table__RowsAssignment_3 ) ) ;
     public final void rule__Table__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3301:1: ( ( ( rule__Table__RowsAssignment_3 ) ) )
-            // InternalSlideOMatic.g:3302:1: ( ( rule__Table__RowsAssignment_3 ) )
+            // InternalSlideOMatic.g:3509:1: ( ( ( rule__Table__RowsAssignment_3 ) ) )
+            // InternalSlideOMatic.g:3510:1: ( ( rule__Table__RowsAssignment_3 ) )
             {
-            // InternalSlideOMatic.g:3302:1: ( ( rule__Table__RowsAssignment_3 ) )
-            // InternalSlideOMatic.g:3303:2: ( rule__Table__RowsAssignment_3 )
+            // InternalSlideOMatic.g:3510:1: ( ( rule__Table__RowsAssignment_3 ) )
+            // InternalSlideOMatic.g:3511:2: ( rule__Table__RowsAssignment_3 )
             {
              before(grammarAccess.getTableAccess().getRowsAssignment_3()); 
-            // InternalSlideOMatic.g:3304:2: ( rule__Table__RowsAssignment_3 )
-            // InternalSlideOMatic.g:3304:3: rule__Table__RowsAssignment_3
+            // InternalSlideOMatic.g:3512:2: ( rule__Table__RowsAssignment_3 )
+            // InternalSlideOMatic.g:3512:3: rule__Table__RowsAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__Table__RowsAssignment_3();
@@ -10416,16 +11113,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__4"
-    // InternalSlideOMatic.g:3312:1: rule__Table__Group__4 : rule__Table__Group__4__Impl rule__Table__Group__5 ;
+    // InternalSlideOMatic.g:3520:1: rule__Table__Group__4 : rule__Table__Group__4__Impl rule__Table__Group__5 ;
     public final void rule__Table__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3316:1: ( rule__Table__Group__4__Impl rule__Table__Group__5 )
-            // InternalSlideOMatic.g:3317:2: rule__Table__Group__4__Impl rule__Table__Group__5
+            // InternalSlideOMatic.g:3524:1: ( rule__Table__Group__4__Impl rule__Table__Group__5 )
+            // InternalSlideOMatic.g:3525:2: rule__Table__Group__4__Impl rule__Table__Group__5
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__Table__Group__4__Impl();
 
             state._fsp--;
@@ -10454,33 +11151,33 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__4__Impl"
-    // InternalSlideOMatic.g:3324:1: rule__Table__Group__4__Impl : ( ( rule__Table__Group_4__0 )* ) ;
+    // InternalSlideOMatic.g:3532:1: rule__Table__Group__4__Impl : ( ( rule__Table__Group_4__0 )* ) ;
     public final void rule__Table__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3328:1: ( ( ( rule__Table__Group_4__0 )* ) )
-            // InternalSlideOMatic.g:3329:1: ( ( rule__Table__Group_4__0 )* )
+            // InternalSlideOMatic.g:3536:1: ( ( ( rule__Table__Group_4__0 )* ) )
+            // InternalSlideOMatic.g:3537:1: ( ( rule__Table__Group_4__0 )* )
             {
-            // InternalSlideOMatic.g:3329:1: ( ( rule__Table__Group_4__0 )* )
-            // InternalSlideOMatic.g:3330:2: ( rule__Table__Group_4__0 )*
+            // InternalSlideOMatic.g:3537:1: ( ( rule__Table__Group_4__0 )* )
+            // InternalSlideOMatic.g:3538:2: ( rule__Table__Group_4__0 )*
             {
              before(grammarAccess.getTableAccess().getGroup_4()); 
-            // InternalSlideOMatic.g:3331:2: ( rule__Table__Group_4__0 )*
-            loop32:
+            // InternalSlideOMatic.g:3539:2: ( rule__Table__Group_4__0 )*
+            loop35:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( (LA32_0==75) ) {
-                    alt32=1;
+                if ( (LA35_0==78) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt35) {
             	case 1 :
-            	    // InternalSlideOMatic.g:3331:3: rule__Table__Group_4__0
+            	    // InternalSlideOMatic.g:3539:3: rule__Table__Group_4__0
             	    {
             	    pushFollow(FOLLOW_12);
             	    rule__Table__Group_4__0();
@@ -10492,7 +11189,7 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop35;
                 }
             } while (true);
 
@@ -10519,14 +11216,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__5"
-    // InternalSlideOMatic.g:3339:1: rule__Table__Group__5 : rule__Table__Group__5__Impl ;
+    // InternalSlideOMatic.g:3547:1: rule__Table__Group__5 : rule__Table__Group__5__Impl ;
     public final void rule__Table__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3343:1: ( rule__Table__Group__5__Impl )
-            // InternalSlideOMatic.g:3344:2: rule__Table__Group__5__Impl
+            // InternalSlideOMatic.g:3551:1: ( rule__Table__Group__5__Impl )
+            // InternalSlideOMatic.g:3552:2: rule__Table__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Table__Group__5__Impl();
@@ -10552,20 +11249,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group__5__Impl"
-    // InternalSlideOMatic.g:3350:1: rule__Table__Group__5__Impl : ( ']' ) ;
+    // InternalSlideOMatic.g:3558:1: rule__Table__Group__5__Impl : ( ']' ) ;
     public final void rule__Table__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3354:1: ( ( ']' ) )
-            // InternalSlideOMatic.g:3355:1: ( ']' )
+            // InternalSlideOMatic.g:3562:1: ( ( ']' ) )
+            // InternalSlideOMatic.g:3563:1: ( ']' )
             {
-            // InternalSlideOMatic.g:3355:1: ( ']' )
-            // InternalSlideOMatic.g:3356:2: ']'
+            // InternalSlideOMatic.g:3563:1: ( ']' )
+            // InternalSlideOMatic.g:3564:2: ']'
             {
              before(grammarAccess.getTableAccess().getRightSquareBracketKeyword_5()); 
-            match(input,94,FOLLOW_2); 
+            match(input,96,FOLLOW_2); 
              after(grammarAccess.getTableAccess().getRightSquareBracketKeyword_5()); 
 
             }
@@ -10589,16 +11286,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group_4__0"
-    // InternalSlideOMatic.g:3366:1: rule__Table__Group_4__0 : rule__Table__Group_4__0__Impl rule__Table__Group_4__1 ;
+    // InternalSlideOMatic.g:3574:1: rule__Table__Group_4__0 : rule__Table__Group_4__0__Impl rule__Table__Group_4__1 ;
     public final void rule__Table__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3370:1: ( rule__Table__Group_4__0__Impl rule__Table__Group_4__1 )
-            // InternalSlideOMatic.g:3371:2: rule__Table__Group_4__0__Impl rule__Table__Group_4__1
+            // InternalSlideOMatic.g:3578:1: ( rule__Table__Group_4__0__Impl rule__Table__Group_4__1 )
+            // InternalSlideOMatic.g:3579:2: rule__Table__Group_4__0__Impl rule__Table__Group_4__1
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_35);
             rule__Table__Group_4__0__Impl();
 
             state._fsp--;
@@ -10627,20 +11324,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group_4__0__Impl"
-    // InternalSlideOMatic.g:3378:1: rule__Table__Group_4__0__Impl : ( ',' ) ;
+    // InternalSlideOMatic.g:3586:1: rule__Table__Group_4__0__Impl : ( ',' ) ;
     public final void rule__Table__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3382:1: ( ( ',' ) )
-            // InternalSlideOMatic.g:3383:1: ( ',' )
+            // InternalSlideOMatic.g:3590:1: ( ( ',' ) )
+            // InternalSlideOMatic.g:3591:1: ( ',' )
             {
-            // InternalSlideOMatic.g:3383:1: ( ',' )
-            // InternalSlideOMatic.g:3384:2: ','
+            // InternalSlideOMatic.g:3591:1: ( ',' )
+            // InternalSlideOMatic.g:3592:2: ','
             {
              before(grammarAccess.getTableAccess().getCommaKeyword_4_0()); 
-            match(input,75,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getTableAccess().getCommaKeyword_4_0()); 
 
             }
@@ -10664,14 +11361,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group_4__1"
-    // InternalSlideOMatic.g:3393:1: rule__Table__Group_4__1 : rule__Table__Group_4__1__Impl ;
+    // InternalSlideOMatic.g:3601:1: rule__Table__Group_4__1 : rule__Table__Group_4__1__Impl ;
     public final void rule__Table__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3397:1: ( rule__Table__Group_4__1__Impl )
-            // InternalSlideOMatic.g:3398:2: rule__Table__Group_4__1__Impl
+            // InternalSlideOMatic.g:3605:1: ( rule__Table__Group_4__1__Impl )
+            // InternalSlideOMatic.g:3606:2: rule__Table__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Table__Group_4__1__Impl();
@@ -10697,21 +11394,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__Group_4__1__Impl"
-    // InternalSlideOMatic.g:3404:1: rule__Table__Group_4__1__Impl : ( ( rule__Table__RowsAssignment_4_1 ) ) ;
+    // InternalSlideOMatic.g:3612:1: rule__Table__Group_4__1__Impl : ( ( rule__Table__RowsAssignment_4_1 ) ) ;
     public final void rule__Table__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3408:1: ( ( ( rule__Table__RowsAssignment_4_1 ) ) )
-            // InternalSlideOMatic.g:3409:1: ( ( rule__Table__RowsAssignment_4_1 ) )
+            // InternalSlideOMatic.g:3616:1: ( ( ( rule__Table__RowsAssignment_4_1 ) ) )
+            // InternalSlideOMatic.g:3617:1: ( ( rule__Table__RowsAssignment_4_1 ) )
             {
-            // InternalSlideOMatic.g:3409:1: ( ( rule__Table__RowsAssignment_4_1 ) )
-            // InternalSlideOMatic.g:3410:2: ( rule__Table__RowsAssignment_4_1 )
+            // InternalSlideOMatic.g:3617:1: ( ( rule__Table__RowsAssignment_4_1 ) )
+            // InternalSlideOMatic.g:3618:2: ( rule__Table__RowsAssignment_4_1 )
             {
              before(grammarAccess.getTableAccess().getRowsAssignment_4_1()); 
-            // InternalSlideOMatic.g:3411:2: ( rule__Table__RowsAssignment_4_1 )
-            // InternalSlideOMatic.g:3411:3: rule__Table__RowsAssignment_4_1
+            // InternalSlideOMatic.g:3619:2: ( rule__Table__RowsAssignment_4_1 )
+            // InternalSlideOMatic.g:3619:3: rule__Table__RowsAssignment_4_1
             {
             pushFollow(FOLLOW_2);
             rule__Table__RowsAssignment_4_1();
@@ -10744,14 +11441,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group__0"
-    // InternalSlideOMatic.g:3420:1: rule__TableRow__Group__0 : rule__TableRow__Group__0__Impl rule__TableRow__Group__1 ;
+    // InternalSlideOMatic.g:3628:1: rule__TableRow__Group__0 : rule__TableRow__Group__0__Impl rule__TableRow__Group__1 ;
     public final void rule__TableRow__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3424:1: ( rule__TableRow__Group__0__Impl rule__TableRow__Group__1 )
-            // InternalSlideOMatic.g:3425:2: rule__TableRow__Group__0__Impl rule__TableRow__Group__1
+            // InternalSlideOMatic.g:3632:1: ( rule__TableRow__Group__0__Impl rule__TableRow__Group__1 )
+            // InternalSlideOMatic.g:3633:2: rule__TableRow__Group__0__Impl rule__TableRow__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__TableRow__Group__0__Impl();
@@ -10782,20 +11479,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group__0__Impl"
-    // InternalSlideOMatic.g:3432:1: rule__TableRow__Group__0__Impl : ( '[' ) ;
+    // InternalSlideOMatic.g:3640:1: rule__TableRow__Group__0__Impl : ( '[' ) ;
     public final void rule__TableRow__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3436:1: ( ( '[' ) )
-            // InternalSlideOMatic.g:3437:1: ( '[' )
+            // InternalSlideOMatic.g:3644:1: ( ( '[' ) )
+            // InternalSlideOMatic.g:3645:1: ( '[' )
             {
-            // InternalSlideOMatic.g:3437:1: ( '[' )
-            // InternalSlideOMatic.g:3438:2: '['
+            // InternalSlideOMatic.g:3645:1: ( '[' )
+            // InternalSlideOMatic.g:3646:2: '['
             {
              before(grammarAccess.getTableRowAccess().getLeftSquareBracketKeyword_0()); 
-            match(input,93,FOLLOW_2); 
+            match(input,95,FOLLOW_2); 
              after(grammarAccess.getTableRowAccess().getLeftSquareBracketKeyword_0()); 
 
             }
@@ -10819,16 +11516,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group__1"
-    // InternalSlideOMatic.g:3447:1: rule__TableRow__Group__1 : rule__TableRow__Group__1__Impl rule__TableRow__Group__2 ;
+    // InternalSlideOMatic.g:3655:1: rule__TableRow__Group__1 : rule__TableRow__Group__1__Impl rule__TableRow__Group__2 ;
     public final void rule__TableRow__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3451:1: ( rule__TableRow__Group__1__Impl rule__TableRow__Group__2 )
-            // InternalSlideOMatic.g:3452:2: rule__TableRow__Group__1__Impl rule__TableRow__Group__2
+            // InternalSlideOMatic.g:3659:1: ( rule__TableRow__Group__1__Impl rule__TableRow__Group__2 )
+            // InternalSlideOMatic.g:3660:2: rule__TableRow__Group__1__Impl rule__TableRow__Group__2
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__TableRow__Group__1__Impl();
 
             state._fsp--;
@@ -10857,21 +11554,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group__1__Impl"
-    // InternalSlideOMatic.g:3459:1: rule__TableRow__Group__1__Impl : ( ( rule__TableRow__ValuesAssignment_1 ) ) ;
+    // InternalSlideOMatic.g:3667:1: rule__TableRow__Group__1__Impl : ( ( rule__TableRow__ValuesAssignment_1 ) ) ;
     public final void rule__TableRow__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3463:1: ( ( ( rule__TableRow__ValuesAssignment_1 ) ) )
-            // InternalSlideOMatic.g:3464:1: ( ( rule__TableRow__ValuesAssignment_1 ) )
+            // InternalSlideOMatic.g:3671:1: ( ( ( rule__TableRow__ValuesAssignment_1 ) ) )
+            // InternalSlideOMatic.g:3672:1: ( ( rule__TableRow__ValuesAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:3464:1: ( ( rule__TableRow__ValuesAssignment_1 ) )
-            // InternalSlideOMatic.g:3465:2: ( rule__TableRow__ValuesAssignment_1 )
+            // InternalSlideOMatic.g:3672:1: ( ( rule__TableRow__ValuesAssignment_1 ) )
+            // InternalSlideOMatic.g:3673:2: ( rule__TableRow__ValuesAssignment_1 )
             {
              before(grammarAccess.getTableRowAccess().getValuesAssignment_1()); 
-            // InternalSlideOMatic.g:3466:2: ( rule__TableRow__ValuesAssignment_1 )
-            // InternalSlideOMatic.g:3466:3: rule__TableRow__ValuesAssignment_1
+            // InternalSlideOMatic.g:3674:2: ( rule__TableRow__ValuesAssignment_1 )
+            // InternalSlideOMatic.g:3674:3: rule__TableRow__ValuesAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TableRow__ValuesAssignment_1();
@@ -10904,16 +11601,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group__2"
-    // InternalSlideOMatic.g:3474:1: rule__TableRow__Group__2 : rule__TableRow__Group__2__Impl rule__TableRow__Group__3 ;
+    // InternalSlideOMatic.g:3682:1: rule__TableRow__Group__2 : rule__TableRow__Group__2__Impl rule__TableRow__Group__3 ;
     public final void rule__TableRow__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3478:1: ( rule__TableRow__Group__2__Impl rule__TableRow__Group__3 )
-            // InternalSlideOMatic.g:3479:2: rule__TableRow__Group__2__Impl rule__TableRow__Group__3
+            // InternalSlideOMatic.g:3686:1: ( rule__TableRow__Group__2__Impl rule__TableRow__Group__3 )
+            // InternalSlideOMatic.g:3687:2: rule__TableRow__Group__2__Impl rule__TableRow__Group__3
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_36);
             rule__TableRow__Group__2__Impl();
 
             state._fsp--;
@@ -10942,33 +11639,33 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group__2__Impl"
-    // InternalSlideOMatic.g:3486:1: rule__TableRow__Group__2__Impl : ( ( rule__TableRow__Group_2__0 )* ) ;
+    // InternalSlideOMatic.g:3694:1: rule__TableRow__Group__2__Impl : ( ( rule__TableRow__Group_2__0 )* ) ;
     public final void rule__TableRow__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3490:1: ( ( ( rule__TableRow__Group_2__0 )* ) )
-            // InternalSlideOMatic.g:3491:1: ( ( rule__TableRow__Group_2__0 )* )
+            // InternalSlideOMatic.g:3698:1: ( ( ( rule__TableRow__Group_2__0 )* ) )
+            // InternalSlideOMatic.g:3699:1: ( ( rule__TableRow__Group_2__0 )* )
             {
-            // InternalSlideOMatic.g:3491:1: ( ( rule__TableRow__Group_2__0 )* )
-            // InternalSlideOMatic.g:3492:2: ( rule__TableRow__Group_2__0 )*
+            // InternalSlideOMatic.g:3699:1: ( ( rule__TableRow__Group_2__0 )* )
+            // InternalSlideOMatic.g:3700:2: ( rule__TableRow__Group_2__0 )*
             {
              before(grammarAccess.getTableRowAccess().getGroup_2()); 
-            // InternalSlideOMatic.g:3493:2: ( rule__TableRow__Group_2__0 )*
-            loop33:
+            // InternalSlideOMatic.g:3701:2: ( rule__TableRow__Group_2__0 )*
+            loop36:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA33_0==75) ) {
-                    alt33=1;
+                if ( (LA36_0==78) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt36) {
             	case 1 :
-            	    // InternalSlideOMatic.g:3493:3: rule__TableRow__Group_2__0
+            	    // InternalSlideOMatic.g:3701:3: rule__TableRow__Group_2__0
             	    {
             	    pushFollow(FOLLOW_12);
             	    rule__TableRow__Group_2__0();
@@ -10980,7 +11677,7 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop36;
                 }
             } while (true);
 
@@ -11007,14 +11704,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group__3"
-    // InternalSlideOMatic.g:3501:1: rule__TableRow__Group__3 : rule__TableRow__Group__3__Impl ;
+    // InternalSlideOMatic.g:3709:1: rule__TableRow__Group__3 : rule__TableRow__Group__3__Impl ;
     public final void rule__TableRow__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3505:1: ( rule__TableRow__Group__3__Impl )
-            // InternalSlideOMatic.g:3506:2: rule__TableRow__Group__3__Impl
+            // InternalSlideOMatic.g:3713:1: ( rule__TableRow__Group__3__Impl )
+            // InternalSlideOMatic.g:3714:2: rule__TableRow__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TableRow__Group__3__Impl();
@@ -11040,20 +11737,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group__3__Impl"
-    // InternalSlideOMatic.g:3512:1: rule__TableRow__Group__3__Impl : ( ']' ) ;
+    // InternalSlideOMatic.g:3720:1: rule__TableRow__Group__3__Impl : ( ']' ) ;
     public final void rule__TableRow__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3516:1: ( ( ']' ) )
-            // InternalSlideOMatic.g:3517:1: ( ']' )
+            // InternalSlideOMatic.g:3724:1: ( ( ']' ) )
+            // InternalSlideOMatic.g:3725:1: ( ']' )
             {
-            // InternalSlideOMatic.g:3517:1: ( ']' )
-            // InternalSlideOMatic.g:3518:2: ']'
+            // InternalSlideOMatic.g:3725:1: ( ']' )
+            // InternalSlideOMatic.g:3726:2: ']'
             {
              before(grammarAccess.getTableRowAccess().getRightSquareBracketKeyword_3()); 
-            match(input,94,FOLLOW_2); 
+            match(input,96,FOLLOW_2); 
              after(grammarAccess.getTableRowAccess().getRightSquareBracketKeyword_3()); 
 
             }
@@ -11077,14 +11774,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group_2__0"
-    // InternalSlideOMatic.g:3528:1: rule__TableRow__Group_2__0 : rule__TableRow__Group_2__0__Impl rule__TableRow__Group_2__1 ;
+    // InternalSlideOMatic.g:3736:1: rule__TableRow__Group_2__0 : rule__TableRow__Group_2__0__Impl rule__TableRow__Group_2__1 ;
     public final void rule__TableRow__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3532:1: ( rule__TableRow__Group_2__0__Impl rule__TableRow__Group_2__1 )
-            // InternalSlideOMatic.g:3533:2: rule__TableRow__Group_2__0__Impl rule__TableRow__Group_2__1
+            // InternalSlideOMatic.g:3740:1: ( rule__TableRow__Group_2__0__Impl rule__TableRow__Group_2__1 )
+            // InternalSlideOMatic.g:3741:2: rule__TableRow__Group_2__0__Impl rule__TableRow__Group_2__1
             {
             pushFollow(FOLLOW_3);
             rule__TableRow__Group_2__0__Impl();
@@ -11115,20 +11812,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group_2__0__Impl"
-    // InternalSlideOMatic.g:3540:1: rule__TableRow__Group_2__0__Impl : ( ',' ) ;
+    // InternalSlideOMatic.g:3748:1: rule__TableRow__Group_2__0__Impl : ( ',' ) ;
     public final void rule__TableRow__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3544:1: ( ( ',' ) )
-            // InternalSlideOMatic.g:3545:1: ( ',' )
+            // InternalSlideOMatic.g:3752:1: ( ( ',' ) )
+            // InternalSlideOMatic.g:3753:1: ( ',' )
             {
-            // InternalSlideOMatic.g:3545:1: ( ',' )
-            // InternalSlideOMatic.g:3546:2: ','
+            // InternalSlideOMatic.g:3753:1: ( ',' )
+            // InternalSlideOMatic.g:3754:2: ','
             {
              before(grammarAccess.getTableRowAccess().getCommaKeyword_2_0()); 
-            match(input,75,FOLLOW_2); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getTableRowAccess().getCommaKeyword_2_0()); 
 
             }
@@ -11152,14 +11849,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group_2__1"
-    // InternalSlideOMatic.g:3555:1: rule__TableRow__Group_2__1 : rule__TableRow__Group_2__1__Impl ;
+    // InternalSlideOMatic.g:3763:1: rule__TableRow__Group_2__1 : rule__TableRow__Group_2__1__Impl ;
     public final void rule__TableRow__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3559:1: ( rule__TableRow__Group_2__1__Impl )
-            // InternalSlideOMatic.g:3560:2: rule__TableRow__Group_2__1__Impl
+            // InternalSlideOMatic.g:3767:1: ( rule__TableRow__Group_2__1__Impl )
+            // InternalSlideOMatic.g:3768:2: rule__TableRow__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TableRow__Group_2__1__Impl();
@@ -11185,21 +11882,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__Group_2__1__Impl"
-    // InternalSlideOMatic.g:3566:1: rule__TableRow__Group_2__1__Impl : ( ( rule__TableRow__ValuesAssignment_2_1 ) ) ;
+    // InternalSlideOMatic.g:3774:1: rule__TableRow__Group_2__1__Impl : ( ( rule__TableRow__ValuesAssignment_2_1 ) ) ;
     public final void rule__TableRow__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3570:1: ( ( ( rule__TableRow__ValuesAssignment_2_1 ) ) )
-            // InternalSlideOMatic.g:3571:1: ( ( rule__TableRow__ValuesAssignment_2_1 ) )
+            // InternalSlideOMatic.g:3778:1: ( ( ( rule__TableRow__ValuesAssignment_2_1 ) ) )
+            // InternalSlideOMatic.g:3779:1: ( ( rule__TableRow__ValuesAssignment_2_1 ) )
             {
-            // InternalSlideOMatic.g:3571:1: ( ( rule__TableRow__ValuesAssignment_2_1 ) )
-            // InternalSlideOMatic.g:3572:2: ( rule__TableRow__ValuesAssignment_2_1 )
+            // InternalSlideOMatic.g:3779:1: ( ( rule__TableRow__ValuesAssignment_2_1 ) )
+            // InternalSlideOMatic.g:3780:2: ( rule__TableRow__ValuesAssignment_2_1 )
             {
              before(grammarAccess.getTableRowAccess().getValuesAssignment_2_1()); 
-            // InternalSlideOMatic.g:3573:2: ( rule__TableRow__ValuesAssignment_2_1 )
-            // InternalSlideOMatic.g:3573:3: rule__TableRow__ValuesAssignment_2_1
+            // InternalSlideOMatic.g:3781:2: ( rule__TableRow__ValuesAssignment_2_1 )
+            // InternalSlideOMatic.g:3781:3: rule__TableRow__ValuesAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__TableRow__ValuesAssignment_2_1();
@@ -11231,17 +11928,332 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__TableRow__Group_2__1__Impl"
 
 
+    // $ANTLR start "rule__Code__Group__0"
+    // InternalSlideOMatic.g:3790:1: rule__Code__Group__0 : rule__Code__Group__0__Impl rule__Code__Group__1 ;
+    public final void rule__Code__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3794:1: ( rule__Code__Group__0__Impl rule__Code__Group__1 )
+            // InternalSlideOMatic.g:3795:2: rule__Code__Group__0__Impl rule__Code__Group__1
+            {
+            pushFollow(FOLLOW_28);
+            rule__Code__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Code__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__Group__0"
+
+
+    // $ANTLR start "rule__Code__Group__0__Impl"
+    // InternalSlideOMatic.g:3802:1: rule__Code__Group__0__Impl : ( '```' ) ;
+    public final void rule__Code__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3806:1: ( ( '```' ) )
+            // InternalSlideOMatic.g:3807:1: ( '```' )
+            {
+            // InternalSlideOMatic.g:3807:1: ( '```' )
+            // InternalSlideOMatic.g:3808:2: '```'
+            {
+             before(grammarAccess.getCodeAccess().getGraveAccentGraveAccentGraveAccentKeyword_0()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getCodeAccess().getGraveAccentGraveAccentGraveAccentKeyword_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Code__Group__1"
+    // InternalSlideOMatic.g:3817:1: rule__Code__Group__1 : rule__Code__Group__1__Impl rule__Code__Group__2 ;
+    public final void rule__Code__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3821:1: ( rule__Code__Group__1__Impl rule__Code__Group__2 )
+            // InternalSlideOMatic.g:3822:2: rule__Code__Group__1__Impl rule__Code__Group__2
+            {
+            pushFollow(FOLLOW_3);
+            rule__Code__Group__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Code__Group__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__Group__1"
+
+
+    // $ANTLR start "rule__Code__Group__1__Impl"
+    // InternalSlideOMatic.g:3829:1: rule__Code__Group__1__Impl : ( ( rule__Code__LangAssignment_1 ) ) ;
+    public final void rule__Code__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3833:1: ( ( ( rule__Code__LangAssignment_1 ) ) )
+            // InternalSlideOMatic.g:3834:1: ( ( rule__Code__LangAssignment_1 ) )
+            {
+            // InternalSlideOMatic.g:3834:1: ( ( rule__Code__LangAssignment_1 ) )
+            // InternalSlideOMatic.g:3835:2: ( rule__Code__LangAssignment_1 )
+            {
+             before(grammarAccess.getCodeAccess().getLangAssignment_1()); 
+            // InternalSlideOMatic.g:3836:2: ( rule__Code__LangAssignment_1 )
+            // InternalSlideOMatic.g:3836:3: rule__Code__LangAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Code__LangAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getCodeAccess().getLangAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__Group__1__Impl"
+
+
+    // $ANTLR start "rule__Code__Group__2"
+    // InternalSlideOMatic.g:3844:1: rule__Code__Group__2 : rule__Code__Group__2__Impl rule__Code__Group__3 ;
+    public final void rule__Code__Group__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3848:1: ( rule__Code__Group__2__Impl rule__Code__Group__3 )
+            // InternalSlideOMatic.g:3849:2: rule__Code__Group__2__Impl rule__Code__Group__3
+            {
+            pushFollow(FOLLOW_37);
+            rule__Code__Group__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Code__Group__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__Group__2"
+
+
+    // $ANTLR start "rule__Code__Group__2__Impl"
+    // InternalSlideOMatic.g:3856:1: rule__Code__Group__2__Impl : ( ( rule__Code__CodeAssignment_2 ) ) ;
+    public final void rule__Code__Group__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3860:1: ( ( ( rule__Code__CodeAssignment_2 ) ) )
+            // InternalSlideOMatic.g:3861:1: ( ( rule__Code__CodeAssignment_2 ) )
+            {
+            // InternalSlideOMatic.g:3861:1: ( ( rule__Code__CodeAssignment_2 ) )
+            // InternalSlideOMatic.g:3862:2: ( rule__Code__CodeAssignment_2 )
+            {
+             before(grammarAccess.getCodeAccess().getCodeAssignment_2()); 
+            // InternalSlideOMatic.g:3863:2: ( rule__Code__CodeAssignment_2 )
+            // InternalSlideOMatic.g:3863:3: rule__Code__CodeAssignment_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Code__CodeAssignment_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getCodeAccess().getCodeAssignment_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__Group__2__Impl"
+
+
+    // $ANTLR start "rule__Code__Group__3"
+    // InternalSlideOMatic.g:3871:1: rule__Code__Group__3 : rule__Code__Group__3__Impl ;
+    public final void rule__Code__Group__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3875:1: ( rule__Code__Group__3__Impl )
+            // InternalSlideOMatic.g:3876:2: rule__Code__Group__3__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Code__Group__3__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__Group__3"
+
+
+    // $ANTLR start "rule__Code__Group__3__Impl"
+    // InternalSlideOMatic.g:3882:1: rule__Code__Group__3__Impl : ( '```' ) ;
+    public final void rule__Code__Group__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:3886:1: ( ( '```' ) )
+            // InternalSlideOMatic.g:3887:1: ( '```' )
+            {
+            // InternalSlideOMatic.g:3887:1: ( '```' )
+            // InternalSlideOMatic.g:3888:2: '```'
+            {
+             before(grammarAccess.getCodeAccess().getGraveAccentGraveAccentGraveAccentKeyword_3()); 
+            match(input,97,FOLLOW_2); 
+             after(grammarAccess.getCodeAccess().getGraveAccentGraveAccentGraveAccentKeyword_3()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__Group__3__Impl"
+
+
     // $ANTLR start "rule__Animation__Group__0"
-    // InternalSlideOMatic.g:3582:1: rule__Animation__Group__0 : rule__Animation__Group__0__Impl rule__Animation__Group__1 ;
+    // InternalSlideOMatic.g:3898:1: rule__Animation__Group__0 : rule__Animation__Group__0__Impl rule__Animation__Group__1 ;
     public final void rule__Animation__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3586:1: ( rule__Animation__Group__0__Impl rule__Animation__Group__1 )
-            // InternalSlideOMatic.g:3587:2: rule__Animation__Group__0__Impl rule__Animation__Group__1
+            // InternalSlideOMatic.g:3902:1: ( rule__Animation__Group__0__Impl rule__Animation__Group__1 )
+            // InternalSlideOMatic.g:3903:2: rule__Animation__Group__0__Impl rule__Animation__Group__1
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_28);
             rule__Animation__Group__0__Impl();
 
             state._fsp--;
@@ -11270,20 +12282,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__0__Impl"
-    // InternalSlideOMatic.g:3594:1: rule__Animation__Group__0__Impl : ( 'animate' ) ;
+    // InternalSlideOMatic.g:3910:1: rule__Animation__Group__0__Impl : ( 'animate' ) ;
     public final void rule__Animation__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3598:1: ( ( 'animate' ) )
-            // InternalSlideOMatic.g:3599:1: ( 'animate' )
+            // InternalSlideOMatic.g:3914:1: ( ( 'animate' ) )
+            // InternalSlideOMatic.g:3915:1: ( 'animate' )
             {
-            // InternalSlideOMatic.g:3599:1: ( 'animate' )
-            // InternalSlideOMatic.g:3600:2: 'animate'
+            // InternalSlideOMatic.g:3915:1: ( 'animate' )
+            // InternalSlideOMatic.g:3916:2: 'animate'
             {
              before(grammarAccess.getAnimationAccess().getAnimateKeyword_0()); 
-            match(input,95,FOLLOW_2); 
+            match(input,98,FOLLOW_2); 
              after(grammarAccess.getAnimationAccess().getAnimateKeyword_0()); 
 
             }
@@ -11307,14 +12319,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__1"
-    // InternalSlideOMatic.g:3609:1: rule__Animation__Group__1 : rule__Animation__Group__1__Impl rule__Animation__Group__2 ;
+    // InternalSlideOMatic.g:3925:1: rule__Animation__Group__1 : rule__Animation__Group__1__Impl rule__Animation__Group__2 ;
     public final void rule__Animation__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3613:1: ( rule__Animation__Group__1__Impl rule__Animation__Group__2 )
-            // InternalSlideOMatic.g:3614:2: rule__Animation__Group__1__Impl rule__Animation__Group__2
+            // InternalSlideOMatic.g:3929:1: ( rule__Animation__Group__1__Impl rule__Animation__Group__2 )
+            // InternalSlideOMatic.g:3930:2: rule__Animation__Group__1__Impl rule__Animation__Group__2
             {
             pushFollow(FOLLOW_38);
             rule__Animation__Group__1__Impl();
@@ -11345,21 +12357,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__1__Impl"
-    // InternalSlideOMatic.g:3621:1: rule__Animation__Group__1__Impl : ( ( rule__Animation__TargetAssignment_1 ) ) ;
+    // InternalSlideOMatic.g:3937:1: rule__Animation__Group__1__Impl : ( ( rule__Animation__TargetAssignment_1 ) ) ;
     public final void rule__Animation__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3625:1: ( ( ( rule__Animation__TargetAssignment_1 ) ) )
-            // InternalSlideOMatic.g:3626:1: ( ( rule__Animation__TargetAssignment_1 ) )
+            // InternalSlideOMatic.g:3941:1: ( ( ( rule__Animation__TargetAssignment_1 ) ) )
+            // InternalSlideOMatic.g:3942:1: ( ( rule__Animation__TargetAssignment_1 ) )
             {
-            // InternalSlideOMatic.g:3626:1: ( ( rule__Animation__TargetAssignment_1 ) )
-            // InternalSlideOMatic.g:3627:2: ( rule__Animation__TargetAssignment_1 )
+            // InternalSlideOMatic.g:3942:1: ( ( rule__Animation__TargetAssignment_1 ) )
+            // InternalSlideOMatic.g:3943:2: ( rule__Animation__TargetAssignment_1 )
             {
              before(grammarAccess.getAnimationAccess().getTargetAssignment_1()); 
-            // InternalSlideOMatic.g:3628:2: ( rule__Animation__TargetAssignment_1 )
-            // InternalSlideOMatic.g:3628:3: rule__Animation__TargetAssignment_1
+            // InternalSlideOMatic.g:3944:2: ( rule__Animation__TargetAssignment_1 )
+            // InternalSlideOMatic.g:3944:3: rule__Animation__TargetAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Animation__TargetAssignment_1();
@@ -11392,14 +12404,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__2"
-    // InternalSlideOMatic.g:3636:1: rule__Animation__Group__2 : rule__Animation__Group__2__Impl rule__Animation__Group__3 ;
+    // InternalSlideOMatic.g:3952:1: rule__Animation__Group__2 : rule__Animation__Group__2__Impl rule__Animation__Group__3 ;
     public final void rule__Animation__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3640:1: ( rule__Animation__Group__2__Impl rule__Animation__Group__3 )
-            // InternalSlideOMatic.g:3641:2: rule__Animation__Group__2__Impl rule__Animation__Group__3
+            // InternalSlideOMatic.g:3956:1: ( rule__Animation__Group__2__Impl rule__Animation__Group__3 )
+            // InternalSlideOMatic.g:3957:2: rule__Animation__Group__2__Impl rule__Animation__Group__3
             {
             pushFollow(FOLLOW_39);
             rule__Animation__Group__2__Impl();
@@ -11430,21 +12442,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__2__Impl"
-    // InternalSlideOMatic.g:3648:1: rule__Animation__Group__2__Impl : ( ( rule__Animation__TypeAssignment_2 ) ) ;
+    // InternalSlideOMatic.g:3964:1: rule__Animation__Group__2__Impl : ( ( rule__Animation__TypeAssignment_2 ) ) ;
     public final void rule__Animation__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3652:1: ( ( ( rule__Animation__TypeAssignment_2 ) ) )
-            // InternalSlideOMatic.g:3653:1: ( ( rule__Animation__TypeAssignment_2 ) )
+            // InternalSlideOMatic.g:3968:1: ( ( ( rule__Animation__TypeAssignment_2 ) ) )
+            // InternalSlideOMatic.g:3969:1: ( ( rule__Animation__TypeAssignment_2 ) )
             {
-            // InternalSlideOMatic.g:3653:1: ( ( rule__Animation__TypeAssignment_2 ) )
-            // InternalSlideOMatic.g:3654:2: ( rule__Animation__TypeAssignment_2 )
+            // InternalSlideOMatic.g:3969:1: ( ( rule__Animation__TypeAssignment_2 ) )
+            // InternalSlideOMatic.g:3970:2: ( rule__Animation__TypeAssignment_2 )
             {
              before(grammarAccess.getAnimationAccess().getTypeAssignment_2()); 
-            // InternalSlideOMatic.g:3655:2: ( rule__Animation__TypeAssignment_2 )
-            // InternalSlideOMatic.g:3655:3: rule__Animation__TypeAssignment_2
+            // InternalSlideOMatic.g:3971:2: ( rule__Animation__TypeAssignment_2 )
+            // InternalSlideOMatic.g:3971:3: rule__Animation__TypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Animation__TypeAssignment_2();
@@ -11477,14 +12489,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__3"
-    // InternalSlideOMatic.g:3663:1: rule__Animation__Group__3 : rule__Animation__Group__3__Impl rule__Animation__Group__4 ;
+    // InternalSlideOMatic.g:3979:1: rule__Animation__Group__3 : rule__Animation__Group__3__Impl rule__Animation__Group__4 ;
     public final void rule__Animation__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3667:1: ( rule__Animation__Group__3__Impl rule__Animation__Group__4 )
-            // InternalSlideOMatic.g:3668:2: rule__Animation__Group__3__Impl rule__Animation__Group__4
+            // InternalSlideOMatic.g:3983:1: ( rule__Animation__Group__3__Impl rule__Animation__Group__4 )
+            // InternalSlideOMatic.g:3984:2: rule__Animation__Group__3__Impl rule__Animation__Group__4
             {
             pushFollow(FOLLOW_40);
             rule__Animation__Group__3__Impl();
@@ -11515,20 +12527,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__3__Impl"
-    // InternalSlideOMatic.g:3675:1: rule__Animation__Group__3__Impl : ( 'to' ) ;
+    // InternalSlideOMatic.g:3991:1: rule__Animation__Group__3__Impl : ( 'to' ) ;
     public final void rule__Animation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3679:1: ( ( 'to' ) )
-            // InternalSlideOMatic.g:3680:1: ( 'to' )
+            // InternalSlideOMatic.g:3995:1: ( ( 'to' ) )
+            // InternalSlideOMatic.g:3996:1: ( 'to' )
             {
-            // InternalSlideOMatic.g:3680:1: ( 'to' )
-            // InternalSlideOMatic.g:3681:2: 'to'
+            // InternalSlideOMatic.g:3996:1: ( 'to' )
+            // InternalSlideOMatic.g:3997:2: 'to'
             {
              before(grammarAccess.getAnimationAccess().getToKeyword_3()); 
-            match(input,96,FOLLOW_2); 
+            match(input,99,FOLLOW_2); 
              after(grammarAccess.getAnimationAccess().getToKeyword_3()); 
 
             }
@@ -11552,16 +12564,16 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__4"
-    // InternalSlideOMatic.g:3690:1: rule__Animation__Group__4 : rule__Animation__Group__4__Impl rule__Animation__Group__5 ;
+    // InternalSlideOMatic.g:4006:1: rule__Animation__Group__4 : rule__Animation__Group__4__Impl rule__Animation__Group__5 ;
     public final void rule__Animation__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3694:1: ( rule__Animation__Group__4__Impl rule__Animation__Group__5 )
-            // InternalSlideOMatic.g:3695:2: rule__Animation__Group__4__Impl rule__Animation__Group__5
+            // InternalSlideOMatic.g:4010:1: ( rule__Animation__Group__4__Impl rule__Animation__Group__5 )
+            // InternalSlideOMatic.g:4011:2: rule__Animation__Group__4__Impl rule__Animation__Group__5
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_30);
             rule__Animation__Group__4__Impl();
 
             state._fsp--;
@@ -11590,21 +12602,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__4__Impl"
-    // InternalSlideOMatic.g:3702:1: rule__Animation__Group__4__Impl : ( ( rule__Animation__LocationAssignment_4 ) ) ;
+    // InternalSlideOMatic.g:4018:1: rule__Animation__Group__4__Impl : ( ( rule__Animation__LocationAssignment_4 ) ) ;
     public final void rule__Animation__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3706:1: ( ( ( rule__Animation__LocationAssignment_4 ) ) )
-            // InternalSlideOMatic.g:3707:1: ( ( rule__Animation__LocationAssignment_4 ) )
+            // InternalSlideOMatic.g:4022:1: ( ( ( rule__Animation__LocationAssignment_4 ) ) )
+            // InternalSlideOMatic.g:4023:1: ( ( rule__Animation__LocationAssignment_4 ) )
             {
-            // InternalSlideOMatic.g:3707:1: ( ( rule__Animation__LocationAssignment_4 ) )
-            // InternalSlideOMatic.g:3708:2: ( rule__Animation__LocationAssignment_4 )
+            // InternalSlideOMatic.g:4023:1: ( ( rule__Animation__LocationAssignment_4 ) )
+            // InternalSlideOMatic.g:4024:2: ( rule__Animation__LocationAssignment_4 )
             {
              before(grammarAccess.getAnimationAccess().getLocationAssignment_4()); 
-            // InternalSlideOMatic.g:3709:2: ( rule__Animation__LocationAssignment_4 )
-            // InternalSlideOMatic.g:3709:3: rule__Animation__LocationAssignment_4
+            // InternalSlideOMatic.g:4025:2: ( rule__Animation__LocationAssignment_4 )
+            // InternalSlideOMatic.g:4025:3: rule__Animation__LocationAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Animation__LocationAssignment_4();
@@ -11637,14 +12649,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__5"
-    // InternalSlideOMatic.g:3717:1: rule__Animation__Group__5 : rule__Animation__Group__5__Impl ;
+    // InternalSlideOMatic.g:4033:1: rule__Animation__Group__5 : rule__Animation__Group__5__Impl ;
     public final void rule__Animation__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3721:1: ( rule__Animation__Group__5__Impl )
-            // InternalSlideOMatic.g:3722:2: rule__Animation__Group__5__Impl
+            // InternalSlideOMatic.g:4037:1: ( rule__Animation__Group__5__Impl )
+            // InternalSlideOMatic.g:4038:2: rule__Animation__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Animation__Group__5__Impl();
@@ -11670,29 +12682,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__Group__5__Impl"
-    // InternalSlideOMatic.g:3728:1: rule__Animation__Group__5__Impl : ( ( rule__Animation__SizeAssignment_5 )? ) ;
+    // InternalSlideOMatic.g:4044:1: rule__Animation__Group__5__Impl : ( ( rule__Animation__SizeAssignment_5 )? ) ;
     public final void rule__Animation__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3732:1: ( ( ( rule__Animation__SizeAssignment_5 )? ) )
-            // InternalSlideOMatic.g:3733:1: ( ( rule__Animation__SizeAssignment_5 )? )
+            // InternalSlideOMatic.g:4048:1: ( ( ( rule__Animation__SizeAssignment_5 )? ) )
+            // InternalSlideOMatic.g:4049:1: ( ( rule__Animation__SizeAssignment_5 )? )
             {
-            // InternalSlideOMatic.g:3733:1: ( ( rule__Animation__SizeAssignment_5 )? )
-            // InternalSlideOMatic.g:3734:2: ( rule__Animation__SizeAssignment_5 )?
+            // InternalSlideOMatic.g:4049:1: ( ( rule__Animation__SizeAssignment_5 )? )
+            // InternalSlideOMatic.g:4050:2: ( rule__Animation__SizeAssignment_5 )?
             {
              before(grammarAccess.getAnimationAccess().getSizeAssignment_5()); 
-            // InternalSlideOMatic.g:3735:2: ( rule__Animation__SizeAssignment_5 )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // InternalSlideOMatic.g:4051:2: ( rule__Animation__SizeAssignment_5 )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
 
-            if ( ((LA34_0>=65 && LA34_0<=66)) ) {
-                alt34=1;
+            if ( (LA37_0==RULE_INT||(LA37_0>=65 && LA37_0<=66)) ) {
+                alt37=1;
             }
-            switch (alt34) {
+            switch (alt37) {
                 case 1 :
-                    // InternalSlideOMatic.g:3735:3: rule__Animation__SizeAssignment_5
+                    // InternalSlideOMatic.g:4051:3: rule__Animation__SizeAssignment_5
                     {
                     pushFollow(FOLLOW_2);
                     rule__Animation__SizeAssignment_5();
@@ -11728,14 +12740,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AnimationType__Group_0__0"
-    // InternalSlideOMatic.g:3744:1: rule__AnimationType__Group_0__0 : rule__AnimationType__Group_0__0__Impl rule__AnimationType__Group_0__1 ;
+    // InternalSlideOMatic.g:4060:1: rule__AnimationType__Group_0__0 : rule__AnimationType__Group_0__0__Impl rule__AnimationType__Group_0__1 ;
     public final void rule__AnimationType__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3748:1: ( rule__AnimationType__Group_0__0__Impl rule__AnimationType__Group_0__1 )
-            // InternalSlideOMatic.g:3749:2: rule__AnimationType__Group_0__0__Impl rule__AnimationType__Group_0__1
+            // InternalSlideOMatic.g:4064:1: ( rule__AnimationType__Group_0__0__Impl rule__AnimationType__Group_0__1 )
+            // InternalSlideOMatic.g:4065:2: rule__AnimationType__Group_0__0__Impl rule__AnimationType__Group_0__1
             {
             pushFollow(FOLLOW_41);
             rule__AnimationType__Group_0__0__Impl();
@@ -11766,21 +12778,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AnimationType__Group_0__0__Impl"
-    // InternalSlideOMatic.g:3756:1: rule__AnimationType__Group_0__0__Impl : ( () ) ;
+    // InternalSlideOMatic.g:4072:1: rule__AnimationType__Group_0__0__Impl : ( () ) ;
     public final void rule__AnimationType__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3760:1: ( ( () ) )
-            // InternalSlideOMatic.g:3761:1: ( () )
+            // InternalSlideOMatic.g:4076:1: ( ( () ) )
+            // InternalSlideOMatic.g:4077:1: ( () )
             {
-            // InternalSlideOMatic.g:3761:1: ( () )
-            // InternalSlideOMatic.g:3762:2: ()
+            // InternalSlideOMatic.g:4077:1: ( () )
+            // InternalSlideOMatic.g:4078:2: ()
             {
              before(grammarAccess.getAnimationTypeAccess().getMoveAction_0_0()); 
-            // InternalSlideOMatic.g:3763:2: ()
-            // InternalSlideOMatic.g:3763:3: 
+            // InternalSlideOMatic.g:4079:2: ()
+            // InternalSlideOMatic.g:4079:3: 
             {
             }
 
@@ -11803,14 +12815,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AnimationType__Group_0__1"
-    // InternalSlideOMatic.g:3771:1: rule__AnimationType__Group_0__1 : rule__AnimationType__Group_0__1__Impl ;
+    // InternalSlideOMatic.g:4087:1: rule__AnimationType__Group_0__1 : rule__AnimationType__Group_0__1__Impl ;
     public final void rule__AnimationType__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3775:1: ( rule__AnimationType__Group_0__1__Impl )
-            // InternalSlideOMatic.g:3776:2: rule__AnimationType__Group_0__1__Impl
+            // InternalSlideOMatic.g:4091:1: ( rule__AnimationType__Group_0__1__Impl )
+            // InternalSlideOMatic.g:4092:2: rule__AnimationType__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AnimationType__Group_0__1__Impl();
@@ -11836,20 +12848,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AnimationType__Group_0__1__Impl"
-    // InternalSlideOMatic.g:3782:1: rule__AnimationType__Group_0__1__Impl : ( 'move' ) ;
+    // InternalSlideOMatic.g:4098:1: rule__AnimationType__Group_0__1__Impl : ( 'move' ) ;
     public final void rule__AnimationType__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3786:1: ( ( 'move' ) )
-            // InternalSlideOMatic.g:3787:1: ( 'move' )
+            // InternalSlideOMatic.g:4102:1: ( ( 'move' ) )
+            // InternalSlideOMatic.g:4103:1: ( 'move' )
             {
-            // InternalSlideOMatic.g:3787:1: ( 'move' )
-            // InternalSlideOMatic.g:3788:2: 'move'
+            // InternalSlideOMatic.g:4103:1: ( 'move' )
+            // InternalSlideOMatic.g:4104:2: 'move'
             {
              before(grammarAccess.getAnimationTypeAccess().getMoveKeyword_0_1()); 
-            match(input,97,FOLLOW_2); 
+            match(input,100,FOLLOW_2); 
              after(grammarAccess.getAnimationTypeAccess().getMoveKeyword_0_1()); 
 
             }
@@ -11873,14 +12885,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AnimationType__Group_1__0"
-    // InternalSlideOMatic.g:3798:1: rule__AnimationType__Group_1__0 : rule__AnimationType__Group_1__0__Impl rule__AnimationType__Group_1__1 ;
+    // InternalSlideOMatic.g:4114:1: rule__AnimationType__Group_1__0 : rule__AnimationType__Group_1__0__Impl rule__AnimationType__Group_1__1 ;
     public final void rule__AnimationType__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3802:1: ( rule__AnimationType__Group_1__0__Impl rule__AnimationType__Group_1__1 )
-            // InternalSlideOMatic.g:3803:2: rule__AnimationType__Group_1__0__Impl rule__AnimationType__Group_1__1
+            // InternalSlideOMatic.g:4118:1: ( rule__AnimationType__Group_1__0__Impl rule__AnimationType__Group_1__1 )
+            // InternalSlideOMatic.g:4119:2: rule__AnimationType__Group_1__0__Impl rule__AnimationType__Group_1__1
             {
             pushFollow(FOLLOW_38);
             rule__AnimationType__Group_1__0__Impl();
@@ -11911,21 +12923,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AnimationType__Group_1__0__Impl"
-    // InternalSlideOMatic.g:3810:1: rule__AnimationType__Group_1__0__Impl : ( () ) ;
+    // InternalSlideOMatic.g:4126:1: rule__AnimationType__Group_1__0__Impl : ( () ) ;
     public final void rule__AnimationType__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3814:1: ( ( () ) )
-            // InternalSlideOMatic.g:3815:1: ( () )
+            // InternalSlideOMatic.g:4130:1: ( ( () ) )
+            // InternalSlideOMatic.g:4131:1: ( () )
             {
-            // InternalSlideOMatic.g:3815:1: ( () )
-            // InternalSlideOMatic.g:3816:2: ()
+            // InternalSlideOMatic.g:4131:1: ( () )
+            // InternalSlideOMatic.g:4132:2: ()
             {
              before(grammarAccess.getAnimationTypeAccess().getJumpAction_1_0()); 
-            // InternalSlideOMatic.g:3817:2: ()
-            // InternalSlideOMatic.g:3817:3: 
+            // InternalSlideOMatic.g:4133:2: ()
+            // InternalSlideOMatic.g:4133:3: 
             {
             }
 
@@ -11948,14 +12960,14 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AnimationType__Group_1__1"
-    // InternalSlideOMatic.g:3825:1: rule__AnimationType__Group_1__1 : rule__AnimationType__Group_1__1__Impl ;
+    // InternalSlideOMatic.g:4141:1: rule__AnimationType__Group_1__1 : rule__AnimationType__Group_1__1__Impl ;
     public final void rule__AnimationType__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3829:1: ( rule__AnimationType__Group_1__1__Impl )
-            // InternalSlideOMatic.g:3830:2: rule__AnimationType__Group_1__1__Impl
+            // InternalSlideOMatic.g:4145:1: ( rule__AnimationType__Group_1__1__Impl )
+            // InternalSlideOMatic.g:4146:2: rule__AnimationType__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AnimationType__Group_1__1__Impl();
@@ -11981,20 +12993,20 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__AnimationType__Group_1__1__Impl"
-    // InternalSlideOMatic.g:3836:1: rule__AnimationType__Group_1__1__Impl : ( 'jump' ) ;
+    // InternalSlideOMatic.g:4152:1: rule__AnimationType__Group_1__1__Impl : ( 'jump' ) ;
     public final void rule__AnimationType__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3840:1: ( ( 'jump' ) )
-            // InternalSlideOMatic.g:3841:1: ( 'jump' )
+            // InternalSlideOMatic.g:4156:1: ( ( 'jump' ) )
+            // InternalSlideOMatic.g:4157:1: ( 'jump' )
             {
-            // InternalSlideOMatic.g:3841:1: ( 'jump' )
-            // InternalSlideOMatic.g:3842:2: 'jump'
+            // InternalSlideOMatic.g:4157:1: ( 'jump' )
+            // InternalSlideOMatic.g:4158:2: 'jump'
             {
              before(grammarAccess.getAnimationTypeAccess().getJumpKeyword_1_1()); 
-            match(input,98,FOLLOW_2); 
+            match(input,101,FOLLOW_2); 
              after(grammarAccess.getAnimationTypeAccess().getJumpKeyword_1_1()); 
 
             }
@@ -12018,17 +13030,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Presentation__NameAssignment_1"
-    // InternalSlideOMatic.g:3852:1: rule__Presentation__NameAssignment_1 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4168:1: rule__Presentation__NameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Presentation__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3856:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:3857:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4172:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4173:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:3857:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:3858:3: RULE_STRING
+            // InternalSlideOMatic.g:4173:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4174:3: RULE_STRING
             {
              before(grammarAccess.getPresentationAccess().getNameSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -12054,26 +13066,63 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Presentation__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Presentation__ThemeAssignment_3_1"
-    // InternalSlideOMatic.g:3867:1: rule__Presentation__ThemeAssignment_3_1 : ( ruleTheme ) ;
-    public final void rule__Presentation__ThemeAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__SubtitleAssignment_2"
+    // InternalSlideOMatic.g:4183:1: rule__Presentation__SubtitleAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__Presentation__SubtitleAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3871:1: ( ( ruleTheme ) )
-            // InternalSlideOMatic.g:3872:2: ( ruleTheme )
+            // InternalSlideOMatic.g:4187:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4188:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:3872:2: ( ruleTheme )
-            // InternalSlideOMatic.g:3873:3: ruleTheme
+            // InternalSlideOMatic.g:4188:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4189:3: RULE_STRING
             {
-             before(grammarAccess.getPresentationAccess().getThemeThemeParserRuleCall_3_1_0()); 
+             before(grammarAccess.getPresentationAccess().getSubtitleSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getPresentationAccess().getSubtitleSTRINGTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Presentation__SubtitleAssignment_2"
+
+
+    // $ANTLR start "rule__Presentation__ThemeAssignment_4_1"
+    // InternalSlideOMatic.g:4198:1: rule__Presentation__ThemeAssignment_4_1 : ( ruleTheme ) ;
+    public final void rule__Presentation__ThemeAssignment_4_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4202:1: ( ( ruleTheme ) )
+            // InternalSlideOMatic.g:4203:2: ( ruleTheme )
+            {
+            // InternalSlideOMatic.g:4203:2: ( ruleTheme )
+            // InternalSlideOMatic.g:4204:3: ruleTheme
+            {
+             before(grammarAccess.getPresentationAccess().getThemeThemeParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
             ruleTheme();
 
             state._fsp--;
 
-             after(grammarAccess.getPresentationAccess().getThemeThemeParserRuleCall_3_1_0()); 
+             after(grammarAccess.getPresentationAccess().getThemeThemeParserRuleCall_4_1_0()); 
 
             }
 
@@ -12092,29 +13141,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__ThemeAssignment_3_1"
+    // $ANTLR end "rule__Presentation__ThemeAssignment_4_1"
 
 
-    // $ANTLR start "rule__Presentation__AuthorsAssignment_3_2"
-    // InternalSlideOMatic.g:3882:1: rule__Presentation__AuthorsAssignment_3_2 : ( ruleAuthors ) ;
-    public final void rule__Presentation__AuthorsAssignment_3_2() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__AuthorsAssignment_4_2"
+    // InternalSlideOMatic.g:4213:1: rule__Presentation__AuthorsAssignment_4_2 : ( ruleAuthors ) ;
+    public final void rule__Presentation__AuthorsAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3886:1: ( ( ruleAuthors ) )
-            // InternalSlideOMatic.g:3887:2: ( ruleAuthors )
+            // InternalSlideOMatic.g:4217:1: ( ( ruleAuthors ) )
+            // InternalSlideOMatic.g:4218:2: ( ruleAuthors )
             {
-            // InternalSlideOMatic.g:3887:2: ( ruleAuthors )
-            // InternalSlideOMatic.g:3888:3: ruleAuthors
+            // InternalSlideOMatic.g:4218:2: ( ruleAuthors )
+            // InternalSlideOMatic.g:4219:3: ruleAuthors
             {
-             before(grammarAccess.getPresentationAccess().getAuthorsAuthorsParserRuleCall_3_2_0()); 
+             before(grammarAccess.getPresentationAccess().getAuthorsAuthorsParserRuleCall_4_2_0()); 
             pushFollow(FOLLOW_2);
             ruleAuthors();
 
             state._fsp--;
 
-             after(grammarAccess.getPresentationAccess().getAuthorsAuthorsParserRuleCall_3_2_0()); 
+             after(grammarAccess.getPresentationAccess().getAuthorsAuthorsParserRuleCall_4_2_0()); 
 
             }
 
@@ -12133,29 +13182,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__AuthorsAssignment_3_2"
+    // $ANTLR end "rule__Presentation__AuthorsAssignment_4_2"
 
 
-    // $ANTLR start "rule__Presentation__InstituteAssignment_3_3"
-    // InternalSlideOMatic.g:3897:1: rule__Presentation__InstituteAssignment_3_3 : ( ruleInstitute ) ;
-    public final void rule__Presentation__InstituteAssignment_3_3() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__InstituteAssignment_4_3"
+    // InternalSlideOMatic.g:4228:1: rule__Presentation__InstituteAssignment_4_3 : ( ruleInstitute ) ;
+    public final void rule__Presentation__InstituteAssignment_4_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3901:1: ( ( ruleInstitute ) )
-            // InternalSlideOMatic.g:3902:2: ( ruleInstitute )
+            // InternalSlideOMatic.g:4232:1: ( ( ruleInstitute ) )
+            // InternalSlideOMatic.g:4233:2: ( ruleInstitute )
             {
-            // InternalSlideOMatic.g:3902:2: ( ruleInstitute )
-            // InternalSlideOMatic.g:3903:3: ruleInstitute
+            // InternalSlideOMatic.g:4233:2: ( ruleInstitute )
+            // InternalSlideOMatic.g:4234:3: ruleInstitute
             {
-             before(grammarAccess.getPresentationAccess().getInstituteInstituteParserRuleCall_3_3_0()); 
+             before(grammarAccess.getPresentationAccess().getInstituteInstituteParserRuleCall_4_3_0()); 
             pushFollow(FOLLOW_2);
             ruleInstitute();
 
             state._fsp--;
 
-             after(grammarAccess.getPresentationAccess().getInstituteInstituteParserRuleCall_3_3_0()); 
+             after(grammarAccess.getPresentationAccess().getInstituteInstituteParserRuleCall_4_3_0()); 
 
             }
 
@@ -12174,29 +13223,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__InstituteAssignment_3_3"
+    // $ANTLR end "rule__Presentation__InstituteAssignment_4_3"
 
 
-    // $ANTLR start "rule__Presentation__DateAssignment_3_4"
-    // InternalSlideOMatic.g:3912:1: rule__Presentation__DateAssignment_3_4 : ( ruleDate ) ;
-    public final void rule__Presentation__DateAssignment_3_4() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__DateAssignment_4_4"
+    // InternalSlideOMatic.g:4243:1: rule__Presentation__DateAssignment_4_4 : ( ruleDate ) ;
+    public final void rule__Presentation__DateAssignment_4_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3916:1: ( ( ruleDate ) )
-            // InternalSlideOMatic.g:3917:2: ( ruleDate )
+            // InternalSlideOMatic.g:4247:1: ( ( ruleDate ) )
+            // InternalSlideOMatic.g:4248:2: ( ruleDate )
             {
-            // InternalSlideOMatic.g:3917:2: ( ruleDate )
-            // InternalSlideOMatic.g:3918:3: ruleDate
+            // InternalSlideOMatic.g:4248:2: ( ruleDate )
+            // InternalSlideOMatic.g:4249:3: ruleDate
             {
-             before(grammarAccess.getPresentationAccess().getDateDateParserRuleCall_3_4_0()); 
+             before(grammarAccess.getPresentationAccess().getDateDateParserRuleCall_4_4_0()); 
             pushFollow(FOLLOW_2);
             ruleDate();
 
             state._fsp--;
 
-             after(grammarAccess.getPresentationAccess().getDateDateParserRuleCall_3_4_0()); 
+             after(grammarAccess.getPresentationAccess().getDateDateParserRuleCall_4_4_0()); 
 
             }
 
@@ -12215,29 +13264,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__DateAssignment_3_4"
+    // $ANTLR end "rule__Presentation__DateAssignment_4_4"
 
 
-    // $ANTLR start "rule__Presentation__SlidesAssignment_4_0"
-    // InternalSlideOMatic.g:3927:1: rule__Presentation__SlidesAssignment_4_0 : ( ruleSlide ) ;
-    public final void rule__Presentation__SlidesAssignment_4_0() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__SlidesAssignment_5_0"
+    // InternalSlideOMatic.g:4258:1: rule__Presentation__SlidesAssignment_5_0 : ( ruleSlide ) ;
+    public final void rule__Presentation__SlidesAssignment_5_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3931:1: ( ( ruleSlide ) )
-            // InternalSlideOMatic.g:3932:2: ( ruleSlide )
+            // InternalSlideOMatic.g:4262:1: ( ( ruleSlide ) )
+            // InternalSlideOMatic.g:4263:2: ( ruleSlide )
             {
-            // InternalSlideOMatic.g:3932:2: ( ruleSlide )
-            // InternalSlideOMatic.g:3933:3: ruleSlide
+            // InternalSlideOMatic.g:4263:2: ( ruleSlide )
+            // InternalSlideOMatic.g:4264:3: ruleSlide
             {
-             before(grammarAccess.getPresentationAccess().getSlidesSlideParserRuleCall_4_0_0()); 
+             before(grammarAccess.getPresentationAccess().getSlidesSlideParserRuleCall_5_0_0()); 
             pushFollow(FOLLOW_2);
             ruleSlide();
 
             state._fsp--;
 
-             after(grammarAccess.getPresentationAccess().getSlidesSlideParserRuleCall_4_0_0()); 
+             after(grammarAccess.getPresentationAccess().getSlidesSlideParserRuleCall_5_0_0()); 
 
             }
 
@@ -12256,29 +13305,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__SlidesAssignment_4_0"
+    // $ANTLR end "rule__Presentation__SlidesAssignment_5_0"
 
 
-    // $ANTLR start "rule__Presentation__AnimationsAssignment_4_1"
-    // InternalSlideOMatic.g:3942:1: rule__Presentation__AnimationsAssignment_4_1 : ( ruleAnimation ) ;
-    public final void rule__Presentation__AnimationsAssignment_4_1() throws RecognitionException {
+    // $ANTLR start "rule__Presentation__AnimationsAssignment_5_1"
+    // InternalSlideOMatic.g:4273:1: rule__Presentation__AnimationsAssignment_5_1 : ( ruleAnimation ) ;
+    public final void rule__Presentation__AnimationsAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3946:1: ( ( ruleAnimation ) )
-            // InternalSlideOMatic.g:3947:2: ( ruleAnimation )
+            // InternalSlideOMatic.g:4277:1: ( ( ruleAnimation ) )
+            // InternalSlideOMatic.g:4278:2: ( ruleAnimation )
             {
-            // InternalSlideOMatic.g:3947:2: ( ruleAnimation )
-            // InternalSlideOMatic.g:3948:3: ruleAnimation
+            // InternalSlideOMatic.g:4278:2: ( ruleAnimation )
+            // InternalSlideOMatic.g:4279:3: ruleAnimation
             {
-             before(grammarAccess.getPresentationAccess().getAnimationsAnimationParserRuleCall_4_1_0()); 
+             before(grammarAccess.getPresentationAccess().getAnimationsAnimationParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
             ruleAnimation();
 
             state._fsp--;
 
-             after(grammarAccess.getPresentationAccess().getAnimationsAnimationParserRuleCall_4_1_0()); 
+             after(grammarAccess.getPresentationAccess().getAnimationsAnimationParserRuleCall_5_1_0()); 
 
             }
 
@@ -12297,21 +13346,21 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Presentation__AnimationsAssignment_4_1"
+    // $ANTLR end "rule__Presentation__AnimationsAssignment_5_1"
 
 
     // $ANTLR start "rule__Theme__ThemeAssignment_1"
-    // InternalSlideOMatic.g:3957:1: rule__Theme__ThemeAssignment_1 : ( ruleBeamerTheme ) ;
+    // InternalSlideOMatic.g:4288:1: rule__Theme__ThemeAssignment_1 : ( ruleBeamerTheme ) ;
     public final void rule__Theme__ThemeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3961:1: ( ( ruleBeamerTheme ) )
-            // InternalSlideOMatic.g:3962:2: ( ruleBeamerTheme )
+            // InternalSlideOMatic.g:4292:1: ( ( ruleBeamerTheme ) )
+            // InternalSlideOMatic.g:4293:2: ( ruleBeamerTheme )
             {
-            // InternalSlideOMatic.g:3962:2: ( ruleBeamerTheme )
-            // InternalSlideOMatic.g:3963:3: ruleBeamerTheme
+            // InternalSlideOMatic.g:4293:2: ( ruleBeamerTheme )
+            // InternalSlideOMatic.g:4294:3: ruleBeamerTheme
             {
              before(grammarAccess.getThemeAccess().getThemeBeamerThemeParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -12342,17 +13391,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Theme__ThemeColorAssignment_2_1"
-    // InternalSlideOMatic.g:3972:1: rule__Theme__ThemeColorAssignment_2_1 : ( ruleThemeColor ) ;
+    // InternalSlideOMatic.g:4303:1: rule__Theme__ThemeColorAssignment_2_1 : ( ruleThemeColor ) ;
     public final void rule__Theme__ThemeColorAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3976:1: ( ( ruleThemeColor ) )
-            // InternalSlideOMatic.g:3977:2: ( ruleThemeColor )
+            // InternalSlideOMatic.g:4307:1: ( ( ruleThemeColor ) )
+            // InternalSlideOMatic.g:4308:2: ( ruleThemeColor )
             {
-            // InternalSlideOMatic.g:3977:2: ( ruleThemeColor )
-            // InternalSlideOMatic.g:3978:3: ruleThemeColor
+            // InternalSlideOMatic.g:4308:2: ( ruleThemeColor )
+            // InternalSlideOMatic.g:4309:3: ruleThemeColor
             {
              before(grammarAccess.getThemeAccess().getThemeColorThemeColorParserRuleCall_2_1_0()); 
             pushFollow(FOLLOW_2);
@@ -12383,17 +13432,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__NamesAssignment_1"
-    // InternalSlideOMatic.g:3987:1: rule__Authors__NamesAssignment_1 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4318:1: rule__Authors__NamesAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Authors__NamesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:3991:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:3992:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4322:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4323:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:3992:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:3993:3: RULE_STRING
+            // InternalSlideOMatic.g:4323:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4324:3: RULE_STRING
             {
              before(grammarAccess.getAuthorsAccess().getNamesSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -12420,17 +13469,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Authors__NamesAssignment_2_1"
-    // InternalSlideOMatic.g:4002:1: rule__Authors__NamesAssignment_2_1 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4333:1: rule__Authors__NamesAssignment_2_1 : ( RULE_STRING ) ;
     public final void rule__Authors__NamesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4006:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4007:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4337:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4338:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4007:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4008:3: RULE_STRING
+            // InternalSlideOMatic.g:4338:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4339:3: RULE_STRING
             {
              before(grammarAccess.getAuthorsAccess().getNamesSTRINGTerminalRuleCall_2_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -12457,17 +13506,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Institute__NameAssignment_1"
-    // InternalSlideOMatic.g:4017:1: rule__Institute__NameAssignment_1 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4348:1: rule__Institute__NameAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Institute__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4021:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4022:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4352:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4353:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4022:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4023:3: RULE_STRING
+            // InternalSlideOMatic.g:4353:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4354:3: RULE_STRING
             {
              before(grammarAccess.getInstituteAccess().getNameSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -12494,17 +13543,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Date__DateAssignment_1"
-    // InternalSlideOMatic.g:4032:1: rule__Date__DateAssignment_1 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4363:1: rule__Date__DateAssignment_1 : ( RULE_STRING ) ;
     public final void rule__Date__DateAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4036:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4037:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4367:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4368:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4037:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4038:3: RULE_STRING
+            // InternalSlideOMatic.g:4368:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4369:3: RULE_STRING
             {
              before(grammarAccess.getDateAccess().getDateSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -12530,18 +13579,59 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Date__DateAssignment_1"
 
 
+    // $ANTLR start "rule__Slide__SecAssignment_1_0_0"
+    // InternalSlideOMatic.g:4378:1: rule__Slide__SecAssignment_1_0_0 : ( ruleSection ) ;
+    public final void rule__Slide__SecAssignment_1_0_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4382:1: ( ( ruleSection ) )
+            // InternalSlideOMatic.g:4383:2: ( ruleSection )
+            {
+            // InternalSlideOMatic.g:4383:2: ( ruleSection )
+            // InternalSlideOMatic.g:4384:3: ruleSection
+            {
+             before(grammarAccess.getSlideAccess().getSecSectionParserRuleCall_1_0_0_0()); 
+            pushFollow(FOLLOW_2);
+            ruleSection();
+
+            state._fsp--;
+
+             after(grammarAccess.getSlideAccess().getSecSectionParserRuleCall_1_0_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Slide__SecAssignment_1_0_0"
+
+
     // $ANTLR start "rule__Slide__NameAssignment_1_0_1"
-    // InternalSlideOMatic.g:4047:1: rule__Slide__NameAssignment_1_0_1 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4393:1: rule__Slide__NameAssignment_1_0_1 : ( RULE_STRING ) ;
     public final void rule__Slide__NameAssignment_1_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4051:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4052:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4397:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4398:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4052:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4053:3: RULE_STRING
+            // InternalSlideOMatic.g:4398:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4399:3: RULE_STRING
             {
              before(grammarAccess.getSlideAccess().getNameSTRINGTerminalRuleCall_1_0_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -12568,17 +13658,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__NameAssignment_1_1"
-    // InternalSlideOMatic.g:4062:1: rule__Slide__NameAssignment_1_1 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4408:1: rule__Slide__NameAssignment_1_1 : ( RULE_STRING ) ;
     public final void rule__Slide__NameAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4066:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4067:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4412:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4413:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4067:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4068:3: RULE_STRING
+            // InternalSlideOMatic.g:4413:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4414:3: RULE_STRING
             {
              before(grammarAccess.getSlideAccess().getNameSTRINGTerminalRuleCall_1_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -12605,17 +13695,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slide__ContentsAssignment_3"
-    // InternalSlideOMatic.g:4077:1: rule__Slide__ContentsAssignment_3 : ( ruleContent ) ;
+    // InternalSlideOMatic.g:4423:1: rule__Slide__ContentsAssignment_3 : ( ruleContent ) ;
     public final void rule__Slide__ContentsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4081:1: ( ( ruleContent ) )
-            // InternalSlideOMatic.g:4082:2: ( ruleContent )
+            // InternalSlideOMatic.g:4427:1: ( ( ruleContent ) )
+            // InternalSlideOMatic.g:4428:2: ( ruleContent )
             {
-            // InternalSlideOMatic.g:4082:2: ( ruleContent )
-            // InternalSlideOMatic.g:4083:3: ruleContent
+            // InternalSlideOMatic.g:4428:2: ( ruleContent )
+            // InternalSlideOMatic.g:4429:3: ruleContent
             {
              before(grammarAccess.getSlideAccess().getContentsContentParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -12645,22 +13735,22 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Slide__ContentsAssignment_3"
 
 
-    // $ANTLR start "rule__Text__TextAssignment_0_2"
-    // InternalSlideOMatic.g:4092:1: rule__Text__TextAssignment_0_2 : ( RULE_STRING ) ;
-    public final void rule__Text__TextAssignment_0_2() throws RecognitionException {
+    // $ANTLR start "rule__Text__TextAssignment_1"
+    // InternalSlideOMatic.g:4438:1: rule__Text__TextAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__Text__TextAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4096:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4097:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4442:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4443:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4097:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4098:3: RULE_STRING
+            // InternalSlideOMatic.g:4443:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4444:3: RULE_STRING
             {
-             before(grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_0_2_0()); 
+             before(grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_0_2_0()); 
+             after(grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_1_0()); 
 
             }
 
@@ -12679,103 +13769,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Text__TextAssignment_0_2"
+    // $ANTLR end "rule__Text__TextAssignment_1"
 
 
-    // $ANTLR start "rule__Text__NameAssignment_1_2"
-    // InternalSlideOMatic.g:4107:1: rule__Text__NameAssignment_1_2 : ( RULE_STRING ) ;
-    public final void rule__Text__NameAssignment_1_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:4111:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4112:2: ( RULE_STRING )
-            {
-            // InternalSlideOMatic.g:4112:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4113:3: RULE_STRING
-            {
-             before(grammarAccess.getTextAccess().getNameSTRINGTerminalRuleCall_1_2_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getTextAccess().getNameSTRINGTerminalRuleCall_1_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__NameAssignment_1_2"
-
-
-    // $ANTLR start "rule__Text__TextAssignment_1_4"
-    // InternalSlideOMatic.g:4122:1: rule__Text__TextAssignment_1_4 : ( RULE_STRING ) ;
-    public final void rule__Text__TextAssignment_1_4() throws RecognitionException {
+    // $ANTLR start "rule__Text__ClickAssignment_2"
+    // InternalSlideOMatic.g:4453:1: rule__Text__ClickAssignment_2 : ( ruleClick ) ;
+    public final void rule__Text__ClickAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4126:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4127:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4457:1: ( ( ruleClick ) )
+            // InternalSlideOMatic.g:4458:2: ( ruleClick )
             {
-            // InternalSlideOMatic.g:4127:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4128:3: RULE_STRING
+            // InternalSlideOMatic.g:4458:2: ( ruleClick )
+            // InternalSlideOMatic.g:4459:3: ruleClick
             {
-             before(grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_1_4_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_1_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Text__TextAssignment_1_4"
-
-
-    // $ANTLR start "rule__List__ListItemsAssignment_0_2"
-    // InternalSlideOMatic.g:4137:1: rule__List__ListItemsAssignment_0_2 : ( ruleNumberedListItem ) ;
-    public final void rule__List__ListItemsAssignment_0_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSlideOMatic.g:4141:1: ( ( ruleNumberedListItem ) )
-            // InternalSlideOMatic.g:4142:2: ( ruleNumberedListItem )
-            {
-            // InternalSlideOMatic.g:4142:2: ( ruleNumberedListItem )
-            // InternalSlideOMatic.g:4143:3: ruleNumberedListItem
-            {
-             before(grammarAccess.getListAccess().getListItemsNumberedListItemParserRuleCall_0_2_0()); 
+             before(grammarAccess.getTextAccess().getClickClickParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
-            ruleNumberedListItem();
+            ruleClick();
 
             state._fsp--;
 
-             after(grammarAccess.getListAccess().getListItemsNumberedListItemParserRuleCall_0_2_0()); 
+             after(grammarAccess.getTextAccess().getClickClickParserRuleCall_2_0()); 
 
             }
 
@@ -12794,29 +13810,66 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__List__ListItemsAssignment_0_2"
+    // $ANTLR end "rule__Text__ClickAssignment_2"
 
 
-    // $ANTLR start "rule__List__ListItemsAssignment_1_2"
-    // InternalSlideOMatic.g:4152:1: rule__List__ListItemsAssignment_1_2 : ( ruleUnNumberedListItem ) ;
-    public final void rule__List__ListItemsAssignment_1_2() throws RecognitionException {
+    // $ANTLR start "rule__Block__NameAssignment_1"
+    // InternalSlideOMatic.g:4468:1: rule__Block__NameAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__Block__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4156:1: ( ( ruleUnNumberedListItem ) )
-            // InternalSlideOMatic.g:4157:2: ( ruleUnNumberedListItem )
+            // InternalSlideOMatic.g:4472:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4473:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4157:2: ( ruleUnNumberedListItem )
-            // InternalSlideOMatic.g:4158:3: ruleUnNumberedListItem
+            // InternalSlideOMatic.g:4473:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4474:3: RULE_STRING
             {
-             before(grammarAccess.getListAccess().getListItemsUnNumberedListItemParserRuleCall_1_2_0()); 
+             before(grammarAccess.getBlockAccess().getNameSTRINGTerminalRuleCall_1_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getBlockAccess().getNameSTRINGTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Block__NameAssignment_1"
+
+
+    // $ANTLR start "rule__Block__ContentAssignment_3"
+    // InternalSlideOMatic.g:4483:1: rule__Block__ContentAssignment_3 : ( ruleBlockableContent ) ;
+    public final void rule__Block__ContentAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4487:1: ( ( ruleBlockableContent ) )
+            // InternalSlideOMatic.g:4488:2: ( ruleBlockableContent )
+            {
+            // InternalSlideOMatic.g:4488:2: ( ruleBlockableContent )
+            // InternalSlideOMatic.g:4489:3: ruleBlockableContent
+            {
+             before(grammarAccess.getBlockAccess().getContentBlockableContentParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
-            ruleUnNumberedListItem();
+            ruleBlockableContent();
 
             state._fsp--;
 
-             after(grammarAccess.getListAccess().getListItemsUnNumberedListItemParserRuleCall_1_2_0()); 
+             after(grammarAccess.getBlockAccess().getContentBlockableContentParserRuleCall_3_0()); 
 
             }
 
@@ -12835,25 +13888,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__List__ListItemsAssignment_1_2"
+    // $ANTLR end "rule__Block__ContentAssignment_3"
 
 
-    // $ANTLR start "rule__NumberedListItem__ItemAssignment_1"
-    // InternalSlideOMatic.g:4167:1: rule__NumberedListItem__ItemAssignment_1 : ( RULE_STRING ) ;
-    public final void rule__NumberedListItem__ItemAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Block__ClickAssignment_5"
+    // InternalSlideOMatic.g:4498:1: rule__Block__ClickAssignment_5 : ( ruleClick ) ;
+    public final void rule__Block__ClickAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4171:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4172:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4502:1: ( ( ruleClick ) )
+            // InternalSlideOMatic.g:4503:2: ( ruleClick )
             {
-            // InternalSlideOMatic.g:4172:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4173:3: RULE_STRING
+            // InternalSlideOMatic.g:4503:2: ( ruleClick )
+            // InternalSlideOMatic.g:4504:3: ruleClick
             {
-             before(grammarAccess.getNumberedListItemAccess().getItemSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getNumberedListItemAccess().getItemSTRINGTerminalRuleCall_1_0()); 
+             before(grammarAccess.getBlockAccess().getClickClickParserRuleCall_5_0()); 
+            pushFollow(FOLLOW_2);
+            ruleClick();
+
+            state._fsp--;
+
+             after(grammarAccess.getBlockAccess().getClickClickParserRuleCall_5_0()); 
 
             }
 
@@ -12872,25 +13929,29 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__NumberedListItem__ItemAssignment_1"
+    // $ANTLR end "rule__Block__ClickAssignment_5"
 
 
-    // $ANTLR start "rule__UnNumberedListItem__ItemAssignment_1"
-    // InternalSlideOMatic.g:4182:1: rule__UnNumberedListItem__ItemAssignment_1 : ( RULE_STRING ) ;
-    public final void rule__UnNumberedListItem__ItemAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__NumberedList__ItemsAssignment_1"
+    // InternalSlideOMatic.g:4513:1: rule__NumberedList__ItemsAssignment_1 : ( ruleListItem ) ;
+    public final void rule__NumberedList__ItemsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4186:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4187:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4517:1: ( ( ruleListItem ) )
+            // InternalSlideOMatic.g:4518:2: ( ruleListItem )
             {
-            // InternalSlideOMatic.g:4187:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4188:3: RULE_STRING
+            // InternalSlideOMatic.g:4518:2: ( ruleListItem )
+            // InternalSlideOMatic.g:4519:3: ruleListItem
             {
-             before(grammarAccess.getUnNumberedListItemAccess().getItemSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getUnNumberedListItemAccess().getItemSTRINGTerminalRuleCall_1_0()); 
+             before(grammarAccess.getNumberedListAccess().getItemsListItemParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleListItem();
+
+            state._fsp--;
+
+             after(grammarAccess.getNumberedListAccess().getItemsListItemParserRuleCall_1_0()); 
 
             }
 
@@ -12909,21 +13970,181 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__UnNumberedListItem__ItemAssignment_1"
+    // $ANTLR end "rule__NumberedList__ItemsAssignment_1"
+
+
+    // $ANTLR start "rule__UnNumberedList__ItemsAssignment_1"
+    // InternalSlideOMatic.g:4528:1: rule__UnNumberedList__ItemsAssignment_1 : ( ruleListItem ) ;
+    public final void rule__UnNumberedList__ItemsAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4532:1: ( ( ruleListItem ) )
+            // InternalSlideOMatic.g:4533:2: ( ruleListItem )
+            {
+            // InternalSlideOMatic.g:4533:2: ( ruleListItem )
+            // InternalSlideOMatic.g:4534:3: ruleListItem
+            {
+             before(grammarAccess.getUnNumberedListAccess().getItemsListItemParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleListItem();
+
+            state._fsp--;
+
+             after(grammarAccess.getUnNumberedListAccess().getItemsListItemParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__UnNumberedList__ItemsAssignment_1"
+
+
+    // $ANTLR start "rule__ListItem__ItemAssignment_1"
+    // InternalSlideOMatic.g:4543:1: rule__ListItem__ItemAssignment_1 : ( RULE_STRING ) ;
+    public final void rule__ListItem__ItemAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4547:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4548:2: ( RULE_STRING )
+            {
+            // InternalSlideOMatic.g:4548:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4549:3: RULE_STRING
+            {
+             before(grammarAccess.getListItemAccess().getItemSTRINGTerminalRuleCall_1_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getListItemAccess().getItemSTRINGTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__ItemAssignment_1"
+
+
+    // $ANTLR start "rule__ListItem__NestedListAssignment_2_1"
+    // InternalSlideOMatic.g:4558:1: rule__ListItem__NestedListAssignment_2_1 : ( ruleList ) ;
+    public final void rule__ListItem__NestedListAssignment_2_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4562:1: ( ( ruleList ) )
+            // InternalSlideOMatic.g:4563:2: ( ruleList )
+            {
+            // InternalSlideOMatic.g:4563:2: ( ruleList )
+            // InternalSlideOMatic.g:4564:3: ruleList
+            {
+             before(grammarAccess.getListItemAccess().getNestedListListParserRuleCall_2_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleList();
+
+            state._fsp--;
+
+             after(grammarAccess.getListItemAccess().getNestedListListParserRuleCall_2_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__NestedListAssignment_2_1"
+
+
+    // $ANTLR start "rule__ListItem__ClickAssignment_3"
+    // InternalSlideOMatic.g:4573:1: rule__ListItem__ClickAssignment_3 : ( ruleClick ) ;
+    public final void rule__ListItem__ClickAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4577:1: ( ( ruleClick ) )
+            // InternalSlideOMatic.g:4578:2: ( ruleClick )
+            {
+            // InternalSlideOMatic.g:4578:2: ( ruleClick )
+            // InternalSlideOMatic.g:4579:3: ruleClick
+            {
+             before(grammarAccess.getListItemAccess().getClickClickParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleClick();
+
+            state._fsp--;
+
+             after(grammarAccess.getListItemAccess().getClickClickParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ListItem__ClickAssignment_3"
 
 
     // $ANTLR start "rule__Image__NameAssignment_1"
-    // InternalSlideOMatic.g:4197:1: rule__Image__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSlideOMatic.g:4588:1: rule__Image__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Image__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4201:1: ( ( RULE_ID ) )
-            // InternalSlideOMatic.g:4202:2: ( RULE_ID )
+            // InternalSlideOMatic.g:4592:1: ( ( RULE_ID ) )
+            // InternalSlideOMatic.g:4593:2: ( RULE_ID )
             {
-            // InternalSlideOMatic.g:4202:2: ( RULE_ID )
-            // InternalSlideOMatic.g:4203:3: RULE_ID
+            // InternalSlideOMatic.g:4593:2: ( RULE_ID )
+            // InternalSlideOMatic.g:4594:3: RULE_ID
             {
              before(grammarAccess.getImageAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -12950,17 +14171,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__SrcAssignment_3"
-    // InternalSlideOMatic.g:4212:1: rule__Image__SrcAssignment_3 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4603:1: rule__Image__SrcAssignment_3 : ( RULE_STRING ) ;
     public final void rule__Image__SrcAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4216:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4217:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4607:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4608:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4217:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4218:3: RULE_STRING
+            // InternalSlideOMatic.g:4608:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4609:3: RULE_STRING
             {
              before(grammarAccess.getImageAccess().getSrcSTRINGTerminalRuleCall_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -12987,17 +14208,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__AlignmentAssignment_4"
-    // InternalSlideOMatic.g:4227:1: rule__Image__AlignmentAssignment_4 : ( ruleAlignment ) ;
+    // InternalSlideOMatic.g:4618:1: rule__Image__AlignmentAssignment_4 : ( ruleAlignment ) ;
     public final void rule__Image__AlignmentAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4231:1: ( ( ruleAlignment ) )
-            // InternalSlideOMatic.g:4232:2: ( ruleAlignment )
+            // InternalSlideOMatic.g:4622:1: ( ( ruleAlignment ) )
+            // InternalSlideOMatic.g:4623:2: ( ruleAlignment )
             {
-            // InternalSlideOMatic.g:4232:2: ( ruleAlignment )
-            // InternalSlideOMatic.g:4233:3: ruleAlignment
+            // InternalSlideOMatic.g:4623:2: ( ruleAlignment )
+            // InternalSlideOMatic.g:4624:3: ruleAlignment
             {
              before(grammarAccess.getImageAccess().getAlignmentAlignmentParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -13028,17 +14249,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Image__SizeAssignment_5"
-    // InternalSlideOMatic.g:4242:1: rule__Image__SizeAssignment_5 : ( ruleSize ) ;
+    // InternalSlideOMatic.g:4633:1: rule__Image__SizeAssignment_5 : ( ruleSize ) ;
     public final void rule__Image__SizeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4246:1: ( ( ruleSize ) )
-            // InternalSlideOMatic.g:4247:2: ( ruleSize )
+            // InternalSlideOMatic.g:4637:1: ( ( ruleSize ) )
+            // InternalSlideOMatic.g:4638:2: ( ruleSize )
             {
-            // InternalSlideOMatic.g:4247:2: ( ruleSize )
-            // InternalSlideOMatic.g:4248:3: ruleSize
+            // InternalSlideOMatic.g:4638:2: ( ruleSize )
+            // InternalSlideOMatic.g:4639:3: ruleSize
             {
              before(grammarAccess.getImageAccess().getSizeSizeParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -13068,22 +14289,26 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__Image__SizeAssignment_5"
 
 
-    // $ANTLR start "rule__Size__ScaleAssignment_1"
-    // InternalSlideOMatic.g:4257:1: rule__Size__ScaleAssignment_1 : ( RULE_INT ) ;
-    public final void rule__Size__ScaleAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Image__ClickAssignment_6"
+    // InternalSlideOMatic.g:4648:1: rule__Image__ClickAssignment_6 : ( ruleClick ) ;
+    public final void rule__Image__ClickAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4261:1: ( ( RULE_INT ) )
-            // InternalSlideOMatic.g:4262:2: ( RULE_INT )
+            // InternalSlideOMatic.g:4652:1: ( ( ruleClick ) )
+            // InternalSlideOMatic.g:4653:2: ( ruleClick )
             {
-            // InternalSlideOMatic.g:4262:2: ( RULE_INT )
-            // InternalSlideOMatic.g:4263:3: RULE_INT
+            // InternalSlideOMatic.g:4653:2: ( ruleClick )
+            // InternalSlideOMatic.g:4654:3: ruleClick
             {
-             before(grammarAccess.getSizeAccess().getScaleINTTerminalRuleCall_1_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getSizeAccess().getScaleINTTerminalRuleCall_1_0()); 
+             before(grammarAccess.getImageAccess().getClickClickParserRuleCall_6_0()); 
+            pushFollow(FOLLOW_2);
+            ruleClick();
+
+            state._fsp--;
+
+             after(grammarAccess.getImageAccess().getClickClickParserRuleCall_6_0()); 
 
             }
 
@@ -13102,21 +14327,189 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Size__ScaleAssignment_1"
+    // $ANTLR end "rule__Image__ClickAssignment_6"
+
+
+    // $ANTLR start "rule__Size__WayAssignment_0_1"
+    // InternalSlideOMatic.g:4663:1: rule__Size__WayAssignment_0_1 : ( ( rule__Size__WayAlternatives_0_1_0 ) ) ;
+    public final void rule__Size__WayAssignment_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4667:1: ( ( ( rule__Size__WayAlternatives_0_1_0 ) ) )
+            // InternalSlideOMatic.g:4668:2: ( ( rule__Size__WayAlternatives_0_1_0 ) )
+            {
+            // InternalSlideOMatic.g:4668:2: ( ( rule__Size__WayAlternatives_0_1_0 ) )
+            // InternalSlideOMatic.g:4669:3: ( rule__Size__WayAlternatives_0_1_0 )
+            {
+             before(grammarAccess.getSizeAccess().getWayAlternatives_0_1_0()); 
+            // InternalSlideOMatic.g:4670:3: ( rule__Size__WayAlternatives_0_1_0 )
+            // InternalSlideOMatic.g:4670:4: rule__Size__WayAlternatives_0_1_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Size__WayAlternatives_0_1_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSizeAccess().getWayAlternatives_0_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__WayAssignment_0_1"
+
+
+    // $ANTLR start "rule__Size__ScaleAssignment_0_2"
+    // InternalSlideOMatic.g:4678:1: rule__Size__ScaleAssignment_0_2 : ( RULE_INT ) ;
+    public final void rule__Size__ScaleAssignment_0_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4682:1: ( ( RULE_INT ) )
+            // InternalSlideOMatic.g:4683:2: ( RULE_INT )
+            {
+            // InternalSlideOMatic.g:4683:2: ( RULE_INT )
+            // InternalSlideOMatic.g:4684:3: RULE_INT
+            {
+             before(grammarAccess.getSizeAccess().getScaleINTTerminalRuleCall_0_2_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getSizeAccess().getScaleINTTerminalRuleCall_0_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__ScaleAssignment_0_2"
+
+
+    // $ANTLR start "rule__Size__SizeAssignment_1_1"
+    // InternalSlideOMatic.g:4693:1: rule__Size__SizeAssignment_1_1 : ( RULE_INT ) ;
+    public final void rule__Size__SizeAssignment_1_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4697:1: ( ( RULE_INT ) )
+            // InternalSlideOMatic.g:4698:2: ( RULE_INT )
+            {
+            // InternalSlideOMatic.g:4698:2: ( RULE_INT )
+            // InternalSlideOMatic.g:4699:3: RULE_INT
+            {
+             before(grammarAccess.getSizeAccess().getSizeINTTerminalRuleCall_1_1_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getSizeAccess().getSizeINTTerminalRuleCall_1_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__SizeAssignment_1_1"
+
+
+    // $ANTLR start "rule__Size__UnitAssignment_1_2"
+    // InternalSlideOMatic.g:4708:1: rule__Size__UnitAssignment_1_2 : ( ( rule__Size__UnitAlternatives_1_2_0 ) ) ;
+    public final void rule__Size__UnitAssignment_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4712:1: ( ( ( rule__Size__UnitAlternatives_1_2_0 ) ) )
+            // InternalSlideOMatic.g:4713:2: ( ( rule__Size__UnitAlternatives_1_2_0 ) )
+            {
+            // InternalSlideOMatic.g:4713:2: ( ( rule__Size__UnitAlternatives_1_2_0 ) )
+            // InternalSlideOMatic.g:4714:3: ( rule__Size__UnitAlternatives_1_2_0 )
+            {
+             before(grammarAccess.getSizeAccess().getUnitAlternatives_1_2_0()); 
+            // InternalSlideOMatic.g:4715:3: ( rule__Size__UnitAlternatives_1_2_0 )
+            // InternalSlideOMatic.g:4715:4: rule__Size__UnitAlternatives_1_2_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Size__UnitAlternatives_1_2_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSizeAccess().getUnitAlternatives_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Size__UnitAssignment_1_2"
 
 
     // $ANTLR start "rule__Table__NameAssignment_1"
-    // InternalSlideOMatic.g:4272:1: rule__Table__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSlideOMatic.g:4723:1: rule__Table__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Table__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4276:1: ( ( RULE_ID ) )
-            // InternalSlideOMatic.g:4277:2: ( RULE_ID )
+            // InternalSlideOMatic.g:4727:1: ( ( RULE_ID ) )
+            // InternalSlideOMatic.g:4728:2: ( RULE_ID )
             {
-            // InternalSlideOMatic.g:4277:2: ( RULE_ID )
-            // InternalSlideOMatic.g:4278:3: RULE_ID
+            // InternalSlideOMatic.g:4728:2: ( RULE_ID )
+            // InternalSlideOMatic.g:4729:3: RULE_ID
             {
              before(grammarAccess.getTableAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -13143,17 +14536,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__RowsAssignment_3"
-    // InternalSlideOMatic.g:4287:1: rule__Table__RowsAssignment_3 : ( ruleTableRow ) ;
+    // InternalSlideOMatic.g:4738:1: rule__Table__RowsAssignment_3 : ( ruleTableRow ) ;
     public final void rule__Table__RowsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4291:1: ( ( ruleTableRow ) )
-            // InternalSlideOMatic.g:4292:2: ( ruleTableRow )
+            // InternalSlideOMatic.g:4742:1: ( ( ruleTableRow ) )
+            // InternalSlideOMatic.g:4743:2: ( ruleTableRow )
             {
-            // InternalSlideOMatic.g:4292:2: ( ruleTableRow )
-            // InternalSlideOMatic.g:4293:3: ruleTableRow
+            // InternalSlideOMatic.g:4743:2: ( ruleTableRow )
+            // InternalSlideOMatic.g:4744:3: ruleTableRow
             {
              before(grammarAccess.getTableAccess().getRowsTableRowParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -13184,17 +14577,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Table__RowsAssignment_4_1"
-    // InternalSlideOMatic.g:4302:1: rule__Table__RowsAssignment_4_1 : ( ruleTableRow ) ;
+    // InternalSlideOMatic.g:4753:1: rule__Table__RowsAssignment_4_1 : ( ruleTableRow ) ;
     public final void rule__Table__RowsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4306:1: ( ( ruleTableRow ) )
-            // InternalSlideOMatic.g:4307:2: ( ruleTableRow )
+            // InternalSlideOMatic.g:4757:1: ( ( ruleTableRow ) )
+            // InternalSlideOMatic.g:4758:2: ( ruleTableRow )
             {
-            // InternalSlideOMatic.g:4307:2: ( ruleTableRow )
-            // InternalSlideOMatic.g:4308:3: ruleTableRow
+            // InternalSlideOMatic.g:4758:2: ( ruleTableRow )
+            // InternalSlideOMatic.g:4759:3: ruleTableRow
             {
              before(grammarAccess.getTableAccess().getRowsTableRowParserRuleCall_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -13225,17 +14618,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__ValuesAssignment_1"
-    // InternalSlideOMatic.g:4317:1: rule__TableRow__ValuesAssignment_1 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4768:1: rule__TableRow__ValuesAssignment_1 : ( RULE_STRING ) ;
     public final void rule__TableRow__ValuesAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4321:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4322:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4772:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4773:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4322:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4323:3: RULE_STRING
+            // InternalSlideOMatic.g:4773:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4774:3: RULE_STRING
             {
              before(grammarAccess.getTableRowAccess().getValuesSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -13262,17 +14655,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TableRow__ValuesAssignment_2_1"
-    // InternalSlideOMatic.g:4332:1: rule__TableRow__ValuesAssignment_2_1 : ( RULE_STRING ) ;
+    // InternalSlideOMatic.g:4783:1: rule__TableRow__ValuesAssignment_2_1 : ( RULE_STRING ) ;
     public final void rule__TableRow__ValuesAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4336:1: ( ( RULE_STRING ) )
-            // InternalSlideOMatic.g:4337:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4787:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4788:2: ( RULE_STRING )
             {
-            // InternalSlideOMatic.g:4337:2: ( RULE_STRING )
-            // InternalSlideOMatic.g:4338:3: RULE_STRING
+            // InternalSlideOMatic.g:4788:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4789:3: RULE_STRING
             {
              before(grammarAccess.getTableRowAccess().getValuesSTRINGTerminalRuleCall_2_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -13298,30 +14691,104 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__TableRow__ValuesAssignment_2_1"
 
 
+    // $ANTLR start "rule__Code__LangAssignment_1"
+    // InternalSlideOMatic.g:4798:1: rule__Code__LangAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Code__LangAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4802:1: ( ( RULE_ID ) )
+            // InternalSlideOMatic.g:4803:2: ( RULE_ID )
+            {
+            // InternalSlideOMatic.g:4803:2: ( RULE_ID )
+            // InternalSlideOMatic.g:4804:3: RULE_ID
+            {
+             before(grammarAccess.getCodeAccess().getLangIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getCodeAccess().getLangIDTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__LangAssignment_1"
+
+
+    // $ANTLR start "rule__Code__CodeAssignment_2"
+    // InternalSlideOMatic.g:4813:1: rule__Code__CodeAssignment_2 : ( RULE_STRING ) ;
+    public final void rule__Code__CodeAssignment_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSlideOMatic.g:4817:1: ( ( RULE_STRING ) )
+            // InternalSlideOMatic.g:4818:2: ( RULE_STRING )
+            {
+            // InternalSlideOMatic.g:4818:2: ( RULE_STRING )
+            // InternalSlideOMatic.g:4819:3: RULE_STRING
+            {
+             before(grammarAccess.getCodeAccess().getCodeSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getCodeAccess().getCodeSTRINGTerminalRuleCall_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Code__CodeAssignment_2"
+
+
     // $ANTLR start "rule__Animation__TargetAssignment_1"
-    // InternalSlideOMatic.g:4347:1: rule__Animation__TargetAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalSlideOMatic.g:4828:1: rule__Animation__TargetAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__Animation__TargetAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4351:1: ( ( ( RULE_ID ) ) )
-            // InternalSlideOMatic.g:4352:2: ( ( RULE_ID ) )
+            // InternalSlideOMatic.g:4832:1: ( ( ( RULE_ID ) ) )
+            // InternalSlideOMatic.g:4833:2: ( ( RULE_ID ) )
             {
-            // InternalSlideOMatic.g:4352:2: ( ( RULE_ID ) )
-            // InternalSlideOMatic.g:4353:3: ( RULE_ID )
+            // InternalSlideOMatic.g:4833:2: ( ( RULE_ID ) )
+            // InternalSlideOMatic.g:4834:3: ( RULE_ID )
             {
-             before(grammarAccess.getAnimationAccess().getTargetFloatCrossReference_1_0()); 
-            // InternalSlideOMatic.g:4354:3: ( RULE_ID )
-            // InternalSlideOMatic.g:4355:4: RULE_ID
+             before(grammarAccess.getAnimationAccess().getTargetFloatsCrossReference_1_0()); 
+            // InternalSlideOMatic.g:4835:3: ( RULE_ID )
+            // InternalSlideOMatic.g:4836:4: RULE_ID
             {
-             before(grammarAccess.getAnimationAccess().getTargetFloatIDTerminalRuleCall_1_0_1()); 
+             before(grammarAccess.getAnimationAccess().getTargetFloatsIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAnimationAccess().getTargetFloatIDTerminalRuleCall_1_0_1()); 
+             after(grammarAccess.getAnimationAccess().getTargetFloatsIDTerminalRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getAnimationAccess().getTargetFloatCrossReference_1_0()); 
+             after(grammarAccess.getAnimationAccess().getTargetFloatsCrossReference_1_0()); 
 
             }
 
@@ -13344,17 +14811,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__TypeAssignment_2"
-    // InternalSlideOMatic.g:4366:1: rule__Animation__TypeAssignment_2 : ( ruleAnimationType ) ;
+    // InternalSlideOMatic.g:4847:1: rule__Animation__TypeAssignment_2 : ( ruleAnimationType ) ;
     public final void rule__Animation__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4370:1: ( ( ruleAnimationType ) )
-            // InternalSlideOMatic.g:4371:2: ( ruleAnimationType )
+            // InternalSlideOMatic.g:4851:1: ( ( ruleAnimationType ) )
+            // InternalSlideOMatic.g:4852:2: ( ruleAnimationType )
             {
-            // InternalSlideOMatic.g:4371:2: ( ruleAnimationType )
-            // InternalSlideOMatic.g:4372:3: ruleAnimationType
+            // InternalSlideOMatic.g:4852:2: ( ruleAnimationType )
+            // InternalSlideOMatic.g:4853:3: ruleAnimationType
             {
              before(grammarAccess.getAnimationAccess().getTypeAnimationTypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -13385,17 +14852,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__LocationAssignment_4"
-    // InternalSlideOMatic.g:4381:1: rule__Animation__LocationAssignment_4 : ( ruleAlignment ) ;
+    // InternalSlideOMatic.g:4862:1: rule__Animation__LocationAssignment_4 : ( ruleAlignment ) ;
     public final void rule__Animation__LocationAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4385:1: ( ( ruleAlignment ) )
-            // InternalSlideOMatic.g:4386:2: ( ruleAlignment )
+            // InternalSlideOMatic.g:4866:1: ( ( ruleAlignment ) )
+            // InternalSlideOMatic.g:4867:2: ( ruleAlignment )
             {
-            // InternalSlideOMatic.g:4386:2: ( ruleAlignment )
-            // InternalSlideOMatic.g:4387:3: ruleAlignment
+            // InternalSlideOMatic.g:4867:2: ( ruleAlignment )
+            // InternalSlideOMatic.g:4868:3: ruleAlignment
             {
              before(grammarAccess.getAnimationAccess().getLocationAlignmentParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -13426,17 +14893,17 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Animation__SizeAssignment_5"
-    // InternalSlideOMatic.g:4396:1: rule__Animation__SizeAssignment_5 : ( ruleSize ) ;
+    // InternalSlideOMatic.g:4877:1: rule__Animation__SizeAssignment_5 : ( ruleSize ) ;
     public final void rule__Animation__SizeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSlideOMatic.g:4400:1: ( ( ruleSize ) )
-            // InternalSlideOMatic.g:4401:2: ( ruleSize )
+            // InternalSlideOMatic.g:4881:1: ( ( ruleSize ) )
+            // InternalSlideOMatic.g:4882:2: ( ruleSize )
             {
-            // InternalSlideOMatic.g:4401:2: ( ruleSize )
-            // InternalSlideOMatic.g:4402:3: ruleSize
+            // InternalSlideOMatic.g:4882:2: ( ruleSize )
+            // InternalSlideOMatic.g:4883:3: ruleSize
             {
              before(grammarAccess.getAnimationAccess().getSizeSizeParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -13473,43 +14940,43 @@ public class InternalSlideOMaticParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000000L,0x0000000080004060L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000002L,0x0000000080004000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003580L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000080L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000000L,0x0000000400020300L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000000002L,0x0000000400020000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000000L,0x000000000001AC00L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000FFFFFFF000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000000L,0x0000000000001000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x00FFFF0000400000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000800L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000010L,0x0000000000038010L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000000L,0x00000000127C0000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000002L,0x00000000127C0000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000000L,0x0000000000008000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000000L,0x0000000000010000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x0000000000038000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000000000180000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000010L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000002L,0x0000000000800000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000000L,0x0000000000600000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000001000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000002L,0x0000000001000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0xFF00000000000000L,0x0000000000000007L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000000008000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000800L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000600000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000002L,0x0000000000004000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000010L,0x00000000001C0080L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000000L,0x000000024BE00000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000002L,0x000000024BE00000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000000L,0x0000000000040000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000000000L,0x0000000000080000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000000L,0x00000000001C0000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x000000004BC00000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000000004000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000002L,0x0000000004000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000800L,0x0000000000000200L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000000003000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000000L,0x0000000010000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0xFF00000000000040L,0x0000000000000007L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000038L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0000000100004000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000003000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000800000000L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0xFF00000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000000L,0x0000001000000000L});
 
 }

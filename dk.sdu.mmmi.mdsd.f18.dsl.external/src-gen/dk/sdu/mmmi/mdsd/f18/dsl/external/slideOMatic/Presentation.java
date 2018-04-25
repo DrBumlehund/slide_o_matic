@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getName <em>Name</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getSubtitle <em>Subtitle</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getTheme <em>Theme</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getAuthors <em>Authors</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getInstitute <em>Institute</em>}</li>
@@ -56,6 +57,32 @@ public interface Presentation extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Subtitle</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Subtitle</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Subtitle</em>' attribute.
+   * @see #setSubtitle(String)
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getPresentation_Subtitle()
+   * @model
+   * @generated
+   */
+  String getSubtitle();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getSubtitle <em>Subtitle</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Subtitle</em>' attribute.
+   * @see #getSubtitle()
+   * @generated
+   */
+  void setSubtitle(String value);
 
   /**
    * Returns the value of the '<em><b>Theme</b></em>' containment reference.

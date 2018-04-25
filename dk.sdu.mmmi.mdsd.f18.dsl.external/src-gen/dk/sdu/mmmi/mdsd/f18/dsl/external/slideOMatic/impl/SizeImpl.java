@@ -6,48 +6,19 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Size</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SizeImpl#getScale <em>Scale</em>}</li>
- * </ul>
  *
  * @generated
  */
 public class SizeImpl extends MinimalEObjectImpl.Container implements Size
 {
-  /**
-   * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getScale()
-   * @generated
-   * @ordered
-   */
-  protected static final int SCALE_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getScale() <em>Scale</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getScale()
-   * @generated
-   * @ordered
-   */
-  protected int scale = SCALE_EDEFAULT;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -67,112 +38,6 @@ public class SizeImpl extends MinimalEObjectImpl.Container implements Size
   protected EClass eStaticClass()
   {
     return SlideOMaticPackage.Literals.SIZE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getScale()
-  {
-    return scale;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setScale(int newScale)
-  {
-    int oldScale = scale;
-    scale = newScale;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.SIZE__SCALE, oldScale, scale));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case SlideOMaticPackage.SIZE__SCALE:
-        return getScale();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case SlideOMaticPackage.SIZE__SCALE:
-        setScale((Integer)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case SlideOMaticPackage.SIZE__SCALE:
-        setScale(SCALE_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case SlideOMaticPackage.SIZE__SCALE:
-        return scale != SCALE_EDEFAULT;
-    }
-    return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (scale: ");
-    result.append(scale);
-    result.append(')');
-    return result.toString();
   }
 
 } //SizeImpl

@@ -4,6 +4,7 @@
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Section;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
@@ -31,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideImpl#getSec <em>Sec</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideImpl#getContents <em>Contents</em>}</li>
  * </ul>
@@ -39,6 +41,16 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
 {
+  /**
+   * The cached value of the '{@link #getSec() <em>Sec</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSec()
+   * @generated
+   * @ordered
+   */
+  protected Section sec;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -95,6 +107,54 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
    * <!-- end-user-doc -->
    * @generated
    */
+  public Section getSec()
+  {
+    return sec;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetSec(Section newSec, NotificationChain msgs)
+  {
+    Section oldSec = sec;
+    sec = newSec;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.SLIDE__SEC, oldSec, newSec);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSec(Section newSec)
+  {
+    if (newSec != sec)
+    {
+      NotificationChain msgs = null;
+      if (sec != null)
+        msgs = ((InternalEObject)sec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.SLIDE__SEC, null, msgs);
+      if (newSec != null)
+        msgs = ((InternalEObject)newSec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.SLIDE__SEC, null, msgs);
+      msgs = basicSetSec(newSec, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.SLIDE__SEC, newSec, newSec));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -137,6 +197,8 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
   {
     switch (featureID)
     {
+      case SlideOMaticPackage.SLIDE__SEC:
+        return basicSetSec(null, msgs);
       case SlideOMaticPackage.SLIDE__CONTENTS:
         return ((InternalEList<?>)getContents()).basicRemove(otherEnd, msgs);
     }
@@ -153,6 +215,8 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
   {
     switch (featureID)
     {
+      case SlideOMaticPackage.SLIDE__SEC:
+        return getSec();
       case SlideOMaticPackage.SLIDE__NAME:
         return getName();
       case SlideOMaticPackage.SLIDE__CONTENTS:
@@ -172,6 +236,9 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
   {
     switch (featureID)
     {
+      case SlideOMaticPackage.SLIDE__SEC:
+        setSec((Section)newValue);
+        return;
       case SlideOMaticPackage.SLIDE__NAME:
         setName((String)newValue);
         return;
@@ -193,6 +260,9 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
   {
     switch (featureID)
     {
+      case SlideOMaticPackage.SLIDE__SEC:
+        setSec((Section)null);
+        return;
       case SlideOMaticPackage.SLIDE__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -213,6 +283,8 @@ public class SlideImpl extends MinimalEObjectImpl.Container implements Slide
   {
     switch (featureID)
     {
+      case SlideOMaticPackage.SLIDE__SEC:
+        return sec != null;
       case SlideOMaticPackage.SLIDE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SlideOMaticPackage.SLIDE__CONTENTS:

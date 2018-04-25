@@ -3,8 +3,8 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,66 +14,66 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Text</b></em>'.
+ * An implementation of the model object '<em><b>Proportional Size</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl#getText <em>Text</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl#getClick <em>Click</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ProportionalSizeImpl#getWay <em>Way</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ProportionalSizeImpl#getScale <em>Scale</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TextImpl extends BlockableContentImpl implements Text
+public class ProportionalSizeImpl extends SizeImpl implements ProportionalSize
 {
   /**
-   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The default value of the '{@link #getWay() <em>Way</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getWay()
    * @generated
    * @ordered
    */
-  protected static final String TEXT_EDEFAULT = null;
+  protected static final String WAY_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The cached value of the '{@link #getWay() <em>Way</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getWay()
    * @generated
    * @ordered
    */
-  protected String text = TEXT_EDEFAULT;
+  protected String way = WAY_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClick()
+   * @see #getScale()
    * @generated
    * @ordered
    */
-  protected static final String CLICK_EDEFAULT = null;
+  protected static final int SCALE_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * The cached value of the '{@link #getScale() <em>Scale</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClick()
+   * @see #getScale()
    * @generated
    * @ordered
    */
-  protected String click = CLICK_EDEFAULT;
+  protected int scale = SCALE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TextImpl()
+  protected ProportionalSizeImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class TextImpl extends BlockableContentImpl implements Text
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.TEXT;
+    return SlideOMaticPackage.Literals.PROPORTIONAL_SIZE;
   }
 
   /**
@@ -94,9 +94,9 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getText()
+  public String getWay()
   {
-    return text;
+    return way;
   }
 
   /**
@@ -104,12 +104,12 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setText(String newText)
+  public void setWay(String newWay)
   {
-    String oldText = text;
-    text = newText;
+    String oldWay = way;
+    way = newWay;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.TEXT__TEXT, oldText, text));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.PROPORTIONAL_SIZE__WAY, oldWay, way));
   }
 
   /**
@@ -117,9 +117,9 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getClick()
+  public int getScale()
   {
-    return click;
+    return scale;
   }
 
   /**
@@ -127,12 +127,12 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClick(String newClick)
+  public void setScale(int newScale)
   {
-    String oldClick = click;
-    click = newClick;
+    int oldScale = scale;
+    scale = newScale;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.TEXT__CLICK, oldClick, click));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.PROPORTIONAL_SIZE__SCALE, oldScale, scale));
   }
 
   /**
@@ -145,10 +145,10 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        return getText();
-      case SlideOMaticPackage.TEXT__CLICK:
-        return getClick();
+      case SlideOMaticPackage.PROPORTIONAL_SIZE__WAY:
+        return getWay();
+      case SlideOMaticPackage.PROPORTIONAL_SIZE__SCALE:
+        return getScale();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,11 +163,11 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        setText((String)newValue);
+      case SlideOMaticPackage.PROPORTIONAL_SIZE__WAY:
+        setWay((String)newValue);
         return;
-      case SlideOMaticPackage.TEXT__CLICK:
-        setClick((String)newValue);
+      case SlideOMaticPackage.PROPORTIONAL_SIZE__SCALE:
+        setScale((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -183,11 +183,11 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        setText(TEXT_EDEFAULT);
+      case SlideOMaticPackage.PROPORTIONAL_SIZE__WAY:
+        setWay(WAY_EDEFAULT);
         return;
-      case SlideOMaticPackage.TEXT__CLICK:
-        setClick(CLICK_EDEFAULT);
+      case SlideOMaticPackage.PROPORTIONAL_SIZE__SCALE:
+        setScale(SCALE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -203,10 +203,10 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-      case SlideOMaticPackage.TEXT__CLICK:
-        return CLICK_EDEFAULT == null ? click != null : !CLICK_EDEFAULT.equals(click);
+      case SlideOMaticPackage.PROPORTIONAL_SIZE__WAY:
+        return WAY_EDEFAULT == null ? way != null : !WAY_EDEFAULT.equals(way);
+      case SlideOMaticPackage.PROPORTIONAL_SIZE__SCALE:
+        return scale != SCALE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -222,12 +222,12 @@ public class TextImpl extends BlockableContentImpl implements Text
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (text: ");
-    result.append(text);
-    result.append(", click: ");
-    result.append(click);
+    result.append(" (way: ");
+    result.append(way);
+    result.append(", scale: ");
+    result.append(scale);
     result.append(')');
     return result.toString();
   }
 
-} //TextImpl
+} //ProportionalSizeImpl

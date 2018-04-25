@@ -6,21 +6,21 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Float</b></em>'.
+ * A representation of the model object '<em><b>Floats</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float#getName <em>Name</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getFloat()
+ * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getFloats()
  * @model
  * @generated
  */
-public interface Float extends Content
+public interface Floats extends BlockableContent
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -32,14 +32,14 @@ public interface Float extends Content
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getFloat_Name()
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getFloats_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -48,4 +48,4 @@ public interface Float extends Content
    */
   void setName(String value);
 
-} // Float
+} // Floats

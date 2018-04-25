@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class TableImpl extends FloatImpl implements Table
+public class TableImpl extends FloatsImpl implements Table
 {
   /**
    * The cached value of the '{@link #getRows() <em>Rows</em>}' containment reference list.

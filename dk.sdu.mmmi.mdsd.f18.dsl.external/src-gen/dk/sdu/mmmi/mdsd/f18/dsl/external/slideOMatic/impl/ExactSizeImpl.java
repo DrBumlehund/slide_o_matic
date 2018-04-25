@@ -3,8 +3,8 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,66 +14,66 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Text</b></em>'.
+ * An implementation of the model object '<em><b>Exact Size</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl#getText <em>Text</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl#getClick <em>Click</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ExactSizeImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ExactSizeImpl#getUnit <em>Unit</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TextImpl extends BlockableContentImpl implements Text
+public class ExactSizeImpl extends SizeImpl implements ExactSize
 {
   /**
-   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The default value of the '{@link #getSize() <em>Size</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getSize()
    * @generated
    * @ordered
    */
-  protected static final String TEXT_EDEFAULT = null;
+  protected static final int SIZE_EDEFAULT = 0;
 
   /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The cached value of the '{@link #getSize() <em>Size</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getSize()
    * @generated
    * @ordered
    */
-  protected String text = TEXT_EDEFAULT;
+  protected int size = SIZE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClick()
+   * @see #getUnit()
    * @generated
    * @ordered
    */
-  protected static final String CLICK_EDEFAULT = null;
+  protected static final String UNIT_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClick()
+   * @see #getUnit()
    * @generated
    * @ordered
    */
-  protected String click = CLICK_EDEFAULT;
+  protected String unit = UNIT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TextImpl()
+  protected ExactSizeImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class TextImpl extends BlockableContentImpl implements Text
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.TEXT;
+    return SlideOMaticPackage.Literals.EXACT_SIZE;
   }
 
   /**
@@ -94,9 +94,9 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getText()
+  public int getSize()
   {
-    return text;
+    return size;
   }
 
   /**
@@ -104,12 +104,12 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setText(String newText)
+  public void setSize(int newSize)
   {
-    String oldText = text;
-    text = newText;
+    int oldSize = size;
+    size = newSize;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.TEXT__TEXT, oldText, text));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.EXACT_SIZE__SIZE, oldSize, size));
   }
 
   /**
@@ -117,9 +117,9 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getClick()
+  public String getUnit()
   {
-    return click;
+    return unit;
   }
 
   /**
@@ -127,12 +127,12 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClick(String newClick)
+  public void setUnit(String newUnit)
   {
-    String oldClick = click;
-    click = newClick;
+    String oldUnit = unit;
+    unit = newUnit;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.TEXT__CLICK, oldClick, click));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.EXACT_SIZE__UNIT, oldUnit, unit));
   }
 
   /**
@@ -145,10 +145,10 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        return getText();
-      case SlideOMaticPackage.TEXT__CLICK:
-        return getClick();
+      case SlideOMaticPackage.EXACT_SIZE__SIZE:
+        return getSize();
+      case SlideOMaticPackage.EXACT_SIZE__UNIT:
+        return getUnit();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,11 +163,11 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        setText((String)newValue);
+      case SlideOMaticPackage.EXACT_SIZE__SIZE:
+        setSize((Integer)newValue);
         return;
-      case SlideOMaticPackage.TEXT__CLICK:
-        setClick((String)newValue);
+      case SlideOMaticPackage.EXACT_SIZE__UNIT:
+        setUnit((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -183,11 +183,11 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        setText(TEXT_EDEFAULT);
+      case SlideOMaticPackage.EXACT_SIZE__SIZE:
+        setSize(SIZE_EDEFAULT);
         return;
-      case SlideOMaticPackage.TEXT__CLICK:
-        setClick(CLICK_EDEFAULT);
+      case SlideOMaticPackage.EXACT_SIZE__UNIT:
+        setUnit(UNIT_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -203,10 +203,10 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-      case SlideOMaticPackage.TEXT__CLICK:
-        return CLICK_EDEFAULT == null ? click != null : !CLICK_EDEFAULT.equals(click);
+      case SlideOMaticPackage.EXACT_SIZE__SIZE:
+        return size != SIZE_EDEFAULT;
+      case SlideOMaticPackage.EXACT_SIZE__UNIT:
+        return UNIT_EDEFAULT == null ? unit != null : !UNIT_EDEFAULT.equals(unit);
     }
     return super.eIsSet(featureID);
   }
@@ -222,12 +222,12 @@ public class TextImpl extends BlockableContentImpl implements Text
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (text: ");
-    result.append(text);
-    result.append(", click: ");
-    result.append(click);
+    result.append(" (size: ");
+    result.append(size);
+    result.append(", unit: ");
+    result.append(unit);
     result.append(')');
     return result.toString();
   }
 
-} //TextImpl
+} //ExactSizeImpl

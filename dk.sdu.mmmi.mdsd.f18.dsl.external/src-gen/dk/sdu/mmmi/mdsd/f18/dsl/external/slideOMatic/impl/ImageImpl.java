@@ -26,11 +26,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl#getSrc <em>Src</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl#getAlignment <em>Alignment</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl#getSize <em>Size</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl#getClick <em>Click</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ImageImpl extends FloatImpl implements Image
+public class ImageImpl extends FloatsImpl implements Image
 {
   /**
    * The default value of the '{@link #getSrc() <em>Src</em>}' attribute.
@@ -81,6 +82,26 @@ public class ImageImpl extends FloatImpl implements Image
    * @ordered
    */
   protected Size size;
+
+  /**
+   * The default value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClick()
+   * @generated
+   * @ordered
+   */
+  protected static final String CLICK_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClick()
+   * @generated
+   * @ordered
+   */
+  protected String click = CLICK_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -202,6 +223,29 @@ public class ImageImpl extends FloatImpl implements Image
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getClick()
+  {
+    return click;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setClick(String newClick)
+  {
+    String oldClick = click;
+    click = newClick;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.IMAGE__CLICK, oldClick, click));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -229,6 +273,8 @@ public class ImageImpl extends FloatImpl implements Image
         return getAlignment();
       case SlideOMaticPackage.IMAGE__SIZE:
         return getSize();
+      case SlideOMaticPackage.IMAGE__CLICK:
+        return getClick();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -251,6 +297,9 @@ public class ImageImpl extends FloatImpl implements Image
         return;
       case SlideOMaticPackage.IMAGE__SIZE:
         setSize((Size)newValue);
+        return;
+      case SlideOMaticPackage.IMAGE__CLICK:
+        setClick((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -275,6 +324,9 @@ public class ImageImpl extends FloatImpl implements Image
       case SlideOMaticPackage.IMAGE__SIZE:
         setSize((Size)null);
         return;
+      case SlideOMaticPackage.IMAGE__CLICK:
+        setClick(CLICK_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -295,6 +347,8 @@ public class ImageImpl extends FloatImpl implements Image
         return ALIGNMENT_EDEFAULT == null ? alignment != null : !ALIGNMENT_EDEFAULT.equals(alignment);
       case SlideOMaticPackage.IMAGE__SIZE:
         return size != null;
+      case SlideOMaticPackage.IMAGE__CLICK:
+        return CLICK_EDEFAULT == null ? click != null : !CLICK_EDEFAULT.equals(click);
     }
     return super.eIsSet(featureID);
   }
@@ -314,6 +368,8 @@ public class ImageImpl extends FloatImpl implements Image
     result.append(src);
     result.append(", alignment: ");
     result.append(alignment);
+    result.append(", click: ");
+    result.append(click);
     result.append(')');
     return result.toString();
   }

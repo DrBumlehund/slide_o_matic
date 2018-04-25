@@ -3,8 +3,8 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ListItem;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -14,53 +14,54 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Block</b></em>'.
+ * An implementation of the model object '<em><b>List Item</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.BlockImpl#getName <em>Name</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.BlockImpl#getContent <em>Content</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.BlockImpl#getClick <em>Click</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ListItemImpl#getItem <em>Item</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ListItemImpl#getNestedList <em>Nested List</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ListItemImpl#getClick <em>Click</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BlockImpl extends BlockableContentImpl implements Block
+public class ListItemImpl extends MinimalEObjectImpl.Container implements ListItem
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The default value of the '{@link #getItem() <em>Item</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getItem()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
+  protected static final String ITEM_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getItem() <em>Item</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getItem()
    * @generated
    * @ordered
    */
-  protected String name = NAME_EDEFAULT;
+  protected String item = ITEM_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
+   * The cached value of the '{@link #getNestedList() <em>Nested List</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getContent()
+   * @see #getNestedList()
    * @generated
    * @ordered
    */
-  protected BlockableContent content;
+  protected List nestedList;
 
   /**
    * The default value of the '{@link #getClick() <em>Click</em>}' attribute.
@@ -87,7 +88,7 @@ public class BlockImpl extends BlockableContentImpl implements Block
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BlockImpl()
+  protected ListItemImpl()
   {
     super();
   }
@@ -100,7 +101,7 @@ public class BlockImpl extends BlockableContentImpl implements Block
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.BLOCK;
+    return SlideOMaticPackage.Literals.LIST_ITEM;
   }
 
   /**
@@ -108,9 +109,9 @@ public class BlockImpl extends BlockableContentImpl implements Block
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
+  public String getItem()
   {
-    return name;
+    return item;
   }
 
   /**
@@ -118,12 +119,12 @@ public class BlockImpl extends BlockableContentImpl implements Block
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(String newName)
+  public void setItem(String newItem)
   {
-    String oldName = name;
-    name = newName;
+    String oldItem = item;
+    item = newItem;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.BLOCK__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.LIST_ITEM__ITEM, oldItem, item));
   }
 
   /**
@@ -131,9 +132,9 @@ public class BlockImpl extends BlockableContentImpl implements Block
    * <!-- end-user-doc -->
    * @generated
    */
-  public BlockableContent getContent()
+  public List getNestedList()
   {
-    return content;
+    return nestedList;
   }
 
   /**
@@ -141,13 +142,13 @@ public class BlockImpl extends BlockableContentImpl implements Block
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetContent(BlockableContent newContent, NotificationChain msgs)
+  public NotificationChain basicSetNestedList(List newNestedList, NotificationChain msgs)
   {
-    BlockableContent oldContent = content;
-    content = newContent;
+    List oldNestedList = nestedList;
+    nestedList = newNestedList;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.BLOCK__CONTENT, oldContent, newContent);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.LIST_ITEM__NESTED_LIST, oldNestedList, newNestedList);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -158,20 +159,20 @@ public class BlockImpl extends BlockableContentImpl implements Block
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setContent(BlockableContent newContent)
+  public void setNestedList(List newNestedList)
   {
-    if (newContent != content)
+    if (newNestedList != nestedList)
     {
       NotificationChain msgs = null;
-      if (content != null)
-        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.BLOCK__CONTENT, null, msgs);
-      if (newContent != null)
-        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.BLOCK__CONTENT, null, msgs);
-      msgs = basicSetContent(newContent, msgs);
+      if (nestedList != null)
+        msgs = ((InternalEObject)nestedList).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.LIST_ITEM__NESTED_LIST, null, msgs);
+      if (newNestedList != null)
+        msgs = ((InternalEObject)newNestedList).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.LIST_ITEM__NESTED_LIST, null, msgs);
+      msgs = basicSetNestedList(newNestedList, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.BLOCK__CONTENT, newContent, newContent));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.LIST_ITEM__NESTED_LIST, newNestedList, newNestedList));
   }
 
   /**
@@ -194,7 +195,7 @@ public class BlockImpl extends BlockableContentImpl implements Block
     String oldClick = click;
     click = newClick;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.BLOCK__CLICK, oldClick, click));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.LIST_ITEM__CLICK, oldClick, click));
   }
 
   /**
@@ -207,8 +208,8 @@ public class BlockImpl extends BlockableContentImpl implements Block
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.BLOCK__CONTENT:
-        return basicSetContent(null, msgs);
+      case SlideOMaticPackage.LIST_ITEM__NESTED_LIST:
+        return basicSetNestedList(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -223,11 +224,11 @@ public class BlockImpl extends BlockableContentImpl implements Block
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.BLOCK__NAME:
-        return getName();
-      case SlideOMaticPackage.BLOCK__CONTENT:
-        return getContent();
-      case SlideOMaticPackage.BLOCK__CLICK:
+      case SlideOMaticPackage.LIST_ITEM__ITEM:
+        return getItem();
+      case SlideOMaticPackage.LIST_ITEM__NESTED_LIST:
+        return getNestedList();
+      case SlideOMaticPackage.LIST_ITEM__CLICK:
         return getClick();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -243,13 +244,13 @@ public class BlockImpl extends BlockableContentImpl implements Block
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.BLOCK__NAME:
-        setName((String)newValue);
+      case SlideOMaticPackage.LIST_ITEM__ITEM:
+        setItem((String)newValue);
         return;
-      case SlideOMaticPackage.BLOCK__CONTENT:
-        setContent((BlockableContent)newValue);
+      case SlideOMaticPackage.LIST_ITEM__NESTED_LIST:
+        setNestedList((List)newValue);
         return;
-      case SlideOMaticPackage.BLOCK__CLICK:
+      case SlideOMaticPackage.LIST_ITEM__CLICK:
         setClick((String)newValue);
         return;
     }
@@ -266,13 +267,13 @@ public class BlockImpl extends BlockableContentImpl implements Block
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.BLOCK__NAME:
-        setName(NAME_EDEFAULT);
+      case SlideOMaticPackage.LIST_ITEM__ITEM:
+        setItem(ITEM_EDEFAULT);
         return;
-      case SlideOMaticPackage.BLOCK__CONTENT:
-        setContent((BlockableContent)null);
+      case SlideOMaticPackage.LIST_ITEM__NESTED_LIST:
+        setNestedList((List)null);
         return;
-      case SlideOMaticPackage.BLOCK__CLICK:
+      case SlideOMaticPackage.LIST_ITEM__CLICK:
         setClick(CLICK_EDEFAULT);
         return;
     }
@@ -289,11 +290,11 @@ public class BlockImpl extends BlockableContentImpl implements Block
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.BLOCK__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SlideOMaticPackage.BLOCK__CONTENT:
-        return content != null;
-      case SlideOMaticPackage.BLOCK__CLICK:
+      case SlideOMaticPackage.LIST_ITEM__ITEM:
+        return ITEM_EDEFAULT == null ? item != null : !ITEM_EDEFAULT.equals(item);
+      case SlideOMaticPackage.LIST_ITEM__NESTED_LIST:
+        return nestedList != null;
+      case SlideOMaticPackage.LIST_ITEM__CLICK:
         return CLICK_EDEFAULT == null ? click != null : !CLICK_EDEFAULT.equals(click);
     }
     return super.eIsSet(featureID);
@@ -310,12 +311,12 @@ public class BlockImpl extends BlockableContentImpl implements Block
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
+    result.append(" (item: ");
+    result.append(item);
     result.append(", click: ");
     result.append(click);
     result.append(')');
     return result.toString();
   }
 
-} //BlockImpl
+} //ListItemImpl

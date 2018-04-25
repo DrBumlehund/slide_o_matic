@@ -8,6 +8,8 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Section</b></em>'.
@@ -15,7 +17,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class SectionImpl extends SlideImpl implements Section
+public class SectionImpl extends MinimalEObjectImpl.Container implements Section
 {
   /**
    * <!-- begin-user-doc -->

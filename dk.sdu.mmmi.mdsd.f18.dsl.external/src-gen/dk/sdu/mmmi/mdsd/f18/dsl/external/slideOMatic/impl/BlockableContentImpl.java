@@ -3,26 +3,26 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Paragraph;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Paragraph</b></em>'.
+ * An implementation of the model object '<em><b>Blockable Content</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ParagraphImpl extends TextImpl implements Paragraph
+public class BlockableContentImpl extends ContentImpl implements BlockableContent
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ParagraphImpl()
+  protected BlockableContentImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class ParagraphImpl extends TextImpl implements Paragraph
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.PARAGRAPH;
+    return SlideOMaticPackage.Literals.BLOCKABLE_CONTENT;
   }
 
-} //ParagraphImpl
+} //BlockableContentImpl

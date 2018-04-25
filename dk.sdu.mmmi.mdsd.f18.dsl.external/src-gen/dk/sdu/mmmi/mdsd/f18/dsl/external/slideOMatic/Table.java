@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Table extends dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float
+public interface Table extends Floats
 {
   /**
    * Returns the value of the '<em><b>Rows</b></em>' containment reference list.

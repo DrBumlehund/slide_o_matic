@@ -3,36 +3,7 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedListItem;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Paragraph;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Section;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticFactory;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -102,25 +73,27 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.SLIDE: return createSlide();
       case SlideOMaticPackage.SECTION: return createSection();
       case SlideOMaticPackage.CONTENT: return createContent();
+      case SlideOMaticPackage.BLOCKABLE_CONTENT: return createBlockableContent();
       case SlideOMaticPackage.TEXT: return createText();
+      case SlideOMaticPackage.BLOCK: return createBlock();
       case SlideOMaticPackage.LIST: return createList();
-      case SlideOMaticPackage.NUMBERED_LIST_ITEM: return createNumberedListItem();
-      case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM: return createUnNumberedListItem();
-      case SlideOMaticPackage.FLOAT: return createFloat();
+      case SlideOMaticPackage.NUMBERED_LIST: return createNumberedList();
+      case SlideOMaticPackage.UN_NUMBERED_LIST: return createUnNumberedList();
+      case SlideOMaticPackage.LIST_ITEM: return createListItem();
+      case SlideOMaticPackage.FLOATS: return createFloats();
       case SlideOMaticPackage.IMAGE: return createImage();
       case SlideOMaticPackage.SIZE: return createSize();
       case SlideOMaticPackage.TABLE: return createTable();
       case SlideOMaticPackage.TABLE_ROW: return createTableRow();
+      case SlideOMaticPackage.CODE: return createCode();
       case SlideOMaticPackage.ANIMATION: return createAnimation();
       case SlideOMaticPackage.ANIMATION_TYPE: return createAnimationType();
       case SlideOMaticPackage.SEC: return createSec();
       case SlideOMaticPackage.SUB_SEC: return createSubSec();
       case SlideOMaticPackage.SUB_SUB_SEC: return createSubSubSec();
       case SlideOMaticPackage.TOC: return createTOC();
-      case SlideOMaticPackage.PARAGRAPH: return createParagraph();
-      case SlideOMaticPackage.BLOCK: return createBlock();
-      case SlideOMaticPackage.NUMBERED_LIST: return createNumberedList();
-      case SlideOMaticPackage.UN_NUMBERED_LIST: return createUnNumberedList();
+      case SlideOMaticPackage.PROPORTIONAL_SIZE: return createProportionalSize();
+      case SlideOMaticPackage.EXACT_SIZE: return createExactSize();
       case SlideOMaticPackage.MOVE: return createMove();
       case SlideOMaticPackage.JUMP: return createJump();
       default:
@@ -221,10 +194,32 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
+  public BlockableContent createBlockableContent()
+  {
+    BlockableContentImpl blockableContent = new BlockableContentImpl();
+    return blockableContent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Text createText()
   {
     TextImpl text = new TextImpl();
     return text;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Block createBlock()
+  {
+    BlockImpl block = new BlockImpl();
+    return block;
   }
 
   /**
@@ -243,10 +238,10 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public NumberedListItem createNumberedListItem()
+  public NumberedList createNumberedList()
   {
-    NumberedListItemImpl numberedListItem = new NumberedListItemImpl();
-    return numberedListItem;
+    NumberedListImpl numberedList = new NumberedListImpl();
+    return numberedList;
   }
 
   /**
@@ -254,10 +249,10 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public UnNumberedListItem createUnNumberedListItem()
+  public UnNumberedList createUnNumberedList()
   {
-    UnNumberedListItemImpl unNumberedListItem = new UnNumberedListItemImpl();
-    return unNumberedListItem;
+    UnNumberedListImpl unNumberedList = new UnNumberedListImpl();
+    return unNumberedList;
   }
 
   /**
@@ -265,10 +260,21 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float createFloat()
+  public ListItem createListItem()
   {
-    FloatImpl float_ = new FloatImpl();
-    return float_;
+    ListItemImpl listItem = new ListItemImpl();
+    return listItem;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Floats createFloats()
+  {
+    FloatsImpl floats = new FloatsImpl();
+    return floats;
   }
 
   /**
@@ -313,6 +319,17 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
   {
     TableRowImpl tableRow = new TableRowImpl();
     return tableRow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Code createCode()
+  {
+    CodeImpl code = new CodeImpl();
+    return code;
   }
 
   /**
@@ -386,10 +403,10 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Paragraph createParagraph()
+  public ProportionalSize createProportionalSize()
   {
-    ParagraphImpl paragraph = new ParagraphImpl();
-    return paragraph;
+    ProportionalSizeImpl proportionalSize = new ProportionalSizeImpl();
+    return proportionalSize;
   }
 
   /**
@@ -397,32 +414,10 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Block createBlock()
+  public ExactSize createExactSize()
   {
-    BlockImpl block = new BlockImpl();
-    return block;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NumberedList createNumberedList()
-  {
-    NumberedListImpl numberedList = new NumberedListImpl();
-    return numberedList;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public UnNumberedList createUnNumberedList()
-  {
-    UnNumberedListImpl unNumberedList = new UnNumberedListImpl();
-    return unNumberedList;
+    ExactSizeImpl exactSize = new ExactSizeImpl();
+    return exactSize;
   }
 
   /**

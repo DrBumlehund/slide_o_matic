@@ -3,19 +3,12 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Un Numbered List</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList#getListItems <em>List Items</em>}</li>
- * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getUnNumberedList()
  * @model
@@ -23,20 +16,4 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface UnNumberedList extends List
 {
-  /**
-   * Returns the value of the '<em><b>List Items</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>List Items</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>List Items</em>' containment reference list.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getUnNumberedList_ListItems()
-   * @model containment="true"
-   * @generated
-   */
-  EList<UnNumberedListItem> getListItems();
-
 } // UnNumberedList

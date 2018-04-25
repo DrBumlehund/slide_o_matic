@@ -96,6 +96,15 @@ public interface SlideOMaticFactory extends EFactory
   Content createContent();
 
   /**
+   * Returns a new object of class '<em>Blockable Content</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Blockable Content</em>'.
+   * @generated
+   */
+  BlockableContent createBlockableContent();
+
+  /**
    * Returns a new object of class '<em>Text</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -103,6 +112,15 @@ public interface SlideOMaticFactory extends EFactory
    * @generated
    */
   Text createText();
+
+  /**
+   * Returns a new object of class '<em>Block</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Block</em>'.
+   * @generated
+   */
+  Block createBlock();
 
   /**
    * Returns a new object of class '<em>List</em>'.
@@ -114,31 +132,40 @@ public interface SlideOMaticFactory extends EFactory
   List createList();
 
   /**
-   * Returns a new object of class '<em>Numbered List Item</em>'.
+   * Returns a new object of class '<em>Numbered List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Numbered List Item</em>'.
+   * @return a new object of class '<em>Numbered List</em>'.
    * @generated
    */
-  NumberedListItem createNumberedListItem();
+  NumberedList createNumberedList();
 
   /**
-   * Returns a new object of class '<em>Un Numbered List Item</em>'.
+   * Returns a new object of class '<em>Un Numbered List</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Un Numbered List Item</em>'.
+   * @return a new object of class '<em>Un Numbered List</em>'.
    * @generated
    */
-  UnNumberedListItem createUnNumberedListItem();
+  UnNumberedList createUnNumberedList();
 
   /**
-   * Returns a new object of class '<em>Float</em>'.
+   * Returns a new object of class '<em>List Item</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Float</em>'.
+   * @return a new object of class '<em>List Item</em>'.
    * @generated
    */
-  Float createFloat();
+  ListItem createListItem();
+
+  /**
+   * Returns a new object of class '<em>Floats</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Floats</em>'.
+   * @generated
+   */
+  Floats createFloats();
 
   /**
    * Returns a new object of class '<em>Image</em>'.
@@ -175,6 +202,15 @@ public interface SlideOMaticFactory extends EFactory
    * @generated
    */
   TableRow createTableRow();
+
+  /**
+   * Returns a new object of class '<em>Code</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Code</em>'.
+   * @generated
+   */
+  Code createCode();
 
   /**
    * Returns a new object of class '<em>Animation</em>'.
@@ -231,40 +267,22 @@ public interface SlideOMaticFactory extends EFactory
   TOC createTOC();
 
   /**
-   * Returns a new object of class '<em>Paragraph</em>'.
+   * Returns a new object of class '<em>Proportional Size</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Paragraph</em>'.
+   * @return a new object of class '<em>Proportional Size</em>'.
    * @generated
    */
-  Paragraph createParagraph();
+  ProportionalSize createProportionalSize();
 
   /**
-   * Returns a new object of class '<em>Block</em>'.
+   * Returns a new object of class '<em>Exact Size</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Block</em>'.
+   * @return a new object of class '<em>Exact Size</em>'.
    * @generated
    */
-  Block createBlock();
-
-  /**
-   * Returns a new object of class '<em>Numbered List</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Numbered List</em>'.
-   * @generated
-   */
-  NumberedList createNumberedList();
-
-  /**
-   * Returns a new object of class '<em>Un Numbered List</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Un Numbered List</em>'.
-   * @generated
-   */
-  UnNumberedList createUnNumberedList();
+  ExactSize createExactSize();
 
   /**
    * Returns a new object of class '<em>Move</em>'.

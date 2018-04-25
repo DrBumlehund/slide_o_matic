@@ -8,17 +8,18 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.services.SlideOMaticGrammarAccess;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ListItem;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedListItem;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Paragraph;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec;
@@ -26,9 +27,9 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -61,10 +62,16 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 				sequence_Authors(context, (Authors) semanticObject); 
 				return; 
 			case SlideOMaticPackage.BLOCK:
-				sequence_Text(context, (Block) semanticObject); 
+				sequence_Block(context, (Block) semanticObject); 
+				return; 
+			case SlideOMaticPackage.CODE:
+				sequence_Code(context, (Code) semanticObject); 
 				return; 
 			case SlideOMaticPackage.DATE:
 				sequence_Date(context, (Date) semanticObject); 
+				return; 
+			case SlideOMaticPackage.EXACT_SIZE:
+				sequence_Size(context, (ExactSize) semanticObject); 
 				return; 
 			case SlideOMaticPackage.IMAGE:
 				sequence_Image(context, (Image) semanticObject); 
@@ -75,57 +82,33 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SlideOMaticPackage.JUMP:
 				sequence_AnimationType(context, (Jump) semanticObject); 
 				return; 
+			case SlideOMaticPackage.LIST_ITEM:
+				sequence_ListItem(context, (ListItem) semanticObject); 
+				return; 
 			case SlideOMaticPackage.MOVE:
 				sequence_AnimationType(context, (Move) semanticObject); 
 				return; 
 			case SlideOMaticPackage.NUMBERED_LIST:
-				sequence_List(context, (NumberedList) semanticObject); 
-				return; 
-			case SlideOMaticPackage.NUMBERED_LIST_ITEM:
-				sequence_NumberedListItem(context, (NumberedListItem) semanticObject); 
-				return; 
-			case SlideOMaticPackage.PARAGRAPH:
-				sequence_Text(context, (Paragraph) semanticObject); 
+				sequence_NumberedList(context, (NumberedList) semanticObject); 
 				return; 
 			case SlideOMaticPackage.PRESENTATION:
 				sequence_Presentation(context, (Presentation) semanticObject); 
 				return; 
+			case SlideOMaticPackage.PROPORTIONAL_SIZE:
+				sequence_Size(context, (ProportionalSize) semanticObject); 
+				return; 
 			case SlideOMaticPackage.SEC:
-				if (rule == grammarAccess.getSectionRule()) {
-					sequence_Section(context, (Sec) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getSlideRule()) {
-					sequence_Section_Slide(context, (Sec) semanticObject); 
-					return; 
-				}
-				else break;
-			case SlideOMaticPackage.SIZE:
-				sequence_Size(context, (Size) semanticObject); 
+				sequence_Section(context, (Sec) semanticObject); 
 				return; 
 			case SlideOMaticPackage.SLIDE:
 				sequence_Slide(context, (Slide) semanticObject); 
 				return; 
 			case SlideOMaticPackage.SUB_SEC:
-				if (rule == grammarAccess.getSlideRule()) {
-					sequence_Section_Slide(context, (SubSec) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getSectionRule()) {
-					sequence_Section(context, (SubSec) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Section(context, (SubSec) semanticObject); 
+				return; 
 			case SlideOMaticPackage.SUB_SUB_SEC:
-				if (rule == grammarAccess.getSlideRule()) {
-					sequence_Section_Slide(context, (SubSubSec) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getSectionRule()) {
-					sequence_Section(context, (SubSubSec) semanticObject); 
-					return; 
-				}
-				else break;
+				sequence_Section(context, (SubSubSec) semanticObject); 
+				return; 
 			case SlideOMaticPackage.TOC:
 				sequence_Content(context, (TOC) semanticObject); 
 				return; 
@@ -135,14 +118,14 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SlideOMaticPackage.TABLE_ROW:
 				sequence_TableRow(context, (TableRow) semanticObject); 
 				return; 
+			case SlideOMaticPackage.TEXT:
+				sequence_Text(context, (Text) semanticObject); 
+				return; 
 			case SlideOMaticPackage.THEME:
 				sequence_Theme(context, (Theme) semanticObject); 
 				return; 
 			case SlideOMaticPackage.UN_NUMBERED_LIST:
-				sequence_List(context, (UnNumberedList) semanticObject); 
-				return; 
-			case SlideOMaticPackage.UN_NUMBERED_LIST_ITEM:
-				sequence_UnNumberedListItem(context, (UnNumberedListItem) semanticObject); 
+				sequence_UnNumberedList(context, (UnNumberedList) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -178,7 +161,7 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Animation returns Animation
 	 *
 	 * Constraint:
-	 *     (target=[Float|ID] type=AnimationType location=Alignment size=Size?)
+	 *     (target=[Floats|ID] type=AnimationType location=Alignment size=Size?)
 	 */
 	protected void sequence_Animation(ISerializationContext context, Animation semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -194,6 +177,42 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_Authors(ISerializationContext context, Authors semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Content returns Block
+	 *     BlockableContent returns Block
+	 *     Block returns Block
+	 *
+	 * Constraint:
+	 *     (name=STRING? content=BlockableContent click=Click?)
+	 */
+	protected void sequence_Block(ISerializationContext context, Block semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Content returns Code
+	 *     Code returns Code
+	 *
+	 * Constraint:
+	 *     (lang=ID code=STRING)
+	 */
+	protected void sequence_Code(ISerializationContext context, Code semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.CODE__LANG) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.CODE__LANG));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.CODE__CODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.CODE__CODE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCodeAccess().getLangIDTerminalRuleCall_1_0(), semanticObject.getLang());
+		feeder.accept(grammarAccess.getCodeAccess().getCodeSTRINGTerminalRuleCall_2_0(), semanticObject.getCode());
+		feeder.finish();
 	}
 	
 	
@@ -230,11 +249,12 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * Contexts:
 	 *     Content returns Image
-	 *     Float returns Image
+	 *     BlockableContent returns Image
+	 *     Floats returns Image
 	 *     Image returns Image
 	 *
 	 * Constraint:
-	 *     (name=ID src=STRING alignment=Alignment? size=Size)
+	 *     (name=ID src=STRING alignment=Alignment? size=Size click=Click?)
 	 */
 	protected void sequence_Image(ISerializationContext context, Image semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -261,45 +281,28 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
+	 *     ListItem returns ListItem
+	 *
+	 * Constraint:
+	 *     (item=STRING nestedList=List? click=Click?)
+	 */
+	protected void sequence_ListItem(ISerializationContext context, ListItem semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Content returns NumberedList
+	 *     BlockableContent returns NumberedList
 	 *     List returns NumberedList
+	 *     NumberedList returns NumberedList
 	 *
 	 * Constraint:
-	 *     ListItems+=NumberedListItem+
+	 *     items+=ListItem+
 	 */
-	protected void sequence_List(ISerializationContext context, NumberedList semanticObject) {
+	protected void sequence_NumberedList(ISerializationContext context, NumberedList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Content returns UnNumberedList
-	 *     List returns UnNumberedList
-	 *
-	 * Constraint:
-	 *     ListItems+=UnNumberedListItem+
-	 */
-	protected void sequence_List(ISerializationContext context, UnNumberedList semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     NumberedListItem returns NumberedListItem
-	 *
-	 * Constraint:
-	 *     item=STRING
-	 */
-	protected void sequence_NumberedListItem(ISerializationContext context, NumberedListItem semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.NUMBERED_LIST_ITEM__ITEM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.NUMBERED_LIST_ITEM__ITEM));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNumberedListItemAccess().getItemSTRINGTerminalRuleCall_1_0(), semanticObject.getItem());
-		feeder.finish();
 	}
 	
 	
@@ -310,6 +313,7 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 * Constraint:
 	 *     (
 	 *         name=STRING 
+	 *         subtitle=STRING? 
 	 *         theme=Theme? 
 	 *         authors=Authors? 
 	 *         institute=Institute? 
@@ -330,42 +334,6 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     {Sec}
 	 */
 	protected void sequence_Section(ISerializationContext context, Sec semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Slide returns Sec
-	 *
-	 * Constraint:
-	 *     (name=STRING contents+=Content+)
-	 */
-	protected void sequence_Section_Slide(ISerializationContext context, Sec semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Slide returns SubSec
-	 *
-	 * Constraint:
-	 *     (name=STRING contents+=Content+)
-	 */
-	protected void sequence_Section_Slide(ISerializationContext context, SubSec semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Slide returns SubSubSec
-	 *
-	 * Constraint:
-	 *     (name=STRING contents+=Content+)
-	 */
-	protected void sequence_Section_Slide(ISerializationContext context, SubSubSec semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -396,19 +364,25 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     Size returns Size
+	 *     Size returns ExactSize
 	 *
 	 * Constraint:
-	 *     scale=INT
+	 *     (size=INT (unit='cm' | unit='em' | unit='mm'))
 	 */
-	protected void sequence_Size(ISerializationContext context, Size semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.SIZE__SCALE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.SIZE__SCALE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSizeAccess().getScaleINTTerminalRuleCall_1_0(), semanticObject.getScale());
-		feeder.finish();
+	protected void sequence_Size(ISerializationContext context, ExactSize semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Size returns ProportionalSize
+	 *
+	 * Constraint:
+	 *     ((way='width' | way='height') scale=INT)
+	 */
+	protected void sequence_Size(ISerializationContext context, ProportionalSize semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -417,7 +391,7 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Slide returns Slide
 	 *
 	 * Constraint:
-	 *     (name=STRING? contents+=Content+)
+	 *     (((sec=Section name=STRING) | name=STRING)? contents+=Content+)
 	 */
 	protected void sequence_Slide(ISerializationContext context, Slide semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -439,7 +413,8 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	/**
 	 * Contexts:
 	 *     Content returns Table
-	 *     Float returns Table
+	 *     BlockableContent returns Table
+	 *     Floats returns Table
 	 *     Table returns Table
 	 *
 	 * Constraint:
@@ -452,33 +427,15 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     Content returns Block
-	 *     Text returns Block
+	 *     Content returns Text
+	 *     BlockableContent returns Text
+	 *     Text returns Text
 	 *
 	 * Constraint:
-	 *     (name=STRING? text=STRING)
+	 *     (text=STRING click=Click?)
 	 */
-	protected void sequence_Text(ISerializationContext context, Block semanticObject) {
+	protected void sequence_Text(ISerializationContext context, Text semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Content returns Paragraph
-	 *     Text returns Paragraph
-	 *
-	 * Constraint:
-	 *     text=STRING
-	 */
-	protected void sequence_Text(ISerializationContext context, Paragraph semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.TEXT__TEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.TEXT__TEXT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_0_2_0(), semanticObject.getText());
-		feeder.finish();
 	}
 	
 	
@@ -496,19 +453,16 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     UnNumberedListItem returns UnNumberedListItem
+	 *     Content returns UnNumberedList
+	 *     BlockableContent returns UnNumberedList
+	 *     List returns UnNumberedList
+	 *     UnNumberedList returns UnNumberedList
 	 *
 	 * Constraint:
-	 *     item=STRING
+	 *     items+=ListItem+
 	 */
-	protected void sequence_UnNumberedListItem(ISerializationContext context, UnNumberedListItem semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.UN_NUMBERED_LIST_ITEM__ITEM) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.UN_NUMBERED_LIST_ITEM__ITEM));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getUnNumberedListItemAccess().getItemSTRINGTerminalRuleCall_1_0(), semanticObject.getItem());
-		feeder.finish();
+	protected void sequence_UnNumberedList(ISerializationContext context, UnNumberedList semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

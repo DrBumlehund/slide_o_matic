@@ -37,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl#getSubtitle <em>Subtitle</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl#getTheme <em>Theme</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl#getAuthors <em>Authors</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl#getInstitute <em>Institute</em>}</li>
@@ -68,6 +69,26 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSubtitle() <em>Subtitle</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubtitle()
+   * @generated
+   * @ordered
+   */
+  protected static final String SUBTITLE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSubtitle() <em>Subtitle</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSubtitle()
+   * @generated
+   * @ordered
+   */
+  protected String subtitle = SUBTITLE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getTheme() <em>Theme</em>}' containment reference.
@@ -171,6 +192,29 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.PRESENTATION__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getSubtitle()
+  {
+    return subtitle;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSubtitle(String newSubtitle)
+  {
+    String oldSubtitle = subtitle;
+    subtitle = newSubtitle;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.PRESENTATION__SUBTITLE, oldSubtitle, subtitle));
   }
 
   /**
@@ -431,6 +475,8 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
     {
       case SlideOMaticPackage.PRESENTATION__NAME:
         return getName();
+      case SlideOMaticPackage.PRESENTATION__SUBTITLE:
+        return getSubtitle();
       case SlideOMaticPackage.PRESENTATION__THEME:
         return getTheme();
       case SlideOMaticPackage.PRESENTATION__AUTHORS:
@@ -460,6 +506,9 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
     {
       case SlideOMaticPackage.PRESENTATION__NAME:
         setName((String)newValue);
+        return;
+      case SlideOMaticPackage.PRESENTATION__SUBTITLE:
+        setSubtitle((String)newValue);
         return;
       case SlideOMaticPackage.PRESENTATION__THEME:
         setTheme((Theme)newValue);
@@ -498,6 +547,9 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
       case SlideOMaticPackage.PRESENTATION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case SlideOMaticPackage.PRESENTATION__SUBTITLE:
+        setSubtitle(SUBTITLE_EDEFAULT);
+        return;
       case SlideOMaticPackage.PRESENTATION__THEME:
         setTheme((Theme)null);
         return;
@@ -532,6 +584,8 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
     {
       case SlideOMaticPackage.PRESENTATION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SlideOMaticPackage.PRESENTATION__SUBTITLE:
+        return SUBTITLE_EDEFAULT == null ? subtitle != null : !SUBTITLE_EDEFAULT.equals(subtitle);
       case SlideOMaticPackage.PRESENTATION__THEME:
         return theme != null;
       case SlideOMaticPackage.PRESENTATION__AUTHORS:
@@ -561,6 +615,8 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", subtitle: ");
+    result.append(subtitle);
     result.append(')');
     return result.toString();
   }

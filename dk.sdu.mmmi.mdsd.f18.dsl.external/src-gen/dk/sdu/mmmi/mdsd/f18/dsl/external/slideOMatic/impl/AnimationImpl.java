@@ -5,6 +5,7 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
@@ -43,7 +44,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
    * @generated
    * @ordered
    */
-  protected dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float target;
+  protected Floats target;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -111,12 +112,12 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
    * <!-- end-user-doc -->
    * @generated
    */
-  public dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float getTarget()
+  public Floats getTarget()
   {
     if (target != null && target.eIsProxy())
     {
       InternalEObject oldTarget = (InternalEObject)target;
-      target = (dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float)eResolveProxy(oldTarget);
+      target = (Floats)eResolveProxy(oldTarget);
       if (target != oldTarget)
       {
         if (eNotificationRequired())
@@ -131,7 +132,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
    * <!-- end-user-doc -->
    * @generated
    */
-  public dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float basicGetTarget()
+  public Floats basicGetTarget()
   {
     return target;
   }
@@ -141,9 +142,9 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float newTarget)
+  public void setTarget(Floats newTarget)
   {
-    dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float oldTarget = target;
+    Floats oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.ANIMATION__TARGET, oldTarget, target));
@@ -320,7 +321,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
     switch (featureID)
     {
       case SlideOMaticPackage.ANIMATION__TARGET:
-        setTarget((dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float)newValue);
+        setTarget((Floats)newValue);
         return;
       case SlideOMaticPackage.ANIMATION__TYPE:
         setType((AnimationType)newValue);
@@ -346,7 +347,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
     switch (featureID)
     {
       case SlideOMaticPackage.ANIMATION__TARGET:
-        setTarget((dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float)null);
+        setTarget((Floats)null);
         return;
       case SlideOMaticPackage.ANIMATION__TYPE:
         setType((AnimationType)null);

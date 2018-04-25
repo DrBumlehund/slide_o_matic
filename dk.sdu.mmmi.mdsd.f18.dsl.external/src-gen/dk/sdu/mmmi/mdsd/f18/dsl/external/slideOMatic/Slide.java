@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getSec <em>Sec</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getContents <em>Contents</em>}</li>
  * </ul>
@@ -26,6 +27,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Slide extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Sec</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Sec</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sec</em>' containment reference.
+   * @see #setSec(Section)
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getSlide_Sec()
+   * @model containment="true"
+   * @generated
+   */
+  Section getSec();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide#getSec <em>Sec</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sec</em>' containment reference.
+   * @see #getSec()
+   * @generated
+   */
+  void setSec(Section value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->

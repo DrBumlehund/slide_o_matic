@@ -3,8 +3,8 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,66 +14,66 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Text</b></em>'.
+ * An implementation of the model object '<em><b>Code</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl#getText <em>Text</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl#getClick <em>Click</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CodeImpl#getLang <em>Lang</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CodeImpl#getCode <em>Code</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TextImpl extends BlockableContentImpl implements Text
+public class CodeImpl extends ContentImpl implements Code
 {
   /**
-   * The default value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The default value of the '{@link #getLang() <em>Lang</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getLang()
    * @generated
    * @ordered
    */
-  protected static final String TEXT_EDEFAULT = null;
+  protected static final String LANG_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getText() <em>Text</em>}' attribute.
+   * The cached value of the '{@link #getLang() <em>Lang</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getText()
+   * @see #getLang()
    * @generated
    * @ordered
    */
-  protected String text = TEXT_EDEFAULT;
+  protected String lang = LANG_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClick()
+   * @see #getCode()
    * @generated
    * @ordered
    */
-  protected static final String CLICK_EDEFAULT = null;
+  protected static final String CODE_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClick()
+   * @see #getCode()
    * @generated
    * @ordered
    */
-  protected String click = CLICK_EDEFAULT;
+  protected String code = CODE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected TextImpl()
+  protected CodeImpl()
   {
     super();
   }
@@ -86,7 +86,7 @@ public class TextImpl extends BlockableContentImpl implements Text
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.TEXT;
+    return SlideOMaticPackage.Literals.CODE;
   }
 
   /**
@@ -94,9 +94,9 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getText()
+  public String getLang()
   {
-    return text;
+    return lang;
   }
 
   /**
@@ -104,12 +104,12 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setText(String newText)
+  public void setLang(String newLang)
   {
-    String oldText = text;
-    text = newText;
+    String oldLang = lang;
+    lang = newLang;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.TEXT__TEXT, oldText, text));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.CODE__LANG, oldLang, lang));
   }
 
   /**
@@ -117,9 +117,9 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getClick()
+  public String getCode()
   {
-    return click;
+    return code;
   }
 
   /**
@@ -127,12 +127,12 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClick(String newClick)
+  public void setCode(String newCode)
   {
-    String oldClick = click;
-    click = newClick;
+    String oldCode = code;
+    code = newCode;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.TEXT__CLICK, oldClick, click));
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.CODE__CODE, oldCode, code));
   }
 
   /**
@@ -145,10 +145,10 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        return getText();
-      case SlideOMaticPackage.TEXT__CLICK:
-        return getClick();
+      case SlideOMaticPackage.CODE__LANG:
+        return getLang();
+      case SlideOMaticPackage.CODE__CODE:
+        return getCode();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,11 +163,11 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        setText((String)newValue);
+      case SlideOMaticPackage.CODE__LANG:
+        setLang((String)newValue);
         return;
-      case SlideOMaticPackage.TEXT__CLICK:
-        setClick((String)newValue);
+      case SlideOMaticPackage.CODE__CODE:
+        setCode((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -183,11 +183,11 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        setText(TEXT_EDEFAULT);
+      case SlideOMaticPackage.CODE__LANG:
+        setLang(LANG_EDEFAULT);
         return;
-      case SlideOMaticPackage.TEXT__CLICK:
-        setClick(CLICK_EDEFAULT);
+      case SlideOMaticPackage.CODE__CODE:
+        setCode(CODE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -203,10 +203,10 @@ public class TextImpl extends BlockableContentImpl implements Text
   {
     switch (featureID)
     {
-      case SlideOMaticPackage.TEXT__TEXT:
-        return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-      case SlideOMaticPackage.TEXT__CLICK:
-        return CLICK_EDEFAULT == null ? click != null : !CLICK_EDEFAULT.equals(click);
+      case SlideOMaticPackage.CODE__LANG:
+        return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
+      case SlideOMaticPackage.CODE__CODE:
+        return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
     }
     return super.eIsSet(featureID);
   }
@@ -222,12 +222,12 @@ public class TextImpl extends BlockableContentImpl implements Text
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (text: ");
-    result.append(text);
-    result.append(", click: ");
-    result.append(click);
+    result.append(" (lang: ");
+    result.append(lang);
+    result.append(", code: ");
+    result.append(code);
     result.append(')');
     return result.toString();
   }
 
-} //TextImpl
+} //CodeImpl

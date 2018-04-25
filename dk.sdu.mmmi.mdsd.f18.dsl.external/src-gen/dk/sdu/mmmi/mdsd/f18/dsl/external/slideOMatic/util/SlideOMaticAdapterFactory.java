@@ -3,35 +3,7 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.util;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedListItem;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Paragraph;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Section;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -144,9 +116,19 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createContentAdapter();
       }
       @Override
+      public Adapter caseBlockableContent(BlockableContent object)
+      {
+        return createBlockableContentAdapter();
+      }
+      @Override
       public Adapter caseText(Text object)
       {
         return createTextAdapter();
+      }
+      @Override
+      public Adapter caseBlock(Block object)
+      {
+        return createBlockAdapter();
       }
       @Override
       public Adapter caseList(List object)
@@ -154,19 +136,24 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createListAdapter();
       }
       @Override
-      public Adapter caseNumberedListItem(NumberedListItem object)
+      public Adapter caseNumberedList(NumberedList object)
       {
-        return createNumberedListItemAdapter();
+        return createNumberedListAdapter();
       }
       @Override
-      public Adapter caseUnNumberedListItem(UnNumberedListItem object)
+      public Adapter caseUnNumberedList(UnNumberedList object)
       {
-        return createUnNumberedListItemAdapter();
+        return createUnNumberedListAdapter();
       }
       @Override
-      public Adapter caseFloat(dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float object)
+      public Adapter caseListItem(ListItem object)
       {
-        return createFloatAdapter();
+        return createListItemAdapter();
+      }
+      @Override
+      public Adapter caseFloats(Floats object)
+      {
+        return createFloatsAdapter();
       }
       @Override
       public Adapter caseImage(Image object)
@@ -187,6 +174,11 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTableRow(TableRow object)
       {
         return createTableRowAdapter();
+      }
+      @Override
+      public Adapter caseCode(Code object)
+      {
+        return createCodeAdapter();
       }
       @Override
       public Adapter caseAnimation(Animation object)
@@ -219,24 +211,14 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createTOCAdapter();
       }
       @Override
-      public Adapter caseParagraph(Paragraph object)
+      public Adapter caseProportionalSize(ProportionalSize object)
       {
-        return createParagraphAdapter();
+        return createProportionalSizeAdapter();
       }
       @Override
-      public Adapter caseBlock(Block object)
+      public Adapter caseExactSize(ExactSize object)
       {
-        return createBlockAdapter();
-      }
-      @Override
-      public Adapter caseNumberedList(NumberedList object)
-      {
-        return createNumberedListAdapter();
-      }
-      @Override
-      public Adapter caseUnNumberedList(UnNumberedList object)
-      {
-        return createUnNumberedListAdapter();
+        return createExactSizeAdapter();
       }
       @Override
       public Adapter caseMove(Move object)
@@ -391,6 +373,21 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent <em>Blockable Content</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent
+   * @generated
+   */
+  public Adapter createBlockableContentAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text <em>Text</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -401,6 +398,21 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTextAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block
+   * @generated
+   */
+  public Adapter createBlockAdapter()
   {
     return null;
   }
@@ -421,46 +433,61 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedListItem <em>Numbered List Item</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList <em>Numbered List</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedListItem
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList
    * @generated
    */
-  public Adapter createNumberedListItemAdapter()
+  public Adapter createNumberedListAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem <em>Un Numbered List Item</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList <em>Un Numbered List</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedListItem
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList
    * @generated
    */
-  public Adapter createUnNumberedListItemAdapter()
+  public Adapter createUnNumberedListAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float <em>Float</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ListItem <em>List Item</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Float
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ListItem
    * @generated
    */
-  public Adapter createFloatAdapter()
+  public Adapter createListItemAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats <em>Floats</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats
+   * @generated
+   */
+  public Adapter createFloatsAdapter()
   {
     return null;
   }
@@ -521,6 +548,21 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTableRowAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code <em>Code</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code
+   * @generated
+   */
+  public Adapter createCodeAdapter()
   {
     return null;
   }
@@ -616,61 +658,31 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Paragraph <em>Paragraph</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize <em>Proportional Size</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Paragraph
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize
    * @generated
    */
-  public Adapter createParagraphAdapter()
+  public Adapter createProportionalSizeAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block <em>Block</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize <em>Exact Size</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize
    * @generated
    */
-  public Adapter createBlockAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList <em>Numbered List</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList
-   * @generated
-   */
-  public Adapter createNumberedListAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList <em>Un Numbered List</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList
-   * @generated
-   */
-  public Adapter createUnNumberedListAdapter()
+  public Adapter createExactSizeAdapter()
   {
     return null;
   }
