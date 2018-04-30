@@ -5,10 +5,13 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Way;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -29,24 +32,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ProportionalSizeImpl extends SizeImpl implements ProportionalSize
 {
   /**
-   * The default value of the '{@link #getWay() <em>Way</em>}' attribute.
+   * The cached value of the '{@link #getWay() <em>Way</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getWay()
    * @generated
    * @ordered
    */
-  protected static final String WAY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getWay() <em>Way</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getWay()
-   * @generated
-   * @ordered
-   */
-  protected String way = WAY_EDEFAULT;
+  protected Way way;
 
   /**
    * The default value of the '{@link #getScale() <em>Scale</em>}' attribute.
@@ -94,7 +87,7 @@ public class ProportionalSizeImpl extends SizeImpl implements ProportionalSize
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getWay()
+  public Way getWay()
   {
     return way;
   }
@@ -104,12 +97,37 @@ public class ProportionalSizeImpl extends SizeImpl implements ProportionalSize
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setWay(String newWay)
+  public NotificationChain basicSetWay(Way newWay, NotificationChain msgs)
   {
-    String oldWay = way;
+    Way oldWay = way;
     way = newWay;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.PROPORTIONAL_SIZE__WAY, oldWay, way));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.PROPORTIONAL_SIZE__WAY, oldWay, newWay);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setWay(Way newWay)
+  {
+    if (newWay != way)
+    {
+      NotificationChain msgs = null;
+      if (way != null)
+        msgs = ((InternalEObject)way).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.PROPORTIONAL_SIZE__WAY, null, msgs);
+      if (newWay != null)
+        msgs = ((InternalEObject)newWay).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.PROPORTIONAL_SIZE__WAY, null, msgs);
+      msgs = basicSetWay(newWay, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.PROPORTIONAL_SIZE__WAY, newWay, newWay));
   }
 
   /**
@@ -141,6 +159,22 @@ public class ProportionalSizeImpl extends SizeImpl implements ProportionalSize
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case SlideOMaticPackage.PROPORTIONAL_SIZE__WAY:
+        return basicSetWay(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -164,7 +198,7 @@ public class ProportionalSizeImpl extends SizeImpl implements ProportionalSize
     switch (featureID)
     {
       case SlideOMaticPackage.PROPORTIONAL_SIZE__WAY:
-        setWay((String)newValue);
+        setWay((Way)newValue);
         return;
       case SlideOMaticPackage.PROPORTIONAL_SIZE__SCALE:
         setScale((Integer)newValue);
@@ -184,7 +218,7 @@ public class ProportionalSizeImpl extends SizeImpl implements ProportionalSize
     switch (featureID)
     {
       case SlideOMaticPackage.PROPORTIONAL_SIZE__WAY:
-        setWay(WAY_EDEFAULT);
+        setWay((Way)null);
         return;
       case SlideOMaticPackage.PROPORTIONAL_SIZE__SCALE:
         setScale(SCALE_EDEFAULT);
@@ -204,7 +238,7 @@ public class ProportionalSizeImpl extends SizeImpl implements ProportionalSize
     switch (featureID)
     {
       case SlideOMaticPackage.PROPORTIONAL_SIZE__WAY:
-        return WAY_EDEFAULT == null ? way != null : !WAY_EDEFAULT.equals(way);
+        return way != null;
       case SlideOMaticPackage.PROPORTIONAL_SIZE__SCALE:
         return scale != SCALE_EDEFAULT;
     }
@@ -222,9 +256,7 @@ public class ProportionalSizeImpl extends SizeImpl implements ProportionalSize
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (way: ");
-    result.append(way);
-    result.append(", scale: ");
+    result.append(" (scale: ");
     result.append(scale);
     result.append(')');
     return result.toString();

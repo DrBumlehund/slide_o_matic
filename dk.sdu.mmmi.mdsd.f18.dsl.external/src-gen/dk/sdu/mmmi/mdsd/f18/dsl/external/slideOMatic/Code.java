@@ -15,6 +15,7 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code#getLang <em>Lang</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code#getCode <em>Code</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code#getClick <em>Click</em>}</li>
  * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getCode()
@@ -74,5 +75,31 @@ public interface Code extends Content
    * @generated
    */
   void setCode(String value);
+
+  /**
+   * Returns the value of the '<em><b>Click</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Click</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Click</em>' attribute.
+   * @see #setClick(String)
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getCode_Click()
+   * @model
+   * @generated
+   */
+  String getClick();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code#getClick <em>Click</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Click</em>' attribute.
+   * @see #getClick()
+   * @generated
+   */
+  void setClick(String value);
 
 } // Code

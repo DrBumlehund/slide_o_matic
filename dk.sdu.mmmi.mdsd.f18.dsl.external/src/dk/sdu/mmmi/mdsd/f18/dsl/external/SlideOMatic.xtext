@@ -23,7 +23,7 @@ ThemeColor:
 	"seagull" | "seahorse" | "sidebartab" | "structure" | "whale" | "wolverine";
 
 Authors:
-	"author" names+=STRING (',' names+=STRING)*;
+	("author" | "authors") names+=STRING (',' names+=STRING)*;
 
 Institute:
 	"institute" name=STRING;
@@ -47,7 +47,7 @@ Text:
 	">" text=STRING (click=Click)?;
 
 Block:
-	"block" (name=STRING)? "{" content=BlockableContent "}" (click=Click)?;
+	"block" (name=STRING)? "{" content+=BlockableContent+ "}" (click=Click)?;
 
 List:
 	NumberedList | UnNumberedList;
@@ -71,7 +71,11 @@ Alignment:
 	"topleft" | "top" | "topright" | "left" | "center" | "right" | "bottomleft" | "bottom" | "bottomright";
 
 Size:
-	{ProportionalSize} way=("width" | "height") scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
+	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
+
+Way :
+	{Width} "width" | {Height} "height"
+;
 
 Table:
 	"tab" name=ID "[" rows+=TableRow ("," rows+=TableRow)* "]";
@@ -80,7 +84,7 @@ TableRow:
 	"[" values+=STRING ("," values+=STRING)* "]";
 
 Code:
-	"```" lang=ID code=STRING "```";
+	"```" lang=ID code=STRING "```"  (click=Click)?;
 
 Click:
 	"$$";

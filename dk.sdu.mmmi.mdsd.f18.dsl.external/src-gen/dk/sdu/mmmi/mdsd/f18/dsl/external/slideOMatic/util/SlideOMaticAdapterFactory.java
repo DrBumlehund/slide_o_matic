@@ -166,6 +166,11 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createSizeAdapter();
       }
       @Override
+      public Adapter caseWay(Way object)
+      {
+        return createWayAdapter();
+      }
+      @Override
       public Adapter caseTable(Table object)
       {
         return createTableAdapter();
@@ -219,6 +224,16 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExactSize(ExactSize object)
       {
         return createExactSizeAdapter();
+      }
+      @Override
+      public Adapter caseWidth(Width object)
+      {
+        return createWidthAdapter();
+      }
+      @Override
+      public Adapter caseHeight(Height object)
+      {
+        return createHeightAdapter();
       }
       @Override
       public Adapter caseMove(Move object)
@@ -523,6 +538,21 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Way <em>Way</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Way
+   * @generated
+   */
+  public Adapter createWayAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table <em>Table</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -683,6 +713,36 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExactSizeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width <em>Width</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width
+   * @generated
+   */
+  public Adapter createWidthAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Height <em>Height</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Height
+   * @generated
+   */
+  public Adapter createHeightAdapter()
   {
     return null;
   }

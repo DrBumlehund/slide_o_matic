@@ -382,7 +382,9 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	public class AuthorsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Authors");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAuthorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cAuthorKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cAuthorsKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final Assignment cNamesAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNamesSTRINGTerminalRuleCall_1_0 = (RuleCall)cNamesAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
@@ -391,14 +393,20 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNamesSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cNamesAssignment_2_1.eContents().get(0);
 		
 		//Authors:
-		//	"author" names+=STRING (',' names+=STRING)*;
+		//	("author" | "authors") names+=STRING (',' names+=STRING)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"author" names+=STRING (',' names+=STRING)*
+		//("author" | "authors") names+=STRING (',' names+=STRING)*
 		public Group getGroup() { return cGroup; }
 		
+		//"author" | "authors"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
 		//"author"
-		public Keyword getAuthorKeyword_0() { return cAuthorKeyword_0; }
+		public Keyword getAuthorKeyword_0_0() { return cAuthorKeyword_0_0; }
+		
+		//"authors"
+		public Keyword getAuthorsKeyword_0_1() { return cAuthorsKeyword_0_1; }
 		
 		//names+=STRING
 		public Assignment getNamesAssignment_1() { return cNamesAssignment_1; }
@@ -677,10 +685,10 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cClickClickParserRuleCall_5_0 = (RuleCall)cClickAssignment_5.eContents().get(0);
 		
 		//Block:
-		//	"block" name=STRING? "{" content=BlockableContent "}" click=Click?;
+		//	"block" name=STRING? "{" content+=BlockableContent+ "}" click=Click?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"block" name=STRING? "{" content=BlockableContent "}" click=Click?
+		//"block" name=STRING? "{" content+=BlockableContent+ "}" click=Click?
 		public Group getGroup() { return cGroup; }
 		
 		//"block"
@@ -695,7 +703,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//content=BlockableContent
+		//content+=BlockableContent+
 		public Assignment getContentAssignment_3() { return cContentAssignment_3; }
 		
 		//BlockableContent
@@ -957,9 +965,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cProportionalSizeAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Assignment cWayAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final Alternatives cWayAlternatives_0_1_0 = (Alternatives)cWayAssignment_0_1.eContents().get(0);
-		private final Keyword cWayWidthKeyword_0_1_0_0 = (Keyword)cWayAlternatives_0_1_0.eContents().get(0);
-		private final Keyword cWayHeightKeyword_0_1_0_1 = (Keyword)cWayAlternatives_0_1_0.eContents().get(1);
+		private final RuleCall cWayWayParserRuleCall_0_1_0 = (RuleCall)cWayAssignment_0_1.eContents().get(0);
 		private final Assignment cScaleAssignment_0_2 = (Assignment)cGroup_0.eContents().get(2);
 		private final RuleCall cScaleINTTerminalRuleCall_0_2_0 = (RuleCall)cScaleAssignment_0_2.eContents().get(0);
 		private final Keyword cPercentSignKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
@@ -974,29 +980,23 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cUnitMmKeyword_1_2_0_2 = (Keyword)cUnitAlternatives_1_2_0.eContents().get(2);
 		
 		//Size:
-		//	{ProportionalSize} way=("width" | "height") scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
+		//	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ProportionalSize} way=("width" | "height") scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm")
+		//{ProportionalSize} way=Way scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm")
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{ProportionalSize} way=("width" | "height") scale=INT "%"
+		//{ProportionalSize} way=Way scale=INT "%"
 		public Group getGroup_0() { return cGroup_0; }
 		
 		//{ProportionalSize}
 		public Action getProportionalSizeAction_0_0() { return cProportionalSizeAction_0_0; }
 		
-		//way=("width" | "height")
+		//way=Way
 		public Assignment getWayAssignment_0_1() { return cWayAssignment_0_1; }
 		
-		//("width" | "height")
-		public Alternatives getWayAlternatives_0_1_0() { return cWayAlternatives_0_1_0; }
-		
-		//"width"
-		public Keyword getWayWidthKeyword_0_1_0_0() { return cWayWidthKeyword_0_1_0_0; }
-		
-		//"height"
-		public Keyword getWayHeightKeyword_0_1_0_1() { return cWayHeightKeyword_0_1_0_1; }
+		//Way
+		public RuleCall getWayWayParserRuleCall_0_1_0() { return cWayWayParserRuleCall_0_1_0; }
 		
 		//scale=INT
 		public Assignment getScaleAssignment_0_2() { return cScaleAssignment_0_2; }
@@ -1033,6 +1033,41 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"mm"
 		public Keyword getUnitMmKeyword_1_2_0_2() { return cUnitMmKeyword_1_2_0_2; }
+	}
+	public class WayElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Way");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cWidthAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cWidthKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cHeightAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cHeightKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		
+		//Way:
+		//	{Width} "width" | {Height} "height";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Width} "width" | {Height} "height"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{Width} "width"
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{Width}
+		public Action getWidthAction_0_0() { return cWidthAction_0_0; }
+		
+		//"width"
+		public Keyword getWidthKeyword_0_1() { return cWidthKeyword_0_1; }
+		
+		//{Height} "height"
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{Height}
+		public Action getHeightAction_1_0() { return cHeightAction_1_0; }
+		
+		//"height"
+		public Keyword getHeightKeyword_1_1() { return cHeightKeyword_1_1; }
 	}
 	public class TableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Table");
@@ -1141,12 +1176,14 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cCodeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cCodeSTRINGTerminalRuleCall_2_0 = (RuleCall)cCodeAssignment_2.eContents().get(0);
 		private final Keyword cGraveAccentGraveAccentGraveAccentKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cClickAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cClickClickParserRuleCall_4_0 = (RuleCall)cClickAssignment_4.eContents().get(0);
 		
 		//Code:
-		//	"```" lang=ID code=STRING "```";
+		//	"```" lang=ID code=STRING "```" click=Click?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"```" lang=ID code=STRING "```"
+		//"```" lang=ID code=STRING "```" click=Click?
 		public Group getGroup() { return cGroup; }
 		
 		//"```"
@@ -1166,6 +1203,12 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"```"
 		public Keyword getGraveAccentGraveAccentGraveAccentKeyword_3() { return cGraveAccentGraveAccentGraveAccentKeyword_3; }
+		
+		//click=Click?
+		public Assignment getClickAssignment_4() { return cClickAssignment_4; }
+		
+		//Click
+		public RuleCall getClickClickParserRuleCall_4_0() { return cClickClickParserRuleCall_4_0; }
 	}
 	public class ClickElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Click");
@@ -1291,6 +1334,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	private final ImageElements pImage;
 	private final AlignmentElements pAlignment;
 	private final SizeElements pSize;
+	private final WayElements pWay;
 	private final TableElements pTable;
 	private final TableRowElements pTableRow;
 	private final CodeElements pCode;
@@ -1328,6 +1372,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		this.pImage = new ImageElements();
 		this.pAlignment = new AlignmentElements();
 		this.pSize = new SizeElements();
+		this.pWay = new WayElements();
 		this.pTable = new TableElements();
 		this.pTableRow = new TableRowElements();
 		this.pCode = new CodeElements();
@@ -1410,7 +1455,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Authors:
-	//	"author" names+=STRING (',' names+=STRING)*;
+	//	("author" | "authors") names+=STRING (',' names+=STRING)*;
 	public AuthorsElements getAuthorsAccess() {
 		return pAuthors;
 	}
@@ -1490,7 +1535,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Block:
-	//	"block" name=STRING? "{" content=BlockableContent "}" click=Click?;
+	//	"block" name=STRING? "{" content+=BlockableContent+ "}" click=Click?;
 	public BlockElements getBlockAccess() {
 		return pBlock;
 	}
@@ -1570,13 +1615,23 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Size:
-	//	{ProportionalSize} way=("width" | "height") scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
+	//	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
 	public SizeElements getSizeAccess() {
 		return pSize;
 	}
 	
 	public ParserRule getSizeRule() {
 		return getSizeAccess().getRule();
+	}
+	
+	//Way:
+	//	{Width} "width" | {Height} "height";
+	public WayElements getWayAccess() {
+		return pWay;
+	}
+	
+	public ParserRule getWayRule() {
+		return getWayAccess().getRule();
 	}
 	
 	//Table:
@@ -1600,7 +1655,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Code:
-	//	"```" lang=ID code=STRING "```";
+	//	"```" lang=ID code=STRING "```" click=Click?;
 	public CodeElements getCodeAccess() {
 		return pCode;
 	}

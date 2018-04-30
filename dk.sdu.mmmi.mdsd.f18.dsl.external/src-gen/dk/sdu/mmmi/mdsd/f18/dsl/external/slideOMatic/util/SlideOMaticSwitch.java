@@ -217,6 +217,13 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlideOMaticPackage.WAY:
+      {
+        Way way = (Way)theEObject;
+        T result = caseWay(way);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlideOMaticPackage.TABLE:
       {
         Table table = (Table)theEObject;
@@ -301,6 +308,22 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         ExactSize exactSize = (ExactSize)theEObject;
         T result = caseExactSize(exactSize);
         if (result == null) result = caseSize(exactSize);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlideOMaticPackage.WIDTH:
+      {
+        Width width = (Width)theEObject;
+        T result = caseWidth(width);
+        if (result == null) result = caseWay(width);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlideOMaticPackage.HEIGHT:
+      {
+        Height height = (Height)theEObject;
+        T result = caseHeight(height);
+        if (result == null) result = caseWay(height);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -613,6 +636,22 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Way</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Way</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWay(Way object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Table</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -784,6 +823,38 @@ public class SlideOMaticSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExactSize(ExactSize object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Width</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Width</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWidth(Width object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Height</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Height</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseHeight(Height object)
   {
     return null;
   }

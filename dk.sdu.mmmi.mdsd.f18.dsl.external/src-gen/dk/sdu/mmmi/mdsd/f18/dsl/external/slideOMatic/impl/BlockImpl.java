@@ -7,13 +7,20 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,14 +60,14 @@ public class BlockImpl extends BlockableContentImpl implements Block
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
+   * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getContent()
    * @generated
    * @ordered
    */
-  protected BlockableContent content;
+  protected EList<BlockableContent> content;
 
   /**
    * The default value of the '{@link #getClick() <em>Click</em>}' attribute.
@@ -131,47 +138,13 @@ public class BlockImpl extends BlockableContentImpl implements Block
    * <!-- end-user-doc -->
    * @generated
    */
-  public BlockableContent getContent()
+  public EList<BlockableContent> getContent()
   {
+    if (content == null)
+    {
+      content = new EObjectContainmentEList<BlockableContent>(BlockableContent.class, this, SlideOMaticPackage.BLOCK__CONTENT);
+    }
     return content;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetContent(BlockableContent newContent, NotificationChain msgs)
-  {
-    BlockableContent oldContent = content;
-    content = newContent;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.BLOCK__CONTENT, oldContent, newContent);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setContent(BlockableContent newContent)
-  {
-    if (newContent != content)
-    {
-      NotificationChain msgs = null;
-      if (content != null)
-        msgs = ((InternalEObject)content).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.BLOCK__CONTENT, null, msgs);
-      if (newContent != null)
-        msgs = ((InternalEObject)newContent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.BLOCK__CONTENT, null, msgs);
-      msgs = basicSetContent(newContent, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.BLOCK__CONTENT, newContent, newContent));
   }
 
   /**
@@ -208,7 +181,7 @@ public class BlockImpl extends BlockableContentImpl implements Block
     switch (featureID)
     {
       case SlideOMaticPackage.BLOCK__CONTENT:
-        return basicSetContent(null, msgs);
+        return ((InternalEList<?>)getContent()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -238,6 +211,7 @@ public class BlockImpl extends BlockableContentImpl implements Block
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -247,7 +221,8 @@ public class BlockImpl extends BlockableContentImpl implements Block
         setName((String)newValue);
         return;
       case SlideOMaticPackage.BLOCK__CONTENT:
-        setContent((BlockableContent)newValue);
+        getContent().clear();
+        getContent().addAll((Collection<? extends BlockableContent>)newValue);
         return;
       case SlideOMaticPackage.BLOCK__CLICK:
         setClick((String)newValue);
@@ -270,7 +245,7 @@ public class BlockImpl extends BlockableContentImpl implements Block
         setName(NAME_EDEFAULT);
         return;
       case SlideOMaticPackage.BLOCK__CONTENT:
-        setContent((BlockableContent)null);
+        getContent().clear();
         return;
       case SlideOMaticPackage.BLOCK__CLICK:
         setClick(CLICK_EDEFAULT);
@@ -292,7 +267,7 @@ public class BlockImpl extends BlockableContentImpl implements Block
       case SlideOMaticPackage.BLOCK__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SlideOMaticPackage.BLOCK__CONTENT:
-        return content != null;
+        return content != null && !content.isEmpty();
       case SlideOMaticPackage.BLOCK__CLICK:
         return CLICK_EDEFAULT == null ? click != null : !CLICK_EDEFAULT.equals(click);
     }

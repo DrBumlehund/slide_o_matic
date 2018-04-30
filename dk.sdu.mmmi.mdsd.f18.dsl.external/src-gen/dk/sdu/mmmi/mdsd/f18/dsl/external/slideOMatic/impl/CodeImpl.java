@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CodeImpl#getLang <em>Lang</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CodeImpl#getCode <em>Code</em>}</li>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CodeImpl#getClick <em>Click</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,6 +68,26 @@ public class CodeImpl extends ContentImpl implements Code
    * @ordered
    */
   protected String code = CODE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClick()
+   * @generated
+   * @ordered
+   */
+  protected static final String CLICK_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getClick() <em>Click</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getClick()
+   * @generated
+   * @ordered
+   */
+  protected String click = CLICK_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -140,6 +161,29 @@ public class CodeImpl extends ContentImpl implements Code
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getClick()
+  {
+    return click;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setClick(String newClick)
+  {
+    String oldClick = click;
+    click = newClick;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.CODE__CLICK, oldClick, click));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -149,6 +193,8 @@ public class CodeImpl extends ContentImpl implements Code
         return getLang();
       case SlideOMaticPackage.CODE__CODE:
         return getCode();
+      case SlideOMaticPackage.CODE__CLICK:
+        return getClick();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -168,6 +214,9 @@ public class CodeImpl extends ContentImpl implements Code
         return;
       case SlideOMaticPackage.CODE__CODE:
         setCode((String)newValue);
+        return;
+      case SlideOMaticPackage.CODE__CLICK:
+        setClick((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -189,6 +238,9 @@ public class CodeImpl extends ContentImpl implements Code
       case SlideOMaticPackage.CODE__CODE:
         setCode(CODE_EDEFAULT);
         return;
+      case SlideOMaticPackage.CODE__CLICK:
+        setClick(CLICK_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -207,6 +259,8 @@ public class CodeImpl extends ContentImpl implements Code
         return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
       case SlideOMaticPackage.CODE__CODE:
         return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
+      case SlideOMaticPackage.CODE__CLICK:
+        return CLICK_EDEFAULT == null ? click != null : !CLICK_EDEFAULT.equals(click);
     }
     return super.eIsSet(featureID);
   }
@@ -226,6 +280,8 @@ public class CodeImpl extends ContentImpl implements Code
     result.append(lang);
     result.append(", code: ");
     result.append(code);
+    result.append(", click: ");
+    result.append(click);
     result.append(')');
     return result.toString();
   }

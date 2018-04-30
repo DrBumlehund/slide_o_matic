@@ -66,6 +66,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Image/click"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//Size"/>
+    <genClasses ecoreClass="SlideOMatic.ecore#//Way"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//Table">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//Table/rows"/>
     </genClasses>
@@ -75,6 +76,7 @@
     <genClasses ecoreClass="SlideOMatic.ecore#//Code">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Code/lang"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Code/code"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Code/click"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//Animation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//Animation/target"/>
@@ -88,13 +90,15 @@
     <genClasses ecoreClass="SlideOMatic.ecore#//SubSubSec"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//TOC"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//ProportionalSize">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//ProportionalSize/way"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//ProportionalSize/way"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//ProportionalSize/scale"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//ExactSize">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//ExactSize/size"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//ExactSize/unit"/>
     </genClasses>
+    <genClasses ecoreClass="SlideOMatic.ecore#//Width"/>
+    <genClasses ecoreClass="SlideOMatic.ecore#//Height"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//Move"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//Jump"/>
   </genPackages>

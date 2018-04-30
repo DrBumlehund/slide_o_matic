@@ -186,6 +186,15 @@ public interface SlideOMaticFactory extends EFactory
   Size createSize();
 
   /**
+   * Returns a new object of class '<em>Way</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Way</em>'.
+   * @generated
+   */
+  Way createWay();
+
+  /**
    * Returns a new object of class '<em>Table</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -283,6 +292,24 @@ public interface SlideOMaticFactory extends EFactory
    * @generated
    */
   ExactSize createExactSize();
+
+  /**
+   * Returns a new object of class '<em>Width</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Width</em>'.
+   * @generated
+   */
+  Width createWidth();
+
+  /**
+   * Returns a new object of class '<em>Height</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Height</em>'.
+   * @generated
+   */
+  Height createHeight();
 
   /**
    * Returns a new object of class '<em>Move</em>'.

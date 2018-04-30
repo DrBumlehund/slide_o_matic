@@ -83,6 +83,7 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.FLOATS: return createFloats();
       case SlideOMaticPackage.IMAGE: return createImage();
       case SlideOMaticPackage.SIZE: return createSize();
+      case SlideOMaticPackage.WAY: return createWay();
       case SlideOMaticPackage.TABLE: return createTable();
       case SlideOMaticPackage.TABLE_ROW: return createTableRow();
       case SlideOMaticPackage.CODE: return createCode();
@@ -94,6 +95,8 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.TOC: return createTOC();
       case SlideOMaticPackage.PROPORTIONAL_SIZE: return createProportionalSize();
       case SlideOMaticPackage.EXACT_SIZE: return createExactSize();
+      case SlideOMaticPackage.WIDTH: return createWidth();
+      case SlideOMaticPackage.HEIGHT: return createHeight();
       case SlideOMaticPackage.MOVE: return createMove();
       case SlideOMaticPackage.JUMP: return createJump();
       default:
@@ -304,6 +307,17 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
+  public Way createWay()
+  {
+    WayImpl way = new WayImpl();
+    return way;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Table createTable()
   {
     TableImpl table = new TableImpl();
@@ -418,6 +432,28 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
   {
     ExactSizeImpl exactSize = new ExactSizeImpl();
     return exactSize;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Width createWidth()
+  {
+    WidthImpl width = new WidthImpl();
+    return width;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Height createHeight()
+  {
+    HeightImpl height = new HeightImpl();
+    return height;
   }
 
   /**

@@ -3,6 +3,7 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,30 +52,20 @@ public interface Block extends BlockableContent
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Content</b></em>' containment reference.
+   * Returns the value of the '<em><b>Content</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Content</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Content</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Content</em>' containment reference.
-   * @see #setContent(BlockableContent)
+   * @return the value of the '<em>Content</em>' containment reference list.
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getBlock_Content()
    * @model containment="true"
    * @generated
    */
-  BlockableContent getContent();
-
-  /**
-   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block#getContent <em>Content</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Content</em>' containment reference.
-   * @see #getContent()
-   * @generated
-   */
-  void setContent(BlockableContent value);
+  EList<BlockableContent> getContent();
 
   /**
    * Returns the value of the '<em><b>Click</b></em>' attribute.

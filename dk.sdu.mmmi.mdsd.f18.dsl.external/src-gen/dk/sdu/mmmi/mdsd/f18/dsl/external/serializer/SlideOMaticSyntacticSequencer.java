@@ -11,6 +11,7 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
@@ -21,11 +22,13 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class SlideOMaticSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SlideOMaticGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1;
 	protected AbstractElementAlias match_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SlideOMaticGrammarAccess) access;
+		match_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAuthorsAccess().getAuthorKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getAuthorsAccess().getAuthorsKeyword_0_1()));
 		match_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPresentationAccess().getLeftParenthesisKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getPresentationAccess().getRightParenthesisKeyword_4_5()));
 	}
 	
@@ -41,12 +44,25 @@ public class SlideOMaticSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q.equals(syntax))
+			if (match_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1.equals(syntax))
+				emit_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q.equals(syntax))
 				emit_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     'author' | 'authors'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) names+=STRING
+	 */
+	protected void emit_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Ambiguous syntax:
 	 *     ('(' ')')?

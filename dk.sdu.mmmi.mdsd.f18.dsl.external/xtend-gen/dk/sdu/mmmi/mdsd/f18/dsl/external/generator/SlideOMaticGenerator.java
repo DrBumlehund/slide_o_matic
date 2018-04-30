@@ -7,6 +7,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
@@ -31,6 +32,8 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Way;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -302,9 +305,14 @@ public class SlideOMaticGenerator extends AbstractGenerator {
           }
         }
         _builder.newLineIfNotEmpty();
-        CharSequence _generateContentsCode = this.generateContentsCode(((Block)c).getContent());
-        _builder.append(_generateContentsCode);
-        _builder.newLineIfNotEmpty();
+        {
+          EList<BlockableContent> _content = ((Block)c).getContent();
+          for(final BlockableContent bc : _content) {
+            CharSequence _generateContentsCode = this.generateContentsCode(bc);
+            _builder.append(_generateContentsCode);
+            _builder.newLineIfNotEmpty();
+          }
+        }
         _builder.append("\\end{block}");
         {
           String _click = ((Block)c).getClick();
@@ -325,7 +333,7 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     if (!_matched) {
       if (c instanceof Floats) {
         _matched=true;
-        _switchResult = this.generateFloatCode(c);
+        _switchResult = this.generateFloatCode(((Floats)c));
       }
     }
     if (!_matched) {
@@ -342,6 +350,14 @@ public class SlideOMaticGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
         _builder.append("\\end{minted}");
         _builder.newLine();
+        {
+          String _click = ((Code)c).getClick();
+          boolean _tripleNotEquals = (_click != null);
+          if (_tripleNotEquals) {
+            _builder.append("\\pause");
+          }
+        }
+        _builder.newLineIfNotEmpty();
         _switchResult = _builder;
       }
     }
@@ -418,6 +434,8 @@ public class SlideOMaticGenerator extends AbstractGenerator {
   
   protected CharSequence _generateFloatCode(final Image i) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\begin{center}");
+    _builder.newLine();
     _builder.append("\\includegraphics[");
     CharSequence _string = this.getString(i.getSize());
     _builder.append(_string);
@@ -433,6 +451,8 @@ public class SlideOMaticGenerator extends AbstractGenerator {
       }
     }
     _builder.newLineIfNotEmpty();
+    _builder.append("\\end{center}");
+    _builder.newLine();
     return _builder;
   }
   
@@ -446,18 +466,17 @@ public class SlideOMaticGenerator extends AbstractGenerator {
       _matched=true;
       StringConcatenation _builder = new StringConcatenation();
       {
-        String _way = ((ProportionalSize)s).getWay();
-        boolean _tripleEquals = (_way == "width");
-        if (_tripleEquals) {
+        Way _way = ((ProportionalSize)s).getWay();
+        if ((_way instanceof Width)) {
           _builder.append("width=");
           int _scale = ((ProportionalSize)s).getScale();
-          int _divide = (_scale / 100);
+          float _divide = (_scale / 100f);
           _builder.append(_divide);
           _builder.append("\\textwidth");
         } else {
           _builder.append("height=");
           int _scale_1 = ((ProportionalSize)s).getScale();
-          int _divide_1 = (_scale_1 / 100);
+          float _divide_1 = (_scale_1 / 100f);
           _builder.append(_divide_1);
           _builder.append("\\textheight");
         }
@@ -515,10 +534,6 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _generateFloatCode(final Code c) {
-    return null;
-  }
-  
   /**
    * Function to check if the slide contains code
    * used to add the "[fragile]" to the slide, in order to support minted.
@@ -544,13 +559,11 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     }
   }
   
-  public CharSequence generateFloatCode(final Content i) {
+  public CharSequence generateFloatCode(final Floats i) {
     if (i instanceof Image) {
       return _generateFloatCode((Image)i);
     } else if (i instanceof Table) {
       return _generateFloatCode((Table)i);
-    } else if (i instanceof Code) {
-      return _generateFloatCode((Code)i);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(i).toString());
