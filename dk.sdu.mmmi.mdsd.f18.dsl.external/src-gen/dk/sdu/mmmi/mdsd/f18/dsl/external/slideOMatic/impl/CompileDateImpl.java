@@ -3,26 +3,26 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Blockable Content</b></em>'.
+ * An implementation of the model object '<em><b>Compile Date</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class BlockableContentImpl extends ContentImpl implements BlockableContent
+public class CompileDateImpl extends DateImpl implements CompileDate
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected BlockableContentImpl()
+  protected CompileDateImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class BlockableContentImpl extends ContentImpl implements BlockableConten
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.BLOCKABLE_CONTENT;
+    return SlideOMaticPackage.Literals.COMPILE_DATE;
   }
 
-} //BlockableContentImpl
+} //CompileDateImpl

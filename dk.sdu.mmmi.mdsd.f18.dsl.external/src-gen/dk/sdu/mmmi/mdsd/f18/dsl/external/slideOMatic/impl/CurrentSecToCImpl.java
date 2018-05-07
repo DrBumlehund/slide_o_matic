@@ -3,26 +3,26 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>To C</b></em>'.
+ * An implementation of the model object '<em><b>Current Sec To C</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ToCImpl extends ContentImpl implements ToC
+public class CurrentSecToCImpl extends ToCImpl implements CurrentSecToC
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ToCImpl()
+  protected CurrentSecToCImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class ToCImpl extends ContentImpl implements ToC
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.TO_C;
+    return SlideOMaticPackage.Literals.CURRENT_SEC_TO_C;
   }
 
-} //ToCImpl
+} //CurrentSecToCImpl

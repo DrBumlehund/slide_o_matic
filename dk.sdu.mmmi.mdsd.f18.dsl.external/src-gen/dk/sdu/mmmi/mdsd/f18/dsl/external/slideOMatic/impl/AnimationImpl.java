@@ -5,7 +5,7 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
@@ -44,7 +44,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
    * @generated
    * @ordered
    */
-  protected Floats target;
+  protected Image target;
 
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
@@ -112,12 +112,12 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
    * <!-- end-user-doc -->
    * @generated
    */
-  public Floats getTarget()
+  public Image getTarget()
   {
     if (target != null && target.eIsProxy())
     {
       InternalEObject oldTarget = (InternalEObject)target;
-      target = (Floats)eResolveProxy(oldTarget);
+      target = (Image)eResolveProxy(oldTarget);
       if (target != oldTarget)
       {
         if (eNotificationRequired())
@@ -132,7 +132,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
    * <!-- end-user-doc -->
    * @generated
    */
-  public Floats basicGetTarget()
+  public Image basicGetTarget()
   {
     return target;
   }
@@ -142,9 +142,9 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(Floats newTarget)
+  public void setTarget(Image newTarget)
   {
-    Floats oldTarget = target;
+    Image oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.ANIMATION__TARGET, oldTarget, target));
@@ -321,7 +321,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
     switch (featureID)
     {
       case SlideOMaticPackage.ANIMATION__TARGET:
-        setTarget((Floats)newValue);
+        setTarget((Image)newValue);
         return;
       case SlideOMaticPackage.ANIMATION__TYPE:
         setType((AnimationType)newValue);
@@ -347,7 +347,7 @@ public class AnimationImpl extends MinimalEObjectImpl.Container implements Anima
     switch (featureID)
     {
       case SlideOMaticPackage.ANIMATION__TARGET:
-        setTarget((Floats)null);
+        setTarget((Image)null);
         return;
       case SlideOMaticPackage.ANIMATION__TYPE:
         setType((AnimationType)null);

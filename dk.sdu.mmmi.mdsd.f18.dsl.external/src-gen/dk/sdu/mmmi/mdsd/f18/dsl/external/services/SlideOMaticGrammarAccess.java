@@ -453,24 +453,40 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Date");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDateKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cDateAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cDateSTRINGTerminalRuleCall_1_0 = (RuleCall)cDateAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cDateAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final RuleCall cDateSTRINGTerminalRuleCall_1_0_0 = (RuleCall)cDateAssignment_1_0.eContents().get(0);
+		private final Group cGroup_1_1 = (Group)cAlternatives_1.eContents().get(1);
+		private final Action cCompileDateAction_1_1_0 = (Action)cGroup_1_1.eContents().get(0);
+		private final Keyword cAsteriskKeyword_1_1_1 = (Keyword)cGroup_1_1.eContents().get(1);
 		
 		//Date:
-		//	"date" date=STRING;
+		//	"date" (date=STRING | {CompileDate} "*");
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"date" date=STRING
+		//"date" (date=STRING | {CompileDate} "*")
 		public Group getGroup() { return cGroup; }
 		
 		//"date"
 		public Keyword getDateKeyword_0() { return cDateKeyword_0; }
 		
+		//date=STRING | {CompileDate} "*"
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
+		
 		//date=STRING
-		public Assignment getDateAssignment_1() { return cDateAssignment_1; }
+		public Assignment getDateAssignment_1_0() { return cDateAssignment_1_0; }
 		
 		//STRING
-		public RuleCall getDateSTRINGTerminalRuleCall_1_0() { return cDateSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getDateSTRINGTerminalRuleCall_1_0_0() { return cDateSTRINGTerminalRuleCall_1_0_0; }
+		
+		//{CompileDate} "*"
+		public Group getGroup_1_1() { return cGroup_1_1; }
+		
+		//{CompileDate}
+		public Action getCompileDateAction_1_1_0() { return cCompileDateAction_1_1_0; }
+		
+		//"*"
+		public Keyword getAsteriskKeyword_1_1_1() { return cAsteriskKeyword_1_1_1; }
 	}
 	public class SlideElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Slide");
@@ -584,92 +600,108 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class ContentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Content");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cTOCAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cToCKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final RuleCall cBlockableContentParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cCodeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final RuleCall cToCParserRuleCall_0_0 = (RuleCall)cAlternatives_0.eContents().get(0);
+		private final RuleCall cTextParserRuleCall_0_1 = (RuleCall)cAlternatives_0.eContents().get(1);
+		private final RuleCall cBlockParserRuleCall_0_2 = (RuleCall)cAlternatives_0.eContents().get(2);
+		private final RuleCall cListParserRuleCall_0_3 = (RuleCall)cAlternatives_0.eContents().get(3);
+		private final RuleCall cImageParserRuleCall_0_4 = (RuleCall)cAlternatives_0.eContents().get(4);
+		private final RuleCall cTableParserRuleCall_0_5 = (RuleCall)cAlternatives_0.eContents().get(5);
+		private final RuleCall cCodeParserRuleCall_0_6 = (RuleCall)cAlternatives_0.eContents().get(6);
+		private final Assignment cClickAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cClickClickParserRuleCall_1_0 = (RuleCall)cClickAssignment_1.eContents().get(0);
 		
 		//Content:
-		//	{TOC} "ToC" | BlockableContent | Code;
+		//	(ToC | Text | Block | List | Image | Table | Code) click=Click?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TOC} "ToC" | BlockableContent | Code
+		//(ToC | Text | Block | List | Image | Table | Code) click=Click?
+		public Group getGroup() { return cGroup; }
+		
+		//ToC | Text | Block | List | Image | Table | Code
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//ToC
+		public RuleCall getToCParserRuleCall_0_0() { return cToCParserRuleCall_0_0; }
+		
+		//Text
+		public RuleCall getTextParserRuleCall_0_1() { return cTextParserRuleCall_0_1; }
+		
+		//Block
+		public RuleCall getBlockParserRuleCall_0_2() { return cBlockParserRuleCall_0_2; }
+		
+		//List
+		public RuleCall getListParserRuleCall_0_3() { return cListParserRuleCall_0_3; }
+		
+		//Image
+		public RuleCall getImageParserRuleCall_0_4() { return cImageParserRuleCall_0_4; }
+		
+		//Table
+		public RuleCall getTableParserRuleCall_0_5() { return cTableParserRuleCall_0_5; }
+		
+		//Code
+		public RuleCall getCodeParserRuleCall_0_6() { return cCodeParserRuleCall_0_6; }
+		
+		//click=Click?
+		public Assignment getClickAssignment_1() { return cClickAssignment_1; }
+		
+		//Click
+		public RuleCall getClickClickParserRuleCall_1_0() { return cClickClickParserRuleCall_1_0; }
+	}
+	public class ToCElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.ToC");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cToCAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cToCKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cCurrentSecToCAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cToCKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Keyword cAsteriskKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		
+		//ToC:
+		//	{ToC} "ToC" | {CurrentSecToC} "ToC" "*";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{ToC} "ToC" | {CurrentSecToC} "ToC" "*"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//{TOC} "ToC"
+		//{ToC} "ToC"
 		public Group getGroup_0() { return cGroup_0; }
 		
-		//{TOC}
-		public Action getTOCAction_0_0() { return cTOCAction_0_0; }
+		//{ToC}
+		public Action getToCAction_0_0() { return cToCAction_0_0; }
 		
 		//"ToC"
 		public Keyword getToCKeyword_0_1() { return cToCKeyword_0_1; }
 		
-		//BlockableContent
-		public RuleCall getBlockableContentParserRuleCall_1() { return cBlockableContentParserRuleCall_1; }
+		//{CurrentSecToC} "ToC" "*"
+		public Group getGroup_1() { return cGroup_1; }
 		
-		//Code
-		public RuleCall getCodeParserRuleCall_2() { return cCodeParserRuleCall_2; }
-	}
-	public class BlockableContentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.BlockableContent");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cTextParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cBlockParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cListParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cFloatsParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		//{CurrentSecToC}
+		public Action getCurrentSecToCAction_1_0() { return cCurrentSecToCAction_1_0; }
 		
-		//BlockableContent:
-		//	Text | Block | List | Floats;
-		@Override public ParserRule getRule() { return rule; }
+		//"ToC"
+		public Keyword getToCKeyword_1_1() { return cToCKeyword_1_1; }
 		
-		//Text | Block | List | Floats
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Text
-		public RuleCall getTextParserRuleCall_0() { return cTextParserRuleCall_0; }
-		
-		//Block
-		public RuleCall getBlockParserRuleCall_1() { return cBlockParserRuleCall_1; }
-		
-		//List
-		public RuleCall getListParserRuleCall_2() { return cListParserRuleCall_2; }
-		
-		//Floats
-		public RuleCall getFloatsParserRuleCall_3() { return cFloatsParserRuleCall_3; }
+		//"*"
+		public Keyword getAsteriskKeyword_1_2() { return cAsteriskKeyword_1_2; }
 	}
 	public class TextElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Text");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cGreaterThanSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cTextAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTextSTRINGTerminalRuleCall_1_0 = (RuleCall)cTextAssignment_1.eContents().get(0);
-		private final Assignment cClickAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cClickClickParserRuleCall_2_0 = (RuleCall)cClickAssignment_2.eContents().get(0);
+		private final Assignment cTextAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cTextSTRINGTerminalRuleCall_0 = (RuleCall)cTextAssignment.eContents().get(0);
 		
 		//Text:
-		//	">" text=STRING click=Click?;
+		//	text=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//">" text=STRING click=Click?
-		public Group getGroup() { return cGroup; }
-		
-		//">"
-		public Keyword getGreaterThanSignKeyword_0() { return cGreaterThanSignKeyword_0; }
-		
 		//text=STRING
-		public Assignment getTextAssignment_1() { return cTextAssignment_1; }
+		public Assignment getTextAssignment() { return cTextAssignment; }
 		
 		//STRING
-		public RuleCall getTextSTRINGTerminalRuleCall_1_0() { return cTextSTRINGTerminalRuleCall_1_0; }
-		
-		//click=Click?
-		public Assignment getClickAssignment_2() { return cClickAssignment_2; }
-		
-		//Click
-		public RuleCall getClickClickParserRuleCall_2_0() { return cClickClickParserRuleCall_2_0; }
+		public RuleCall getTextSTRINGTerminalRuleCall_0() { return cTextSTRINGTerminalRuleCall_0; }
 	}
 	public class BlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Block");
@@ -679,16 +711,14 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cContentAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cContentBlockableContentParserRuleCall_3_0 = (RuleCall)cContentAssignment_3.eContents().get(0);
+		private final RuleCall cContentContentParserRuleCall_3_0 = (RuleCall)cContentAssignment_3.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cClickAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cClickClickParserRuleCall_5_0 = (RuleCall)cClickAssignment_5.eContents().get(0);
 		
 		//Block:
-		//	"block" name=STRING? "{" content+=BlockableContent+ "}" click=Click?;
+		//	"block" name=STRING? "{" content+=Content+ "}";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"block" name=STRING? "{" content+=BlockableContent+ "}" click=Click?
+		//"block" name=STRING? "{" content+=Content+ "}"
 		public Group getGroup() { return cGroup; }
 		
 		//"block"
@@ -703,20 +733,14 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		//"{"
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//content+=BlockableContent+
+		//content+=Content+
 		public Assignment getContentAssignment_3() { return cContentAssignment_3; }
 		
-		//BlockableContent
-		public RuleCall getContentBlockableContentParserRuleCall_3_0() { return cContentBlockableContentParserRuleCall_3_0; }
+		//Content
+		public RuleCall getContentContentParserRuleCall_3_0() { return cContentContentParserRuleCall_3_0; }
 		
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-		
-		//click=Click?
-		public Assignment getClickAssignment_5() { return cClickAssignment_5; }
-		
-		//Click
-		public RuleCall getClickClickParserRuleCall_5_0() { return cClickClickParserRuleCall_5_0; }
 	}
 	public class ListElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.List");
@@ -834,25 +858,6 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		//Click
 		public RuleCall getClickClickParserRuleCall_3_0() { return cClickClickParserRuleCall_3_0; }
 	}
-	public class FloatsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Floats");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cImageParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cTableParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//Floats:
-		//	Image | Table;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//Image | Table
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//Image
-		public RuleCall getImageParserRuleCall_0() { return cImageParserRuleCall_0; }
-		
-		//Table
-		public RuleCall getTableParserRuleCall_1() { return cTableParserRuleCall_1; }
-	}
 	public class ImageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Image");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -866,14 +871,12 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAlignmentAlignmentParserRuleCall_4_0 = (RuleCall)cAlignmentAssignment_4.eContents().get(0);
 		private final Assignment cSizeAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cSizeSizeParserRuleCall_5_0 = (RuleCall)cSizeAssignment_5.eContents().get(0);
-		private final Assignment cClickAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cClickClickParserRuleCall_6_0 = (RuleCall)cClickAssignment_6.eContents().get(0);
 		
 		//Image:
-		//	"img" name=ID "src" src=STRING alignment=Alignment? size=Size click=Click?;
+		//	"img" name=ID "src" src=STRING alignment=Alignment? size=Size;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"img" name=ID "src" src=STRING alignment=Alignment? size=Size click=Click?
+		//"img" name=ID "src" src=STRING alignment=Alignment? size=Size
 		public Group getGroup() { return cGroup; }
 		
 		//"img"
@@ -905,12 +908,6 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Size
 		public RuleCall getSizeSizeParserRuleCall_5_0() { return cSizeSizeParserRuleCall_5_0; }
-		
-		//click=Click?
-		public Assignment getClickAssignment_6() { return cClickAssignment_6; }
-		
-		//Click
-		public RuleCall getClickClickParserRuleCall_6_0() { return cClickClickParserRuleCall_6_0; }
 	}
 	public class AlignmentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Alignment");
@@ -1176,14 +1173,12 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cCodeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cCodeSTRINGTerminalRuleCall_2_0 = (RuleCall)cCodeAssignment_2.eContents().get(0);
 		private final Keyword cGraveAccentGraveAccentGraveAccentKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cClickAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cClickClickParserRuleCall_4_0 = (RuleCall)cClickAssignment_4.eContents().get(0);
 		
 		//Code:
-		//	"```" lang=ID code=STRING "```" click=Click?;
+		//	"```" lang=ID code=STRING "```";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"```" lang=ID code=STRING "```" click=Click?
+		//"```" lang=ID code=STRING "```"
 		public Group getGroup() { return cGroup; }
 		
 		//"```"
@@ -1203,12 +1198,6 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"```"
 		public Keyword getGraveAccentGraveAccentGraveAccentKeyword_3() { return cGraveAccentGraveAccentGraveAccentKeyword_3; }
-		
-		//click=Click?
-		public Assignment getClickAssignment_4() { return cClickAssignment_4; }
-		
-		//Click
-		public RuleCall getClickClickParserRuleCall_4_0() { return cClickClickParserRuleCall_4_0; }
 	}
 	public class ClickElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Click");
@@ -1226,8 +1215,8 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cAnimateKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cTargetAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTargetFloatsCrossReference_1_0 = (CrossReference)cTargetAssignment_1.eContents().get(0);
-		private final RuleCall cTargetFloatsIDTerminalRuleCall_1_0_1 = (RuleCall)cTargetFloatsCrossReference_1_0.eContents().get(1);
+		private final CrossReference cTargetImageCrossReference_1_0 = (CrossReference)cTargetAssignment_1.eContents().get(0);
+		private final RuleCall cTargetImageIDTerminalRuleCall_1_0_1 = (RuleCall)cTargetImageCrossReference_1_0.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeAnimationTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final Keyword cToKeyword_3 = (Keyword)cGroup.eContents().get(3);
@@ -1237,23 +1226,23 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSizeSizeParserRuleCall_5_0 = (RuleCall)cSizeAssignment_5.eContents().get(0);
 		
 		//Animation:
-		//	"animate" target=[Floats] type=AnimationType "to" location=Alignment size=Size?;
+		//	"animate" target=[Image] type=AnimationType "to" location=Alignment size=Size?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"animate" target=[Floats] type=AnimationType "to" location=Alignment size=Size?
+		//"animate" target=[Image] type=AnimationType "to" location=Alignment size=Size?
 		public Group getGroup() { return cGroup; }
 		
 		//"animate"
 		public Keyword getAnimateKeyword_0() { return cAnimateKeyword_0; }
 		
-		//target=[Floats]
+		//target=[Image]
 		public Assignment getTargetAssignment_1() { return cTargetAssignment_1; }
 		
-		//[Floats]
-		public CrossReference getTargetFloatsCrossReference_1_0() { return cTargetFloatsCrossReference_1_0; }
+		//[Image]
+		public CrossReference getTargetImageCrossReference_1_0() { return cTargetImageCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getTargetFloatsIDTerminalRuleCall_1_0_1() { return cTargetFloatsIDTerminalRuleCall_1_0_1; }
+		public RuleCall getTargetImageIDTerminalRuleCall_1_0_1() { return cTargetImageIDTerminalRuleCall_1_0_1; }
 		
 		//type=AnimationType
 		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
@@ -1323,14 +1312,13 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	private final SlideElements pSlide;
 	private final SectionElements pSection;
 	private final ContentElements pContent;
-	private final BlockableContentElements pBlockableContent;
+	private final ToCElements pToC;
 	private final TextElements pText;
 	private final BlockElements pBlock;
 	private final ListElements pList;
 	private final NumberedListElements pNumberedList;
 	private final UnNumberedListElements pUnNumberedList;
 	private final ListItemElements pListItem;
-	private final FloatsElements pFloats;
 	private final ImageElements pImage;
 	private final AlignmentElements pAlignment;
 	private final SizeElements pSize;
@@ -1361,14 +1349,13 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		this.pSlide = new SlideElements();
 		this.pSection = new SectionElements();
 		this.pContent = new ContentElements();
-		this.pBlockableContent = new BlockableContentElements();
+		this.pToC = new ToCElements();
 		this.pText = new TextElements();
 		this.pBlock = new BlockElements();
 		this.pList = new ListElements();
 		this.pNumberedList = new NumberedListElements();
 		this.pUnNumberedList = new UnNumberedListElements();
 		this.pListItem = new ListItemElements();
-		this.pFloats = new FloatsElements();
 		this.pImage = new ImageElements();
 		this.pAlignment = new AlignmentElements();
 		this.pSize = new SizeElements();
@@ -1475,7 +1462,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Date:
-	//	"date" date=STRING;
+	//	"date" (date=STRING | {CompileDate} "*");
 	public DateElements getDateAccess() {
 		return pDate;
 	}
@@ -1505,7 +1492,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Content:
-	//	{TOC} "ToC" | BlockableContent | Code;
+	//	(ToC | Text | Block | List | Image | Table | Code) click=Click?;
 	public ContentElements getContentAccess() {
 		return pContent;
 	}
@@ -1514,18 +1501,18 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		return getContentAccess().getRule();
 	}
 	
-	//BlockableContent:
-	//	Text | Block | List | Floats;
-	public BlockableContentElements getBlockableContentAccess() {
-		return pBlockableContent;
+	//ToC:
+	//	{ToC} "ToC" | {CurrentSecToC} "ToC" "*";
+	public ToCElements getToCAccess() {
+		return pToC;
 	}
 	
-	public ParserRule getBlockableContentRule() {
-		return getBlockableContentAccess().getRule();
+	public ParserRule getToCRule() {
+		return getToCAccess().getRule();
 	}
 	
 	//Text:
-	//	">" text=STRING click=Click?;
+	//	text=STRING;
 	public TextElements getTextAccess() {
 		return pText;
 	}
@@ -1535,7 +1522,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Block:
-	//	"block" name=STRING? "{" content+=BlockableContent+ "}" click=Click?;
+	//	"block" name=STRING? "{" content+=Content+ "}";
 	public BlockElements getBlockAccess() {
 		return pBlock;
 	}
@@ -1584,18 +1571,8 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		return getListItemAccess().getRule();
 	}
 	
-	//Floats:
-	//	Image | Table;
-	public FloatsElements getFloatsAccess() {
-		return pFloats;
-	}
-	
-	public ParserRule getFloatsRule() {
-		return getFloatsAccess().getRule();
-	}
-	
 	//Image:
-	//	"img" name=ID "src" src=STRING alignment=Alignment? size=Size click=Click?;
+	//	"img" name=ID "src" src=STRING alignment=Alignment? size=Size;
 	public ImageElements getImageAccess() {
 		return pImage;
 	}
@@ -1655,7 +1632,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Code:
-	//	"```" lang=ID code=STRING "```" click=Click?;
+	//	"```" lang=ID code=STRING "```";
 	public CodeElements getCodeAccess() {
 		return pCode;
 	}
@@ -1675,7 +1652,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Animation:
-	//	"animate" target=[Floats] type=AnimationType "to" location=Alignment size=Size?;
+	//	"animate" target=[Image] type=AnimationType "to" location=Alignment size=Size?;
 	public AnimationElements getAnimationAccess() {
 		return pAnimation;
 	}

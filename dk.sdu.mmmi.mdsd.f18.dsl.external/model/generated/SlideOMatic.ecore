@@ -39,19 +39,19 @@
         eType="#//Content" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Section"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Content"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BlockableContent" eSuperTypes="#//Content"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//BlockableContent">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Content">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="click" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//BlockableContent">
+  <eClassifiers xsi:type="ecore:EClass" name="ToC" eSuperTypes="#//Content"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//Content">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//Content">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
-        eType="#//BlockableContent" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="click" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="#//Content" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//BlockableContent">
+  <eClassifiers xsi:type="ecore:EClass" name="List" eSuperTypes="#//Content">
     <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
         eType="#//ListItem" containment="true"/>
   </eClassifiers>
@@ -63,18 +63,16 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="click" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Floats" eSuperTypes="#//BlockableContent">
+  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//Content">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Image" eSuperTypes="#//Floats">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="src" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="click" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Size"/>
   <eClassifiers xsi:type="ecore:EClass" name="Way"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//Floats">
+  <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//Content">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="rows" upperBound="-1" eType="#//TableRow"
         containment="true"/>
   </eClassifiers>
@@ -85,20 +83,20 @@
   <eClassifiers xsi:type="ecore:EClass" name="Code" eSuperTypes="#//Content">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lang" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="code" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="click" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Animation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Floats"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Image"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//AnimationType"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AnimationType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompileDate" eSuperTypes="#//Date"/>
   <eClassifiers xsi:type="ecore:EClass" name="Sec" eSuperTypes="#//Section"/>
   <eClassifiers xsi:type="ecore:EClass" name="SubSec" eSuperTypes="#//Section"/>
   <eClassifiers xsi:type="ecore:EClass" name="SubSubSec" eSuperTypes="#//Section"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TOC" eSuperTypes="#//Content"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CurrentSecToC" eSuperTypes="#//ToC"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProportionalSize" eSuperTypes="#//Size">
     <eStructuralFeatures xsi:type="ecore:EReference" name="way" eType="#//Way" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

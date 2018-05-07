@@ -7,12 +7,12 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Height;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
@@ -35,6 +35,7 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Way;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width;
@@ -115,7 +116,7 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass blockableContentEClass = null;
+  private EClass toCEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,13 +159,6 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * @generated
    */
   private EClass listItemEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass floatsEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -227,6 +221,13 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass compileDateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass secEClass = null;
 
   /**
@@ -248,7 +249,7 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass tocEClass = null;
+  private EClass currentSecToCEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -600,9 +601,19 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getBlockableContent()
+  public EAttribute getContent_Click()
   {
-    return blockableContentEClass;
+    return (EAttribute)contentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getToC()
+  {
+    return toCEClass;
   }
 
   /**
@@ -623,16 +634,6 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
   public EAttribute getText_Text()
   {
     return (EAttribute)textEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getText_Click()
-  {
-    return (EAttribute)textEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -663,16 +664,6 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
   public EReference getBlock_Content()
   {
     return (EReference)blockEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getBlock_Click()
-  {
-    return (EAttribute)blockEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -760,26 +751,6 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFloats()
-  {
-    return floatsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFloats_Name()
-  {
-    return (EAttribute)floatsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getImage()
   {
     return imageEClass;
@@ -790,7 +761,7 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getImage_Src()
+  public EAttribute getImage_Name()
   {
     return (EAttribute)imageEClass.getEStructuralFeatures().get(0);
   }
@@ -800,7 +771,7 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getImage_Alignment()
+  public EAttribute getImage_Src()
   {
     return (EAttribute)imageEClass.getEStructuralFeatures().get(1);
   }
@@ -810,9 +781,9 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getImage_Size()
+  public EAttribute getImage_Alignment()
   {
-    return (EReference)imageEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)imageEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -820,9 +791,9 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getImage_Click()
+  public EReference getImage_Size()
   {
-    return (EAttribute)imageEClass.getEStructuralFeatures().get(3);
+    return (EReference)imageEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -860,9 +831,19 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getTable_Name()
+  {
+    return (EAttribute)tableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getTable_Rows()
   {
-    return (EReference)tableEClass.getEStructuralFeatures().get(0);
+    return (EReference)tableEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -913,16 +894,6 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
   public EAttribute getCode_Code()
   {
     return (EAttribute)codeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getCode_Click()
-  {
-    return (EAttribute)codeEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -990,6 +961,16 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getCompileDate()
+  {
+    return compileDateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSec()
   {
     return secEClass;
@@ -1020,9 +1001,9 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getTOC()
+  public EClass getCurrentSecToC()
   {
-    return tocEClass;
+    return currentSecToCEClass;
   }
 
   /**
@@ -1186,17 +1167,16 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
     sectionEClass = createEClass(SECTION);
 
     contentEClass = createEClass(CONTENT);
+    createEAttribute(contentEClass, CONTENT__CLICK);
 
-    blockableContentEClass = createEClass(BLOCKABLE_CONTENT);
+    toCEClass = createEClass(TO_C);
 
     textEClass = createEClass(TEXT);
     createEAttribute(textEClass, TEXT__TEXT);
-    createEAttribute(textEClass, TEXT__CLICK);
 
     blockEClass = createEClass(BLOCK);
     createEAttribute(blockEClass, BLOCK__NAME);
     createEReference(blockEClass, BLOCK__CONTENT);
-    createEAttribute(blockEClass, BLOCK__CLICK);
 
     listEClass = createEClass(LIST);
     createEReference(listEClass, LIST__ITEMS);
@@ -1210,20 +1190,18 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
     createEReference(listItemEClass, LIST_ITEM__NESTED_LIST);
     createEAttribute(listItemEClass, LIST_ITEM__CLICK);
 
-    floatsEClass = createEClass(FLOATS);
-    createEAttribute(floatsEClass, FLOATS__NAME);
-
     imageEClass = createEClass(IMAGE);
+    createEAttribute(imageEClass, IMAGE__NAME);
     createEAttribute(imageEClass, IMAGE__SRC);
     createEAttribute(imageEClass, IMAGE__ALIGNMENT);
     createEReference(imageEClass, IMAGE__SIZE);
-    createEAttribute(imageEClass, IMAGE__CLICK);
 
     sizeEClass = createEClass(SIZE);
 
     wayEClass = createEClass(WAY);
 
     tableEClass = createEClass(TABLE);
+    createEAttribute(tableEClass, TABLE__NAME);
     createEReference(tableEClass, TABLE__ROWS);
 
     tableRowEClass = createEClass(TABLE_ROW);
@@ -1232,7 +1210,6 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
     codeEClass = createEClass(CODE);
     createEAttribute(codeEClass, CODE__LANG);
     createEAttribute(codeEClass, CODE__CODE);
-    createEAttribute(codeEClass, CODE__CLICK);
 
     animationEClass = createEClass(ANIMATION);
     createEReference(animationEClass, ANIMATION__TARGET);
@@ -1242,13 +1219,15 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
 
     animationTypeEClass = createEClass(ANIMATION_TYPE);
 
+    compileDateEClass = createEClass(COMPILE_DATE);
+
     secEClass = createEClass(SEC);
 
     subSecEClass = createEClass(SUB_SEC);
 
     subSubSecEClass = createEClass(SUB_SUB_SEC);
 
-    tocEClass = createEClass(TOC);
+    currentSecToCEClass = createEClass(CURRENT_SEC_TO_C);
 
     proportionalSizeEClass = createEClass(PROPORTIONAL_SIZE);
     createEReference(proportionalSizeEClass, PROPORTIONAL_SIZE__WAY);
@@ -1296,20 +1275,20 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    blockableContentEClass.getESuperTypes().add(this.getContent());
-    textEClass.getESuperTypes().add(this.getBlockableContent());
-    blockEClass.getESuperTypes().add(this.getBlockableContent());
-    listEClass.getESuperTypes().add(this.getBlockableContent());
+    toCEClass.getESuperTypes().add(this.getContent());
+    textEClass.getESuperTypes().add(this.getContent());
+    blockEClass.getESuperTypes().add(this.getContent());
+    listEClass.getESuperTypes().add(this.getContent());
     numberedListEClass.getESuperTypes().add(this.getList());
     unNumberedListEClass.getESuperTypes().add(this.getList());
-    floatsEClass.getESuperTypes().add(this.getBlockableContent());
-    imageEClass.getESuperTypes().add(this.getFloats());
-    tableEClass.getESuperTypes().add(this.getFloats());
+    imageEClass.getESuperTypes().add(this.getContent());
+    tableEClass.getESuperTypes().add(this.getContent());
     codeEClass.getESuperTypes().add(this.getContent());
+    compileDateEClass.getESuperTypes().add(this.getDate());
     secEClass.getESuperTypes().add(this.getSection());
     subSecEClass.getESuperTypes().add(this.getSection());
     subSubSecEClass.getESuperTypes().add(this.getSection());
-    tocEClass.getESuperTypes().add(this.getContent());
+    currentSecToCEClass.getESuperTypes().add(this.getToC());
     proportionalSizeEClass.getESuperTypes().add(this.getSize());
     exactSizeEClass.getESuperTypes().add(this.getSize());
     widthEClass.getESuperTypes().add(this.getWay());
@@ -1349,17 +1328,16 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
     initEClass(sectionEClass, Section.class, "Section", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(contentEClass, Content.class, "Content", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getContent_Click(), ecorePackage.getEString(), "click", null, 0, 1, Content.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(blockableContentEClass, BlockableContent.class, "BlockableContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(toCEClass, ToC.class, "ToC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getText_Text(), ecorePackage.getEString(), "text", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getText_Click(), ecorePackage.getEString(), "click", null, 0, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getBlock_Name(), ecorePackage.getEString(), "name", null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBlock_Content(), this.getBlockableContent(), null, "content", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBlock_Click(), ecorePackage.getEString(), "click", null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBlock_Content(), this.getContent(), null, "content", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(listEClass, List.class, "List", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getList_Items(), this.getListItem(), null, "items", null, 0, -1, List.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1373,20 +1351,18 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
     initEReference(getListItem_NestedList(), this.getList(), null, "nestedList", null, 0, 1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getListItem_Click(), ecorePackage.getEString(), "click", null, 0, 1, ListItem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(floatsEClass, Floats.class, "Floats", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFloats_Name(), ecorePackage.getEString(), "name", null, 0, 1, Floats.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(imageEClass, Image.class, "Image", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getImage_Name(), ecorePackage.getEString(), "name", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_Src(), ecorePackage.getEString(), "src", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getImage_Alignment(), ecorePackage.getEString(), "alignment", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getImage_Size(), this.getSize(), null, "size", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getImage_Click(), ecorePackage.getEString(), "click", null, 0, 1, Image.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sizeEClass, Size.class, "Size", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(wayEClass, Way.class, "Way", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getTable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTable_Rows(), this.getTableRow(), null, "rows", null, 0, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(tableRowEClass, TableRow.class, "TableRow", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1395,15 +1371,16 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
     initEClass(codeEClass, Code.class, "Code", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCode_Lang(), ecorePackage.getEString(), "lang", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCode_Code(), ecorePackage.getEString(), "code", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCode_Click(), ecorePackage.getEString(), "click", null, 0, 1, Code.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(animationEClass, Animation.class, "Animation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAnimation_Target(), this.getFloats(), null, "target", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAnimation_Target(), this.getImage(), null, "target", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAnimation_Type(), this.getAnimationType(), null, "type", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAnimation_Location(), ecorePackage.getEString(), "location", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAnimation_Size(), this.getSize(), null, "size", null, 0, 1, Animation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(animationTypeEClass, AnimationType.class, "AnimationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(compileDateEClass, CompileDate.class, "CompileDate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(secEClass, Sec.class, "Sec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1411,7 +1388,7 @@ public class SlideOMaticPackageImpl extends EPackageImpl implements SlideOMaticP
 
     initEClass(subSubSecEClass, SubSubSec.class, "SubSubSec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(tocEClass, dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC.class, "TOC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEClass(currentSecToCEClass, CurrentSecToC.class, "CurrentSecToC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(proportionalSizeEClass, ProportionalSize.class, "ProportionalSize", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getProportionalSize_Way(), this.getWay(), null, "way", null, 0, 1, ProportionalSize.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

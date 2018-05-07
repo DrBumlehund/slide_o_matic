@@ -345,32 +345,50 @@ public interface SlideOMaticPackage extends EPackage
   int CONTENT = 7;
 
   /**
+   * The feature id for the '<em><b>Click</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTENT__CLICK = 0;
+
+  /**
    * The number of structural features of the '<em>Content</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTENT_FEATURE_COUNT = 0;
+  int CONTENT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.BlockableContentImpl <em>Blockable Content</em>}' class.
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ToCImpl <em>To C</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.BlockableContentImpl
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getBlockableContent()
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ToCImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getToC()
    * @generated
    */
-  int BLOCKABLE_CONTENT = 8;
+  int TO_C = 8;
 
   /**
-   * The number of structural features of the '<em>Blockable Content</em>' class.
+   * The feature id for the '<em><b>Click</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCKABLE_CONTENT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
+  int TO_C__CLICK = CONTENT__CLICK;
+
+  /**
+   * The number of structural features of the '<em>To C</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TO_C_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl <em>Text</em>}' class.
@@ -383,22 +401,22 @@ public interface SlideOMaticPackage extends EPackage
   int TEXT = 9;
 
   /**
-   * The feature id for the '<em><b>Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TEXT__TEXT = BLOCKABLE_CONTENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Click</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TEXT__CLICK = BLOCKABLE_CONTENT_FEATURE_COUNT + 1;
+  int TEXT__CLICK = CONTENT__CLICK;
+
+  /**
+   * The feature id for the '<em><b>Text</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TEXT__TEXT = CONTENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Text</em>' class.
@@ -407,7 +425,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TEXT_FEATURE_COUNT = BLOCKABLE_CONTENT_FEATURE_COUNT + 2;
+  int TEXT_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.BlockImpl <em>Block</em>}' class.
@@ -420,13 +438,22 @@ public interface SlideOMaticPackage extends EPackage
   int BLOCK = 10;
 
   /**
+   * The feature id for the '<em><b>Click</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK__CLICK = CONTENT__CLICK;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK__NAME = BLOCKABLE_CONTENT_FEATURE_COUNT + 0;
+  int BLOCK__NAME = CONTENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference list.
@@ -435,16 +462,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BLOCK__CONTENT = BLOCKABLE_CONTENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Click</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLOCK__CLICK = BLOCKABLE_CONTENT_FEATURE_COUNT + 2;
+  int BLOCK__CONTENT = CONTENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Block</em>' class.
@@ -453,7 +471,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BLOCK_FEATURE_COUNT = BLOCKABLE_CONTENT_FEATURE_COUNT + 3;
+  int BLOCK_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ListImpl <em>List</em>}' class.
@@ -466,13 +484,22 @@ public interface SlideOMaticPackage extends EPackage
   int LIST = 11;
 
   /**
+   * The feature id for the '<em><b>Click</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LIST__CLICK = CONTENT__CLICK;
+
+  /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LIST__ITEMS = BLOCKABLE_CONTENT_FEATURE_COUNT + 0;
+  int LIST__ITEMS = CONTENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>List</em>' class.
@@ -481,7 +508,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LIST_FEATURE_COUNT = BLOCKABLE_CONTENT_FEATURE_COUNT + 1;
+  int LIST_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.NumberedListImpl <em>Numbered List</em>}' class.
@@ -492,6 +519,15 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    */
   int NUMBERED_LIST = 12;
+
+  /**
+   * The feature id for the '<em><b>Click</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBERED_LIST__CLICK = LIST__CLICK;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -520,6 +556,15 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    */
   int UN_NUMBERED_LIST = 13;
+
+  /**
+   * The feature id for the '<em><b>Click</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UN_NUMBERED_LIST__CLICK = LIST__CLICK;
 
   /**
    * The feature id for the '<em><b>Items</b></em>' containment reference list.
@@ -586,34 +631,6 @@ public interface SlideOMaticPackage extends EPackage
   int LIST_ITEM_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.FloatsImpl <em>Floats</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.FloatsImpl
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getFloats()
-   * @generated
-   */
-  int FLOATS = 15;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOATS__NAME = BLOCKABLE_CONTENT_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Floats</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FLOATS_FEATURE_COUNT = BLOCKABLE_CONTENT_FEATURE_COUNT + 1;
-
-  /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl <em>Image</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -621,43 +638,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getImage()
    * @generated
    */
-  int IMAGE = 16;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMAGE__NAME = FLOATS__NAME;
-
-  /**
-   * The feature id for the '<em><b>Src</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMAGE__SRC = FLOATS_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Alignment</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMAGE__ALIGNMENT = FLOATS_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Size</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IMAGE__SIZE = FLOATS_FEATURE_COUNT + 2;
+  int IMAGE = 15;
 
   /**
    * The feature id for the '<em><b>Click</b></em>' attribute.
@@ -666,7 +647,43 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMAGE__CLICK = FLOATS_FEATURE_COUNT + 3;
+  int IMAGE__CLICK = CONTENT__CLICK;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE__NAME = CONTENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Src</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE__SRC = CONTENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Alignment</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE__ALIGNMENT = CONTENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Size</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMAGE__SIZE = CONTENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Image</em>' class.
@@ -675,7 +692,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int IMAGE_FEATURE_COUNT = FLOATS_FEATURE_COUNT + 4;
+  int IMAGE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SizeImpl <em>Size</em>}' class.
@@ -685,7 +702,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getSize()
    * @generated
    */
-  int SIZE = 17;
+  int SIZE = 16;
 
   /**
    * The number of structural features of the '<em>Size</em>' class.
@@ -704,7 +721,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getWay()
    * @generated
    */
-  int WAY = 18;
+  int WAY = 17;
 
   /**
    * The number of structural features of the '<em>Way</em>' class.
@@ -723,7 +740,16 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getTable()
    * @generated
    */
-  int TABLE = 19;
+  int TABLE = 18;
+
+  /**
+   * The feature id for the '<em><b>Click</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TABLE__CLICK = CONTENT__CLICK;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -732,7 +758,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TABLE__NAME = FLOATS__NAME;
+  int TABLE__NAME = CONTENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Rows</b></em>' containment reference list.
@@ -741,7 +767,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TABLE__ROWS = FLOATS_FEATURE_COUNT + 0;
+  int TABLE__ROWS = CONTENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Table</em>' class.
@@ -750,7 +776,7 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TABLE_FEATURE_COUNT = FLOATS_FEATURE_COUNT + 1;
+  int TABLE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TableRowImpl <em>Table Row</em>}' class.
@@ -760,7 +786,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getTableRow()
    * @generated
    */
-  int TABLE_ROW = 20;
+  int TABLE_ROW = 19;
 
   /**
    * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -788,7 +814,16 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getCode()
    * @generated
    */
-  int CODE = 21;
+  int CODE = 20;
+
+  /**
+   * The feature id for the '<em><b>Click</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CODE__CLICK = CONTENT__CLICK;
 
   /**
    * The feature id for the '<em><b>Lang</b></em>' attribute.
@@ -809,22 +844,13 @@ public interface SlideOMaticPackage extends EPackage
   int CODE__CODE = CONTENT_FEATURE_COUNT + 1;
 
   /**
-   * The feature id for the '<em><b>Click</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CODE__CLICK = CONTENT_FEATURE_COUNT + 2;
-
-  /**
    * The number of structural features of the '<em>Code</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CODE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 3;
+  int CODE_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AnimationImpl <em>Animation</em>}' class.
@@ -834,7 +860,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getAnimation()
    * @generated
    */
-  int ANIMATION = 22;
+  int ANIMATION = 21;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' reference.
@@ -889,7 +915,7 @@ public interface SlideOMaticPackage extends EPackage
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getAnimationType()
    * @generated
    */
-  int ANIMATION_TYPE = 23;
+  int ANIMATION_TYPE = 22;
 
   /**
    * The number of structural features of the '<em>Animation Type</em>' class.
@@ -899,6 +925,34 @@ public interface SlideOMaticPackage extends EPackage
    * @ordered
    */
   int ANIMATION_TYPE_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CompileDateImpl <em>Compile Date</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CompileDateImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getCompileDate()
+   * @generated
+   */
+  int COMPILE_DATE = 23;
+
+  /**
+   * The feature id for the '<em><b>Date</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILE_DATE__DATE = DATE__DATE;
+
+  /**
+   * The number of structural features of the '<em>Compile Date</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPILE_DATE_FEATURE_COUNT = DATE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SecImpl <em>Sec</em>}' class.
@@ -958,23 +1012,32 @@ public interface SlideOMaticPackage extends EPackage
   int SUB_SUB_SEC_FEATURE_COUNT = SECTION_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TOCImpl <em>TOC</em>}' class.
+   * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CurrentSecToCImpl <em>Current Sec To C</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TOCImpl
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getTOC()
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CurrentSecToCImpl
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getCurrentSecToC()
    * @generated
    */
-  int TOC = 27;
+  int CURRENT_SEC_TO_C = 27;
 
   /**
-   * The number of structural features of the '<em>TOC</em>' class.
+   * The feature id for the '<em><b>Click</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TOC_FEATURE_COUNT = CONTENT_FEATURE_COUNT + 0;
+  int CURRENT_SEC_TO_C__CLICK = TO_C__CLICK;
+
+  /**
+   * The number of structural features of the '<em>Current Sec To C</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CURRENT_SEC_TO_C_FEATURE_COUNT = TO_C_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ProportionalSizeImpl <em>Proportional Size</em>}' class.
@@ -1384,14 +1447,25 @@ public interface SlideOMaticPackage extends EPackage
   EClass getContent();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent <em>Blockable Content</em>}'.
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content#getClick <em>Click</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Blockable Content</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent
+   * @return the meta object for the attribute '<em>Click</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content#getClick()
+   * @see #getContent()
    * @generated
    */
-  EClass getBlockableContent();
+  EAttribute getContent_Click();
+
+  /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC <em>To C</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>To C</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC
+   * @generated
+   */
+  EClass getToC();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text <em>Text</em>}'.
@@ -1413,17 +1487,6 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    */
   EAttribute getText_Text();
-
-  /**
-   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text#getClick <em>Click</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Click</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text#getClick()
-   * @see #getText()
-   * @generated
-   */
-  EAttribute getText_Click();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block <em>Block</em>}'.
@@ -1456,17 +1519,6 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    */
   EReference getBlock_Content();
-
-  /**
-   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block#getClick <em>Click</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Click</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block#getClick()
-   * @see #getBlock()
-   * @generated
-   */
-  EAttribute getBlock_Click();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List <em>List</em>}'.
@@ -1553,27 +1605,6 @@ public interface SlideOMaticPackage extends EPackage
   EAttribute getListItem_Click();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats <em>Floats</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Floats</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats
-   * @generated
-   */
-  EClass getFloats();
-
-  /**
-   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats#getName()
-   * @see #getFloats()
-   * @generated
-   */
-  EAttribute getFloats_Name();
-
-  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image <em>Image</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1582,6 +1613,17 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    */
   EClass getImage();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image#getName()
+   * @see #getImage()
+   * @generated
+   */
+  EAttribute getImage_Name();
 
   /**
    * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image#getSrc <em>Src</em>}'.
@@ -1617,17 +1659,6 @@ public interface SlideOMaticPackage extends EPackage
   EReference getImage_Size();
 
   /**
-   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image#getClick <em>Click</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Click</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image#getClick()
-   * @see #getImage()
-   * @generated
-   */
-  EAttribute getImage_Click();
-
-  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size <em>Size</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1656,6 +1687,17 @@ public interface SlideOMaticPackage extends EPackage
    * @generated
    */
   EClass getTable();
+
+  /**
+   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table#getName()
+   * @see #getTable()
+   * @generated
+   */
+  EAttribute getTable_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table#getRows <em>Rows</em>}'.
@@ -1722,17 +1764,6 @@ public interface SlideOMaticPackage extends EPackage
   EAttribute getCode_Code();
 
   /**
-   * Returns the meta object for the attribute '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code#getClick <em>Click</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Click</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code#getClick()
-   * @see #getCode()
-   * @generated
-   */
-  EAttribute getCode_Click();
-
-  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation <em>Animation</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1797,6 +1828,16 @@ public interface SlideOMaticPackage extends EPackage
   EClass getAnimationType();
 
   /**
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate <em>Compile Date</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Compile Date</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate
+   * @generated
+   */
+  EClass getCompileDate();
+
+  /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec <em>Sec</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1827,14 +1868,14 @@ public interface SlideOMaticPackage extends EPackage
   EClass getSubSubSec();
 
   /**
-   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC <em>TOC</em>}'.
+   * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC <em>Current Sec To C</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>TOC</em>'.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC
+   * @return the meta object for class '<em>Current Sec To C</em>'.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC
    * @generated
    */
-  EClass getTOC();
+  EClass getCurrentSecToC();
 
   /**
    * Returns the meta object for class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize <em>Proportional Size</em>}'.
@@ -2172,14 +2213,22 @@ public interface SlideOMaticPackage extends EPackage
     EClass CONTENT = eINSTANCE.getContent();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.BlockableContentImpl <em>Blockable Content</em>}' class.
+     * The meta object literal for the '<em><b>Click</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.BlockableContentImpl
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getBlockableContent()
      * @generated
      */
-    EClass BLOCKABLE_CONTENT = eINSTANCE.getBlockableContent();
+    EAttribute CONTENT__CLICK = eINSTANCE.getContent_Click();
+
+    /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ToCImpl <em>To C</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ToCImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getToC()
+     * @generated
+     */
+    EClass TO_C = eINSTANCE.getToC();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl <em>Text</em>}' class.
@@ -2198,14 +2247,6 @@ public interface SlideOMaticPackage extends EPackage
      * @generated
      */
     EAttribute TEXT__TEXT = eINSTANCE.getText_Text();
-
-    /**
-     * The meta object literal for the '<em><b>Click</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute TEXT__CLICK = eINSTANCE.getText_Click();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.BlockImpl <em>Block</em>}' class.
@@ -2232,14 +2273,6 @@ public interface SlideOMaticPackage extends EPackage
      * @generated
      */
     EReference BLOCK__CONTENT = eINSTANCE.getBlock_Content();
-
-    /**
-     * The meta object literal for the '<em><b>Click</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BLOCK__CLICK = eINSTANCE.getBlock_Click();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ListImpl <em>List</em>}' class.
@@ -2314,24 +2347,6 @@ public interface SlideOMaticPackage extends EPackage
     EAttribute LIST_ITEM__CLICK = eINSTANCE.getListItem_Click();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.FloatsImpl <em>Floats</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.FloatsImpl
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getFloats()
-     * @generated
-     */
-    EClass FLOATS = eINSTANCE.getFloats();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FLOATS__NAME = eINSTANCE.getFloats_Name();
-
-    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl <em>Image</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2340,6 +2355,14 @@ public interface SlideOMaticPackage extends EPackage
      * @generated
      */
     EClass IMAGE = eINSTANCE.getImage();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute IMAGE__NAME = eINSTANCE.getImage_Name();
 
     /**
      * The meta object literal for the '<em><b>Src</b></em>' attribute feature.
@@ -2364,14 +2387,6 @@ public interface SlideOMaticPackage extends EPackage
      * @generated
      */
     EReference IMAGE__SIZE = eINSTANCE.getImage_Size();
-
-    /**
-     * The meta object literal for the '<em><b>Click</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute IMAGE__CLICK = eINSTANCE.getImage_Click();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SizeImpl <em>Size</em>}' class.
@@ -2402,6 +2417,14 @@ public interface SlideOMaticPackage extends EPackage
      * @generated
      */
     EClass TABLE = eINSTANCE.getTable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TABLE__NAME = eINSTANCE.getTable_Name();
 
     /**
      * The meta object literal for the '<em><b>Rows</b></em>' containment reference list feature.
@@ -2456,14 +2479,6 @@ public interface SlideOMaticPackage extends EPackage
     EAttribute CODE__CODE = eINSTANCE.getCode_Code();
 
     /**
-     * The meta object literal for the '<em><b>Click</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CODE__CLICK = eINSTANCE.getCode_Click();
-
-    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.AnimationImpl <em>Animation</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2516,6 +2531,16 @@ public interface SlideOMaticPackage extends EPackage
     EClass ANIMATION_TYPE = eINSTANCE.getAnimationType();
 
     /**
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CompileDateImpl <em>Compile Date</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CompileDateImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getCompileDate()
+     * @generated
+     */
+    EClass COMPILE_DATE = eINSTANCE.getCompileDate();
+
+    /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SecImpl <em>Sec</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2546,14 +2571,14 @@ public interface SlideOMaticPackage extends EPackage
     EClass SUB_SUB_SEC = eINSTANCE.getSubSubSec();
 
     /**
-     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TOCImpl <em>TOC</em>}' class.
+     * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CurrentSecToCImpl <em>Current Sec To C</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TOCImpl
-     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getTOC()
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CurrentSecToCImpl
+     * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.SlideOMaticPackageImpl#getCurrentSecToC()
      * @generated
      */
-    EClass TOC = eINSTANCE.getTOC();
+    EClass CURRENT_SEC_TO_C = eINSTANCE.getCurrentSecToC();
 
     /**
      * The meta object literal for the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ProportionalSizeImpl <em>Proportional Size</em>}' class.

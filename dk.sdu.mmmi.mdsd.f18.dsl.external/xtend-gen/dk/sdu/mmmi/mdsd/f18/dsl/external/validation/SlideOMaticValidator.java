@@ -3,7 +3,15 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.validation;
 
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.validation.AbstractSlideOMaticValidator;
+import java.io.File;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
 
 /**
  * This class contains custom validation rules.
@@ -12,4 +20,28 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.validation.AbstractSlideOMaticValidator
  */
 @SuppressWarnings("all")
 public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
+  public final static String UNBLOCKABLE_CONTENT = "unblockableContent";
+  
+  public final static String FILE_NOT_FOUND = "fileNotFound";
+  
+  @Check
+  public void checkUnblockableContent(final Block block) {
+    EList<Content> _content = block.getContent();
+    for (final Content content : _content) {
+      if ((content instanceof Code)) {
+        this.error("Unable to put Code in a block", SlideOMaticPackage.Literals.BLOCK__CONTENT, SlideOMaticValidator.UNBLOCKABLE_CONTENT);
+      }
+    }
+  }
+  
+  @Check
+  public void checkSource(final Image img) {
+    String _src = img.getSrc();
+    final File f = new File(_src);
+    boolean _exists = f.exists();
+    boolean _not = (!_exists);
+    if (_not) {
+      this.warning("Unable to find image source", SlideOMaticPackage.Literals.IMAGE__SRC, SlideOMaticValidator.FILE_NOT_FOUND);
+    }
+  }
 }

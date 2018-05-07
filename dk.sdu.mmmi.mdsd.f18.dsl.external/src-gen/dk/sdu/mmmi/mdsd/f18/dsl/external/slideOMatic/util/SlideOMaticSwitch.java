@@ -129,11 +129,11 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlideOMaticPackage.BLOCKABLE_CONTENT:
+      case SlideOMaticPackage.TO_C:
       {
-        BlockableContent blockableContent = (BlockableContent)theEObject;
-        T result = caseBlockableContent(blockableContent);
-        if (result == null) result = caseContent(blockableContent);
+        ToC toC = (ToC)theEObject;
+        T result = caseToC(toC);
+        if (result == null) result = caseContent(toC);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -141,7 +141,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
       {
         Text text = (Text)theEObject;
         T result = caseText(text);
-        if (result == null) result = caseBlockableContent(text);
         if (result == null) result = caseContent(text);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -150,7 +149,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
       {
         Block block = (Block)theEObject;
         T result = caseBlock(block);
-        if (result == null) result = caseBlockableContent(block);
         if (result == null) result = caseContent(block);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -159,7 +157,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
       {
         List list = (List)theEObject;
         T result = caseList(list);
-        if (result == null) result = caseBlockableContent(list);
         if (result == null) result = caseContent(list);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -169,7 +166,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         NumberedList numberedList = (NumberedList)theEObject;
         T result = caseNumberedList(numberedList);
         if (result == null) result = caseList(numberedList);
-        if (result == null) result = caseBlockableContent(numberedList);
         if (result == null) result = caseContent(numberedList);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -179,7 +175,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         UnNumberedList unNumberedList = (UnNumberedList)theEObject;
         T result = caseUnNumberedList(unNumberedList);
         if (result == null) result = caseList(unNumberedList);
-        if (result == null) result = caseBlockableContent(unNumberedList);
         if (result == null) result = caseContent(unNumberedList);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -191,21 +186,10 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlideOMaticPackage.FLOATS:
-      {
-        Floats floats = (Floats)theEObject;
-        T result = caseFloats(floats);
-        if (result == null) result = caseBlockableContent(floats);
-        if (result == null) result = caseContent(floats);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SlideOMaticPackage.IMAGE:
       {
         Image image = (Image)theEObject;
         T result = caseImage(image);
-        if (result == null) result = caseFloats(image);
-        if (result == null) result = caseBlockableContent(image);
         if (result == null) result = caseContent(image);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -228,8 +212,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
       {
         Table table = (Table)theEObject;
         T result = caseTable(table);
-        if (result == null) result = caseFloats(table);
-        if (result == null) result = caseBlockableContent(table);
         if (result == null) result = caseContent(table);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -263,6 +245,14 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlideOMaticPackage.COMPILE_DATE:
+      {
+        CompileDate compileDate = (CompileDate)theEObject;
+        T result = caseCompileDate(compileDate);
+        if (result == null) result = caseDate(compileDate);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlideOMaticPackage.SEC:
       {
         Sec sec = (Sec)theEObject;
@@ -287,11 +277,12 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlideOMaticPackage.TOC:
+      case SlideOMaticPackage.CURRENT_SEC_TO_C:
       {
-        TOC toc = (TOC)theEObject;
-        T result = caseTOC(toc);
-        if (result == null) result = caseContent(toc);
+        CurrentSecToC currentSecToC = (CurrentSecToC)theEObject;
+        T result = caseCurrentSecToC(currentSecToC);
+        if (result == null) result = caseToC(currentSecToC);
+        if (result == null) result = caseContent(currentSecToC);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -476,17 +467,17 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Blockable Content</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>To C</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Blockable Content</em>'.
+   * @return the result of interpreting the object as an instance of '<em>To C</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseBlockableContent(BlockableContent object)
+  public T caseToC(ToC object)
   {
     return null;
   }
@@ -583,22 +574,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseListItem(ListItem object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Floats</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Floats</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFloats(Floats object)
   {
     return null;
   }
@@ -732,6 +707,22 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Compile Date</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Compile Date</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCompileDate(CompileDate object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Sec</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -780,17 +771,17 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>TOC</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Current Sec To C</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>TOC</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Current Sec To C</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseTOC(TOC object)
+  public T caseCurrentSecToC(CurrentSecToC object)
   {
     return null;
   }

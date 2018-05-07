@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.sdu.dk/mmmi/mdsd/f18/dsl/external/SlideOMatic"
+			class = "dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage"
+			genModel = "model/generated/SlideOMatic.genmodel" />
+	</extension>
+</plugin>

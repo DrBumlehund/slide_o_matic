@@ -7,12 +7,12 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List;
@@ -26,11 +26,11 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Way;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width;
@@ -55,7 +55,6 @@ public class SlideOMaticGenerator extends AbstractGenerator {
   }
   
   public void doGenerateTexFile(final Presentation p, final IFileSystemAccess2 fsa) {
-    System.out.println(this.generateTexCode(p));
     String _name = p.getName();
     String _plus = (_name + ".tex");
     fsa.generateFile(_plus, this.generateTexCode(p));
@@ -157,9 +156,20 @@ public class SlideOMaticGenerator extends AbstractGenerator {
       Date _date = p.getDate();
       boolean _tripleNotEquals_5 = (_date != null);
       if (_tripleNotEquals_5) {
+        {
+          Date _date_1 = p.getDate();
+          boolean _not = (!(_date_1 instanceof CompileDate));
+          if (_not) {
+            _builder.append("\\date{");
+            String _date_2 = p.getDate().getDate();
+            _builder.append(_date_2);
+            _builder.append("}");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+      } else {
         _builder.append("\\date{");
-        String _date_1 = p.getDate().getDate();
-        _builder.append(_date_1);
+        _builder.append(" ");
         _builder.append("}");
         _builder.newLineIfNotEmpty();
       }
@@ -265,11 +275,18 @@ public class SlideOMaticGenerator extends AbstractGenerator {
   public CharSequence generateContentsCode(final Content c) {
     CharSequence _switchResult = null;
     boolean _matched = false;
-    if (c instanceof TOC) {
+    if (c instanceof ToC) {
       _matched=true;
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("\\tableofcontents");
-      _switchResult = _builder;
+      {
+        if ((c instanceof CurrentSecToC)) {
+          _builder.append("[sections=\\value{section}]");
+        } else {
+          _builder.append("[hideallsubsections]");
+        }
+      }
+      _switchResult = _builder.toString();
     }
     if (!_matched) {
       if (c instanceof Text) {
@@ -279,14 +296,7 @@ public class SlideOMaticGenerator extends AbstractGenerator {
         String _text = ((Text)c).getText();
         _builder.append(_text);
         _builder.append("}");
-        {
-          String _click = ((Text)c).getClick();
-          boolean _tripleNotEquals = (_click != null);
-          if (_tripleNotEquals) {
-            _builder.append("\\pause");
-          }
-        }
-        _switchResult = _builder;
+        _switchResult = _builder.toString();
       }
     }
     if (!_matched) {
@@ -306,22 +316,15 @@ public class SlideOMaticGenerator extends AbstractGenerator {
         }
         _builder.newLineIfNotEmpty();
         {
-          EList<BlockableContent> _content = ((Block)c).getContent();
-          for(final BlockableContent bc : _content) {
+          EList<Content> _content = ((Block)c).getContent();
+          for(final Content bc : _content) {
             CharSequence _generateContentsCode = this.generateContentsCode(bc);
             _builder.append(_generateContentsCode);
             _builder.newLineIfNotEmpty();
           }
         }
         _builder.append("\\end{block}");
-        {
-          String _click = ((Block)c).getClick();
-          boolean _tripleNotEquals_1 = (_click != null);
-          if (_tripleNotEquals_1) {
-            _builder.append("\\pause");
-          }
-        }
-        _switchResult = _builder;
+        _switchResult = _builder.toString();
       }
     }
     if (!_matched) {
@@ -331,9 +334,65 @@ public class SlideOMaticGenerator extends AbstractGenerator {
       }
     }
     if (!_matched) {
-      if (c instanceof Floats) {
+      if (c instanceof Image) {
         _matched=true;
-        _switchResult = this.generateFloatCode(((Floats)c));
+        String _xblockexpression = null;
+        {
+          final String src = ((Image)c).getSrc().replace("\\", "/");
+          StringConcatenation _builder = new StringConcatenation();
+          _builder.append("\\begin{center}");
+          _builder.newLine();
+          _builder.append("\\includegraphics[");
+          CharSequence _string = this.getString(((Image)c).getSize());
+          _builder.append(_string);
+          _builder.append("]{");
+          _builder.append(src);
+          _builder.append("}");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\\end{center}");
+          _builder.newLine();
+          _xblockexpression = _builder.toString();
+        }
+        _switchResult = _xblockexpression;
+      }
+    }
+    if (!_matched) {
+      if (c instanceof Table) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("\\begin{tabular}{");
+        {
+          EList<TableRow> _rows = ((Table)c).getRows();
+          for(final TableRow i : _rows) {
+            _builder.append("|c");
+          }
+        }
+        _builder.append("|}");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\\hline");
+        _builder.newLine();
+        {
+          EList<TableRow> _rows_1 = ((Table)c).getRows();
+          for(final TableRow row : _rows_1) {
+            {
+              EList<String> _values = row.getValues();
+              boolean _hasElements = false;
+              for(final String v : _values) {
+                if (!_hasElements) {
+                  _hasElements = true;
+                } else {
+                  _builder.appendImmediate(" & ", "");
+                }
+                _builder.append(v);
+              }
+            }
+            _builder.append(" \\\\ \\hline");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("\\end{tabular}");
+        _builder.newLine();
+        _switchResult = _builder.toString();
       }
     }
     if (!_matched) {
@@ -350,18 +409,18 @@ public class SlideOMaticGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
         _builder.append("\\end{minted}");
         _builder.newLine();
-        {
-          String _click = ((Code)c).getClick();
-          boolean _tripleNotEquals = (_click != null);
-          if (_tripleNotEquals) {
-            _builder.append("\\pause");
-          }
-        }
-        _builder.newLineIfNotEmpty();
-        _switchResult = _builder;
+        _switchResult = _builder.toString();
       }
     }
-    return _switchResult;
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      String _click = c.getClick();
+      boolean _tripleNotEquals = (_click != null);
+      if (_tripleNotEquals) {
+        _builder.append("\\pause");
+      }
+    }
+    return (_switchResult + _builder.toString());
   }
   
   protected CharSequence _generateListsCode(final NumberedList nl) {
@@ -432,30 +491,6 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _generateFloatCode(final Image i) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\\begin{center}");
-    _builder.newLine();
-    _builder.append("\\includegraphics[");
-    CharSequence _string = this.getString(i.getSize());
-    _builder.append(_string);
-    _builder.append("]{");
-    String _src = i.getSrc();
-    _builder.append(_src);
-    _builder.append("} ");
-    {
-      String _click = i.getClick();
-      boolean _tripleNotEquals = (_click != null);
-      if (_tripleNotEquals) {
-        _builder.append("\\pause");
-      }
-    }
-    _builder.newLineIfNotEmpty();
-    _builder.append("\\end{center}");
-    _builder.newLine();
-    return _builder;
-  }
-  
   /**
    * Function to convert the size of floats into the correct LaTeX string.
    */
@@ -497,43 +532,6 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _switchResult;
   }
   
-  protected CharSequence _generateFloatCode(final Table t) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\\begin{tabular}{");
-    {
-      EList<TableRow> _rows = t.getRows();
-      for(final TableRow c : _rows) {
-        _builder.append("|c");
-      }
-    }
-    _builder.append("|}");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\\hline");
-    _builder.newLine();
-    {
-      EList<TableRow> _rows_1 = t.getRows();
-      for(final TableRow row : _rows_1) {
-        {
-          EList<String> _values = row.getValues();
-          boolean _hasElements = false;
-          for(final String v : _values) {
-            if (!_hasElements) {
-              _hasElements = true;
-            } else {
-              _builder.appendImmediate(" & ", "");
-            }
-            _builder.append(v);
-          }
-        }
-        _builder.append(" \\\\ \\hline");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("\\end{tabular}");
-    _builder.newLine();
-    return _builder;
-  }
-  
   /**
    * Function to check if the slide contains code
    * used to add the "[fragile]" to the slide, in order to support minted.
@@ -556,17 +554,6 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(nl).toString());
-    }
-  }
-  
-  public CharSequence generateFloatCode(final Floats i) {
-    if (i instanceof Image) {
-      return _generateFloatCode((Image)i);
-    } else if (i instanceof Table) {
-      return _generateFloatCode((Table)i);
-    } else {
-      throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(i).toString());
     }
   }
 }

@@ -6,14 +6,14 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>TOC</b></em>'.
+ * A representation of the model object '<em><b>To C</b></em>'.
  * <!-- end-user-doc -->
  *
  *
- * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getTOC()
+ * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getToC()
  * @model
  * @generated
  */
-public interface TOC extends Content
+public interface ToC extends Content
 {
-} // TOC
+} // ToC

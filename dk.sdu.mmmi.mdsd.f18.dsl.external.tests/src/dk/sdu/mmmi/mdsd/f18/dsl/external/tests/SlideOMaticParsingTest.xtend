@@ -3,13 +3,8 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.tests
 
-import com.google.inject.Inject
-//import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Model
 import org.eclipse.xtext.testing.InjectWith
 import org.eclipse.xtext.testing.XtextRunner
-import org.eclipse.xtext.testing.util.ParseHelper
-import org.junit.Assert
-import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(XtextRunner)

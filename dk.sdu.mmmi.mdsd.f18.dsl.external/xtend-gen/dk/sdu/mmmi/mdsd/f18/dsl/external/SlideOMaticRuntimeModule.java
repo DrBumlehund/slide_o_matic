@@ -3,11 +3,19 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external;
 
+import com.google.inject.Binder;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.AbstractSlideOMaticRuntimeModule;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.UTF8EncodingProvider;
+import org.eclipse.xtext.parser.IEncodingProvider;
+import org.eclipse.xtext.service.DispatchingProvider;
 
 /**
  * Use this class to register components to be used at runtime / without the Equinox extension registry.
  */
 @SuppressWarnings("all")
 public class SlideOMaticRuntimeModule extends AbstractSlideOMaticRuntimeModule {
+  @Override
+  public void configureRuntimeEncodingProvider(final Binder binder) {
+    binder.<IEncodingProvider>bind(IEncodingProvider.class).annotatedWith(DispatchingProvider.Runtime.class).to(UTF8EncodingProvider.class);
+  }
 }

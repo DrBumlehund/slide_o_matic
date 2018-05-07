@@ -29,7 +29,7 @@ Institute:
 	"institute" name=STRING;
 
 Date:
-	"date" date=STRING;
+	"date" (date=STRING | {CompileDate} "*");
 
 Slide:
 	"slide" (sec=Section name=STRING | name=STRING)? "{" contents+=Content+ "}";
@@ -38,16 +38,16 @@ Section:
 	{Sec} "*" | {SubSec} "**" | {SubSubSec} "***";
 
 Content:
-	{TOC} "ToC" |BlockableContent| Code;
+	(ToC | Text | Block | List | Image | Table | Code) (click=Click)?;
 
-BlockableContent:
-	 Text | Block | List | Floats;
+ToC:
+	{ToC} "ToC" | {CurrentSecToC} "ToC" "*";
 
 Text:
-	">" text=STRING (click=Click)?;
+	text=STRING;
 
 Block:
-	"block" (name=STRING)? "{" content+=BlockableContent+ "}" (click=Click)?;
+	"block" (name=STRING)? "{" content+=Content+ "}";
 
 List:
 	NumberedList | UnNumberedList;
@@ -61,11 +61,8 @@ UnNumberedList:
 ListItem:
 	"-" item=STRING ("(" nestedList=List ")")? (click=Click)?;
 
-Floats:
-	Image | Table;
-
 Image:
-	"img" name=ID "src" src=STRING (alignment=Alignment)? (size=Size) (click=Click)?;
+	"img" name=ID "src" src=STRING (alignment=Alignment)? (size=Size);
 
 Alignment:
 	"topleft" | "top" | "topright" | "left" | "center" | "right" | "bottomleft" | "bottom" | "bottomright";
@@ -73,9 +70,8 @@ Alignment:
 Size:
 	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
 
-Way :
-	{Width} "width" | {Height} "height"
-;
+Way:
+	{Width} "width" | {Height} "height";
 
 Table:
 	"tab" name=ID "[" rows+=TableRow ("," rows+=TableRow)* "]";
@@ -84,13 +80,13 @@ TableRow:
 	"[" values+=STRING ("," values+=STRING)* "]";
 
 Code:
-	"```" lang=ID code=STRING "```"  (click=Click)?;
+	"```" lang=ID code=STRING "```";
 
 Click:
 	"$$";
 
 Animation:
-	"animate" target=[Floats] type=AnimationType "to" location=Alignment (size=Size)?;
+	"animate" target=[Image] type=AnimationType "to" location=Alignment (size=Size)?;
 
 AnimationType:
 	{Move} "move" | {Jump} "jump";

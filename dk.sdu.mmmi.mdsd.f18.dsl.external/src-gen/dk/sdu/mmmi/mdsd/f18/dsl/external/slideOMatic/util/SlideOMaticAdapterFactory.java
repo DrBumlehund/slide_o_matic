@@ -116,9 +116,9 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createContentAdapter();
       }
       @Override
-      public Adapter caseBlockableContent(BlockableContent object)
+      public Adapter caseToC(ToC object)
       {
-        return createBlockableContentAdapter();
+        return createToCAdapter();
       }
       @Override
       public Adapter caseText(Text object)
@@ -149,11 +149,6 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
       public Adapter caseListItem(ListItem object)
       {
         return createListItemAdapter();
-      }
-      @Override
-      public Adapter caseFloats(Floats object)
-      {
-        return createFloatsAdapter();
       }
       @Override
       public Adapter caseImage(Image object)
@@ -196,6 +191,11 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createAnimationTypeAdapter();
       }
       @Override
+      public Adapter caseCompileDate(CompileDate object)
+      {
+        return createCompileDateAdapter();
+      }
+      @Override
       public Adapter caseSec(Sec object)
       {
         return createSecAdapter();
@@ -211,9 +211,9 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createSubSubSecAdapter();
       }
       @Override
-      public Adapter caseTOC(TOC object)
+      public Adapter caseCurrentSecToC(CurrentSecToC object)
       {
-        return createTOCAdapter();
+        return createCurrentSecToCAdapter();
       }
       @Override
       public Adapter caseProportionalSize(ProportionalSize object)
@@ -388,16 +388,16 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent <em>Blockable Content</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC <em>To C</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.BlockableContent
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC
    * @generated
    */
-  public Adapter createBlockableContentAdapter()
+  public Adapter createToCAdapter()
   {
     return null;
   }
@@ -488,21 +488,6 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createListItemAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats <em>Floats</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats
-   * @generated
-   */
-  public Adapter createFloatsAdapter()
   {
     return null;
   }
@@ -628,6 +613,21 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate <em>Compile Date</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate
+   * @generated
+   */
+  public Adapter createCompileDateAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec <em>Sec</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -673,16 +673,16 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC <em>TOC</em>}'.
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC <em>Current Sec To C</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC
    * @generated
    */
-  public Adapter createTOCAdapter()
+  public Adapter createCurrentSecToCAdapter()
   {
     return null;
   }

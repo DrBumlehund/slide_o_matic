@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface List extends BlockableContent
+public interface List extends Content
 {
   /**
    * Returns the value of the '<em><b>Items</b></em>' containment reference list.

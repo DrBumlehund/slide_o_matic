@@ -35,16 +35,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//Slide/contents"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//Section"/>
-    <genClasses ecoreClass="SlideOMatic.ecore#//Content"/>
-    <genClasses ecoreClass="SlideOMatic.ecore#//BlockableContent"/>
+    <genClasses ecoreClass="SlideOMatic.ecore#//Content">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Content/click"/>
+    </genClasses>
+    <genClasses ecoreClass="SlideOMatic.ecore#//ToC"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//Text">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Text/text"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Text/click"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//Block">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Block/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//Block/content"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Block/click"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//List">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//List/items"/>
@@ -56,18 +56,16 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//ListItem/nestedList"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//ListItem/click"/>
     </genClasses>
-    <genClasses ecoreClass="SlideOMatic.ecore#//Floats">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Floats/name"/>
-    </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//Image">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Image/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Image/src"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Image/alignment"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//Image/size"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Image/click"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//Size"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//Way"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//Table">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Table/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//Table/rows"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//TableRow">
@@ -76,7 +74,6 @@
     <genClasses ecoreClass="SlideOMatic.ecore#//Code">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Code/lang"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Code/code"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//Code/click"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//Animation">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//Animation/target"/>
@@ -85,10 +82,11 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//Animation/size"/>
     </genClasses>
     <genClasses ecoreClass="SlideOMatic.ecore#//AnimationType"/>
+    <genClasses ecoreClass="SlideOMatic.ecore#//CompileDate"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//Sec"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//SubSec"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//SubSubSec"/>
-    <genClasses ecoreClass="SlideOMatic.ecore#//TOC"/>
+    <genClasses ecoreClass="SlideOMatic.ecore#//CurrentSecToC"/>
     <genClasses ecoreClass="SlideOMatic.ecore#//ProportionalSize">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SlideOMatic.ecore#//ProportionalSize/way"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SlideOMatic.ecore#//ProportionalSize/scale"/>

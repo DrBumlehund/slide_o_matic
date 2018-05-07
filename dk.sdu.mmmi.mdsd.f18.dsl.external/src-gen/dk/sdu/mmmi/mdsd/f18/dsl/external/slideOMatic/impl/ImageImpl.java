@@ -23,16 +23,36 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl#getName <em>Name</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl#getSrc <em>Src</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl#getAlignment <em>Alignment</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl#getSize <em>Size</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.ImageImpl#getClick <em>Click</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ImageImpl extends FloatsImpl implements Image
+public class ImageImpl extends ContentImpl implements Image
 {
+  /**
+   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected static final String NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getName()
+   * @generated
+   * @ordered
+   */
+  protected String name = NAME_EDEFAULT;
+
   /**
    * The default value of the '{@link #getSrc() <em>Src</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -84,26 +104,6 @@ public class ImageImpl extends FloatsImpl implements Image
   protected Size size;
 
   /**
-   * The default value of the '{@link #getClick() <em>Click</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getClick()
-   * @generated
-   * @ordered
-   */
-  protected static final String CLICK_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getClick() <em>Click</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getClick()
-   * @generated
-   * @ordered
-   */
-  protected String click = CLICK_EDEFAULT;
-
-  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -122,6 +122,29 @@ public class ImageImpl extends FloatsImpl implements Image
   protected EClass eStaticClass()
   {
     return SlideOMaticPackage.Literals.IMAGE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getName()
+  {
+    return name;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setName(String newName)
+  {
+    String oldName = name;
+    name = newName;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.IMAGE__NAME, oldName, name));
   }
 
   /**
@@ -223,29 +246,6 @@ public class ImageImpl extends FloatsImpl implements Image
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getClick()
-  {
-    return click;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setClick(String newClick)
-  {
-    String oldClick = click;
-    click = newClick;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.IMAGE__CLICK, oldClick, click));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -267,14 +267,14 @@ public class ImageImpl extends FloatsImpl implements Image
   {
     switch (featureID)
     {
+      case SlideOMaticPackage.IMAGE__NAME:
+        return getName();
       case SlideOMaticPackage.IMAGE__SRC:
         return getSrc();
       case SlideOMaticPackage.IMAGE__ALIGNMENT:
         return getAlignment();
       case SlideOMaticPackage.IMAGE__SIZE:
         return getSize();
-      case SlideOMaticPackage.IMAGE__CLICK:
-        return getClick();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -289,6 +289,9 @@ public class ImageImpl extends FloatsImpl implements Image
   {
     switch (featureID)
     {
+      case SlideOMaticPackage.IMAGE__NAME:
+        setName((String)newValue);
+        return;
       case SlideOMaticPackage.IMAGE__SRC:
         setSrc((String)newValue);
         return;
@@ -297,9 +300,6 @@ public class ImageImpl extends FloatsImpl implements Image
         return;
       case SlideOMaticPackage.IMAGE__SIZE:
         setSize((Size)newValue);
-        return;
-      case SlideOMaticPackage.IMAGE__CLICK:
-        setClick((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -315,6 +315,9 @@ public class ImageImpl extends FloatsImpl implements Image
   {
     switch (featureID)
     {
+      case SlideOMaticPackage.IMAGE__NAME:
+        setName(NAME_EDEFAULT);
+        return;
       case SlideOMaticPackage.IMAGE__SRC:
         setSrc(SRC_EDEFAULT);
         return;
@@ -323,9 +326,6 @@ public class ImageImpl extends FloatsImpl implements Image
         return;
       case SlideOMaticPackage.IMAGE__SIZE:
         setSize((Size)null);
-        return;
-      case SlideOMaticPackage.IMAGE__CLICK:
-        setClick(CLICK_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -341,14 +341,14 @@ public class ImageImpl extends FloatsImpl implements Image
   {
     switch (featureID)
     {
+      case SlideOMaticPackage.IMAGE__NAME:
+        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case SlideOMaticPackage.IMAGE__SRC:
         return SRC_EDEFAULT == null ? src != null : !SRC_EDEFAULT.equals(src);
       case SlideOMaticPackage.IMAGE__ALIGNMENT:
         return ALIGNMENT_EDEFAULT == null ? alignment != null : !ALIGNMENT_EDEFAULT.equals(alignment);
       case SlideOMaticPackage.IMAGE__SIZE:
         return size != null;
-      case SlideOMaticPackage.IMAGE__CLICK:
-        return CLICK_EDEFAULT == null ? click != null : !CLICK_EDEFAULT.equals(click);
     }
     return super.eIsSet(featureID);
   }
@@ -364,12 +364,12 @@ public class ImageImpl extends FloatsImpl implements Image
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (src: ");
+    result.append(" (name: ");
+    result.append(name);
+    result.append(", src: ");
     result.append(src);
     result.append(", alignment: ");
     result.append(alignment);
-    result.append(", click: ");
-    result.append(click);
     result.append(')');
     return result.toString();
   }

@@ -762,19 +762,35 @@ ruleDate returns [EObject current=null]
 		}
 		(
 			(
-				lv_date_1_0=RULE_STRING
-				{
-					newLeafNode(lv_date_1_0, grammarAccess.getDateAccess().getDateSTRINGTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getDateRule());
+				(
+					lv_date_1_0=RULE_STRING
+					{
+						newLeafNode(lv_date_1_0, grammarAccess.getDateAccess().getDateSTRINGTerminalRuleCall_1_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"date",
-						lv_date_1_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getDateRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"date",
+							lv_date_1_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			    |
+			(
+				(
+					{
+						$current = forceCreateModelElement(
+							grammarAccess.getDateAccess().getCompileDateAction_1_1_0(),
+							$current);
+					}
+				)
+				otherlv_3='*'
+				{
+					newLeafNode(otherlv_3, grammarAccess.getDateAccess().getAsteriskKeyword_1_1_1());
 				}
 			)
 		)
@@ -968,48 +984,100 @@ ruleContent returns [EObject current=null]
 }:
 	(
 		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getContentAccess().getTOCAction_0_0(),
-						$current);
-				}
-			)
-			otherlv_1='ToC'
 			{
-				newLeafNode(otherlv_1, grammarAccess.getContentAccess().getToCKeyword_0_1());
+				newCompositeNode(grammarAccess.getContentAccess().getToCParserRuleCall_0_0());
+			}
+			this_ToC_0=ruleToC
+			{
+				$current = $this_ToC_0.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getContentAccess().getTextParserRuleCall_0_1());
+			}
+			this_Text_1=ruleText
+			{
+				$current = $this_Text_1.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getContentAccess().getBlockParserRuleCall_0_2());
+			}
+			this_Block_2=ruleBlock
+			{
+				$current = $this_Block_2.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getContentAccess().getListParserRuleCall_0_3());
+			}
+			this_List_3=ruleList
+			{
+				$current = $this_List_3.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getContentAccess().getImageParserRuleCall_0_4());
+			}
+			this_Image_4=ruleImage
+			{
+				$current = $this_Image_4.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getContentAccess().getTableParserRuleCall_0_5());
+			}
+			this_Table_5=ruleTable
+			{
+				$current = $this_Table_5.current;
+				afterParserOrEnumRuleCall();
+			}
+			    |
+			{
+				newCompositeNode(grammarAccess.getContentAccess().getCodeParserRuleCall_0_6());
+			}
+			this_Code_6=ruleCode
+			{
+				$current = $this_Code_6.current;
+				afterParserOrEnumRuleCall();
 			}
 		)
-		    |
-		{
-			newCompositeNode(grammarAccess.getContentAccess().getBlockableContentParserRuleCall_1());
-		}
-		this_BlockableContent_2=ruleBlockableContent
-		{
-			$current = $this_BlockableContent_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getContentAccess().getCodeParserRuleCall_2());
-		}
-		this_Code_3=ruleCode
-		{
-			$current = $this_Code_3.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getContentAccess().getClickClickParserRuleCall_1_0());
+				}
+				lv_click_7_0=ruleClick
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getContentRule());
+					}
+					set(
+						$current,
+						"click",
+						lv_click_7_0,
+						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Click");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
 	)
 ;
 
-// Entry rule entryRuleBlockableContent
-entryRuleBlockableContent returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBlockableContentRule()); }
-	iv_ruleBlockableContent=ruleBlockableContent
-	{ $current=$iv_ruleBlockableContent.current; }
+// Entry rule entryRuleToC
+entryRuleToC returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getToCRule()); }
+	iv_ruleToC=ruleToC
+	{ $current=$iv_ruleToC.current; }
 	EOF;
 
-// Rule BlockableContent
-ruleBlockableContent returns [EObject current=null]
+// Rule ToC
+ruleToC returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1017,41 +1085,37 @@ ruleBlockableContent returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		{
-			newCompositeNode(grammarAccess.getBlockableContentAccess().getTextParserRuleCall_0());
-		}
-		this_Text_0=ruleText
-		{
-			$current = $this_Text_0.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getToCAccess().getToCAction_0_0(),
+						$current);
+				}
+			)
+			otherlv_1='ToC'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getToCAccess().getToCKeyword_0_1());
+			}
+		)
 		    |
-		{
-			newCompositeNode(grammarAccess.getBlockableContentAccess().getBlockParserRuleCall_1());
-		}
-		this_Block_1=ruleBlock
-		{
-			$current = $this_Block_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getBlockableContentAccess().getListParserRuleCall_2());
-		}
-		this_List_2=ruleList
-		{
-			$current = $this_List_2.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getBlockableContentAccess().getFloatsParserRuleCall_3());
-		}
-		this_Floats_3=ruleFloats
-		{
-			$current = $this_Floats_3.current;
-			afterParserOrEnumRuleCall();
-		}
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getToCAccess().getCurrentSecToCAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_3='ToC'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getToCAccess().getToCKeyword_1_1());
+			}
+			otherlv_4='*'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getToCAccess().getAsteriskKeyword_1_2());
+			}
+		)
 	)
 ;
 
@@ -1071,47 +1135,22 @@ ruleText returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='>'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getTextAccess().getGreaterThanSignKeyword_0());
-		}
 		(
-			(
-				lv_text_1_0=RULE_STRING
-				{
-					newLeafNode(lv_text_1_0, grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_1_0());
+			lv_text_0_0=RULE_STRING
+			{
+				newLeafNode(lv_text_0_0, grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_0());
+			}
+			{
+				if ($current==null) {
+					$current = createModelElement(grammarAccess.getTextRule());
 				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTextRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"text",
-						lv_text_1_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
+				setWithLastConsumed(
+					$current,
+					"text",
+					lv_text_0_0,
+					"org.eclipse.xtext.common.Terminals.STRING");
+			}
 		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getTextAccess().getClickClickParserRuleCall_2_0());
-				}
-				lv_click_2_0=ruleClick
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTextRule());
-					}
-					set(
-						$current,
-						"click",
-						lv_click_2_0,
-						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Click");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
 	)
 ;
 
@@ -1160,9 +1199,9 @@ ruleBlock returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBlockAccess().getContentBlockableContentParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getBlockAccess().getContentContentParserRuleCall_3_0());
 				}
-				lv_content_3_0=ruleBlockableContent
+				lv_content_3_0=ruleContent
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBlockRule());
@@ -1171,7 +1210,7 @@ ruleBlock returns [EObject current=null]
 						$current,
 						"content",
 						lv_content_3_0,
-						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.BlockableContent");
+						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Content");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1180,25 +1219,6 @@ ruleBlock returns [EObject current=null]
 		{
 			newLeafNode(otherlv_4, grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_4());
 		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getBlockAccess().getClickClickParserRuleCall_5_0());
-				}
-				lv_click_5_0=ruleClick
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBlockRule());
-					}
-					set(
-						$current,
-						"click",
-						lv_click_5_0,
-						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Click");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
 	)
 ;
 
@@ -1411,42 +1431,6 @@ ruleListItem returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleFloats
-entryRuleFloats returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getFloatsRule()); }
-	iv_ruleFloats=ruleFloats
-	{ $current=$iv_ruleFloats.current; }
-	EOF;
-
-// Rule Floats
-ruleFloats returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getFloatsAccess().getImageParserRuleCall_0());
-		}
-		this_Image_0=ruleImage
-		{
-			$current = $this_Image_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getFloatsAccess().getTableParserRuleCall_1());
-		}
-		this_Table_1=ruleTable
-		{
-			$current = $this_Table_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
 // Entry rule entryRuleImage
 entryRuleImage returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getImageRule()); }
@@ -1545,25 +1529,6 @@ ruleImage returns [EObject current=null]
 				}
 			)
 		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getImageAccess().getClickClickParserRuleCall_6_0());
-				}
-				lv_click_6_0=ruleClick
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getImageRule());
-					}
-					set(
-						$current,
-						"click",
-						lv_click_6_0,
-						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Click");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
 	)
 ;
 
@@ -2042,25 +2007,6 @@ ruleCode returns [EObject current=null]
 		{
 			newLeafNode(otherlv_3, grammarAccess.getCodeAccess().getGraveAccentGraveAccentGraveAccentKeyword_3());
 		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getCodeAccess().getClickClickParserRuleCall_4_0());
-				}
-				lv_click_4_0=ruleClick
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCodeRule());
-					}
-					set(
-						$current,
-						"click",
-						lv_click_4_0,
-						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Click");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
 	)
 ;
 
@@ -2115,7 +2061,7 @@ ruleAnimation returns [EObject current=null]
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getAnimationAccess().getTargetFloatsCrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getAnimationAccess().getTargetImageCrossReference_1_0());
 				}
 			)
 		)

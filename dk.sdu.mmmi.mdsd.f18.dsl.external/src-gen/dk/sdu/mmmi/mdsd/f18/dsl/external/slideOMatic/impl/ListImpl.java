@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class ListImpl extends BlockableContentImpl implements List
+public class ListImpl extends ContentImpl implements List
 {
   /**
    * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.

@@ -12,4 +12,5 @@ Require-Bundle: dk.sdu.mmmi.mdsd.f18.dsl.external,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: dk.sdu.mmmi.mdsd.f18.dsl.external.ide.contentassist.antlr.internal,
  dk.sdu.mmmi.mdsd.f18.dsl.external.ide.contentassist.antlr
+Automatic-Module-Name: dk.sdu.mmmi.mdsd.f18.dsl.external.ide
 

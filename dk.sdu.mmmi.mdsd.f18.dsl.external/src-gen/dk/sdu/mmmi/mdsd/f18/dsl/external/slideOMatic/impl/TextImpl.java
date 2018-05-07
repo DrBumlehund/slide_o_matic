@@ -21,12 +21,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl#getText <em>Text</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.TextImpl#getClick <em>Click</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class TextImpl extends BlockableContentImpl implements Text
+public class TextImpl extends ContentImpl implements Text
 {
   /**
    * The default value of the '{@link #getText() <em>Text</em>}' attribute.
@@ -47,26 +46,6 @@ public class TextImpl extends BlockableContentImpl implements Text
    * @ordered
    */
   protected String text = TEXT_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getClick() <em>Click</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getClick()
-   * @generated
-   * @ordered
-   */
-  protected static final String CLICK_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getClick() <em>Click</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getClick()
-   * @generated
-   * @ordered
-   */
-  protected String click = CLICK_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,29 +96,6 @@ public class TextImpl extends BlockableContentImpl implements Text
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getClick()
-  {
-    return click;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setClick(String newClick)
-  {
-    String oldClick = click;
-    click = newClick;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.TEXT__CLICK, oldClick, click));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -147,8 +103,6 @@ public class TextImpl extends BlockableContentImpl implements Text
     {
       case SlideOMaticPackage.TEXT__TEXT:
         return getText();
-      case SlideOMaticPackage.TEXT__CLICK:
-        return getClick();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -165,9 +119,6 @@ public class TextImpl extends BlockableContentImpl implements Text
     {
       case SlideOMaticPackage.TEXT__TEXT:
         setText((String)newValue);
-        return;
-      case SlideOMaticPackage.TEXT__CLICK:
-        setClick((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,9 +137,6 @@ public class TextImpl extends BlockableContentImpl implements Text
       case SlideOMaticPackage.TEXT__TEXT:
         setText(TEXT_EDEFAULT);
         return;
-      case SlideOMaticPackage.TEXT__CLICK:
-        setClick(CLICK_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -205,8 +153,6 @@ public class TextImpl extends BlockableContentImpl implements Text
     {
       case SlideOMaticPackage.TEXT__TEXT:
         return TEXT_EDEFAULT == null ? text != null : !TEXT_EDEFAULT.equals(text);
-      case SlideOMaticPackage.TEXT__CLICK:
-        return CLICK_EDEFAULT == null ? click != null : !CLICK_EDEFAULT.equals(click);
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +170,6 @@ public class TextImpl extends BlockableContentImpl implements Text
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (text: ");
     result.append(text);
-    result.append(", click: ");
-    result.append(click);
     result.append(')');
     return result.toString();
   }

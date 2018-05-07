@@ -7,7 +7,6 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Floats
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList
@@ -19,7 +18,6 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TOC
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList
@@ -28,6 +26,9 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate
 
 /**
  * Generates code from your model files on save.
@@ -37,11 +38,12 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width
 class SlideOMaticGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+
 		resource.allContents.filter(Presentation).next.doGenerateTexFile(fsa)
+
 	}
 
 	def void doGenerateTexFile(Presentation p, IFileSystemAccess2 fsa) {
-		System.out.println(p.generateTexCode)
 		fsa.generateFile(p.name + ".tex", p.generateTexCode)
 	}
 
@@ -75,7 +77,11 @@ class SlideOMaticGenerator extends AbstractGenerator {
 				\institute{«p.institute.name»}
 			«ENDIF»
 			«IF p.date !== null»
-				\date{«p.date.date»}
+				«IF !(p.date instanceof CompileDate)»
+					\date{«p.date.date»}
+				«ENDIF»
+			«ELSE»
+				\date{«" "»}
 			«ENDIF»
 			
 			\begin{document}
@@ -116,34 +122,48 @@ class SlideOMaticGenerator extends AbstractGenerator {
 
 	def CharSequence generateContentsCode(Content c) {
 		switch c {
-			TOC: '''
-			\tableofcontents'''
+			ToC: '''
+			\tableofcontents«IF c instanceof CurrentSecToC»[sections=\value{section}]«ELSE»[hideallsubsections]«ENDIF»'''
 			Text: '''
-			{«c.text»}«IF c.click !== null»\pause«ENDIF»'''
+			{«c.text»}'''
 			Block: '''
 			\begin{block}«IF c.name !== null»{«c.name»}«ENDIF»
 			«FOR bc : c.content»
 				«bc.generateContentsCode»
 			«ENDFOR»
-			\end{block}«IF c.click !== null»\pause«ENDIF»'''
+			\end{block}'''
 			List:
 				c.generateListsCode
-			Floats:
-				c.generateFloatCode
+			Image: {
+				val src = c.src.replace("\\", "/")
+				'''
+					\begin{center}
+					\includegraphics[«c.size.getString»]{«src»}
+					\end{center}
+				'''
+
+			}
+			Table: '''
+				\begin{tabular}{«FOR i : c.rows»|c«ENDFOR»|}
+				\hline
+				«FOR row : c.rows»
+					«FOR v: row.values SEPARATOR " & "»«v»«ENDFOR» \\ \hline
+				«ENDFOR»
+				\end{tabular}
+			'''
 			Code: '''
 				\begin{minted}{«c.lang»}
 				«c.code»
 				\end{minted}
-				«IF c.click !== null»\pause«ENDIF»
 			'''
-		}
+		} + '''«IF c.click !== null»\pause«ENDIF»'''
 	}
 
 	def dispatch CharSequence generateListsCode(NumberedList nl) {
 		'''
 			\begin{enumerate}
 			«FOR i : nl.items»
-				\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateListsCode»«ENDIF» «IF i.click !== null»\pause«ENDIF»
+				\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateListsCode»«ENDIF»«IF i.click !== null»\pause«ENDIF»
 			«ENDFOR»
 			\end{enumerate}
 		'''
@@ -153,17 +173,9 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		'''
 			\begin{itemize}
 			«FOR i : nl.items»
-				\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateListsCode»«ENDIF» «IF i.click !== null»\pause«ENDIF»
+				\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateListsCode»«ENDIF»«IF i.click !== null»\pause«ENDIF»
 			«ENDFOR»
 			\end{itemize}
-		'''
-	}
-
-	def dispatch CharSequence generateFloatCode(Image i) {
-		'''
-			\begin{center}
-			\includegraphics[«i.size.getString»]{«i.src»} «IF i.click !== null»\pause«ENDIF»
-			\end{center}
 		'''
 	}
 
@@ -175,17 +187,6 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			ProportionalSize: '''«IF s.way instanceof Width»width=«(s.scale/100f)»\textwidth«ELSE»height=«(s.scale/100f)»\textheight«ENDIF»'''
 			ExactSize: '''«s.size»«s.unit»'''
 		}
-	}
-
-	def dispatch CharSequence generateFloatCode(Table t) {
-		'''
-			\begin{tabular}{«FOR c : t.rows»|c«ENDFOR»|}
-			\hline
-			«FOR row : t.rows»
-				«FOR v: row.values SEPARATOR " & "»«v»«ENDFOR» \\ \hline
-			«ENDFOR»
-			\end{tabular}
-		'''
 	}
 
 	/**

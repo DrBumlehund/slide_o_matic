@@ -96,13 +96,13 @@ public interface SlideOMaticFactory extends EFactory
   Content createContent();
 
   /**
-   * Returns a new object of class '<em>Blockable Content</em>'.
+   * Returns a new object of class '<em>To C</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Blockable Content</em>'.
+   * @return a new object of class '<em>To C</em>'.
    * @generated
    */
-  BlockableContent createBlockableContent();
+  ToC createToC();
 
   /**
    * Returns a new object of class '<em>Text</em>'.
@@ -157,15 +157,6 @@ public interface SlideOMaticFactory extends EFactory
    * @generated
    */
   ListItem createListItem();
-
-  /**
-   * Returns a new object of class '<em>Floats</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Floats</em>'.
-   * @generated
-   */
-  Floats createFloats();
 
   /**
    * Returns a new object of class '<em>Image</em>'.
@@ -240,6 +231,15 @@ public interface SlideOMaticFactory extends EFactory
   AnimationType createAnimationType();
 
   /**
+   * Returns a new object of class '<em>Compile Date</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Compile Date</em>'.
+   * @generated
+   */
+  CompileDate createCompileDate();
+
+  /**
    * Returns a new object of class '<em>Sec</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -267,13 +267,13 @@ public interface SlideOMaticFactory extends EFactory
   SubSubSec createSubSubSec();
 
   /**
-   * Returns a new object of class '<em>TOC</em>'.
+   * Returns a new object of class '<em>Current Sec To C</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>TOC</em>'.
+   * @return a new object of class '<em>Current Sec To C</em>'.
    * @generated
    */
-  TOC createTOC();
+  CurrentSecToC createCurrentSecToC();
 
   /**
    * Returns a new object of class '<em>Proportional Size</em>'.

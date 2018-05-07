@@ -73,14 +73,13 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.SLIDE: return createSlide();
       case SlideOMaticPackage.SECTION: return createSection();
       case SlideOMaticPackage.CONTENT: return createContent();
-      case SlideOMaticPackage.BLOCKABLE_CONTENT: return createBlockableContent();
+      case SlideOMaticPackage.TO_C: return createToC();
       case SlideOMaticPackage.TEXT: return createText();
       case SlideOMaticPackage.BLOCK: return createBlock();
       case SlideOMaticPackage.LIST: return createList();
       case SlideOMaticPackage.NUMBERED_LIST: return createNumberedList();
       case SlideOMaticPackage.UN_NUMBERED_LIST: return createUnNumberedList();
       case SlideOMaticPackage.LIST_ITEM: return createListItem();
-      case SlideOMaticPackage.FLOATS: return createFloats();
       case SlideOMaticPackage.IMAGE: return createImage();
       case SlideOMaticPackage.SIZE: return createSize();
       case SlideOMaticPackage.WAY: return createWay();
@@ -89,10 +88,11 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.CODE: return createCode();
       case SlideOMaticPackage.ANIMATION: return createAnimation();
       case SlideOMaticPackage.ANIMATION_TYPE: return createAnimationType();
+      case SlideOMaticPackage.COMPILE_DATE: return createCompileDate();
       case SlideOMaticPackage.SEC: return createSec();
       case SlideOMaticPackage.SUB_SEC: return createSubSec();
       case SlideOMaticPackage.SUB_SUB_SEC: return createSubSubSec();
-      case SlideOMaticPackage.TOC: return createTOC();
+      case SlideOMaticPackage.CURRENT_SEC_TO_C: return createCurrentSecToC();
       case SlideOMaticPackage.PROPORTIONAL_SIZE: return createProportionalSize();
       case SlideOMaticPackage.EXACT_SIZE: return createExactSize();
       case SlideOMaticPackage.WIDTH: return createWidth();
@@ -197,10 +197,10 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public BlockableContent createBlockableContent()
+  public ToC createToC()
   {
-    BlockableContentImpl blockableContent = new BlockableContentImpl();
-    return blockableContent;
+    ToCImpl toC = new ToCImpl();
+    return toC;
   }
 
   /**
@@ -267,17 +267,6 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
   {
     ListItemImpl listItem = new ListItemImpl();
     return listItem;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Floats createFloats()
-  {
-    FloatsImpl floats = new FloatsImpl();
-    return floats;
   }
 
   /**
@@ -373,6 +362,17 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
+  public CompileDate createCompileDate()
+  {
+    CompileDateImpl compileDate = new CompileDateImpl();
+    return compileDate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Sec createSec()
   {
     SecImpl sec = new SecImpl();
@@ -406,10 +406,10 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public TOC createTOC()
+  public CurrentSecToC createCurrentSecToC()
   {
-    TOCImpl toc = new TOCImpl();
-    return toc;
+    CurrentSecToCImpl currentSecToC = new CurrentSecToCImpl();
+    return currentSecToC;
   }
 
   /**
