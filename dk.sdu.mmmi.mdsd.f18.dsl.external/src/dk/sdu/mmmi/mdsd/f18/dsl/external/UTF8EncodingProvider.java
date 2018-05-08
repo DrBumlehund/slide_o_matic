@@ -7,7 +7,6 @@ public class UTF8EncodingProvider implements IEncodingProvider {
 
 	@Override
 	public String getEncoding(URI uri) {
-		System.out.println("hej");
 		return "UTF-8";
 	}
 

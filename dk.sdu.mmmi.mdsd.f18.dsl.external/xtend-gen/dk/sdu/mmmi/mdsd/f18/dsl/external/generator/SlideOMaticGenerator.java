@@ -31,10 +31,8 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Way;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width;
-import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
@@ -54,10 +52,22 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     this.doGenerateTexFile(Iterators.<Presentation>filter(resource.getAllContents(), Presentation.class).next(), fsa);
   }
   
+  /**
+   * Shitty workaround for danish letters in the generated source
+   */
+  public String dkLetters(final CharSequence cs) {
+    String _xblockexpression = null;
+    {
+      final String str = cs.toString().replace("æ", "\\ae{}").replace("ø", "\\o{}").replace("å", "\\aa{}").replace("Æ", "\\AE{}").replace("Ø", "\\O{}").replace("Å", "\\AA{}");
+      _xblockexpression = str;
+    }
+    return _xblockexpression;
+  }
+  
   public void doGenerateTexFile(final Presentation p, final IFileSystemAccess2 fsa) {
     String _name = p.getName();
     String _plus = (_name + ".tex");
-    fsa.generateFile(_plus, this.generateTexCode(p));
+    fsa.generateFile(_plus, this.dkLetters(this.generateTexCode(p)));
   }
   
   public CharSequence generateTexCode(final Presentation p) {
@@ -273,7 +283,7 @@ public class SlideOMaticGenerator extends AbstractGenerator {
   }
   
   public CharSequence generateContentsCode(final Content c) {
-    CharSequence _switchResult = null;
+    String _switchResult = null;
     boolean _matched = false;
     if (c instanceof ToC) {
       _matched=true;
@@ -330,7 +340,52 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     if (!_matched) {
       if (c instanceof List) {
         _matched=true;
-        _switchResult = this.generateListsCode(((List)c));
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("\\begin{");
+        {
+          if ((c instanceof NumberedList)) {
+            _builder.append("enumerate");
+          } else {
+            _builder.append("itemize");
+          }
+        }
+        _builder.append("}");
+        _builder.newLineIfNotEmpty();
+        {
+          EList<ListItem> _items = ((List)c).getItems();
+          for(final ListItem i : _items) {
+            _builder.append("\\item ");
+            String _item = i.getItem();
+            _builder.append(_item);
+            {
+              List _nestedList = i.getNestedList();
+              boolean _tripleNotEquals = (_nestedList != null);
+              if (_tripleNotEquals) {
+                CharSequence _generateContentsCode = this.generateContentsCode(i.getNestedList());
+                _builder.append(_generateContentsCode);
+              }
+            }
+            {
+              String _click = i.getClick();
+              boolean _tripleNotEquals_1 = (_click != null);
+              if (_tripleNotEquals_1) {
+                _builder.append("\\pause");
+              }
+            }
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _builder.append("\\end{");
+        {
+          if ((c instanceof NumberedList)) {
+            _builder.append("enumerate");
+          } else {
+            _builder.append("itemize");
+          }
+        }
+        _builder.append("}");
+        _builder.newLineIfNotEmpty();
+        _switchResult = _builder.toString();
       }
     }
     if (!_matched) {
@@ -420,75 +475,7 @@ public class SlideOMaticGenerator extends AbstractGenerator {
         _builder.append("\\pause");
       }
     }
-    return (_switchResult + _builder.toString());
-  }
-  
-  protected CharSequence _generateListsCode(final NumberedList nl) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\\begin{enumerate}");
-    _builder.newLine();
-    {
-      EList<ListItem> _items = nl.getItems();
-      for(final ListItem i : _items) {
-        _builder.append("\\item ");
-        String _item = i.getItem();
-        _builder.append(_item);
-        {
-          List _nestedList = i.getNestedList();
-          boolean _tripleNotEquals = (_nestedList != null);
-          if (_tripleNotEquals) {
-            CharSequence _generateListsCode = this.generateListsCode(i.getNestedList());
-            _builder.append(_generateListsCode);
-          }
-        }
-        _builder.append(" ");
-        {
-          String _click = i.getClick();
-          boolean _tripleNotEquals_1 = (_click != null);
-          if (_tripleNotEquals_1) {
-            _builder.append("\\pause");
-          }
-        }
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("\\end{enumerate}");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  protected CharSequence _generateListsCode(final UnNumberedList nl) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\\begin{itemize}");
-    _builder.newLine();
-    {
-      EList<ListItem> _items = nl.getItems();
-      for(final ListItem i : _items) {
-        _builder.append("\\item ");
-        String _item = i.getItem();
-        _builder.append(_item);
-        {
-          List _nestedList = i.getNestedList();
-          boolean _tripleNotEquals = (_nestedList != null);
-          if (_tripleNotEquals) {
-            CharSequence _generateListsCode = this.generateListsCode(i.getNestedList());
-            _builder.append(_generateListsCode);
-          }
-        }
-        _builder.append(" ");
-        {
-          String _click = i.getClick();
-          boolean _tripleNotEquals_1 = (_click != null);
-          if (_tripleNotEquals_1) {
-            _builder.append("\\pause");
-          }
-        }
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.append("\\end{itemize}");
-    _builder.newLine();
-    return _builder;
+    return (_switchResult + _builder);
   }
   
   /**
@@ -544,16 +531,5 @@ public class SlideOMaticGenerator extends AbstractGenerator {
       }
     }
     return false;
-  }
-  
-  public CharSequence generateListsCode(final List nl) {
-    if (nl instanceof NumberedList) {
-      return _generateListsCode((NumberedList)nl);
-    } else if (nl instanceof UnNumberedList) {
-      return _generateListsCode((UnNumberedList)nl);
-    } else {
-      throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(nl).toString());
-    }
   }
 }

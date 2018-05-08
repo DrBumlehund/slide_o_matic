@@ -43,8 +43,16 @@ class SlideOMaticGenerator extends AbstractGenerator {
 
 	}
 
+	/**
+	 * Shitty workaround for danish letters in the generated source
+	 */
+	def String dkLetters(CharSequence cs) {
+		val str = cs.toString().replace("æ", "\\ae{}").replace("ø", "\\o{}").replace("å", "\\aa{}").replace("Æ", "\\AE{}").replace("Ø", "\\O{}").replace("Å", "\\AA{}")
+		str
+	}
+
 	def void doGenerateTexFile(Presentation p, IFileSystemAccess2 fsa) {
-		fsa.generateFile(p.name + ".tex", p.generateTexCode)
+		fsa.generateFile(p.name + ".tex", dkLetters(p.generateTexCode))
 	}
 
 	def CharSequence generateTexCode(Presentation p) {
@@ -132,8 +140,13 @@ class SlideOMaticGenerator extends AbstractGenerator {
 				«bc.generateContentsCode»
 			«ENDFOR»
 			\end{block}'''
-			List:
-				c.generateListsCode
+			List: '''
+				\begin{«IF c instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}
+				«FOR i : c.items»
+					\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateContentsCode»«ENDIF»«IF i.click !== null»\pause«ENDIF»
+				«ENDFOR»
+				\end{«IF c instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}
+			'''
 			Image: {
 				val src = c.src.replace("\\", "/")
 				'''
@@ -157,26 +170,6 @@ class SlideOMaticGenerator extends AbstractGenerator {
 				\end{minted}
 			'''
 		} + '''«IF c.click !== null»\pause«ENDIF»'''
-	}
-
-	def dispatch CharSequence generateListsCode(NumberedList nl) {
-		'''
-			\begin{enumerate}
-			«FOR i : nl.items»
-				\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateListsCode»«ENDIF»«IF i.click !== null»\pause«ENDIF»
-			«ENDFOR»
-			\end{enumerate}
-		'''
-	}
-
-	def dispatch CharSequence generateListsCode(UnNumberedList nl) {
-		'''
-			\begin{itemize}
-			«FOR i : nl.items»
-				\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateListsCode»«ENDIF»«IF i.click !== null»\pause«ENDIF»
-			«ENDFOR»
-			\end{itemize}
-		'''
 	}
 
 	/**
