@@ -86,8 +86,11 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.TABLE: return createTable();
       case SlideOMaticPackage.TABLE_ROW: return createTableRow();
       case SlideOMaticPackage.CODE: return createCode();
+      case SlideOMaticPackage.LINE_SEQUENCE: return createLineSequence();
       case SlideOMaticPackage.ANIMATION: return createAnimation();
       case SlideOMaticPackage.ANIMATION_TYPE: return createAnimationType();
+      case SlideOMaticPackage.MATH_EXP: return createMathExp();
+      case SlideOMaticPackage.EXPRESSION: return createExpression();
       case SlideOMaticPackage.COMPILE_DATE: return createCompileDate();
       case SlideOMaticPackage.SEC: return createSec();
       case SlideOMaticPackage.SUB_SEC: return createSubSec();
@@ -97,8 +100,18 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.EXACT_SIZE: return createExactSize();
       case SlideOMaticPackage.WIDTH: return createWidth();
       case SlideOMaticPackage.HEIGHT: return createHeight();
+      case SlideOMaticPackage.INLINE_CODE: return createInlineCode();
+      case SlideOMaticPackage.FILE_CODE: return createFileCode();
       case SlideOMaticPackage.MOVE: return createMove();
       case SlideOMaticPackage.JUMP: return createJump();
+      case SlideOMaticPackage.PLUS: return createPlus();
+      case SlideOMaticPackage.MINUS: return createMinus();
+      case SlideOMaticPackage.MULT: return createMult();
+      case SlideOMaticPackage.DIV: return createDiv();
+      case SlideOMaticPackage.POW: return createPow();
+      case SlideOMaticPackage.VAR: return createVar();
+      case SlideOMaticPackage.LET: return createLet();
+      case SlideOMaticPackage.NUM: return createNum();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -340,6 +353,17 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
+  public LineSequence createLineSequence()
+  {
+    LineSequenceImpl lineSequence = new LineSequenceImpl();
+    return lineSequence;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Animation createAnimation()
   {
     AnimationImpl animation = new AnimationImpl();
@@ -355,6 +379,28 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
   {
     AnimationTypeImpl animationType = new AnimationTypeImpl();
     return animationType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public MathExp createMathExp()
+  {
+    MathExpImpl mathExp = new MathExpImpl();
+    return mathExp;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expression createExpression()
+  {
+    ExpressionImpl expression = new ExpressionImpl();
+    return expression;
   }
 
   /**
@@ -461,6 +507,28 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
+  public InlineCode createInlineCode()
+  {
+    InlineCodeImpl inlineCode = new InlineCodeImpl();
+    return inlineCode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FileCode createFileCode()
+  {
+    FileCodeImpl fileCode = new FileCodeImpl();
+    return fileCode;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Move createMove()
   {
     MoveImpl move = new MoveImpl();
@@ -476,6 +544,94 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
   {
     JumpImpl jump = new JumpImpl();
     return jump;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Plus createPlus()
+  {
+    PlusImpl plus = new PlusImpl();
+    return plus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Minus createMinus()
+  {
+    MinusImpl minus = new MinusImpl();
+    return minus;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Mult createMult()
+  {
+    MultImpl mult = new MultImpl();
+    return mult;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Div createDiv()
+  {
+    DivImpl div = new DivImpl();
+    return div;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Pow createPow()
+  {
+    PowImpl pow = new PowImpl();
+    return pow;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Var createVar()
+  {
+    VarImpl var = new VarImpl();
+    return var;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Let createLet()
+  {
+    LetImpl let = new LetImpl();
+    return let;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Num createNum()
+  {
+    NumImpl num = new NumImpl();
+    return num;
   }
 
   /**

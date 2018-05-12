@@ -5,11 +5,22 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.generator
 
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Div
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Expression
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Let
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.MathExp
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Minus
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Mult
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Num
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Plus
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Pow
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec
@@ -20,15 +31,17 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Var
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width
+import java.util.HashMap
+import java.util.Map
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.InlineCode
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode
 
 /**
  * Generates code from your model files on save.
@@ -47,7 +60,8 @@ class SlideOMaticGenerator extends AbstractGenerator {
 	 * Shitty workaround for danish letters in the generated source
 	 */
 	def String dkLetters(CharSequence cs) {
-		val str = cs.toString().replace("æ", "\\ae{}").replace("ø", "\\o{}").replace("å", "\\aa{}").replace("Æ", "\\AE{}").replace("Ø", "\\O{}").replace("Å", "\\AA{}")
+		val str = cs.toString().replace("æ", "\\ae{}").replace("ø", "\\o{}").replace("å", "\\aa{}").replace("Æ",
+			"\\AE{}").replace("Ø", "\\O{}").replace("Å", "\\AA{}")
 		str
 	}
 
@@ -64,8 +78,9 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			\usepackage[english]{babel}
 			\usepackage{lastpage}
 			\usepackage{minted}
-			\setminted{autogobble, fontsize=\footnotesize}
+			\setminted{autogobble, fontsize=\footnotesize, linenos}
 			\usepackage{tabu}
+			\usepackage{mathtools}
 			
 			«IF p.theme !== null»
 				\usetheme{«p.theme.theme»}
@@ -114,12 +129,15 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			«ENDIF»
 			\begin{frame}«IF s.hasCode»[fragile]«ENDIF»«IF s.name !== null»{«s.name»}«ENDIF»
 			«FOR c : s.contents»
-				«c.generateContentsCode»
+				«c.generateContentsCode(s)»
 			«ENDFOR»
 			\end{frame}
 		'''
 	}
 
+	/**
+	 * used to generate sections
+	 */
 	def CharSequence generateSectionsCode(Section s, String name) {
 		switch s {
 			Sec: '''\section{'''
@@ -128,7 +146,7 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		} + name + "}"
 	}
 
-	def CharSequence generateContentsCode(Content c) {
+	def CharSequence generateContentsCode(Content c, Slide s) {
 		switch c {
 			ToC: '''
 			\tableofcontents«IF c instanceof CurrentSecToC»[sections=\value{section}]«ELSE»[hideallsubsections]«ENDIF»'''
@@ -137,13 +155,13 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			Block: '''
 			\begin{block}«IF c.name !== null»{«c.name»}«ENDIF»
 			«FOR bc : c.content»
-				«bc.generateContentsCode»
+				«bc.generateContentsCode(s)»
 			«ENDFOR»
 			\end{block}'''
 			List: '''
 				\begin{«IF c instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}
 				«FOR i : c.items»
-					\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateContentsCode»«ENDIF»«IF i.click !== null»\pause«ENDIF»
+					\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateContentsCode(s)»«ENDIF»«IF i.click !== null»\pause«ENDIF»
 				«ENDFOR»
 				\end{«IF c instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}
 			'''
@@ -164,10 +182,32 @@ class SlideOMaticGenerator extends AbstractGenerator {
 				«ENDFOR»
 				\end{tabular}
 			'''
-			Code: '''
-				\begin{minted}{«c.lang»}
-				«c.code»
-				\end{minted}
+			InlineCode: '''
+			\begin{minted}{«c.lang»}
+			«c.code»
+			\end{minted}'''
+			FileCode: '''
+				«IF c.lines.length > 0»«/*Weird workaround*/»
+					«var i =0»
+					«FOR l: c.lines»
+						«IF i++ > 0»
+							\begin{frame}[fragile]{«s.name»}
+						«ENDIF»
+						\begin{minted}{«c.lang»}
+							// hej «i»
+						\end{minted}
+						«IF i < c.lines.length»
+						\end{frame}
+						«ENDIF»
+					«ENDFOR»
+				«ELSE»
+					\inputminted{«c.lang»}{«c.src»}
+				«ENDIF»
+			'''
+			MathExp: '''
+				\begin{equation}
+				«c.display» «IF c.eval !== null»=«c.compute»«ENDIF»
+				\end{equation}
 			'''
 		} + '''«IF c.click !== null»\pause«ENDIF»'''
 	}
@@ -194,4 +234,48 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		}
 		return false
 	}
+
+	def Map<String, Integer> bind(Map<String, Integer> env1, String name, int value) {
+		val env2 = new HashMap<String, Integer>(env1)
+		env2.put(name, value)
+		env2
+	}
+
+	def int compute(MathExp math) {
+		math.exp.computeExp(new HashMap<String, Integer>)
+	}
+
+	def int computeExp(Expression exp, Map<String, Integer> env) {
+		switch exp {
+			Plus: exp.left.computeExp(env) + exp.right.computeExp(env)
+			Minus: exp.left.computeExp(env) - exp.right.computeExp(env)
+			Mult: exp.left.computeExp(env) * exp.right.computeExp(env)
+			Div: exp.left.computeExp(env) / exp.right.computeExp(env)
+			Num: exp.value
+			Var: env.get(exp.id)
+			Let: exp.body.computeExp(env.bind(exp.id, exp.binding.computeExp(env)))
+			Pow: Math.pow(exp.left.computeExp(env), exp.right.computeExp(env)) as int
+			default: throw new Error("Invalid expression")
+		}
+	}
+
+	def String display(MathExp math) {
+		math.exp.displayExp
+	}
+
+	def String displayExp(Expression exp) {
+		switch exp {
+			Plus: '''«exp.left.displayExp»+«exp.right.displayExp»'''
+			Minus: '''«exp.left.displayExp»-«exp.right.displayExp»'''
+			Mult: '''«exp.left.displayExp»\cdot«exp.right.displayExp»'''
+			Div: '''\frac{«exp.left.displayExp»}{«exp.right.displayExp»}'''
+			Num: '''«Integer.toString(exp.value)»'''
+			Var: '''«exp.id»'''
+			Let: '''let «exp.id» = «exp.binding.displayExp» in «exp.body.displayExp» end'''
+			Pow: '''«exp.left.displayExp»^{«exp.right.displayExp»}'''
+			default:
+				throw new Error("Invalid expression")
+		}
+	}
+
 }

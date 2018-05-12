@@ -6,6 +6,7 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.validation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.validation.AbstractSlideOMaticValidator;
@@ -23,6 +24,8 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
   public final static String UNBLOCKABLE_CONTENT = "unblockableContent";
   
   public final static String FILE_NOT_FOUND = "fileNotFound";
+  
+  public final static String LINE_NUMBER_TOO_HIGH = "lineNumberTooHigh";
   
   @Check
   public void checkUnblockableContent(final Block block) {
@@ -42,6 +45,29 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
     boolean _not = (!_exists);
     if (_not) {
       this.warning("Unable to find image source", SlideOMaticPackage.Literals.IMAGE__SRC, SlideOMaticValidator.FILE_NOT_FOUND);
+    }
+  }
+  
+  @Check
+  public void checkSource(final FileCode code) {
+    String _src = code.getSrc();
+    final File f = new File(_src);
+    boolean _exists = f.exists();
+    boolean _not = (!_exists);
+    if (_not) {
+      this.warning("Unable to find Code source", SlideOMaticPackage.Literals.FILE_CODE__SRC, SlideOMaticValidator.FILE_NOT_FOUND);
+    }
+  }
+  
+  @Check
+  public void checkLineSequence(final FileCode fc) {
+    if (((fc.getSrc() != null) && (fc.getLines() != null))) {
+      String _src = fc.getSrc();
+      final File f = new File(_src);
+      boolean _exists = f.exists();
+      if (_exists) {
+        System.out.println("the FileCode has lines");
+      }
     }
   }
 }

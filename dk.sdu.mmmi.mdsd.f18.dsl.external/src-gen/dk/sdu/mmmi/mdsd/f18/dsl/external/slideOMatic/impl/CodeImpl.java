@@ -21,7 +21,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CodeImpl#getLang <em>Lang</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.CodeImpl#getCode <em>Code</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,26 +46,6 @@ public class CodeImpl extends ContentImpl implements Code
    * @ordered
    */
   protected String lang = LANG_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getCode() <em>Code</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCode()
-   * @generated
-   * @ordered
-   */
-  protected static final String CODE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getCode() <em>Code</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getCode()
-   * @generated
-   * @ordered
-   */
-  protected String code = CODE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -117,29 +96,6 @@ public class CodeImpl extends ContentImpl implements Code
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getCode()
-  {
-    return code;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setCode(String newCode)
-  {
-    String oldCode = code;
-    code = newCode;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.CODE__CODE, oldCode, code));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -147,8 +103,6 @@ public class CodeImpl extends ContentImpl implements Code
     {
       case SlideOMaticPackage.CODE__LANG:
         return getLang();
-      case SlideOMaticPackage.CODE__CODE:
-        return getCode();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -165,9 +119,6 @@ public class CodeImpl extends ContentImpl implements Code
     {
       case SlideOMaticPackage.CODE__LANG:
         setLang((String)newValue);
-        return;
-      case SlideOMaticPackage.CODE__CODE:
-        setCode((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -186,9 +137,6 @@ public class CodeImpl extends ContentImpl implements Code
       case SlideOMaticPackage.CODE__LANG:
         setLang(LANG_EDEFAULT);
         return;
-      case SlideOMaticPackage.CODE__CODE:
-        setCode(CODE_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -205,8 +153,6 @@ public class CodeImpl extends ContentImpl implements Code
     {
       case SlideOMaticPackage.CODE__LANG:
         return LANG_EDEFAULT == null ? lang != null : !LANG_EDEFAULT.equals(lang);
-      case SlideOMaticPackage.CODE__CODE:
-        return CODE_EDEFAULT == null ? code != null : !CODE_EDEFAULT.equals(code);
     }
     return super.eIsSet(featureID);
   }
@@ -224,8 +170,6 @@ public class CodeImpl extends ContentImpl implements Code
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (lang: ");
     result.append(lang);
-    result.append(", code: ");
-    result.append(code);
     result.append(')');
     return result.toString();
   }

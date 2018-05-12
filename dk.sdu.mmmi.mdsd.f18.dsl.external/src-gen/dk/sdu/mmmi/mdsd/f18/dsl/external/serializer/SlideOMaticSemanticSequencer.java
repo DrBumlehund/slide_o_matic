@@ -8,18 +8,28 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.services.SlideOMaticGrammarAccess;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Div;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Height;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.InlineCode;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Let;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.LineSequence;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ListItem;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.MathExp;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Minus;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Mult;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Num;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Plus;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Pow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec;
@@ -33,6 +43,7 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Var;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -75,16 +86,6 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 					return; 
 				}
 				else break;
-			case SlideOMaticPackage.CODE:
-				if (rule == grammarAccess.getCodeRule()) {
-					sequence_Code(context, (Code) semanticObject); 
-					return; 
-				}
-				else if (rule == grammarAccess.getContentRule()) {
-					sequence_Code_Content(context, (Code) semanticObject); 
-					return; 
-				}
-				else break;
 			case SlideOMaticPackage.COMPILE_DATE:
 				sequence_Date(context, (CompileDate) semanticObject); 
 				return; 
@@ -101,9 +102,22 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SlideOMaticPackage.DATE:
 				sequence_Date(context, (Date) semanticObject); 
 				return; 
+			case SlideOMaticPackage.DIV:
+				sequence_Factor(context, (Div) semanticObject); 
+				return; 
 			case SlideOMaticPackage.EXACT_SIZE:
 				sequence_Size(context, (ExactSize) semanticObject); 
 				return; 
+			case SlideOMaticPackage.FILE_CODE:
+				if (rule == grammarAccess.getContentRule()) {
+					sequence_Code_Content(context, (FileCode) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getCodeRule()) {
+					sequence_Code(context, (FileCode) semanticObject); 
+					return; 
+				}
+				else break;
 			case SlideOMaticPackage.HEIGHT:
 				sequence_Way(context, (Height) semanticObject); 
 				return; 
@@ -117,17 +131,52 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 					return; 
 				}
 				else break;
+			case SlideOMaticPackage.INLINE_CODE:
+				if (rule == grammarAccess.getContentRule()) {
+					sequence_Code_Content(context, (InlineCode) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getCodeRule()) {
+					sequence_Code(context, (InlineCode) semanticObject); 
+					return; 
+				}
+				else break;
 			case SlideOMaticPackage.INSTITUTE:
 				sequence_Institute(context, (Institute) semanticObject); 
 				return; 
 			case SlideOMaticPackage.JUMP:
 				sequence_AnimationType(context, (Jump) semanticObject); 
 				return; 
+			case SlideOMaticPackage.LET:
+				sequence_VariableBinding(context, (Let) semanticObject); 
+				return; 
+			case SlideOMaticPackage.LINE_SEQUENCE:
+				sequence_LineSequence(context, (LineSequence) semanticObject); 
+				return; 
 			case SlideOMaticPackage.LIST_ITEM:
 				sequence_ListItem(context, (ListItem) semanticObject); 
 				return; 
+			case SlideOMaticPackage.MATH_EXP:
+				if (rule == grammarAccess.getContentRule()) {
+					sequence_Content_MathExp(context, (MathExp) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getMathExpRule()) {
+					sequence_MathExp(context, (MathExp) semanticObject); 
+					return; 
+				}
+				else break;
+			case SlideOMaticPackage.MINUS:
+				sequence_Exp(context, (Minus) semanticObject); 
+				return; 
 			case SlideOMaticPackage.MOVE:
 				sequence_AnimationType(context, (Move) semanticObject); 
+				return; 
+			case SlideOMaticPackage.MULT:
+				sequence_Factor(context, (Mult) semanticObject); 
+				return; 
+			case SlideOMaticPackage.NUM:
+				sequence_Number(context, (Num) semanticObject); 
 				return; 
 			case SlideOMaticPackage.NUMBERED_LIST:
 				if (rule == grammarAccess.getContentRule()) {
@@ -140,6 +189,12 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 					return; 
 				}
 				else break;
+			case SlideOMaticPackage.PLUS:
+				sequence_Exp(context, (Plus) semanticObject); 
+				return; 
+			case SlideOMaticPackage.POW:
+				sequence_Pow(context, (Pow) semanticObject); 
+				return; 
 			case SlideOMaticPackage.PRESENTATION:
 				sequence_Presentation(context, (Presentation) semanticObject); 
 				return; 
@@ -205,6 +260,9 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 					return; 
 				}
 				else break;
+			case SlideOMaticPackage.VAR:
+				sequence_VariableUse(context, (Var) semanticObject); 
+				return; 
 			case SlideOMaticPackage.WIDTH:
 				sequence_Way(context, (Width) semanticObject); 
 				return; 
@@ -287,34 +345,58 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     Code returns Code
+	 *     Content returns FileCode
 	 *
 	 * Constraint:
-	 *     (lang=ID code=STRING)
+	 *     (lang=ID src=STRING (lines+=LineSequence lines+=LineSequence*)? click=Click?)
 	 */
-	protected void sequence_Code(ISerializationContext context, Code semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.CODE__LANG) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.CODE__LANG));
-			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.CODE__CODE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.CODE__CODE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getCodeAccess().getLangIDTerminalRuleCall_1_0(), semanticObject.getLang());
-		feeder.accept(grammarAccess.getCodeAccess().getCodeSTRINGTerminalRuleCall_2_0(), semanticObject.getCode());
-		feeder.finish();
+	protected void sequence_Code_Content(ISerializationContext context, FileCode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Content returns Code
+	 *     Content returns InlineCode
 	 *
 	 * Constraint:
 	 *     (lang=ID code=STRING click=Click?)
 	 */
-	protected void sequence_Code_Content(ISerializationContext context, Code semanticObject) {
+	protected void sequence_Code_Content(ISerializationContext context, InlineCode semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Code returns FileCode
+	 *
+	 * Constraint:
+	 *     (lang=ID src=STRING (lines+=LineSequence lines+=LineSequence*)?)
+	 */
+	protected void sequence_Code(ISerializationContext context, FileCode semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Code returns InlineCode
+	 *
+	 * Constraint:
+	 *     (lang=ID code=STRING)
+	 */
+	protected void sequence_Code(ISerializationContext context, InlineCode semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.CODE__LANG) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.CODE__LANG));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.INLINE_CODE__CODE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.INLINE_CODE__CODE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getCodeAccess().getLangIDTerminalRuleCall_0_2_0(), semanticObject.getLang());
+		feeder.accept(grammarAccess.getCodeAccess().getCodeSTRINGTerminalRuleCall_0_3_0(), semanticObject.getCode());
+		feeder.finish();
 	}
 	
 	
@@ -326,6 +408,18 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     (name=ID src=STRING alignment=Alignment? size=Size click=Click?)
 	 */
 	protected void sequence_Content_Image(ISerializationContext context, Image semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Content returns MathExp
+	 *
+	 * Constraint:
+	 *     (eval='eval'? exp=Exp click=Click?)
+	 */
+	protected void sequence_Content_MathExp(ISerializationContext context, MathExp semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -434,6 +528,126 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
+	 *     Exp returns Minus
+	 *     Exp.Plus_1_0_0_1 returns Minus
+	 *     Exp.Minus_1_0_1_1 returns Minus
+	 *     Factor returns Minus
+	 *     Factor.Mult_1_0_0_1 returns Minus
+	 *     Factor.Div_1_0_1_1 returns Minus
+	 *     Pow returns Minus
+	 *     Pow.Pow_1_0 returns Minus
+	 *     Primary returns Minus
+	 *     Parenthesis returns Minus
+	 *
+	 * Constraint:
+	 *     (left=Exp_Minus_1_0_1_1 right=Factor)
+	 */
+	protected void sequence_Exp(ISerializationContext context, Minus semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.MINUS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.MINUS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.MINUS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.MINUS__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getExpAccess().getMinusLeftAction_1_0_1_1(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getExpAccess().getRightFactorParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Exp returns Plus
+	 *     Exp.Plus_1_0_0_1 returns Plus
+	 *     Exp.Minus_1_0_1_1 returns Plus
+	 *     Factor returns Plus
+	 *     Factor.Mult_1_0_0_1 returns Plus
+	 *     Factor.Div_1_0_1_1 returns Plus
+	 *     Pow returns Plus
+	 *     Pow.Pow_1_0 returns Plus
+	 *     Primary returns Plus
+	 *     Parenthesis returns Plus
+	 *
+	 * Constraint:
+	 *     (left=Exp_Plus_1_0_0_1 right=Factor)
+	 */
+	protected void sequence_Exp(ISerializationContext context, Plus semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.PLUS__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.PLUS__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.PLUS__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.PLUS__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getExpAccess().getPlusLeftAction_1_0_0_1(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getExpAccess().getRightFactorParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Exp returns Div
+	 *     Exp.Plus_1_0_0_1 returns Div
+	 *     Exp.Minus_1_0_1_1 returns Div
+	 *     Factor returns Div
+	 *     Factor.Mult_1_0_0_1 returns Div
+	 *     Factor.Div_1_0_1_1 returns Div
+	 *     Pow returns Div
+	 *     Pow.Pow_1_0 returns Div
+	 *     Primary returns Div
+	 *     Parenthesis returns Div
+	 *
+	 * Constraint:
+	 *     (left=Factor_Div_1_0_1_1 right=Pow)
+	 */
+	protected void sequence_Factor(ISerializationContext context, Div semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.DIV__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.DIV__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.DIV__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.DIV__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFactorAccess().getDivLeftAction_1_0_1_1(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getFactorAccess().getRightPowParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Exp returns Mult
+	 *     Exp.Plus_1_0_0_1 returns Mult
+	 *     Exp.Minus_1_0_1_1 returns Mult
+	 *     Factor returns Mult
+	 *     Factor.Mult_1_0_0_1 returns Mult
+	 *     Factor.Div_1_0_1_1 returns Mult
+	 *     Pow returns Mult
+	 *     Pow.Pow_1_0 returns Mult
+	 *     Primary returns Mult
+	 *     Parenthesis returns Mult
+	 *
+	 * Constraint:
+	 *     (left=Factor_Mult_1_0_0_1 right=Pow)
+	 */
+	protected void sequence_Factor(ISerializationContext context, Mult semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.MULT__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.MULT__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.MULT__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.MULT__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getFactorAccess().getMultLeftAction_1_0_0_1(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getFactorAccess().getRightPowParserRuleCall_1_1_0(), semanticObject.getRight());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Image returns Image
 	 *
 	 * Constraint:
@@ -464,6 +678,18 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
+	 *     LineSequence returns LineSequence
+	 *
+	 * Constraint:
+	 *     (lower=INT upper=INT? additional+=LineSequence*)
+	 */
+	protected void sequence_LineSequence(ISerializationContext context, LineSequence semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     ListItem returns ListItem
 	 *
 	 * Constraint:
@@ -471,6 +697,46 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_ListItem(ISerializationContext context, ListItem semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     MathExp returns MathExp
+	 *
+	 * Constraint:
+	 *     (eval='eval'? exp=Exp)
+	 */
+	protected void sequence_MathExp(ISerializationContext context, MathExp semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Exp returns Num
+	 *     Exp.Plus_1_0_0_1 returns Num
+	 *     Exp.Minus_1_0_1_1 returns Num
+	 *     Factor returns Num
+	 *     Factor.Mult_1_0_0_1 returns Num
+	 *     Factor.Div_1_0_1_1 returns Num
+	 *     Pow returns Num
+	 *     Pow.Pow_1_0 returns Num
+	 *     Primary returns Num
+	 *     Parenthesis returns Num
+	 *     Number returns Num
+	 *
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_Number(ISerializationContext context, Num semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.NUM__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.NUM__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNumberAccess().getValueINTTerminalRuleCall_1_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -484,6 +750,36 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_NumberedList(ISerializationContext context, NumberedList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Exp returns Pow
+	 *     Exp.Plus_1_0_0_1 returns Pow
+	 *     Exp.Minus_1_0_1_1 returns Pow
+	 *     Factor returns Pow
+	 *     Factor.Mult_1_0_0_1 returns Pow
+	 *     Factor.Div_1_0_1_1 returns Pow
+	 *     Pow returns Pow
+	 *     Pow.Pow_1_0 returns Pow
+	 *     Primary returns Pow
+	 *     Parenthesis returns Pow
+	 *
+	 * Constraint:
+	 *     (left=Pow_Pow_1_0 right=Primary)
+	 */
+	protected void sequence_Pow(ISerializationContext context, Pow semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.POW__LEFT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.POW__LEFT));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.POW__RIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.POW__RIGHT));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPowAccess().getPowLeftAction_1_0(), semanticObject.getLeft());
+		feeder.accept(grammarAccess.getPowAccess().getRightPrimaryParserRuleCall_1_2_0(), semanticObject.getRight());
+		feeder.finish();
 	}
 	
 	
@@ -676,6 +972,68 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_UnNumberedList(ISerializationContext context, UnNumberedList semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Exp returns Let
+	 *     Exp.Plus_1_0_0_1 returns Let
+	 *     Exp.Minus_1_0_1_1 returns Let
+	 *     Factor returns Let
+	 *     Factor.Mult_1_0_0_1 returns Let
+	 *     Factor.Div_1_0_1_1 returns Let
+	 *     Pow returns Let
+	 *     Pow.Pow_1_0 returns Let
+	 *     Primary returns Let
+	 *     VariableBinding returns Let
+	 *     Parenthesis returns Let
+	 *
+	 * Constraint:
+	 *     (id=ID binding=Exp body=Exp)
+	 */
+	protected void sequence_VariableBinding(ISerializationContext context, Let semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.LET__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.LET__ID));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.LET__BINDING) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.LET__BINDING));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.LET__BODY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.LET__BODY));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableBindingAccess().getIdIDTerminalRuleCall_2_0(), semanticObject.getId());
+		feeder.accept(grammarAccess.getVariableBindingAccess().getBindingExpParserRuleCall_4_0(), semanticObject.getBinding());
+		feeder.accept(grammarAccess.getVariableBindingAccess().getBodyExpParserRuleCall_6_0(), semanticObject.getBody());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Exp returns Var
+	 *     Exp.Plus_1_0_0_1 returns Var
+	 *     Exp.Minus_1_0_1_1 returns Var
+	 *     Factor returns Var
+	 *     Factor.Mult_1_0_0_1 returns Var
+	 *     Factor.Div_1_0_1_1 returns Var
+	 *     Pow returns Var
+	 *     Pow.Pow_1_0 returns Var
+	 *     Primary returns Var
+	 *     VariableUse returns Var
+	 *     Parenthesis returns Var
+	 *
+	 * Constraint:
+	 *     id=ID
+	 */
+	protected void sequence_VariableUse(ISerializationContext context, Var semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.VAR__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.VAR__ID));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableUseAccess().getIdIDTerminalRuleCall_1_0(), semanticObject.getId());
+		feeder.finish();
 	}
 	
 	

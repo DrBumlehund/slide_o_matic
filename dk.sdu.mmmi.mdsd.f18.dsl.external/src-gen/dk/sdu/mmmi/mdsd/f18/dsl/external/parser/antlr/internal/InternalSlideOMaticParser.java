@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'presentation'", "'{'", "'('", "')'", "'}'", "'theme'", "'color'", "'AnnArbor'", "'Antibes'", "'Bergen'", "'Berkeley'", "'Berlin'", "'Boadilla'", "'boxes'", "'CambridgeUS'", "'Copenhagen'", "'Darmstadt'", "'default'", "'Dresden'", "'Frankfurt'", "'Goettingen'", "'Hannover'", "'Ilmanau'", "'JuanLesPins'", "'Luebeck'", "'Madrid'", "'Malmoe'", "'Marburg'", "'Montpellier'", "'PaloAlto'", "'Pittsburgh'", "'Rochester'", "'Singapore'", "'Szeged'", "'Warsaw'", "'albatros'", "'beaver'", "'beetle'", "'crane'", "'dolphin'", "'dove'", "'fly'", "'lily'", "'orchid'", "'rose'", "'seagull'", "'seahorse'", "'sidebartab'", "'structure'", "'whale'", "'wolverine'", "'author'", "'authors'", "','", "'institute'", "'date'", "'*'", "'slide'", "'**'", "'***'", "'ToC'", "'block'", "'#list'", "'&list'", "'-'", "'img'", "'src'", "'topleft'", "'top'", "'topright'", "'left'", "'center'", "'right'", "'bottomleft'", "'bottom'", "'bottomright'", "'%'", "'cm'", "'em'", "'mm'", "'width'", "'height'", "'tab'", "'['", "']'", "'```'", "'$$'", "'animate'", "'to'", "'move'", "'jump'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'presentation'", "'{'", "'('", "')'", "'}'", "'theme'", "'color'", "'AnnArbor'", "'Antibes'", "'Bergen'", "'Berkeley'", "'Berlin'", "'Boadilla'", "'boxes'", "'CambridgeUS'", "'Copenhagen'", "'Darmstadt'", "'default'", "'Dresden'", "'Frankfurt'", "'Goettingen'", "'Hannover'", "'Ilmanau'", "'JuanLesPins'", "'Luebeck'", "'Madrid'", "'Malmoe'", "'Marburg'", "'Montpellier'", "'PaloAlto'", "'Pittsburgh'", "'Rochester'", "'Singapore'", "'Szeged'", "'Warsaw'", "'albatros'", "'beaver'", "'beetle'", "'crane'", "'dolphin'", "'dove'", "'fly'", "'lily'", "'orchid'", "'rose'", "'seagull'", "'seahorse'", "'sidebartab'", "'structure'", "'whale'", "'wolverine'", "'author'", "'authors'", "','", "'institute'", "'date'", "'*'", "'slide'", "'**'", "'***'", "'ToC'", "'block'", "'#list'", "'&list'", "'-'", "'img'", "'src'", "'topleft'", "'top'", "'topright'", "'left'", "'center'", "'right'", "'bottomleft'", "'bottom'", "'bottomright'", "'%'", "'cm'", "'em'", "'mm'", "'width'", "'height'", "'tab'", "'['", "']'", "'code'", "'end'", "'filecode'", "'show'", "':'", "'$$'", "'animate'", "'to'", "'move'", "'jump'", "'math'", "'eval'", "'+'", "'/'", "'^'", "'let'", "'='", "'in'"
     };
     public static final int T__50=50;
     public static final int T__59=59;
@@ -70,6 +70,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
     public static final int T__100=100;
     public static final int T__92=92;
     public static final int T__93=93;
+    public static final int T__102=102;
     public static final int T__94=94;
     public static final int T__101=101;
     public static final int T__90=90;
@@ -111,17 +112,28 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
     public static final int T__75=75;
     public static final int T__76=76;
     public static final int T__80=80;
+    public static final int T__111=111;
     public static final int T__81=81;
+    public static final int T__110=110;
     public static final int T__82=82;
+    public static final int T__113=113;
     public static final int T__83=83;
+    public static final int T__112=112;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
     public static final int T__88=88;
+    public static final int T__108=108;
     public static final int T__89=89;
+    public static final int T__107=107;
+    public static final int T__109=109;
     public static final int T__84=84;
+    public static final int T__104=104;
     public static final int T__85=85;
+    public static final int T__103=103;
     public static final int T__86=86;
+    public static final int T__106=106;
     public static final int T__87=87;
+    public static final int T__105=105;
 
     // delegates
     // delegators
@@ -506,7 +518,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                 if ( (LA7_0==68) ) {
                     alt7=1;
                 }
-                else if ( (LA7_0==98) ) {
+                else if ( (LA7_0==102) ) {
                     alt7=2;
                 }
 
@@ -2327,7 +2339,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                 int alt15=2;
                 int LA15_0 = input.LA(1);
 
-                if ( (LA15_0==RULE_STRING||(LA15_0>=71 && LA15_0<=74)||LA15_0==76||LA15_0==93||LA15_0==96) ) {
+                if ( (LA15_0==RULE_STRING||(LA15_0>=71 && LA15_0<=74)||LA15_0==76||LA15_0==93||LA15_0==96||LA15_0==98||LA15_0==106) ) {
                     alt15=1;
                 }
 
@@ -2618,7 +2630,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContent"
-    // InternalSlideOMatic.g:978:1: ruleContent returns [EObject current=null] : ( (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode ) ( (lv_click_7_0= ruleClick ) )? ) ;
+    // InternalSlideOMatic.g:978:1: ruleContent returns [EObject current=null] : ( (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode | this_MathExp_7= ruleMathExp ) ( (lv_click_8_0= ruleClick ) )? ) ;
     public final EObject ruleContent() throws RecognitionException {
         EObject current = null;
 
@@ -2636,21 +2648,23 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
         EObject this_Code_6 = null;
 
-        AntlrDatatypeRuleToken lv_click_7_0 = null;
+        EObject this_MathExp_7 = null;
+
+        AntlrDatatypeRuleToken lv_click_8_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:984:2: ( ( (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode ) ( (lv_click_7_0= ruleClick ) )? ) )
-            // InternalSlideOMatic.g:985:2: ( (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode ) ( (lv_click_7_0= ruleClick ) )? )
+            // InternalSlideOMatic.g:984:2: ( ( (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode | this_MathExp_7= ruleMathExp ) ( (lv_click_8_0= ruleClick ) )? ) )
+            // InternalSlideOMatic.g:985:2: ( (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode | this_MathExp_7= ruleMathExp ) ( (lv_click_8_0= ruleClick ) )? )
             {
-            // InternalSlideOMatic.g:985:2: ( (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode ) ( (lv_click_7_0= ruleClick ) )? )
-            // InternalSlideOMatic.g:986:3: (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode ) ( (lv_click_7_0= ruleClick ) )?
+            // InternalSlideOMatic.g:985:2: ( (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode | this_MathExp_7= ruleMathExp ) ( (lv_click_8_0= ruleClick ) )? )
+            // InternalSlideOMatic.g:986:3: (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode | this_MathExp_7= ruleMathExp ) ( (lv_click_8_0= ruleClick ) )?
             {
-            // InternalSlideOMatic.g:986:3: (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode )
-            int alt17=7;
+            // InternalSlideOMatic.g:986:3: (this_ToC_0= ruleToC | this_Text_1= ruleText | this_Block_2= ruleBlock | this_List_3= ruleList | this_Image_4= ruleImage | this_Table_5= ruleTable | this_Code_6= ruleCode | this_MathExp_7= ruleMathExp )
+            int alt17=8;
             switch ( input.LA(1) ) {
             case 71:
                 {
@@ -2684,8 +2698,14 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                 }
                 break;
             case 96:
+            case 98:
                 {
                 alt17=7;
+                }
+                break;
+            case 106:
+                {
+                alt17=8;
                 }
                 break;
             default:
@@ -2822,28 +2842,46 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                     }
                     break;
+                case 8 :
+                    // InternalSlideOMatic.g:1050:4: this_MathExp_7= ruleMathExp
+                    {
+
+                    				newCompositeNode(grammarAccess.getContentAccess().getMathExpParserRuleCall_0_7());
+                    			
+                    pushFollow(FOLLOW_21);
+                    this_MathExp_7=ruleMathExp();
+
+                    state._fsp--;
+
+
+                    				current = this_MathExp_7;
+                    				afterParserOrEnumRuleCall();
+                    			
+
+                    }
+                    break;
 
             }
 
-            // InternalSlideOMatic.g:1050:3: ( (lv_click_7_0= ruleClick ) )?
+            // InternalSlideOMatic.g:1059:3: ( (lv_click_8_0= ruleClick ) )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==97) ) {
+            if ( (LA18_0==101) ) {
                 alt18=1;
             }
             switch (alt18) {
                 case 1 :
-                    // InternalSlideOMatic.g:1051:4: (lv_click_7_0= ruleClick )
+                    // InternalSlideOMatic.g:1060:4: (lv_click_8_0= ruleClick )
                     {
-                    // InternalSlideOMatic.g:1051:4: (lv_click_7_0= ruleClick )
-                    // InternalSlideOMatic.g:1052:5: lv_click_7_0= ruleClick
+                    // InternalSlideOMatic.g:1060:4: (lv_click_8_0= ruleClick )
+                    // InternalSlideOMatic.g:1061:5: lv_click_8_0= ruleClick
                     {
 
                     					newCompositeNode(grammarAccess.getContentAccess().getClickClickParserRuleCall_1_0());
                     				
                     pushFollow(FOLLOW_2);
-                    lv_click_7_0=ruleClick();
+                    lv_click_8_0=ruleClick();
 
                     state._fsp--;
 
@@ -2854,7 +2892,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     					set(
                     						current,
                     						"click",
-                    						lv_click_7_0,
+                    						lv_click_8_0,
                     						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Click");
                     					afterParserOrEnumRuleCall();
                     				
@@ -2890,7 +2928,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleToC"
-    // InternalSlideOMatic.g:1073:1: entryRuleToC returns [EObject current=null] : iv_ruleToC= ruleToC EOF ;
+    // InternalSlideOMatic.g:1082:1: entryRuleToC returns [EObject current=null] : iv_ruleToC= ruleToC EOF ;
     public final EObject entryRuleToC() throws RecognitionException {
         EObject current = null;
 
@@ -2898,8 +2936,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1073:44: (iv_ruleToC= ruleToC EOF )
-            // InternalSlideOMatic.g:1074:2: iv_ruleToC= ruleToC EOF
+            // InternalSlideOMatic.g:1082:44: (iv_ruleToC= ruleToC EOF )
+            // InternalSlideOMatic.g:1083:2: iv_ruleToC= ruleToC EOF
             {
              newCompositeNode(grammarAccess.getToCRule()); 
             pushFollow(FOLLOW_1);
@@ -2926,7 +2964,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleToC"
-    // InternalSlideOMatic.g:1080:1: ruleToC returns [EObject current=null] : ( ( () otherlv_1= 'ToC' ) | ( () otherlv_3= 'ToC' otherlv_4= '*' ) ) ;
+    // InternalSlideOMatic.g:1089:1: ruleToC returns [EObject current=null] : ( ( () otherlv_1= 'ToC' ) | ( () otherlv_3= 'ToC' otherlv_4= '*' ) ) ;
     public final EObject ruleToC() throws RecognitionException {
         EObject current = null;
 
@@ -2938,17 +2976,17 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1086:2: ( ( ( () otherlv_1= 'ToC' ) | ( () otherlv_3= 'ToC' otherlv_4= '*' ) ) )
-            // InternalSlideOMatic.g:1087:2: ( ( () otherlv_1= 'ToC' ) | ( () otherlv_3= 'ToC' otherlv_4= '*' ) )
+            // InternalSlideOMatic.g:1095:2: ( ( ( () otherlv_1= 'ToC' ) | ( () otherlv_3= 'ToC' otherlv_4= '*' ) ) )
+            // InternalSlideOMatic.g:1096:2: ( ( () otherlv_1= 'ToC' ) | ( () otherlv_3= 'ToC' otherlv_4= '*' ) )
             {
-            // InternalSlideOMatic.g:1087:2: ( ( () otherlv_1= 'ToC' ) | ( () otherlv_3= 'ToC' otherlv_4= '*' ) )
+            // InternalSlideOMatic.g:1096:2: ( ( () otherlv_1= 'ToC' ) | ( () otherlv_3= 'ToC' otherlv_4= '*' ) )
             int alt19=2;
             int LA19_0 = input.LA(1);
 
             if ( (LA19_0==71) ) {
                 int LA19_1 = input.LA(2);
 
-                if ( (LA19_1==EOF||LA19_1==RULE_STRING||LA19_1==15||(LA19_1>=71 && LA19_1<=74)||LA19_1==76||LA19_1==93||(LA19_1>=96 && LA19_1<=97)) ) {
+                if ( (LA19_1==EOF||LA19_1==RULE_STRING||LA19_1==15||(LA19_1>=71 && LA19_1<=74)||LA19_1==76||LA19_1==93||LA19_1==96||LA19_1==98||LA19_1==101||LA19_1==106) ) {
                     alt19=1;
                 }
                 else if ( (LA19_1==67) ) {
@@ -2969,13 +3007,13 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
             }
             switch (alt19) {
                 case 1 :
-                    // InternalSlideOMatic.g:1088:3: ( () otherlv_1= 'ToC' )
+                    // InternalSlideOMatic.g:1097:3: ( () otherlv_1= 'ToC' )
                     {
-                    // InternalSlideOMatic.g:1088:3: ( () otherlv_1= 'ToC' )
-                    // InternalSlideOMatic.g:1089:4: () otherlv_1= 'ToC'
+                    // InternalSlideOMatic.g:1097:3: ( () otherlv_1= 'ToC' )
+                    // InternalSlideOMatic.g:1098:4: () otherlv_1= 'ToC'
                     {
-                    // InternalSlideOMatic.g:1089:4: ()
-                    // InternalSlideOMatic.g:1090:5: 
+                    // InternalSlideOMatic.g:1098:4: ()
+                    // InternalSlideOMatic.g:1099:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -2996,13 +3034,13 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1102:3: ( () otherlv_3= 'ToC' otherlv_4= '*' )
+                    // InternalSlideOMatic.g:1111:3: ( () otherlv_3= 'ToC' otherlv_4= '*' )
                     {
-                    // InternalSlideOMatic.g:1102:3: ( () otherlv_3= 'ToC' otherlv_4= '*' )
-                    // InternalSlideOMatic.g:1103:4: () otherlv_3= 'ToC' otherlv_4= '*'
+                    // InternalSlideOMatic.g:1111:3: ( () otherlv_3= 'ToC' otherlv_4= '*' )
+                    // InternalSlideOMatic.g:1112:4: () otherlv_3= 'ToC' otherlv_4= '*'
                     {
-                    // InternalSlideOMatic.g:1103:4: ()
-                    // InternalSlideOMatic.g:1104:5: 
+                    // InternalSlideOMatic.g:1112:4: ()
+                    // InternalSlideOMatic.g:1113:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -3049,7 +3087,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleText"
-    // InternalSlideOMatic.g:1123:1: entryRuleText returns [EObject current=null] : iv_ruleText= ruleText EOF ;
+    // InternalSlideOMatic.g:1132:1: entryRuleText returns [EObject current=null] : iv_ruleText= ruleText EOF ;
     public final EObject entryRuleText() throws RecognitionException {
         EObject current = null;
 
@@ -3057,8 +3095,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1123:45: (iv_ruleText= ruleText EOF )
-            // InternalSlideOMatic.g:1124:2: iv_ruleText= ruleText EOF
+            // InternalSlideOMatic.g:1132:45: (iv_ruleText= ruleText EOF )
+            // InternalSlideOMatic.g:1133:2: iv_ruleText= ruleText EOF
             {
              newCompositeNode(grammarAccess.getTextRule()); 
             pushFollow(FOLLOW_1);
@@ -3085,7 +3123,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleText"
-    // InternalSlideOMatic.g:1130:1: ruleText returns [EObject current=null] : ( (lv_text_0_0= RULE_STRING ) ) ;
+    // InternalSlideOMatic.g:1139:1: ruleText returns [EObject current=null] : ( (lv_text_0_0= RULE_STRING ) ) ;
     public final EObject ruleText() throws RecognitionException {
         EObject current = null;
 
@@ -3095,14 +3133,14 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1136:2: ( ( (lv_text_0_0= RULE_STRING ) ) )
-            // InternalSlideOMatic.g:1137:2: ( (lv_text_0_0= RULE_STRING ) )
+            // InternalSlideOMatic.g:1145:2: ( ( (lv_text_0_0= RULE_STRING ) ) )
+            // InternalSlideOMatic.g:1146:2: ( (lv_text_0_0= RULE_STRING ) )
             {
-            // InternalSlideOMatic.g:1137:2: ( (lv_text_0_0= RULE_STRING ) )
-            // InternalSlideOMatic.g:1138:3: (lv_text_0_0= RULE_STRING )
+            // InternalSlideOMatic.g:1146:2: ( (lv_text_0_0= RULE_STRING ) )
+            // InternalSlideOMatic.g:1147:3: (lv_text_0_0= RULE_STRING )
             {
-            // InternalSlideOMatic.g:1138:3: (lv_text_0_0= RULE_STRING )
-            // InternalSlideOMatic.g:1139:4: lv_text_0_0= RULE_STRING
+            // InternalSlideOMatic.g:1147:3: (lv_text_0_0= RULE_STRING )
+            // InternalSlideOMatic.g:1148:4: lv_text_0_0= RULE_STRING
             {
             lv_text_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -3144,7 +3182,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBlock"
-    // InternalSlideOMatic.g:1158:1: entryRuleBlock returns [EObject current=null] : iv_ruleBlock= ruleBlock EOF ;
+    // InternalSlideOMatic.g:1167:1: entryRuleBlock returns [EObject current=null] : iv_ruleBlock= ruleBlock EOF ;
     public final EObject entryRuleBlock() throws RecognitionException {
         EObject current = null;
 
@@ -3152,8 +3190,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1158:46: (iv_ruleBlock= ruleBlock EOF )
-            // InternalSlideOMatic.g:1159:2: iv_ruleBlock= ruleBlock EOF
+            // InternalSlideOMatic.g:1167:46: (iv_ruleBlock= ruleBlock EOF )
+            // InternalSlideOMatic.g:1168:2: iv_ruleBlock= ruleBlock EOF
             {
              newCompositeNode(grammarAccess.getBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -3180,7 +3218,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBlock"
-    // InternalSlideOMatic.g:1165:1: ruleBlock returns [EObject current=null] : (otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}' ) ;
+    // InternalSlideOMatic.g:1174:1: ruleBlock returns [EObject current=null] : (otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}' ) ;
     public final EObject ruleBlock() throws RecognitionException {
         EObject current = null;
 
@@ -3195,17 +3233,17 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1171:2: ( (otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}' ) )
-            // InternalSlideOMatic.g:1172:2: (otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}' )
+            // InternalSlideOMatic.g:1180:2: ( (otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}' ) )
+            // InternalSlideOMatic.g:1181:2: (otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}' )
             {
-            // InternalSlideOMatic.g:1172:2: (otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}' )
-            // InternalSlideOMatic.g:1173:3: otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}'
+            // InternalSlideOMatic.g:1181:2: (otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}' )
+            // InternalSlideOMatic.g:1182:3: otherlv_0= 'block' ( (lv_name_1_0= RULE_STRING ) )? otherlv_2= '{' ( (lv_content_3_0= ruleContent ) )+ otherlv_4= '}'
             {
             otherlv_0=(Token)match(input,72,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBlockAccess().getBlockKeyword_0());
             		
-            // InternalSlideOMatic.g:1177:3: ( (lv_name_1_0= RULE_STRING ) )?
+            // InternalSlideOMatic.g:1186:3: ( (lv_name_1_0= RULE_STRING ) )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -3214,10 +3252,10 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
             }
             switch (alt20) {
                 case 1 :
-                    // InternalSlideOMatic.g:1178:4: (lv_name_1_0= RULE_STRING )
+                    // InternalSlideOMatic.g:1187:4: (lv_name_1_0= RULE_STRING )
                     {
-                    // InternalSlideOMatic.g:1178:4: (lv_name_1_0= RULE_STRING )
-                    // InternalSlideOMatic.g:1179:5: lv_name_1_0= RULE_STRING
+                    // InternalSlideOMatic.g:1187:4: (lv_name_1_0= RULE_STRING )
+                    // InternalSlideOMatic.g:1188:5: lv_name_1_0= RULE_STRING
                     {
                     lv_name_1_0=(Token)match(input,RULE_STRING,FOLLOW_5); 
 
@@ -3246,24 +3284,24 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_2());
             		
-            // InternalSlideOMatic.g:1199:3: ( (lv_content_3_0= ruleContent ) )+
+            // InternalSlideOMatic.g:1208:3: ( (lv_content_3_0= ruleContent ) )+
             int cnt21=0;
             loop21:
             do {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( (LA21_0==RULE_STRING||(LA21_0>=71 && LA21_0<=74)||LA21_0==76||LA21_0==93||LA21_0==96) ) {
+                if ( (LA21_0==RULE_STRING||(LA21_0>=71 && LA21_0<=74)||LA21_0==76||LA21_0==93||LA21_0==96||LA21_0==98||LA21_0==106) ) {
                     alt21=1;
                 }
 
 
                 switch (alt21) {
             	case 1 :
-            	    // InternalSlideOMatic.g:1200:4: (lv_content_3_0= ruleContent )
+            	    // InternalSlideOMatic.g:1209:4: (lv_content_3_0= ruleContent )
             	    {
-            	    // InternalSlideOMatic.g:1200:4: (lv_content_3_0= ruleContent )
-            	    // InternalSlideOMatic.g:1201:5: lv_content_3_0= ruleContent
+            	    // InternalSlideOMatic.g:1209:4: (lv_content_3_0= ruleContent )
+            	    // InternalSlideOMatic.g:1210:5: lv_content_3_0= ruleContent
             	    {
 
             	    					newCompositeNode(grammarAccess.getBlockAccess().getContentContentParserRuleCall_3_0());
@@ -3327,7 +3365,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleList"
-    // InternalSlideOMatic.g:1226:1: entryRuleList returns [EObject current=null] : iv_ruleList= ruleList EOF ;
+    // InternalSlideOMatic.g:1235:1: entryRuleList returns [EObject current=null] : iv_ruleList= ruleList EOF ;
     public final EObject entryRuleList() throws RecognitionException {
         EObject current = null;
 
@@ -3335,8 +3373,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1226:45: (iv_ruleList= ruleList EOF )
-            // InternalSlideOMatic.g:1227:2: iv_ruleList= ruleList EOF
+            // InternalSlideOMatic.g:1235:45: (iv_ruleList= ruleList EOF )
+            // InternalSlideOMatic.g:1236:2: iv_ruleList= ruleList EOF
             {
              newCompositeNode(grammarAccess.getListRule()); 
             pushFollow(FOLLOW_1);
@@ -3363,7 +3401,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleList"
-    // InternalSlideOMatic.g:1233:1: ruleList returns [EObject current=null] : (this_NumberedList_0= ruleNumberedList | this_UnNumberedList_1= ruleUnNumberedList ) ;
+    // InternalSlideOMatic.g:1242:1: ruleList returns [EObject current=null] : (this_NumberedList_0= ruleNumberedList | this_UnNumberedList_1= ruleUnNumberedList ) ;
     public final EObject ruleList() throws RecognitionException {
         EObject current = null;
 
@@ -3376,10 +3414,10 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1239:2: ( (this_NumberedList_0= ruleNumberedList | this_UnNumberedList_1= ruleUnNumberedList ) )
-            // InternalSlideOMatic.g:1240:2: (this_NumberedList_0= ruleNumberedList | this_UnNumberedList_1= ruleUnNumberedList )
+            // InternalSlideOMatic.g:1248:2: ( (this_NumberedList_0= ruleNumberedList | this_UnNumberedList_1= ruleUnNumberedList ) )
+            // InternalSlideOMatic.g:1249:2: (this_NumberedList_0= ruleNumberedList | this_UnNumberedList_1= ruleUnNumberedList )
             {
-            // InternalSlideOMatic.g:1240:2: (this_NumberedList_0= ruleNumberedList | this_UnNumberedList_1= ruleUnNumberedList )
+            // InternalSlideOMatic.g:1249:2: (this_NumberedList_0= ruleNumberedList | this_UnNumberedList_1= ruleUnNumberedList )
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -3397,7 +3435,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
             }
             switch (alt22) {
                 case 1 :
-                    // InternalSlideOMatic.g:1241:3: this_NumberedList_0= ruleNumberedList
+                    // InternalSlideOMatic.g:1250:3: this_NumberedList_0= ruleNumberedList
                     {
 
                     			newCompositeNode(grammarAccess.getListAccess().getNumberedListParserRuleCall_0());
@@ -3415,7 +3453,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1250:3: this_UnNumberedList_1= ruleUnNumberedList
+                    // InternalSlideOMatic.g:1259:3: this_UnNumberedList_1= ruleUnNumberedList
                     {
 
                     			newCompositeNode(grammarAccess.getListAccess().getUnNumberedListParserRuleCall_1());
@@ -3455,7 +3493,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumberedList"
-    // InternalSlideOMatic.g:1262:1: entryRuleNumberedList returns [EObject current=null] : iv_ruleNumberedList= ruleNumberedList EOF ;
+    // InternalSlideOMatic.g:1271:1: entryRuleNumberedList returns [EObject current=null] : iv_ruleNumberedList= ruleNumberedList EOF ;
     public final EObject entryRuleNumberedList() throws RecognitionException {
         EObject current = null;
 
@@ -3463,8 +3501,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1262:53: (iv_ruleNumberedList= ruleNumberedList EOF )
-            // InternalSlideOMatic.g:1263:2: iv_ruleNumberedList= ruleNumberedList EOF
+            // InternalSlideOMatic.g:1271:53: (iv_ruleNumberedList= ruleNumberedList EOF )
+            // InternalSlideOMatic.g:1272:2: iv_ruleNumberedList= ruleNumberedList EOF
             {
              newCompositeNode(grammarAccess.getNumberedListRule()); 
             pushFollow(FOLLOW_1);
@@ -3491,7 +3529,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumberedList"
-    // InternalSlideOMatic.g:1269:1: ruleNumberedList returns [EObject current=null] : (otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+ ) ;
+    // InternalSlideOMatic.g:1278:1: ruleNumberedList returns [EObject current=null] : (otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+ ) ;
     public final EObject ruleNumberedList() throws RecognitionException {
         EObject current = null;
 
@@ -3503,17 +3541,17 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1275:2: ( (otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+ ) )
-            // InternalSlideOMatic.g:1276:2: (otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+ )
+            // InternalSlideOMatic.g:1284:2: ( (otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+ ) )
+            // InternalSlideOMatic.g:1285:2: (otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+ )
             {
-            // InternalSlideOMatic.g:1276:2: (otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+ )
-            // InternalSlideOMatic.g:1277:3: otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+
+            // InternalSlideOMatic.g:1285:2: (otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+ )
+            // InternalSlideOMatic.g:1286:3: otherlv_0= '#list' ( (lv_items_1_0= ruleListItem ) )+
             {
             otherlv_0=(Token)match(input,73,FOLLOW_23); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNumberedListAccess().getListKeyword_0());
             		
-            // InternalSlideOMatic.g:1281:3: ( (lv_items_1_0= ruleListItem ) )+
+            // InternalSlideOMatic.g:1290:3: ( (lv_items_1_0= ruleListItem ) )+
             int cnt23=0;
             loop23:
             do {
@@ -3527,10 +3565,10 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                 switch (alt23) {
             	case 1 :
-            	    // InternalSlideOMatic.g:1282:4: (lv_items_1_0= ruleListItem )
+            	    // InternalSlideOMatic.g:1291:4: (lv_items_1_0= ruleListItem )
             	    {
-            	    // InternalSlideOMatic.g:1282:4: (lv_items_1_0= ruleListItem )
-            	    // InternalSlideOMatic.g:1283:5: lv_items_1_0= ruleListItem
+            	    // InternalSlideOMatic.g:1291:4: (lv_items_1_0= ruleListItem )
+            	    // InternalSlideOMatic.g:1292:5: lv_items_1_0= ruleListItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getNumberedListAccess().getItemsListItemParserRuleCall_1_0());
@@ -3590,7 +3628,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleUnNumberedList"
-    // InternalSlideOMatic.g:1304:1: entryRuleUnNumberedList returns [EObject current=null] : iv_ruleUnNumberedList= ruleUnNumberedList EOF ;
+    // InternalSlideOMatic.g:1313:1: entryRuleUnNumberedList returns [EObject current=null] : iv_ruleUnNumberedList= ruleUnNumberedList EOF ;
     public final EObject entryRuleUnNumberedList() throws RecognitionException {
         EObject current = null;
 
@@ -3598,8 +3636,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1304:55: (iv_ruleUnNumberedList= ruleUnNumberedList EOF )
-            // InternalSlideOMatic.g:1305:2: iv_ruleUnNumberedList= ruleUnNumberedList EOF
+            // InternalSlideOMatic.g:1313:55: (iv_ruleUnNumberedList= ruleUnNumberedList EOF )
+            // InternalSlideOMatic.g:1314:2: iv_ruleUnNumberedList= ruleUnNumberedList EOF
             {
              newCompositeNode(grammarAccess.getUnNumberedListRule()); 
             pushFollow(FOLLOW_1);
@@ -3626,7 +3664,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleUnNumberedList"
-    // InternalSlideOMatic.g:1311:1: ruleUnNumberedList returns [EObject current=null] : (otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+ ) ;
+    // InternalSlideOMatic.g:1320:1: ruleUnNumberedList returns [EObject current=null] : (otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+ ) ;
     public final EObject ruleUnNumberedList() throws RecognitionException {
         EObject current = null;
 
@@ -3638,17 +3676,17 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1317:2: ( (otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+ ) )
-            // InternalSlideOMatic.g:1318:2: (otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+ )
+            // InternalSlideOMatic.g:1326:2: ( (otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+ ) )
+            // InternalSlideOMatic.g:1327:2: (otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+ )
             {
-            // InternalSlideOMatic.g:1318:2: (otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+ )
-            // InternalSlideOMatic.g:1319:3: otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+
+            // InternalSlideOMatic.g:1327:2: (otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+ )
+            // InternalSlideOMatic.g:1328:3: otherlv_0= '&list' ( (lv_items_1_0= ruleListItem ) )+
             {
             otherlv_0=(Token)match(input,74,FOLLOW_23); 
 
             			newLeafNode(otherlv_0, grammarAccess.getUnNumberedListAccess().getListKeyword_0());
             		
-            // InternalSlideOMatic.g:1323:3: ( (lv_items_1_0= ruleListItem ) )+
+            // InternalSlideOMatic.g:1332:3: ( (lv_items_1_0= ruleListItem ) )+
             int cnt24=0;
             loop24:
             do {
@@ -3662,10 +3700,10 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                 switch (alt24) {
             	case 1 :
-            	    // InternalSlideOMatic.g:1324:4: (lv_items_1_0= ruleListItem )
+            	    // InternalSlideOMatic.g:1333:4: (lv_items_1_0= ruleListItem )
             	    {
-            	    // InternalSlideOMatic.g:1324:4: (lv_items_1_0= ruleListItem )
-            	    // InternalSlideOMatic.g:1325:5: lv_items_1_0= ruleListItem
+            	    // InternalSlideOMatic.g:1333:4: (lv_items_1_0= ruleListItem )
+            	    // InternalSlideOMatic.g:1334:5: lv_items_1_0= ruleListItem
             	    {
 
             	    					newCompositeNode(grammarAccess.getUnNumberedListAccess().getItemsListItemParserRuleCall_1_0());
@@ -3725,7 +3763,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleListItem"
-    // InternalSlideOMatic.g:1346:1: entryRuleListItem returns [EObject current=null] : iv_ruleListItem= ruleListItem EOF ;
+    // InternalSlideOMatic.g:1355:1: entryRuleListItem returns [EObject current=null] : iv_ruleListItem= ruleListItem EOF ;
     public final EObject entryRuleListItem() throws RecognitionException {
         EObject current = null;
 
@@ -3733,8 +3771,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1346:49: (iv_ruleListItem= ruleListItem EOF )
-            // InternalSlideOMatic.g:1347:2: iv_ruleListItem= ruleListItem EOF
+            // InternalSlideOMatic.g:1355:49: (iv_ruleListItem= ruleListItem EOF )
+            // InternalSlideOMatic.g:1356:2: iv_ruleListItem= ruleListItem EOF
             {
              newCompositeNode(grammarAccess.getListItemRule()); 
             pushFollow(FOLLOW_1);
@@ -3761,7 +3799,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleListItem"
-    // InternalSlideOMatic.g:1353:1: ruleListItem returns [EObject current=null] : (otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )? ) ;
+    // InternalSlideOMatic.g:1362:1: ruleListItem returns [EObject current=null] : (otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )? ) ;
     public final EObject ruleListItem() throws RecognitionException {
         EObject current = null;
 
@@ -3778,21 +3816,21 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1359:2: ( (otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )? ) )
-            // InternalSlideOMatic.g:1360:2: (otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )? )
+            // InternalSlideOMatic.g:1368:2: ( (otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )? ) )
+            // InternalSlideOMatic.g:1369:2: (otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )? )
             {
-            // InternalSlideOMatic.g:1360:2: (otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )? )
-            // InternalSlideOMatic.g:1361:3: otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )?
+            // InternalSlideOMatic.g:1369:2: (otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )? )
+            // InternalSlideOMatic.g:1370:3: otherlv_0= '-' ( (lv_item_1_0= RULE_STRING ) ) (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )? ( (lv_click_5_0= ruleClick ) )?
             {
             otherlv_0=(Token)match(input,75,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getListItemAccess().getHyphenMinusKeyword_0());
             		
-            // InternalSlideOMatic.g:1365:3: ( (lv_item_1_0= RULE_STRING ) )
-            // InternalSlideOMatic.g:1366:4: (lv_item_1_0= RULE_STRING )
+            // InternalSlideOMatic.g:1374:3: ( (lv_item_1_0= RULE_STRING ) )
+            // InternalSlideOMatic.g:1375:4: (lv_item_1_0= RULE_STRING )
             {
-            // InternalSlideOMatic.g:1366:4: (lv_item_1_0= RULE_STRING )
-            // InternalSlideOMatic.g:1367:5: lv_item_1_0= RULE_STRING
+            // InternalSlideOMatic.g:1375:4: (lv_item_1_0= RULE_STRING )
+            // InternalSlideOMatic.g:1376:5: lv_item_1_0= RULE_STRING
             {
             lv_item_1_0=(Token)match(input,RULE_STRING,FOLLOW_25); 
 
@@ -3814,7 +3852,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSlideOMatic.g:1383:3: (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )?
+            // InternalSlideOMatic.g:1392:3: (otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')' )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
@@ -3823,17 +3861,17 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
             }
             switch (alt25) {
                 case 1 :
-                    // InternalSlideOMatic.g:1384:4: otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')'
+                    // InternalSlideOMatic.g:1393:4: otherlv_2= '(' ( (lv_nestedList_3_0= ruleList ) ) otherlv_4= ')'
                     {
                     otherlv_2=(Token)match(input,13,FOLLOW_26); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getListItemAccess().getLeftParenthesisKeyword_2_0());
                     			
-                    // InternalSlideOMatic.g:1388:4: ( (lv_nestedList_3_0= ruleList ) )
-                    // InternalSlideOMatic.g:1389:5: (lv_nestedList_3_0= ruleList )
+                    // InternalSlideOMatic.g:1397:4: ( (lv_nestedList_3_0= ruleList ) )
+                    // InternalSlideOMatic.g:1398:5: (lv_nestedList_3_0= ruleList )
                     {
-                    // InternalSlideOMatic.g:1389:5: (lv_nestedList_3_0= ruleList )
-                    // InternalSlideOMatic.g:1390:6: lv_nestedList_3_0= ruleList
+                    // InternalSlideOMatic.g:1398:5: (lv_nestedList_3_0= ruleList )
+                    // InternalSlideOMatic.g:1399:6: lv_nestedList_3_0= ruleList
                     {
 
                     						newCompositeNode(grammarAccess.getListItemAccess().getNestedListListParserRuleCall_2_1_0());
@@ -3870,19 +3908,19 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSlideOMatic.g:1412:3: ( (lv_click_5_0= ruleClick ) )?
+            // InternalSlideOMatic.g:1421:3: ( (lv_click_5_0= ruleClick ) )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
-            if ( (LA26_0==97) ) {
+            if ( (LA26_0==101) ) {
                 alt26=1;
             }
             switch (alt26) {
                 case 1 :
-                    // InternalSlideOMatic.g:1413:4: (lv_click_5_0= ruleClick )
+                    // InternalSlideOMatic.g:1422:4: (lv_click_5_0= ruleClick )
                     {
-                    // InternalSlideOMatic.g:1413:4: (lv_click_5_0= ruleClick )
-                    // InternalSlideOMatic.g:1414:5: lv_click_5_0= ruleClick
+                    // InternalSlideOMatic.g:1422:4: (lv_click_5_0= ruleClick )
+                    // InternalSlideOMatic.g:1423:5: lv_click_5_0= ruleClick
                     {
 
                     					newCompositeNode(grammarAccess.getListItemAccess().getClickClickParserRuleCall_3_0());
@@ -3935,7 +3973,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImage"
-    // InternalSlideOMatic.g:1435:1: entryRuleImage returns [EObject current=null] : iv_ruleImage= ruleImage EOF ;
+    // InternalSlideOMatic.g:1444:1: entryRuleImage returns [EObject current=null] : iv_ruleImage= ruleImage EOF ;
     public final EObject entryRuleImage() throws RecognitionException {
         EObject current = null;
 
@@ -3943,8 +3981,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1435:46: (iv_ruleImage= ruleImage EOF )
-            // InternalSlideOMatic.g:1436:2: iv_ruleImage= ruleImage EOF
+            // InternalSlideOMatic.g:1444:46: (iv_ruleImage= ruleImage EOF )
+            // InternalSlideOMatic.g:1445:2: iv_ruleImage= ruleImage EOF
             {
              newCompositeNode(grammarAccess.getImageRule()); 
             pushFollow(FOLLOW_1);
@@ -3971,7 +4009,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImage"
-    // InternalSlideOMatic.g:1442:1: ruleImage returns [EObject current=null] : (otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) ) ) ;
+    // InternalSlideOMatic.g:1451:1: ruleImage returns [EObject current=null] : (otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) ) ) ;
     public final EObject ruleImage() throws RecognitionException {
         EObject current = null;
 
@@ -3988,21 +4026,21 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1448:2: ( (otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) ) ) )
-            // InternalSlideOMatic.g:1449:2: (otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) ) )
+            // InternalSlideOMatic.g:1457:2: ( (otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) ) ) )
+            // InternalSlideOMatic.g:1458:2: (otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) ) )
             {
-            // InternalSlideOMatic.g:1449:2: (otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) ) )
-            // InternalSlideOMatic.g:1450:3: otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) )
+            // InternalSlideOMatic.g:1458:2: (otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) ) )
+            // InternalSlideOMatic.g:1459:3: otherlv_0= 'img' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= 'src' ( (lv_src_3_0= RULE_STRING ) ) ( (lv_alignment_4_0= ruleAlignment ) )? ( (lv_size_5_0= ruleSize ) )
             {
             otherlv_0=(Token)match(input,76,FOLLOW_27); 
 
             			newLeafNode(otherlv_0, grammarAccess.getImageAccess().getImgKeyword_0());
             		
-            // InternalSlideOMatic.g:1454:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSlideOMatic.g:1455:4: (lv_name_1_0= RULE_ID )
+            // InternalSlideOMatic.g:1463:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSlideOMatic.g:1464:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSlideOMatic.g:1455:4: (lv_name_1_0= RULE_ID )
-            // InternalSlideOMatic.g:1456:5: lv_name_1_0= RULE_ID
+            // InternalSlideOMatic.g:1464:4: (lv_name_1_0= RULE_ID )
+            // InternalSlideOMatic.g:1465:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_28); 
 
@@ -4028,11 +4066,11 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getImageAccess().getSrcKeyword_2());
             		
-            // InternalSlideOMatic.g:1476:3: ( (lv_src_3_0= RULE_STRING ) )
-            // InternalSlideOMatic.g:1477:4: (lv_src_3_0= RULE_STRING )
+            // InternalSlideOMatic.g:1485:3: ( (lv_src_3_0= RULE_STRING ) )
+            // InternalSlideOMatic.g:1486:4: (lv_src_3_0= RULE_STRING )
             {
-            // InternalSlideOMatic.g:1477:4: (lv_src_3_0= RULE_STRING )
-            // InternalSlideOMatic.g:1478:5: lv_src_3_0= RULE_STRING
+            // InternalSlideOMatic.g:1486:4: (lv_src_3_0= RULE_STRING )
+            // InternalSlideOMatic.g:1487:5: lv_src_3_0= RULE_STRING
             {
             lv_src_3_0=(Token)match(input,RULE_STRING,FOLLOW_29); 
 
@@ -4054,7 +4092,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSlideOMatic.g:1494:3: ( (lv_alignment_4_0= ruleAlignment ) )?
+            // InternalSlideOMatic.g:1503:3: ( (lv_alignment_4_0= ruleAlignment ) )?
             int alt27=2;
             int LA27_0 = input.LA(1);
 
@@ -4063,10 +4101,10 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
             }
             switch (alt27) {
                 case 1 :
-                    // InternalSlideOMatic.g:1495:4: (lv_alignment_4_0= ruleAlignment )
+                    // InternalSlideOMatic.g:1504:4: (lv_alignment_4_0= ruleAlignment )
                     {
-                    // InternalSlideOMatic.g:1495:4: (lv_alignment_4_0= ruleAlignment )
-                    // InternalSlideOMatic.g:1496:5: lv_alignment_4_0= ruleAlignment
+                    // InternalSlideOMatic.g:1504:4: (lv_alignment_4_0= ruleAlignment )
+                    // InternalSlideOMatic.g:1505:5: lv_alignment_4_0= ruleAlignment
                     {
 
                     					newCompositeNode(grammarAccess.getImageAccess().getAlignmentAlignmentParserRuleCall_4_0());
@@ -4096,11 +4134,11 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSlideOMatic.g:1513:3: ( (lv_size_5_0= ruleSize ) )
-            // InternalSlideOMatic.g:1514:4: (lv_size_5_0= ruleSize )
+            // InternalSlideOMatic.g:1522:3: ( (lv_size_5_0= ruleSize ) )
+            // InternalSlideOMatic.g:1523:4: (lv_size_5_0= ruleSize )
             {
-            // InternalSlideOMatic.g:1514:4: (lv_size_5_0= ruleSize )
-            // InternalSlideOMatic.g:1515:5: lv_size_5_0= ruleSize
+            // InternalSlideOMatic.g:1523:4: (lv_size_5_0= ruleSize )
+            // InternalSlideOMatic.g:1524:5: lv_size_5_0= ruleSize
             {
 
             					newCompositeNode(grammarAccess.getImageAccess().getSizeSizeParserRuleCall_5_0());
@@ -4150,7 +4188,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAlignment"
-    // InternalSlideOMatic.g:1536:1: entryRuleAlignment returns [String current=null] : iv_ruleAlignment= ruleAlignment EOF ;
+    // InternalSlideOMatic.g:1545:1: entryRuleAlignment returns [String current=null] : iv_ruleAlignment= ruleAlignment EOF ;
     public final String entryRuleAlignment() throws RecognitionException {
         String current = null;
 
@@ -4158,8 +4196,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1536:49: (iv_ruleAlignment= ruleAlignment EOF )
-            // InternalSlideOMatic.g:1537:2: iv_ruleAlignment= ruleAlignment EOF
+            // InternalSlideOMatic.g:1545:49: (iv_ruleAlignment= ruleAlignment EOF )
+            // InternalSlideOMatic.g:1546:2: iv_ruleAlignment= ruleAlignment EOF
             {
              newCompositeNode(grammarAccess.getAlignmentRule()); 
             pushFollow(FOLLOW_1);
@@ -4186,7 +4224,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAlignment"
-    // InternalSlideOMatic.g:1543:1: ruleAlignment returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'topleft' | kw= 'top' | kw= 'topright' | kw= 'left' | kw= 'center' | kw= 'right' | kw= 'bottomleft' | kw= 'bottom' | kw= 'bottomright' ) ;
+    // InternalSlideOMatic.g:1552:1: ruleAlignment returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'topleft' | kw= 'top' | kw= 'topright' | kw= 'left' | kw= 'center' | kw= 'right' | kw= 'bottomleft' | kw= 'bottom' | kw= 'bottomright' ) ;
     public final AntlrDatatypeRuleToken ruleAlignment() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4196,10 +4234,10 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1549:2: ( (kw= 'topleft' | kw= 'top' | kw= 'topright' | kw= 'left' | kw= 'center' | kw= 'right' | kw= 'bottomleft' | kw= 'bottom' | kw= 'bottomright' ) )
-            // InternalSlideOMatic.g:1550:2: (kw= 'topleft' | kw= 'top' | kw= 'topright' | kw= 'left' | kw= 'center' | kw= 'right' | kw= 'bottomleft' | kw= 'bottom' | kw= 'bottomright' )
+            // InternalSlideOMatic.g:1558:2: ( (kw= 'topleft' | kw= 'top' | kw= 'topright' | kw= 'left' | kw= 'center' | kw= 'right' | kw= 'bottomleft' | kw= 'bottom' | kw= 'bottomright' ) )
+            // InternalSlideOMatic.g:1559:2: (kw= 'topleft' | kw= 'top' | kw= 'topright' | kw= 'left' | kw= 'center' | kw= 'right' | kw= 'bottomleft' | kw= 'bottom' | kw= 'bottomright' )
             {
-            // InternalSlideOMatic.g:1550:2: (kw= 'topleft' | kw= 'top' | kw= 'topright' | kw= 'left' | kw= 'center' | kw= 'right' | kw= 'bottomleft' | kw= 'bottom' | kw= 'bottomright' )
+            // InternalSlideOMatic.g:1559:2: (kw= 'topleft' | kw= 'top' | kw= 'topright' | kw= 'left' | kw= 'center' | kw= 'right' | kw= 'bottomleft' | kw= 'bottom' | kw= 'bottomright' )
             int alt28=9;
             switch ( input.LA(1) ) {
             case 78:
@@ -4256,7 +4294,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             switch (alt28) {
                 case 1 :
-                    // InternalSlideOMatic.g:1551:3: kw= 'topleft'
+                    // InternalSlideOMatic.g:1560:3: kw= 'topleft'
                     {
                     kw=(Token)match(input,78,FOLLOW_2); 
 
@@ -4267,7 +4305,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1557:3: kw= 'top'
+                    // InternalSlideOMatic.g:1566:3: kw= 'top'
                     {
                     kw=(Token)match(input,79,FOLLOW_2); 
 
@@ -4278,7 +4316,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSlideOMatic.g:1563:3: kw= 'topright'
+                    // InternalSlideOMatic.g:1572:3: kw= 'topright'
                     {
                     kw=(Token)match(input,80,FOLLOW_2); 
 
@@ -4289,7 +4327,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSlideOMatic.g:1569:3: kw= 'left'
+                    // InternalSlideOMatic.g:1578:3: kw= 'left'
                     {
                     kw=(Token)match(input,81,FOLLOW_2); 
 
@@ -4300,7 +4338,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSlideOMatic.g:1575:3: kw= 'center'
+                    // InternalSlideOMatic.g:1584:3: kw= 'center'
                     {
                     kw=(Token)match(input,82,FOLLOW_2); 
 
@@ -4311,7 +4349,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSlideOMatic.g:1581:3: kw= 'right'
+                    // InternalSlideOMatic.g:1590:3: kw= 'right'
                     {
                     kw=(Token)match(input,83,FOLLOW_2); 
 
@@ -4322,7 +4360,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalSlideOMatic.g:1587:3: kw= 'bottomleft'
+                    // InternalSlideOMatic.g:1596:3: kw= 'bottomleft'
                     {
                     kw=(Token)match(input,84,FOLLOW_2); 
 
@@ -4333,7 +4371,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalSlideOMatic.g:1593:3: kw= 'bottom'
+                    // InternalSlideOMatic.g:1602:3: kw= 'bottom'
                     {
                     kw=(Token)match(input,85,FOLLOW_2); 
 
@@ -4344,7 +4382,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 9 :
-                    // InternalSlideOMatic.g:1599:3: kw= 'bottomright'
+                    // InternalSlideOMatic.g:1608:3: kw= 'bottomright'
                     {
                     kw=(Token)match(input,86,FOLLOW_2); 
 
@@ -4377,7 +4415,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSize"
-    // InternalSlideOMatic.g:1608:1: entryRuleSize returns [EObject current=null] : iv_ruleSize= ruleSize EOF ;
+    // InternalSlideOMatic.g:1617:1: entryRuleSize returns [EObject current=null] : iv_ruleSize= ruleSize EOF ;
     public final EObject entryRuleSize() throws RecognitionException {
         EObject current = null;
 
@@ -4385,8 +4423,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1608:45: (iv_ruleSize= ruleSize EOF )
-            // InternalSlideOMatic.g:1609:2: iv_ruleSize= ruleSize EOF
+            // InternalSlideOMatic.g:1617:45: (iv_ruleSize= ruleSize EOF )
+            // InternalSlideOMatic.g:1618:2: iv_ruleSize= ruleSize EOF
             {
              newCompositeNode(grammarAccess.getSizeRule()); 
             pushFollow(FOLLOW_1);
@@ -4413,7 +4451,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSize"
-    // InternalSlideOMatic.g:1615:1: ruleSize returns [EObject current=null] : ( ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' ) | ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) ) ) ;
+    // InternalSlideOMatic.g:1624:1: ruleSize returns [EObject current=null] : ( ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' ) | ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) ) ) ;
     public final EObject ruleSize() throws RecognitionException {
         EObject current = null;
 
@@ -4430,10 +4468,10 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1621:2: ( ( ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' ) | ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) ) ) )
-            // InternalSlideOMatic.g:1622:2: ( ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' ) | ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) ) )
+            // InternalSlideOMatic.g:1630:2: ( ( ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' ) | ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) ) ) )
+            // InternalSlideOMatic.g:1631:2: ( ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' ) | ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) ) )
             {
-            // InternalSlideOMatic.g:1622:2: ( ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' ) | ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) ) )
+            // InternalSlideOMatic.g:1631:2: ( ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' ) | ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) ) )
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -4451,13 +4489,13 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
             }
             switch (alt30) {
                 case 1 :
-                    // InternalSlideOMatic.g:1623:3: ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' )
+                    // InternalSlideOMatic.g:1632:3: ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' )
                     {
-                    // InternalSlideOMatic.g:1623:3: ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' )
-                    // InternalSlideOMatic.g:1624:4: () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%'
+                    // InternalSlideOMatic.g:1632:3: ( () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%' )
+                    // InternalSlideOMatic.g:1633:4: () ( (lv_way_1_0= ruleWay ) ) ( (lv_scale_2_0= RULE_INT ) ) otherlv_3= '%'
                     {
-                    // InternalSlideOMatic.g:1624:4: ()
-                    // InternalSlideOMatic.g:1625:5: 
+                    // InternalSlideOMatic.g:1633:4: ()
+                    // InternalSlideOMatic.g:1634:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4467,11 +4505,11 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSlideOMatic.g:1631:4: ( (lv_way_1_0= ruleWay ) )
-                    // InternalSlideOMatic.g:1632:5: (lv_way_1_0= ruleWay )
+                    // InternalSlideOMatic.g:1640:4: ( (lv_way_1_0= ruleWay ) )
+                    // InternalSlideOMatic.g:1641:5: (lv_way_1_0= ruleWay )
                     {
-                    // InternalSlideOMatic.g:1632:5: (lv_way_1_0= ruleWay )
-                    // InternalSlideOMatic.g:1633:6: lv_way_1_0= ruleWay
+                    // InternalSlideOMatic.g:1641:5: (lv_way_1_0= ruleWay )
+                    // InternalSlideOMatic.g:1642:6: lv_way_1_0= ruleWay
                     {
 
                     						newCompositeNode(grammarAccess.getSizeAccess().getWayWayParserRuleCall_0_1_0());
@@ -4498,11 +4536,11 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSlideOMatic.g:1650:4: ( (lv_scale_2_0= RULE_INT ) )
-                    // InternalSlideOMatic.g:1651:5: (lv_scale_2_0= RULE_INT )
+                    // InternalSlideOMatic.g:1659:4: ( (lv_scale_2_0= RULE_INT ) )
+                    // InternalSlideOMatic.g:1660:5: (lv_scale_2_0= RULE_INT )
                     {
-                    // InternalSlideOMatic.g:1651:5: (lv_scale_2_0= RULE_INT )
-                    // InternalSlideOMatic.g:1652:6: lv_scale_2_0= RULE_INT
+                    // InternalSlideOMatic.g:1660:5: (lv_scale_2_0= RULE_INT )
+                    // InternalSlideOMatic.g:1661:6: lv_scale_2_0= RULE_INT
                     {
                     lv_scale_2_0=(Token)match(input,RULE_INT,FOLLOW_31); 
 
@@ -4535,13 +4573,13 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1674:3: ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) )
+                    // InternalSlideOMatic.g:1683:3: ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) )
                     {
-                    // InternalSlideOMatic.g:1674:3: ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) )
-                    // InternalSlideOMatic.g:1675:4: () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) )
+                    // InternalSlideOMatic.g:1683:3: ( () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) ) )
+                    // InternalSlideOMatic.g:1684:4: () ( (lv_size_5_0= RULE_INT ) ) ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) )
                     {
-                    // InternalSlideOMatic.g:1675:4: ()
-                    // InternalSlideOMatic.g:1676:5: 
+                    // InternalSlideOMatic.g:1684:4: ()
+                    // InternalSlideOMatic.g:1685:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4551,11 +4589,11 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSlideOMatic.g:1682:4: ( (lv_size_5_0= RULE_INT ) )
-                    // InternalSlideOMatic.g:1683:5: (lv_size_5_0= RULE_INT )
+                    // InternalSlideOMatic.g:1691:4: ( (lv_size_5_0= RULE_INT ) )
+                    // InternalSlideOMatic.g:1692:5: (lv_size_5_0= RULE_INT )
                     {
-                    // InternalSlideOMatic.g:1683:5: (lv_size_5_0= RULE_INT )
-                    // InternalSlideOMatic.g:1684:6: lv_size_5_0= RULE_INT
+                    // InternalSlideOMatic.g:1692:5: (lv_size_5_0= RULE_INT )
+                    // InternalSlideOMatic.g:1693:6: lv_size_5_0= RULE_INT
                     {
                     lv_size_5_0=(Token)match(input,RULE_INT,FOLLOW_32); 
 
@@ -4577,13 +4615,13 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSlideOMatic.g:1700:4: ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) )
-                    // InternalSlideOMatic.g:1701:5: ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) )
+                    // InternalSlideOMatic.g:1709:4: ( ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) ) )
+                    // InternalSlideOMatic.g:1710:5: ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) )
                     {
-                    // InternalSlideOMatic.g:1701:5: ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) )
-                    // InternalSlideOMatic.g:1702:6: (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' )
+                    // InternalSlideOMatic.g:1710:5: ( (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' ) )
+                    // InternalSlideOMatic.g:1711:6: (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' )
                     {
-                    // InternalSlideOMatic.g:1702:6: (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' )
+                    // InternalSlideOMatic.g:1711:6: (lv_unit_6_1= 'cm' | lv_unit_6_2= 'em' | lv_unit_6_3= 'mm' )
                     int alt29=3;
                     switch ( input.LA(1) ) {
                     case 88:
@@ -4610,7 +4648,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                     switch (alt29) {
                         case 1 :
-                            // InternalSlideOMatic.g:1703:7: lv_unit_6_1= 'cm'
+                            // InternalSlideOMatic.g:1712:7: lv_unit_6_1= 'cm'
                             {
                             lv_unit_6_1=(Token)match(input,88,FOLLOW_2); 
 
@@ -4626,7 +4664,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalSlideOMatic.g:1714:7: lv_unit_6_2= 'em'
+                            // InternalSlideOMatic.g:1723:7: lv_unit_6_2= 'em'
                             {
                             lv_unit_6_2=(Token)match(input,89,FOLLOW_2); 
 
@@ -4642,7 +4680,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 3 :
-                            // InternalSlideOMatic.g:1725:7: lv_unit_6_3= 'mm'
+                            // InternalSlideOMatic.g:1734:7: lv_unit_6_3= 'mm'
                             {
                             lv_unit_6_3=(Token)match(input,90,FOLLOW_2); 
 
@@ -4695,7 +4733,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWay"
-    // InternalSlideOMatic.g:1743:1: entryRuleWay returns [EObject current=null] : iv_ruleWay= ruleWay EOF ;
+    // InternalSlideOMatic.g:1752:1: entryRuleWay returns [EObject current=null] : iv_ruleWay= ruleWay EOF ;
     public final EObject entryRuleWay() throws RecognitionException {
         EObject current = null;
 
@@ -4703,8 +4741,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1743:44: (iv_ruleWay= ruleWay EOF )
-            // InternalSlideOMatic.g:1744:2: iv_ruleWay= ruleWay EOF
+            // InternalSlideOMatic.g:1752:44: (iv_ruleWay= ruleWay EOF )
+            // InternalSlideOMatic.g:1753:2: iv_ruleWay= ruleWay EOF
             {
              newCompositeNode(grammarAccess.getWayRule()); 
             pushFollow(FOLLOW_1);
@@ -4731,7 +4769,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWay"
-    // InternalSlideOMatic.g:1750:1: ruleWay returns [EObject current=null] : ( ( () otherlv_1= 'width' ) | ( () otherlv_3= 'height' ) ) ;
+    // InternalSlideOMatic.g:1759:1: ruleWay returns [EObject current=null] : ( ( () otherlv_1= 'width' ) | ( () otherlv_3= 'height' ) ) ;
     public final EObject ruleWay() throws RecognitionException {
         EObject current = null;
 
@@ -4742,10 +4780,10 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1756:2: ( ( ( () otherlv_1= 'width' ) | ( () otherlv_3= 'height' ) ) )
-            // InternalSlideOMatic.g:1757:2: ( ( () otherlv_1= 'width' ) | ( () otherlv_3= 'height' ) )
+            // InternalSlideOMatic.g:1765:2: ( ( ( () otherlv_1= 'width' ) | ( () otherlv_3= 'height' ) ) )
+            // InternalSlideOMatic.g:1766:2: ( ( () otherlv_1= 'width' ) | ( () otherlv_3= 'height' ) )
             {
-            // InternalSlideOMatic.g:1757:2: ( ( () otherlv_1= 'width' ) | ( () otherlv_3= 'height' ) )
+            // InternalSlideOMatic.g:1766:2: ( ( () otherlv_1= 'width' ) | ( () otherlv_3= 'height' ) )
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -4763,13 +4801,13 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
             }
             switch (alt31) {
                 case 1 :
-                    // InternalSlideOMatic.g:1758:3: ( () otherlv_1= 'width' )
+                    // InternalSlideOMatic.g:1767:3: ( () otherlv_1= 'width' )
                     {
-                    // InternalSlideOMatic.g:1758:3: ( () otherlv_1= 'width' )
-                    // InternalSlideOMatic.g:1759:4: () otherlv_1= 'width'
+                    // InternalSlideOMatic.g:1767:3: ( () otherlv_1= 'width' )
+                    // InternalSlideOMatic.g:1768:4: () otherlv_1= 'width'
                     {
-                    // InternalSlideOMatic.g:1759:4: ()
-                    // InternalSlideOMatic.g:1760:5: 
+                    // InternalSlideOMatic.g:1768:4: ()
+                    // InternalSlideOMatic.g:1769:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4790,13 +4828,13 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:1772:3: ( () otherlv_3= 'height' )
+                    // InternalSlideOMatic.g:1781:3: ( () otherlv_3= 'height' )
                     {
-                    // InternalSlideOMatic.g:1772:3: ( () otherlv_3= 'height' )
-                    // InternalSlideOMatic.g:1773:4: () otherlv_3= 'height'
+                    // InternalSlideOMatic.g:1781:3: ( () otherlv_3= 'height' )
+                    // InternalSlideOMatic.g:1782:4: () otherlv_3= 'height'
                     {
-                    // InternalSlideOMatic.g:1773:4: ()
-                    // InternalSlideOMatic.g:1774:5: 
+                    // InternalSlideOMatic.g:1782:4: ()
+                    // InternalSlideOMatic.g:1783:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -4839,7 +4877,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTable"
-    // InternalSlideOMatic.g:1789:1: entryRuleTable returns [EObject current=null] : iv_ruleTable= ruleTable EOF ;
+    // InternalSlideOMatic.g:1798:1: entryRuleTable returns [EObject current=null] : iv_ruleTable= ruleTable EOF ;
     public final EObject entryRuleTable() throws RecognitionException {
         EObject current = null;
 
@@ -4847,8 +4885,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1789:46: (iv_ruleTable= ruleTable EOF )
-            // InternalSlideOMatic.g:1790:2: iv_ruleTable= ruleTable EOF
+            // InternalSlideOMatic.g:1798:46: (iv_ruleTable= ruleTable EOF )
+            // InternalSlideOMatic.g:1799:2: iv_ruleTable= ruleTable EOF
             {
              newCompositeNode(grammarAccess.getTableRule()); 
             pushFollow(FOLLOW_1);
@@ -4875,7 +4913,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTable"
-    // InternalSlideOMatic.g:1796:1: ruleTable returns [EObject current=null] : (otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']' ) ;
+    // InternalSlideOMatic.g:1805:1: ruleTable returns [EObject current=null] : (otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']' ) ;
     public final EObject ruleTable() throws RecognitionException {
         EObject current = null;
 
@@ -4893,21 +4931,21 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1802:2: ( (otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']' ) )
-            // InternalSlideOMatic.g:1803:2: (otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']' )
+            // InternalSlideOMatic.g:1811:2: ( (otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']' ) )
+            // InternalSlideOMatic.g:1812:2: (otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']' )
             {
-            // InternalSlideOMatic.g:1803:2: (otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']' )
-            // InternalSlideOMatic.g:1804:3: otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']'
+            // InternalSlideOMatic.g:1812:2: (otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']' )
+            // InternalSlideOMatic.g:1813:3: otherlv_0= 'tab' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '[' ( (lv_rows_3_0= ruleTableRow ) ) (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )* otherlv_6= ']'
             {
             otherlv_0=(Token)match(input,93,FOLLOW_27); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTableAccess().getTabKeyword_0());
             		
-            // InternalSlideOMatic.g:1808:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSlideOMatic.g:1809:4: (lv_name_1_0= RULE_ID )
+            // InternalSlideOMatic.g:1817:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSlideOMatic.g:1818:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSlideOMatic.g:1809:4: (lv_name_1_0= RULE_ID )
-            // InternalSlideOMatic.g:1810:5: lv_name_1_0= RULE_ID
+            // InternalSlideOMatic.g:1818:4: (lv_name_1_0= RULE_ID )
+            // InternalSlideOMatic.g:1819:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_33); 
 
@@ -4933,11 +4971,11 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getTableAccess().getLeftSquareBracketKeyword_2());
             		
-            // InternalSlideOMatic.g:1830:3: ( (lv_rows_3_0= ruleTableRow ) )
-            // InternalSlideOMatic.g:1831:4: (lv_rows_3_0= ruleTableRow )
+            // InternalSlideOMatic.g:1839:3: ( (lv_rows_3_0= ruleTableRow ) )
+            // InternalSlideOMatic.g:1840:4: (lv_rows_3_0= ruleTableRow )
             {
-            // InternalSlideOMatic.g:1831:4: (lv_rows_3_0= ruleTableRow )
-            // InternalSlideOMatic.g:1832:5: lv_rows_3_0= ruleTableRow
+            // InternalSlideOMatic.g:1840:4: (lv_rows_3_0= ruleTableRow )
+            // InternalSlideOMatic.g:1841:5: lv_rows_3_0= ruleTableRow
             {
 
             					newCompositeNode(grammarAccess.getTableAccess().getRowsTableRowParserRuleCall_3_0());
@@ -4964,7 +5002,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSlideOMatic.g:1849:3: (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )*
+            // InternalSlideOMatic.g:1858:3: (otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) ) )*
             loop32:
             do {
                 int alt32=2;
@@ -4977,17 +5015,17 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                 switch (alt32) {
             	case 1 :
-            	    // InternalSlideOMatic.g:1850:4: otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) )
+            	    // InternalSlideOMatic.g:1859:4: otherlv_4= ',' ( (lv_rows_5_0= ruleTableRow ) )
             	    {
             	    otherlv_4=(Token)match(input,64,FOLLOW_33); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getTableAccess().getCommaKeyword_4_0());
             	    			
-            	    // InternalSlideOMatic.g:1854:4: ( (lv_rows_5_0= ruleTableRow ) )
-            	    // InternalSlideOMatic.g:1855:5: (lv_rows_5_0= ruleTableRow )
+            	    // InternalSlideOMatic.g:1863:4: ( (lv_rows_5_0= ruleTableRow ) )
+            	    // InternalSlideOMatic.g:1864:5: (lv_rows_5_0= ruleTableRow )
             	    {
-            	    // InternalSlideOMatic.g:1855:5: (lv_rows_5_0= ruleTableRow )
-            	    // InternalSlideOMatic.g:1856:6: lv_rows_5_0= ruleTableRow
+            	    // InternalSlideOMatic.g:1864:5: (lv_rows_5_0= ruleTableRow )
+            	    // InternalSlideOMatic.g:1865:6: lv_rows_5_0= ruleTableRow
             	    {
 
             	    						newCompositeNode(grammarAccess.getTableAccess().getRowsTableRowParserRuleCall_4_1_0());
@@ -5050,7 +5088,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTableRow"
-    // InternalSlideOMatic.g:1882:1: entryRuleTableRow returns [EObject current=null] : iv_ruleTableRow= ruleTableRow EOF ;
+    // InternalSlideOMatic.g:1891:1: entryRuleTableRow returns [EObject current=null] : iv_ruleTableRow= ruleTableRow EOF ;
     public final EObject entryRuleTableRow() throws RecognitionException {
         EObject current = null;
 
@@ -5058,8 +5096,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1882:49: (iv_ruleTableRow= ruleTableRow EOF )
-            // InternalSlideOMatic.g:1883:2: iv_ruleTableRow= ruleTableRow EOF
+            // InternalSlideOMatic.g:1891:49: (iv_ruleTableRow= ruleTableRow EOF )
+            // InternalSlideOMatic.g:1892:2: iv_ruleTableRow= ruleTableRow EOF
             {
              newCompositeNode(grammarAccess.getTableRowRule()); 
             pushFollow(FOLLOW_1);
@@ -5086,7 +5124,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTableRow"
-    // InternalSlideOMatic.g:1889:1: ruleTableRow returns [EObject current=null] : (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']' ) ;
+    // InternalSlideOMatic.g:1898:1: ruleTableRow returns [EObject current=null] : (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']' ) ;
     public final EObject ruleTableRow() throws RecognitionException {
         EObject current = null;
 
@@ -5100,21 +5138,21 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1895:2: ( (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']' ) )
-            // InternalSlideOMatic.g:1896:2: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']' )
+            // InternalSlideOMatic.g:1904:2: ( (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']' ) )
+            // InternalSlideOMatic.g:1905:2: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']' )
             {
-            // InternalSlideOMatic.g:1896:2: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']' )
-            // InternalSlideOMatic.g:1897:3: otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']'
+            // InternalSlideOMatic.g:1905:2: (otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']' )
+            // InternalSlideOMatic.g:1906:3: otherlv_0= '[' ( (lv_values_1_0= RULE_STRING ) ) (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )* otherlv_4= ']'
             {
             otherlv_0=(Token)match(input,94,FOLLOW_3); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTableRowAccess().getLeftSquareBracketKeyword_0());
             		
-            // InternalSlideOMatic.g:1901:3: ( (lv_values_1_0= RULE_STRING ) )
-            // InternalSlideOMatic.g:1902:4: (lv_values_1_0= RULE_STRING )
+            // InternalSlideOMatic.g:1910:3: ( (lv_values_1_0= RULE_STRING ) )
+            // InternalSlideOMatic.g:1911:4: (lv_values_1_0= RULE_STRING )
             {
-            // InternalSlideOMatic.g:1902:4: (lv_values_1_0= RULE_STRING )
-            // InternalSlideOMatic.g:1903:5: lv_values_1_0= RULE_STRING
+            // InternalSlideOMatic.g:1911:4: (lv_values_1_0= RULE_STRING )
+            // InternalSlideOMatic.g:1912:5: lv_values_1_0= RULE_STRING
             {
             lv_values_1_0=(Token)match(input,RULE_STRING,FOLLOW_34); 
 
@@ -5136,7 +5174,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSlideOMatic.g:1919:3: (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
+            // InternalSlideOMatic.g:1928:3: (otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) ) )*
             loop33:
             do {
                 int alt33=2;
@@ -5149,17 +5187,17 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                 switch (alt33) {
             	case 1 :
-            	    // InternalSlideOMatic.g:1920:4: otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) )
+            	    // InternalSlideOMatic.g:1929:4: otherlv_2= ',' ( (lv_values_3_0= RULE_STRING ) )
             	    {
             	    otherlv_2=(Token)match(input,64,FOLLOW_3); 
 
             	    				newLeafNode(otherlv_2, grammarAccess.getTableRowAccess().getCommaKeyword_2_0());
             	    			
-            	    // InternalSlideOMatic.g:1924:4: ( (lv_values_3_0= RULE_STRING ) )
-            	    // InternalSlideOMatic.g:1925:5: (lv_values_3_0= RULE_STRING )
+            	    // InternalSlideOMatic.g:1933:4: ( (lv_values_3_0= RULE_STRING ) )
+            	    // InternalSlideOMatic.g:1934:5: (lv_values_3_0= RULE_STRING )
             	    {
-            	    // InternalSlideOMatic.g:1925:5: (lv_values_3_0= RULE_STRING )
-            	    // InternalSlideOMatic.g:1926:6: lv_values_3_0= RULE_STRING
+            	    // InternalSlideOMatic.g:1934:5: (lv_values_3_0= RULE_STRING )
+            	    // InternalSlideOMatic.g:1935:6: lv_values_3_0= RULE_STRING
             	    {
             	    lv_values_3_0=(Token)match(input,RULE_STRING,FOLLOW_34); 
 
@@ -5217,7 +5255,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCode"
-    // InternalSlideOMatic.g:1951:1: entryRuleCode returns [EObject current=null] : iv_ruleCode= ruleCode EOF ;
+    // InternalSlideOMatic.g:1960:1: entryRuleCode returns [EObject current=null] : iv_ruleCode= ruleCode EOF ;
     public final EObject entryRuleCode() throws RecognitionException {
         EObject current = null;
 
@@ -5225,8 +5263,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:1951:45: (iv_ruleCode= ruleCode EOF )
-            // InternalSlideOMatic.g:1952:2: iv_ruleCode= ruleCode EOF
+            // InternalSlideOMatic.g:1960:45: (iv_ruleCode= ruleCode EOF )
+            // InternalSlideOMatic.g:1961:2: iv_ruleCode= ruleCode EOF
             {
              newCompositeNode(grammarAccess.getCodeRule()); 
             pushFollow(FOLLOW_1);
@@ -5253,85 +5291,346 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCode"
-    // InternalSlideOMatic.g:1958:1: ruleCode returns [EObject current=null] : (otherlv_0= '```' ( (lv_lang_1_0= RULE_ID ) ) ( (lv_code_2_0= RULE_STRING ) ) otherlv_3= '```' ) ;
+    // InternalSlideOMatic.g:1967:1: ruleCode returns [EObject current=null] : ( ( () otherlv_1= 'code' ( (lv_lang_2_0= RULE_ID ) ) ( (lv_code_3_0= RULE_STRING ) ) otherlv_4= 'end' ) | ( () otherlv_6= 'filecode' ( (lv_lang_7_0= RULE_ID ) ) ( (lv_src_8_0= RULE_STRING ) ) (otherlv_9= 'show' otherlv_10= '[' ( (lv_lines_11_0= ruleLineSequence ) ) otherlv_12= ']' (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )* )? otherlv_17= 'end' ) ) ;
     public final EObject ruleCode() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token lv_lang_1_0=null;
-        Token lv_code_2_0=null;
-        Token otherlv_3=null;
+        Token otherlv_1=null;
+        Token lv_lang_2_0=null;
+        Token lv_code_3_0=null;
+        Token otherlv_4=null;
+        Token otherlv_6=null;
+        Token lv_lang_7_0=null;
+        Token lv_src_8_0=null;
+        Token otherlv_9=null;
+        Token otherlv_10=null;
+        Token otherlv_12=null;
+        Token otherlv_13=null;
+        Token otherlv_14=null;
+        Token otherlv_16=null;
+        Token otherlv_17=null;
+        EObject lv_lines_11_0 = null;
+
+        EObject lv_lines_15_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:1964:2: ( (otherlv_0= '```' ( (lv_lang_1_0= RULE_ID ) ) ( (lv_code_2_0= RULE_STRING ) ) otherlv_3= '```' ) )
-            // InternalSlideOMatic.g:1965:2: (otherlv_0= '```' ( (lv_lang_1_0= RULE_ID ) ) ( (lv_code_2_0= RULE_STRING ) ) otherlv_3= '```' )
+            // InternalSlideOMatic.g:1973:2: ( ( ( () otherlv_1= 'code' ( (lv_lang_2_0= RULE_ID ) ) ( (lv_code_3_0= RULE_STRING ) ) otherlv_4= 'end' ) | ( () otherlv_6= 'filecode' ( (lv_lang_7_0= RULE_ID ) ) ( (lv_src_8_0= RULE_STRING ) ) (otherlv_9= 'show' otherlv_10= '[' ( (lv_lines_11_0= ruleLineSequence ) ) otherlv_12= ']' (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )* )? otherlv_17= 'end' ) ) )
+            // InternalSlideOMatic.g:1974:2: ( ( () otherlv_1= 'code' ( (lv_lang_2_0= RULE_ID ) ) ( (lv_code_3_0= RULE_STRING ) ) otherlv_4= 'end' ) | ( () otherlv_6= 'filecode' ( (lv_lang_7_0= RULE_ID ) ) ( (lv_src_8_0= RULE_STRING ) ) (otherlv_9= 'show' otherlv_10= '[' ( (lv_lines_11_0= ruleLineSequence ) ) otherlv_12= ']' (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )* )? otherlv_17= 'end' ) )
             {
-            // InternalSlideOMatic.g:1965:2: (otherlv_0= '```' ( (lv_lang_1_0= RULE_ID ) ) ( (lv_code_2_0= RULE_STRING ) ) otherlv_3= '```' )
-            // InternalSlideOMatic.g:1966:3: otherlv_0= '```' ( (lv_lang_1_0= RULE_ID ) ) ( (lv_code_2_0= RULE_STRING ) ) otherlv_3= '```'
-            {
-            otherlv_0=(Token)match(input,96,FOLLOW_27); 
+            // InternalSlideOMatic.g:1974:2: ( ( () otherlv_1= 'code' ( (lv_lang_2_0= RULE_ID ) ) ( (lv_code_3_0= RULE_STRING ) ) otherlv_4= 'end' ) | ( () otherlv_6= 'filecode' ( (lv_lang_7_0= RULE_ID ) ) ( (lv_src_8_0= RULE_STRING ) ) (otherlv_9= 'show' otherlv_10= '[' ( (lv_lines_11_0= ruleLineSequence ) ) otherlv_12= ']' (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )* )? otherlv_17= 'end' ) )
+            int alt36=2;
+            int LA36_0 = input.LA(1);
 
-            			newLeafNode(otherlv_0, grammarAccess.getCodeAccess().getGraveAccentGraveAccentGraveAccentKeyword_0());
-            		
-            // InternalSlideOMatic.g:1970:3: ( (lv_lang_1_0= RULE_ID ) )
-            // InternalSlideOMatic.g:1971:4: (lv_lang_1_0= RULE_ID )
-            {
-            // InternalSlideOMatic.g:1971:4: (lv_lang_1_0= RULE_ID )
-            // InternalSlideOMatic.g:1972:5: lv_lang_1_0= RULE_ID
-            {
-            lv_lang_1_0=(Token)match(input,RULE_ID,FOLLOW_3); 
-
-            					newLeafNode(lv_lang_1_0, grammarAccess.getCodeAccess().getLangIDTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getCodeRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"lang",
-            						lv_lang_1_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
+            if ( (LA36_0==96) ) {
+                alt36=1;
             }
-
-
+            else if ( (LA36_0==98) ) {
+                alt36=2;
             }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 36, 0, input);
 
-            // InternalSlideOMatic.g:1988:3: ( (lv_code_2_0= RULE_STRING ) )
-            // InternalSlideOMatic.g:1989:4: (lv_code_2_0= RULE_STRING )
-            {
-            // InternalSlideOMatic.g:1989:4: (lv_code_2_0= RULE_STRING )
-            // InternalSlideOMatic.g:1990:5: lv_code_2_0= RULE_STRING
-            {
-            lv_code_2_0=(Token)match(input,RULE_STRING,FOLLOW_35); 
-
-            					newLeafNode(lv_code_2_0, grammarAccess.getCodeAccess().getCodeSTRINGTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getCodeRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"code",
-            						lv_code_2_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
+                throw nvae;
             }
+            switch (alt36) {
+                case 1 :
+                    // InternalSlideOMatic.g:1975:3: ( () otherlv_1= 'code' ( (lv_lang_2_0= RULE_ID ) ) ( (lv_code_3_0= RULE_STRING ) ) otherlv_4= 'end' )
+                    {
+                    // InternalSlideOMatic.g:1975:3: ( () otherlv_1= 'code' ( (lv_lang_2_0= RULE_ID ) ) ( (lv_code_3_0= RULE_STRING ) ) otherlv_4= 'end' )
+                    // InternalSlideOMatic.g:1976:4: () otherlv_1= 'code' ( (lv_lang_2_0= RULE_ID ) ) ( (lv_code_3_0= RULE_STRING ) ) otherlv_4= 'end'
+                    {
+                    // InternalSlideOMatic.g:1976:4: ()
+                    // InternalSlideOMatic.g:1977:5: 
+                    {
+
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getCodeAccess().getInlineCodeAction_0_0(),
+                    						current);
+                    				
+
+                    }
+
+                    otherlv_1=(Token)match(input,96,FOLLOW_27); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getCodeAccess().getCodeKeyword_0_1());
+                    			
+                    // InternalSlideOMatic.g:1987:4: ( (lv_lang_2_0= RULE_ID ) )
+                    // InternalSlideOMatic.g:1988:5: (lv_lang_2_0= RULE_ID )
+                    {
+                    // InternalSlideOMatic.g:1988:5: (lv_lang_2_0= RULE_ID )
+                    // InternalSlideOMatic.g:1989:6: lv_lang_2_0= RULE_ID
+                    {
+                    lv_lang_2_0=(Token)match(input,RULE_ID,FOLLOW_3); 
+
+                    						newLeafNode(lv_lang_2_0, grammarAccess.getCodeAccess().getLangIDTerminalRuleCall_0_2_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getCodeRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"lang",
+                    							lv_lang_2_0,
+                    							"org.eclipse.xtext.common.Terminals.ID");
+                    					
+
+                    }
 
 
-            }
+                    }
 
-            otherlv_3=(Token)match(input,96,FOLLOW_2); 
+                    // InternalSlideOMatic.g:2005:4: ( (lv_code_3_0= RULE_STRING ) )
+                    // InternalSlideOMatic.g:2006:5: (lv_code_3_0= RULE_STRING )
+                    {
+                    // InternalSlideOMatic.g:2006:5: (lv_code_3_0= RULE_STRING )
+                    // InternalSlideOMatic.g:2007:6: lv_code_3_0= RULE_STRING
+                    {
+                    lv_code_3_0=(Token)match(input,RULE_STRING,FOLLOW_35); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getCodeAccess().getGraveAccentGraveAccentGraveAccentKeyword_3());
-            		
+                    						newLeafNode(lv_code_3_0, grammarAccess.getCodeAccess().getCodeSTRINGTerminalRuleCall_0_3_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getCodeRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"code",
+                    							lv_code_3_0,
+                    							"org.eclipse.xtext.common.Terminals.STRING");
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_4=(Token)match(input,97,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_4, grammarAccess.getCodeAccess().getEndKeyword_0_4());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSlideOMatic.g:2029:3: ( () otherlv_6= 'filecode' ( (lv_lang_7_0= RULE_ID ) ) ( (lv_src_8_0= RULE_STRING ) ) (otherlv_9= 'show' otherlv_10= '[' ( (lv_lines_11_0= ruleLineSequence ) ) otherlv_12= ']' (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )* )? otherlv_17= 'end' )
+                    {
+                    // InternalSlideOMatic.g:2029:3: ( () otherlv_6= 'filecode' ( (lv_lang_7_0= RULE_ID ) ) ( (lv_src_8_0= RULE_STRING ) ) (otherlv_9= 'show' otherlv_10= '[' ( (lv_lines_11_0= ruleLineSequence ) ) otherlv_12= ']' (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )* )? otherlv_17= 'end' )
+                    // InternalSlideOMatic.g:2030:4: () otherlv_6= 'filecode' ( (lv_lang_7_0= RULE_ID ) ) ( (lv_src_8_0= RULE_STRING ) ) (otherlv_9= 'show' otherlv_10= '[' ( (lv_lines_11_0= ruleLineSequence ) ) otherlv_12= ']' (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )* )? otherlv_17= 'end'
+                    {
+                    // InternalSlideOMatic.g:2030:4: ()
+                    // InternalSlideOMatic.g:2031:5: 
+                    {
+
+                    					current = forceCreateModelElement(
+                    						grammarAccess.getCodeAccess().getFileCodeAction_1_0(),
+                    						current);
+                    				
+
+                    }
+
+                    otherlv_6=(Token)match(input,98,FOLLOW_27); 
+
+                    				newLeafNode(otherlv_6, grammarAccess.getCodeAccess().getFilecodeKeyword_1_1());
+                    			
+                    // InternalSlideOMatic.g:2041:4: ( (lv_lang_7_0= RULE_ID ) )
+                    // InternalSlideOMatic.g:2042:5: (lv_lang_7_0= RULE_ID )
+                    {
+                    // InternalSlideOMatic.g:2042:5: (lv_lang_7_0= RULE_ID )
+                    // InternalSlideOMatic.g:2043:6: lv_lang_7_0= RULE_ID
+                    {
+                    lv_lang_7_0=(Token)match(input,RULE_ID,FOLLOW_3); 
+
+                    						newLeafNode(lv_lang_7_0, grammarAccess.getCodeAccess().getLangIDTerminalRuleCall_1_2_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getCodeRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"lang",
+                    							lv_lang_7_0,
+                    							"org.eclipse.xtext.common.Terminals.ID");
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalSlideOMatic.g:2059:4: ( (lv_src_8_0= RULE_STRING ) )
+                    // InternalSlideOMatic.g:2060:5: (lv_src_8_0= RULE_STRING )
+                    {
+                    // InternalSlideOMatic.g:2060:5: (lv_src_8_0= RULE_STRING )
+                    // InternalSlideOMatic.g:2061:6: lv_src_8_0= RULE_STRING
+                    {
+                    lv_src_8_0=(Token)match(input,RULE_STRING,FOLLOW_36); 
+
+                    						newLeafNode(lv_src_8_0, grammarAccess.getCodeAccess().getSrcSTRINGTerminalRuleCall_1_3_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getCodeRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"src",
+                    							lv_src_8_0,
+                    							"org.eclipse.xtext.common.Terminals.STRING");
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalSlideOMatic.g:2077:4: (otherlv_9= 'show' otherlv_10= '[' ( (lv_lines_11_0= ruleLineSequence ) ) otherlv_12= ']' (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )* )?
+                    int alt35=2;
+                    int LA35_0 = input.LA(1);
+
+                    if ( (LA35_0==99) ) {
+                        alt35=1;
+                    }
+                    switch (alt35) {
+                        case 1 :
+                            // InternalSlideOMatic.g:2078:5: otherlv_9= 'show' otherlv_10= '[' ( (lv_lines_11_0= ruleLineSequence ) ) otherlv_12= ']' (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )*
+                            {
+                            otherlv_9=(Token)match(input,99,FOLLOW_33); 
+
+                            					newLeafNode(otherlv_9, grammarAccess.getCodeAccess().getShowKeyword_1_4_0());
+                            				
+                            otherlv_10=(Token)match(input,94,FOLLOW_30); 
+
+                            					newLeafNode(otherlv_10, grammarAccess.getCodeAccess().getLeftSquareBracketKeyword_1_4_1());
+                            				
+                            // InternalSlideOMatic.g:2086:5: ( (lv_lines_11_0= ruleLineSequence ) )
+                            // InternalSlideOMatic.g:2087:6: (lv_lines_11_0= ruleLineSequence )
+                            {
+                            // InternalSlideOMatic.g:2087:6: (lv_lines_11_0= ruleLineSequence )
+                            // InternalSlideOMatic.g:2088:7: lv_lines_11_0= ruleLineSequence
+                            {
+
+                            							newCompositeNode(grammarAccess.getCodeAccess().getLinesLineSequenceParserRuleCall_1_4_2_0());
+                            						
+                            pushFollow(FOLLOW_37);
+                            lv_lines_11_0=ruleLineSequence();
+
+                            state._fsp--;
+
+
+                            							if (current==null) {
+                            								current = createModelElementForParent(grammarAccess.getCodeRule());
+                            							}
+                            							add(
+                            								current,
+                            								"lines",
+                            								lv_lines_11_0,
+                            								"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.LineSequence");
+                            							afterParserOrEnumRuleCall();
+                            						
+
+                            }
+
+
+                            }
+
+                            otherlv_12=(Token)match(input,95,FOLLOW_38); 
+
+                            					newLeafNode(otherlv_12, grammarAccess.getCodeAccess().getRightSquareBracketKeyword_1_4_3());
+                            				
+                            // InternalSlideOMatic.g:2109:5: (otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']' )*
+                            loop34:
+                            do {
+                                int alt34=2;
+                                int LA34_0 = input.LA(1);
+
+                                if ( (LA34_0==64) ) {
+                                    alt34=1;
+                                }
+
+
+                                switch (alt34) {
+                            	case 1 :
+                            	    // InternalSlideOMatic.g:2110:6: otherlv_13= ',' otherlv_14= '[' ( (lv_lines_15_0= ruleLineSequence ) ) otherlv_16= ']'
+                            	    {
+                            	    otherlv_13=(Token)match(input,64,FOLLOW_33); 
+
+                            	    						newLeafNode(otherlv_13, grammarAccess.getCodeAccess().getCommaKeyword_1_4_4_0());
+                            	    					
+                            	    otherlv_14=(Token)match(input,94,FOLLOW_30); 
+
+                            	    						newLeafNode(otherlv_14, grammarAccess.getCodeAccess().getLeftSquareBracketKeyword_1_4_4_1());
+                            	    					
+                            	    // InternalSlideOMatic.g:2118:6: ( (lv_lines_15_0= ruleLineSequence ) )
+                            	    // InternalSlideOMatic.g:2119:7: (lv_lines_15_0= ruleLineSequence )
+                            	    {
+                            	    // InternalSlideOMatic.g:2119:7: (lv_lines_15_0= ruleLineSequence )
+                            	    // InternalSlideOMatic.g:2120:8: lv_lines_15_0= ruleLineSequence
+                            	    {
+
+                            	    								newCompositeNode(grammarAccess.getCodeAccess().getLinesLineSequenceParserRuleCall_1_4_4_2_0());
+                            	    							
+                            	    pushFollow(FOLLOW_37);
+                            	    lv_lines_15_0=ruleLineSequence();
+
+                            	    state._fsp--;
+
+
+                            	    								if (current==null) {
+                            	    									current = createModelElementForParent(grammarAccess.getCodeRule());
+                            	    								}
+                            	    								add(
+                            	    									current,
+                            	    									"lines",
+                            	    									lv_lines_15_0,
+                            	    									"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.LineSequence");
+                            	    								afterParserOrEnumRuleCall();
+                            	    							
+
+                            	    }
+
+
+                            	    }
+
+                            	    otherlv_16=(Token)match(input,95,FOLLOW_38); 
+
+                            	    						newLeafNode(otherlv_16, grammarAccess.getCodeAccess().getRightSquareBracketKeyword_1_4_4_3());
+                            	    					
+
+                            	    }
+                            	    break;
+
+                            	default :
+                            	    break loop34;
+                                }
+                            } while (true);
+
+
+                            }
+                            break;
+
+                    }
+
+                    otherlv_17=(Token)match(input,97,FOLLOW_2); 
+
+                    				newLeafNode(otherlv_17, grammarAccess.getCodeAccess().getEndKeyword_1_5());
+                    			
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -5354,8 +5653,220 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleCode"
 
 
+    // $ANTLR start "entryRuleLineSequence"
+    // InternalSlideOMatic.g:2152:1: entryRuleLineSequence returns [EObject current=null] : iv_ruleLineSequence= ruleLineSequence EOF ;
+    public final EObject entryRuleLineSequence() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleLineSequence = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2152:53: (iv_ruleLineSequence= ruleLineSequence EOF )
+            // InternalSlideOMatic.g:2153:2: iv_ruleLineSequence= ruleLineSequence EOF
+            {
+             newCompositeNode(grammarAccess.getLineSequenceRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleLineSequence=ruleLineSequence();
+
+            state._fsp--;
+
+             current =iv_ruleLineSequence; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLineSequence"
+
+
+    // $ANTLR start "ruleLineSequence"
+    // InternalSlideOMatic.g:2159:1: ruleLineSequence returns [EObject current=null] : ( ( (lv_lower_0_0= RULE_INT ) ) (otherlv_1= ':' ( (lv_upper_2_0= RULE_INT ) ) )? (otherlv_3= ',' ( (lv_additional_4_0= ruleLineSequence ) ) )* ) ;
+    public final EObject ruleLineSequence() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_lower_0_0=null;
+        Token otherlv_1=null;
+        Token lv_upper_2_0=null;
+        Token otherlv_3=null;
+        EObject lv_additional_4_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2165:2: ( ( ( (lv_lower_0_0= RULE_INT ) ) (otherlv_1= ':' ( (lv_upper_2_0= RULE_INT ) ) )? (otherlv_3= ',' ( (lv_additional_4_0= ruleLineSequence ) ) )* ) )
+            // InternalSlideOMatic.g:2166:2: ( ( (lv_lower_0_0= RULE_INT ) ) (otherlv_1= ':' ( (lv_upper_2_0= RULE_INT ) ) )? (otherlv_3= ',' ( (lv_additional_4_0= ruleLineSequence ) ) )* )
+            {
+            // InternalSlideOMatic.g:2166:2: ( ( (lv_lower_0_0= RULE_INT ) ) (otherlv_1= ':' ( (lv_upper_2_0= RULE_INT ) ) )? (otherlv_3= ',' ( (lv_additional_4_0= ruleLineSequence ) ) )* )
+            // InternalSlideOMatic.g:2167:3: ( (lv_lower_0_0= RULE_INT ) ) (otherlv_1= ':' ( (lv_upper_2_0= RULE_INT ) ) )? (otherlv_3= ',' ( (lv_additional_4_0= ruleLineSequence ) ) )*
+            {
+            // InternalSlideOMatic.g:2167:3: ( (lv_lower_0_0= RULE_INT ) )
+            // InternalSlideOMatic.g:2168:4: (lv_lower_0_0= RULE_INT )
+            {
+            // InternalSlideOMatic.g:2168:4: (lv_lower_0_0= RULE_INT )
+            // InternalSlideOMatic.g:2169:5: lv_lower_0_0= RULE_INT
+            {
+            lv_lower_0_0=(Token)match(input,RULE_INT,FOLLOW_39); 
+
+            					newLeafNode(lv_lower_0_0, grammarAccess.getLineSequenceAccess().getLowerINTTerminalRuleCall_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getLineSequenceRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"lower",
+            						lv_lower_0_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+            // InternalSlideOMatic.g:2185:3: (otherlv_1= ':' ( (lv_upper_2_0= RULE_INT ) ) )?
+            int alt37=2;
+            int LA37_0 = input.LA(1);
+
+            if ( (LA37_0==100) ) {
+                alt37=1;
+            }
+            switch (alt37) {
+                case 1 :
+                    // InternalSlideOMatic.g:2186:4: otherlv_1= ':' ( (lv_upper_2_0= RULE_INT ) )
+                    {
+                    otherlv_1=(Token)match(input,100,FOLLOW_30); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getLineSequenceAccess().getColonKeyword_1_0());
+                    			
+                    // InternalSlideOMatic.g:2190:4: ( (lv_upper_2_0= RULE_INT ) )
+                    // InternalSlideOMatic.g:2191:5: (lv_upper_2_0= RULE_INT )
+                    {
+                    // InternalSlideOMatic.g:2191:5: (lv_upper_2_0= RULE_INT )
+                    // InternalSlideOMatic.g:2192:6: lv_upper_2_0= RULE_INT
+                    {
+                    lv_upper_2_0=(Token)match(input,RULE_INT,FOLLOW_16); 
+
+                    						newLeafNode(lv_upper_2_0, grammarAccess.getLineSequenceAccess().getUpperINTTerminalRuleCall_1_1_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getLineSequenceRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"upper",
+                    							lv_upper_2_0,
+                    							"org.eclipse.xtext.common.Terminals.INT");
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalSlideOMatic.g:2209:3: (otherlv_3= ',' ( (lv_additional_4_0= ruleLineSequence ) ) )*
+            loop38:
+            do {
+                int alt38=2;
+                int LA38_0 = input.LA(1);
+
+                if ( (LA38_0==64) ) {
+                    alt38=1;
+                }
+
+
+                switch (alt38) {
+            	case 1 :
+            	    // InternalSlideOMatic.g:2210:4: otherlv_3= ',' ( (lv_additional_4_0= ruleLineSequence ) )
+            	    {
+            	    otherlv_3=(Token)match(input,64,FOLLOW_30); 
+
+            	    				newLeafNode(otherlv_3, grammarAccess.getLineSequenceAccess().getCommaKeyword_2_0());
+            	    			
+            	    // InternalSlideOMatic.g:2214:4: ( (lv_additional_4_0= ruleLineSequence ) )
+            	    // InternalSlideOMatic.g:2215:5: (lv_additional_4_0= ruleLineSequence )
+            	    {
+            	    // InternalSlideOMatic.g:2215:5: (lv_additional_4_0= ruleLineSequence )
+            	    // InternalSlideOMatic.g:2216:6: lv_additional_4_0= ruleLineSequence
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getLineSequenceAccess().getAdditionalLineSequenceParserRuleCall_2_1_0());
+            	    					
+            	    pushFollow(FOLLOW_16);
+            	    lv_additional_4_0=ruleLineSequence();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getLineSequenceRule());
+            	    						}
+            	    						add(
+            	    							current,
+            	    							"additional",
+            	    							lv_additional_4_0,
+            	    							"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.LineSequence");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop38;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLineSequence"
+
+
     // $ANTLR start "entryRuleClick"
-    // InternalSlideOMatic.g:2014:1: entryRuleClick returns [String current=null] : iv_ruleClick= ruleClick EOF ;
+    // InternalSlideOMatic.g:2238:1: entryRuleClick returns [String current=null] : iv_ruleClick= ruleClick EOF ;
     public final String entryRuleClick() throws RecognitionException {
         String current = null;
 
@@ -5363,8 +5874,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:2014:45: (iv_ruleClick= ruleClick EOF )
-            // InternalSlideOMatic.g:2015:2: iv_ruleClick= ruleClick EOF
+            // InternalSlideOMatic.g:2238:45: (iv_ruleClick= ruleClick EOF )
+            // InternalSlideOMatic.g:2239:2: iv_ruleClick= ruleClick EOF
             {
              newCompositeNode(grammarAccess.getClickRule()); 
             pushFollow(FOLLOW_1);
@@ -5391,7 +5902,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClick"
-    // InternalSlideOMatic.g:2021:1: ruleClick returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '$$' ;
+    // InternalSlideOMatic.g:2245:1: ruleClick returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : kw= '$$' ;
     public final AntlrDatatypeRuleToken ruleClick() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5401,10 +5912,10 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:2027:2: (kw= '$$' )
-            // InternalSlideOMatic.g:2028:2: kw= '$$'
+            // InternalSlideOMatic.g:2251:2: (kw= '$$' )
+            // InternalSlideOMatic.g:2252:2: kw= '$$'
             {
-            kw=(Token)match(input,97,FOLLOW_2); 
+            kw=(Token)match(input,101,FOLLOW_2); 
 
             		current.merge(kw);
             		newLeafNode(kw, grammarAccess.getClickAccess().getDollarSignDollarSignKeyword());
@@ -5429,7 +5940,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAnimation"
-    // InternalSlideOMatic.g:2036:1: entryRuleAnimation returns [EObject current=null] : iv_ruleAnimation= ruleAnimation EOF ;
+    // InternalSlideOMatic.g:2260:1: entryRuleAnimation returns [EObject current=null] : iv_ruleAnimation= ruleAnimation EOF ;
     public final EObject entryRuleAnimation() throws RecognitionException {
         EObject current = null;
 
@@ -5437,8 +5948,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:2036:50: (iv_ruleAnimation= ruleAnimation EOF )
-            // InternalSlideOMatic.g:2037:2: iv_ruleAnimation= ruleAnimation EOF
+            // InternalSlideOMatic.g:2260:50: (iv_ruleAnimation= ruleAnimation EOF )
+            // InternalSlideOMatic.g:2261:2: iv_ruleAnimation= ruleAnimation EOF
             {
              newCompositeNode(grammarAccess.getAnimationRule()); 
             pushFollow(FOLLOW_1);
@@ -5465,7 +5976,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnimation"
-    // InternalSlideOMatic.g:2043:1: ruleAnimation returns [EObject current=null] : (otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )? ) ;
+    // InternalSlideOMatic.g:2267:1: ruleAnimation returns [EObject current=null] : (otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )? ) ;
     public final EObject ruleAnimation() throws RecognitionException {
         EObject current = null;
 
@@ -5483,28 +5994,28 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:2049:2: ( (otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )? ) )
-            // InternalSlideOMatic.g:2050:2: (otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )? )
+            // InternalSlideOMatic.g:2273:2: ( (otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )? ) )
+            // InternalSlideOMatic.g:2274:2: (otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )? )
             {
-            // InternalSlideOMatic.g:2050:2: (otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )? )
-            // InternalSlideOMatic.g:2051:3: otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )?
+            // InternalSlideOMatic.g:2274:2: (otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )? )
+            // InternalSlideOMatic.g:2275:3: otherlv_0= 'animate' ( (otherlv_1= RULE_ID ) ) ( (lv_type_2_0= ruleAnimationType ) ) otherlv_3= 'to' ( (lv_location_4_0= ruleAlignment ) ) ( (lv_size_5_0= ruleSize ) )?
             {
-            otherlv_0=(Token)match(input,98,FOLLOW_27); 
+            otherlv_0=(Token)match(input,102,FOLLOW_27); 
 
             			newLeafNode(otherlv_0, grammarAccess.getAnimationAccess().getAnimateKeyword_0());
             		
-            // InternalSlideOMatic.g:2055:3: ( (otherlv_1= RULE_ID ) )
-            // InternalSlideOMatic.g:2056:4: (otherlv_1= RULE_ID )
+            // InternalSlideOMatic.g:2279:3: ( (otherlv_1= RULE_ID ) )
+            // InternalSlideOMatic.g:2280:4: (otherlv_1= RULE_ID )
             {
-            // InternalSlideOMatic.g:2056:4: (otherlv_1= RULE_ID )
-            // InternalSlideOMatic.g:2057:5: otherlv_1= RULE_ID
+            // InternalSlideOMatic.g:2280:4: (otherlv_1= RULE_ID )
+            // InternalSlideOMatic.g:2281:5: otherlv_1= RULE_ID
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getAnimationRule());
             					}
             				
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_36); 
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_40); 
 
             					newLeafNode(otherlv_1, grammarAccess.getAnimationAccess().getTargetImageCrossReference_1_0());
             				
@@ -5514,16 +6025,16 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSlideOMatic.g:2068:3: ( (lv_type_2_0= ruleAnimationType ) )
-            // InternalSlideOMatic.g:2069:4: (lv_type_2_0= ruleAnimationType )
+            // InternalSlideOMatic.g:2292:3: ( (lv_type_2_0= ruleAnimationType ) )
+            // InternalSlideOMatic.g:2293:4: (lv_type_2_0= ruleAnimationType )
             {
-            // InternalSlideOMatic.g:2069:4: (lv_type_2_0= ruleAnimationType )
-            // InternalSlideOMatic.g:2070:5: lv_type_2_0= ruleAnimationType
+            // InternalSlideOMatic.g:2293:4: (lv_type_2_0= ruleAnimationType )
+            // InternalSlideOMatic.g:2294:5: lv_type_2_0= ruleAnimationType
             {
 
             					newCompositeNode(grammarAccess.getAnimationAccess().getTypeAnimationTypeParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_41);
             lv_type_2_0=ruleAnimationType();
 
             state._fsp--;
@@ -5545,20 +6056,20 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,99,FOLLOW_38); 
+            otherlv_3=(Token)match(input,103,FOLLOW_42); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAnimationAccess().getToKeyword_3());
             		
-            // InternalSlideOMatic.g:2091:3: ( (lv_location_4_0= ruleAlignment ) )
-            // InternalSlideOMatic.g:2092:4: (lv_location_4_0= ruleAlignment )
+            // InternalSlideOMatic.g:2315:3: ( (lv_location_4_0= ruleAlignment ) )
+            // InternalSlideOMatic.g:2316:4: (lv_location_4_0= ruleAlignment )
             {
-            // InternalSlideOMatic.g:2092:4: (lv_location_4_0= ruleAlignment )
-            // InternalSlideOMatic.g:2093:5: lv_location_4_0= ruleAlignment
+            // InternalSlideOMatic.g:2316:4: (lv_location_4_0= ruleAlignment )
+            // InternalSlideOMatic.g:2317:5: lv_location_4_0= ruleAlignment
             {
 
             					newCompositeNode(grammarAccess.getAnimationAccess().getLocationAlignmentParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_43);
             lv_location_4_0=ruleAlignment();
 
             state._fsp--;
@@ -5580,19 +6091,19 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSlideOMatic.g:2110:3: ( (lv_size_5_0= ruleSize ) )?
-            int alt34=2;
-            int LA34_0 = input.LA(1);
+            // InternalSlideOMatic.g:2334:3: ( (lv_size_5_0= ruleSize ) )?
+            int alt39=2;
+            int LA39_0 = input.LA(1);
 
-            if ( (LA34_0==RULE_INT||(LA34_0>=91 && LA34_0<=92)) ) {
-                alt34=1;
+            if ( (LA39_0==RULE_INT||(LA39_0>=91 && LA39_0<=92)) ) {
+                alt39=1;
             }
-            switch (alt34) {
+            switch (alt39) {
                 case 1 :
-                    // InternalSlideOMatic.g:2111:4: (lv_size_5_0= ruleSize )
+                    // InternalSlideOMatic.g:2335:4: (lv_size_5_0= ruleSize )
                     {
-                    // InternalSlideOMatic.g:2111:4: (lv_size_5_0= ruleSize )
-                    // InternalSlideOMatic.g:2112:5: lv_size_5_0= ruleSize
+                    // InternalSlideOMatic.g:2335:4: (lv_size_5_0= ruleSize )
+                    // InternalSlideOMatic.g:2336:5: lv_size_5_0= ruleSize
                     {
 
                     					newCompositeNode(grammarAccess.getAnimationAccess().getSizeSizeParserRuleCall_5_0());
@@ -5645,7 +6156,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAnimationType"
-    // InternalSlideOMatic.g:2133:1: entryRuleAnimationType returns [EObject current=null] : iv_ruleAnimationType= ruleAnimationType EOF ;
+    // InternalSlideOMatic.g:2357:1: entryRuleAnimationType returns [EObject current=null] : iv_ruleAnimationType= ruleAnimationType EOF ;
     public final EObject entryRuleAnimationType() throws RecognitionException {
         EObject current = null;
 
@@ -5653,8 +6164,8 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSlideOMatic.g:2133:54: (iv_ruleAnimationType= ruleAnimationType EOF )
-            // InternalSlideOMatic.g:2134:2: iv_ruleAnimationType= ruleAnimationType EOF
+            // InternalSlideOMatic.g:2357:54: (iv_ruleAnimationType= ruleAnimationType EOF )
+            // InternalSlideOMatic.g:2358:2: iv_ruleAnimationType= ruleAnimationType EOF
             {
              newCompositeNode(grammarAccess.getAnimationTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -5681,7 +6192,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAnimationType"
-    // InternalSlideOMatic.g:2140:1: ruleAnimationType returns [EObject current=null] : ( ( () otherlv_1= 'move' ) | ( () otherlv_3= 'jump' ) ) ;
+    // InternalSlideOMatic.g:2364:1: ruleAnimationType returns [EObject current=null] : ( ( () otherlv_1= 'move' ) | ( () otherlv_3= 'jump' ) ) ;
     public final EObject ruleAnimationType() throws RecognitionException {
         EObject current = null;
 
@@ -5692,34 +6203,34 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSlideOMatic.g:2146:2: ( ( ( () otherlv_1= 'move' ) | ( () otherlv_3= 'jump' ) ) )
-            // InternalSlideOMatic.g:2147:2: ( ( () otherlv_1= 'move' ) | ( () otherlv_3= 'jump' ) )
+            // InternalSlideOMatic.g:2370:2: ( ( ( () otherlv_1= 'move' ) | ( () otherlv_3= 'jump' ) ) )
+            // InternalSlideOMatic.g:2371:2: ( ( () otherlv_1= 'move' ) | ( () otherlv_3= 'jump' ) )
             {
-            // InternalSlideOMatic.g:2147:2: ( ( () otherlv_1= 'move' ) | ( () otherlv_3= 'jump' ) )
-            int alt35=2;
-            int LA35_0 = input.LA(1);
+            // InternalSlideOMatic.g:2371:2: ( ( () otherlv_1= 'move' ) | ( () otherlv_3= 'jump' ) )
+            int alt40=2;
+            int LA40_0 = input.LA(1);
 
-            if ( (LA35_0==100) ) {
-                alt35=1;
+            if ( (LA40_0==104) ) {
+                alt40=1;
             }
-            else if ( (LA35_0==101) ) {
-                alt35=2;
+            else if ( (LA40_0==105) ) {
+                alt40=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 35, 0, input);
+                    new NoViableAltException("", 40, 0, input);
 
                 throw nvae;
             }
-            switch (alt35) {
+            switch (alt40) {
                 case 1 :
-                    // InternalSlideOMatic.g:2148:3: ( () otherlv_1= 'move' )
+                    // InternalSlideOMatic.g:2372:3: ( () otherlv_1= 'move' )
                     {
-                    // InternalSlideOMatic.g:2148:3: ( () otherlv_1= 'move' )
-                    // InternalSlideOMatic.g:2149:4: () otherlv_1= 'move'
+                    // InternalSlideOMatic.g:2372:3: ( () otherlv_1= 'move' )
+                    // InternalSlideOMatic.g:2373:4: () otherlv_1= 'move'
                     {
-                    // InternalSlideOMatic.g:2149:4: ()
-                    // InternalSlideOMatic.g:2150:5: 
+                    // InternalSlideOMatic.g:2373:4: ()
+                    // InternalSlideOMatic.g:2374:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -5729,7 +6240,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_1=(Token)match(input,100,FOLLOW_2); 
+                    otherlv_1=(Token)match(input,104,FOLLOW_2); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getAnimationTypeAccess().getMoveKeyword_0_1());
                     			
@@ -5740,13 +6251,13 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSlideOMatic.g:2162:3: ( () otherlv_3= 'jump' )
+                    // InternalSlideOMatic.g:2386:3: ( () otherlv_3= 'jump' )
                     {
-                    // InternalSlideOMatic.g:2162:3: ( () otherlv_3= 'jump' )
-                    // InternalSlideOMatic.g:2163:4: () otherlv_3= 'jump'
+                    // InternalSlideOMatic.g:2386:3: ( () otherlv_3= 'jump' )
+                    // InternalSlideOMatic.g:2387:4: () otherlv_3= 'jump'
                     {
-                    // InternalSlideOMatic.g:2163:4: ()
-                    // InternalSlideOMatic.g:2164:5: 
+                    // InternalSlideOMatic.g:2387:4: ()
+                    // InternalSlideOMatic.g:2388:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -5756,7 +6267,7 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,101,FOLLOW_2); 
+                    otherlv_3=(Token)match(input,105,FOLLOW_2); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getAnimationTypeAccess().getJumpKeyword_1_1());
                     			
@@ -5787,6 +6298,1450 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleAnimationType"
 
+
+    // $ANTLR start "entryRuleMathExp"
+    // InternalSlideOMatic.g:2403:1: entryRuleMathExp returns [EObject current=null] : iv_ruleMathExp= ruleMathExp EOF ;
+    public final EObject entryRuleMathExp() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMathExp = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2403:48: (iv_ruleMathExp= ruleMathExp EOF )
+            // InternalSlideOMatic.g:2404:2: iv_ruleMathExp= ruleMathExp EOF
+            {
+             newCompositeNode(grammarAccess.getMathExpRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMathExp=ruleMathExp();
+
+            state._fsp--;
+
+             current =iv_ruleMathExp; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMathExp"
+
+
+    // $ANTLR start "ruleMathExp"
+    // InternalSlideOMatic.g:2410:1: ruleMathExp returns [EObject current=null] : (otherlv_0= 'math' ( (lv_eval_1_0= 'eval' ) )? ( (lv_exp_2_0= ruleExp ) ) ) ;
+    public final EObject ruleMathExp() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_eval_1_0=null;
+        EObject lv_exp_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2416:2: ( (otherlv_0= 'math' ( (lv_eval_1_0= 'eval' ) )? ( (lv_exp_2_0= ruleExp ) ) ) )
+            // InternalSlideOMatic.g:2417:2: (otherlv_0= 'math' ( (lv_eval_1_0= 'eval' ) )? ( (lv_exp_2_0= ruleExp ) ) )
+            {
+            // InternalSlideOMatic.g:2417:2: (otherlv_0= 'math' ( (lv_eval_1_0= 'eval' ) )? ( (lv_exp_2_0= ruleExp ) ) )
+            // InternalSlideOMatic.g:2418:3: otherlv_0= 'math' ( (lv_eval_1_0= 'eval' ) )? ( (lv_exp_2_0= ruleExp ) )
+            {
+            otherlv_0=(Token)match(input,106,FOLLOW_44); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getMathExpAccess().getMathKeyword_0());
+            		
+            // InternalSlideOMatic.g:2422:3: ( (lv_eval_1_0= 'eval' ) )?
+            int alt41=2;
+            int LA41_0 = input.LA(1);
+
+            if ( (LA41_0==107) ) {
+                alt41=1;
+            }
+            switch (alt41) {
+                case 1 :
+                    // InternalSlideOMatic.g:2423:4: (lv_eval_1_0= 'eval' )
+                    {
+                    // InternalSlideOMatic.g:2423:4: (lv_eval_1_0= 'eval' )
+                    // InternalSlideOMatic.g:2424:5: lv_eval_1_0= 'eval'
+                    {
+                    lv_eval_1_0=(Token)match(input,107,FOLLOW_44); 
+
+                    					newLeafNode(lv_eval_1_0, grammarAccess.getMathExpAccess().getEvalEvalKeyword_1_0());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getMathExpRule());
+                    					}
+                    					setWithLastConsumed(current, "eval", lv_eval_1_0, "eval");
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalSlideOMatic.g:2436:3: ( (lv_exp_2_0= ruleExp ) )
+            // InternalSlideOMatic.g:2437:4: (lv_exp_2_0= ruleExp )
+            {
+            // InternalSlideOMatic.g:2437:4: (lv_exp_2_0= ruleExp )
+            // InternalSlideOMatic.g:2438:5: lv_exp_2_0= ruleExp
+            {
+
+            					newCompositeNode(grammarAccess.getMathExpAccess().getExpExpParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_exp_2_0=ruleExp();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMathExpRule());
+            					}
+            					set(
+            						current,
+            						"exp",
+            						lv_exp_2_0,
+            						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Exp");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMathExp"
+
+
+    // $ANTLR start "entryRuleExp"
+    // InternalSlideOMatic.g:2459:1: entryRuleExp returns [EObject current=null] : iv_ruleExp= ruleExp EOF ;
+    public final EObject entryRuleExp() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleExp = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2459:44: (iv_ruleExp= ruleExp EOF )
+            // InternalSlideOMatic.g:2460:2: iv_ruleExp= ruleExp EOF
+            {
+             newCompositeNode(grammarAccess.getExpRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleExp=ruleExp();
+
+            state._fsp--;
+
+             current =iv_ruleExp; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleExp"
+
+
+    // $ANTLR start "ruleExp"
+    // InternalSlideOMatic.g:2466:1: ruleExp returns [EObject current=null] : (this_Factor_0= ruleFactor ( ( (otherlv_1= '+' () ) | (otherlv_3= '-' () ) ) ( (lv_right_5_0= ruleFactor ) ) )* ) ;
+    public final EObject ruleExp() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject this_Factor_0 = null;
+
+        EObject lv_right_5_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2472:2: ( (this_Factor_0= ruleFactor ( ( (otherlv_1= '+' () ) | (otherlv_3= '-' () ) ) ( (lv_right_5_0= ruleFactor ) ) )* ) )
+            // InternalSlideOMatic.g:2473:2: (this_Factor_0= ruleFactor ( ( (otherlv_1= '+' () ) | (otherlv_3= '-' () ) ) ( (lv_right_5_0= ruleFactor ) ) )* )
+            {
+            // InternalSlideOMatic.g:2473:2: (this_Factor_0= ruleFactor ( ( (otherlv_1= '+' () ) | (otherlv_3= '-' () ) ) ( (lv_right_5_0= ruleFactor ) ) )* )
+            // InternalSlideOMatic.g:2474:3: this_Factor_0= ruleFactor ( ( (otherlv_1= '+' () ) | (otherlv_3= '-' () ) ) ( (lv_right_5_0= ruleFactor ) ) )*
+            {
+
+            			newCompositeNode(grammarAccess.getExpAccess().getFactorParserRuleCall_0());
+            		
+            pushFollow(FOLLOW_45);
+            this_Factor_0=ruleFactor();
+
+            state._fsp--;
+
+
+            			current = this_Factor_0;
+            			afterParserOrEnumRuleCall();
+            		
+            // InternalSlideOMatic.g:2482:3: ( ( (otherlv_1= '+' () ) | (otherlv_3= '-' () ) ) ( (lv_right_5_0= ruleFactor ) ) )*
+            loop43:
+            do {
+                int alt43=2;
+                int LA43_0 = input.LA(1);
+
+                if ( (LA43_0==75||LA43_0==108) ) {
+                    alt43=1;
+                }
+
+
+                switch (alt43) {
+            	case 1 :
+            	    // InternalSlideOMatic.g:2483:4: ( (otherlv_1= '+' () ) | (otherlv_3= '-' () ) ) ( (lv_right_5_0= ruleFactor ) )
+            	    {
+            	    // InternalSlideOMatic.g:2483:4: ( (otherlv_1= '+' () ) | (otherlv_3= '-' () ) )
+            	    int alt42=2;
+            	    int LA42_0 = input.LA(1);
+
+            	    if ( (LA42_0==108) ) {
+            	        alt42=1;
+            	    }
+            	    else if ( (LA42_0==75) ) {
+            	        alt42=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 42, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt42) {
+            	        case 1 :
+            	            // InternalSlideOMatic.g:2484:5: (otherlv_1= '+' () )
+            	            {
+            	            // InternalSlideOMatic.g:2484:5: (otherlv_1= '+' () )
+            	            // InternalSlideOMatic.g:2485:6: otherlv_1= '+' ()
+            	            {
+            	            otherlv_1=(Token)match(input,108,FOLLOW_44); 
+
+            	            						newLeafNode(otherlv_1, grammarAccess.getExpAccess().getPlusSignKeyword_1_0_0_0());
+            	            					
+            	            // InternalSlideOMatic.g:2489:6: ()
+            	            // InternalSlideOMatic.g:2490:7: 
+            	            {
+
+            	            							current = forceCreateModelElementAndSet(
+            	            								grammarAccess.getExpAccess().getPlusLeftAction_1_0_0_1(),
+            	            								current);
+            	            						
+
+            	            }
+
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalSlideOMatic.g:2498:5: (otherlv_3= '-' () )
+            	            {
+            	            // InternalSlideOMatic.g:2498:5: (otherlv_3= '-' () )
+            	            // InternalSlideOMatic.g:2499:6: otherlv_3= '-' ()
+            	            {
+            	            otherlv_3=(Token)match(input,75,FOLLOW_44); 
+
+            	            						newLeafNode(otherlv_3, grammarAccess.getExpAccess().getHyphenMinusKeyword_1_0_1_0());
+            	            					
+            	            // InternalSlideOMatic.g:2503:6: ()
+            	            // InternalSlideOMatic.g:2504:7: 
+            	            {
+
+            	            							current = forceCreateModelElementAndSet(
+            	            								grammarAccess.getExpAccess().getMinusLeftAction_1_0_1_1(),
+            	            								current);
+            	            						
+
+            	            }
+
+
+            	            }
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    // InternalSlideOMatic.g:2512:4: ( (lv_right_5_0= ruleFactor ) )
+            	    // InternalSlideOMatic.g:2513:5: (lv_right_5_0= ruleFactor )
+            	    {
+            	    // InternalSlideOMatic.g:2513:5: (lv_right_5_0= ruleFactor )
+            	    // InternalSlideOMatic.g:2514:6: lv_right_5_0= ruleFactor
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getExpAccess().getRightFactorParserRuleCall_1_1_0());
+            	    					
+            	    pushFollow(FOLLOW_45);
+            	    lv_right_5_0=ruleFactor();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getExpRule());
+            	    						}
+            	    						set(
+            	    							current,
+            	    							"right",
+            	    							lv_right_5_0,
+            	    							"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Factor");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop43;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleExp"
+
+
+    // $ANTLR start "entryRuleFactor"
+    // InternalSlideOMatic.g:2536:1: entryRuleFactor returns [EObject current=null] : iv_ruleFactor= ruleFactor EOF ;
+    public final EObject entryRuleFactor() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleFactor = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2536:47: (iv_ruleFactor= ruleFactor EOF )
+            // InternalSlideOMatic.g:2537:2: iv_ruleFactor= ruleFactor EOF
+            {
+             newCompositeNode(grammarAccess.getFactorRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleFactor=ruleFactor();
+
+            state._fsp--;
+
+             current =iv_ruleFactor; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleFactor"
+
+
+    // $ANTLR start "ruleFactor"
+    // InternalSlideOMatic.g:2543:1: ruleFactor returns [EObject current=null] : (this_Pow_0= rulePow ( ( (otherlv_1= '*' () ) | (otherlv_3= '/' () ) ) ( (lv_right_5_0= rulePow ) ) )* ) ;
+    public final EObject ruleFactor() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject this_Pow_0 = null;
+
+        EObject lv_right_5_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2549:2: ( (this_Pow_0= rulePow ( ( (otherlv_1= '*' () ) | (otherlv_3= '/' () ) ) ( (lv_right_5_0= rulePow ) ) )* ) )
+            // InternalSlideOMatic.g:2550:2: (this_Pow_0= rulePow ( ( (otherlv_1= '*' () ) | (otherlv_3= '/' () ) ) ( (lv_right_5_0= rulePow ) ) )* )
+            {
+            // InternalSlideOMatic.g:2550:2: (this_Pow_0= rulePow ( ( (otherlv_1= '*' () ) | (otherlv_3= '/' () ) ) ( (lv_right_5_0= rulePow ) ) )* )
+            // InternalSlideOMatic.g:2551:3: this_Pow_0= rulePow ( ( (otherlv_1= '*' () ) | (otherlv_3= '/' () ) ) ( (lv_right_5_0= rulePow ) ) )*
+            {
+
+            			newCompositeNode(grammarAccess.getFactorAccess().getPowParserRuleCall_0());
+            		
+            pushFollow(FOLLOW_46);
+            this_Pow_0=rulePow();
+
+            state._fsp--;
+
+
+            			current = this_Pow_0;
+            			afterParserOrEnumRuleCall();
+            		
+            // InternalSlideOMatic.g:2559:3: ( ( (otherlv_1= '*' () ) | (otherlv_3= '/' () ) ) ( (lv_right_5_0= rulePow ) ) )*
+            loop45:
+            do {
+                int alt45=2;
+                int LA45_0 = input.LA(1);
+
+                if ( (LA45_0==67||LA45_0==109) ) {
+                    alt45=1;
+                }
+
+
+                switch (alt45) {
+            	case 1 :
+            	    // InternalSlideOMatic.g:2560:4: ( (otherlv_1= '*' () ) | (otherlv_3= '/' () ) ) ( (lv_right_5_0= rulePow ) )
+            	    {
+            	    // InternalSlideOMatic.g:2560:4: ( (otherlv_1= '*' () ) | (otherlv_3= '/' () ) )
+            	    int alt44=2;
+            	    int LA44_0 = input.LA(1);
+
+            	    if ( (LA44_0==67) ) {
+            	        alt44=1;
+            	    }
+            	    else if ( (LA44_0==109) ) {
+            	        alt44=2;
+            	    }
+            	    else {
+            	        NoViableAltException nvae =
+            	            new NoViableAltException("", 44, 0, input);
+
+            	        throw nvae;
+            	    }
+            	    switch (alt44) {
+            	        case 1 :
+            	            // InternalSlideOMatic.g:2561:5: (otherlv_1= '*' () )
+            	            {
+            	            // InternalSlideOMatic.g:2561:5: (otherlv_1= '*' () )
+            	            // InternalSlideOMatic.g:2562:6: otherlv_1= '*' ()
+            	            {
+            	            otherlv_1=(Token)match(input,67,FOLLOW_44); 
+
+            	            						newLeafNode(otherlv_1, grammarAccess.getFactorAccess().getAsteriskKeyword_1_0_0_0());
+            	            					
+            	            // InternalSlideOMatic.g:2566:6: ()
+            	            // InternalSlideOMatic.g:2567:7: 
+            	            {
+
+            	            							current = forceCreateModelElementAndSet(
+            	            								grammarAccess.getFactorAccess().getMultLeftAction_1_0_0_1(),
+            	            								current);
+            	            						
+
+            	            }
+
+
+            	            }
+
+
+            	            }
+            	            break;
+            	        case 2 :
+            	            // InternalSlideOMatic.g:2575:5: (otherlv_3= '/' () )
+            	            {
+            	            // InternalSlideOMatic.g:2575:5: (otherlv_3= '/' () )
+            	            // InternalSlideOMatic.g:2576:6: otherlv_3= '/' ()
+            	            {
+            	            otherlv_3=(Token)match(input,109,FOLLOW_44); 
+
+            	            						newLeafNode(otherlv_3, grammarAccess.getFactorAccess().getSolidusKeyword_1_0_1_0());
+            	            					
+            	            // InternalSlideOMatic.g:2580:6: ()
+            	            // InternalSlideOMatic.g:2581:7: 
+            	            {
+
+            	            							current = forceCreateModelElementAndSet(
+            	            								grammarAccess.getFactorAccess().getDivLeftAction_1_0_1_1(),
+            	            								current);
+            	            						
+
+            	            }
+
+
+            	            }
+
+
+            	            }
+            	            break;
+
+            	    }
+
+            	    // InternalSlideOMatic.g:2589:4: ( (lv_right_5_0= rulePow ) )
+            	    // InternalSlideOMatic.g:2590:5: (lv_right_5_0= rulePow )
+            	    {
+            	    // InternalSlideOMatic.g:2590:5: (lv_right_5_0= rulePow )
+            	    // InternalSlideOMatic.g:2591:6: lv_right_5_0= rulePow
+            	    {
+
+            	    						newCompositeNode(grammarAccess.getFactorAccess().getRightPowParserRuleCall_1_1_0());
+            	    					
+            	    pushFollow(FOLLOW_46);
+            	    lv_right_5_0=rulePow();
+
+            	    state._fsp--;
+
+
+            	    						if (current==null) {
+            	    							current = createModelElementForParent(grammarAccess.getFactorRule());
+            	    						}
+            	    						set(
+            	    							current,
+            	    							"right",
+            	    							lv_right_5_0,
+            	    							"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Pow");
+            	    						afterParserOrEnumRuleCall();
+            	    					
+
+            	    }
+
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop45;
+                }
+            } while (true);
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleFactor"
+
+
+    // $ANTLR start "entryRulePow"
+    // InternalSlideOMatic.g:2613:1: entryRulePow returns [EObject current=null] : iv_rulePow= rulePow EOF ;
+    public final EObject entryRulePow() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePow = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2613:44: (iv_rulePow= rulePow EOF )
+            // InternalSlideOMatic.g:2614:2: iv_rulePow= rulePow EOF
+            {
+             newCompositeNode(grammarAccess.getPowRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePow=rulePow();
+
+            state._fsp--;
+
+             current =iv_rulePow; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePow"
+
+
+    // $ANTLR start "rulePow"
+    // InternalSlideOMatic.g:2620:1: rulePow returns [EObject current=null] : (this_Primary_0= rulePrimary ( () otherlv_2= '^' ( (lv_right_3_0= rulePrimary ) ) )? ) ;
+    public final EObject rulePow() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_2=null;
+        EObject this_Primary_0 = null;
+
+        EObject lv_right_3_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2626:2: ( (this_Primary_0= rulePrimary ( () otherlv_2= '^' ( (lv_right_3_0= rulePrimary ) ) )? ) )
+            // InternalSlideOMatic.g:2627:2: (this_Primary_0= rulePrimary ( () otherlv_2= '^' ( (lv_right_3_0= rulePrimary ) ) )? )
+            {
+            // InternalSlideOMatic.g:2627:2: (this_Primary_0= rulePrimary ( () otherlv_2= '^' ( (lv_right_3_0= rulePrimary ) ) )? )
+            // InternalSlideOMatic.g:2628:3: this_Primary_0= rulePrimary ( () otherlv_2= '^' ( (lv_right_3_0= rulePrimary ) ) )?
+            {
+
+            			newCompositeNode(grammarAccess.getPowAccess().getPrimaryParserRuleCall_0());
+            		
+            pushFollow(FOLLOW_47);
+            this_Primary_0=rulePrimary();
+
+            state._fsp--;
+
+
+            			current = this_Primary_0;
+            			afterParserOrEnumRuleCall();
+            		
+            // InternalSlideOMatic.g:2636:3: ( () otherlv_2= '^' ( (lv_right_3_0= rulePrimary ) ) )?
+            int alt46=2;
+            int LA46_0 = input.LA(1);
+
+            if ( (LA46_0==110) ) {
+                alt46=1;
+            }
+            switch (alt46) {
+                case 1 :
+                    // InternalSlideOMatic.g:2637:4: () otherlv_2= '^' ( (lv_right_3_0= rulePrimary ) )
+                    {
+                    // InternalSlideOMatic.g:2637:4: ()
+                    // InternalSlideOMatic.g:2638:5: 
+                    {
+
+                    					current = forceCreateModelElementAndSet(
+                    						grammarAccess.getPowAccess().getPowLeftAction_1_0(),
+                    						current);
+                    				
+
+                    }
+
+                    otherlv_2=(Token)match(input,110,FOLLOW_44); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getPowAccess().getCircumflexAccentKeyword_1_1());
+                    			
+                    // InternalSlideOMatic.g:2648:4: ( (lv_right_3_0= rulePrimary ) )
+                    // InternalSlideOMatic.g:2649:5: (lv_right_3_0= rulePrimary )
+                    {
+                    // InternalSlideOMatic.g:2649:5: (lv_right_3_0= rulePrimary )
+                    // InternalSlideOMatic.g:2650:6: lv_right_3_0= rulePrimary
+                    {
+
+                    						newCompositeNode(grammarAccess.getPowAccess().getRightPrimaryParserRuleCall_1_2_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_right_3_0=rulePrimary();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getPowRule());
+                    						}
+                    						set(
+                    							current,
+                    							"right",
+                    							lv_right_3_0,
+                    							"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Primary");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePow"
+
+
+    // $ANTLR start "entryRulePrimary"
+    // InternalSlideOMatic.g:2672:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
+    public final EObject entryRulePrimary() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_rulePrimary = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2672:48: (iv_rulePrimary= rulePrimary EOF )
+            // InternalSlideOMatic.g:2673:2: iv_rulePrimary= rulePrimary EOF
+            {
+             newCompositeNode(grammarAccess.getPrimaryRule()); 
+            pushFollow(FOLLOW_1);
+            iv_rulePrimary=rulePrimary();
+
+            state._fsp--;
+
+             current =iv_rulePrimary; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRulePrimary"
+
+
+    // $ANTLR start "rulePrimary"
+    // InternalSlideOMatic.g:2679:1: rulePrimary returns [EObject current=null] : (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis | this_VariableBinding_2= ruleVariableBinding | this_VariableUse_3= ruleVariableUse ) ;
+    public final EObject rulePrimary() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_Number_0 = null;
+
+        EObject this_Parenthesis_1 = null;
+
+        EObject this_VariableBinding_2 = null;
+
+        EObject this_VariableUse_3 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2685:2: ( (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis | this_VariableBinding_2= ruleVariableBinding | this_VariableUse_3= ruleVariableUse ) )
+            // InternalSlideOMatic.g:2686:2: (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis | this_VariableBinding_2= ruleVariableBinding | this_VariableUse_3= ruleVariableUse )
+            {
+            // InternalSlideOMatic.g:2686:2: (this_Number_0= ruleNumber | this_Parenthesis_1= ruleParenthesis | this_VariableBinding_2= ruleVariableBinding | this_VariableUse_3= ruleVariableUse )
+            int alt47=4;
+            switch ( input.LA(1) ) {
+            case RULE_INT:
+                {
+                alt47=1;
+                }
+                break;
+            case 13:
+                {
+                alt47=2;
+                }
+                break;
+            case 111:
+                {
+                alt47=3;
+                }
+                break;
+            case RULE_ID:
+                {
+                alt47=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 47, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt47) {
+                case 1 :
+                    // InternalSlideOMatic.g:2687:3: this_Number_0= ruleNumber
+                    {
+
+                    			newCompositeNode(grammarAccess.getPrimaryAccess().getNumberParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Number_0=ruleNumber();
+
+                    state._fsp--;
+
+
+                    			current = this_Number_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSlideOMatic.g:2696:3: this_Parenthesis_1= ruleParenthesis
+                    {
+
+                    			newCompositeNode(grammarAccess.getPrimaryAccess().getParenthesisParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_Parenthesis_1=ruleParenthesis();
+
+                    state._fsp--;
+
+
+                    			current = this_Parenthesis_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSlideOMatic.g:2705:3: this_VariableBinding_2= ruleVariableBinding
+                    {
+
+                    			newCompositeNode(grammarAccess.getPrimaryAccess().getVariableBindingParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_VariableBinding_2=ruleVariableBinding();
+
+                    state._fsp--;
+
+
+                    			current = this_VariableBinding_2;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSlideOMatic.g:2714:3: this_VariableUse_3= ruleVariableUse
+                    {
+
+                    			newCompositeNode(grammarAccess.getPrimaryAccess().getVariableUseParserRuleCall_3());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_VariableUse_3=ruleVariableUse();
+
+                    state._fsp--;
+
+
+                    			current = this_VariableUse_3;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "rulePrimary"
+
+
+    // $ANTLR start "entryRuleVariableUse"
+    // InternalSlideOMatic.g:2726:1: entryRuleVariableUse returns [EObject current=null] : iv_ruleVariableUse= ruleVariableUse EOF ;
+    public final EObject entryRuleVariableUse() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleVariableUse = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2726:52: (iv_ruleVariableUse= ruleVariableUse EOF )
+            // InternalSlideOMatic.g:2727:2: iv_ruleVariableUse= ruleVariableUse EOF
+            {
+             newCompositeNode(grammarAccess.getVariableUseRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleVariableUse=ruleVariableUse();
+
+            state._fsp--;
+
+             current =iv_ruleVariableUse; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleVariableUse"
+
+
+    // $ANTLR start "ruleVariableUse"
+    // InternalSlideOMatic.g:2733:1: ruleVariableUse returns [EObject current=null] : ( () ( (lv_id_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleVariableUse() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_id_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2739:2: ( ( () ( (lv_id_1_0= RULE_ID ) ) ) )
+            // InternalSlideOMatic.g:2740:2: ( () ( (lv_id_1_0= RULE_ID ) ) )
+            {
+            // InternalSlideOMatic.g:2740:2: ( () ( (lv_id_1_0= RULE_ID ) ) )
+            // InternalSlideOMatic.g:2741:3: () ( (lv_id_1_0= RULE_ID ) )
+            {
+            // InternalSlideOMatic.g:2741:3: ()
+            // InternalSlideOMatic.g:2742:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getVariableUseAccess().getVarAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalSlideOMatic.g:2748:3: ( (lv_id_1_0= RULE_ID ) )
+            // InternalSlideOMatic.g:2749:4: (lv_id_1_0= RULE_ID )
+            {
+            // InternalSlideOMatic.g:2749:4: (lv_id_1_0= RULE_ID )
+            // InternalSlideOMatic.g:2750:5: lv_id_1_0= RULE_ID
+            {
+            lv_id_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            					newLeafNode(lv_id_1_0, grammarAccess.getVariableUseAccess().getIdIDTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getVariableUseRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"id",
+            						lv_id_1_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleVariableUse"
+
+
+    // $ANTLR start "entryRuleVariableBinding"
+    // InternalSlideOMatic.g:2770:1: entryRuleVariableBinding returns [EObject current=null] : iv_ruleVariableBinding= ruleVariableBinding EOF ;
+    public final EObject entryRuleVariableBinding() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleVariableBinding = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2770:56: (iv_ruleVariableBinding= ruleVariableBinding EOF )
+            // InternalSlideOMatic.g:2771:2: iv_ruleVariableBinding= ruleVariableBinding EOF
+            {
+             newCompositeNode(grammarAccess.getVariableBindingRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleVariableBinding=ruleVariableBinding();
+
+            state._fsp--;
+
+             current =iv_ruleVariableBinding; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleVariableBinding"
+
+
+    // $ANTLR start "ruleVariableBinding"
+    // InternalSlideOMatic.g:2777:1: ruleVariableBinding returns [EObject current=null] : ( () otherlv_1= 'let' ( (lv_id_2_0= RULE_ID ) ) otherlv_3= '=' ( (lv_binding_4_0= ruleExp ) ) otherlv_5= 'in' ( (lv_body_6_0= ruleExp ) ) otherlv_7= 'end' ) ;
+    public final EObject ruleVariableBinding() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token lv_id_2_0=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        Token otherlv_7=null;
+        EObject lv_binding_4_0 = null;
+
+        EObject lv_body_6_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2783:2: ( ( () otherlv_1= 'let' ( (lv_id_2_0= RULE_ID ) ) otherlv_3= '=' ( (lv_binding_4_0= ruleExp ) ) otherlv_5= 'in' ( (lv_body_6_0= ruleExp ) ) otherlv_7= 'end' ) )
+            // InternalSlideOMatic.g:2784:2: ( () otherlv_1= 'let' ( (lv_id_2_0= RULE_ID ) ) otherlv_3= '=' ( (lv_binding_4_0= ruleExp ) ) otherlv_5= 'in' ( (lv_body_6_0= ruleExp ) ) otherlv_7= 'end' )
+            {
+            // InternalSlideOMatic.g:2784:2: ( () otherlv_1= 'let' ( (lv_id_2_0= RULE_ID ) ) otherlv_3= '=' ( (lv_binding_4_0= ruleExp ) ) otherlv_5= 'in' ( (lv_body_6_0= ruleExp ) ) otherlv_7= 'end' )
+            // InternalSlideOMatic.g:2785:3: () otherlv_1= 'let' ( (lv_id_2_0= RULE_ID ) ) otherlv_3= '=' ( (lv_binding_4_0= ruleExp ) ) otherlv_5= 'in' ( (lv_body_6_0= ruleExp ) ) otherlv_7= 'end'
+            {
+            // InternalSlideOMatic.g:2785:3: ()
+            // InternalSlideOMatic.g:2786:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getVariableBindingAccess().getLetAction_0(),
+            					current);
+            			
+
+            }
+
+            otherlv_1=(Token)match(input,111,FOLLOW_27); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getVariableBindingAccess().getLetKeyword_1());
+            		
+            // InternalSlideOMatic.g:2796:3: ( (lv_id_2_0= RULE_ID ) )
+            // InternalSlideOMatic.g:2797:4: (lv_id_2_0= RULE_ID )
+            {
+            // InternalSlideOMatic.g:2797:4: (lv_id_2_0= RULE_ID )
+            // InternalSlideOMatic.g:2798:5: lv_id_2_0= RULE_ID
+            {
+            lv_id_2_0=(Token)match(input,RULE_ID,FOLLOW_48); 
+
+            					newLeafNode(lv_id_2_0, grammarAccess.getVariableBindingAccess().getIdIDTerminalRuleCall_2_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getVariableBindingRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"id",
+            						lv_id_2_0,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,112,FOLLOW_44); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getVariableBindingAccess().getEqualsSignKeyword_3());
+            		
+            // InternalSlideOMatic.g:2818:3: ( (lv_binding_4_0= ruleExp ) )
+            // InternalSlideOMatic.g:2819:4: (lv_binding_4_0= ruleExp )
+            {
+            // InternalSlideOMatic.g:2819:4: (lv_binding_4_0= ruleExp )
+            // InternalSlideOMatic.g:2820:5: lv_binding_4_0= ruleExp
+            {
+
+            					newCompositeNode(grammarAccess.getVariableBindingAccess().getBindingExpParserRuleCall_4_0());
+            				
+            pushFollow(FOLLOW_49);
+            lv_binding_4_0=ruleExp();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getVariableBindingRule());
+            					}
+            					set(
+            						current,
+            						"binding",
+            						lv_binding_4_0,
+            						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Exp");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_5=(Token)match(input,113,FOLLOW_44); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getVariableBindingAccess().getInKeyword_5());
+            		
+            // InternalSlideOMatic.g:2841:3: ( (lv_body_6_0= ruleExp ) )
+            // InternalSlideOMatic.g:2842:4: (lv_body_6_0= ruleExp )
+            {
+            // InternalSlideOMatic.g:2842:4: (lv_body_6_0= ruleExp )
+            // InternalSlideOMatic.g:2843:5: lv_body_6_0= ruleExp
+            {
+
+            					newCompositeNode(grammarAccess.getVariableBindingAccess().getBodyExpParserRuleCall_6_0());
+            				
+            pushFollow(FOLLOW_35);
+            lv_body_6_0=ruleExp();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getVariableBindingRule());
+            					}
+            					set(
+            						current,
+            						"body",
+            						lv_body_6_0,
+            						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Exp");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_7=(Token)match(input,97,FOLLOW_2); 
+
+            			newLeafNode(otherlv_7, grammarAccess.getVariableBindingAccess().getEndKeyword_7());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleVariableBinding"
+
+
+    // $ANTLR start "entryRuleParenthesis"
+    // InternalSlideOMatic.g:2868:1: entryRuleParenthesis returns [EObject current=null] : iv_ruleParenthesis= ruleParenthesis EOF ;
+    public final EObject entryRuleParenthesis() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleParenthesis = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2868:52: (iv_ruleParenthesis= ruleParenthesis EOF )
+            // InternalSlideOMatic.g:2869:2: iv_ruleParenthesis= ruleParenthesis EOF
+            {
+             newCompositeNode(grammarAccess.getParenthesisRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleParenthesis=ruleParenthesis();
+
+            state._fsp--;
+
+             current =iv_ruleParenthesis; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleParenthesis"
+
+
+    // $ANTLR start "ruleParenthesis"
+    // InternalSlideOMatic.g:2875:1: ruleParenthesis returns [EObject current=null] : (otherlv_0= '(' this_Exp_1= ruleExp otherlv_2= ')' ) ;
+    public final EObject ruleParenthesis() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token otherlv_2=null;
+        EObject this_Exp_1 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2881:2: ( (otherlv_0= '(' this_Exp_1= ruleExp otherlv_2= ')' ) )
+            // InternalSlideOMatic.g:2882:2: (otherlv_0= '(' this_Exp_1= ruleExp otherlv_2= ')' )
+            {
+            // InternalSlideOMatic.g:2882:2: (otherlv_0= '(' this_Exp_1= ruleExp otherlv_2= ')' )
+            // InternalSlideOMatic.g:2883:3: otherlv_0= '(' this_Exp_1= ruleExp otherlv_2= ')'
+            {
+            otherlv_0=(Token)match(input,13,FOLLOW_44); 
+
+            			newLeafNode(otherlv_0, grammarAccess.getParenthesisAccess().getLeftParenthesisKeyword_0());
+            		
+
+            			newCompositeNode(grammarAccess.getParenthesisAccess().getExpParserRuleCall_1());
+            		
+            pushFollow(FOLLOW_11);
+            this_Exp_1=ruleExp();
+
+            state._fsp--;
+
+
+            			current = this_Exp_1;
+            			afterParserOrEnumRuleCall();
+            		
+            otherlv_2=(Token)match(input,14,FOLLOW_2); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getParenthesisAccess().getRightParenthesisKeyword_2());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleParenthesis"
+
+
+    // $ANTLR start "entryRuleNumber"
+    // InternalSlideOMatic.g:2903:1: entryRuleNumber returns [EObject current=null] : iv_ruleNumber= ruleNumber EOF ;
+    public final EObject entryRuleNumber() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleNumber = null;
+
+
+        try {
+            // InternalSlideOMatic.g:2903:47: (iv_ruleNumber= ruleNumber EOF )
+            // InternalSlideOMatic.g:2904:2: iv_ruleNumber= ruleNumber EOF
+            {
+             newCompositeNode(grammarAccess.getNumberRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleNumber=ruleNumber();
+
+            state._fsp--;
+
+             current =iv_ruleNumber; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNumber"
+
+
+    // $ANTLR start "ruleNumber"
+    // InternalSlideOMatic.g:2910:1: ruleNumber returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_INT ) ) ) ;
+    public final EObject ruleNumber() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_value_1_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSlideOMatic.g:2916:2: ( ( () ( (lv_value_1_0= RULE_INT ) ) ) )
+            // InternalSlideOMatic.g:2917:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
+            {
+            // InternalSlideOMatic.g:2917:2: ( () ( (lv_value_1_0= RULE_INT ) ) )
+            // InternalSlideOMatic.g:2918:3: () ( (lv_value_1_0= RULE_INT ) )
+            {
+            // InternalSlideOMatic.g:2918:3: ()
+            // InternalSlideOMatic.g:2919:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getNumberAccess().getNumAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalSlideOMatic.g:2925:3: ( (lv_value_1_0= RULE_INT ) )
+            // InternalSlideOMatic.g:2926:4: (lv_value_1_0= RULE_INT )
+            {
+            // InternalSlideOMatic.g:2926:4: (lv_value_1_0= RULE_INT )
+            // InternalSlideOMatic.g:2927:5: lv_value_1_0= RULE_INT
+            {
+            lv_value_1_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_value_1_0, grammarAccess.getNumberAccess().getValueINTTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getNumberRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"value",
+            						lv_value_1_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNumber"
+
     // Delegated rules
 
 
@@ -5797,26 +7752,26 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001010L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000000A000L,0x0000000400000010L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x000000000000A000L,0x0000004000000010L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0xC000000000014000L,0x0000000000000006L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0xC000000000004000L,0x0000000000000006L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000006L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000004000L,0x0000000000000004L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000008000L,0x0000000400000010L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000008000L,0x0000004000000010L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x00003FFFFFFC0000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000020002L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x3FFFC00010000000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000008L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000001010L,0x0000000000000068L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000010L,0x0000000120001780L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000008010L,0x0000000120001780L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000002L,0x0000000200000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000010L,0x0000040520001780L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000008010L,0x0000040520001780L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000002L,0x0000002000000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000800L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000002002L,0x0000000200000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000002002L,0x0000002000000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000600L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
@@ -5826,10 +7781,20 @@ public class InternalSlideOMaticParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000000L,0x0000000007000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000000L,0x0000000040000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000001L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000000100000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0000003000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000800000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x00000000007FC000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000042L,0x00000000187FC000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0000000A00000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x0000000200000001L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000002L,0x0000001000000001L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0000030000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000000L,0x0000008000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x00000000007FC000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000042L,0x00000000187FC000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000002060L,0x0000880000000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000800L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000002L,0x0000200000000008L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000002L,0x0000400000000000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x0001000000000000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000000L,0x0002000000000000L});
 
 }

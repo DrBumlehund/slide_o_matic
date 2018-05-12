@@ -38,7 +38,7 @@ Section:
 	{Sec} "*" | {SubSec} "**" | {SubSubSec} "***";
 
 Content:
-	(ToC | Text | Block | List | Image | Table | Code) (click=Click)?;
+	(ToC | Text | Block | List | Image | Table | Code | MathExp) (click=Click)?;
 
 ToC:
 	{ToC} "ToC" | {CurrentSecToC} "ToC" "*";
@@ -80,7 +80,12 @@ TableRow:
 	"[" values+=STRING ("," values+=STRING)* "]";
 
 Code:
-	"```" lang=ID code=STRING "```";
+	{InlineCode} "code" lang=ID code=STRING "end" | {FileCode} "filecode" lang=ID src=STRING ("show" "[" lines+=LineSequence "]"
+	("," "[" lines+=LineSequence
+	"]")*)? "end";
+
+LineSequence:
+	lower=INT (":" upper=INT)? ("," additional+=LineSequence)*;
 
 Click:
 	"$$";
@@ -90,4 +95,32 @@ Animation:
 
 AnimationType:
 	{Move} "move" | {Jump} "jump";
+
+MathExp:
+	'math' (eval="eval")? exp=Exp;
+
+Exp returns Expression:
+	Factor (('+' {Plus.left=current} | '-' {Minus.left=current}) right=Factor)*;
+
+Factor returns Expression:
+	Pow (('*' {Mult.left=current} | '/' {Div.left=current}) right=Pow)*;
+
+Pow returns Expression:
+	Primary ({Pow.left=current} "^" right=Primary)?;
+
+Primary returns Expression:
+	Number | Parenthesis | VariableBinding | VariableUse;
+
+VariableUse returns Expression:
+	{Var} id=ID;
+
+VariableBinding returns Expression:
+	{Let} 'let' id=ID '=' binding=Exp 'in' body=Exp 'end';
+
+Parenthesis returns Expression:
+	'(' Exp ')';
+
+Number returns Expression:
+	{Num} value=INT;
+
 	

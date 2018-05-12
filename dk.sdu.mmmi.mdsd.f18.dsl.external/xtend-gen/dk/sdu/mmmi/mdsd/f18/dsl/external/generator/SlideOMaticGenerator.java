@@ -12,12 +12,24 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Div;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Expression;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.InlineCode;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Let;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.LineSequence;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ListItem;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.MathExp;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Minus;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Mult;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Num;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Plus;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Pow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec;
@@ -31,14 +43,18 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Var;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Way;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width;
+import java.util.HashMap;
+import java.util.Map;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Conversions;
 
 /**
  * Generates code from your model files on save.
@@ -58,7 +74,8 @@ public class SlideOMaticGenerator extends AbstractGenerator {
   public String dkLetters(final CharSequence cs) {
     String _xblockexpression = null;
     {
-      final String str = cs.toString().replace("æ", "\\ae{}").replace("ø", "\\o{}").replace("å", "\\aa{}").replace("Æ", "\\AE{}").replace("Ø", "\\O{}").replace("Å", "\\AA{}");
+      final String str = cs.toString().replace("æ", "\\ae{}").replace("ø", "\\o{}").replace("å", "\\aa{}").replace("Æ", 
+        "\\AE{}").replace("Ø", "\\O{}").replace("Å", "\\AA{}");
       _xblockexpression = str;
     }
     return _xblockexpression;
@@ -86,9 +103,11 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\\usepackage{minted}");
     _builder.newLine();
-    _builder.append("\\setminted{autogobble, fontsize=\\footnotesize}");
+    _builder.append("\\setminted{autogobble, fontsize=\\footnotesize, linenos}");
     _builder.newLine();
     _builder.append("\\usepackage{tabu}");
+    _builder.newLine();
+    _builder.append("\\usepackage{mathtools}");
     _builder.newLine();
     _builder.newLine();
     {
@@ -243,7 +262,7 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     {
       EList<Content> _contents = s.getContents();
       for(final Content c : _contents) {
-        CharSequence _generateContentsCode = this.generateContentsCode(c);
+        CharSequence _generateContentsCode = this.generateContentsCode(c, s);
         _builder.append(_generateContentsCode);
         _builder.newLineIfNotEmpty();
       }
@@ -253,6 +272,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  /**
+   * used to generate sections
+   */
   public CharSequence generateSectionsCode(final Section s, final String name) {
     String _switchResult = null;
     boolean _matched = false;
@@ -282,7 +304,7 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return (_plus + "}");
   }
   
-  public CharSequence generateContentsCode(final Content c) {
+  public CharSequence generateContentsCode(final Content c, final Slide s) {
     String _switchResult = null;
     boolean _matched = false;
     if (c instanceof ToC) {
@@ -328,7 +350,7 @@ public class SlideOMaticGenerator extends AbstractGenerator {
         {
           EList<Content> _content = ((Block)c).getContent();
           for(final Content bc : _content) {
-            CharSequence _generateContentsCode = this.generateContentsCode(bc);
+            CharSequence _generateContentsCode = this.generateContentsCode(bc, s);
             _builder.append(_generateContentsCode);
             _builder.newLineIfNotEmpty();
           }
@@ -361,7 +383,7 @@ public class SlideOMaticGenerator extends AbstractGenerator {
               List _nestedList = i.getNestedList();
               boolean _tripleNotEquals = (_nestedList != null);
               if (_tripleNotEquals) {
-                CharSequence _generateContentsCode = this.generateContentsCode(i.getNestedList());
+                CharSequence _generateContentsCode = this.generateContentsCode(i.getNestedList(), s);
                 _builder.append(_generateContentsCode);
               }
             }
@@ -451,18 +473,100 @@ public class SlideOMaticGenerator extends AbstractGenerator {
       }
     }
     if (!_matched) {
-      if (c instanceof Code) {
+      if (c instanceof InlineCode) {
         _matched=true;
         StringConcatenation _builder = new StringConcatenation();
         _builder.append("\\begin{minted}{");
-        String _lang = ((Code)c).getLang();
+        String _lang = ((InlineCode)c).getLang();
         _builder.append(_lang);
         _builder.append("}");
         _builder.newLineIfNotEmpty();
-        String _code = ((Code)c).getCode();
+        String _code = ((InlineCode)c).getCode();
         _builder.append(_code);
         _builder.newLineIfNotEmpty();
         _builder.append("\\end{minted}");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (c instanceof FileCode) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        {
+          int _length = ((Object[])Conversions.unwrapArray(((FileCode)c).getLines(), Object.class)).length;
+          boolean _greaterThan = (_length > 0);
+          if (_greaterThan) {
+            int i = 0;
+            _builder.newLineIfNotEmpty();
+            {
+              EList<LineSequence> _lines = ((FileCode)c).getLines();
+              for(final LineSequence l : _lines) {
+                {
+                  int _plusPlus = i++;
+                  boolean _greaterThan_1 = (_plusPlus > 0);
+                  if (_greaterThan_1) {
+                    _builder.append("\\begin{frame}[fragile]{");
+                    String _name = s.getName();
+                    _builder.append(_name);
+                    _builder.append("}");
+                    _builder.newLineIfNotEmpty();
+                  }
+                }
+                _builder.append("\\begin{minted}{");
+                String _lang = ((FileCode)c).getLang();
+                _builder.append(_lang);
+                _builder.append("}");
+                _builder.newLineIfNotEmpty();
+                _builder.append("\t");
+                _builder.append("// hej ");
+                _builder.append(i, "\t");
+                _builder.newLineIfNotEmpty();
+                _builder.append("\\end{minted}");
+                _builder.newLine();
+                {
+                  int _length_1 = ((Object[])Conversions.unwrapArray(((FileCode)c).getLines(), Object.class)).length;
+                  boolean _lessThan = (i < _length_1);
+                  if (_lessThan) {
+                    _builder.append("\\end{frame}");
+                    _builder.newLine();
+                  }
+                }
+              }
+            }
+          } else {
+            _builder.append("\\inputminted{");
+            String _lang_1 = ((FileCode)c).getLang();
+            _builder.append(_lang_1);
+            _builder.append("}{");
+            String _src = ((FileCode)c).getSrc();
+            _builder.append(_src);
+            _builder.append("}");
+            _builder.newLineIfNotEmpty();
+          }
+        }
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (c instanceof MathExp) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("\\begin{equation}");
+        _builder.newLine();
+        String _display = this.display(((MathExp)c));
+        _builder.append(_display);
+        _builder.append(" ");
+        {
+          String _eval = ((MathExp)c).getEval();
+          boolean _tripleNotEquals = (_eval != null);
+          if (_tripleNotEquals) {
+            _builder.append("=");
+            int _compute = this.compute(((MathExp)c));
+            _builder.append(_compute);
+          }
+        }
+        _builder.newLineIfNotEmpty();
+        _builder.append("\\end{equation}");
         _builder.newLine();
         _switchResult = _builder.toString();
       }
@@ -531,5 +635,194 @@ public class SlideOMaticGenerator extends AbstractGenerator {
       }
     }
     return false;
+  }
+  
+  public Map<String, Integer> bind(final Map<String, Integer> env1, final String name, final int value) {
+    HashMap<String, Integer> _xblockexpression = null;
+    {
+      final HashMap<String, Integer> env2 = new HashMap<String, Integer>(env1);
+      env2.put(name, Integer.valueOf(value));
+      _xblockexpression = env2;
+    }
+    return _xblockexpression;
+  }
+  
+  public int compute(final MathExp math) {
+    Expression _exp = math.getExp();
+    HashMap<String, Integer> _hashMap = new HashMap<String, Integer>();
+    return this.computeExp(_exp, _hashMap);
+  }
+  
+  public int computeExp(final Expression exp, final Map<String, Integer> env) {
+    Integer _switchResult = null;
+    boolean _matched = false;
+    if (exp instanceof Plus) {
+      _matched=true;
+      int _computeExp = this.computeExp(((Plus)exp).getLeft(), env);
+      int _computeExp_1 = this.computeExp(((Plus)exp).getRight(), env);
+      _switchResult = Integer.valueOf((_computeExp + _computeExp_1));
+    }
+    if (!_matched) {
+      if (exp instanceof Minus) {
+        _matched=true;
+        int _computeExp = this.computeExp(((Minus)exp).getLeft(), env);
+        int _computeExp_1 = this.computeExp(((Minus)exp).getRight(), env);
+        _switchResult = Integer.valueOf((_computeExp - _computeExp_1));
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Mult) {
+        _matched=true;
+        int _computeExp = this.computeExp(((Mult)exp).getLeft(), env);
+        int _computeExp_1 = this.computeExp(((Mult)exp).getRight(), env);
+        _switchResult = Integer.valueOf((_computeExp * _computeExp_1));
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Div) {
+        _matched=true;
+        int _computeExp = this.computeExp(((Div)exp).getLeft(), env);
+        int _computeExp_1 = this.computeExp(((Div)exp).getRight(), env);
+        _switchResult = Integer.valueOf((_computeExp / _computeExp_1));
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Num) {
+        _matched=true;
+        _switchResult = Integer.valueOf(((Num)exp).getValue());
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Var) {
+        _matched=true;
+        _switchResult = env.get(((Var)exp).getId());
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Let) {
+        _matched=true;
+        _switchResult = Integer.valueOf(this.computeExp(((Let)exp).getBody(), this.bind(env, ((Let)exp).getId(), this.computeExp(((Let)exp).getBinding(), env))));
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Pow) {
+        _matched=true;
+        double _pow = Math.pow(this.computeExp(((Pow)exp).getLeft(), env), this.computeExp(((Pow)exp).getRight(), env));
+        _switchResult = Integer.valueOf(((int) _pow));
+      }
+    }
+    if (!_matched) {
+      throw new Error("Invalid expression");
+    }
+    return (_switchResult).intValue();
+  }
+  
+  public String display(final MathExp math) {
+    return this.displayExp(math.getExp());
+  }
+  
+  public String displayExp(final Expression exp) {
+    String _switchResult = null;
+    boolean _matched = false;
+    if (exp instanceof Plus) {
+      _matched=true;
+      StringConcatenation _builder = new StringConcatenation();
+      String _displayExp = this.displayExp(((Plus)exp).getLeft());
+      _builder.append(_displayExp);
+      _builder.append("+");
+      String _displayExp_1 = this.displayExp(((Plus)exp).getRight());
+      _builder.append(_displayExp_1);
+      _switchResult = _builder.toString();
+    }
+    if (!_matched) {
+      if (exp instanceof Minus) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        String _displayExp = this.displayExp(((Minus)exp).getLeft());
+        _builder.append(_displayExp);
+        _builder.append("-");
+        String _displayExp_1 = this.displayExp(((Minus)exp).getRight());
+        _builder.append(_displayExp_1);
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Mult) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        String _displayExp = this.displayExp(((Mult)exp).getLeft());
+        _builder.append(_displayExp);
+        _builder.append("\\cdot");
+        String _displayExp_1 = this.displayExp(((Mult)exp).getRight());
+        _builder.append(_displayExp_1);
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Div) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("\\frac{");
+        String _displayExp = this.displayExp(((Div)exp).getLeft());
+        _builder.append(_displayExp);
+        _builder.append("}{");
+        String _displayExp_1 = this.displayExp(((Div)exp).getRight());
+        _builder.append(_displayExp_1);
+        _builder.append("}");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Num) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        String _string = Integer.toString(((Num)exp).getValue());
+        _builder.append(_string);
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Var) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        String _id = ((Var)exp).getId();
+        _builder.append(_id);
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Let) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        _builder.append("let ");
+        String _id = ((Let)exp).getId();
+        _builder.append(_id);
+        _builder.append(" = ");
+        String _displayExp = this.displayExp(((Let)exp).getBinding());
+        _builder.append(_displayExp);
+        _builder.append(" in ");
+        String _displayExp_1 = this.displayExp(((Let)exp).getBody());
+        _builder.append(_displayExp_1);
+        _builder.append(" end");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      if (exp instanceof Pow) {
+        _matched=true;
+        StringConcatenation _builder = new StringConcatenation();
+        String _displayExp = this.displayExp(((Pow)exp).getLeft());
+        _builder.append(_displayExp);
+        _builder.append("^{");
+        String _displayExp_1 = this.displayExp(((Pow)exp).getRight());
+        _builder.append(_displayExp_1);
+        _builder.append("}");
+        _switchResult = _builder.toString();
+      }
+    }
+    if (!_matched) {
+      throw new Error("Invalid expression");
+    }
+    return _switchResult;
   }
 }

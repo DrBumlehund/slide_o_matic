@@ -213,6 +213,15 @@ public interface SlideOMaticFactory extends EFactory
   Code createCode();
 
   /**
+   * Returns a new object of class '<em>Line Sequence</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Line Sequence</em>'.
+   * @generated
+   */
+  LineSequence createLineSequence();
+
+  /**
    * Returns a new object of class '<em>Animation</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,6 +238,24 @@ public interface SlideOMaticFactory extends EFactory
    * @generated
    */
   AnimationType createAnimationType();
+
+  /**
+   * Returns a new object of class '<em>Math Exp</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Math Exp</em>'.
+   * @generated
+   */
+  MathExp createMathExp();
+
+  /**
+   * Returns a new object of class '<em>Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expression</em>'.
+   * @generated
+   */
+  Expression createExpression();
 
   /**
    * Returns a new object of class '<em>Compile Date</em>'.
@@ -312,6 +339,24 @@ public interface SlideOMaticFactory extends EFactory
   Height createHeight();
 
   /**
+   * Returns a new object of class '<em>Inline Code</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inline Code</em>'.
+   * @generated
+   */
+  InlineCode createInlineCode();
+
+  /**
+   * Returns a new object of class '<em>File Code</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>File Code</em>'.
+   * @generated
+   */
+  FileCode createFileCode();
+
+  /**
    * Returns a new object of class '<em>Move</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -328,6 +373,78 @@ public interface SlideOMaticFactory extends EFactory
    * @generated
    */
   Jump createJump();
+
+  /**
+   * Returns a new object of class '<em>Plus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Plus</em>'.
+   * @generated
+   */
+  Plus createPlus();
+
+  /**
+   * Returns a new object of class '<em>Minus</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Minus</em>'.
+   * @generated
+   */
+  Minus createMinus();
+
+  /**
+   * Returns a new object of class '<em>Mult</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Mult</em>'.
+   * @generated
+   */
+  Mult createMult();
+
+  /**
+   * Returns a new object of class '<em>Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Div</em>'.
+   * @generated
+   */
+  Div createDiv();
+
+  /**
+   * Returns a new object of class '<em>Pow</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pow</em>'.
+   * @generated
+   */
+  Pow createPow();
+
+  /**
+   * Returns a new object of class '<em>Var</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Var</em>'.
+   * @generated
+   */
+  Var createVar();
+
+  /**
+   * Returns a new object of class '<em>Let</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Let</em>'.
+   * @generated
+   */
+  Let createLet();
+
+  /**
+   * Returns a new object of class '<em>Num</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Num</em>'.
+   * @generated
+   */
+  Num createNum();
 
   /**
    * Returns the package supported by this factory.

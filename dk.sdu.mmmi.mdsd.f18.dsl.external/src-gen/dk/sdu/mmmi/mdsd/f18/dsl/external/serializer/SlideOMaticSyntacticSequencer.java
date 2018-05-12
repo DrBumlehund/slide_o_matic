@@ -23,12 +23,16 @@ public class SlideOMaticSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SlideOMaticGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1;
+	protected AbstractElementAlias match_Parenthesis_LeftParenthesisKeyword_0_a;
+	protected AbstractElementAlias match_Parenthesis_LeftParenthesisKeyword_0_p;
 	protected AbstractElementAlias match_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SlideOMaticGrammarAccess) access;
 		match_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getAuthorsAccess().getAuthorKeyword_0_0()), new TokenAlias(false, false, grammarAccess.getAuthorsAccess().getAuthorsKeyword_0_1()));
+		match_Parenthesis_LeftParenthesisKeyword_0_a = new TokenAlias(true, true, grammarAccess.getParenthesisAccess().getLeftParenthesisKeyword_0());
+		match_Parenthesis_LeftParenthesisKeyword_0_p = new TokenAlias(true, false, grammarAccess.getParenthesisAccess().getLeftParenthesisKeyword_0());
 		match_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getPresentationAccess().getLeftParenthesisKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getPresentationAccess().getRightParenthesisKeyword_4_5()));
 	}
 	
@@ -46,6 +50,10 @@ public class SlideOMaticSyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if (match_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1.equals(syntax))
 				emit_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Parenthesis_LeftParenthesisKeyword_0_a.equals(syntax))
+				emit_Parenthesis_LeftParenthesisKeyword_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Parenthesis_LeftParenthesisKeyword_0_p.equals(syntax))
+				emit_Parenthesis_LeftParenthesisKeyword_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q.equals(syntax))
 				emit_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
@@ -60,6 +68,42 @@ public class SlideOMaticSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) names+=STRING
 	 */
 	protected void emit_Authors_AuthorKeyword_0_0_or_AuthorsKeyword_0_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '('*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'let' id=ID
+	 *     (rule start) (ambiguity) id=ID
+	 *     (rule start) (ambiguity) value=INT
+	 *     (rule start) (ambiguity) {Div.left=}
+	 *     (rule start) (ambiguity) {Minus.left=}
+	 *     (rule start) (ambiguity) {Mult.left=}
+	 *     (rule start) (ambiguity) {Plus.left=}
+	 *     (rule start) (ambiguity) {Pow.left=}
+	 */
+	protected void emit_Parenthesis_LeftParenthesisKeyword_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     '('+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'let' id=ID
+	 *     (rule start) (ambiguity) id=ID
+	 *     (rule start) (ambiguity) value=INT
+	 *     (rule start) (ambiguity) {Div.left=}
+	 *     (rule start) (ambiguity) {Minus.left=}
+	 *     (rule start) (ambiguity) {Mult.left=}
+	 *     (rule start) (ambiguity) {Plus.left=}
+	 *     (rule start) (ambiguity) {Pow.left=}
+	 */
+	protected void emit_Parenthesis_LeftParenthesisKeyword_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
