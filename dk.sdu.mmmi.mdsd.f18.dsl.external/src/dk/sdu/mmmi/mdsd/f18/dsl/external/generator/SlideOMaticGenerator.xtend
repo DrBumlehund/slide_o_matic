@@ -193,9 +193,8 @@ class SlideOMaticGenerator extends AbstractGenerator {
 						«IF i++ > 0»
 							\begin{frame}[fragile]{«s.name»}
 						«ENDIF»
-						\begin{minted}{«c.lang»}
-							// hej «i»
-						\end{minted}
+						«/* TODO: Implement function for getting exact lines from file.
+						 * make sure to include blank lines as \n, because it would look great */»
 						«IF i < c.lines.length»
 						\end{frame}
 						«ENDIF»

@@ -11,7 +11,6 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image
 import java.io.File
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.LineSequence
 
 /**
  * This class contains custom validation rules. 
@@ -54,7 +53,7 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 		if (fc.src !== null && fc.lines !== null) {
 			val f = new File(fc.src)
 			if (f.exists){
-				System.out.println("the FileCode has lines")
+				// TODO: Implement validation for line numbers to be within range.	
 			}
 		}
 	}

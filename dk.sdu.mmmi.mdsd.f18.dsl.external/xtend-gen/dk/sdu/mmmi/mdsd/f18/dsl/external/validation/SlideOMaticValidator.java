@@ -60,14 +60,22 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
   }
   
   @Check
-  public void checkLineSequence(final FileCode fc) {
+  public Object checkLineSequence(final FileCode fc) {
+    Object _xifexpression = null;
     if (((fc.getSrc() != null) && (fc.getLines() != null))) {
-      String _src = fc.getSrc();
-      final File f = new File(_src);
-      boolean _exists = f.exists();
-      if (_exists) {
-        System.out.println("the FileCode has lines");
+      Object _xblockexpression = null;
+      {
+        String _src = fc.getSrc();
+        final File f = new File(_src);
+        Object _xifexpression_1 = null;
+        boolean _exists = f.exists();
+        if (_exists) {
+          _xifexpression_1 = null;
+        }
+        _xblockexpression = _xifexpression_1;
       }
+      _xifexpression = _xblockexpression;
     }
+    return _xifexpression;
   }
 }

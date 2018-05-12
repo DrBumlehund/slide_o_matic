@@ -512,16 +512,6 @@ public class SlideOMaticGenerator extends AbstractGenerator {
                     _builder.newLineIfNotEmpty();
                   }
                 }
-                _builder.append("\\begin{minted}{");
-                String _lang = ((FileCode)c).getLang();
-                _builder.append(_lang);
-                _builder.append("}");
-                _builder.newLineIfNotEmpty();
-                _builder.append("\t");
-                _builder.append("// hej ");
-                _builder.append(i, "\t");
-                _builder.newLineIfNotEmpty();
-                _builder.append("\\end{minted}");
                 _builder.newLine();
                 {
                   int _length_1 = ((Object[])Conversions.unwrapArray(((FileCode)c).getLines(), Object.class)).length;
@@ -535,8 +525,8 @@ public class SlideOMaticGenerator extends AbstractGenerator {
             }
           } else {
             _builder.append("\\inputminted{");
-            String _lang_1 = ((FileCode)c).getLang();
-            _builder.append(_lang_1);
+            String _lang = ((FileCode)c).getLang();
+            _builder.append(_lang);
             _builder.append("}{");
             String _src = ((FileCode)c).getSrc();
             _builder.append(_src);
