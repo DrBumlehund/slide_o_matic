@@ -1637,22 +1637,28 @@ ruleImage returns [EObject current=null]
 			)
 		)?
 		(
+			otherlv_5='align'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getImageAccess().getAlignKeyword_5_0());
+			}
 			(
-				{
-					newCompositeNode(grammarAccess.getImageAccess().getAlignmentAlignmentParserRuleCall_5_0());
-				}
-				lv_alignment_5_0=ruleAlignment
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getImageRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getImageAccess().getAlignmentAlignmentParserRuleCall_5_1_0());
 					}
-					set(
-						$current,
-						"alignment",
-						lv_alignment_5_0,
-						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Alignment");
-					afterParserOrEnumRuleCall();
-				}
+					lv_alignment_6_0=ruleAlignment
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getImageRule());
+						}
+						set(
+							$current,
+							"alignment",
+							lv_alignment_6_0,
+							"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Alignment");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)?
 		(
@@ -1660,7 +1666,7 @@ ruleImage returns [EObject current=null]
 				{
 					newCompositeNode(grammarAccess.getImageAccess().getSizeSizeParserRuleCall_6_0());
 				}
-				lv_size_6_0=ruleSize
+				lv_size_7_0=ruleSize
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getImageRule());
@@ -1668,7 +1674,7 @@ ruleImage returns [EObject current=null]
 					set(
 						$current,
 						"size",
-						lv_size_6_0,
+						lv_size_7_0,
 						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Size");
 					afterParserOrEnumRuleCall();
 				}

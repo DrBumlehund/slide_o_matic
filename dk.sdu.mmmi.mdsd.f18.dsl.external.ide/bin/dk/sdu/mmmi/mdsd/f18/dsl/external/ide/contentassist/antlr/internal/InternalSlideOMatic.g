@@ -3994,9 +3994,9 @@ rule__Image__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getImageAccess().getAlignmentAssignment_5()); }
-	(rule__Image__AlignmentAssignment_5)?
-	{ after(grammarAccess.getImageAccess().getAlignmentAssignment_5()); }
+	{ before(grammarAccess.getImageAccess().getGroup_5()); }
+	(rule__Image__Group_5__0)?
+	{ after(grammarAccess.getImageAccess().getGroup_5()); }
 )
 ;
 finally {
@@ -4023,6 +4023,60 @@ rule__Image__Group__6__Impl
 	{ before(grammarAccess.getImageAccess().getSizeAssignment_6()); }
 	(rule__Image__SizeAssignment_6)
 	{ after(grammarAccess.getImageAccess().getSizeAssignment_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Image__Group_5__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Image__Group_5__0__Impl
+	rule__Image__Group_5__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Image__Group_5__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImageAccess().getAlignKeyword_5_0()); }
+	'align'
+	{ after(grammarAccess.getImageAccess().getAlignKeyword_5_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Image__Group_5__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Image__Group_5__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Image__Group_5__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImageAccess().getAlignmentAssignment_5_1()); }
+	(rule__Image__AlignmentAssignment_5_1)
+	{ after(grammarAccess.getImageAccess().getAlignmentAssignment_5_1()); }
 )
 ;
 finally {
@@ -7276,15 +7330,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Image__AlignmentAssignment_5
+rule__Image__AlignmentAssignment_5_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getImageAccess().getAlignmentAlignmentParserRuleCall_5_0()); }
+		{ before(grammarAccess.getImageAccess().getAlignmentAlignmentParserRuleCall_5_1_0()); }
 		ruleAlignment
-		{ after(grammarAccess.getImageAccess().getAlignmentAlignmentParserRuleCall_5_0()); }
+		{ after(grammarAccess.getImageAccess().getAlignmentAlignmentParserRuleCall_5_1_0()); }
 	)
 ;
 finally {

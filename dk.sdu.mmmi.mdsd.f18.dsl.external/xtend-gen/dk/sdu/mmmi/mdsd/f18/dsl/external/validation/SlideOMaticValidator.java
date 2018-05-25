@@ -3,6 +3,7 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.validation;
 
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
@@ -29,6 +30,8 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
   public final static String LINE_NUMBER_TOO_HIGH = "lineNumberTooHigh";
   
   public final static String SLIDE_NAME_IS_EMPTY = "slideNameIsEnpty";
+  
+  public final static String EQUAL_LOCATIONS = "locationsAreEqual";
   
   @Check
   public void checkUnblockableContent(final Block block) {
@@ -82,11 +85,45 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
     return _xifexpression;
   }
   
+  /**
+   * Warn if a slide title is empty
+   */
   @Check
   public void checkSlideTitleIsNotEmpty(final Slide s) {
     boolean _isEmpty = s.getName().isEmpty();
     if (_isEmpty) {
       this.warning("Slide name is empty", SlideOMaticPackage.Literals.SLIDE__NAME, SlideOMaticValidator.SLIDE_NAME_IS_EMPTY);
+    }
+  }
+  
+  /**
+   * Warn if locations are the same in an animation
+   */
+  @Check
+  public void checkAnimationLocations(final Animation a) {
+    final String from = a.getFromLocation();
+    final String final_ = a.getFinalLocation();
+    final String via = a.getViaLocation();
+    if ((from.equals(final_) || from.equals(via))) {
+      this.warning("One or more locations are the same", SlideOMaticPackage.Literals.ANIMATION__FINAL_LOCATION, SlideOMaticValidator.EQUAL_LOCATIONS);
+    } else {
+      boolean _equals = final_.equals(via);
+      if (_equals) {
+        this.warning("One or more locations are the same", SlideOMaticPackage.Literals.ANIMATION__FINAL_LOCATION, SlideOMaticValidator.EQUAL_LOCATIONS);
+      }
+    }
+  }
+  
+  /**
+   * Warn that original image alignment will be ignored
+   */
+  @Check
+  public void checkAnimationSourceAlignment(final Animation a) {
+    final Image img = a.getTarget();
+    String _alignment = img.getAlignment();
+    boolean _tripleNotEquals = (_alignment != null);
+    if (_tripleNotEquals) {
+      this.warning("Original image alignment will be ignored", SlideOMaticPackage.Literals.ANIMATION__TARGET);
     }
   }
 }

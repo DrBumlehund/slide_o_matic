@@ -961,16 +961,18 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSrcSTRINGTerminalRuleCall_3_0 = (RuleCall)cSrcAssignment_3.eContents().get(0);
 		private final Assignment cAngleAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cAngleINTTerminalRuleCall_4_0 = (RuleCall)cAngleAssignment_4.eContents().get(0);
-		private final Assignment cAlignmentAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cAlignmentAlignmentParserRuleCall_5_0 = (RuleCall)cAlignmentAssignment_5.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cAlignKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cAlignmentAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cAlignmentAlignmentParserRuleCall_5_1_0 = (RuleCall)cAlignmentAssignment_5_1.eContents().get(0);
 		private final Assignment cSizeAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cSizeSizeParserRuleCall_6_0 = (RuleCall)cSizeAssignment_6.eContents().get(0);
 		
 		//Image:
-		//	"img" name=ID "src" src=STRING angle=INT? alignment=Alignment? size=Size;
+		//	"img" name=ID "src" src=STRING angle=INT? ("align" alignment=Alignment)? size=Size;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"img" name=ID "src" src=STRING angle=INT? alignment=Alignment? size=Size
+		//"img" name=ID "src" src=STRING angle=INT? ("align" alignment=Alignment)? size=Size
 		public Group getGroup() { return cGroup; }
 		
 		//"img"
@@ -997,11 +999,17 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getAngleINTTerminalRuleCall_4_0() { return cAngleINTTerminalRuleCall_4_0; }
 		
-		//alignment=Alignment?
-		public Assignment getAlignmentAssignment_5() { return cAlignmentAssignment_5; }
+		//("align" alignment=Alignment)?
+		public Group getGroup_5() { return cGroup_5; }
+		
+		//"align"
+		public Keyword getAlignKeyword_5_0() { return cAlignKeyword_5_0; }
+		
+		//alignment=Alignment
+		public Assignment getAlignmentAssignment_5_1() { return cAlignmentAssignment_5_1; }
 		
 		//Alignment
-		public RuleCall getAlignmentAlignmentParserRuleCall_5_0() { return cAlignmentAlignmentParserRuleCall_5_0; }
+		public RuleCall getAlignmentAlignmentParserRuleCall_5_1_0() { return cAlignmentAlignmentParserRuleCall_5_1_0; }
 		
 		//size=Size
 		public Assignment getSizeAssignment_6() { return cSizeAssignment_6; }
@@ -2162,7 +2170,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Image:
-	//	"img" name=ID "src" src=STRING angle=INT? alignment=Alignment? size=Size;
+	//	"img" name=ID "src" src=STRING angle=INT? ("align" alignment=Alignment)? size=Size;
 	public ImageElements getImageAccess() {
 		return pImage;
 	}

@@ -12,6 +12,7 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image
 import java.io.File
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation
 
 /**
  * This class contains custom validation rules. 
@@ -24,7 +25,8 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 	public static val FILE_NOT_FOUND = 'fileNotFound'
 	public static val LINE_NUMBER_TOO_HIGH = 'lineNumberTooHigh'
 	public static val SLIDE_NAME_IS_EMPTY = 'slideNameIsEnpty'
-
+	public static val EQUAL_LOCATIONS = 'locationsAreEqual'
+	
 	@Check
 	def checkUnblockableContent(Block block) {
 		for (Content content : block.content) {
@@ -60,10 +62,43 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 		}
 	}
 	
+	
+	
+	/**
+	 * Warn if a slide title is empty 
+	 */
 	@Check 
 	def checkSlideTitleIsNotEmpty(Slide s){
 		if (s.name.isEmpty){
 			warning('Slide name is empty', SlideOMaticPackage.Literals.SLIDE__NAME, SLIDE_NAME_IS_EMPTY)
+		}
+	}
+	
+	/*
+	 * Warn if locations are the same in an animation 
+	 */
+	@Check 
+	def checkAnimationLocations(Animation a){
+		val from = a.fromLocation; 
+		val final = a.finalLocation; 
+		val via = a.viaLocation;
+		
+		if (from.equals(final) || from.equals(via)){
+			warning('One or more locations are the same', SlideOMaticPackage.Literals.ANIMATION__FINAL_LOCATION, EQUAL_LOCATIONS)
+		}
+		else if (final.equals(via)){
+			warning('One or more locations are the same', SlideOMaticPackage.Literals.ANIMATION__FINAL_LOCATION, EQUAL_LOCATIONS)
+		}
+	}
+	
+	/* 
+	 * Warn that original image alignment will be ignored
+	 * */
+	@Check 
+	def checkAnimationSourceAlignment(Animation a){
+		val img = a.target; 
+		if (img.alignment !== null){
+			warning('Original image alignment will be ignored', SlideOMaticPackage.Literals.ANIMATION__TARGET)
 		}
 	}
 

@@ -66,7 +66,7 @@ ListItem:
 	"-" item=STRING ("(" nestedList=List ")")? (click=Click)?;
 
 Image:
-	"img" name=ID "src" src=STRING (angle=INT)? (alignment=Alignment)? (size=Size);
+	"img" name=ID "src" src=STRING (angle=INT)? ("align" alignment=Alignment)? (size=Size);
 
 ShowImage: 
 	"showimg" image=[Image];

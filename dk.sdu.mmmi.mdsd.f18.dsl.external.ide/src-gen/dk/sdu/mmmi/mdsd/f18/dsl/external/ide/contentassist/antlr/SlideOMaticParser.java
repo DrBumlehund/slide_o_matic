@@ -79,6 +79,7 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 					put(grammarAccess.getListItemAccess().getGroup(), "rule__ListItem__Group__0");
 					put(grammarAccess.getListItemAccess().getGroup_2(), "rule__ListItem__Group_2__0");
 					put(grammarAccess.getImageAccess().getGroup(), "rule__Image__Group__0");
+					put(grammarAccess.getImageAccess().getGroup_5(), "rule__Image__Group_5__0");
 					put(grammarAccess.getShowImageAccess().getGroup(), "rule__ShowImage__Group__0");
 					put(grammarAccess.getSizeAccess().getGroup_0(), "rule__Size__Group_0__0");
 					put(grammarAccess.getSizeAccess().getGroup_1(), "rule__Size__Group_1__0");
@@ -143,7 +144,7 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImageAccess().getNameAssignment_1(), "rule__Image__NameAssignment_1");
 					put(grammarAccess.getImageAccess().getSrcAssignment_3(), "rule__Image__SrcAssignment_3");
 					put(grammarAccess.getImageAccess().getAngleAssignment_4(), "rule__Image__AngleAssignment_4");
-					put(grammarAccess.getImageAccess().getAlignmentAssignment_5(), "rule__Image__AlignmentAssignment_5");
+					put(grammarAccess.getImageAccess().getAlignmentAssignment_5_1(), "rule__Image__AlignmentAssignment_5_1");
 					put(grammarAccess.getImageAccess().getSizeAssignment_6(), "rule__Image__SizeAssignment_6");
 					put(grammarAccess.getShowImageAccess().getImageAssignment_1(), "rule__ShowImage__ImageAssignment_1");
 					put(grammarAccess.getSizeAccess().getWayAssignment_0_1(), "rule__Size__WayAssignment_0_1");
