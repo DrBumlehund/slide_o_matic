@@ -267,8 +267,8 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		'''
 		\begin{figure}
 			\includegraphics[«i.size.getString»
-			«IF i.angle !== 0», angle=«i.angle»«ENDIF»
-			«IF i.alignment !== null», «i.alignment»«ENDIF»]{«src»}
+			«IF i.angle !== 0», angle=«i.angle»«ENDIF»,
+			«IF i.alignment === null» center«ELSE» «i.alignment»«ENDIF»]{«src»}
 		\end{figure}
 		'''
 	}

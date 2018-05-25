@@ -608,13 +608,16 @@ public class SlideOMaticGenerator extends AbstractGenerator {
           _builder.append(_angle_1, "\t");
         }
       }
+      _builder.append(",");
       _builder.newLineIfNotEmpty();
       _builder.append("\t");
       {
         String _alignment = i.getAlignment();
-        boolean _tripleNotEquals_1 = (_alignment != null);
-        if (_tripleNotEquals_1) {
-          _builder.append(", ");
+        boolean _tripleEquals = (_alignment == null);
+        if (_tripleEquals) {
+          _builder.append(" center");
+        } else {
+          _builder.append(" ");
           String _alignment_1 = i.getAlignment();
           _builder.append(_alignment_1, "\t");
         }

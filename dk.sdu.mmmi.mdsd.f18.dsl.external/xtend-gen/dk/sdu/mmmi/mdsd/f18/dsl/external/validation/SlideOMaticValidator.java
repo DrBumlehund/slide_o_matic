@@ -126,4 +126,16 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
       this.warning("Original image alignment will be ignored", SlideOMaticPackage.Literals.ANIMATION__TARGET);
     }
   }
+  
+  /**
+   * Warn about no image alignment
+   */
+  @Check
+  public void checkImageAlignment(final Image i) {
+    String _alignment = i.getAlignment();
+    boolean _tripleEquals = (_alignment == null);
+    if (_tripleEquals) {
+      this.warning("No alignment specified. Default will be center", SlideOMaticPackage.Literals.IMAGE__ALIGNMENT);
+    }
+  }
 }

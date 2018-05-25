@@ -101,5 +101,15 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 			warning('Original image alignment will be ignored', SlideOMaticPackage.Literals.ANIMATION__TARGET)
 		}
 	}
+	
+	/*
+	 * Warn about no image alignment 
+	 */
+	 @Check 
+	 def checkImageAlignment(Image i){
+	 	if (i.alignment === null){
+	 		warning('No alignment specified. Default will be center', SlideOMaticPackage.Literals.IMAGE__ALIGNMENT)
+	 	}
+	 }
 
 }
