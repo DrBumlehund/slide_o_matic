@@ -88,6 +88,10 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
   
+  /**
+   * Function to generate the .tex file
+   * Could also be used for calling the system pdfLaTeX function, in order to generate a pdf file in stead
+   */
   public void doGenerateTexFile(final Presentation p, final IFileSystemAccess2 fsa) {
     String _name = p.getName();
     String _plus = (_name + "/");
@@ -97,6 +101,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     fsa.generateFile(_plus_2, this.dkLetters(this.generateTexCode(p)));
   }
   
+  /**
+   * Creates the main .tex file string
+   */
   public CharSequence generateTexCode(final Presentation p) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\documentclass{beamer}");
@@ -240,6 +247,10 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  /**
+   * Creates creates the latex code for slides
+   * if the frame (slide) contains code, it needsd to have the 'fragile' attribute, thats why there is an if check.
+   */
   public CharSequence generateSlideCode(final Slide s) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -314,6 +325,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return (_plus + "}");
   }
   
+  /**
+   * generates content code, calls the dispatch methods, and appends a '\pause' if needed.
+   */
   public CharSequence generateContents(final Content c, final Slide s) {
     CharSequence _generateContentsCode = this.generateContentsCode(c, s);
     StringConcatenation _builder = new StringConcatenation();
@@ -327,6 +341,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return (_generateContentsCode + _builder.toString());
   }
   
+  /**
+   * dispatch method for creating Table of Contents code
+   */
   protected CharSequence _generateContentsCode(final ToC t, final Slide s) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\tableofcontents");
@@ -340,6 +357,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  /**
+   * dispatch method for creating text code
+   */
   protected CharSequence _generateContentsCode(final Text t, final Slide s) {
     StringConcatenation _builder = new StringConcatenation();
     {
@@ -360,6 +380,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  /**
+   * Helper function for creating the texttype code
+   */
   public CharSequence generateTextTypeStartCode(final TextType tt) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\");
@@ -395,6 +418,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return str.replaceAll("#", "\\#").replaceAll("&", "\\&").replaceAll("%", "\\%").replaceAll("_", "\\_");
   }
   
+  /**
+   * dispatch function to create block code, recursive call to generateContents, for the contents of the block
+   */
   protected CharSequence _generateContentsCode(final Block b, final Slide s) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\begin{block}");
@@ -421,6 +447,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  /**
+   * dispatch function to create lists code, either numbered or unnumbered lists.
+   */
   protected CharSequence _generateContentsCode(final List l, final Slide s) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\begin{");
@@ -469,6 +498,10 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  /**
+   * dispatch function to create image code,
+   * TODO: Fix allignment of the image, it is only able to stay in the middle at the moment.
+   */
   protected CharSequence _generateContentsCode(final Image i, final Slide s) {
     CharSequence _xblockexpression = null;
     {
@@ -538,6 +571,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return (_builder.toString() + _switchResult);
   }
   
+  /**
+   * dispatch function to create table code, it is only possible to create
+   */
   protected CharSequence _generateContentsCode(final Table t, final Slide s) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\begin{tabular}{");
@@ -575,6 +611,10 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  /**
+   * dispatch function to create LaTeX code for codehighlighting, using minted.
+   * it
+   */
   protected CharSequence _generateContentsCode(final Code c, final Slide s) {
     CharSequence _switchResult = null;
     boolean _matched = false;
@@ -617,6 +657,12 @@ public class SlideOMaticGenerator extends AbstractGenerator {
                   }
                 }
                 _builder.newLine();
+                _builder.append("\\begin{minted}{py}");
+                _builder.newLine();
+                _builder.append("print(\'The code line-by-line feature is not supported\')");
+                _builder.newLine();
+                _builder.append("\\end{minted}");
+                _builder.newLine();
                 {
                   int _length_1 = ((Object[])Conversions.unwrapArray(((FileCode)c).getLines(), Object.class)).length;
                   boolean _lessThan = (i < _length_1);
@@ -658,6 +704,9 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return false;
   }
   
+  /**
+   * dispatch function to create equations code
+   */
   protected CharSequence _generateContentsCode(final MathExp m, final Slide s) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("\\begin{equation}");
@@ -690,12 +739,18 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
   
+  /**
+   * function for cumputing the overall equation
+   */
   public int compute(final MathExp math) {
     Expression _exp = math.getExp();
     HashMap<String, Integer> _hashMap = new HashMap<String, Integer>();
     return this.computeExp(_exp, _hashMap);
   }
   
+  /**
+   * function for computing the actual math
+   */
   public int computeExp(final Expression exp, final Map<String, Integer> env) {
     Integer _switchResult = null;
     boolean _matched = false;
@@ -760,10 +815,16 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return (_switchResult).intValue();
   }
   
+  /**
+   * function to show math
+   */
   public String display(final MathExp math) {
     return this.displayExp(math.getExp());
   }
   
+  /**
+   * function to generate math symbols in latex
+   */
   public String displayExp(final Expression exp) {
     String _switchResult = null;
     boolean _matched = false;

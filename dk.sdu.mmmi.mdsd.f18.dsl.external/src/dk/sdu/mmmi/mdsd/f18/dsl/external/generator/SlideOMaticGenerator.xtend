@@ -70,11 +70,18 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			"\\AE{}").replace("Ø", "\\O{}").replace("Å", "\\AA{}")
 		str
 	}
-
+	
+	/**
+	 * Function to generate the .tex file
+	 * Could also be used for calling the system pdfLaTeX function, in order to generate a pdf file in stead 
+	 */
 	def void doGenerateTexFile(Presentation p, IFileSystemAccess2 fsa) {
 		fsa.generateFile(p.name + "/" + p.name + ".tex", dkLetters(p.generateTexCode))
 	}
 
+	/**
+	 * Creates the main .tex file string
+	 */
 	def CharSequence generateTexCode(Presentation p) {
 		'''
 			\documentclass{beamer}
@@ -128,6 +135,10 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		'''
 	}
 
+	/**
+	 * Creates creates the latex code for slides
+	 * if the frame (slide) contains code, it needsd to have the 'fragile' attribute, thats why there is an if check.
+	 */
 	def CharSequence generateSlideCode(Slide s) {
 		'''
 			«IF s.sec !== null»
@@ -152,18 +163,30 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		} + name + "}"
 	}
 
+	/**
+	 * generates content code, calls the dispatch methods, and appends a '\pause' if needed. 
+	 */
 	def CharSequence generateContents(Content c, Slide s) {
 		c.generateContentsCode(s) + '''«IF c.click !== null»\pause«ENDIF»'''
 	}
 	
+	/**
+	 * dispatch method for creating Table of Contents code
+	 */
 	def dispatch CharSequence generateContentsCode(ToC t, Slide s){
 		'''\tableofcontents«IF t instanceof CurrentSecToC»[sections=\value{section}]«ELSE»[hideallsubsections]«ENDIF»'''
 	}
 	
+	/**
+	 * dispatch method for creating text code
+	 */
 	def dispatch CharSequence generateContentsCode(Text t, Slide s) {
 		'''«FOR tt: t.types»«tt.generateTextTypeStartCode»«ENDFOR»«t.text.sanitize»«FOR tt: t.types»}«ENDFOR»'''
 	}
 	
+	/**
+	 * Helper function for creating the texttype code
+	 */
 	def CharSequence generateTextTypeStartCode(TextType tt){
 		'''\«IF tt instanceof Bold»textbf«ELSEIF tt instanceof Italic»textit«ELSEIF tt instanceof Underline»underline«ELSEIF tt instanceof FootNote»footnote«ELSEIF tt instanceof URL»url«ENDIF»{'''
 	}
@@ -175,6 +198,9 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		str.replaceAll("#", "\\#").replaceAll("&", "\\&").replaceAll("%", "\\%").replaceAll("_", "\\_")
 	}
 	
+	/**
+	 * dispatch function to create block code, recursive call to generateContents, for the contents of the block
+	 */
 	def dispatch CharSequence generateContentsCode(Block b, Slide s) {'''
 		\begin{block}«IF b.name !== null»{«b.name»}«ENDIF»
 		«FOR bc : b.content»
@@ -183,6 +209,9 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		\end{block}'''
 	}
 	
+	/** 
+	 * dispatch function to create lists code, either numbered or unnumbered lists.
+	 */
 	def dispatch CharSequence generateContentsCode(List l, Slide s) {'''
 		\begin{«IF l instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}
 		«FOR i : l.items»
@@ -191,6 +220,10 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		\end{«IF l instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}'''
 	}
 	
+	/**
+	 * dispatch function to create image code, 
+	 * TODO: Fix allignment of the image, it is only able to stay in the middle at the moment.
+	 */
 	def dispatch CharSequence generateContentsCode(Image i, Slide s){
 		val src = i.src.replace("\\", "/")
 		'''
@@ -210,6 +243,9 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		}
 	}
 
+	/**
+	 * dispatch function to create table code, it is only possible to create 
+	 */
 	def dispatch CharSequence generateContentsCode(Table t, Slide s){
 		'''
 		\begin{tabular}{«FOR i : t.rows»|c«ENDFOR»|}
@@ -221,6 +257,10 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		'''
 	}
 	
+	/**
+	 * dispatch function to create LaTeX code for codehighlighting, using minted.
+	 * it 
+	 */
 	def dispatch CharSequence generateContentsCode(Code c, Slide s){
 		switch c {
 			InlineCode: '''
@@ -236,6 +276,9 @@ class SlideOMaticGenerator extends AbstractGenerator {
 						«ENDIF»
 						«/* TODO: Implement function for getting exact lines from file.
 						 * make sure to include blank lines as \n, because it would look great */»
+						\begin{minted}{py}
+						print('The code line-by-line feature is not supported')
+						\end{minted}
 						«IF i < c.lines.length»
 							\end{frame}
 						«ENDIF»
@@ -260,7 +303,9 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		return false
 	}
 
-
+	/**
+	 * dispatch function to create equations code
+	 */
 	def dispatch CharSequence generateContentsCode(MathExp m, Slide s){
 		'''
 		\begin{equation}
@@ -268,17 +313,23 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		\end{equation}
 		'''
 	}
-
+	
 	def Map<String, Integer> bind(Map<String, Integer> env1, String name, int value) {
 		val env2 = new HashMap<String, Integer>(env1)
 		env2.put(name, value)
 		env2
 	}
 
+	/**
+	 * function for cumputing the overall equation
+	 */
 	def int compute(MathExp math) {
 		math.exp.computeExp(new HashMap<String, Integer>)
 	}
 
+	/**
+	 * function for computing the actual math
+	 */
 	def int computeExp(Expression exp, Map<String, Integer> env) {
 		switch exp {
 			Plus: exp.left.computeExp(env) + exp.right.computeExp(env)
@@ -293,10 +344,16 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		}
 	}
 
+	/**
+	 * function to show math
+	 */
 	def String display(MathExp math) {
 		math.exp.displayExp
 	}
 
+	/**
+	 * function to generate math symbols in latex
+	 */
 	def String displayExp(Expression exp) {
 		switch exp {
 			Plus: '''«exp.left.displayExp»+«exp.right.displayExp»'''
