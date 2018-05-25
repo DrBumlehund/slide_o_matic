@@ -6,21 +6,14 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.LineSequence;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -80,14 +73,14 @@ public class LineSequenceImpl extends MinimalEObjectImpl.Container implements Li
   protected int upper = UPPER_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getAdditional() <em>Additional</em>}' containment reference list.
+   * The cached value of the '{@link #getAdditional() <em>Additional</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getAdditional()
    * @generated
    * @ordered
    */
-  protected EList<LineSequence> additional;
+  protected LineSequence additional;
 
   /**
    * <!-- begin-user-doc -->
@@ -161,13 +154,47 @@ public class LineSequenceImpl extends MinimalEObjectImpl.Container implements Li
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<LineSequence> getAdditional()
+  public LineSequence getAdditional()
   {
-    if (additional == null)
-    {
-      additional = new EObjectContainmentEList<LineSequence>(LineSequence.class, this, SlideOMaticPackage.LINE_SEQUENCE__ADDITIONAL);
-    }
     return additional;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAdditional(LineSequence newAdditional, NotificationChain msgs)
+  {
+    LineSequence oldAdditional = additional;
+    additional = newAdditional;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.LINE_SEQUENCE__ADDITIONAL, oldAdditional, newAdditional);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAdditional(LineSequence newAdditional)
+  {
+    if (newAdditional != additional)
+    {
+      NotificationChain msgs = null;
+      if (additional != null)
+        msgs = ((InternalEObject)additional).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.LINE_SEQUENCE__ADDITIONAL, null, msgs);
+      if (newAdditional != null)
+        msgs = ((InternalEObject)newAdditional).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SlideOMaticPackage.LINE_SEQUENCE__ADDITIONAL, null, msgs);
+      msgs = basicSetAdditional(newAdditional, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SlideOMaticPackage.LINE_SEQUENCE__ADDITIONAL, newAdditional, newAdditional));
   }
 
   /**
@@ -181,7 +208,7 @@ public class LineSequenceImpl extends MinimalEObjectImpl.Container implements Li
     switch (featureID)
     {
       case SlideOMaticPackage.LINE_SEQUENCE__ADDITIONAL:
-        return ((InternalEList<?>)getAdditional()).basicRemove(otherEnd, msgs);
+        return basicSetAdditional(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -211,7 +238,6 @@ public class LineSequenceImpl extends MinimalEObjectImpl.Container implements Li
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -224,8 +250,7 @@ public class LineSequenceImpl extends MinimalEObjectImpl.Container implements Li
         setUpper((Integer)newValue);
         return;
       case SlideOMaticPackage.LINE_SEQUENCE__ADDITIONAL:
-        getAdditional().clear();
-        getAdditional().addAll((Collection<? extends LineSequence>)newValue);
+        setAdditional((LineSequence)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -248,7 +273,7 @@ public class LineSequenceImpl extends MinimalEObjectImpl.Container implements Li
         setUpper(UPPER_EDEFAULT);
         return;
       case SlideOMaticPackage.LINE_SEQUENCE__ADDITIONAL:
-        getAdditional().clear();
+        setAdditional((LineSequence)null);
         return;
     }
     super.eUnset(featureID);
@@ -269,7 +294,7 @@ public class LineSequenceImpl extends MinimalEObjectImpl.Container implements Li
       case SlideOMaticPackage.LINE_SEQUENCE__UPPER:
         return upper != UPPER_EDEFAULT;
       case SlideOMaticPackage.LINE_SEQUENCE__ADDITIONAL:
-        return additional != null && !additional.isEmpty();
+        return additional != null;
     }
     return super.eIsSet(featureID);
   }

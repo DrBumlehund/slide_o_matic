@@ -3,8 +3,8 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TextType;
 
 import org.eclipse.emf.ecore.EClass;
 
@@ -12,19 +12,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Animation Type</b></em>'.
+ * An implementation of the model object '<em><b>Text Type</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class AnimationTypeImpl extends MinimalEObjectImpl.Container implements AnimationType
+public class TextTypeImpl extends MinimalEObjectImpl.Container implements TextType
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected AnimationTypeImpl()
+  protected TextTypeImpl()
   {
     super();
   }
@@ -37,7 +37,7 @@ public class AnimationTypeImpl extends MinimalEObjectImpl.Container implements A
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.ANIMATION_TYPE;
+    return SlideOMaticPackage.Literals.TEXT_TYPE;
   }
 
-} //AnimationTypeImpl
+} //TextTypeImpl

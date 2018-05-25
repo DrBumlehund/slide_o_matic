@@ -3,6 +3,7 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text#getTypes <em>Types</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text#getText <em>Text</em>}</li>
  * </ul>
  *
@@ -22,6 +24,22 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
  */
 public interface Text extends Content
 {
+  /**
+   * Returns the value of the '<em><b>Types</b></em>' containment reference list.
+   * The list contents are of type {@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TextType}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Types</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Types</em>' containment reference list.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getText_Types()
+   * @model containment="true"
+   * @generated
+   */
+  EList<TextType> getTypes();
+
   /**
    * Returns the value of the '<em><b>Text</b></em>' attribute.
    * <!-- begin-user-doc -->

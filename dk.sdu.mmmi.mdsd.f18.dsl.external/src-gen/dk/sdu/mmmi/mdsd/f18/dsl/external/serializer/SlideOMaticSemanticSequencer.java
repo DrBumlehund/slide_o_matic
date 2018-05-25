@@ -5,26 +5,26 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.serializer;
 
 import com.google.inject.Inject;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.services.SlideOMaticGrammarAccess;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Bold;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CurrentSecToC;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Div;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FootNote;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Height;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.InlineCode;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Italic;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Let;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.LineSequence;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ListItem;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.MathExp;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Minus;
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Mult;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Num;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.NumberedList;
@@ -42,7 +42,9 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.URL;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.UnNumberedList;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Underline;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Var;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width;
 import java.util.Set;
@@ -70,9 +72,6 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SlideOMaticPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SlideOMaticPackage.ANIMATION:
-				sequence_Animation(context, (Animation) semanticObject); 
-				return; 
 			case SlideOMaticPackage.AUTHORS:
 				sequence_Authors(context, (Authors) semanticObject); 
 				return; 
@@ -86,6 +85,9 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 					return; 
 				}
 				else break;
+			case SlideOMaticPackage.BOLD:
+				sequence_TextType(context, (Bold) semanticObject); 
+				return; 
 			case SlideOMaticPackage.COMPILE_DATE:
 				sequence_Date(context, (CompileDate) semanticObject); 
 				return; 
@@ -118,6 +120,9 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 					return; 
 				}
 				else break;
+			case SlideOMaticPackage.FOOT_NOTE:
+				sequence_TextType(context, (FootNote) semanticObject); 
+				return; 
 			case SlideOMaticPackage.HEIGHT:
 				sequence_Way(context, (Height) semanticObject); 
 				return; 
@@ -144,8 +149,8 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SlideOMaticPackage.INSTITUTE:
 				sequence_Institute(context, (Institute) semanticObject); 
 				return; 
-			case SlideOMaticPackage.JUMP:
-				sequence_AnimationType(context, (Jump) semanticObject); 
+			case SlideOMaticPackage.ITALIC:
+				sequence_TextType(context, (Italic) semanticObject); 
 				return; 
 			case SlideOMaticPackage.LET:
 				sequence_VariableBinding(context, (Let) semanticObject); 
@@ -168,9 +173,6 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 				else break;
 			case SlideOMaticPackage.MINUS:
 				sequence_Exp(context, (Minus) semanticObject); 
-				return; 
-			case SlideOMaticPackage.MOVE:
-				sequence_AnimationType(context, (Move) semanticObject); 
 				return; 
 			case SlideOMaticPackage.MULT:
 				sequence_Factor(context, (Mult) semanticObject); 
@@ -249,6 +251,9 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 					return; 
 				}
 				else break;
+			case SlideOMaticPackage.URL:
+				sequence_TextType(context, (URL) semanticObject); 
+				return; 
 			case SlideOMaticPackage.UN_NUMBERED_LIST:
 				if (rule == grammarAccess.getContentRule()) {
 					sequence_Content_UnNumberedList(context, (UnNumberedList) semanticObject); 
@@ -260,6 +265,9 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 					return; 
 				}
 				else break;
+			case SlideOMaticPackage.UNDERLINE:
+				sequence_TextType(context, (Underline) semanticObject); 
+				return; 
 			case SlideOMaticPackage.VAR:
 				sequence_VariableUse(context, (Var) semanticObject); 
 				return; 
@@ -270,42 +278,6 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Contexts:
-	 *     AnimationType returns Jump
-	 *
-	 * Constraint:
-	 *     {Jump}
-	 */
-	protected void sequence_AnimationType(ISerializationContext context, Jump semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     AnimationType returns Move
-	 *
-	 * Constraint:
-	 *     {Move}
-	 */
-	protected void sequence_AnimationType(ISerializationContext context, Move semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Animation returns Animation
-	 *
-	 * Constraint:
-	 *     (target=[Image|ID] type=AnimationType location=Alignment size=Size?)
-	 */
-	protected void sequence_Animation(ISerializationContext context, Animation semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Contexts:
@@ -453,7 +425,7 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Content returns Text
 	 *
 	 * Constraint:
-	 *     (text=STRING click=Click?)
+	 *     (types+=TextType* text=STRING click=Click?)
 	 */
 	protected void sequence_Content_Text(ISerializationContext context, Text semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -681,7 +653,7 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     LineSequence returns LineSequence
 	 *
 	 * Constraint:
-	 *     (lower=INT upper=INT? additional+=LineSequence*)
+	 *     (lower=INT upper=INT? additional=LineSequence?)
 	 */
 	protected void sequence_LineSequence(ISerializationContext context, LineSequence semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -795,7 +767,7 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *         authors=Authors? 
 	 *         institute=Institute? 
 	 *         date=Date? 
-	 *         (slides+=Slide | animations+=Animation)*
+	 *         slides+=Slide*
 	 *     )
 	 */
 	protected void sequence_Presentation(ISerializationContext context, Presentation semanticObject) {
@@ -844,7 +816,7 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Size returns ExactSize
 	 *
 	 * Constraint:
-	 *     (size=INT (unit='cm' | unit='em' | unit='mm'))
+	 *     (way=Way size=INT (unit='cm' | unit='em' | unit='mm'))
 	 */
 	protected void sequence_Size(ISerializationContext context, ExactSize semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -860,8 +832,8 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_Size(ISerializationContext context, ProportionalSize semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.PROPORTIONAL_SIZE__WAY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.PROPORTIONAL_SIZE__WAY));
+			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.SIZE__WAY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.SIZE__WAY));
 			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.PROPORTIONAL_SIZE__SCALE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.PROPORTIONAL_SIZE__SCALE));
 		}
@@ -910,19 +882,73 @@ public class SlideOMaticSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
+	 *     TextType returns Bold
+	 *
+	 * Constraint:
+	 *     {Bold}
+	 */
+	protected void sequence_TextType(ISerializationContext context, Bold semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TextType returns FootNote
+	 *
+	 * Constraint:
+	 *     {FootNote}
+	 */
+	protected void sequence_TextType(ISerializationContext context, FootNote semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TextType returns Italic
+	 *
+	 * Constraint:
+	 *     {Italic}
+	 */
+	protected void sequence_TextType(ISerializationContext context, Italic semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TextType returns URL
+	 *
+	 * Constraint:
+	 *     {URL}
+	 */
+	protected void sequence_TextType(ISerializationContext context, URL semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     TextType returns Underline
+	 *
+	 * Constraint:
+	 *     {Underline}
+	 */
+	protected void sequence_TextType(ISerializationContext context, Underline semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Text returns Text
 	 *
 	 * Constraint:
-	 *     text=STRING
+	 *     (types+=TextType* text=STRING)
 	 */
 	protected void sequence_Text(ISerializationContext context, Text semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SlideOMaticPackage.Literals.TEXT__TEXT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SlideOMaticPackage.Literals.TEXT__TEXT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_0(), semanticObject.getText());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

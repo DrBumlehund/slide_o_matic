@@ -14,8 +14,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="date" eType="#//Date" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="slides" upperBound="-1"
         eType="#//Slide" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="animations" upperBound="-1"
-        eType="#//Animation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Theme">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="theme" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -44,8 +42,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ToC" eSuperTypes="#//Content"/>
   <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//Content">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="types" upperBound="-1"
+        eType="#//TextType" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TextType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="#//Content">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="content" upperBound="-1"
@@ -69,7 +70,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="alignment" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Size"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Size">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="way" eType="#//Way" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Way"/>
   <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//Content">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -86,17 +89,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="LineSequence">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lower" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="upper" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="additional" upperBound="-1"
-        eType="#//LineSequence" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Animation">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//Image"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//AnimationType"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="additional" eType="#//LineSequence"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="size" eType="#//Size" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AnimationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="MathExp" eSuperTypes="#//Content">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="eval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="exp" eType="#//Expression"
@@ -108,8 +103,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="SubSec" eSuperTypes="#//Section"/>
   <eClassifiers xsi:type="ecore:EClass" name="SubSubSec" eSuperTypes="#//Section"/>
   <eClassifiers xsi:type="ecore:EClass" name="CurrentSecToC" eSuperTypes="#//ToC"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bold" eSuperTypes="#//TextType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Italic" eSuperTypes="#//TextType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Underline" eSuperTypes="#//TextType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="FootNote" eSuperTypes="#//TextType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="URL" eSuperTypes="#//TextType"/>
   <eClassifiers xsi:type="ecore:EClass" name="ProportionalSize" eSuperTypes="#//Size">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="way" eType="#//Way" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ExactSize" eSuperTypes="#//Size">
@@ -126,8 +125,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="lines" upperBound="-1"
         eType="#//LineSequence" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Move" eSuperTypes="#//AnimationType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Jump" eSuperTypes="#//AnimationType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Plus" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
         containment="true"/>

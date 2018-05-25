@@ -208,48 +208,26 @@ rulePresentation returns [EObject current=null]
 		)?
 		(
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPresentationAccess().getSlidesSlideParserRuleCall_5_0_0());
+				{
+					newCompositeNode(grammarAccess.getPresentationAccess().getSlidesSlideParserRuleCall_5_0());
+				}
+				lv_slides_10_0=ruleSlide
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPresentationRule());
 					}
-					lv_slides_10_0=ruleSlide
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPresentationRule());
-						}
-						add(
-							$current,
-							"slides",
-							lv_slides_10_0,
-							"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Slide");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			    |
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getPresentationAccess().getAnimationsAnimationParserRuleCall_5_1_0());
-					}
-					lv_animations_11_0=ruleAnimation
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getPresentationRule());
-						}
-						add(
-							$current,
-							"animations",
-							lv_animations_11_0,
-							"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Animation");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					add(
+						$current,
+						"slides",
+						lv_slides_10_0,
+						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Slide");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)*
-		otherlv_12='}'
+		otherlv_11='}'
 		{
-			newLeafNode(otherlv_12, grammarAccess.getPresentationAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_11, grammarAccess.getPresentationAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -1145,19 +1123,128 @@ ruleText returns [EObject current=null]
 }:
 	(
 		(
-			lv_text_0_0=RULE_STRING
-			{
-				newLeafNode(lv_text_0_0, grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_0());
-			}
-			{
-				if ($current==null) {
-					$current = createModelElement(grammarAccess.getTextRule());
+			(
+				{
+					newCompositeNode(grammarAccess.getTextAccess().getTypesTextTypeParserRuleCall_0_0());
 				}
-				setWithLastConsumed(
-					$current,
-					"text",
-					lv_text_0_0,
-					"org.eclipse.xtext.common.Terminals.STRING");
+				lv_types_0_0=ruleTextType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTextRule());
+					}
+					add(
+						$current,
+						"types",
+						lv_types_0_0,
+						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.TextType");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				lv_text_1_0=RULE_STRING
+				{
+					newLeafNode(lv_text_1_0, grammarAccess.getTextAccess().getTextSTRINGTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTextRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"text",
+						lv_text_1_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleTextType
+entryRuleTextType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTextTypeRule()); }
+	iv_ruleTextType=ruleTextType
+	{ $current=$iv_ruleTextType.current; }
+	EOF;
+
+// Rule TextType
+ruleTextType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTextTypeAccess().getBoldAction_0_0(),
+						$current);
+				}
+			)
+			otherlv_1='b'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getTextTypeAccess().getBKeyword_0_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTextTypeAccess().getItalicAction_1_0(),
+						$current);
+				}
+			)
+			otherlv_3='i'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getTextTypeAccess().getIKeyword_1_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTextTypeAccess().getUnderlineAction_2_0(),
+						$current);
+				}
+			)
+			otherlv_5='u'
+			{
+				newLeafNode(otherlv_5, grammarAccess.getTextTypeAccess().getUKeyword_2_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTextTypeAccess().getFootNoteAction_3_0(),
+						$current);
+				}
+			)
+			otherlv_7='fnote'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getTextTypeAccess().getFnoteKeyword_3_1());
+			}
+		)
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getTextTypeAccess().getURLAction_4_0(),
+						$current);
+				}
+			)
+			otherlv_9='url'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getTextTypeAccess().getUrlKeyword_4_1());
 			}
 		)
 	)
@@ -1690,9 +1777,28 @@ ruleSize returns [EObject current=null]
 			)
 			(
 				(
-					lv_size_5_0=RULE_INT
 					{
-						newLeafNode(lv_size_5_0, grammarAccess.getSizeAccess().getSizeINTTerminalRuleCall_1_1_0());
+						newCompositeNode(grammarAccess.getSizeAccess().getWayWayParserRuleCall_1_1_0());
+					}
+					lv_way_5_0=ruleWay
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getSizeRule());
+						}
+						set(
+							$current,
+							"way",
+							lv_way_5_0,
+							"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Way");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					lv_size_6_0=RULE_INT
+					{
+						newLeafNode(lv_size_6_0, grammarAccess.getSizeAccess().getSizeINTTerminalRuleCall_1_2_0());
 					}
 					{
 						if ($current==null) {
@@ -1701,7 +1807,7 @@ ruleSize returns [EObject current=null]
 						setWithLastConsumed(
 							$current,
 							"size",
-							lv_size_5_0,
+							lv_size_6_0,
 							"org.eclipse.xtext.common.Terminals.INT");
 					}
 				)
@@ -1709,37 +1815,37 @@ ruleSize returns [EObject current=null]
 			(
 				(
 					(
-						lv_unit_6_1='cm'
+						lv_unit_7_1='cm'
 						{
-							newLeafNode(lv_unit_6_1, grammarAccess.getSizeAccess().getUnitCmKeyword_1_2_0_0());
+							newLeafNode(lv_unit_7_1, grammarAccess.getSizeAccess().getUnitCmKeyword_1_3_0_0());
 						}
 						{
 							if ($current==null) {
 								$current = createModelElement(grammarAccess.getSizeRule());
 							}
-							setWithLastConsumed($current, "unit", lv_unit_6_1, null);
+							setWithLastConsumed($current, "unit", lv_unit_7_1, null);
 						}
 						    |
-						lv_unit_6_2='em'
+						lv_unit_7_2='em'
 						{
-							newLeafNode(lv_unit_6_2, grammarAccess.getSizeAccess().getUnitEmKeyword_1_2_0_1());
+							newLeafNode(lv_unit_7_2, grammarAccess.getSizeAccess().getUnitEmKeyword_1_3_0_1());
 						}
 						{
 							if ($current==null) {
 								$current = createModelElement(grammarAccess.getSizeRule());
 							}
-							setWithLastConsumed($current, "unit", lv_unit_6_2, null);
+							setWithLastConsumed($current, "unit", lv_unit_7_2, null);
 						}
 						    |
-						lv_unit_6_3='mm'
+						lv_unit_7_3='mm'
 						{
-							newLeafNode(lv_unit_6_3, grammarAccess.getSizeAccess().getUnitMmKeyword_1_2_0_2());
+							newLeafNode(lv_unit_7_3, grammarAccess.getSizeAccess().getUnitMmKeyword_1_3_0_2());
 						}
 						{
 							if ($current==null) {
 								$current = createModelElement(grammarAccess.getSizeRule());
 							}
-							setWithLastConsumed($current, "unit", lv_unit_6_3, null);
+							setWithLastConsumed($current, "unit", lv_unit_7_3, null);
 						}
 					)
 				)
@@ -2221,7 +2327,7 @@ ruleLineSequence returns [EObject current=null]
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getLineSequenceRule());
 						}
-						add(
+						set(
 							$current,
 							"additional",
 							lv_additional_4_0,
@@ -2230,7 +2336,7 @@ ruleLineSequence returns [EObject current=null]
 					}
 				)
 			)
-		)*
+		)?
 	)
 ;
 
@@ -2254,149 +2360,6 @@ ruleClick returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 		$current.merge(kw);
 		newLeafNode(kw, grammarAccess.getClickAccess().getDollarSignDollarSignKeyword());
 	}
-;
-
-// Entry rule entryRuleAnimation
-entryRuleAnimation returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAnimationRule()); }
-	iv_ruleAnimation=ruleAnimation
-	{ $current=$iv_ruleAnimation.current; }
-	EOF;
-
-// Rule Animation
-ruleAnimation returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='animate'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getAnimationAccess().getAnimateKeyword_0());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAnimationRule());
-					}
-				}
-				otherlv_1=RULE_ID
-				{
-					newLeafNode(otherlv_1, grammarAccess.getAnimationAccess().getTargetImageCrossReference_1_0());
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAnimationAccess().getTypeAnimationTypeParserRuleCall_2_0());
-				}
-				lv_type_2_0=ruleAnimationType
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAnimationRule());
-					}
-					set(
-						$current,
-						"type",
-						lv_type_2_0,
-						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.AnimationType");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_3='to'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getAnimationAccess().getToKeyword_3());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAnimationAccess().getLocationAlignmentParserRuleCall_4_0());
-				}
-				lv_location_4_0=ruleAlignment
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAnimationRule());
-					}
-					set(
-						$current,
-						"location",
-						lv_location_4_0,
-						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Alignment");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getAnimationAccess().getSizeSizeParserRuleCall_5_0());
-				}
-				lv_size_5_0=ruleSize
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getAnimationRule());
-					}
-					set(
-						$current,
-						"size",
-						lv_size_5_0,
-						"dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Size");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-	)
-;
-
-// Entry rule entryRuleAnimationType
-entryRuleAnimationType returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getAnimationTypeRule()); }
-	iv_ruleAnimationType=ruleAnimationType
-	{ $current=$iv_ruleAnimationType.current; }
-	EOF;
-
-// Rule AnimationType
-ruleAnimationType returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getAnimationTypeAccess().getMoveAction_0_0(),
-						$current);
-				}
-			)
-			otherlv_1='move'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getAnimationTypeAccess().getMoveKeyword_0_1());
-			}
-		)
-		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getAnimationTypeAccess().getJumpAction_1_0(),
-						$current);
-				}
-			)
-			otherlv_3='jump'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getAnimationTypeAccess().getJumpKeyword_1_1());
-			}
-		)
-	)
 ;
 
 // Entry rule entryRuleMathExp

@@ -113,10 +113,8 @@ public class SlideOMaticSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     name=STRING '{' (ambiguity) '}' (rule end)
-	 *     name=STRING '{' (ambiguity) animations+=Animation
 	 *     name=STRING '{' (ambiguity) slides+=Slide
 	 *     subtitle=STRING '{' (ambiguity) '}' (rule end)
-	 *     subtitle=STRING '{' (ambiguity) animations+=Animation
 	 *     subtitle=STRING '{' (ambiguity) slides+=Slide
 	 */
 	protected void emit_Presentation___LeftParenthesisKeyword_4_0_RightParenthesisKeyword_4_5__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {

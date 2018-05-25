@@ -7,6 +7,7 @@ import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Bold;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
@@ -16,9 +17,11 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Div;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ExactSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Expression;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FootNote;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.InlineCode;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Italic;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Let;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.LineSequence;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.List;
@@ -41,11 +44,15 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSubSec;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Table;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TableRow;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TextType;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Theme;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ToC;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.URL;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Underline;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Var;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Way;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Width;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
@@ -83,8 +90,11 @@ public class SlideOMaticGenerator extends AbstractGenerator {
   
   public void doGenerateTexFile(final Presentation p, final IFileSystemAccess2 fsa) {
     String _name = p.getName();
-    String _plus = (_name + ".tex");
-    fsa.generateFile(_plus, this.dkLetters(this.generateTexCode(p)));
+    String _plus = (_name + "/");
+    String _name_1 = p.getName();
+    String _plus_1 = (_plus + _name_1);
+    String _plus_2 = (_plus_1 + ".tex");
+    fsa.generateFile(_plus_2, this.dkLetters(this.generateTexCode(p)));
   }
   
   public CharSequence generateTexCode(final Presentation p) {
@@ -262,8 +272,8 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     {
       EList<Content> _contents = s.getContents();
       for(final Content c : _contents) {
-        CharSequence _generateContentsCode = this.generateContentsCode(c, s);
-        _builder.append(_generateContentsCode);
+        CharSequence _generateContents = this.generateContents(c, s);
+        _builder.append(_generateContents);
         _builder.newLineIfNotEmpty();
       }
     }
@@ -304,189 +314,283 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return (_plus + "}");
   }
   
-  public CharSequence generateContentsCode(final Content c, final Slide s) {
-    String _switchResult = null;
+  public CharSequence generateContents(final Content c, final Slide s) {
+    CharSequence _generateContentsCode = this.generateContentsCode(c, s);
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      String _click = c.getClick();
+      boolean _tripleNotEquals = (_click != null);
+      if (_tripleNotEquals) {
+        _builder.append("\\pause");
+      }
+    }
+    return (_generateContentsCode + _builder.toString());
+  }
+  
+  protected CharSequence _generateContentsCode(final ToC t, final Slide s) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\tableofcontents");
+    {
+      if ((t instanceof CurrentSecToC)) {
+        _builder.append("[sections=\\value{section}]");
+      } else {
+        _builder.append("[hideallsubsections]");
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _generateContentsCode(final Text t, final Slide s) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<TextType> _types = t.getTypes();
+      for(final TextType tt : _types) {
+        CharSequence _generateTextTypeStartCode = this.generateTextTypeStartCode(tt);
+        _builder.append(_generateTextTypeStartCode);
+      }
+    }
+    String _sanitize = this.sanitize(t.getText());
+    _builder.append(_sanitize);
+    {
+      EList<TextType> _types_1 = t.getTypes();
+      for(final TextType tt_1 : _types_1) {
+        _builder.append("}");
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence generateTextTypeStartCode(final TextType tt) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\");
+    {
+      if ((tt instanceof Bold)) {
+        _builder.append("textbf");
+      } else {
+        if ((tt instanceof Italic)) {
+          _builder.append("textit");
+        } else {
+          if ((tt instanceof Underline)) {
+            _builder.append("underline");
+          } else {
+            if ((tt instanceof FootNote)) {
+              _builder.append("footnote");
+            } else {
+              if ((tt instanceof URL)) {
+                _builder.append("url");
+              }
+            }
+          }
+        }
+      }
+    }
+    _builder.append("{");
+    return _builder;
+  }
+  
+  /**
+   * Some common characters, which needs to be sanitized in latex, in strings...
+   */
+  public String sanitize(final String str) {
+    return str.replaceAll("#", "\\#").replaceAll("&", "\\&").replaceAll("%", "\\%").replaceAll("_", "\\_");
+  }
+  
+  protected CharSequence _generateContentsCode(final Block b, final Slide s) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\begin{block}");
+    {
+      String _name = b.getName();
+      boolean _tripleNotEquals = (_name != null);
+      if (_tripleNotEquals) {
+        _builder.append("{");
+        String _name_1 = b.getName();
+        _builder.append(_name_1);
+        _builder.append("}");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    {
+      EList<Content> _content = b.getContent();
+      for(final Content bc : _content) {
+        CharSequence _generateContents = this.generateContents(bc, s);
+        _builder.append(_generateContents);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\\end{block}");
+    return _builder;
+  }
+  
+  protected CharSequence _generateContentsCode(final List l, final Slide s) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\begin{");
+    {
+      if ((l instanceof NumberedList)) {
+        _builder.append("enumerate");
+      } else {
+        _builder.append("itemize");
+      }
+    }
+    _builder.append("}");
+    _builder.newLineIfNotEmpty();
+    {
+      EList<ListItem> _items = l.getItems();
+      for(final ListItem i : _items) {
+        _builder.append("\\item ");
+        String _item = i.getItem();
+        _builder.append(_item);
+        {
+          List _nestedList = i.getNestedList();
+          boolean _tripleNotEquals = (_nestedList != null);
+          if (_tripleNotEquals) {
+            CharSequence _generateContentsCode = this.generateContentsCode(i.getNestedList(), s);
+            _builder.append(_generateContentsCode);
+          }
+        }
+        {
+          String _click = i.getClick();
+          boolean _tripleNotEquals_1 = (_click != null);
+          if (_tripleNotEquals_1) {
+            _builder.append("\\pause");
+          }
+        }
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\\end{");
+    {
+      if ((l instanceof NumberedList)) {
+        _builder.append("enumerate");
+      } else {
+        _builder.append("itemize");
+      }
+    }
+    _builder.append("}");
+    return _builder;
+  }
+  
+  protected CharSequence _generateContentsCode(final Image i, final Slide s) {
+    CharSequence _xblockexpression = null;
+    {
+      final String src = i.getSrc().replace("\\", "/");
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("\\begin{center}");
+      _builder.newLine();
+      _builder.append("\\includegraphics[");
+      CharSequence _string = this.getString(i.getSize());
+      _builder.append(_string);
+      _builder.append("]{");
+      _builder.append(src);
+      _builder.append("}");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\\end{center}");
+      _builder.newLine();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
+  }
+  
+  /**
+   * Function to convert the size of floats into the correct LaTeX string.
+   */
+  public CharSequence getString(final Size s) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      Way _way = s.getWay();
+      if ((_way instanceof Width)) {
+        _builder.append("width=");
+      } else {
+        _builder.append("height=");
+      }
+    }
+    CharSequence _switchResult = null;
     boolean _matched = false;
-    if (c instanceof ToC) {
+    if (s instanceof ProportionalSize) {
+      _matched=true;
+      StringConcatenation _builder_1 = new StringConcatenation();
+      {
+        Way _way_1 = ((ProportionalSize)s).getWay();
+        if ((_way_1 instanceof Width)) {
+          int _scale = ((ProportionalSize)s).getScale();
+          float _divide = (_scale / 100f);
+          _builder_1.append(_divide);
+          _builder_1.append("\\textwidth");
+        } else {
+          int _scale_1 = ((ProportionalSize)s).getScale();
+          float _divide_1 = (_scale_1 / 100f);
+          _builder_1.append(_divide_1);
+          _builder_1.append("\\textheight");
+        }
+      }
+      _switchResult = _builder_1;
+    }
+    if (!_matched) {
+      if (s instanceof ExactSize) {
+        _matched=true;
+        StringConcatenation _builder_1 = new StringConcatenation();
+        int _size = ((ExactSize)s).getSize();
+        _builder_1.append(_size);
+        String _unit = ((ExactSize)s).getUnit();
+        _builder_1.append(_unit);
+        _switchResult = _builder_1;
+      }
+    }
+    return (_builder.toString() + _switchResult);
+  }
+  
+  protected CharSequence _generateContentsCode(final Table t, final Slide s) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\begin{tabular}{");
+    {
+      EList<TableRow> _rows = t.getRows();
+      for(final TableRow i : _rows) {
+        _builder.append("|c");
+      }
+    }
+    _builder.append("|}");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\\hline");
+    _builder.newLine();
+    {
+      EList<TableRow> _rows_1 = t.getRows();
+      for(final TableRow row : _rows_1) {
+        {
+          EList<String> _values = row.getValues();
+          boolean _hasElements = false;
+          for(final String v : _values) {
+            if (!_hasElements) {
+              _hasElements = true;
+            } else {
+              _builder.appendImmediate(" & ", "");
+            }
+            _builder.append(v);
+          }
+        }
+        _builder.append(" \\\\ \\hline");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("\\end{tabular}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _generateContentsCode(final Code c, final Slide s) {
+    CharSequence _switchResult = null;
+    boolean _matched = false;
+    if (c instanceof InlineCode) {
       _matched=true;
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("\\tableofcontents");
-      {
-        if ((c instanceof CurrentSecToC)) {
-          _builder.append("[sections=\\value{section}]");
-        } else {
-          _builder.append("[hideallsubsections]");
-        }
-      }
-      _switchResult = _builder.toString();
-    }
-    if (!_matched) {
-      if (c instanceof Text) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("{");
-        String _text = ((Text)c).getText();
-        _builder.append(_text);
-        _builder.append("}");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (c instanceof Block) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("\\begin{block}");
-        {
-          String _name = ((Block)c).getName();
-          boolean _tripleNotEquals = (_name != null);
-          if (_tripleNotEquals) {
-            _builder.append("{");
-            String _name_1 = ((Block)c).getName();
-            _builder.append(_name_1);
-            _builder.append("}");
-          }
-        }
-        _builder.newLineIfNotEmpty();
-        {
-          EList<Content> _content = ((Block)c).getContent();
-          for(final Content bc : _content) {
-            CharSequence _generateContentsCode = this.generateContentsCode(bc, s);
-            _builder.append(_generateContentsCode);
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        _builder.append("\\end{block}");
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (c instanceof List) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("\\begin{");
-        {
-          if ((c instanceof NumberedList)) {
-            _builder.append("enumerate");
-          } else {
-            _builder.append("itemize");
-          }
-        }
-        _builder.append("}");
-        _builder.newLineIfNotEmpty();
-        {
-          EList<ListItem> _items = ((List)c).getItems();
-          for(final ListItem i : _items) {
-            _builder.append("\\item ");
-            String _item = i.getItem();
-            _builder.append(_item);
-            {
-              List _nestedList = i.getNestedList();
-              boolean _tripleNotEquals = (_nestedList != null);
-              if (_tripleNotEquals) {
-                CharSequence _generateContentsCode = this.generateContentsCode(i.getNestedList(), s);
-                _builder.append(_generateContentsCode);
-              }
-            }
-            {
-              String _click = i.getClick();
-              boolean _tripleNotEquals_1 = (_click != null);
-              if (_tripleNotEquals_1) {
-                _builder.append("\\pause");
-              }
-            }
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        _builder.append("\\end{");
-        {
-          if ((c instanceof NumberedList)) {
-            _builder.append("enumerate");
-          } else {
-            _builder.append("itemize");
-          }
-        }
-        _builder.append("}");
-        _builder.newLineIfNotEmpty();
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (c instanceof Image) {
-        _matched=true;
-        String _xblockexpression = null;
-        {
-          final String src = ((Image)c).getSrc().replace("\\", "/");
-          StringConcatenation _builder = new StringConcatenation();
-          _builder.append("\\begin{center}");
-          _builder.newLine();
-          _builder.append("\\includegraphics[");
-          CharSequence _string = this.getString(((Image)c).getSize());
-          _builder.append(_string);
-          _builder.append("]{");
-          _builder.append(src);
-          _builder.append("}");
-          _builder.newLineIfNotEmpty();
-          _builder.append("\\end{center}");
-          _builder.newLine();
-          _xblockexpression = _builder.toString();
-        }
-        _switchResult = _xblockexpression;
-      }
-    }
-    if (!_matched) {
-      if (c instanceof Table) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("\\begin{tabular}{");
-        {
-          EList<TableRow> _rows = ((Table)c).getRows();
-          for(final TableRow i : _rows) {
-            _builder.append("|c");
-          }
-        }
-        _builder.append("|}");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\\hline");
-        _builder.newLine();
-        {
-          EList<TableRow> _rows_1 = ((Table)c).getRows();
-          for(final TableRow row : _rows_1) {
-            {
-              EList<String> _values = row.getValues();
-              boolean _hasElements = false;
-              for(final String v : _values) {
-                if (!_hasElements) {
-                  _hasElements = true;
-                } else {
-                  _builder.appendImmediate(" & ", "");
-                }
-                _builder.append(v);
-              }
-            }
-            _builder.append(" \\\\ \\hline");
-            _builder.newLineIfNotEmpty();
-          }
-        }
-        _builder.append("\\end{tabular}");
-        _builder.newLine();
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (c instanceof InlineCode) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("\\begin{minted}{");
-        String _lang = ((InlineCode)c).getLang();
-        _builder.append(_lang);
-        _builder.append("}");
-        _builder.newLineIfNotEmpty();
-        String _code = ((InlineCode)c).getCode();
-        _builder.append(_code);
-        _builder.newLineIfNotEmpty();
-        _builder.append("\\end{minted}");
-        _switchResult = _builder.toString();
-      }
+      _builder.append("\\begin{minted}{");
+      String _lang = ((InlineCode)c).getLang();
+      _builder.append(_lang);
+      _builder.append("}");
+      _builder.newLineIfNotEmpty();
+      String _code = ((InlineCode)c).getCode();
+      _builder.append(_code);
+      _builder.newLineIfNotEmpty();
+      _builder.append("\\end{minted}");
+      _switchResult = _builder;
     }
     if (!_matched) {
       if (c instanceof FileCode) {
@@ -534,79 +638,6 @@ public class SlideOMaticGenerator extends AbstractGenerator {
             _builder.newLineIfNotEmpty();
           }
         }
-        _switchResult = _builder.toString();
-      }
-    }
-    if (!_matched) {
-      if (c instanceof MathExp) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        _builder.append("\\begin{equation}");
-        _builder.newLine();
-        String _display = this.display(((MathExp)c));
-        _builder.append(_display);
-        _builder.append(" ");
-        {
-          String _eval = ((MathExp)c).getEval();
-          boolean _tripleNotEquals = (_eval != null);
-          if (_tripleNotEquals) {
-            _builder.append("=");
-            int _compute = this.compute(((MathExp)c));
-            _builder.append(_compute);
-          }
-        }
-        _builder.newLineIfNotEmpty();
-        _builder.append("\\end{equation}");
-        _builder.newLine();
-        _switchResult = _builder.toString();
-      }
-    }
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      String _click = c.getClick();
-      boolean _tripleNotEquals = (_click != null);
-      if (_tripleNotEquals) {
-        _builder.append("\\pause");
-      }
-    }
-    return (_switchResult + _builder);
-  }
-  
-  /**
-   * Function to convert the size of floats into the correct LaTeX string.
-   */
-  public CharSequence getString(final Size s) {
-    CharSequence _switchResult = null;
-    boolean _matched = false;
-    if (s instanceof ProportionalSize) {
-      _matched=true;
-      StringConcatenation _builder = new StringConcatenation();
-      {
-        Way _way = ((ProportionalSize)s).getWay();
-        if ((_way instanceof Width)) {
-          _builder.append("width=");
-          int _scale = ((ProportionalSize)s).getScale();
-          float _divide = (_scale / 100f);
-          _builder.append(_divide);
-          _builder.append("\\textwidth");
-        } else {
-          _builder.append("height=");
-          int _scale_1 = ((ProportionalSize)s).getScale();
-          float _divide_1 = (_scale_1 / 100f);
-          _builder.append(_divide_1);
-          _builder.append("\\textheight");
-        }
-      }
-      _switchResult = _builder;
-    }
-    if (!_matched) {
-      if (s instanceof ExactSize) {
-        _matched=true;
-        StringConcatenation _builder = new StringConcatenation();
-        int _size = ((ExactSize)s).getSize();
-        _builder.append(_size);
-        String _unit = ((ExactSize)s).getUnit();
-        _builder.append(_unit);
         _switchResult = _builder;
       }
     }
@@ -625,6 +656,28 @@ public class SlideOMaticGenerator extends AbstractGenerator {
       }
     }
     return false;
+  }
+  
+  protected CharSequence _generateContentsCode(final MathExp m, final Slide s) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\begin{equation}");
+    _builder.newLine();
+    String _display = this.display(m);
+    _builder.append(_display);
+    _builder.append(" ");
+    {
+      String _eval = m.getEval();
+      boolean _tripleNotEquals = (_eval != null);
+      if (_tripleNotEquals) {
+        _builder.append("=");
+        int _compute = this.compute(m);
+        _builder.append(_compute);
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append("\\end{equation}");
+    _builder.newLine();
+    return _builder;
   }
   
   public Map<String, Integer> bind(final Map<String, Integer> env1, final String name, final int value) {
@@ -814,5 +867,28 @@ public class SlideOMaticGenerator extends AbstractGenerator {
       throw new Error("Invalid expression");
     }
     return _switchResult;
+  }
+  
+  public CharSequence generateContentsCode(final Content b, final Slide s) {
+    if (b instanceof Block) {
+      return _generateContentsCode((Block)b, s);
+    } else if (b instanceof Code) {
+      return _generateContentsCode((Code)b, s);
+    } else if (b instanceof Image) {
+      return _generateContentsCode((Image)b, s);
+    } else if (b instanceof List) {
+      return _generateContentsCode((List)b, s);
+    } else if (b instanceof MathExp) {
+      return _generateContentsCode((MathExp)b, s);
+    } else if (b instanceof Table) {
+      return _generateContentsCode((Table)b, s);
+    } else if (b instanceof Text) {
+      return _generateContentsCode((Text)b, s);
+    } else if (b instanceof ToC) {
+      return _generateContentsCode((ToC)b, s);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(b, s).toString());
+    }
   }
 }

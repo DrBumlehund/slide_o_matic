@@ -23,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getInstitute <em>Institute</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getDate <em>Date</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getSlides <em>Slides</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation#getAnimations <em>Animations</em>}</li>
  * </ul>
  *
  * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getPresentation()
@@ -203,21 +202,5 @@ public interface Presentation extends EObject
    * @generated
    */
   EList<Slide> getSlides();
-
-  /**
-   * Returns the value of the '<em><b>Animations</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Animations</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Animations</em>' containment reference list.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getPresentation_Animations()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Animation> getAnimations();
 
 } // Presentation

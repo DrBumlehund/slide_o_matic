@@ -3,7 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Institute;
@@ -43,7 +42,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl#getInstitute <em>Institute</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl#getDate <em>Date</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl#getSlides <em>Slides</em>}</li>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl.PresentationImpl#getAnimations <em>Animations</em>}</li>
  * </ul>
  *
  * @generated
@@ -139,16 +137,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
    * @ordered
    */
   protected EList<Slide> slides;
-
-  /**
-   * The cached value of the '{@link #getAnimations() <em>Animations</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAnimations()
-   * @generated
-   * @ordered
-   */
-  protected EList<Animation> animations;
 
   /**
    * <!-- begin-user-doc -->
@@ -428,20 +416,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Animation> getAnimations()
-  {
-    if (animations == null)
-    {
-      animations = new EObjectContainmentEList<Animation>(Animation.class, this, SlideOMaticPackage.PRESENTATION__ANIMATIONS);
-    }
-    return animations;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -457,8 +431,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
         return basicSetDate(null, msgs);
       case SlideOMaticPackage.PRESENTATION__SLIDES:
         return ((InternalEList<?>)getSlides()).basicRemove(otherEnd, msgs);
-      case SlideOMaticPackage.PRESENTATION__ANIMATIONS:
-        return ((InternalEList<?>)getAnimations()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -487,8 +459,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
         return getDate();
       case SlideOMaticPackage.PRESENTATION__SLIDES:
         return getSlides();
-      case SlideOMaticPackage.PRESENTATION__ANIMATIONS:
-        return getAnimations();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -526,10 +496,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
         getSlides().clear();
         getSlides().addAll((Collection<? extends Slide>)newValue);
         return;
-      case SlideOMaticPackage.PRESENTATION__ANIMATIONS:
-        getAnimations().clear();
-        getAnimations().addAll((Collection<? extends Animation>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -565,9 +531,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
       case SlideOMaticPackage.PRESENTATION__SLIDES:
         getSlides().clear();
         return;
-      case SlideOMaticPackage.PRESENTATION__ANIMATIONS:
-        getAnimations().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -596,8 +559,6 @@ public class PresentationImpl extends MinimalEObjectImpl.Container implements Pr
         return date != null;
       case SlideOMaticPackage.PRESENTATION__SLIDES:
         return slides != null && !slides.isEmpty();
-      case SlideOMaticPackage.PRESENTATION__ANIMATIONS:
-        return animations != null && !animations.isEmpty();
     }
     return super.eIsSet(featureID);
   }

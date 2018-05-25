@@ -6,8 +6,7 @@ generate slideOMatic "http://www.sdu.dk/mmmi/mdsd/f18/dsl/external/SlideOMatic"
 Presentation:
 	"presentation" name=STRING (subtitle=STRING)? "{" ("(" (theme=Theme)? (authors=Authors)? (institute=Institute)?
 	(date=Date)? ")")?
-	(slides+=Slide |
-	animations+=Animation)* "}";
+	(slides+=Slide)* "}";
 
 Theme:
 	"theme" theme=BeamerTheme ("color" themeColor=ThemeColor)?;
@@ -44,7 +43,10 @@ ToC:
 	{ToC} "ToC" | {CurrentSecToC} "ToC" "*";
 
 Text:
-	text=STRING;
+	(types+=TextType)* text=STRING;
+
+TextType:
+	{Bold} 'b' | {Italic} 'i' | {Underline} 'u' | {FootNote} 'fnote' | {URL} 'url';
 
 Block:
 	"block" (name=STRING)? "{" content+=Content+ "}";
@@ -68,7 +70,7 @@ Alignment:
 	"topleft" | "top" | "topright" | "left" | "center" | "right" | "bottomleft" | "bottom" | "bottomright";
 
 Size:
-	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
+	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} way=Way size=INT unit=("cm" | "em" | "mm");
 
 Way:
 	{Width} "width" | {Height} "height";
@@ -80,21 +82,16 @@ TableRow:
 	"[" values+=STRING ("," values+=STRING)* "]";
 
 Code:
-	{InlineCode} "code" lang=ID code=STRING "end" | {FileCode} "filecode" lang=ID src=STRING ("show" "[" lines+=LineSequence "]"
+	{InlineCode} "code" lang=ID code=STRING "end" | {FileCode} "filecode" lang=ID src=STRING ("show" "["
+	lines+=LineSequence "]"
 	("," "[" lines+=LineSequence
 	"]")*)? "end";
 
 LineSequence:
-	lower=INT (":" upper=INT)? ("," additional+=LineSequence)*;
+	lower=INT (":" upper=INT)? ("," additional=LineSequence)?;
 
 Click:
 	"$$";
-
-Animation:
-	"animate" target=[Image] type=AnimationType "to" location=Alignment (size=Size)?;
-
-AnimationType:
-	{Move} "move" | {Jump} "jump";
 
 MathExp:
 	'math' (eval="eval")? exp=Exp;

@@ -114,6 +114,15 @@ public interface SlideOMaticFactory extends EFactory
   Text createText();
 
   /**
+   * Returns a new object of class '<em>Text Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Text Type</em>'.
+   * @generated
+   */
+  TextType createTextType();
+
+  /**
    * Returns a new object of class '<em>Block</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -222,24 +231,6 @@ public interface SlideOMaticFactory extends EFactory
   LineSequence createLineSequence();
 
   /**
-   * Returns a new object of class '<em>Animation</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Animation</em>'.
-   * @generated
-   */
-  Animation createAnimation();
-
-  /**
-   * Returns a new object of class '<em>Animation Type</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Animation Type</em>'.
-   * @generated
-   */
-  AnimationType createAnimationType();
-
-  /**
    * Returns a new object of class '<em>Math Exp</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -303,6 +294,51 @@ public interface SlideOMaticFactory extends EFactory
   CurrentSecToC createCurrentSecToC();
 
   /**
+   * Returns a new object of class '<em>Bold</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bold</em>'.
+   * @generated
+   */
+  Bold createBold();
+
+  /**
+   * Returns a new object of class '<em>Italic</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Italic</em>'.
+   * @generated
+   */
+  Italic createItalic();
+
+  /**
+   * Returns a new object of class '<em>Underline</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Underline</em>'.
+   * @generated
+   */
+  Underline createUnderline();
+
+  /**
+   * Returns a new object of class '<em>Foot Note</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Foot Note</em>'.
+   * @generated
+   */
+  FootNote createFootNote();
+
+  /**
+   * Returns a new object of class '<em>URL</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>URL</em>'.
+   * @generated
+   */
+  URL createURL();
+
+  /**
    * Returns a new object of class '<em>Proportional Size</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -355,24 +391,6 @@ public interface SlideOMaticFactory extends EFactory
    * @generated
    */
   FileCode createFileCode();
-
-  /**
-   * Returns a new object of class '<em>Move</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Move</em>'.
-   * @generated
-   */
-  Move createMove();
-
-  /**
-   * Returns a new object of class '<em>Jump</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Jump</em>'.
-   * @generated
-   */
-  Jump createJump();
 
   /**
    * Returns a new object of class '<em>Plus</em>'.

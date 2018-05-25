@@ -31,7 +31,6 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getPresentationAccess().getAlternatives_5(), "rule__Presentation__Alternatives_5");
 					put(grammarAccess.getBeamerThemeAccess().getAlternatives(), "rule__BeamerTheme__Alternatives");
 					put(grammarAccess.getThemeColorAccess().getAlternatives(), "rule__ThemeColor__Alternatives");
 					put(grammarAccess.getAuthorsAccess().getAlternatives_0(), "rule__Authors__Alternatives_0");
@@ -40,13 +39,13 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSectionAccess().getAlternatives(), "rule__Section__Alternatives");
 					put(grammarAccess.getContentAccess().getAlternatives_0(), "rule__Content__Alternatives_0");
 					put(grammarAccess.getToCAccess().getAlternatives(), "rule__ToC__Alternatives");
+					put(grammarAccess.getTextTypeAccess().getAlternatives(), "rule__TextType__Alternatives");
 					put(grammarAccess.getListAccess().getAlternatives(), "rule__List__Alternatives");
 					put(grammarAccess.getAlignmentAccess().getAlternatives(), "rule__Alignment__Alternatives");
 					put(grammarAccess.getSizeAccess().getAlternatives(), "rule__Size__Alternatives");
-					put(grammarAccess.getSizeAccess().getUnitAlternatives_1_2_0(), "rule__Size__UnitAlternatives_1_2_0");
+					put(grammarAccess.getSizeAccess().getUnitAlternatives_1_3_0(), "rule__Size__UnitAlternatives_1_3_0");
 					put(grammarAccess.getWayAccess().getAlternatives(), "rule__Way__Alternatives");
 					put(grammarAccess.getCodeAccess().getAlternatives(), "rule__Code__Alternatives");
-					put(grammarAccess.getAnimationTypeAccess().getAlternatives(), "rule__AnimationType__Alternatives");
 					put(grammarAccess.getExpAccess().getAlternatives_1_0(), "rule__Exp__Alternatives_1_0");
 					put(grammarAccess.getFactorAccess().getAlternatives_1_0(), "rule__Factor__Alternatives_1_0");
 					put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
@@ -67,6 +66,12 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 					put(grammarAccess.getContentAccess().getGroup(), "rule__Content__Group__0");
 					put(grammarAccess.getToCAccess().getGroup_0(), "rule__ToC__Group_0__0");
 					put(grammarAccess.getToCAccess().getGroup_1(), "rule__ToC__Group_1__0");
+					put(grammarAccess.getTextAccess().getGroup(), "rule__Text__Group__0");
+					put(grammarAccess.getTextTypeAccess().getGroup_0(), "rule__TextType__Group_0__0");
+					put(grammarAccess.getTextTypeAccess().getGroup_1(), "rule__TextType__Group_1__0");
+					put(grammarAccess.getTextTypeAccess().getGroup_2(), "rule__TextType__Group_2__0");
+					put(grammarAccess.getTextTypeAccess().getGroup_3(), "rule__TextType__Group_3__0");
+					put(grammarAccess.getTextTypeAccess().getGroup_4(), "rule__TextType__Group_4__0");
 					put(grammarAccess.getBlockAccess().getGroup(), "rule__Block__Group__0");
 					put(grammarAccess.getNumberedListAccess().getGroup(), "rule__NumberedList__Group__0");
 					put(grammarAccess.getUnNumberedListAccess().getGroup(), "rule__UnNumberedList__Group__0");
@@ -88,9 +93,6 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLineSequenceAccess().getGroup(), "rule__LineSequence__Group__0");
 					put(grammarAccess.getLineSequenceAccess().getGroup_1(), "rule__LineSequence__Group_1__0");
 					put(grammarAccess.getLineSequenceAccess().getGroup_2(), "rule__LineSequence__Group_2__0");
-					put(grammarAccess.getAnimationAccess().getGroup(), "rule__Animation__Group__0");
-					put(grammarAccess.getAnimationTypeAccess().getGroup_0(), "rule__AnimationType__Group_0__0");
-					put(grammarAccess.getAnimationTypeAccess().getGroup_1(), "rule__AnimationType__Group_1__0");
 					put(grammarAccess.getMathExpAccess().getGroup(), "rule__MathExp__Group__0");
 					put(grammarAccess.getExpAccess().getGroup(), "rule__Exp__Group__0");
 					put(grammarAccess.getExpAccess().getGroup_1(), "rule__Exp__Group_1__0");
@@ -112,8 +114,7 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPresentationAccess().getAuthorsAssignment_4_2(), "rule__Presentation__AuthorsAssignment_4_2");
 					put(grammarAccess.getPresentationAccess().getInstituteAssignment_4_3(), "rule__Presentation__InstituteAssignment_4_3");
 					put(grammarAccess.getPresentationAccess().getDateAssignment_4_4(), "rule__Presentation__DateAssignment_4_4");
-					put(grammarAccess.getPresentationAccess().getSlidesAssignment_5_0(), "rule__Presentation__SlidesAssignment_5_0");
-					put(grammarAccess.getPresentationAccess().getAnimationsAssignment_5_1(), "rule__Presentation__AnimationsAssignment_5_1");
+					put(grammarAccess.getPresentationAccess().getSlidesAssignment_5(), "rule__Presentation__SlidesAssignment_5");
 					put(grammarAccess.getThemeAccess().getThemeAssignment_1(), "rule__Theme__ThemeAssignment_1");
 					put(grammarAccess.getThemeAccess().getThemeColorAssignment_2_1(), "rule__Theme__ThemeColorAssignment_2_1");
 					put(grammarAccess.getAuthorsAccess().getNamesAssignment_1(), "rule__Authors__NamesAssignment_1");
@@ -125,7 +126,8 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSlideAccess().getNameAssignment_1_1(), "rule__Slide__NameAssignment_1_1");
 					put(grammarAccess.getSlideAccess().getContentsAssignment_3(), "rule__Slide__ContentsAssignment_3");
 					put(grammarAccess.getContentAccess().getClickAssignment_1(), "rule__Content__ClickAssignment_1");
-					put(grammarAccess.getTextAccess().getTextAssignment(), "rule__Text__TextAssignment");
+					put(grammarAccess.getTextAccess().getTypesAssignment_0(), "rule__Text__TypesAssignment_0");
+					put(grammarAccess.getTextAccess().getTextAssignment_1(), "rule__Text__TextAssignment_1");
 					put(grammarAccess.getBlockAccess().getNameAssignment_1(), "rule__Block__NameAssignment_1");
 					put(grammarAccess.getBlockAccess().getContentAssignment_3(), "rule__Block__ContentAssignment_3");
 					put(grammarAccess.getNumberedListAccess().getItemsAssignment_1(), "rule__NumberedList__ItemsAssignment_1");
@@ -139,8 +141,9 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 					put(grammarAccess.getImageAccess().getSizeAssignment_5(), "rule__Image__SizeAssignment_5");
 					put(grammarAccess.getSizeAccess().getWayAssignment_0_1(), "rule__Size__WayAssignment_0_1");
 					put(grammarAccess.getSizeAccess().getScaleAssignment_0_2(), "rule__Size__ScaleAssignment_0_2");
-					put(grammarAccess.getSizeAccess().getSizeAssignment_1_1(), "rule__Size__SizeAssignment_1_1");
-					put(grammarAccess.getSizeAccess().getUnitAssignment_1_2(), "rule__Size__UnitAssignment_1_2");
+					put(grammarAccess.getSizeAccess().getWayAssignment_1_1(), "rule__Size__WayAssignment_1_1");
+					put(grammarAccess.getSizeAccess().getSizeAssignment_1_2(), "rule__Size__SizeAssignment_1_2");
+					put(grammarAccess.getSizeAccess().getUnitAssignment_1_3(), "rule__Size__UnitAssignment_1_3");
 					put(grammarAccess.getTableAccess().getNameAssignment_1(), "rule__Table__NameAssignment_1");
 					put(grammarAccess.getTableAccess().getRowsAssignment_3(), "rule__Table__RowsAssignment_3");
 					put(grammarAccess.getTableAccess().getRowsAssignment_4_1(), "rule__Table__RowsAssignment_4_1");
@@ -155,10 +158,6 @@ public class SlideOMaticParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLineSequenceAccess().getLowerAssignment_0(), "rule__LineSequence__LowerAssignment_0");
 					put(grammarAccess.getLineSequenceAccess().getUpperAssignment_1_1(), "rule__LineSequence__UpperAssignment_1_1");
 					put(grammarAccess.getLineSequenceAccess().getAdditionalAssignment_2_1(), "rule__LineSequence__AdditionalAssignment_2_1");
-					put(grammarAccess.getAnimationAccess().getTargetAssignment_1(), "rule__Animation__TargetAssignment_1");
-					put(grammarAccess.getAnimationAccess().getTypeAssignment_2(), "rule__Animation__TypeAssignment_2");
-					put(grammarAccess.getAnimationAccess().getLocationAssignment_4(), "rule__Animation__LocationAssignment_4");
-					put(grammarAccess.getAnimationAccess().getSizeAssignment_5(), "rule__Animation__SizeAssignment_5");
 					put(grammarAccess.getMathExpAccess().getEvalAssignment_1(), "rule__MathExp__EvalAssignment_1");
 					put(grammarAccess.getMathExpAccess().getExpAssignment_2(), "rule__MathExp__ExpAssignment_2");
 					put(grammarAccess.getExpAccess().getRightAssignment_1_1(), "rule__Exp__RightAssignment_1_1");

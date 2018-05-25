@@ -3,26 +3,26 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Underline;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Move</b></em>'.
+ * An implementation of the model object '<em><b>Underline</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class MoveImpl extends AnimationTypeImpl implements Move
+public class UnderlineImpl extends TextTypeImpl implements Underline
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected MoveImpl()
+  protected UnderlineImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class MoveImpl extends AnimationTypeImpl implements Move
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.MOVE;
+    return SlideOMaticPackage.Literals.UNDERLINE;
   }
 
-} //MoveImpl
+} //UnderlineImpl

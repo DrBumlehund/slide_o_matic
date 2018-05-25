@@ -42,6 +42,12 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.InlineCode
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TextType
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Bold
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Italic
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Underline
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FootNote
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.URL
 
 /**
  * Generates code from your model files on save.
@@ -66,7 +72,7 @@ class SlideOMaticGenerator extends AbstractGenerator {
 	}
 
 	def void doGenerateTexFile(Presentation p, IFileSystemAccess2 fsa) {
-		fsa.generateFile(p.name + ".tex", dkLetters(p.generateTexCode))
+		fsa.generateFile(p.name + "/" + p.name + ".tex", dkLetters(p.generateTexCode))
 	}
 
 	def CharSequence generateTexCode(Presentation p) {
@@ -129,7 +135,7 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			«ENDIF»
 			\begin{frame}«IF s.hasCode»[fragile]«ENDIF»«IF s.name !== null»{«s.name»}«ENDIF»
 			«FOR c : s.contents»
-				«c.generateContentsCode(s)»
+				«c.generateContents(s)»
 			«ENDFOR»
 			\end{frame}
 		'''
@@ -146,42 +152,77 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		} + name + "}"
 	}
 
-	def CharSequence generateContentsCode(Content c, Slide s) {
-		switch c {
-			ToC: '''
-			\tableofcontents«IF c instanceof CurrentSecToC»[sections=\value{section}]«ELSE»[hideallsubsections]«ENDIF»'''
-			Text: '''
-			{«c.text»}'''
-			Block: '''
-			\begin{block}«IF c.name !== null»{«c.name»}«ENDIF»
-			«FOR bc : c.content»
-				«bc.generateContentsCode(s)»
-			«ENDFOR»
-			\end{block}'''
-			List: '''
-				\begin{«IF c instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}
-				«FOR i : c.items»
-					\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateContentsCode(s)»«ENDIF»«IF i.click !== null»\pause«ENDIF»
-				«ENDFOR»
-				\end{«IF c instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}
-			'''
-			Image: {
-				val src = c.src.replace("\\", "/")
-				'''
-					\begin{center}
-					\includegraphics[«c.size.getString»]{«src»}
-					\end{center}
-				'''
+	def CharSequence generateContents(Content c, Slide s) {
+		c.generateContentsCode(s) + '''«IF c.click !== null»\pause«ENDIF»'''
+	}
+	
+	def dispatch CharSequence generateContentsCode(ToC t, Slide s){
+		'''\tableofcontents«IF t instanceof CurrentSecToC»[sections=\value{section}]«ELSE»[hideallsubsections]«ENDIF»'''
+	}
+	
+	def dispatch CharSequence generateContentsCode(Text t, Slide s) {
+		'''«FOR tt: t.types»«tt.generateTextTypeStartCode»«ENDFOR»«t.text.sanitize»«FOR tt: t.types»}«ENDFOR»'''
+	}
+	
+	def CharSequence generateTextTypeStartCode(TextType tt){
+		'''\«IF tt instanceof Bold»textbf«ELSEIF tt instanceof Italic»textit«ELSEIF tt instanceof Underline»underline«ELSEIF tt instanceof FootNote»footnote«ELSEIF tt instanceof URL»url«ENDIF»{'''
+	}
+	
+	/**
+	 * Some common characters, which needs to be sanitized in latex, in strings...
+	 */
+	def sanitize(String str) {
+		str.replaceAll("#", "\\#").replaceAll("&", "\\&").replaceAll("%", "\\%").replaceAll("_", "\\_")
+	}
+	
+	def dispatch CharSequence generateContentsCode(Block b, Slide s) {'''
+		\begin{block}«IF b.name !== null»{«b.name»}«ENDIF»
+		«FOR bc : b.content»
+			«bc.generateContents(s)»
+		«ENDFOR»
+		\end{block}'''
+	}
+	
+	def dispatch CharSequence generateContentsCode(List l, Slide s) {'''
+		\begin{«IF l instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}
+		«FOR i : l.items»
+			\item «i.item»«IF i.nestedList !== null»«i.nestedList.generateContentsCode(s)»«ENDIF»«IF i.click !== null»\pause«ENDIF»
+		«ENDFOR»
+		\end{«IF l instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}'''
+	}
+	
+	def dispatch CharSequence generateContentsCode(Image i, Slide s){
+		val src = i.src.replace("\\", "/")
+		'''
+		\begin{center}
+		\includegraphics[«i.size.getString»]{«src»}
+		\end{center}
+		'''
+	}
+	
+	/**
+	 * Function to convert the size of floats into the correct LaTeX string.
+	 */
+	def CharSequence getString(Size s) {
+		'''«IF s.way instanceof Width»width=«ELSE»height=«ENDIF»''' + switch s {
+			ProportionalSize: '''«IF s.way instanceof Width»«(s.scale/100f)»\textwidth«ELSE»«(s.scale/100f)»\textheight«ENDIF»'''
+			ExactSize: '''«s.size»«s.unit»'''
+		}
+	}
 
-			}
-			Table: '''
-				\begin{tabular}{«FOR i : c.rows»|c«ENDFOR»|}
-				\hline
-				«FOR row : c.rows»
-					«FOR v: row.values SEPARATOR " & "»«v»«ENDFOR» \\ \hline
-				«ENDFOR»
-				\end{tabular}
-			'''
+	def dispatch CharSequence generateContentsCode(Table t, Slide s){
+		'''
+		\begin{tabular}{«FOR i : t.rows»|c«ENDFOR»|}
+		\hline
+		«FOR row : t.rows»
+		«FOR v: row.values SEPARATOR " & "»«v»«ENDFOR» \\ \hline
+		«ENDFOR»
+		\end{tabular}
+		'''
+	}
+	
+	def dispatch CharSequence generateContentsCode(Code c, Slide s){
+		switch c {
 			InlineCode: '''
 			\begin{minted}{«c.lang»}
 			«c.code»
@@ -196,28 +237,13 @@ class SlideOMaticGenerator extends AbstractGenerator {
 						«/* TODO: Implement function for getting exact lines from file.
 						 * make sure to include blank lines as \n, because it would look great */»
 						«IF i < c.lines.length»
-						\end{frame}
+							\end{frame}
 						«ENDIF»
 					«ENDFOR»
 				«ELSE»
 					\inputminted{«c.lang»}{«c.src»}
 				«ENDIF»
 			'''
-			MathExp: '''
-				\begin{equation}
-				«c.display» «IF c.eval !== null»=«c.compute»«ENDIF»
-				\end{equation}
-			'''
-		} + '''«IF c.click !== null»\pause«ENDIF»'''
-	}
-
-	/**
-	 * Function to convert the size of floats into the correct LaTeX string.
-	 */
-	def CharSequence getString(Size s) {
-		switch s {
-			ProportionalSize: '''«IF s.way instanceof Width»width=«(s.scale/100f)»\textwidth«ELSE»height=«(s.scale/100f)»\textheight«ENDIF»'''
-			ExactSize: '''«s.size»«s.unit»'''
 		}
 	}
 
@@ -232,6 +258,15 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			}
 		}
 		return false
+	}
+
+
+	def dispatch CharSequence generateContentsCode(MathExp m, Slide s){
+		'''
+		\begin{equation}
+		«m.display» «IF m.eval !== null»=«m.compute»«ENDIF»
+		\end{equation}
+		'''
 	}
 
 	def Map<String, Integer> bind(Map<String, Integer> env1, String name, int value) {

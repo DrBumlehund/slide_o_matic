@@ -3,8 +3,6 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -80,19 +78,29 @@ public interface LineSequence extends EObject
   void setUpper(int value);
 
   /**
-   * Returns the value of the '<em><b>Additional</b></em>' containment reference list.
-   * The list contents are of type {@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.LineSequence}.
+   * Returns the value of the '<em><b>Additional</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Additional</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Additional</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Additional</em>' containment reference list.
+   * @return the value of the '<em>Additional</em>' containment reference.
+   * @see #setAdditional(LineSequence)
    * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getLineSequence_Additional()
    * @model containment="true"
    * @generated
    */
-  EList<LineSequence> getAdditional();
+  LineSequence getAdditional();
+
+  /**
+   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.LineSequence#getAdditional <em>Additional</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Additional</em>' containment reference.
+   * @see #getAdditional()
+   * @generated
+   */
+  void setAdditional(LineSequence value);
 
 } // LineSequence

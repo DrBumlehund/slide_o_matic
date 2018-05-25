@@ -126,6 +126,11 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createTextAdapter();
       }
       @Override
+      public Adapter caseTextType(TextType object)
+      {
+        return createTextTypeAdapter();
+      }
+      @Override
       public Adapter caseBlock(Block object)
       {
         return createBlockAdapter();
@@ -186,16 +191,6 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createLineSequenceAdapter();
       }
       @Override
-      public Adapter caseAnimation(Animation object)
-      {
-        return createAnimationAdapter();
-      }
-      @Override
-      public Adapter caseAnimationType(AnimationType object)
-      {
-        return createAnimationTypeAdapter();
-      }
-      @Override
       public Adapter caseMathExp(MathExp object)
       {
         return createMathExpAdapter();
@@ -231,6 +226,31 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
         return createCurrentSecToCAdapter();
       }
       @Override
+      public Adapter caseBold(Bold object)
+      {
+        return createBoldAdapter();
+      }
+      @Override
+      public Adapter caseItalic(Italic object)
+      {
+        return createItalicAdapter();
+      }
+      @Override
+      public Adapter caseUnderline(Underline object)
+      {
+        return createUnderlineAdapter();
+      }
+      @Override
+      public Adapter caseFootNote(FootNote object)
+      {
+        return createFootNoteAdapter();
+      }
+      @Override
+      public Adapter caseURL(URL object)
+      {
+        return createURLAdapter();
+      }
+      @Override
       public Adapter caseProportionalSize(ProportionalSize object)
       {
         return createProportionalSizeAdapter();
@@ -259,16 +279,6 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
       public Adapter caseFileCode(FileCode object)
       {
         return createFileCodeAdapter();
-      }
-      @Override
-      public Adapter caseMove(Move object)
-      {
-        return createMoveAdapter();
-      }
-      @Override
-      public Adapter caseJump(Jump object)
-      {
-        return createJumpAdapter();
       }
       @Override
       public Adapter casePlus(Plus object)
@@ -483,6 +493,21 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TextType <em>Text Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TextType
+   * @generated
+   */
+  public Adapter createTextTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block <em>Block</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -663,36 +688,6 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation <em>Animation</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation
-   * @generated
-   */
-  public Adapter createAnimationAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType <em>Animation Type</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.AnimationType
-   * @generated
-   */
-  public Adapter createAnimationTypeAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.MathExp <em>Math Exp</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -798,6 +793,81 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Bold <em>Bold</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Bold
+   * @generated
+   */
+  public Adapter createBoldAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Italic <em>Italic</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Italic
+   * @generated
+   */
+  public Adapter createItalicAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Underline <em>Underline</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Underline
+   * @generated
+   */
+  public Adapter createUnderlineAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FootNote <em>Foot Note</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FootNote
+   * @generated
+   */
+  public Adapter createFootNoteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.URL <em>URL</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.URL
+   * @generated
+   */
+  public Adapter createURLAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize <em>Proportional Size</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -883,36 +953,6 @@ public class SlideOMaticAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createFileCodeAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move <em>Move</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Move
-   * @generated
-   */
-  public Adapter createMoveAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump <em>Jump</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump
-   * @generated
-   */
-  public Adapter createJumpAdapter()
   {
     return null;
   }

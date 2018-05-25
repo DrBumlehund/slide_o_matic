@@ -13,7 +13,6 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize#getWay <em>Way</em>}</li>
  *   <li>{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize#getScale <em>Scale</em>}</li>
  * </ul>
  *
@@ -23,32 +22,6 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic;
  */
 public interface ProportionalSize extends Size
 {
-  /**
-   * Returns the value of the '<em><b>Way</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Way</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Way</em>' containment reference.
-   * @see #setWay(Way)
-   * @see dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage#getProportionalSize_Way()
-   * @model containment="true"
-   * @generated
-   */
-  Way getWay();
-
-  /**
-   * Sets the value of the '{@link dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize#getWay <em>Way</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Way</em>' containment reference.
-   * @see #getWay()
-   * @generated
-   */
-  void setWay(Way value);
-
   /**
    * Returns the value of the '<em><b>Scale</b></em>' attribute.
    * <!-- begin-user-doc -->

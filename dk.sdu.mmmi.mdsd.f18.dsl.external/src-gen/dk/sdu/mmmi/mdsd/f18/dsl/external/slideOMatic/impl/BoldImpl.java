@@ -3,26 +3,26 @@
  */
 package dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.impl;
 
-import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Jump;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Bold;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 
 import org.eclipse.emf.ecore.EClass;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Jump</b></em>'.
+ * An implementation of the model object '<em><b>Bold</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class JumpImpl extends AnimationTypeImpl implements Jump
+public class BoldImpl extends TextTypeImpl implements Bold
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected JumpImpl()
+  protected BoldImpl()
   {
     super();
   }
@@ -35,7 +35,7 @@ public class JumpImpl extends AnimationTypeImpl implements Jump
   @Override
   protected EClass eStaticClass()
   {
-    return SlideOMaticPackage.Literals.JUMP;
+    return SlideOMaticPackage.Literals.BOLD;
   }
 
-} //JumpImpl
+} //BoldImpl

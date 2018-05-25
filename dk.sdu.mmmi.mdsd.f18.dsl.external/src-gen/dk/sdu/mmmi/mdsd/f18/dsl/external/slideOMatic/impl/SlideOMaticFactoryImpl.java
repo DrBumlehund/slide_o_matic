@@ -75,6 +75,7 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.CONTENT: return createContent();
       case SlideOMaticPackage.TO_C: return createToC();
       case SlideOMaticPackage.TEXT: return createText();
+      case SlideOMaticPackage.TEXT_TYPE: return createTextType();
       case SlideOMaticPackage.BLOCK: return createBlock();
       case SlideOMaticPackage.LIST: return createList();
       case SlideOMaticPackage.NUMBERED_LIST: return createNumberedList();
@@ -87,8 +88,6 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.TABLE_ROW: return createTableRow();
       case SlideOMaticPackage.CODE: return createCode();
       case SlideOMaticPackage.LINE_SEQUENCE: return createLineSequence();
-      case SlideOMaticPackage.ANIMATION: return createAnimation();
-      case SlideOMaticPackage.ANIMATION_TYPE: return createAnimationType();
       case SlideOMaticPackage.MATH_EXP: return createMathExp();
       case SlideOMaticPackage.EXPRESSION: return createExpression();
       case SlideOMaticPackage.COMPILE_DATE: return createCompileDate();
@@ -96,14 +95,17 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
       case SlideOMaticPackage.SUB_SEC: return createSubSec();
       case SlideOMaticPackage.SUB_SUB_SEC: return createSubSubSec();
       case SlideOMaticPackage.CURRENT_SEC_TO_C: return createCurrentSecToC();
+      case SlideOMaticPackage.BOLD: return createBold();
+      case SlideOMaticPackage.ITALIC: return createItalic();
+      case SlideOMaticPackage.UNDERLINE: return createUnderline();
+      case SlideOMaticPackage.FOOT_NOTE: return createFootNote();
+      case SlideOMaticPackage.URL: return createURL();
       case SlideOMaticPackage.PROPORTIONAL_SIZE: return createProportionalSize();
       case SlideOMaticPackage.EXACT_SIZE: return createExactSize();
       case SlideOMaticPackage.WIDTH: return createWidth();
       case SlideOMaticPackage.HEIGHT: return createHeight();
       case SlideOMaticPackage.INLINE_CODE: return createInlineCode();
       case SlideOMaticPackage.FILE_CODE: return createFileCode();
-      case SlideOMaticPackage.MOVE: return createMove();
-      case SlideOMaticPackage.JUMP: return createJump();
       case SlideOMaticPackage.PLUS: return createPlus();
       case SlideOMaticPackage.MINUS: return createMinus();
       case SlideOMaticPackage.MULT: return createMult();
@@ -225,6 +227,17 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
   {
     TextImpl text = new TextImpl();
     return text;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TextType createTextType()
+  {
+    TextTypeImpl textType = new TextTypeImpl();
+    return textType;
   }
 
   /**
@@ -364,28 +377,6 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Animation createAnimation()
-  {
-    AnimationImpl animation = new AnimationImpl();
-    return animation;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public AnimationType createAnimationType()
-  {
-    AnimationTypeImpl animationType = new AnimationTypeImpl();
-    return animationType;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public MathExp createMathExp()
   {
     MathExpImpl mathExp = new MathExpImpl();
@@ -463,6 +454,61 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
    * <!-- end-user-doc -->
    * @generated
    */
+  public Bold createBold()
+  {
+    BoldImpl bold = new BoldImpl();
+    return bold;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Italic createItalic()
+  {
+    ItalicImpl italic = new ItalicImpl();
+    return italic;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Underline createUnderline()
+  {
+    UnderlineImpl underline = new UnderlineImpl();
+    return underline;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FootNote createFootNote()
+  {
+    FootNoteImpl footNote = new FootNoteImpl();
+    return footNote;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public URL createURL()
+  {
+    URLImpl url = new URLImpl();
+    return url;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ProportionalSize createProportionalSize()
   {
     ProportionalSizeImpl proportionalSize = new ProportionalSizeImpl();
@@ -522,28 +568,6 @@ public class SlideOMaticFactoryImpl extends EFactoryImpl implements SlideOMaticF
   {
     FileCodeImpl fileCode = new FileCodeImpl();
     return fileCode;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Move createMove()
-  {
-    MoveImpl move = new MoveImpl();
-    return move;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Jump createJump()
-  {
-    JumpImpl jump = new JumpImpl();
-    return jump;
   }
 
   /**

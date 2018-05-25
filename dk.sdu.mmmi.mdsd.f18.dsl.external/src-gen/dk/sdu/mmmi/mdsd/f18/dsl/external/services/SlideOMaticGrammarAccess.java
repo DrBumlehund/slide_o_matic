@@ -9,7 +9,6 @@ import java.util.List;
 import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -44,21 +43,19 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cDateAssignment_4_4 = (Assignment)cGroup_4.eContents().get(4);
 		private final RuleCall cDateDateParserRuleCall_4_4_0 = (RuleCall)cDateAssignment_4_4.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4_5 = (Keyword)cGroup_4.eContents().get(5);
-		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
-		private final Assignment cSlidesAssignment_5_0 = (Assignment)cAlternatives_5.eContents().get(0);
-		private final RuleCall cSlidesSlideParserRuleCall_5_0_0 = (RuleCall)cSlidesAssignment_5_0.eContents().get(0);
-		private final Assignment cAnimationsAssignment_5_1 = (Assignment)cAlternatives_5.eContents().get(1);
-		private final RuleCall cAnimationsAnimationParserRuleCall_5_1_0 = (RuleCall)cAnimationsAssignment_5_1.eContents().get(0);
+		private final Assignment cSlidesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSlidesSlideParserRuleCall_5_0 = (RuleCall)cSlidesAssignment_5.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//// Project Extension is '.slide'
 		//Presentation:
 		//	"presentation" name=STRING subtitle=STRING? "{" ("(" theme=Theme? authors=Authors? institute=Institute?
-		//	date=Date? ")")? (slides+=Slide | animations+=Animation)* "}";
+		//	date=Date? ")")?
+		//	slides+=Slide* "}";
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"presentation" name=STRING subtitle=STRING? "{" ("(" theme=Theme? authors=Authors? institute=Institute? date=Date? ")")?
-		//(slides+=Slide | animations+=Animation)* "}"
+		//slides+=Slide* "}"
 		public Group getGroup() { return cGroup; }
 		
 		//"presentation"
@@ -112,20 +109,11 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_4_5() { return cRightParenthesisKeyword_4_5; }
 		
-		//(slides+=Slide | animations+=Animation)*
-		public Alternatives getAlternatives_5() { return cAlternatives_5; }
-		
-		//slides+=Slide
-		public Assignment getSlidesAssignment_5_0() { return cSlidesAssignment_5_0; }
+		//slides+=Slide*
+		public Assignment getSlidesAssignment_5() { return cSlidesAssignment_5; }
 		
 		//Slide
-		public RuleCall getSlidesSlideParserRuleCall_5_0_0() { return cSlidesSlideParserRuleCall_5_0_0; }
-		
-		//animations+=Animation
-		public Assignment getAnimationsAssignment_5_1() { return cAnimationsAssignment_5_1; }
-		
-		//Animation
-		public RuleCall getAnimationsAnimationParserRuleCall_5_1_0() { return cAnimationsAnimationParserRuleCall_5_1_0; }
+		public RuleCall getSlidesSlideParserRuleCall_5_0() { return cSlidesSlideParserRuleCall_5_0; }
 		
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
@@ -694,18 +682,101 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class TextElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Text");
-		private final Assignment cTextAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cTextSTRINGTerminalRuleCall_0 = (RuleCall)cTextAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTypesAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTypesTextTypeParserRuleCall_0_0 = (RuleCall)cTypesAssignment_0.eContents().get(0);
+		private final Assignment cTextAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTextSTRINGTerminalRuleCall_1_0 = (RuleCall)cTextAssignment_1.eContents().get(0);
 		
 		//Text:
-		//	text=STRING;
+		//	types+=TextType* text=STRING;
 		@Override public ParserRule getRule() { return rule; }
 		
+		//types+=TextType* text=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//types+=TextType*
+		public Assignment getTypesAssignment_0() { return cTypesAssignment_0; }
+		
+		//TextType
+		public RuleCall getTypesTextTypeParserRuleCall_0_0() { return cTypesTextTypeParserRuleCall_0_0; }
+		
 		//text=STRING
-		public Assignment getTextAssignment() { return cTextAssignment; }
+		public Assignment getTextAssignment_1() { return cTextAssignment_1; }
 		
 		//STRING
-		public RuleCall getTextSTRINGTerminalRuleCall_0() { return cTextSTRINGTerminalRuleCall_0; }
+		public RuleCall getTextSTRINGTerminalRuleCall_1_0() { return cTextSTRINGTerminalRuleCall_1_0; }
+	}
+	public class TextTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.TextType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cBoldAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cBKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cItalicAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cIKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cUnderlineAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Keyword cUKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cFootNoteAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Keyword cFnoteKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
+		private final Group cGroup_4 = (Group)cAlternatives.eContents().get(4);
+		private final Action cURLAction_4_0 = (Action)cGroup_4.eContents().get(0);
+		private final Keyword cUrlKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
+		
+		//TextType:
+		//	{Bold} 'b' | {Italic} 'i' | {Underline} 'u' | {FootNote} 'fnote' | {URL} 'url';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//{Bold} 'b' | {Italic} 'i' | {Underline} 'u' | {FootNote} 'fnote' | {URL} 'url'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{Bold} 'b'
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{Bold}
+		public Action getBoldAction_0_0() { return cBoldAction_0_0; }
+		
+		//'b'
+		public Keyword getBKeyword_0_1() { return cBKeyword_0_1; }
+		
+		//{Italic} 'i'
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{Italic}
+		public Action getItalicAction_1_0() { return cItalicAction_1_0; }
+		
+		//'i'
+		public Keyword getIKeyword_1_1() { return cIKeyword_1_1; }
+		
+		//{Underline} 'u'
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//{Underline}
+		public Action getUnderlineAction_2_0() { return cUnderlineAction_2_0; }
+		
+		//'u'
+		public Keyword getUKeyword_2_1() { return cUKeyword_2_1; }
+		
+		//{FootNote} 'fnote'
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//{FootNote}
+		public Action getFootNoteAction_3_0() { return cFootNoteAction_3_0; }
+		
+		//'fnote'
+		public Keyword getFnoteKeyword_3_1() { return cFnoteKeyword_3_1; }
+		
+		//{URL} 'url'
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//{URL}
+		public Action getURLAction_4_0() { return cURLAction_4_0; }
+		
+		//'url'
+		public Keyword getUrlKeyword_4_1() { return cUrlKeyword_4_1; }
 	}
 	public class BlockElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Block");
@@ -972,19 +1043,21 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cPercentSignKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cExactSizeAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cSizeAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cSizeINTTerminalRuleCall_1_1_0 = (RuleCall)cSizeAssignment_1_1.eContents().get(0);
-		private final Assignment cUnitAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final Alternatives cUnitAlternatives_1_2_0 = (Alternatives)cUnitAssignment_1_2.eContents().get(0);
-		private final Keyword cUnitCmKeyword_1_2_0_0 = (Keyword)cUnitAlternatives_1_2_0.eContents().get(0);
-		private final Keyword cUnitEmKeyword_1_2_0_1 = (Keyword)cUnitAlternatives_1_2_0.eContents().get(1);
-		private final Keyword cUnitMmKeyword_1_2_0_2 = (Keyword)cUnitAlternatives_1_2_0.eContents().get(2);
+		private final Assignment cWayAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cWayWayParserRuleCall_1_1_0 = (RuleCall)cWayAssignment_1_1.eContents().get(0);
+		private final Assignment cSizeAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
+		private final RuleCall cSizeINTTerminalRuleCall_1_2_0 = (RuleCall)cSizeAssignment_1_2.eContents().get(0);
+		private final Assignment cUnitAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final Alternatives cUnitAlternatives_1_3_0 = (Alternatives)cUnitAssignment_1_3.eContents().get(0);
+		private final Keyword cUnitCmKeyword_1_3_0_0 = (Keyword)cUnitAlternatives_1_3_0.eContents().get(0);
+		private final Keyword cUnitEmKeyword_1_3_0_1 = (Keyword)cUnitAlternatives_1_3_0.eContents().get(1);
+		private final Keyword cUnitMmKeyword_1_3_0_2 = (Keyword)cUnitAlternatives_1_3_0.eContents().get(2);
 		
 		//Size:
-		//	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
+		//	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} way=Way size=INT unit=("cm" | "em" | "mm");
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ProportionalSize} way=Way scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm")
+		//{ProportionalSize} way=Way scale=INT "%" | {ExactSize} way=Way size=INT unit=("cm" | "em" | "mm")
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//{ProportionalSize} way=Way scale=INT "%"
@@ -1008,32 +1081,38 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		//"%"
 		public Keyword getPercentSignKeyword_0_3() { return cPercentSignKeyword_0_3; }
 		
-		//{ExactSize} size=INT unit=("cm" | "em" | "mm")
+		//{ExactSize} way=Way size=INT unit=("cm" | "em" | "mm")
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{ExactSize}
 		public Action getExactSizeAction_1_0() { return cExactSizeAction_1_0; }
 		
+		//way=Way
+		public Assignment getWayAssignment_1_1() { return cWayAssignment_1_1; }
+		
+		//Way
+		public RuleCall getWayWayParserRuleCall_1_1_0() { return cWayWayParserRuleCall_1_1_0; }
+		
 		//size=INT
-		public Assignment getSizeAssignment_1_1() { return cSizeAssignment_1_1; }
+		public Assignment getSizeAssignment_1_2() { return cSizeAssignment_1_2; }
 		
 		//INT
-		public RuleCall getSizeINTTerminalRuleCall_1_1_0() { return cSizeINTTerminalRuleCall_1_1_0; }
+		public RuleCall getSizeINTTerminalRuleCall_1_2_0() { return cSizeINTTerminalRuleCall_1_2_0; }
 		
 		//unit=("cm" | "em" | "mm")
-		public Assignment getUnitAssignment_1_2() { return cUnitAssignment_1_2; }
+		public Assignment getUnitAssignment_1_3() { return cUnitAssignment_1_3; }
 		
 		//("cm" | "em" | "mm")
-		public Alternatives getUnitAlternatives_1_2_0() { return cUnitAlternatives_1_2_0; }
+		public Alternatives getUnitAlternatives_1_3_0() { return cUnitAlternatives_1_3_0; }
 		
 		//"cm"
-		public Keyword getUnitCmKeyword_1_2_0_0() { return cUnitCmKeyword_1_2_0_0; }
+		public Keyword getUnitCmKeyword_1_3_0_0() { return cUnitCmKeyword_1_3_0_0; }
 		
 		//"em"
-		public Keyword getUnitEmKeyword_1_2_0_1() { return cUnitEmKeyword_1_2_0_1; }
+		public Keyword getUnitEmKeyword_1_3_0_1() { return cUnitEmKeyword_1_3_0_1; }
 		
 		//"mm"
-		public Keyword getUnitMmKeyword_1_2_0_2() { return cUnitMmKeyword_1_2_0_2; }
+		public Keyword getUnitMmKeyword_1_3_0_2() { return cUnitMmKeyword_1_3_0_2; }
 	}
 	public class WayElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Way");
@@ -1309,10 +1388,10 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cAdditionalLineSequenceParserRuleCall_2_1_0 = (RuleCall)cAdditionalAssignment_2_1.eContents().get(0);
 		
 		//LineSequence:
-		//	lower=INT (":" upper=INT)? ("," additional+=LineSequence)*;
+		//	lower=INT (":" upper=INT)? ("," additional=LineSequence)?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//lower=INT (":" upper=INT)? ("," additional+=LineSequence)*
+		//lower=INT (":" upper=INT)? ("," additional=LineSequence)?
 		public Group getGroup() { return cGroup; }
 		
 		//lower=INT
@@ -1333,13 +1412,13 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getUpperINTTerminalRuleCall_1_1_0() { return cUpperINTTerminalRuleCall_1_1_0; }
 		
-		//("," additional+=LineSequence)*
+		//("," additional=LineSequence)?
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//","
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 		
-		//additional+=LineSequence
+		//additional=LineSequence
 		public Assignment getAdditionalAssignment_2_1() { return cAdditionalAssignment_2_1; }
 		
 		//LineSequence
@@ -1355,96 +1434,6 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//"$$"
 		public Keyword getDollarSignDollarSignKeyword() { return cDollarSignDollarSignKeyword; }
-	}
-	public class AnimationElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.Animation");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAnimateKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cTargetAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTargetImageCrossReference_1_0 = (CrossReference)cTargetAssignment_1.eContents().get(0);
-		private final RuleCall cTargetImageIDTerminalRuleCall_1_0_1 = (RuleCall)cTargetImageCrossReference_1_0.eContents().get(1);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeAnimationTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Keyword cToKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cLocationAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cLocationAlignmentParserRuleCall_4_0 = (RuleCall)cLocationAssignment_4.eContents().get(0);
-		private final Assignment cSizeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cSizeSizeParserRuleCall_5_0 = (RuleCall)cSizeAssignment_5.eContents().get(0);
-		
-		//Animation:
-		//	"animate" target=[Image] type=AnimationType "to" location=Alignment size=Size?;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//"animate" target=[Image] type=AnimationType "to" location=Alignment size=Size?
-		public Group getGroup() { return cGroup; }
-		
-		//"animate"
-		public Keyword getAnimateKeyword_0() { return cAnimateKeyword_0; }
-		
-		//target=[Image]
-		public Assignment getTargetAssignment_1() { return cTargetAssignment_1; }
-		
-		//[Image]
-		public CrossReference getTargetImageCrossReference_1_0() { return cTargetImageCrossReference_1_0; }
-		
-		//ID
-		public RuleCall getTargetImageIDTerminalRuleCall_1_0_1() { return cTargetImageIDTerminalRuleCall_1_0_1; }
-		
-		//type=AnimationType
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
-		
-		//AnimationType
-		public RuleCall getTypeAnimationTypeParserRuleCall_2_0() { return cTypeAnimationTypeParserRuleCall_2_0; }
-		
-		//"to"
-		public Keyword getToKeyword_3() { return cToKeyword_3; }
-		
-		//location=Alignment
-		public Assignment getLocationAssignment_4() { return cLocationAssignment_4; }
-		
-		//Alignment
-		public RuleCall getLocationAlignmentParserRuleCall_4_0() { return cLocationAlignmentParserRuleCall_4_0; }
-		
-		//size=Size?
-		public Assignment getSizeAssignment_5() { return cSizeAssignment_5; }
-		
-		//Size
-		public RuleCall getSizeSizeParserRuleCall_5_0() { return cSizeSizeParserRuleCall_5_0; }
-	}
-	public class AnimationTypeElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.AnimationType");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Action cMoveAction_0_0 = (Action)cGroup_0.eContents().get(0);
-		private final Keyword cMoveKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cJumpAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cJumpKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		
-		//AnimationType:
-		//	{Move} "move" | {Jump} "jump";
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{Move} "move" | {Jump} "jump"
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//{Move} "move"
-		public Group getGroup_0() { return cGroup_0; }
-		
-		//{Move}
-		public Action getMoveAction_0_0() { return cMoveAction_0_0; }
-		
-		//"move"
-		public Keyword getMoveKeyword_0_1() { return cMoveKeyword_0_1; }
-		
-		//{Jump} "jump"
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//{Jump}
-		public Action getJumpAction_1_0() { return cJumpAction_1_0; }
-		
-		//"jump"
-		public Keyword getJumpKeyword_1_1() { return cJumpKeyword_1_1; }
 	}
 	public class MathExpElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "dk.sdu.mmmi.mdsd.f18.dsl.external.SlideOMatic.MathExp");
@@ -1787,6 +1776,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	private final ContentElements pContent;
 	private final ToCElements pToC;
 	private final TextElements pText;
+	private final TextTypeElements pTextType;
 	private final BlockElements pBlock;
 	private final ListElements pList;
 	private final NumberedListElements pNumberedList;
@@ -1801,8 +1791,6 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	private final CodeElements pCode;
 	private final LineSequenceElements pLineSequence;
 	private final ClickElements pClick;
-	private final AnimationElements pAnimation;
-	private final AnimationTypeElements pAnimationType;
 	private final MathExpElements pMathExp;
 	private final ExpElements pExp;
 	private final FactorElements pFactor;
@@ -1834,6 +1822,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		this.pContent = new ContentElements();
 		this.pToC = new ToCElements();
 		this.pText = new TextElements();
+		this.pTextType = new TextTypeElements();
 		this.pBlock = new BlockElements();
 		this.pList = new ListElements();
 		this.pNumberedList = new NumberedListElements();
@@ -1848,8 +1837,6 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 		this.pCode = new CodeElements();
 		this.pLineSequence = new LineSequenceElements();
 		this.pClick = new ClickElements();
-		this.pAnimation = new AnimationElements();
-		this.pAnimationType = new AnimationTypeElements();
 		this.pMathExp = new MathExpElements();
 		this.pExp = new ExpElements();
 		this.pFactor = new FactorElements();
@@ -1891,7 +1878,8 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	//// Project Extension is '.slide'
 	//Presentation:
 	//	"presentation" name=STRING subtitle=STRING? "{" ("(" theme=Theme? authors=Authors? institute=Institute?
-	//	date=Date? ")")? (slides+=Slide | animations+=Animation)* "}";
+	//	date=Date? ")")?
+	//	slides+=Slide* "}";
 	public PresentationElements getPresentationAccess() {
 		return pPresentation;
 	}
@@ -2005,13 +1993,23 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Text:
-	//	text=STRING;
+	//	types+=TextType* text=STRING;
 	public TextElements getTextAccess() {
 		return pText;
 	}
 	
 	public ParserRule getTextRule() {
 		return getTextAccess().getRule();
+	}
+	
+	//TextType:
+	//	{Bold} 'b' | {Italic} 'i' | {Underline} 'u' | {FootNote} 'fnote' | {URL} 'url';
+	public TextTypeElements getTextTypeAccess() {
+		return pTextType;
+	}
+	
+	public ParserRule getTextTypeRule() {
+		return getTextTypeAccess().getRule();
 	}
 	
 	//Block:
@@ -2085,7 +2083,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Size:
-	//	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} size=INT unit=("cm" | "em" | "mm");
+	//	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} way=Way size=INT unit=("cm" | "em" | "mm");
 	public SizeElements getSizeAccess() {
 		return pSize;
 	}
@@ -2137,7 +2135,7 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//LineSequence:
-	//	lower=INT (":" upper=INT)? ("," additional+=LineSequence)*;
+	//	lower=INT (":" upper=INT)? ("," additional=LineSequence)?;
 	public LineSequenceElements getLineSequenceAccess() {
 		return pLineSequence;
 	}
@@ -2154,26 +2152,6 @@ public class SlideOMaticGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getClickRule() {
 		return getClickAccess().getRule();
-	}
-	
-	//Animation:
-	//	"animate" target=[Image] type=AnimationType "to" location=Alignment size=Size?;
-	public AnimationElements getAnimationAccess() {
-		return pAnimation;
-	}
-	
-	public ParserRule getAnimationRule() {
-		return getAnimationAccess().getRule();
-	}
-	
-	//AnimationType:
-	//	{Move} "move" | {Jump} "jump";
-	public AnimationTypeElements getAnimationTypeAccess() {
-		return pAnimationType;
-	}
-	
-	public ParserRule getAnimationTypeRule() {
-		return getAnimationTypeAccess().getRule();
 	}
 	
 	//MathExp:

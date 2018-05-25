@@ -145,6 +145,13 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlideOMaticPackage.TEXT_TYPE:
+      {
+        TextType textType = (TextType)theEObject;
+        T result = caseTextType(textType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlideOMaticPackage.BLOCK:
       {
         Block block = (Block)theEObject;
@@ -238,20 +245,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case SlideOMaticPackage.ANIMATION:
-      {
-        Animation animation = (Animation)theEObject;
-        T result = caseAnimation(animation);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SlideOMaticPackage.ANIMATION_TYPE:
-      {
-        AnimationType animationType = (AnimationType)theEObject;
-        T result = caseAnimationType(animationType);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case SlideOMaticPackage.MATH_EXP:
       {
         MathExp mathExp = (MathExp)theEObject;
@@ -308,6 +301,46 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SlideOMaticPackage.BOLD:
+      {
+        Bold bold = (Bold)theEObject;
+        T result = caseBold(bold);
+        if (result == null) result = caseTextType(bold);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlideOMaticPackage.ITALIC:
+      {
+        Italic italic = (Italic)theEObject;
+        T result = caseItalic(italic);
+        if (result == null) result = caseTextType(italic);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlideOMaticPackage.UNDERLINE:
+      {
+        Underline underline = (Underline)theEObject;
+        T result = caseUnderline(underline);
+        if (result == null) result = caseTextType(underline);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlideOMaticPackage.FOOT_NOTE:
+      {
+        FootNote footNote = (FootNote)theEObject;
+        T result = caseFootNote(footNote);
+        if (result == null) result = caseTextType(footNote);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SlideOMaticPackage.URL:
+      {
+        URL url = (URL)theEObject;
+        T result = caseURL(url);
+        if (result == null) result = caseTextType(url);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SlideOMaticPackage.PROPORTIONAL_SIZE:
       {
         ProportionalSize proportionalSize = (ProportionalSize)theEObject;
@@ -355,22 +388,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
         T result = caseFileCode(fileCode);
         if (result == null) result = caseCode(fileCode);
         if (result == null) result = caseContent(fileCode);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SlideOMaticPackage.MOVE:
-      {
-        Move move = (Move)theEObject;
-        T result = caseMove(move);
-        if (result == null) result = caseAnimationType(move);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case SlideOMaticPackage.JUMP:
-      {
-        Jump jump = (Jump)theEObject;
-        T result = caseJump(jump);
-        if (result == null) result = caseAnimationType(jump);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -603,6 +620,22 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Text Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Text Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTextType(TextType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Block</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -795,38 +828,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Animation</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Animation</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAnimation(Animation object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Animation Type</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Animation Type</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAnimationType(AnimationType object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Math Exp</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -939,6 +940,86 @@ public class SlideOMaticSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Bold</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Bold</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBold(Bold object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Italic</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Italic</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseItalic(Italic object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Underline</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Underline</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUnderline(Underline object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Foot Note</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Foot Note</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFootNote(FootNote object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>URL</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>URL</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseURL(URL object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Proportional Size</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1030,38 +1111,6 @@ public class SlideOMaticSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseFileCode(FileCode object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Move</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Move</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMove(Move object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Jump</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Jump</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseJump(Jump object)
   {
     return null;
   }
