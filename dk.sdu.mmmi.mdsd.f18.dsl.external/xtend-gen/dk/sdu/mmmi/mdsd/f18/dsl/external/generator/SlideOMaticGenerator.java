@@ -5,6 +5,7 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.generator;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Iterators;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Authors;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Bold;
@@ -37,6 +38,7 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Presentation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ProportionalSize;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Sec;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Section;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ShowImage;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Size;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SubSec;
@@ -56,6 +58,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
@@ -125,6 +128,8 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     _builder.append("\\usepackage{tabu}");
     _builder.newLine();
     _builder.append("\\usepackage{mathtools}");
+    _builder.newLine();
+    _builder.append("\\usepackage[export]{adjustbox}");
     _builder.newLine();
     _builder.newLine();
     {
@@ -242,7 +247,6 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     }
     _builder.newLine();
     _builder.append("\\end{document}");
-    _builder.newLine();
     _builder.newLine();
     return _builder;
   }
@@ -499,24 +503,127 @@ public class SlideOMaticGenerator extends AbstractGenerator {
   }
   
   /**
-   * dispatch function to create image code,
-   * TODO: Fix allignment of the image, it is only able to stay in the middle at the moment.
+   * Method for generating animation code
+   */
+  protected CharSequence _generateContentsCode(final Animation a, final Slide s) {
+    CharSequence _xblockexpression = null;
+    {
+      final String from = a.getFromLocation();
+      final String final_ = a.getFinalLocation();
+      final String via = a.getViaLocation();
+      final Image target = a.getTarget();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("\\only<1> {");
+      CharSequence _generateAnimationImageCode = this.generateAnimationImageCode(target, from);
+      _builder.append(_generateAnimationImageCode);
+      _builder.append("}");
+      _builder.newLineIfNotEmpty();
+      {
+        String _viaLocation = a.getViaLocation();
+        boolean _tripleNotEquals = (_viaLocation != null);
+        if (_tripleNotEquals) {
+          _builder.append("\\only<2> {");
+          CharSequence _generateAnimationImageCode_1 = this.generateAnimationImageCode(target, via);
+          _builder.append(_generateAnimationImageCode_1);
+          _builder.append("}");
+          _builder.newLineIfNotEmpty();
+          _builder.append("\\only<3> {");
+          CharSequence _generateAnimationImageCode_2 = this.generateAnimationImageCode(target, final_);
+          _builder.append(_generateAnimationImageCode_2);
+          _builder.append("}");
+          _builder.newLineIfNotEmpty();
+        } else {
+          _builder.append("\\only<2> {");
+          CharSequence _generateAnimationImageCode_3 = this.generateAnimationImageCode(target, final_);
+          _builder.append(_generateAnimationImageCode_3);
+          _builder.append("}");
+          _builder.newLineIfNotEmpty();
+        }
+      }
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
+  }
+  
+  public CharSequence generateAnimationImageCode(final Image i, final String alignment) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\\includegraphics[");
+    CharSequence _string = this.getString(i.getSize());
+    _builder.append(_string);
+    _builder.newLineIfNotEmpty();
+    {
+      int _angle = i.getAngle();
+      boolean _tripleNotEquals = (_angle != 0);
+      if (_tripleNotEquals) {
+        _builder.append(", angle=");
+        int _angle_1 = i.getAngle();
+        _builder.append(_angle_1);
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    _builder.append(", ");
+    _builder.append(alignment);
+    _builder.append("]{");
+    String _src = i.getSrc();
+    _builder.append(_src);
+    _builder.append("}");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  /**
+   * Enables you to present an image based on a reference
+   */
+  protected CharSequence _generateContentsCode(final ShowImage i, final Slide s) {
+    CharSequence _xblockexpression = null;
+    {
+      final Image img = i.getImage();
+      _xblockexpression = this.generateContentsCode(img, s);
+    }
+    return _xblockexpression;
+  }
+  
+  /**
+   * Dispatch function to create image code,
    */
   protected CharSequence _generateContentsCode(final Image i, final Slide s) {
     CharSequence _xblockexpression = null;
     {
       final String src = i.getSrc().replace("\\", "/");
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("\\begin{center}");
+      _builder.append("\\begin{figure}");
       _builder.newLine();
+      _builder.append("\t");
       _builder.append("\\includegraphics[");
       CharSequence _string = this.getString(i.getSize());
-      _builder.append(_string);
+      _builder.append(_string, "\t");
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t");
+      {
+        int _angle = i.getAngle();
+        boolean _tripleNotEquals = (_angle != 0);
+        if (_tripleNotEquals) {
+          _builder.append(", angle=");
+          int _angle_1 = i.getAngle();
+          _builder.append(_angle_1, "\t");
+        }
+      }
+      _builder.newLineIfNotEmpty();
+      _builder.append("\t");
+      {
+        String _alignment = i.getAlignment();
+        boolean _tripleNotEquals_1 = (_alignment != null);
+        if (_tripleNotEquals_1) {
+          _builder.append(", ");
+          String _alignment_1 = i.getAlignment();
+          _builder.append(_alignment_1, "\t");
+        }
+      }
       _builder.append("]{");
-      _builder.append(src);
+      _builder.append(src, "\t");
       _builder.append("}");
       _builder.newLineIfNotEmpty();
-      _builder.append("\\end{center}");
+      _builder.append("\\end{figure}");
       _builder.newLine();
       _xblockexpression = _builder;
     }
@@ -930,26 +1037,30 @@ public class SlideOMaticGenerator extends AbstractGenerator {
     return _switchResult;
   }
   
-  public CharSequence generateContentsCode(final Content b, final Slide s) {
-    if (b instanceof Block) {
-      return _generateContentsCode((Block)b, s);
-    } else if (b instanceof Code) {
-      return _generateContentsCode((Code)b, s);
-    } else if (b instanceof Image) {
-      return _generateContentsCode((Image)b, s);
-    } else if (b instanceof List) {
-      return _generateContentsCode((List)b, s);
-    } else if (b instanceof MathExp) {
-      return _generateContentsCode((MathExp)b, s);
-    } else if (b instanceof Table) {
-      return _generateContentsCode((Table)b, s);
-    } else if (b instanceof Text) {
-      return _generateContentsCode((Text)b, s);
-    } else if (b instanceof ToC) {
-      return _generateContentsCode((ToC)b, s);
+  public CharSequence generateContentsCode(final EObject a, final Slide s) {
+    if (a instanceof Animation) {
+      return _generateContentsCode((Animation)a, s);
+    } else if (a instanceof Block) {
+      return _generateContentsCode((Block)a, s);
+    } else if (a instanceof Code) {
+      return _generateContentsCode((Code)a, s);
+    } else if (a instanceof List) {
+      return _generateContentsCode((List)a, s);
+    } else if (a instanceof MathExp) {
+      return _generateContentsCode((MathExp)a, s);
+    } else if (a instanceof ShowImage) {
+      return _generateContentsCode((ShowImage)a, s);
+    } else if (a instanceof Table) {
+      return _generateContentsCode((Table)a, s);
+    } else if (a instanceof Text) {
+      return _generateContentsCode((Text)a, s);
+    } else if (a instanceof ToC) {
+      return _generateContentsCode((ToC)a, s);
+    } else if (a instanceof Image) {
+      return _generateContentsCode((Image)a, s);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(b, s).toString());
+        Arrays.<Object>asList(a, s).toString());
     }
   }
 }

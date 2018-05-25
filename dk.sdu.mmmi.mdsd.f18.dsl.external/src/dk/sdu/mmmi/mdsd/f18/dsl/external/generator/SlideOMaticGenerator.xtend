@@ -48,6 +48,8 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Italic
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Underline
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FootNote
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.URL
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.ShowImage
 
 /**
  * Generates code from your model files on save.
@@ -94,6 +96,7 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			\setminted{autogobble, fontsize=\footnotesize, linenos}
 			\usepackage{tabu}
 			\usepackage{mathtools}
+			\usepackage[export]{adjustbox}
 			
 			«IF p.theme !== null»
 				\usetheme{«p.theme.theme»}
@@ -131,7 +134,6 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			«ENDFOR»
 			
 			\end{document}
-			
 		'''
 	}
 
@@ -151,7 +153,8 @@ class SlideOMaticGenerator extends AbstractGenerator {
 			\end{frame}
 		'''
 	}
-
+	
+	
 	/**
 	 * used to generate sections
 	 */
@@ -220,16 +223,53 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		\end{«IF l instanceof NumberedList»enumerate«ELSE»itemize«ENDIF»}'''
 	}
 	
+	/*
+	 * Method for generating animation code 
+	 */
+	def dispatch CharSequence generateContentsCode(Animation a, Slide s){
+		val from = a.fromLocation; 
+		val final = a.finalLocation;
+		val via = a.viaLocation;    
+		val target = a.target; 
+		
+		'''
+		\only<1> {«generateAnimationImageCode(target, from)»}
+		«IF a.viaLocation !== null»
+			\only<2> {«generateAnimationImageCode(target, via)»}
+			\only<3> {«generateAnimationImageCode(target, final)»}
+		«ELSE»
+			\only<2> {«generateAnimationImageCode(target, final)»}
+		«ENDIF»
+		'''
+	}
+	
+	def generateAnimationImageCode(Image i, String alignment){
+		'''
+		\includegraphics[«i.size.getString»
+		«IF i.angle !== 0», angle=«i.angle»«ENDIF»
+		, «alignment»]{«i.src»}
+		'''
+	}
+	
 	/**
-	 * dispatch function to create image code, 
-	 * TODO: Fix allignment of the image, it is only able to stay in the middle at the moment.
+	 * Enables you to present an image based on a reference
+	 */
+	def dispatch CharSequence generateContentsCode(ShowImage i, Slide s){
+		val img = i.image;
+		generateContentsCode(img, s);
+	} 
+	
+	/**
+	 * Dispatch function to create image code,
 	 */
 	def dispatch CharSequence generateContentsCode(Image i, Slide s){
 		val src = i.src.replace("\\", "/")
 		'''
-		\begin{center}
-		\includegraphics[«i.size.getString»]{«src»}
-		\end{center}
+		\begin{figure}
+			\includegraphics[«i.size.getString»
+			«IF i.angle !== 0», angle=«i.angle»«ENDIF»
+			«IF i.alignment !== null», «i.alignment»«ENDIF»]{«src»}
+		\end{figure}
 		'''
 	}
 	

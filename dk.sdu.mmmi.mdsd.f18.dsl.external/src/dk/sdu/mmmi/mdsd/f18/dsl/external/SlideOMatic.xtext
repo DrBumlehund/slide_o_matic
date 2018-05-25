@@ -6,7 +6,9 @@ generate slideOMatic "http://www.sdu.dk/mmmi/mdsd/f18/dsl/external/SlideOMatic"
 Presentation:
 	"presentation" name=STRING (subtitle=STRING)? "{" ("(" (theme=Theme)? (authors=Authors)? (institute=Institute)?
 	(date=Date)? ")")?
-	(slides+=Slide)* "}";
+	(slides+=Slide |
+	images+=Image)*
+	 "}";
 
 Theme:
 	"theme" theme=BeamerTheme ("color" themeColor=ThemeColor)?;
@@ -37,7 +39,7 @@ Section:
 	{Sec} "*" | {SubSec} "**" | {SubSubSec} "***";
 
 Content:
-	(ToC | Text | Block | List | Image | Table | Code | MathExp) (click=Click)?;
+	(ToC | Text | Block | List | ShowImage | Table | Code | MathExp | Animation) (click=Click)?;
 
 ToC:
 	{ToC} "ToC" | {CurrentSecToC} "ToC" "*";
@@ -64,10 +66,13 @@ ListItem:
 	"-" item=STRING ("(" nestedList=List ")")? (click=Click)?;
 
 Image:
-	"img" name=ID "src" src=STRING (alignment=Alignment)? (size=Size);
+	"img" name=ID "src" src=STRING (angle=INT)? (alignment=Alignment)? (size=Size);
+
+ShowImage: 
+	"showimg" image=[Image];
 
 Alignment:
-	"topleft" | "top" | "topright" | "left" | "center" | "right" | "bottomleft" | "bottom" | "bottomright";
+	"left" | "center" | "right"; 
 
 Size:
 	{ProportionalSize} way=Way scale=INT "%" | {ExactSize} way=Way size=INT unit=("cm" | "em" | "mm");
@@ -92,6 +97,10 @@ LineSequence:
 
 Click:
 	"$$";
+
+Animation:
+	"animate" target=[Image] "from" fromLocation=Alignment "to" finalLocation=Alignment ("via" viaLocation=Alignment)?;
+
 
 MathExp:
 	'math' (eval="eval")? exp=Exp;

@@ -8,6 +8,7 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.validation.AbstractSlideOMaticValidator;
 import java.io.File;
@@ -26,6 +27,8 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
   public final static String FILE_NOT_FOUND = "fileNotFound";
   
   public final static String LINE_NUMBER_TOO_HIGH = "lineNumberTooHigh";
+  
+  public final static String SLIDE_NAME_IS_EMPTY = "slideNameIsEnpty";
   
   @Check
   public void checkUnblockableContent(final Block block) {
@@ -77,5 +80,13 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
       _xifexpression = _xblockexpression;
     }
     return _xifexpression;
+  }
+  
+  @Check
+  public void checkSlideTitleIsNotEmpty(final Slide s) {
+    boolean _isEmpty = s.getName().isEmpty();
+    if (_isEmpty) {
+      this.warning("Slide name is empty", SlideOMaticPackage.Literals.SLIDE__NAME, SlideOMaticValidator.SLIDE_NAME_IS_EMPTY);
+    }
   }
 }

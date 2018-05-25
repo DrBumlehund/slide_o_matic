@@ -11,6 +11,7 @@ import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image
 import java.io.File
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide
 
 /**
  * This class contains custom validation rules. 
@@ -22,6 +23,7 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 	public static val UNBLOCKABLE_CONTENT = 'unblockableContent'
 	public static val FILE_NOT_FOUND = 'fileNotFound'
 	public static val LINE_NUMBER_TOO_HIGH = 'lineNumberTooHigh'
+	public static val SLIDE_NAME_IS_EMPTY = 'slideNameIsEnpty'
 
 	@Check
 	def checkUnblockableContent(Block block) {
@@ -55,6 +57,13 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 			if (f.exists){
 				// TODO: Implement validation for line numbers to be within range.	
 			}
+		}
+	}
+	
+	@Check 
+	def checkSlideTitleIsNotEmpty(Slide s){
+		if (s.name.isEmpty){
+			warning('Slide name is empty', SlideOMaticPackage.Literals.SLIDE__NAME, SLIDE_NAME_IS_EMPTY)
 		}
 	}
 
