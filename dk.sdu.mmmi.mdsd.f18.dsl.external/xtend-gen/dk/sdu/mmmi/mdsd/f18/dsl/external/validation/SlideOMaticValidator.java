@@ -6,11 +6,16 @@ package dk.sdu.mmmi.mdsd.f18.dsl.external.validation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Block;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Code;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Content;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Image;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.SlideOMaticPackage;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TextType;
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.URL;
 import dk.sdu.mmmi.mdsd.f18.dsl.external.validation.AbstractSlideOMaticValidator;
 import java.io.File;
 import org.eclipse.emf.common.util.EList;
@@ -40,17 +45,6 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
       if ((content instanceof Code)) {
         this.error("Unable to put Code in a block", SlideOMaticPackage.Literals.BLOCK__CONTENT, SlideOMaticValidator.UNBLOCKABLE_CONTENT);
       }
-    }
-  }
-  
-  @Check
-  public void checkSource(final Image img) {
-    String _src = img.getSrc();
-    final File f = new File(_src);
-    boolean _exists = f.exists();
-    boolean _not = (!_exists);
-    if (_not) {
-      this.warning("Unable to find image source", SlideOMaticPackage.Literals.IMAGE__SRC, SlideOMaticValidator.FILE_NOT_FOUND);
     }
   }
   
@@ -86,7 +80,20 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
   }
   
   /**
-   * Warn if a slide title is empty
+   * Check that manually written date is not empty
+   */
+  @Check
+  public void checkDate(final Date d) {
+    if ((!(d instanceof CompileDate))) {
+      boolean _isEmpty = d.getDate().isEmpty();
+      if (_isEmpty) {
+        this.warning("Date is empty", SlideOMaticPackage.Literals.DATE__DATE);
+      }
+    }
+  }
+  
+  /**
+   * Check that a slide title is not empty
    */
   @Check
   public void checkSlideTitleIsNotEmpty(final Slide s) {
@@ -97,7 +104,32 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
   }
   
   /**
-   * Warn if locations are the same in an animation
+   * Checks if url contains 'www'
+   * Checks if url contains min. 2x'.'
+   */
+  @Check
+  public void checkText(final Text txt) {
+    final EList<TextType> types = txt.getTypes();
+    final String t = txt.getText();
+    for (final TextType tt : types) {
+      if ((tt instanceof URL)) {
+        boolean _contains = t.contains("www");
+        boolean _not = (!_contains);
+        if (_not) {
+          this.warning("Url might be invalid. Check protocol", SlideOMaticPackage.Literals.TEXT__TEXT);
+        }
+        int _length = t.length();
+        int _length_1 = t.replace(".", "").length();
+        final int count = (_length - _length_1);
+        if ((count < 2)) {
+          this.warning("Url might be invalid. Check number of dots", SlideOMaticPackage.Literals.TEXT__TEXT);
+        }
+      }
+    }
+  }
+  
+  /**
+   * Check that locations to, from, or via are not the same
    */
   @Check
   public void checkAnimationLocations(final Animation a) {
@@ -136,6 +168,26 @@ public class SlideOMaticValidator extends AbstractSlideOMaticValidator {
     boolean _tripleEquals = (_alignment == null);
     if (_tripleEquals) {
       this.warning("No alignment specified. Default will be center", SlideOMaticPackage.Literals.IMAGE__ALIGNMENT);
+    }
+  }
+  
+  /**
+   * Check that image source cotains '.' for extension
+   * Check if image source can be found
+   */
+  @Check
+  public void checkImageSource(final Image img) {
+    String _src = img.getSrc();
+    final File f = new File(_src);
+    boolean _exists = f.exists();
+    boolean _not = (!_exists);
+    if (_not) {
+      this.warning("Unable to find image source", SlideOMaticPackage.Literals.IMAGE__SRC, SlideOMaticValidator.FILE_NOT_FOUND);
+    }
+    boolean _contains = img.getSrc().contains(".");
+    boolean _not_1 = (!_contains);
+    if (_not_1) {
+      this.warning("Image has no extension", SlideOMaticPackage.Literals.IMAGE__SRC);
     }
   }
 }

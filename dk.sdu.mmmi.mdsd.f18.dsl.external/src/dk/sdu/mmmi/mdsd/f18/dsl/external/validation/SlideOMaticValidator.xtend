@@ -13,6 +13,11 @@ import java.io.File
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.FileCode
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Slide
 import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Animation
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Text
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.TextType
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.URL
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.Date
+import dk.sdu.mmmi.mdsd.f18.dsl.external.slideOMatic.CompileDate
 
 /**
  * This class contains custom validation rules. 
@@ -37,14 +42,6 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 	}
 
 	@Check
-	def checkSource(Image img) {
-		val f = new File(img.src)
-		if (!f.exists) {
-			warning('Unable to find image source', SlideOMaticPackage.Literals.IMAGE__SRC, FILE_NOT_FOUND)
-		}
-	}
-
-	@Check
 	def checkSource(FileCode code) {
 		val f = new File(code.src)
 		if (!f.exists) {
@@ -62,10 +59,20 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 		}
 	}
 	
+	/*
+	 * Check that manually written date is not empty
+	 */
+	@Check
+	def checkDate(Date d){
+		if (!(d instanceof CompileDate)){
+			if (d.date.isEmpty()){
+				warning('Date is empty', SlideOMaticPackage.Literals.DATE__DATE);
+			}
+		}
+	}
 	
-	
-	/**
-	 * Warn if a slide title is empty 
+	/*
+	 * Check that a slide title is not empty
 	 */
 	@Check 
 	def checkSlideTitleIsNotEmpty(Slide s){
@@ -75,7 +82,30 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 	}
 	
 	/*
-	 * Warn if locations are the same in an animation 
+	 * Checks if url contains 'www'
+	 * Checks if url contains min. 2x'.'
+	 */
+	@Check
+	def checkText(Text txt){
+		val types = txt.types;
+		val t = txt.text; 
+		
+		for (TextType tt : types){
+			if (tt instanceof URL){
+				if (!t.contains('www')){
+					warning('Url might be invalid. Check protocol', SlideOMaticPackage.Literals.TEXT__TEXT);
+				}
+				//Count number of dots 
+				val count = t.length() - t.replace(".", "").length();
+				if (count < 2){
+					warning('Url might be invalid. Check number of dots', SlideOMaticPackage.Literals.TEXT__TEXT);
+				}
+			}
+		}
+	}
+	
+	/*
+	 * Check that locations to, from, or via are not the same  
 	 */
 	@Check 
 	def checkAnimationLocations(Animation a){
@@ -111,5 +141,20 @@ class SlideOMaticValidator extends AbstractSlideOMaticValidator {
 	 		warning('No alignment specified. Default will be center', SlideOMaticPackage.Literals.IMAGE__ALIGNMENT)
 	 	}
 	 }
-
+	
+	/*
+	 * Check that image source cotains '.' for extension 
+	 * Check if image source can be found
+	 */ 
+	@Check
+	def checkImageSource(Image img) {
+		val f = new File(img.src)
+		if (!f.exists) {
+			warning('Unable to find image source', SlideOMaticPackage.Literals.IMAGE__SRC, FILE_NOT_FOUND)
+		}
+		if (!img.src.contains('.')){
+			warning('Image has no extension', SlideOMaticPackage.Literals.IMAGE__SRC)
+		}
+	}
+	
 }

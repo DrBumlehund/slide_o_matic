@@ -572,7 +572,8 @@ public class SlideOMaticGenerator extends AbstractGenerator {
   }
   
   /**
-   * Enables you to present an image based on a reference
+   * Enables you to present a showImage.
+   * The showimage enables image reference use
    */
   protected CharSequence _generateContentsCode(final ShowImage i, final Slide s) {
     CharSequence _xblockexpression = null;

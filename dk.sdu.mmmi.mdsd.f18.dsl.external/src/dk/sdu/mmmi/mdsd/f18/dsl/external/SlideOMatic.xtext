@@ -101,7 +101,6 @@ Click:
 Animation:
 	"animate" target=[Image] "from" fromLocation=Alignment "to" finalLocation=Alignment ("via" viaLocation=Alignment)?;
 
-
 MathExp:
 	'math' (eval="eval")? exp=Exp;
 

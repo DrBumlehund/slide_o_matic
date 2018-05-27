@@ -231,7 +231,7 @@ class SlideOMaticGenerator extends AbstractGenerator {
 		val final = a.finalLocation;
 		val via = a.viaLocation;    
 		val target = a.target; 
-		
+	
 		'''
 		\only<1> {«generateAnimationImageCode(target, from)»}
 		«IF a.viaLocation !== null»
@@ -252,7 +252,8 @@ class SlideOMaticGenerator extends AbstractGenerator {
 	}
 	
 	/**
-	 * Enables you to present an image based on a reference
+	 * Enables you to present a showImage. 
+	 * The showimage enables image reference use
 	 */
 	def dispatch CharSequence generateContentsCode(ShowImage i, Slide s){
 		val img = i.image;
