@@ -61,7 +61,6 @@ class SlideOMaticGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 
 		resource.allContents.filter(Presentation).next.doGenerateTexFile(fsa)
-
 	}
 
 	/**
